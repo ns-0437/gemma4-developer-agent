@@ -1,0 +1,118 @@
+{
+  "prepared_utc": "2026-09-29T20:42:23.585841+05:30",
+  "status": "RUNNING",
+  "kernel": "navin03/gemma4-swe-agent-compare",
+  "notebook_sha256": "97873af2210b0f26276efce30c14d1b4c0491320f008e983c20c174328bfdbbc",
+  "candidates": {
+    "A": "b8da59c1c3a0671bb9b11b2fe4238a252ff792a63abf7ea4b5d555ceab57b24b",
+    "B": "33a5ec57db0dd482fd4f807206f2cbda45cdc5f14a28c836c88417305c6e3909"
+  },
+  "controls": [
+    {
+      "task": "rich_3278",
+      "arm": "baseline",
+      "counts": {
+        "passed": 7,
+        "failed": 16
+      },
+      "targets": 16
+    },
+    {
+      "task": "rich_3278",
+      "arm": "reference",
+      "counts": {
+        "passed": 23
+      },
+      "targets": 16
+    },
+    {
+      "task": "rich_3535",
+      "arm": "baseline",
+      "counts": {
+        "passed": 7,
+        "failed": 1
+      },
+      "targets": 1
+    },
+    {
+      "task": "rich_3535",
+      "arm": "reference",
+      "counts": {
+        "passed": 8
+      },
+      "targets": 1
+    },
+    {
+      "task": "rich_3675",
+      "arm": "baseline",
+      "counts": {
+        "passed": 98,
+        "failed": 1
+      },
+      "targets": 1
+    },
+    {
+      "task": "rich_3675",
+      "arm": "reference",
+      "counts": {
+        "passed": 99
+      },
+      "targets": 1
+    },
+    {
+      "task": "rich_3942",
+      "arm": "baseline",
+      "counts": {
+        "failed": 6,
+        "passed": 2
+      },
+      "targets": 6
+    },
+    {
+      "task": "rich_3942",
+      "arm": "reference",
+      "counts": {
+        "passed": 8
+      },
+      "targets": 6
+    }
+  ],
+  "quota_observation": "Kaggle settings: GPU 01:27 / 30 hrs observed before launch",
+  "authorization": "User: Yes—one GPU comparison after CPU passes",
+  "raw_hashes": {
+    "gemma4-control-preflight.log": "01a8532328b34b2fbe1871361a603e010766115963b03aae9727b89986550413",
+    "pilot\\control_recheck.json": "d595cd2cfd0b3e29fd249653fe712bd46112f2b6bed51c7eb10b155e4098ac94",
+    "pilot\\original_patch_diagnostic.json": "ddb41ca41410f83a2b761784f5681e670f0e81cec1b57af18a5ff1a624cf69a2",
+    "pilot\\preconditions.json": "701a4a879f8a78422bcbaa0a485c1113feb0ad3e8924f4a04d1dcfc6b85cf621",
+    "pilot\\sandbox_commands.jsonl": "03bb024f1b4f75094473a625038a250a7faf260158a007b9ea029021d84d3d8a",
+    "pilot\\setup_observations.json": "d79fb9e66deb84c06a3c1127ec9cf87e69477e1cd5c97d743a80aa3fc551f1e3",
+    "pilot\\control_evidence\\rich_3278__baseline.json": "4b978ea9410040a4b78c5755fe0ceb38dde70cb3682f8acd408c15d09f5e0920",
+    "pilot\\control_evidence\\rich_3278__baseline.junit.xml": "e4fa8d4062bcb15e307250a776e64fb2583ab9785b205e765108a1919964f9d0",
+    "pilot\\control_evidence\\rich_3278__reference.json": "8ee8d794198a88a9f5bc2d5626f1f6508e293189828cf3b51a1761265c3c88fe",
+    "pilot\\control_evidence\\rich_3278__reference.junit.xml": "a65e83af28581f3c755fab17797500bbb731e47d50242a31052b76a463a59bfb",
+    "pilot\\control_evidence\\rich_3535__baseline.json": "90ace3e4516b8321814e2d2783ae8edab8145f70f92c1469c35c22f436218b1b",
+    "pilot\\control_evidence\\rich_3535__baseline.junit.xml": "ab30e455ca52a913b2e6a24ecac8ab403529122b7bc5600aab1bafbc329a9b25",
+    "pilot\\control_evidence\\rich_3535__reference.json": "0319107810ba33735ad2ee2abb0b4e9e68ed21d039630a9e74962a6cf1ffc699",
+    "pilot\\control_evidence\\rich_3535__reference.junit.xml": "4590b0cda0f9a4b3fb496c15637e77c4de15a32117d2638083950f577e67db45",
+    "pilot\\control_evidence\\rich_3675__baseline.json": "569d43c3cd5bd30b277845a02dc90f0dc72f4397e21753e9186e3c155fd4a0b4",
+    "pilot\\control_evidence\\rich_3675__baseline.junit.xml": "9220916c1b33f0bcc28e51ca6c14cb71f93a04c6580116e20028131520a5ad09",
+    "pilot\\control_evidence\\rich_3675__reference.json": "1f7d834dab0c08e9695e033c2ca456804db4dbd4f4bc70fcd28aa142339bf8e9",
+    "pilot\\control_evidence\\rich_3675__reference.junit.xml": "11e001fa1a34afc34d7727ed011007b39846f3d5922ae3cbdb00ef8eece81b72",
+    "pilot\\control_evidence\\rich_3942__baseline.json": "7e99c6481710655fd0a4a361cc5c38e0de40bf6ad7e707d499ee4e2139cd8fd0",
+    "pilot\\control_evidence\\rich_3942__baseline.junit.xml": "73572b56d0699c16906b721e4ba667bfdb758cd92b61b7eebf5ad2bd76dc042f",
+    "pilot\\control_evidence\\rich_3942__reference.json": "826052700a6fd6ed8a3af405ae5cce339d66ced800325732cac9770e64892542",
+    "pilot\\control_evidence\\rich_3942__reference.junit.xml": "91cf6b87f1fe1988468c55cda77fefa760790f33799901531d021a81360f3efc"
+  },
+  "limitations": [
+    "Four tasks from Rich only; no leaderboard score projection",
+    "Repaired subprocess environment, not demonstrated private grader parity",
+    "Patch evidence bytes/sha256 describe original text; created_bytes includes added final newline"
+  ],
+  "kernel_version": 2,
+  "launch_verified_utc": "2026-09-29T15:13:51.7204972Z",
+  "tests": {
+    "stop_logic": "22 passed",
+    "cpu_controls": "8 of 8 accepted",
+    "dispatch": "108 passed"
+  }
+}
