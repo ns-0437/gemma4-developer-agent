@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+*.pyc
+
+# Local build output: regenerate with scripts/validate_and_zip.py, never hand-edit.
+# Frozen copies of what was actually submitted live in releases/ and ARE tracked.
+/submission.zip
+
+# Binary wheels: re-downloadable from Kaggle dataset
+# metric/gemma-4-developer-agent-wheelhouse. The unpacked source beside them
+# (reference/harness_src/src_*) is what we actually read, and is tracked.
+*.whl
+
+# Competition-provided training data, not ours to redistribute.
+reference/tasks.jsonl
