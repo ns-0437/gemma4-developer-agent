@@ -1,0 +1,19 @@
+{
+  "id": "navin03/gemma4-swe-agent-replay",
+  "title": "gemma4-swe-agent-replay",
+  "code_file": "replay.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": false,
+  "enable_tpu": false,
+  "enable_internet": false,
+  "dataset_sources": [
+    "metric/gemma-4-developer-agent-wheelhouse"
+  ],
+  "competition_sources": [
+    "gemma-4-developer-agent"
+  ],
+  "kernel_sources": [],
+  "model_sources": []
+}
