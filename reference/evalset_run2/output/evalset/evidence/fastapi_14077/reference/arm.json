@@ -1,0 +1,108 @@
+{
+  "task": "fastapi_14077",
+  "arm": "reference",
+  "reached_pytest": true,
+  "pytest_exit": 0,
+  "pytest_cmd": "PYTHONSAFEPATH=1 PYTHONNOUSERSITE=1 python3 -s -m pytest tests/test_enforce_once_required_parameter.py",
+  "nodes": {
+    "tests.test_enforce_once_required_parameter::test_schema": "passed",
+    "tests.test_enforce_once_required_parameter::test_get_invalid": "passed",
+    "tests.test_enforce_once_required_parameter::test_get_valid": "passed"
+  },
+  "failure_details": {},
+  "import_in_checkout": true,
+  "grading_import": "/tmp/swegemma_sandbox_7a0ccd67-f67_7j7i5_zp/workspace/fastapi/__init__.py",
+  "patch_rc": 0,
+  "patch_err": "",
+  "test_patch_rc": 0,
+  "test_patch_err": "",
+  "editable_rc": 0,
+  "collection_error": false,
+  "exception": null,
+  "traceback": null,
+  "task_sha256": "a973ef3cc60bdc94582b499bf0f3e216a9cd919f06171ee0893e5b43229f5bfd",
+  "snapshot_sha256": "1c65517e393733a25b94abea2f54aff24f543ee7899d9aecf3403ccf4d0705b5",
+  "environment_versions": {
+    "swegemma": "0.2.7",
+    "adk-submission": "0.2.11",
+    "adk-eval-core": "0.1.0",
+    "google-adk": "1.36.1"
+  },
+  "policy_sha256": "f59934c6b6369e97d529f821c0284cc666d708e340b3654aafd16dfe5f5e37ee",
+  "setup_commands": [
+    {
+      "cmd": "pip setuptools",
+      "rc": 0
+    },
+    {
+      "cmd": "pip wheel",
+      "rc": 0
+    },
+    {
+      "cmd": "pip editables",
+      "rc": 0
+    },
+    {
+      "cmd": "pip flit_core",
+      "rc": 0
+    },
+    {
+      "cmd": "pip poetry_core",
+      "rc": 0
+    },
+    {
+      "cmd": "pip pdm_backend",
+      "rc": 0
+    },
+    {
+      "cmd": "pip -e .",
+      "rc": 0,
+      "tail": "p/swegemma_sandbox_32888976-0c1__r84tml6/venv\n    Can't uninstall 'fastapi'. No files were found to uninstall.\nSuccessfully installed fastapi-0.116.1\n"
+    },
+    {
+      "cmd": "checkout tests/test_enforce_once_required_parameter.py",
+      "rc": 0
+    },
+    {
+      "cmd": "clean tests/test_enforce_once_required_parameter.py",
+      "rc": 0
+    },
+    {
+      "cmd": "pip setuptools",
+      "rc": 0
+    },
+    {
+      "cmd": "pip wheel",
+      "rc": 0
+    },
+    {
+      "cmd": "pip editables",
+      "rc": 0
+    },
+    {
+      "cmd": "pip flit_core",
+      "rc": 0
+    },
+    {
+      "cmd": "pip poetry_core",
+      "rc": 0
+    },
+    {
+      "cmd": "pip pdm_backend",
+      "rc": 0
+    },
+    {
+      "cmd": "pip -e .",
+      "rc": 0,
+      "tail": "p/swegemma_sandbox_7a0ccd67-f67_7j7i5_zp/venv\n    Can't uninstall 'fastapi'. No files were found to uninstall.\nSuccessfully installed fastapi-0.116.1\n"
+    },
+    {
+      "cmd": "checkout tests/test_enforce_once_required_parameter.py",
+      "rc": 0
+    },
+    {
+      "cmd": "clean tests/test_enforce_once_required_parameter.py",
+      "rc": 0
+    }
+  ]
+}

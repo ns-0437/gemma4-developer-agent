@@ -1,0 +1,3 @@
+...................s.                                                    [100%]
+- generated xml file: /tmp/swegemma_sandbox_4051d793-423_gw9i4m4_/tmp/_j_0b0a1949.xml -
+20 passed, 1 skipped in 1.22s

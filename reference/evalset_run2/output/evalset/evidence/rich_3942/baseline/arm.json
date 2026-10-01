@@ -1,0 +1,123 @@
+{
+  "task": "rich_3942",
+  "arm": "baseline",
+  "reached_pytest": true,
+  "pytest_exit": 1,
+  "pytest_cmd": "PYTHONSAFEPATH=1 PYTHONNOUSERSITE=1 python3 -s -m pytest tests/_card_render.py tests/test_markdown.py tests/test_markdown_no_hyperlinks.py",
+  "nodes": {
+    "test_markdown::test_markdown_render": "failed",
+    "test_markdown::test_inline_code": "passed",
+    "test_markdown::test_markdown_table": "failed",
+    "test_markdown::test_inline_styles_in_table": "failed",
+    "test_markdown::test_inline_styles_with_justification": "failed",
+    "test_markdown::test_partial_table": "failed",
+    "test_markdown::test_table_with_empty_cells": "passed",
+    "test_markdown_no_hyperlinks::test_markdown_render": "failed"
+  },
+  "failure_details": {
+    "test_markdown::test_markdown_render": {
+      "kind": "failure",
+      "message": "AssertionError: assert '\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501...    \\x1b[0m\\n' == '            ...    \\x1b[0m\\n'\n  \n  + \u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n  -                                               #x1B[1;4mHeading#x1B[0m                                               \n  ? ^                                                --                                                          ^\n  + \u2503                                             #x1B[1mHeading#x1B[0m                                              \u2503\n  ? ^                                            ",
+      "detail": "def test_markdown_render():\n        markdown = Markdown(MARKDOWN)\n        rendered_markdown = render(markdown)\n        expected = \"                                              \\x1b[1;4mHeading\\x1b[0m                                               \\n\\n\\x1b[4;35mSub-heading\\x1b[0m                                                                                         \\n\\n\\x1b[1;35mHeading\\x1b[0m                                                                                             \\n\\n\\x1b[3;35mH4 Heading\\x1b[0m                                                                                          \\n\\n\\x1b[3mH5 Heading\\x1b[0m                                                                                          \\n\\n\\x1b[2mH6 Heading\\x1b[0m                                                                                          \\n\\nParagraphs are separated by a blank line.                                                           \\n\\nTwo spaces at the end of a line produces a line break.                                              \\n\\nText attributes \\x1b[3mitalic\\x1b[0m, \\x1b[1mbold\\x1b[0m, \\x1b[1;36;40mmonospace\\x1b[0m.                                                            \\n\\nHorizontal rule:                                                                                    \\n\\n\\x1b[2m----------------------------------------------------------------------------------------------------\\x1b[0m\\n\\nBullet list:                                                        "
+    },
+    "test_markdown::test_markdown_table": {
+      "kind": "failure",
+      "message": "AssertionError: assert '\\n          ...           \\n' == '\\n\\x1b[36m  ...    \\x1b[0m\\n'\n  \n    \n  - #x1B[36m                                                                                          #x1B[0m\n  - #x1B[36m #x1B[0m#x1B[36mYear#x1B[0m#x1B[1m #x1B[0m#x1B[36m #x1B[0m#x1B[1m                    #x1B[0m#x1B[36mTitle#x1B[0m#x1B[1m                     #x1B[0m#x1B[1m #x1B[0m#x1B[36m #x1B[0m#x1B[36mDirector#x1B[0m#x1B[1m        #x1B[0m#x1B[1m #x1B[0m#x1B[36m #x1B[0m#x1B[36mBox Office (USD)#x1B[0m#x1B[36m #x1B[0m\n  - #x1B[36m \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+      "detail": "def test_markdown_table():\n        markdown = Markdown(\n            \"\"\"\\\n    | Year |                      Title                       | Director          |  Box Office (USD) |\n    |------|:------------------------------------------------:|:------------------|------------------:|\n    | 1982 |            *E.T. the Extra-Terrestrial*          | Steven Spielberg  |    $792.9 million |\n    | 1980 |  Star Wars: Episode V \u2013 The Empire Strikes Back  | Irvin Kershner    |    $538.4 million |\n    | 1983 |    Star Wars: Episode VI \u2013 Return of the Jedi    | Richard Marquand  |    $475.1 million |\n    | 1981 |             Raiders of the Lost Ark              | Steven Spielberg  |    $389.9 million |\n    | 1984 |       Indiana Jones and the Temple of Doom       | Steven Spielberg  |    $333.1 million |\n    \"\"\"\n        )\n        result = render(markdown)\n        expected = \"\\n\\x1b[36m                                                                                          \\x1b[0m\\n\\x1b[36m \\x1b[0m\\x1b[36mYear\\x1b[0m\\x1b[1m \\x1b[0m\\x1b[36m \\x1b[0m\\x1b[1m                    \\x1b[0m\\x1b[36mTitle\\x1b[0m\\x1b[1m                     \\x1b[0m\\x1b[1m \\x1b[0m\\x1b[36m \\x1b[0m\\x1b[36mDirector\\x1b[0m\\x1b[1m        \\x1b[0m\\x1b[1m \\x1b[0m\\x1b[36m \\x1b[0m\\x1b[36mBox Office (USD)\\x1b[0m\\x1b[36m \\x1b[0m\\n\\x1b[36m \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 \\x1b[0m\\n\\x1b[36m \\x1b[0m1982 \\x1b[36m \\x1b[0m          \\x1b[3mE.T. the Extra-Terrestrial\\x1b[0m           \\x"
+    },
+    "test_markdown::test_inline_styles_in_table": {
+      "kind": "failure",
+      "message": "AssertionError: assert '\\n          ...           \\n' == '\\n\\x1b[36m  ...    \\x1b[0m\\n'\n  \n    \n  - #x1B[36m                                                                                            #x1B[0m\n  - #x1B[36m #x1B[0m#x1B[36mYear#x1B[0m#x1B[1m #x1B[0m#x1B[36m #x1B[0m#x1B[36mThis #x1B[0m#x1B[36mcolumn#x1B[0m#x1B[36m displays #x1B[0m#x1B[3;36mthe#x1B[0m#x1B[36m movie #x1B[0m#x1B[3;36mtitle#x1B[0m#x1B[36m #x1B[0m#x1B[9;36mdescription#x1B[0m#x1B[1m #x1B[0m#x1B[36m #x1B[0m#x1B[36mDirector#x1B[0m#x1B[1m        #x1B[0m#x1B[1m #x1B[0m#x1B[36m #x1B[0m#x1B[36mBox Office (USD)#x1B[0m#x1B[36m #",
+      "detail": "def test_inline_styles_in_table():\n        \"\"\"Regression test for https://github.com/Textualize/rich/issues/3115\"\"\"\n        markdown = Markdown(\n            \"\"\"\\\n    | Year | This **column** displays _the_ movie _title_ ~~description~~ | Director          |  Box Office (USD) |\n    |------|:----------------------------------------------------------:|:------------------|------------------:|\n    | 1982 | *E.T. the Extra-Terrestrial* ([Wikipedia article](https://en.wikipedia.org/wiki/E.T._the_Extra-Terrestrial)) | Steven Spielberg  |    $792.9 million |\n    | 1980 |  Star Wars: Episode V \u2013 The *Empire* **Strikes** ~~Back~~  | Irvin Kershner    |    $538.4 million |\n    \"\"\"\n        )\n        result = render(markdown)\n        expected = \"\\n\\x1b[36m                                                                                            \\x1b[0m\\n\\x1b[36m \\x1b[0m\\x1b[36mYear\\x1b[0m\\x1b[1m \\x1b[0m\\x1b[36m \\x1b[0m\\x1b[36mThis \\x1b[0m\\x1b[36mcolumn\\x1b[0m\\x1b[36m displays \\x1b[0m\\x1b[3;36mthe\\x1b[0m\\x1b[36m movie \\x1b[0m\\x1b[3;36mtitle\\x1b[0m\\x1b[36m \\x1b[0m\\x1b[9;36mdescription\\x1b[0m\\x1b[1m \\x1b[0m\\x1b[36m \\x1b[0m\\x1b[36mDirector\\x1b[0m\\x1b[1m        \\x1b[0m\\x1b[1m \\x1b[0m\\x1b[36m \\x1b[0m\\x1b[36mBox Office (USD)\\x1b[0m\\x1b[36m \\x1b[0m\\n\\x1b[36m \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 \\x1b[0m\\n\\x1b[36m \\x1b[0m1982 \\x1b[36m \\x1b[0m \\x1b[3mE.T. the Extra-Terrestrial\\x1b[0m (\\x1b]8;id=0;foo\\x1b\\\\\\x1b[4;34mWikipedia article\\x1b[0m\\x1b]8;"
+    },
+    "test_markdown::test_inline_styles_with_justification": {
+      "kind": "failure",
+      "message": "AssertionError: assert '\\n          ...           \\n' == '\\n\\x1b[36m  ...    \\x1b[0m\\n'\n  \n    \n  - #x1B[36m                                                                  #x1B[0m\n  - #x1B[36m #x1B[0m#x1B[36mleft#x1B[0m#x1B[1m              #x1B[0m#x1B[1m #x1B[0m#x1B[36m #x1B[0m#x1B[1m      #x1B[0m#x1B[36mcenter#x1B[0m#x1B[1m       #x1B[0m#x1B[1m #x1B[0m#x1B[36m #x1B[0m#x1B[1m                  #x1B[0m#x1B[36mright#x1B[0m#x1B[36m #x1B[0m\n  - #x1B[36m \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 #x1B[0m\n  - #x1B[36m #x1B[0mThis is a long row #x1B[36m #x1B[0mbecause it contai",
+      "detail": "def test_inline_styles_with_justification():\n        \"\"\"Regression test for https://github.com/Textualize/rich/issues/3115\n    \n        In particular, this tests the interaction between the change that was made to fix\n        #3115 and column text justification.\n        \"\"\"\n        markdown = Markdown(\n            \"\"\"\\\n    | left | center | right |\n    | :- | :-: | -: |\n    | This is a long row | because it contains | a fairly long sentence. |\n    | a*b* _c_ ~~d~~ e | a*b* _c_ ~~d~~ e | a*b* _c_ ~~d~~ e |\"\"\"\n        )\n        result = render(markdown)\n        expected = \"\\n\\x1b[36m                                                                  \\x1b[0m\\n\\x1b[36m \\x1b[0m\\x1b[36mleft\\x1b[0m\\x1b[1m              \\x1b[0m\\x1b[1m \\x1b[0m\\x1b[36m \\x1b[0m\\x1b[1m      \\x1b[0m\\x1b[36mcenter\\x1b[0m\\x1b[1m       \\x1b[0m\\x1b[1m \\x1b[0m\\x1b[36m \\x1b[0m\\x1b[1m                  \\x1b[0m\\x1b[36mright\\x1b[0m\\x1b[36m \\x1b[0m\\n\\x1b[36m \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 \\x1b[0m\\n\\x1b[36m \\x1b[0mThis is a long row \\x1b[36m \\x1b[0mbecause it contains \\x1b[36m \\x1b[0ma fairly long sentence.\\x1b[36m \\x1b[0m\\n\\x1b[36m \\x1b[0ma\\x1b[3mb\\x1b[0m \\x1b[3mc\\x1b[0m \\x1b[9md\\x1b[0m e           \\x1b[36m \\x1b[0m     a\\x1b[3mb\\x1b[0m \\x1b[3mc\\x1b[0m \\x1b[9md\\x1b[0m e       \\x1b[36m \\x1b[0m               a\\x1b[3mb\\x1b[0m \\x1b[3mc\\x1b[0m \\x1b[9md\\x1b[0m e\\x1b[36m \\x1b[0m\\n\\x1b[36m                                                                  \\x1b[0m\\n\"\n>       assert result == expec"
+    },
+    "test_markdown::test_partial_table": {
+      "kind": "failure",
+      "message": "AssertionError: assert '\\n          ...           \\n' == '\\n\\x1b[36m  ...    \\x1b[0m\\n'\n  \n    \n  - #x1B[36m               #x1B[0m\n  +                   \n  - #x1B[36m #x1B[0m#x1B[36mSimple#x1B[0m#x1B[1m #x1B[0m#x1B[36m #x1B[0m#x1B[36mTable#x1B[0m#x1B[36m #x1B[0m\n  ?   ^^        ^^                      ^^^^^^^^^^^^            ^^\n  +  #x1B[1m #x1B[0m#x1B[1mSimple#x1B[0m#x1B[1m #x1B[0m #x1B[1m #x1B[0m#x1B[1mTable#x1B[0m#x1B[1m #x1B[0m ...\n  \n  ...Full output truncated (5 lines hidden), use '-vv' to show",
+      "detail": "def test_partial_table():\n        markdown = Markdown(\"| Simple | Table |\\n| ------ | ----- \")\n        result = render(markdown)\n        print(repr(result))\n        expected = \"\\n\\x1b[36m               \\x1b[0m\\n\\x1b[36m \\x1b[0m\\x1b[36mSimple\\x1b[0m\\x1b[1m \\x1b[0m\\x1b[36m \\x1b[0m\\x1b[36mTable\\x1b[0m\\x1b[36m \\x1b[0m\\n\\x1b[36m \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 \\x1b[0m\\n\\x1b[36m               \\x1b[0m\\n\"\n>       assert result == expected\nE       AssertionError: assert '\\n          ...           \\n' == '\\n\\x1b[36m  ...    \\x1b[0m\\n'\nE         \nE           \nE         - #x1B[36m               #x1B[0m\nE         +                   \nE         - #x1B[36m #x1B[0m#x1B[36mSimple#x1B[0m#x1B[1m #x1B[0m#x1B[36m #x1B[0m#x1B[36mTable#x1B[0m#x1B[36m #x1B[0m\nE         ?   ^^        ^^                      ^^^^^^^^^^^^            ^^\nE         +  #x1B[1m #x1B[0m#x1B[1mSimple#x1B[0m#x1B[1m #x1B[0m #x1B[1m #x1B[0m#x1B[1mTable#x1B[0m#x1B[1m #x1B[0m ...\nE         \nE         ...Full output truncated (5 lines hidden), use '-vv' to show\n\ntests/test_markdown.py:174: AssertionError"
+    },
+    "test_markdown_no_hyperlinks::test_markdown_render": {
+      "kind": "failure",
+      "message": "AssertionError: assert '\u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501...    \\x1b[0m\\n' == '            ...    \\x1b[0m\\n'\n  \n  + \u250f\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2513\n  -                                               #x1B[1;4mHeading#x1B[0m                                               \n  ? ^                                                --                                                          ^\n  + \u2503                                             #x1B[1mHeading#x1B[0m                                              \u2503\n  ? ^                                            ",
+      "detail": "def test_markdown_render():\n        markdown = Markdown(MARKDOWN, hyperlinks=False)\n        rendered_markdown = render(markdown)\n        print(repr(rendered_markdown))\n        expected = \"                                              \\x1b[1;4mHeading\\x1b[0m                                               \\n\\n\\x1b[4;35mSub-heading\\x1b[0m                                                                                         \\n\\n\\x1b[1;35mHeading\\x1b[0m                                                                                             \\n\\n\\x1b[3;35mH4 Heading\\x1b[0m                                                                                          \\n\\n\\x1b[3mH5 Heading\\x1b[0m                                                                                          \\n\\n\\x1b[2mH6 Heading\\x1b[0m                                                                                          \\n\\nParagraphs are separated by a blank line.                                                           \\n\\nTwo spaces at the end of a line produces a line break.                                              \\n\\nText attributes \\x1b[3mitalic\\x1b[0m, \\x1b[1mbold\\x1b[0m, \\x1b[1;36;40mmonospace\\x1b[0m.                                                            \\n\\nHorizontal rule:                                                                                    \\n\\n\\x1b[2m----------------------------------------------------------------------------------------------------\\x1b[0m\\n\\nBullet list"
+    }
+  },
+  "import_in_checkout": true,
+  "grading_import": "/tmp/swegemma_sandbox_cb7391fe-ddf_sauv1peb/workspace/rich/__init__.py",
+  "patch_rc": 0,
+  "patch_err": null,
+  "test_patch_rc": 0,
+  "test_patch_err": "",
+  "editable_rc": 0,
+  "collection_error": false,
+  "exception": null,
+  "traceback": null,
+  "task_sha256": "b626009683a3a55af3ad72e8a4cc9cd629cb24444a2c404c073a87778b8148b8",
+  "snapshot_sha256": "6e70935bd690ef22152b1c34ba2654acd1d6078fc975d7dcf1071e7921816e52",
+  "environment_versions": {
+    "swegemma": "0.2.7",
+    "adk-submission": "0.2.11",
+    "adk-eval-core": "0.1.0",
+    "google-adk": "1.36.1"
+  },
+  "policy_sha256": "f59934c6b6369e97d529f821c0284cc666d708e340b3654aafd16dfe5f5e37ee",
+  "setup_commands": [
+    {
+      "cmd": "pip setuptools",
+      "rc": 0
+    },
+    {
+      "cmd": "pip wheel",
+      "rc": 0
+    },
+    {
+      "cmd": "pip editables",
+      "rc": 0
+    },
+    {
+      "cmd": "pip flit_core",
+      "rc": 0
+    },
+    {
+      "cmd": "pip poetry_core",
+      "rc": 0
+    },
+    {
+      "cmd": "pip pdm_backend",
+      "rc": 0
+    },
+    {
+      "cmd": "pip -e .",
+      "rc": 0,
+      "tail": "ent /tmp/swegemma_sandbox_cb7391fe-ddf_sauv1peb/venv\n    Can't uninstall 'rich'. No files were found to uninstall.\nSuccessfully installed rich-14.2.0\n"
+    },
+    {
+      "cmd": "checkout tests/_card_render.py",
+      "rc": 0
+    },
+    {
+      "cmd": "clean tests/_card_render.py",
+      "rc": 0
+    },
+    {
+      "cmd": "checkout tests/test_markdown.py",
+      "rc": 0
+    },
+    {
+      "cmd": "clean tests/test_markdown.py",
+      "rc": 0
+    },
+    {
+      "cmd": "checkout tests/test_markdown_no_hyperlinks.py",
+      "rc": 0
+    },
+    {
+      "cmd": "clean tests/test_markdown_no_hyperlinks.py",
+      "rc": 0
+    }
+  ]
+}

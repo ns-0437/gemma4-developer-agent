@@ -1,0 +1,1 @@
+{"instance_id": "requests_6589", "repo": "psf/requests", "resolved": false, "agent_patch_size": 731, "test_exit_code": 1, "duration_seconds": 150.73, "error": "Agent exceeded turns budget (40 turns)", "tool_calls": 39, "total_llm_calls": 40, "task_index": 1}

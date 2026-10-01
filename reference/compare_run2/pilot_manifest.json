@@ -1,0 +1,2043 @@
+{
+  "candidates": {
+    "A": "b8da59c1c3a0671bb9b11b2fe4238a252ff792a63abf7ea4b5d555ceab57b24b",
+    "B": "33a5ec57db0dd482fd4f807206f2cbda45cdc5f14a28c836c88417305c6e3909"
+  },
+  "candidate_dirs": {
+    "A": "/kaggle/working/candidates/A",
+    "B": "/kaggle/working/candidates/B"
+  },
+  "tasks": [
+    "rich_3278",
+    "rich_3535",
+    "rich_3675",
+    "rich_3942"
+  ],
+  "control_evidence": {
+    "rich_3278": {
+      "negative": {
+        "pytest_exit": 1,
+        "workspace_real": "/tmp/swegemma_sandbox_fbc86660-ea1_mbw02i_a/workspace",
+        "agent_pkg_file": "unavailable (no agent ran in the control)",
+        "pytest_pkg_file": "/tmp/swegemma_sandbox_fbc86660-ea1_mbw02i_a/workspace/rich/__init__.py",
+        "import_in_checkout": true,
+        "patch_rc": 0,
+        "test_patch_rc": 0,
+        "nodes": {
+          "test_ansi::test_decode": "passed",
+          "test_ansi::test_decode_example": "passed",
+          "test_ansi::test_decode_issue_2688[\\x1b[31mFound 4 errors in 2 files (checked 18 source files)\\x1b(B\\x1b[m\\n-Found 4 errors in 2 files (checked 18 source files)]": "passed",
+          "test_ansi::test_decode_issue_2688[Hallo-Hallo]": "passed",
+          "test_ansi::test_decode_issue_2688[\\x1b(BHallo-Hallo]": "passed",
+          "test_ansi::test_decode_issue_2688[\\x1b(JHallo-Hallo]": "passed",
+          "test_ansi::test_decode_issue_2688[\\x1b(BHal\\x1b(Jlo-Hallo]": "passed",
+          "test_ansi::test_strip_private_escape_sequences[0]": "failed",
+          "test_ansi::test_strip_private_escape_sequences[1]": "failed",
+          "test_ansi::test_strip_private_escape_sequences[2]": "failed",
+          "test_ansi::test_strip_private_escape_sequences[3]": "failed",
+          "test_ansi::test_strip_private_escape_sequences[4]": "failed",
+          "test_ansi::test_strip_private_escape_sequences[5]": "failed",
+          "test_ansi::test_strip_private_escape_sequences[6]": "failed",
+          "test_ansi::test_strip_private_escape_sequences[7]": "failed",
+          "test_ansi::test_strip_private_escape_sequences[8]": "failed",
+          "test_ansi::test_strip_private_escape_sequences[9]": "failed",
+          "test_ansi::test_strip_private_escape_sequences[:]": "failed",
+          "test_ansi::test_strip_private_escape_sequences[;]": "failed",
+          "test_ansi::test_strip_private_escape_sequences[<]": "failed",
+          "test_ansi::test_strip_private_escape_sequences[=]": "failed",
+          "test_ansi::test_strip_private_escape_sequences[>]": "failed",
+          "test_ansi::test_strip_private_escape_sequences[?]": "failed"
+        },
+        "n_cases": 23,
+        "failed_nodes": [
+          "test_ansi::test_strip_private_escape_sequences[0]",
+          "test_ansi::test_strip_private_escape_sequences[1]",
+          "test_ansi::test_strip_private_escape_sequences[2]",
+          "test_ansi::test_strip_private_escape_sequences[3]",
+          "test_ansi::test_strip_private_escape_sequences[4]",
+          "test_ansi::test_strip_private_escape_sequences[5]",
+          "test_ansi::test_strip_private_escape_sequences[6]",
+          "test_ansi::test_strip_private_escape_sequences[7]",
+          "test_ansi::test_strip_private_escape_sequences[8]",
+          "test_ansi::test_strip_private_escape_sequences[9]",
+          "test_ansi::test_strip_private_escape_sequences[:]",
+          "test_ansi::test_strip_private_escape_sequences[;]",
+          "test_ansi::test_strip_private_escape_sequences[<]",
+          "test_ansi::test_strip_private_escape_sequences[=]",
+          "test_ansi::test_strip_private_escape_sequences[>]",
+          "test_ansi::test_strip_private_escape_sequences[?]"
+        ],
+        "passed_nodes": [
+          "test_ansi::test_decode",
+          "test_ansi::test_decode_example",
+          "test_ansi::test_decode_issue_2688[Hallo-Hallo]",
+          "test_ansi::test_decode_issue_2688[\\x1b(BHal\\x1b(Jlo-Hallo]",
+          "test_ansi::test_decode_issue_2688[\\x1b(BHallo-Hallo]",
+          "test_ansi::test_decode_issue_2688[\\x1b(JHallo-Hallo]",
+          "test_ansi::test_decode_issue_2688[\\x1b[31mFound 4 errors in 2 files (checked 18 source files)\\x1b(B\\x1b[m\\n-Found 4 errors in 2 files (checked 18 source files)]"
+        ],
+        "failed": [
+          "test_ansi::test_strip_private_escape_sequences[0]",
+          "test_ansi::test_strip_private_escape_sequences[1]",
+          "test_ansi::test_strip_private_escape_sequences[2]",
+          "test_ansi::test_strip_private_escape_sequences[3]",
+          "test_ansi::test_strip_private_escape_sequences[4]",
+          "test_ansi::test_strip_private_escape_sequences[5]",
+          "test_ansi::test_strip_private_escape_sequences[6]",
+          "test_ansi::test_strip_private_escape_sequences[7]",
+          "test_ansi::test_strip_private_escape_sequences[8]",
+          "test_ansi::test_strip_private_escape_sequences[9]",
+          "test_ansi::test_strip_private_escape_sequences[:]",
+          "test_ansi::test_strip_private_escape_sequences[;]",
+          "test_ansi::test_strip_private_escape_sequences[<]",
+          "test_ansi::test_strip_private_escape_sequences[=]",
+          "test_ansi::test_strip_private_escape_sequences[>]",
+          "test_ansi::test_strip_private_escape_sequences[?]"
+        ],
+        "errored": []
+      },
+      "positive": {
+        "pytest_exit": 0,
+        "workspace_real": "/tmp/swegemma_sandbox_2c91183e-840_38s9ivy0/workspace",
+        "agent_pkg_file": "unavailable (no agent ran in the control)",
+        "pytest_pkg_file": "/tmp/swegemma_sandbox_2c91183e-840_38s9ivy0/workspace/rich/__init__.py",
+        "import_in_checkout": true,
+        "patch_rc": 0,
+        "test_patch_rc": 0,
+        "nodes": {
+          "test_ansi::test_decode": "passed",
+          "test_ansi::test_decode_example": "passed",
+          "test_ansi::test_decode_issue_2688[\\x1b[31mFound 4 errors in 2 files (checked 18 source files)\\x1b(B\\x1b[m\\n-Found 4 errors in 2 files (checked 18 source files)]": "passed",
+          "test_ansi::test_decode_issue_2688[Hallo-Hallo]": "passed",
+          "test_ansi::test_decode_issue_2688[\\x1b(BHallo-Hallo]": "passed",
+          "test_ansi::test_decode_issue_2688[\\x1b(JHallo-Hallo]": "passed",
+          "test_ansi::test_decode_issue_2688[\\x1b(BHal\\x1b(Jlo-Hallo]": "passed",
+          "test_ansi::test_strip_private_escape_sequences[0]": "passed",
+          "test_ansi::test_strip_private_escape_sequences[1]": "passed",
+          "test_ansi::test_strip_private_escape_sequences[2]": "passed",
+          "test_ansi::test_strip_private_escape_sequences[3]": "passed",
+          "test_ansi::test_strip_private_escape_sequences[4]": "passed",
+          "test_ansi::test_strip_private_escape_sequences[5]": "passed",
+          "test_ansi::test_strip_private_escape_sequences[6]": "passed",
+          "test_ansi::test_strip_private_escape_sequences[7]": "passed",
+          "test_ansi::test_strip_private_escape_sequences[8]": "passed",
+          "test_ansi::test_strip_private_escape_sequences[9]": "passed",
+          "test_ansi::test_strip_private_escape_sequences[:]": "passed",
+          "test_ansi::test_strip_private_escape_sequences[;]": "passed",
+          "test_ansi::test_strip_private_escape_sequences[<]": "passed",
+          "test_ansi::test_strip_private_escape_sequences[=]": "passed",
+          "test_ansi::test_strip_private_escape_sequences[>]": "passed",
+          "test_ansi::test_strip_private_escape_sequences[?]": "passed"
+        },
+        "n_cases": 23,
+        "failed_nodes": [],
+        "passed_nodes": [
+          "test_ansi::test_decode",
+          "test_ansi::test_decode_example",
+          "test_ansi::test_decode_issue_2688[Hallo-Hallo]",
+          "test_ansi::test_decode_issue_2688[\\x1b(BHal\\x1b(Jlo-Hallo]",
+          "test_ansi::test_decode_issue_2688[\\x1b(BHallo-Hallo]",
+          "test_ansi::test_decode_issue_2688[\\x1b(JHallo-Hallo]",
+          "test_ansi::test_decode_issue_2688[\\x1b[31mFound 4 errors in 2 files (checked 18 source files)\\x1b(B\\x1b[m\\n-Found 4 errors in 2 files (checked 18 source files)]",
+          "test_ansi::test_strip_private_escape_sequences[0]",
+          "test_ansi::test_strip_private_escape_sequences[1]",
+          "test_ansi::test_strip_private_escape_sequences[2]",
+          "test_ansi::test_strip_private_escape_sequences[3]",
+          "test_ansi::test_strip_private_escape_sequences[4]",
+          "test_ansi::test_strip_private_escape_sequences[5]",
+          "test_ansi::test_strip_private_escape_sequences[6]",
+          "test_ansi::test_strip_private_escape_sequences[7]",
+          "test_ansi::test_strip_private_escape_sequences[8]",
+          "test_ansi::test_strip_private_escape_sequences[9]",
+          "test_ansi::test_strip_private_escape_sequences[:]",
+          "test_ansi::test_strip_private_escape_sequences[;]",
+          "test_ansi::test_strip_private_escape_sequences[<]",
+          "test_ansi::test_strip_private_escape_sequences[=]",
+          "test_ansi::test_strip_private_escape_sequences[>]",
+          "test_ansi::test_strip_private_escape_sequences[?]"
+        ],
+        "failed": [],
+        "errored": []
+      }
+    },
+    "rich_3535": {
+      "negative": {
+        "pytest_exit": 1,
+        "workspace_real": "/tmp/swegemma_sandbox_b9bb1fae-ea7_j4kmphm5/workspace",
+        "agent_pkg_file": "unavailable (no agent ran in the control)",
+        "pytest_pkg_file": "/tmp/swegemma_sandbox_b9bb1fae-ea7_j4kmphm5/workspace/rich/__init__.py",
+        "import_in_checkout": true,
+        "patch_rc": 0,
+        "test_patch_rc": 0,
+        "nodes": {
+          "test_cells::test_cell_len_long_string": "passed",
+          "test_cells::test_cell_len_short_string": "passed",
+          "test_cells::test_set_cell_size": "passed",
+          "test_cells::test_set_cell_size_infinite": "passed",
+          "test_cells::test_chop_cells": "passed",
+          "test_cells::test_chop_cells_double_width_boundary": "passed",
+          "test_cells::test_chop_cells_mixed_width": "passed",
+          "test_cells::test_is_single_cell_widths": "failed"
+        },
+        "n_cases": 8,
+        "failed_nodes": [
+          "test_cells::test_is_single_cell_widths"
+        ],
+        "passed_nodes": [
+          "test_cells::test_cell_len_long_string",
+          "test_cells::test_cell_len_short_string",
+          "test_cells::test_chop_cells",
+          "test_cells::test_chop_cells_double_width_boundary",
+          "test_cells::test_chop_cells_mixed_width",
+          "test_cells::test_set_cell_size",
+          "test_cells::test_set_cell_size_infinite"
+        ],
+        "failed": [
+          "test_cells::test_is_single_cell_widths"
+        ],
+        "errored": []
+      },
+      "positive": {
+        "pytest_exit": 0,
+        "workspace_real": "/tmp/swegemma_sandbox_613d24b0-112_yqshur97/workspace",
+        "agent_pkg_file": "unavailable (no agent ran in the control)",
+        "pytest_pkg_file": "/tmp/swegemma_sandbox_613d24b0-112_yqshur97/workspace/rich/__init__.py",
+        "import_in_checkout": true,
+        "patch_rc": 0,
+        "test_patch_rc": 0,
+        "nodes": {
+          "test_cells::test_cell_len_long_string": "passed",
+          "test_cells::test_cell_len_short_string": "passed",
+          "test_cells::test_set_cell_size": "passed",
+          "test_cells::test_set_cell_size_infinite": "passed",
+          "test_cells::test_chop_cells": "passed",
+          "test_cells::test_chop_cells_double_width_boundary": "passed",
+          "test_cells::test_chop_cells_mixed_width": "passed",
+          "test_cells::test_is_single_cell_widths": "passed"
+        },
+        "n_cases": 8,
+        "failed_nodes": [],
+        "passed_nodes": [
+          "test_cells::test_cell_len_long_string",
+          "test_cells::test_cell_len_short_string",
+          "test_cells::test_chop_cells",
+          "test_cells::test_chop_cells_double_width_boundary",
+          "test_cells::test_chop_cells_mixed_width",
+          "test_cells::test_is_single_cell_widths",
+          "test_cells::test_set_cell_size",
+          "test_cells::test_set_cell_size_infinite"
+        ],
+        "failed": [],
+        "errored": []
+      }
+    },
+    "rich_3675": {
+      "negative": {
+        "pytest_exit": 1,
+        "workspace_real": "/tmp/swegemma_sandbox_eee552f1-f25_sg8paafw/workspace",
+        "agent_pkg_file": "unavailable (no agent ran in the control)",
+        "pytest_pkg_file": "/tmp/swegemma_sandbox_eee552f1-f25_sg8paafw/workspace/rich/__init__.py",
+        "import_in_checkout": true,
+        "patch_rc": 0,
+        "test_patch_rc": 0,
+        "nodes": {
+          "test_console::test_dumb_terminal": "passed",
+          "test_console::test_soft_wrap": "passed",
+          "test_console::test_16color_terminal": "passed",
+          "test_console::test_truecolor_terminal": "passed",
+          "test_console::test_kitty_terminal": "passed",
+          "test_console::test_console_options_update": "passed",
+          "test_console::test_console_options_update_height": "passed",
+          "test_console::test_init": "passed",
+          "test_console::test_size": "passed",
+          "test_console::test_size_can_fall_back_to_std_descriptors[True-no_descriptor_size0-ValueError-ValueError-ValueError-expected_size0]": "passed",
+          "test_console::test_size_can_fall_back_to_std_descriptors[False-no_descriptor_size1-ValueError-ValueError-ValueError-expected_size1]": "passed",
+          "test_console::test_size_can_fall_back_to_std_descriptors[False-ValueError-stdin_size2-ValueError-ValueError-expected_size2]": "passed",
+          "test_console::test_size_can_fall_back_to_std_descriptors[False-ValueError-ValueError-stdout_size3-ValueError-expected_size3]": "passed",
+          "test_console::test_size_can_fall_back_to_std_descriptors[False-ValueError-ValueError-ValueError-stderr_size4-expected_size4]": "passed",
+          "test_console::test_size_can_fall_back_to_std_descriptors[False-ValueError-ValueError-ValueError-ValueError-expected_size5]": "passed",
+          "test_console::test_repr": "passed",
+          "test_console::test_print": "passed",
+          "test_console::test_print_multiple": "passed",
+          "test_console::test_print_text": "passed",
+          "test_console::test_print_text_multiple": "passed",
+          "test_console::test_print_json": "passed",
+          "test_console::test_print_json_error": "passed",
+          "test_console::test_print_json_data": "passed",
+          "test_console::test_print_json_ensure_ascii": "passed",
+          "test_console::test_print_json_with_default_ensure_ascii": "passed",
+          "test_console::test_print_json_indent_none": "passed",
+          "test_console::test_console_null_file": "passed",
+          "test_console::test_log": "passed",
+          "test_console::test_log_milliseconds": "passed",
+          "test_console::test_print_empty": "passed",
+          "test_console::test_markup_highlight": "passed",
+          "test_console::test_print_style": "passed",
+          "test_console::test_show_cursor": "passed",
+          "test_console::test_clear": "passed",
+          "test_console::test_clear_no_terminal": "passed",
+          "test_console::test_get_style": "passed",
+          "test_console::test_get_style_default": "passed",
+          "test_console::test_get_style_error": "passed",
+          "test_console::test_render_error": "passed",
+          "test_console::test_control": "passed",
+          "test_console::test_capture": "passed",
+          "test_console::test_input": "passed",
+          "test_console::test_input_password": "passed",
+          "test_console::test_status": "passed",
+          "test_console::test_justify_none": "passed",
+          "test_console::test_justify_left": "passed",
+          "test_console::test_justify_center": "passed",
+          "test_console::test_justify_right": "passed",
+          "test_console::test_justify_renderable_none": "passed",
+          "test_console::test_justify_renderable_left": "passed",
+          "test_console::test_justify_renderable_center": "passed",
+          "test_console::test_justify_renderable_right": "passed",
+          "test_console::test_render_broken_renderable": "passed",
+          "test_console::test_export_text": "passed",
+          "test_console::test_export_html": "passed",
+          "test_console::test_export_html_inline": "passed",
+          "test_console::test_export_svg": "passed",
+          "test_console::test_export_svg_specified_unique_id": "passed",
+          "test_console::test_save_svg": "passed",
+          "test_console::test_save_text": "passed",
+          "test_console::test_save_html": "passed",
+          "test_console::test_no_wrap": "passed",
+          "test_console::test_unicode_error": "passed",
+          "test_console::test_bell": "passed",
+          "test_console::test_pager": "passed",
+          "test_console::test_out": "passed",
+          "test_console::test_render_group": "passed",
+          "test_console::test_render_group_fit": "passed",
+          "test_console::test_get_time": "passed",
+          "test_console::test_console_style": "passed",
+          "test_console::test_no_color": "passed",
+          "test_console::test_quiet": "passed",
+          "test_console::test_no_nested_live": "passed",
+          "test_console::test_screen": "passed",
+          "test_console::test_screen_update": "passed",
+          "test_console::test_height": "passed",
+          "test_console::test_columns_env": "passed",
+          "test_console::test_lines_env": "passed",
+          "test_console::test_screen_update_class": "passed",
+          "test_console::test_is_alt_screen": "passed",
+          "test_console::test_set_console_title": "passed",
+          "test_console::test_update_screen": "passed",
+          "test_console::test_update_screen_lines": "passed",
+          "test_console::test_update_options_markup": "passed",
+          "test_console::test_print_width_zero": "passed",
+          "test_console::test_size_properties": "passed",
+          "test_console::test_print_newline_start": "passed",
+          "test_console::test_is_terminal_broken_file": "passed",
+          "test_console::test_detect_color_system": "passed",
+          "test_console::test_reset_height": "passed",
+          "test_console::test_render_lines_height_minus_vertical_pad_is_negative": "passed",
+          "test_console::test_recording_no_stdout_and_no_stderr_files": "passed",
+          "test_console::test_capturing_no_stdout_and_no_stderr_files": "passed",
+          "test_console::test_force_color": "passed",
+          "test_console::test_force_color_jupyter": "passed",
+          "test_console::test_reenable_highlighting": "passed",
+          "test_console::test_brokenpipeerror": "passed",
+          "test_console::test_capture_and_record": "passed",
+          "test_console::test_tty_compatible": "failed"
+        },
+        "n_cases": 99,
+        "failed_nodes": [
+          "test_console::test_tty_compatible"
+        ],
+        "passed_nodes": [
+          "test_console::test_16color_terminal",
+          "test_console::test_bell",
+          "test_console::test_brokenpipeerror",
+          "test_console::test_capture",
+          "test_console::test_capture_and_record",
+          "test_console::test_capturing_no_stdout_and_no_stderr_files",
+          "test_console::test_clear",
+          "test_console::test_clear_no_terminal",
+          "test_console::test_columns_env",
+          "test_console::test_console_null_file",
+          "test_console::test_console_options_update",
+          "test_console::test_console_options_update_height",
+          "test_console::test_console_style",
+          "test_console::test_control",
+          "test_console::test_detect_color_system",
+          "test_console::test_dumb_terminal",
+          "test_console::test_export_html",
+          "test_console::test_export_html_inline",
+          "test_console::test_export_svg",
+          "test_console::test_export_svg_specified_unique_id",
+          "test_console::test_export_text",
+          "test_console::test_force_color",
+          "test_console::test_force_color_jupyter",
+          "test_console::test_get_style",
+          "test_console::test_get_style_default",
+          "test_console::test_get_style_error",
+          "test_console::test_get_time",
+          "test_console::test_height",
+          "test_console::test_init",
+          "test_console::test_input",
+          "test_console::test_input_password",
+          "test_console::test_is_alt_screen",
+          "test_console::test_is_terminal_broken_file",
+          "test_console::test_justify_center",
+          "test_console::test_justify_left",
+          "test_console::test_justify_none",
+          "test_console::test_justify_renderable_center",
+          "test_console::test_justify_renderable_left",
+          "test_console::test_justify_renderable_none",
+          "test_console::test_justify_renderable_right",
+          "test_console::test_justify_right",
+          "test_console::test_kitty_terminal",
+          "test_console::test_lines_env",
+          "test_console::test_log",
+          "test_console::test_log_milliseconds",
+          "test_console::test_markup_highlight",
+          "test_console::test_no_color",
+          "test_console::test_no_nested_live",
+          "test_console::test_no_wrap",
+          "test_console::test_out",
+          "test_console::test_pager",
+          "test_console::test_print",
+          "test_console::test_print_empty",
+          "test_console::test_print_json",
+          "test_console::test_print_json_data",
+          "test_console::test_print_json_ensure_ascii",
+          "test_console::test_print_json_error",
+          "test_console::test_print_json_indent_none",
+          "test_console::test_print_json_with_default_ensure_ascii",
+          "test_console::test_print_multiple",
+          "test_console::test_print_newline_start",
+          "test_console::test_print_style",
+          "test_console::test_print_text",
+          "test_console::test_print_text_multiple",
+          "test_console::test_print_width_zero",
+          "test_console::test_quiet",
+          "test_console::test_recording_no_stdout_and_no_stderr_files",
+          "test_console::test_reenable_highlighting",
+          "test_console::test_render_broken_renderable",
+          "test_console::test_render_error",
+          "test_console::test_render_group",
+          "test_console::test_render_group_fit",
+          "test_console::test_render_lines_height_minus_vertical_pad_is_negative",
+          "test_console::test_repr",
+          "test_console::test_reset_height",
+          "test_console::test_save_html",
+          "test_console::test_save_svg",
+          "test_console::test_save_text",
+          "test_console::test_screen",
+          "test_console::test_screen_update",
+          "test_console::test_screen_update_class",
+          "test_console::test_set_console_title",
+          "test_console::test_show_cursor",
+          "test_console::test_size",
+          "test_console::test_size_can_fall_back_to_std_descriptors[False-ValueError-ValueError-ValueError-ValueError-expected_size5]",
+          "test_console::test_size_can_fall_back_to_std_descriptors[False-ValueError-ValueError-ValueError-stderr_size4-expected_size4]",
+          "test_console::test_size_can_fall_back_to_std_descriptors[False-ValueError-ValueError-stdout_size3-ValueError-expected_size3]",
+          "test_console::test_size_can_fall_back_to_std_descriptors[False-ValueError-stdin_size2-ValueError-ValueError-expected_size2]",
+          "test_console::test_size_can_fall_back_to_std_descriptors[False-no_descriptor_size1-ValueError-ValueError-ValueError-expected_size1]",
+          "test_console::test_size_can_fall_back_to_std_descriptors[True-no_descriptor_size0-ValueError-ValueError-ValueError-expected_size0]",
+          "test_console::test_size_properties",
+          "test_console::test_soft_wrap",
+          "test_console::test_status",
+          "test_console::test_truecolor_terminal",
+          "test_console::test_unicode_error",
+          "test_console::test_update_options_markup",
+          "test_console::test_update_screen",
+          "test_console::test_update_screen_lines"
+        ],
+        "failed": [
+          "test_console::test_tty_compatible"
+        ],
+        "errored": []
+      },
+      "positive": {
+        "pytest_exit": 0,
+        "workspace_real": "/tmp/swegemma_sandbox_29800dba-55b_9nqi_yv4/workspace",
+        "agent_pkg_file": "unavailable (no agent ran in the control)",
+        "pytest_pkg_file": "/tmp/swegemma_sandbox_29800dba-55b_9nqi_yv4/workspace/rich/__init__.py",
+        "import_in_checkout": true,
+        "patch_rc": 0,
+        "test_patch_rc": 0,
+        "nodes": {
+          "test_console::test_dumb_terminal": "passed",
+          "test_console::test_soft_wrap": "passed",
+          "test_console::test_16color_terminal": "passed",
+          "test_console::test_truecolor_terminal": "passed",
+          "test_console::test_kitty_terminal": "passed",
+          "test_console::test_console_options_update": "passed",
+          "test_console::test_console_options_update_height": "passed",
+          "test_console::test_init": "passed",
+          "test_console::test_size": "passed",
+          "test_console::test_size_can_fall_back_to_std_descriptors[True-no_descriptor_size0-ValueError-ValueError-ValueError-expected_size0]": "passed",
+          "test_console::test_size_can_fall_back_to_std_descriptors[False-no_descriptor_size1-ValueError-ValueError-ValueError-expected_size1]": "passed",
+          "test_console::test_size_can_fall_back_to_std_descriptors[False-ValueError-stdin_size2-ValueError-ValueError-expected_size2]": "passed",
+          "test_console::test_size_can_fall_back_to_std_descriptors[False-ValueError-ValueError-stdout_size3-ValueError-expected_size3]": "passed",
+          "test_console::test_size_can_fall_back_to_std_descriptors[False-ValueError-ValueError-ValueError-stderr_size4-expected_size4]": "passed",
+          "test_console::test_size_can_fall_back_to_std_descriptors[False-ValueError-ValueError-ValueError-ValueError-expected_size5]": "passed",
+          "test_console::test_repr": "passed",
+          "test_console::test_print": "passed",
+          "test_console::test_print_multiple": "passed",
+          "test_console::test_print_text": "passed",
+          "test_console::test_print_text_multiple": "passed",
+          "test_console::test_print_json": "passed",
+          "test_console::test_print_json_error": "passed",
+          "test_console::test_print_json_data": "passed",
+          "test_console::test_print_json_ensure_ascii": "passed",
+          "test_console::test_print_json_with_default_ensure_ascii": "passed",
+          "test_console::test_print_json_indent_none": "passed",
+          "test_console::test_console_null_file": "passed",
+          "test_console::test_log": "passed",
+          "test_console::test_log_milliseconds": "passed",
+          "test_console::test_print_empty": "passed",
+          "test_console::test_markup_highlight": "passed",
+          "test_console::test_print_style": "passed",
+          "test_console::test_show_cursor": "passed",
+          "test_console::test_clear": "passed",
+          "test_console::test_clear_no_terminal": "passed",
+          "test_console::test_get_style": "passed",
+          "test_console::test_get_style_default": "passed",
+          "test_console::test_get_style_error": "passed",
+          "test_console::test_render_error": "passed",
+          "test_console::test_control": "passed",
+          "test_console::test_capture": "passed",
+          "test_console::test_input": "passed",
+          "test_console::test_input_password": "passed",
+          "test_console::test_status": "passed",
+          "test_console::test_justify_none": "passed",
+          "test_console::test_justify_left": "passed",
+          "test_console::test_justify_center": "passed",
+          "test_console::test_justify_right": "passed",
+          "test_console::test_justify_renderable_none": "passed",
+          "test_console::test_justify_renderable_left": "passed",
+          "test_console::test_justify_renderable_center": "passed",
+          "test_console::test_justify_renderable_right": "passed",
+          "test_console::test_render_broken_renderable": "passed",
+          "test_console::test_export_text": "passed",
+          "test_console::test_export_html": "passed",
+          "test_console::test_export_html_inline": "passed",
+          "test_console::test_export_svg": "passed",
+          "test_console::test_export_svg_specified_unique_id": "passed",
+          "test_console::test_save_svg": "passed",
+          "test_console::test_save_text": "passed",
+          "test_console::test_save_html": "passed",
+          "test_console::test_no_wrap": "passed",
+          "test_console::test_unicode_error": "passed",
+          "test_console::test_bell": "passed",
+          "test_console::test_pager": "passed",
+          "test_console::test_out": "passed",
+          "test_console::test_render_group": "passed",
+          "test_console::test_render_group_fit": "passed",
+          "test_console::test_get_time": "passed",
+          "test_console::test_console_style": "passed",
+          "test_console::test_no_color": "passed",
+          "test_console::test_quiet": "passed",
+          "test_console::test_no_nested_live": "passed",
+          "test_console::test_screen": "passed",
+          "test_console::test_screen_update": "passed",
+          "test_console::test_height": "passed",
+          "test_console::test_columns_env": "passed",
+          "test_console::test_lines_env": "passed",
+          "test_console::test_screen_update_class": "passed",
+          "test_console::test_is_alt_screen": "passed",
+          "test_console::test_set_console_title": "passed",
+          "test_console::test_update_screen": "passed",
+          "test_console::test_update_screen_lines": "passed",
+          "test_console::test_update_options_markup": "passed",
+          "test_console::test_print_width_zero": "passed",
+          "test_console::test_size_properties": "passed",
+          "test_console::test_print_newline_start": "passed",
+          "test_console::test_is_terminal_broken_file": "passed",
+          "test_console::test_detect_color_system": "passed",
+          "test_console::test_reset_height": "passed",
+          "test_console::test_render_lines_height_minus_vertical_pad_is_negative": "passed",
+          "test_console::test_recording_no_stdout_and_no_stderr_files": "passed",
+          "test_console::test_capturing_no_stdout_and_no_stderr_files": "passed",
+          "test_console::test_force_color": "passed",
+          "test_console::test_force_color_jupyter": "passed",
+          "test_console::test_reenable_highlighting": "passed",
+          "test_console::test_brokenpipeerror": "passed",
+          "test_console::test_capture_and_record": "passed",
+          "test_console::test_tty_compatible": "passed"
+        },
+        "n_cases": 99,
+        "failed_nodes": [],
+        "passed_nodes": [
+          "test_console::test_16color_terminal",
+          "test_console::test_bell",
+          "test_console::test_brokenpipeerror",
+          "test_console::test_capture",
+          "test_console::test_capture_and_record",
+          "test_console::test_capturing_no_stdout_and_no_stderr_files",
+          "test_console::test_clear",
+          "test_console::test_clear_no_terminal",
+          "test_console::test_columns_env",
+          "test_console::test_console_null_file",
+          "test_console::test_console_options_update",
+          "test_console::test_console_options_update_height",
+          "test_console::test_console_style",
+          "test_console::test_control",
+          "test_console::test_detect_color_system",
+          "test_console::test_dumb_terminal",
+          "test_console::test_export_html",
+          "test_console::test_export_html_inline",
+          "test_console::test_export_svg",
+          "test_console::test_export_svg_specified_unique_id",
+          "test_console::test_export_text",
+          "test_console::test_force_color",
+          "test_console::test_force_color_jupyter",
+          "test_console::test_get_style",
+          "test_console::test_get_style_default",
+          "test_console::test_get_style_error",
+          "test_console::test_get_time",
+          "test_console::test_height",
+          "test_console::test_init",
+          "test_console::test_input",
+          "test_console::test_input_password",
+          "test_console::test_is_alt_screen",
+          "test_console::test_is_terminal_broken_file",
+          "test_console::test_justify_center",
+          "test_console::test_justify_left",
+          "test_console::test_justify_none",
+          "test_console::test_justify_renderable_center",
+          "test_console::test_justify_renderable_left",
+          "test_console::test_justify_renderable_none",
+          "test_console::test_justify_renderable_right",
+          "test_console::test_justify_right",
+          "test_console::test_kitty_terminal",
+          "test_console::test_lines_env",
+          "test_console::test_log",
+          "test_console::test_log_milliseconds",
+          "test_console::test_markup_highlight",
+          "test_console::test_no_color",
+          "test_console::test_no_nested_live",
+          "test_console::test_no_wrap",
+          "test_console::test_out",
+          "test_console::test_pager",
+          "test_console::test_print",
+          "test_console::test_print_empty",
+          "test_console::test_print_json",
+          "test_console::test_print_json_data",
+          "test_console::test_print_json_ensure_ascii",
+          "test_console::test_print_json_error",
+          "test_console::test_print_json_indent_none",
+          "test_console::test_print_json_with_default_ensure_ascii",
+          "test_console::test_print_multiple",
+          "test_console::test_print_newline_start",
+          "test_console::test_print_style",
+          "test_console::test_print_text",
+          "test_console::test_print_text_multiple",
+          "test_console::test_print_width_zero",
+          "test_console::test_quiet",
+          "test_console::test_recording_no_stdout_and_no_stderr_files",
+          "test_console::test_reenable_highlighting",
+          "test_console::test_render_broken_renderable",
+          "test_console::test_render_error",
+          "test_console::test_render_group",
+          "test_console::test_render_group_fit",
+          "test_console::test_render_lines_height_minus_vertical_pad_is_negative",
+          "test_console::test_repr",
+          "test_console::test_reset_height",
+          "test_console::test_save_html",
+          "test_console::test_save_svg",
+          "test_console::test_save_text",
+          "test_console::test_screen",
+          "test_console::test_screen_update",
+          "test_console::test_screen_update_class",
+          "test_console::test_set_console_title",
+          "test_console::test_show_cursor",
+          "test_console::test_size",
+          "test_console::test_size_can_fall_back_to_std_descriptors[False-ValueError-ValueError-ValueError-ValueError-expected_size5]",
+          "test_console::test_size_can_fall_back_to_std_descriptors[False-ValueError-ValueError-ValueError-stderr_size4-expected_size4]",
+          "test_console::test_size_can_fall_back_to_std_descriptors[False-ValueError-ValueError-stdout_size3-ValueError-expected_size3]",
+          "test_console::test_size_can_fall_back_to_std_descriptors[False-ValueError-stdin_size2-ValueError-ValueError-expected_size2]",
+          "test_console::test_size_can_fall_back_to_std_descriptors[False-no_descriptor_size1-ValueError-ValueError-ValueError-expected_size1]",
+          "test_console::test_size_can_fall_back_to_std_descriptors[True-no_descriptor_size0-ValueError-ValueError-ValueError-expected_size0]",
+          "test_console::test_size_properties",
+          "test_console::test_soft_wrap",
+          "test_console::test_status",
+          "test_console::test_truecolor_terminal",
+          "test_console::test_tty_compatible",
+          "test_console::test_unicode_error",
+          "test_console::test_update_options_markup",
+          "test_console::test_update_screen",
+          "test_console::test_update_screen_lines"
+        ],
+        "failed": [],
+        "errored": []
+      }
+    },
+    "rich_3942": {
+      "negative": {
+        "pytest_exit": 1,
+        "workspace_real": "/tmp/swegemma_sandbox_cb7391fe-ddf_sauv1peb/workspace",
+        "agent_pkg_file": "unavailable (no agent ran in the control)",
+        "pytest_pkg_file": "/tmp/swegemma_sandbox_cb7391fe-ddf_sauv1peb/workspace/rich/__init__.py",
+        "import_in_checkout": true,
+        "patch_rc": 0,
+        "test_patch_rc": 0,
+        "nodes": {
+          "test_markdown::test_markdown_render": "failed",
+          "test_markdown::test_inline_code": "passed",
+          "test_markdown::test_markdown_table": "failed",
+          "test_markdown::test_inline_styles_in_table": "failed",
+          "test_markdown::test_inline_styles_with_justification": "failed",
+          "test_markdown::test_partial_table": "failed",
+          "test_markdown::test_table_with_empty_cells": "passed",
+          "test_markdown_no_hyperlinks::test_markdown_render": "failed"
+        },
+        "n_cases": 8,
+        "failed_nodes": [
+          "test_markdown::test_inline_styles_in_table",
+          "test_markdown::test_inline_styles_with_justification",
+          "test_markdown::test_markdown_render",
+          "test_markdown::test_markdown_table",
+          "test_markdown::test_partial_table",
+          "test_markdown_no_hyperlinks::test_markdown_render"
+        ],
+        "passed_nodes": [
+          "test_markdown::test_inline_code",
+          "test_markdown::test_table_with_empty_cells"
+        ],
+        "failed": [
+          "test_markdown::test_inline_styles_in_table",
+          "test_markdown::test_inline_styles_with_justification",
+          "test_markdown::test_markdown_render",
+          "test_markdown::test_markdown_table",
+          "test_markdown::test_partial_table",
+          "test_markdown_no_hyperlinks::test_markdown_render"
+        ],
+        "errored": []
+      },
+      "positive": {
+        "pytest_exit": 0,
+        "workspace_real": "/tmp/swegemma_sandbox_58f2d1f1-b18_zzqdtsd6/workspace",
+        "agent_pkg_file": "unavailable (no agent ran in the control)",
+        "pytest_pkg_file": "/tmp/swegemma_sandbox_58f2d1f1-b18_zzqdtsd6/workspace/rich/__init__.py",
+        "import_in_checkout": true,
+        "patch_rc": 0,
+        "test_patch_rc": 0,
+        "nodes": {
+          "test_markdown::test_markdown_render": "passed",
+          "test_markdown::test_inline_code": "passed",
+          "test_markdown::test_markdown_table": "passed",
+          "test_markdown::test_inline_styles_in_table": "passed",
+          "test_markdown::test_inline_styles_with_justification": "passed",
+          "test_markdown::test_partial_table": "passed",
+          "test_markdown::test_table_with_empty_cells": "passed",
+          "test_markdown_no_hyperlinks::test_markdown_render": "passed"
+        },
+        "n_cases": 8,
+        "failed_nodes": [],
+        "passed_nodes": [
+          "test_markdown::test_inline_code",
+          "test_markdown::test_inline_styles_in_table",
+          "test_markdown::test_inline_styles_with_justification",
+          "test_markdown::test_markdown_render",
+          "test_markdown::test_markdown_table",
+          "test_markdown::test_partial_table",
+          "test_markdown::test_table_with_empty_cells",
+          "test_markdown_no_hyperlinks::test_markdown_render"
+        ],
+        "failed": [],
+        "errored": []
+      }
+    }
+  },
+  "expected_task_hashes": {
+    "rich_3278": "8fb8127fdb3e069ae02db8a0e3d2e5306b96e7d42a1ab7c3185da2e269cd61bf",
+    "rich_3535": "3c70ac67cc8e78d329459615dd6db711e2715b92f6da4632cc4905f1faf0ad18",
+    "rich_3675": "d651989d2710c16333584401276a29f5c36026b5fff3407204f53d550f3176fb",
+    "rich_3942": "b626009683a3a55af3ad72e8a4cc9cd629cb24444a2c404c073a87778b8148b8"
+  },
+  "preconditions": [
+    {
+      "task": "rich_3278",
+      "ws": "/tmp/swegemma_sandbox_9fd6efb5-f09_wjbg6duw/workspace",
+      "agent_file": "/tmp/swegemma_sandbox_9fd6efb5-f09_wjbg6duw/workspace/rich/__init__.py",
+      "agent_exe": "/tmp/swegemma_sandbox_9fd6efb5-f09_wjbg6duw/venv/bin/python3",
+      "grading_file": "/tmp/swegemma_sandbox_9fd6efb5-f09_wjbg6duw/workspace/rich/__init__.py",
+      "grading_exe": "/tmp/swegemma_sandbox_9fd6efb5-f09_wjbg6duw/venv/bin/python3",
+      "cleanup_ok": true,
+      "owned_sandboxes": [],
+      "ok": true
+    },
+    {
+      "task": "rich_3535",
+      "ws": "/tmp/swegemma_sandbox_86d62501-7b9__j94rvtz/workspace",
+      "agent_file": "/tmp/swegemma_sandbox_86d62501-7b9__j94rvtz/workspace/rich/__init__.py",
+      "agent_exe": "/tmp/swegemma_sandbox_86d62501-7b9__j94rvtz/venv/bin/python3",
+      "grading_file": "/tmp/swegemma_sandbox_86d62501-7b9__j94rvtz/workspace/rich/__init__.py",
+      "grading_exe": "/tmp/swegemma_sandbox_86d62501-7b9__j94rvtz/venv/bin/python3",
+      "cleanup_ok": true,
+      "owned_sandboxes": [],
+      "ok": true
+    },
+    {
+      "task": "rich_3675",
+      "ws": "/tmp/swegemma_sandbox_a4bbf185-5a8_43ltm2qo/workspace",
+      "agent_file": "/tmp/swegemma_sandbox_a4bbf185-5a8_43ltm2qo/workspace/rich/__init__.py",
+      "agent_exe": "/tmp/swegemma_sandbox_a4bbf185-5a8_43ltm2qo/venv/bin/python3",
+      "grading_file": "/tmp/swegemma_sandbox_a4bbf185-5a8_43ltm2qo/workspace/rich/__init__.py",
+      "grading_exe": "/tmp/swegemma_sandbox_a4bbf185-5a8_43ltm2qo/venv/bin/python3",
+      "cleanup_ok": true,
+      "owned_sandboxes": [],
+      "ok": true
+    },
+    {
+      "task": "rich_3942",
+      "ws": "/tmp/swegemma_sandbox_af15d87a-e52_kq9p60vq/workspace",
+      "agent_file": "/tmp/swegemma_sandbox_af15d87a-e52_kq9p60vq/workspace/rich/__init__.py",
+      "agent_exe": "/tmp/swegemma_sandbox_af15d87a-e52_kq9p60vq/venv/bin/python3",
+      "grading_file": "/tmp/swegemma_sandbox_af15d87a-e52_kq9p60vq/workspace/rich/__init__.py",
+      "grading_exe": "/tmp/swegemma_sandbox_af15d87a-e52_kq9p60vq/venv/bin/python3",
+      "cleanup_ok": true,
+      "owned_sandboxes": [],
+      "ok": true
+    }
+  ],
+  "budgets": {
+    "max_time_minutes": 10.0,
+    "max_tool_calls": 100,
+    "max_turns": 60,
+    "timeout_seconds": 300
+  },
+  "seed_in_sampling": 42,
+  "package_versions": {
+    "swegemma": "0.2.7",
+    "adk-submission": "0.2.11",
+    "adk-eval-core": "0.1.0",
+    "google-adk": "1.36.1",
+    "vllm": "0.19.1",
+    "transformers": "5.13.1",
+    "litellm": "1.82.4"
+  },
+  "model_config_sha256": "b100d85e571c25b688e82919d819253063a1defb0e6cee3b9b1c1fbad99bd0c2",
+  "model_path": "/kaggle/input/models/google/gemma-4/other/gemma-4-31b-it-qat-w4a16-ct/2",
+  "quantization": {
+    "config_groups": {
+      "group_0": {
+        "format": "pack-quantized",
+        "input_activations": null,
+        "output_activations": null,
+        "targets": [
+          "Linear"
+        ],
+        "weights": {
+          "actorder": null,
+          "block_structure": null,
+          "dynamic": false,
+          "group_size": 32,
+          "num_bits": 4,
+          "observer": "memoryless_minmax",
+          "observer_kwargs": {},
+          "scale_dtype": null,
+          "strategy": "group",
+          "symmetric": true,
+          "type": "int",
+          "zp_dtype": null
+        }
+      }
+    },
+    "format": "pack-quantized",
+    "global_compression_ratio": null,
+    "ignore": [
+      "model.vision_tower.patch_embedder.input_proj",
+      "model.vision_tower.encoder.layers.0.self_attn.q_proj.linear",
+      "model.vision_tower.encoder.layers.0.self_attn.k_proj.linear",
+      "model.vision_tower.encoder.layers.0.self_attn.v_proj.linear",
+      "model.vision_tower.encoder.layers.0.self_attn.o_proj.linear",
+      "model.vision_tower.encoder.layers.0.mlp.gate_proj.linear",
+      "model.vision_tower.encoder.layers.0.mlp.up_proj.linear",
+      "model.vision_tower.encoder.layers.0.mlp.down_proj.linear",
+      "model.vision_tower.encoder.layers.1.self_attn.q_proj.linear",
+      "model.vision_tower.encoder.layers.1.self_attn.k_proj.linear",
+      "model.vision_tower.encoder.layers.1.self_attn.v_proj.linear",
+      "model.vision_tower.encoder.layers.1.self_attn.o_proj.linear",
+      "model.vision_tower.encoder.layers.1.mlp.gate_proj.linear",
+      "model.vision_tower.encoder.layers.1.mlp.up_proj.linear",
+      "model.vision_tower.encoder.layers.1.mlp.down_proj.linear",
+      "model.vision_tower.encoder.layers.2.self_attn.q_proj.linear",
+      "model.vision_tower.encoder.layers.2.self_attn.k_proj.linear",
+      "model.vision_tower.encoder.layers.2.self_attn.v_proj.linear",
+      "model.vision_tower.encoder.layers.2.self_attn.o_proj.linear",
+      "model.vision_tower.encoder.layers.2.mlp.gate_proj.linear",
+      "model.vision_tower.encoder.layers.2.mlp.up_proj.linear",
+      "model.vision_tower.encoder.layers.2.mlp.down_proj.linear",
+      "model.vision_tower.encoder.layers.3.self_attn.q_proj.linear",
+      "model.vision_tower.encoder.layers.3.self_attn.k_proj.linear",
+      "model.vision_tower.encoder.layers.3.self_attn.v_proj.linear",
+      "model.vision_tower.encoder.layers.3.self_attn.o_proj.linear",
+      "model.vision_tower.encoder.layers.3.mlp.gate_proj.linear",
+      "model.vision_tower.encoder.layers.3.mlp.up_proj.linear",
+      "model.vision_tower.encoder.layers.3.mlp.down_proj.linear",
+      "model.vision_tower.encoder.layers.4.self_attn.q_proj.linear",
+      "model.vision_tower.encoder.layers.4.self_attn.k_proj.linear",
+      "model.vision_tower.encoder.layers.4.self_attn.v_proj.linear",
+      "model.vision_tower.encoder.layers.4.self_attn.o_proj.linear",
+      "model.vision_tower.encoder.layers.4.mlp.gate_proj.linear",
+      "model.vision_tower.encoder.layers.4.mlp.up_proj.linear",
+      "model.vision_tower.encoder.layers.4.mlp.down_proj.linear",
+      "model.vision_tower.encoder.layers.5.self_attn.q_proj.linear",
+      "model.vision_tower.encoder.layers.5.self_attn.k_proj.linear",
+      "model.vision_tower.encoder.layers.5.self_attn.v_proj.linear",
+      "model.vision_tower.encoder.layers.5.self_attn.o_proj.linear",
+      "model.vision_tower.encoder.layers.5.mlp.gate_proj.linear",
+      "model.vision_tower.encoder.layers.5.mlp.up_proj.linear",
+      "model.vision_tower.encoder.layers.5.mlp.down_proj.linear",
+      "model.vision_tower.encoder.layers.6.self_attn.q_proj.linear",
+      "model.vision_tower.encoder.layers.6.self_attn.k_proj.linear",
+      "model.vision_tower.encoder.layers.6.self_attn.v_proj.linear",
+      "model.vision_tower.encoder.layers.6.self_attn.o_proj.linear",
+      "model.vision_tower.encoder.layers.6.mlp.gate_proj.linear",
+      "model.vision_tower.encoder.layers.6.mlp.up_proj.linear",
+      "model.vision_tower.encoder.layers.6.mlp.down_proj.linear",
+      "model.vision_tower.encoder.layers.7.self_attn.q_proj.linear",
+      "model.vision_tower.encoder.layers.7.self_attn.k_proj.linear",
+      "model.vision_tower.encoder.layers.7.self_attn.v_proj.linear",
+      "model.vision_tower.encoder.layers.7.self_attn.o_proj.linear",
+      "model.vision_tower.encoder.layers.7.mlp.gate_proj.linear",
+      "model.vision_tower.encoder.layers.7.mlp.up_proj.linear",
+      "model.vision_tower.encoder.layers.7.mlp.down_proj.linear",
+      "model.vision_tower.encoder.layers.8.self_attn.q_proj.linear",
+      "model.vision_tower.encoder.layers.8.self_attn.k_proj.linear",
+      "model.vision_tower.encoder.layers.8.self_attn.v_proj.linear",
+      "model.vision_tower.encoder.layers.8.self_attn.o_proj.linear",
+      "model.vision_tower.encoder.layers.8.mlp.gate_proj.linear",
+      "model.vision_tower.encoder.layers.8.mlp.up_proj.linear",
+      "model.vision_tower.encoder.layers.8.mlp.down_proj.linear",
+      "model.vision_tower.encoder.layers.9.self_attn.q_proj.linear",
+      "model.vision_tower.encoder.layers.9.self_attn.k_proj.linear",
+      "model.vision_tower.encoder.layers.9.self_attn.v_proj.linear",
+      "model.vision_tower.encoder.layers.9.self_attn.o_proj.linear",
+      "model.vision_tower.encoder.layers.9.mlp.gate_proj.linear",
+      "model.vision_tower.encoder.layers.9.mlp.up_proj.linear",
+      "model.vision_tower.encoder.layers.9.mlp.down_proj.linear",
+      "model.vision_tower.encoder.layers.10.self_attn.q_proj.linear",
+      "model.vision_tower.encoder.layers.10.self_attn.k_proj.linear",
+      "model.vision_tower.encoder.layers.10.self_attn.v_proj.linear",
+      "model.vision_tower.encoder.layers.10.self_attn.o_proj.linear",
+      "model.vision_tower.encoder.layers.10.mlp.gate_proj.linear",
+      "model.vision_tower.encoder.layers.10.mlp.up_proj.linear",
+      "model.vision_tower.encoder.layers.10.mlp.down_proj.linear",
+      "model.vision_tower.encoder.layers.11.self_attn.q_proj.linear",
+      "model.vision_tower.encoder.layers.11.self_attn.k_proj.linear",
+      "model.vision_tower.encoder.layers.11.self_attn.v_proj.linear",
+      "model.vision_tower.encoder.layers.11.self_attn.o_proj.linear",
+      "model.vision_tower.encoder.layers.11.mlp.gate_proj.linear",
+      "model.vision_tower.encoder.layers.11.mlp.up_proj.linear",
+      "model.vision_tower.encoder.layers.11.mlp.down_proj.linear",
+      "model.vision_tower.encoder.layers.12.self_attn.q_proj.linear",
+      "model.vision_tower.encoder.layers.12.self_attn.k_proj.linear",
+      "model.vision_tower.encoder.layers.12.self_attn.v_proj.linear",
+      "model.vision_tower.encoder.layers.12.self_attn.o_proj.linear",
+      "model.vision_tower.encoder.layers.12.mlp.gate_proj.linear",
+      "model.vision_tower.encoder.layers.12.mlp.up_proj.linear",
+      "model.vision_tower.encoder.layers.12.mlp.down_proj.linear",
+      "model.vision_tower.encoder.layers.13.self_attn.q_proj.linear",
+      "model.vision_tower.encoder.layers.13.self_attn.k_proj.linear",
+      "model.vision_tower.encoder.layers.13.self_attn.v_proj.linear",
+      "model.vision_tower.encoder.layers.13.self_attn.o_proj.linear",
+      "model.vision_tower.encoder.layers.13.mlp.gate_proj.linear",
+      "model.vision_tower.encoder.layers.13.mlp.up_proj.linear",
+      "model.vision_tower.encoder.layers.13.mlp.down_proj.linear",
+      "model.vision_tower.encoder.layers.14.self_attn.q_proj.linear",
+      "model.vision_tower.encoder.layers.14.self_attn.k_proj.linear",
+      "model.vision_tower.encoder.layers.14.self_attn.v_proj.linear",
+      "model.vision_tower.encoder.layers.14.self_attn.o_proj.linear",
+      "model.vision_tower.encoder.layers.14.mlp.gate_proj.linear",
+      "model.vision_tower.encoder.layers.14.mlp.up_proj.linear",
+      "model.vision_tower.encoder.layers.14.mlp.down_proj.linear",
+      "model.vision_tower.encoder.layers.15.self_attn.q_proj.linear",
+      "model.vision_tower.encoder.layers.15.self_attn.k_proj.linear",
+      "model.vision_tower.encoder.layers.15.self_attn.v_proj.linear",
+      "model.vision_tower.encoder.layers.15.self_attn.o_proj.linear",
+      "model.vision_tower.encoder.layers.15.mlp.gate_proj.linear",
+      "model.vision_tower.encoder.layers.15.mlp.up_proj.linear",
+      "model.vision_tower.encoder.layers.15.mlp.down_proj.linear",
+      "model.vision_tower.encoder.layers.16.self_attn.q_proj.linear",
+      "model.vision_tower.encoder.layers.16.self_attn.k_proj.linear",
+      "model.vision_tower.encoder.layers.16.self_attn.v_proj.linear",
+      "model.vision_tower.encoder.layers.16.self_attn.o_proj.linear",
+      "model.vision_tower.encoder.layers.16.mlp.gate_proj.linear",
+      "model.vision_tower.encoder.layers.16.mlp.up_proj.linear",
+      "model.vision_tower.encoder.layers.16.mlp.down_proj.linear",
+      "model.vision_tower.encoder.layers.17.self_attn.q_proj.linear",
+      "model.vision_tower.encoder.layers.17.self_attn.k_proj.linear",
+      "model.vision_tower.encoder.layers.17.self_attn.v_proj.linear",
+      "model.vision_tower.encoder.layers.17.self_attn.o_proj.linear",
+      "model.vision_tower.encoder.layers.17.mlp.gate_proj.linear",
+      "model.vision_tower.encoder.layers.17.mlp.up_proj.linear",
+      "model.vision_tower.encoder.layers.17.mlp.down_proj.linear",
+      "model.vision_tower.encoder.layers.18.self_attn.q_proj.linear",
+      "model.vision_tower.encoder.layers.18.self_attn.k_proj.linear",
+      "model.vision_tower.encoder.layers.18.self_attn.v_proj.linear",
+      "model.vision_tower.encoder.layers.18.self_attn.o_proj.linear",
+      "model.vision_tower.encoder.layers.18.mlp.gate_proj.linear",
+      "model.vision_tower.encoder.layers.18.mlp.up_proj.linear",
+      "model.vision_tower.encoder.layers.18.mlp.down_proj.linear",
+      "model.vision_tower.encoder.layers.19.self_attn.q_proj.linear",
+      "model.vision_tower.encoder.layers.19.self_attn.k_proj.linear",
+      "model.vision_tower.encoder.layers.19.self_attn.v_proj.linear",
+      "model.vision_tower.encoder.layers.19.self_attn.o_proj.linear",
+      "model.vision_tower.encoder.layers.19.mlp.gate_proj.linear",
+      "model.vision_tower.encoder.layers.19.mlp.up_proj.linear",
+      "model.vision_tower.encoder.layers.19.mlp.down_proj.linear",
+      "model.vision_tower.encoder.layers.20.self_attn.q_proj.linear",
+      "model.vision_tower.encoder.layers.20.self_attn.k_proj.linear",
+      "model.vision_tower.encoder.layers.20.self_attn.v_proj.linear",
+      "model.vision_tower.encoder.layers.20.self_attn.o_proj.linear",
+      "model.vision_tower.encoder.layers.20.mlp.gate_proj.linear",
+      "model.vision_tower.encoder.layers.20.mlp.up_proj.linear",
+      "model.vision_tower.encoder.layers.20.mlp.down_proj.linear",
+      "model.vision_tower.encoder.layers.21.self_attn.q_proj.linear",
+      "model.vision_tower.encoder.layers.21.self_attn.k_proj.linear",
+      "model.vision_tower.encoder.layers.21.self_attn.v_proj.linear",
+      "model.vision_tower.encoder.layers.21.self_attn.o_proj.linear",
+      "model.vision_tower.encoder.layers.21.mlp.gate_proj.linear",
+      "model.vision_tower.encoder.layers.21.mlp.up_proj.linear",
+      "model.vision_tower.encoder.layers.21.mlp.down_proj.linear",
+      "model.vision_tower.encoder.layers.22.self_attn.q_proj.linear",
+      "model.vision_tower.encoder.layers.22.self_attn.k_proj.linear",
+      "model.vision_tower.encoder.layers.22.self_attn.v_proj.linear",
+      "model.vision_tower.encoder.layers.22.self_attn.o_proj.linear",
+      "model.vision_tower.encoder.layers.22.mlp.gate_proj.linear",
+      "model.vision_tower.encoder.layers.22.mlp.up_proj.linear",
+      "model.vision_tower.encoder.layers.22.mlp.down_proj.linear",
+      "model.vision_tower.encoder.layers.23.self_attn.q_proj.linear",
+      "model.vision_tower.encoder.layers.23.self_attn.k_proj.linear",
+      "model.vision_tower.encoder.layers.23.self_attn.v_proj.linear",
+      "model.vision_tower.encoder.layers.23.self_attn.o_proj.linear",
+      "model.vision_tower.encoder.layers.23.mlp.gate_proj.linear",
+      "model.vision_tower.encoder.layers.23.mlp.up_proj.linear",
+      "model.vision_tower.encoder.layers.23.mlp.down_proj.linear",
+      "model.vision_tower.encoder.layers.24.self_attn.q_proj.linear",
+      "model.vision_tower.encoder.layers.24.self_attn.k_proj.linear",
+      "model.vision_tower.encoder.layers.24.self_attn.v_proj.linear",
+      "model.vision_tower.encoder.layers.24.self_attn.o_proj.linear",
+      "model.vision_tower.encoder.layers.24.mlp.gate_proj.linear",
+      "model.vision_tower.encoder.layers.24.mlp.up_proj.linear",
+      "model.vision_tower.encoder.layers.24.mlp.down_proj.linear",
+      "model.vision_tower.encoder.layers.25.self_attn.q_proj.linear",
+      "model.vision_tower.encoder.layers.25.self_attn.k_proj.linear",
+      "model.vision_tower.encoder.layers.25.self_attn.v_proj.linear",
+      "model.vision_tower.encoder.layers.25.self_attn.o_proj.linear",
+      "model.vision_tower.encoder.layers.25.mlp.gate_proj.linear",
+      "model.vision_tower.encoder.layers.25.mlp.up_proj.linear",
+      "model.vision_tower.encoder.layers.25.mlp.down_proj.linear",
+      "model.vision_tower.encoder.layers.26.self_attn.q_proj.linear",
+      "model.vision_tower.encoder.layers.26.self_attn.k_proj.linear",
+      "model.vision_tower.encoder.layers.26.self_attn.v_proj.linear",
+      "model.vision_tower.encoder.layers.26.self_attn.o_proj.linear",
+      "model.vision_tower.encoder.layers.26.mlp.gate_proj.linear",
+      "model.vision_tower.encoder.layers.26.mlp.up_proj.linear",
+      "model.vision_tower.encoder.layers.26.mlp.down_proj.linear",
+      "model.embed_vision.embedding_projection",
+      "lm_head"
+    ],
+    "kv_cache_scheme": null,
+    "quant_method": "compressed-tensors",
+    "quantization_status": "compressed",
+    "sparsity_config": {},
+    "transform_config": {},
+    "version": "0.15.1.a20260521"
+  },
+  "gpus": {
+    "count": 4,
+    "names": [
+      "NVIDIA L4",
+      "NVIDIA L4",
+      "NVIDIA L4",
+      "NVIDIA L4"
+    ]
+  },
+  "run_order": [
+    [
+      "rich_3278",
+      "A"
+    ],
+    [
+      "rich_3278",
+      "B"
+    ],
+    [
+      "rich_3535",
+      "B"
+    ],
+    [
+      "rich_3535",
+      "A"
+    ],
+    [
+      "rich_3675",
+      "A"
+    ],
+    [
+      "rich_3675",
+      "B"
+    ],
+    [
+      "rich_3942",
+      "B"
+    ],
+    [
+      "rich_3942",
+      "A"
+    ]
+  ],
+  "repair_log": [
+    {
+      "container": "9fd6efb5-f09",
+      "required": {
+        "setuptools": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nRequirement already satisfied: setuptools in /usr/local/lib/python3.12/dist-packages (81.0.0)\n",
+          "err": ""
+        },
+        "wheel": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nRequirement already satisfied: wheel in /usr/local/lib/python3.12/dist-packages (0.47.0)\nRequirement already satisfied: packaging>=24.0 in /usr/local/lib/python3.12/dist-packages (from wheel) (26.1)\n",
+          "err": ""
+        },
+        "editables": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/editables-0.6-py3-none-any.whl\nInstalling collected packages: editables\nSuccessfully installed editables-0.6\n",
+          "err": ""
+        }
+      },
+      "optional": {
+        "flit_core": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/flit_core-3.12.0-py3-none-any.whl\nInstalling collected packages: flit_core\nSuccessfully installed flit_core-3.12.0\n",
+          "err": ""
+        },
+        "hatchling": {
+          "rc": 1,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/hatchling-1.30.1-py3-none-any.whl\nRequirement already satisfied: packaging>=24.2 in /usr/local/lib/python3.12/dist-packages (from hatchling) (26.1)\nRequirement already satisfied: pathspec>=0.10.1 in /usr/local/lib/python3.12/dist-packages (from hatchling) (1.1.1)\nRequirement already satisfied: pluggy>=1.0.0 in /usr/local/lib/python3.12/dist-packages (from hatchling) (1.6.0)\nINFO: pip is looking at multiple versions of hatchling to determine which version is compatible with other requirements. This could take a while.\n",
+          "err": "ERROR: Could not find a version that satisfies the requirement trove-classifiers (from hatchling) (from versions: none)\nERROR: No matching distribution found for trove-classifiers\n"
+        },
+        "poetry_core": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/poetry_core-2.4.1-py3-none-any.whl\nInstalling collected packages: poetry_core\nSuccessfully installed poetry_core-2.4.1\n",
+          "err": ""
+        },
+        "pdm_backend": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/pdm_backend-2.4.9-py3-none-any.whl\nInstalling collected packages: pdm_backend\nSuccessfully installed pdm_backend-2.4.9\n",
+          "err": ""
+        }
+      },
+      "phase": "precondition",
+      "run": {
+        "task": "rich_3278",
+        "candidate": null,
+        "package": "rich"
+      },
+      "editable": {
+        "rc": 0,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nObtaining file:///tmp/swegemma_sandbox_9fd6efb5-f09_wjbg6duw/workspace\n  Checking if build backend supports build_editable: started\n  Checking if build backend supports build_editable: finished with status 'done'\n  Preparing editable metadata (pyproject.toml): started\n  Preparing editable metadata (pyproject.toml): finished with status 'done'\nBuilding wheels for collected packages: rich\n  Building editable for rich (pyproject.toml): started\n  Building editable for rich (pyproject.toml): finished with status 'done'\n  Created wheel for rich: filename=rich-13.7.1-py3-none-any.whl size=7755 sha256=bdc9027711cbb7525a307ab1d5997d0ec519ade658e96709dc28f2973851cc30\n  Stored in directory: /tmp/swegemma_sandbox_9fd6efb5-f09_wjbg6duw/tmp/pip-ephem-wheel-cache-117xmf3u/wheels/09/e5/b2/5b8b726815ca5a2d8e07f587e4e7fe7552de3115929675b98d\nSuccessfully built rich\nInstalling collected packages: rich\n  Attempting uninstall: rich\n    Found existing installation: rich 13.9.4\n    Not uninstalling rich at /usr/local/lib/python3.12/dist-packages, outside environment /tmp/swegemma_sandbox_9fd6efb5-f09_wjbg6duw/venv\n    Can't uninstall 'rich'. No files were found to uninstall.\nSuccessfully installed rich-13.7.1\n",
+        "err": ""
+      },
+      "workspace_real": "/tmp/swegemma_sandbox_9fd6efb5-f09_wjbg6duw/workspace",
+      "agent": {
+        "rc": 0,
+        "path": "/tmp/swegemma_sandbox_9fd6efb5-f09_wjbg6duw/workspace/rich/__init__.py",
+        "executable": "/tmp/swegemma_sandbox_9fd6efb5-f09_wjbg6duw/venv/bin/python3",
+        "stderr": ""
+      },
+      "grading_flags": {
+        "rc": 0,
+        "path": "/tmp/swegemma_sandbox_9fd6efb5-f09_wjbg6duw/workspace/rich/__init__.py",
+        "executable": "/tmp/swegemma_sandbox_9fd6efb5-f09_wjbg6duw/venv/bin/python3",
+        "stderr": ""
+      },
+      "provenance_ok": true
+    },
+    {
+      "container": "86d62501-7b9",
+      "required": {
+        "setuptools": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nRequirement already satisfied: setuptools in /usr/local/lib/python3.12/dist-packages (81.0.0)\n",
+          "err": ""
+        },
+        "wheel": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nRequirement already satisfied: wheel in /usr/local/lib/python3.12/dist-packages (0.47.0)\nRequirement already satisfied: packaging>=24.0 in /usr/local/lib/python3.12/dist-packages (from wheel) (26.1)\n",
+          "err": ""
+        },
+        "editables": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/editables-0.6-py3-none-any.whl\nInstalling collected packages: editables\nSuccessfully installed editables-0.6\n",
+          "err": ""
+        }
+      },
+      "optional": {
+        "flit_core": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/flit_core-3.12.0-py3-none-any.whl\nInstalling collected packages: flit_core\nSuccessfully installed flit_core-3.12.0\n",
+          "err": ""
+        },
+        "hatchling": {
+          "rc": 1,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/hatchling-1.30.1-py3-none-any.whl\nRequirement already satisfied: packaging>=24.2 in /usr/local/lib/python3.12/dist-packages (from hatchling) (26.1)\nRequirement already satisfied: pathspec>=0.10.1 in /usr/local/lib/python3.12/dist-packages (from hatchling) (1.1.1)\nRequirement already satisfied: pluggy>=1.0.0 in /usr/local/lib/python3.12/dist-packages (from hatchling) (1.6.0)\nINFO: pip is looking at multiple versions of hatchling to determine which version is compatible with other requirements. This could take a while.\n",
+          "err": "ERROR: Could not find a version that satisfies the requirement trove-classifiers (from hatchling) (from versions: none)\nERROR: No matching distribution found for trove-classifiers\n"
+        },
+        "poetry_core": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/poetry_core-2.4.1-py3-none-any.whl\nInstalling collected packages: poetry_core\nSuccessfully installed poetry_core-2.4.1\n",
+          "err": ""
+        },
+        "pdm_backend": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/pdm_backend-2.4.9-py3-none-any.whl\nInstalling collected packages: pdm_backend\nSuccessfully installed pdm_backend-2.4.9\n",
+          "err": ""
+        }
+      },
+      "phase": "precondition",
+      "run": {
+        "task": "rich_3535",
+        "candidate": null,
+        "package": "rich"
+      },
+      "editable": {
+        "rc": 0,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nObtaining file:///tmp/swegemma_sandbox_86d62501-7b9__j94rvtz/workspace\n  Checking if build backend supports build_editable: started\n  Checking if build backend supports build_editable: finished with status 'done'\n  Preparing editable metadata (pyproject.toml): started\n  Preparing editable metadata (pyproject.toml): finished with status 'done'\nBuilding wheels for collected packages: rich\n  Building editable for rich (pyproject.toml): started\n  Building editable for rich (pyproject.toml): finished with status 'done'\n  Created wheel for rich: filename=rich-13.9.2-py3-none-any.whl size=7752 sha256=e24578b221d1337c56b77e83eac1a29c3aa566b648c168e07b0e334546b26259\n  Stored in directory: /tmp/swegemma_sandbox_86d62501-7b9__j94rvtz/tmp/pip-ephem-wheel-cache-3o6uw2yz/wheels/8f/8d/14/6165b5f5b48cc4f87a3d726a85f35e462b5548f004a274c3ed\nSuccessfully built rich\nInstalling collected packages: rich\n  Attempting uninstall: rich\n    Found existing installation: rich 13.9.4\n    Not uninstalling rich at /usr/local/lib/python3.12/dist-packages, outside environment /tmp/swegemma_sandbox_86d62501-7b9__j94rvtz/venv\n    Can't uninstall 'rich'. No files were found to uninstall.\nSuccessfully installed rich-13.9.2\n",
+        "err": ""
+      },
+      "workspace_real": "/tmp/swegemma_sandbox_86d62501-7b9__j94rvtz/workspace",
+      "agent": {
+        "rc": 0,
+        "path": "/tmp/swegemma_sandbox_86d62501-7b9__j94rvtz/workspace/rich/__init__.py",
+        "executable": "/tmp/swegemma_sandbox_86d62501-7b9__j94rvtz/venv/bin/python3",
+        "stderr": ""
+      },
+      "grading_flags": {
+        "rc": 0,
+        "path": "/tmp/swegemma_sandbox_86d62501-7b9__j94rvtz/workspace/rich/__init__.py",
+        "executable": "/tmp/swegemma_sandbox_86d62501-7b9__j94rvtz/venv/bin/python3",
+        "stderr": ""
+      },
+      "provenance_ok": true
+    },
+    {
+      "container": "a4bbf185-5a8",
+      "required": {
+        "setuptools": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nRequirement already satisfied: setuptools in /usr/local/lib/python3.12/dist-packages (81.0.0)\n",
+          "err": ""
+        },
+        "wheel": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nRequirement already satisfied: wheel in /usr/local/lib/python3.12/dist-packages (0.47.0)\nRequirement already satisfied: packaging>=24.0 in /usr/local/lib/python3.12/dist-packages (from wheel) (26.1)\n",
+          "err": ""
+        },
+        "editables": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/editables-0.6-py3-none-any.whl\nInstalling collected packages: editables\nSuccessfully installed editables-0.6\n",
+          "err": ""
+        }
+      },
+      "optional": {
+        "flit_core": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/flit_core-3.12.0-py3-none-any.whl\nInstalling collected packages: flit_core\nSuccessfully installed flit_core-3.12.0\n",
+          "err": ""
+        },
+        "hatchling": {
+          "rc": 1,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/hatchling-1.30.1-py3-none-any.whl\nRequirement already satisfied: packaging>=24.2 in /usr/local/lib/python3.12/dist-packages (from hatchling) (26.1)\nRequirement already satisfied: pathspec>=0.10.1 in /usr/local/lib/python3.12/dist-packages (from hatchling) (1.1.1)\nRequirement already satisfied: pluggy>=1.0.0 in /usr/local/lib/python3.12/dist-packages (from hatchling) (1.6.0)\nINFO: pip is looking at multiple versions of hatchling to determine which version is compatible with other requirements. This could take a while.\n",
+          "err": "ERROR: Could not find a version that satisfies the requirement trove-classifiers (from hatchling) (from versions: none)\nERROR: No matching distribution found for trove-classifiers\n"
+        },
+        "poetry_core": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/poetry_core-2.4.1-py3-none-any.whl\nInstalling collected packages: poetry_core\nSuccessfully installed poetry_core-2.4.1\n",
+          "err": ""
+        },
+        "pdm_backend": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/pdm_backend-2.4.9-py3-none-any.whl\nInstalling collected packages: pdm_backend\nSuccessfully installed pdm_backend-2.4.9\n",
+          "err": ""
+        }
+      },
+      "phase": "precondition",
+      "run": {
+        "task": "rich_3675",
+        "candidate": null,
+        "package": "rich"
+      },
+      "editable": {
+        "rc": 0,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nObtaining file:///tmp/swegemma_sandbox_a4bbf185-5a8_43ltm2qo/workspace\n  Checking if build backend supports build_editable: started\n  Checking if build backend supports build_editable: finished with status 'done'\n  Preparing editable metadata (pyproject.toml): started\n  Preparing editable metadata (pyproject.toml): finished with status 'done'\nBuilding wheels for collected packages: rich\n  Building editable for rich (pyproject.toml): started\n  Building editable for rich (pyproject.toml): finished with status 'done'\n  Created wheel for rich: filename=rich-13.9.4-py3-none-any.whl size=7749 sha256=658868711c06d7ff3001589b08f98a65206c6b02638f60d3472c04fc513dfde5\n  Stored in directory: /tmp/swegemma_sandbox_a4bbf185-5a8_43ltm2qo/tmp/pip-ephem-wheel-cache-bohko2nr/wheels/02/62/b0/e83407d9053b6ba0a5221a52319b50c017b6f4776719094ac3\nSuccessfully built rich\nInstalling collected packages: rich\n  Attempting uninstall: rich\n    Found existing installation: rich 13.9.4\n    Not uninstalling rich at /usr/local/lib/python3.12/dist-packages, outside environment /tmp/swegemma_sandbox_a4bbf185-5a8_43ltm2qo/venv\n    Can't uninstall 'rich'. No files were found to uninstall.\nSuccessfully installed rich-13.9.4\n",
+        "err": ""
+      },
+      "workspace_real": "/tmp/swegemma_sandbox_a4bbf185-5a8_43ltm2qo/workspace",
+      "agent": {
+        "rc": 0,
+        "path": "/tmp/swegemma_sandbox_a4bbf185-5a8_43ltm2qo/workspace/rich/__init__.py",
+        "executable": "/tmp/swegemma_sandbox_a4bbf185-5a8_43ltm2qo/venv/bin/python3",
+        "stderr": ""
+      },
+      "grading_flags": {
+        "rc": 0,
+        "path": "/tmp/swegemma_sandbox_a4bbf185-5a8_43ltm2qo/workspace/rich/__init__.py",
+        "executable": "/tmp/swegemma_sandbox_a4bbf185-5a8_43ltm2qo/venv/bin/python3",
+        "stderr": ""
+      },
+      "provenance_ok": true
+    },
+    {
+      "container": "af15d87a-e52",
+      "required": {
+        "setuptools": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nRequirement already satisfied: setuptools in /usr/local/lib/python3.12/dist-packages (81.0.0)\n",
+          "err": ""
+        },
+        "wheel": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nRequirement already satisfied: wheel in /usr/local/lib/python3.12/dist-packages (0.47.0)\nRequirement already satisfied: packaging>=24.0 in /usr/local/lib/python3.12/dist-packages (from wheel) (26.1)\n",
+          "err": ""
+        },
+        "editables": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/editables-0.6-py3-none-any.whl\nInstalling collected packages: editables\nSuccessfully installed editables-0.6\n",
+          "err": ""
+        }
+      },
+      "optional": {
+        "flit_core": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/flit_core-3.12.0-py3-none-any.whl\nInstalling collected packages: flit_core\nSuccessfully installed flit_core-3.12.0\n",
+          "err": ""
+        },
+        "hatchling": {
+          "rc": 1,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/hatchling-1.30.1-py3-none-any.whl\nRequirement already satisfied: packaging>=24.2 in /usr/local/lib/python3.12/dist-packages (from hatchling) (26.1)\nRequirement already satisfied: pathspec>=0.10.1 in /usr/local/lib/python3.12/dist-packages (from hatchling) (1.1.1)\nRequirement already satisfied: pluggy>=1.0.0 in /usr/local/lib/python3.12/dist-packages (from hatchling) (1.6.0)\nINFO: pip is looking at multiple versions of hatchling to determine which version is compatible with other requirements. This could take a while.\n",
+          "err": "ERROR: Could not find a version that satisfies the requirement trove-classifiers (from hatchling) (from versions: none)\nERROR: No matching distribution found for trove-classifiers\n"
+        },
+        "poetry_core": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/poetry_core-2.4.1-py3-none-any.whl\nInstalling collected packages: poetry_core\nSuccessfully installed poetry_core-2.4.1\n",
+          "err": ""
+        },
+        "pdm_backend": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/pdm_backend-2.4.9-py3-none-any.whl\nInstalling collected packages: pdm_backend\nSuccessfully installed pdm_backend-2.4.9\n",
+          "err": ""
+        }
+      },
+      "phase": "precondition",
+      "run": {
+        "task": "rich_3942",
+        "candidate": null,
+        "package": "rich"
+      },
+      "editable": {
+        "rc": 0,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nObtaining file:///tmp/swegemma_sandbox_af15d87a-e52_kq9p60vq/workspace\n  Checking if build backend supports build_editable: started\n  Checking if build backend supports build_editable: finished with status 'done'\n  Preparing editable metadata (pyproject.toml): started\n  Preparing editable metadata (pyproject.toml): finished with status 'done'\nBuilding wheels for collected packages: rich\n  Building editable for rich (pyproject.toml): started\n  Building editable for rich (pyproject.toml): finished with status 'done'\n  Created wheel for rich: filename=rich-14.2.0-py3-none-any.whl size=7849 sha256=6a11aa09a8309dfd52c67c8a4422862c5b8cfb7e2f44ac0e43095d506d13fafc\n  Stored in directory: /tmp/swegemma_sandbox_af15d87a-e52_kq9p60vq/tmp/pip-ephem-wheel-cache-48g21k53/wheels/ec/4b/f5/f123611dc21cc187a60af2f7fcb61a3c98d694065410b81583\nSuccessfully built rich\nInstalling collected packages: rich\n  Attempting uninstall: rich\n    Found existing installation: rich 13.9.4\n    Not uninstalling rich at /usr/local/lib/python3.12/dist-packages, outside environment /tmp/swegemma_sandbox_af15d87a-e52_kq9p60vq/venv\n    Can't uninstall 'rich'. No files were found to uninstall.\nSuccessfully installed rich-14.2.0\n",
+        "err": ""
+      },
+      "workspace_real": "/tmp/swegemma_sandbox_af15d87a-e52_kq9p60vq/workspace",
+      "agent": {
+        "rc": 0,
+        "path": "/tmp/swegemma_sandbox_af15d87a-e52_kq9p60vq/workspace/rich/__init__.py",
+        "executable": "/tmp/swegemma_sandbox_af15d87a-e52_kq9p60vq/venv/bin/python3",
+        "stderr": ""
+      },
+      "grading_flags": {
+        "rc": 0,
+        "path": "/tmp/swegemma_sandbox_af15d87a-e52_kq9p60vq/workspace/rich/__init__.py",
+        "executable": "/tmp/swegemma_sandbox_af15d87a-e52_kq9p60vq/venv/bin/python3",
+        "stderr": ""
+      },
+      "provenance_ok": true
+    },
+    {
+      "container": "64134ff5-6c9",
+      "required": {
+        "setuptools": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nRequirement already satisfied: setuptools in /usr/local/lib/python3.12/dist-packages (81.0.0)\n",
+          "err": ""
+        },
+        "wheel": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nRequirement already satisfied: wheel in /usr/local/lib/python3.12/dist-packages (0.47.0)\nRequirement already satisfied: packaging>=24.0 in /usr/local/lib/python3.12/dist-packages (from wheel) (26.1)\n",
+          "err": ""
+        },
+        "editables": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/editables-0.6-py3-none-any.whl\nInstalling collected packages: editables\nSuccessfully installed editables-0.6\n",
+          "err": ""
+        }
+      },
+      "optional": {
+        "flit_core": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/flit_core-3.12.0-py3-none-any.whl\nInstalling collected packages: flit_core\nSuccessfully installed flit_core-3.12.0\n",
+          "err": ""
+        },
+        "hatchling": {
+          "rc": 1,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/hatchling-1.30.1-py3-none-any.whl\nRequirement already satisfied: packaging>=24.2 in /usr/local/lib/python3.12/dist-packages (from hatchling) (26.1)\nRequirement already satisfied: pathspec>=0.10.1 in /usr/local/lib/python3.12/dist-packages (from hatchling) (1.1.1)\nRequirement already satisfied: pluggy>=1.0.0 in /usr/local/lib/python3.12/dist-packages (from hatchling) (1.6.0)\nINFO: pip is looking at multiple versions of hatchling to determine which version is compatible with other requirements. This could take a while.\n",
+          "err": "ERROR: Could not find a version that satisfies the requirement trove-classifiers (from hatchling) (from versions: none)\nERROR: No matching distribution found for trove-classifiers\n"
+        },
+        "poetry_core": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/poetry_core-2.4.1-py3-none-any.whl\nInstalling collected packages: poetry_core\nSuccessfully installed poetry_core-2.4.1\n",
+          "err": ""
+        },
+        "pdm_backend": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/pdm_backend-2.4.9-py3-none-any.whl\nInstalling collected packages: pdm_backend\nSuccessfully installed pdm_backend-2.4.9\n",
+          "err": ""
+        }
+      },
+      "phase": "control_baseline",
+      "run": {
+        "task": "rich_3278",
+        "candidate": null,
+        "package": "rich"
+      },
+      "editable": {
+        "rc": 0,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nObtaining file:///tmp/swegemma_sandbox_64134ff5-6c9_bffc1dsc/workspace\n  Checking if build backend supports build_editable: started\n  Checking if build backend supports build_editable: finished with status 'done'\n  Preparing editable metadata (pyproject.toml): started\n  Preparing editable metadata (pyproject.toml): finished with status 'done'\nBuilding wheels for collected packages: rich\n  Building editable for rich (pyproject.toml): started\n  Building editable for rich (pyproject.toml): finished with status 'done'\n  Created wheel for rich: filename=rich-13.7.1-py3-none-any.whl size=7755 sha256=091d8e0684f0430d4372a914c8364444da28f0c971e4d601c9500823a3baea51\n  Stored in directory: /tmp/swegemma_sandbox_64134ff5-6c9_bffc1dsc/tmp/pip-ephem-wheel-cache-tk2vx8b7/wheels/49/bb/63/b39d417d0d05165cb05530ffd00a294ffd813687896c2fd654\nSuccessfully built rich\nInstalling collected packages: rich\n  Attempting uninstall: rich\n    Found existing installation: rich 13.9.4\n    Not uninstalling rich at /usr/local/lib/python3.12/dist-packages, outside environment /tmp/swegemma_sandbox_64134ff5-6c9_bffc1dsc/venv\n    Can't uninstall 'rich'. No files were found to uninstall.\nSuccessfully installed rich-13.7.1\n",
+        "err": ""
+      },
+      "workspace_real": "/tmp/swegemma_sandbox_64134ff5-6c9_bffc1dsc/workspace",
+      "agent": {
+        "rc": 0,
+        "path": "/tmp/swegemma_sandbox_64134ff5-6c9_bffc1dsc/workspace/rich/__init__.py",
+        "executable": "/tmp/swegemma_sandbox_64134ff5-6c9_bffc1dsc/venv/bin/python3",
+        "stderr": ""
+      },
+      "grading_flags": {
+        "rc": 0,
+        "path": "/tmp/swegemma_sandbox_64134ff5-6c9_bffc1dsc/workspace/rich/__init__.py",
+        "executable": "/tmp/swegemma_sandbox_64134ff5-6c9_bffc1dsc/venv/bin/python3",
+        "stderr": ""
+      },
+      "provenance_ok": true
+    },
+    {
+      "container": "1c00144a-930",
+      "required": {
+        "setuptools": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nRequirement already satisfied: setuptools in /usr/local/lib/python3.12/dist-packages (81.0.0)\n",
+          "err": ""
+        },
+        "wheel": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nRequirement already satisfied: wheel in /usr/local/lib/python3.12/dist-packages (0.47.0)\nRequirement already satisfied: packaging>=24.0 in /usr/local/lib/python3.12/dist-packages (from wheel) (26.1)\n",
+          "err": ""
+        },
+        "editables": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/editables-0.6-py3-none-any.whl\nInstalling collected packages: editables\nSuccessfully installed editables-0.6\n",
+          "err": ""
+        }
+      },
+      "optional": {
+        "flit_core": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/flit_core-3.12.0-py3-none-any.whl\nInstalling collected packages: flit_core\nSuccessfully installed flit_core-3.12.0\n",
+          "err": ""
+        },
+        "hatchling": {
+          "rc": 1,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/hatchling-1.30.1-py3-none-any.whl\nRequirement already satisfied: packaging>=24.2 in /usr/local/lib/python3.12/dist-packages (from hatchling) (26.1)\nRequirement already satisfied: pathspec>=0.10.1 in /usr/local/lib/python3.12/dist-packages (from hatchling) (1.1.1)\nRequirement already satisfied: pluggy>=1.0.0 in /usr/local/lib/python3.12/dist-packages (from hatchling) (1.6.0)\nINFO: pip is looking at multiple versions of hatchling to determine which version is compatible with other requirements. This could take a while.\n",
+          "err": "ERROR: Could not find a version that satisfies the requirement trove-classifiers (from hatchling) (from versions: none)\nERROR: No matching distribution found for trove-classifiers\n"
+        },
+        "poetry_core": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/poetry_core-2.4.1-py3-none-any.whl\nInstalling collected packages: poetry_core\nSuccessfully installed poetry_core-2.4.1\n",
+          "err": ""
+        },
+        "pdm_backend": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/pdm_backend-2.4.9-py3-none-any.whl\nInstalling collected packages: pdm_backend\nSuccessfully installed pdm_backend-2.4.9\n",
+          "err": ""
+        }
+      },
+      "phase": "control_reference",
+      "run": {
+        "task": "rich_3278",
+        "candidate": null,
+        "package": "rich"
+      },
+      "editable": {
+        "rc": 0,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nObtaining file:///tmp/swegemma_sandbox_1c00144a-930_v1dt_yyq/workspace\n  Checking if build backend supports build_editable: started\n  Checking if build backend supports build_editable: finished with status 'done'\n  Preparing editable metadata (pyproject.toml): started\n  Preparing editable metadata (pyproject.toml): finished with status 'done'\nBuilding wheels for collected packages: rich\n  Building editable for rich (pyproject.toml): started\n  Building editable for rich (pyproject.toml): finished with status 'done'\n  Created wheel for rich: filename=rich-13.7.1-py3-none-any.whl size=7755 sha256=2780d1be1376c69b2943e766d6467a118f3a53dcc2dcaaff9c47bf7c5fd20570\n  Stored in directory: /tmp/swegemma_sandbox_1c00144a-930_v1dt_yyq/tmp/pip-ephem-wheel-cache-zmjr7rl_/wheels/c9/d4/42/19d0ba01f29facbe683850d075fae5abd6e11640480e8d6e75\nSuccessfully built rich\nInstalling collected packages: rich\n  Attempting uninstall: rich\n    Found existing installation: rich 13.9.4\n    Not uninstalling rich at /usr/local/lib/python3.12/dist-packages, outside environment /tmp/swegemma_sandbox_1c00144a-930_v1dt_yyq/venv\n    Can't uninstall 'rich'. No files were found to uninstall.\nSuccessfully installed rich-13.7.1\n",
+        "err": ""
+      },
+      "workspace_real": "/tmp/swegemma_sandbox_1c00144a-930_v1dt_yyq/workspace",
+      "agent": {
+        "rc": 0,
+        "path": "/tmp/swegemma_sandbox_1c00144a-930_v1dt_yyq/workspace/rich/__init__.py",
+        "executable": "/tmp/swegemma_sandbox_1c00144a-930_v1dt_yyq/venv/bin/python3",
+        "stderr": ""
+      },
+      "grading_flags": {
+        "rc": 0,
+        "path": "/tmp/swegemma_sandbox_1c00144a-930_v1dt_yyq/workspace/rich/__init__.py",
+        "executable": "/tmp/swegemma_sandbox_1c00144a-930_v1dt_yyq/venv/bin/python3",
+        "stderr": ""
+      },
+      "provenance_ok": true
+    },
+    {
+      "container": "6901025c-3c1",
+      "required": {
+        "setuptools": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nRequirement already satisfied: setuptools in /usr/local/lib/python3.12/dist-packages (81.0.0)\n",
+          "err": ""
+        },
+        "wheel": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nRequirement already satisfied: wheel in /usr/local/lib/python3.12/dist-packages (0.47.0)\nRequirement already satisfied: packaging>=24.0 in /usr/local/lib/python3.12/dist-packages (from wheel) (26.1)\n",
+          "err": ""
+        },
+        "editables": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/editables-0.6-py3-none-any.whl\nInstalling collected packages: editables\nSuccessfully installed editables-0.6\n",
+          "err": ""
+        }
+      },
+      "optional": {
+        "flit_core": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/flit_core-3.12.0-py3-none-any.whl\nInstalling collected packages: flit_core\nSuccessfully installed flit_core-3.12.0\n",
+          "err": ""
+        },
+        "hatchling": {
+          "rc": 1,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/hatchling-1.30.1-py3-none-any.whl\nRequirement already satisfied: packaging>=24.2 in /usr/local/lib/python3.12/dist-packages (from hatchling) (26.1)\nRequirement already satisfied: pathspec>=0.10.1 in /usr/local/lib/python3.12/dist-packages (from hatchling) (1.1.1)\nRequirement already satisfied: pluggy>=1.0.0 in /usr/local/lib/python3.12/dist-packages (from hatchling) (1.6.0)\nINFO: pip is looking at multiple versions of hatchling to determine which version is compatible with other requirements. This could take a while.\n",
+          "err": "ERROR: Could not find a version that satisfies the requirement trove-classifiers (from hatchling) (from versions: none)\nERROR: No matching distribution found for trove-classifiers\n"
+        },
+        "poetry_core": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/poetry_core-2.4.1-py3-none-any.whl\nInstalling collected packages: poetry_core\nSuccessfully installed poetry_core-2.4.1\n",
+          "err": ""
+        },
+        "pdm_backend": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/pdm_backend-2.4.9-py3-none-any.whl\nInstalling collected packages: pdm_backend\nSuccessfully installed pdm_backend-2.4.9\n",
+          "err": ""
+        }
+      },
+      "phase": "control_baseline",
+      "run": {
+        "task": "rich_3535",
+        "candidate": null,
+        "package": "rich"
+      },
+      "editable": {
+        "rc": 0,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nObtaining file:///tmp/swegemma_sandbox_6901025c-3c1_dt5cjc32/workspace\n  Checking if build backend supports build_editable: started\n  Checking if build backend supports build_editable: finished with status 'done'\n  Preparing editable metadata (pyproject.toml): started\n  Preparing editable metadata (pyproject.toml): finished with status 'done'\nBuilding wheels for collected packages: rich\n  Building editable for rich (pyproject.toml): started\n  Building editable for rich (pyproject.toml): finished with status 'done'\n  Created wheel for rich: filename=rich-13.9.2-py3-none-any.whl size=7751 sha256=a9691ba67aa62fb32a2f71b3d3ce44d497712dc5c46820ad83b3232560283511\n  Stored in directory: /tmp/swegemma_sandbox_6901025c-3c1_dt5cjc32/tmp/pip-ephem-wheel-cache-if_r7kmy/wheels/d4/05/6a/b06d616cd27e6a16bac0a4ce6198d25fa46e7a63fb1df89898\nSuccessfully built rich\nInstalling collected packages: rich\n  Attempting uninstall: rich\n    Found existing installation: rich 13.9.4\n    Not uninstalling rich at /usr/local/lib/python3.12/dist-packages, outside environment /tmp/swegemma_sandbox_6901025c-3c1_dt5cjc32/venv\n    Can't uninstall 'rich'. No files were found to uninstall.\nSuccessfully installed rich-13.9.2\n",
+        "err": ""
+      },
+      "workspace_real": "/tmp/swegemma_sandbox_6901025c-3c1_dt5cjc32/workspace",
+      "agent": {
+        "rc": 0,
+        "path": "/tmp/swegemma_sandbox_6901025c-3c1_dt5cjc32/workspace/rich/__init__.py",
+        "executable": "/tmp/swegemma_sandbox_6901025c-3c1_dt5cjc32/venv/bin/python3",
+        "stderr": ""
+      },
+      "grading_flags": {
+        "rc": 0,
+        "path": "/tmp/swegemma_sandbox_6901025c-3c1_dt5cjc32/workspace/rich/__init__.py",
+        "executable": "/tmp/swegemma_sandbox_6901025c-3c1_dt5cjc32/venv/bin/python3",
+        "stderr": ""
+      },
+      "provenance_ok": true
+    },
+    {
+      "container": "b3282f55-3a7",
+      "required": {
+        "setuptools": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nRequirement already satisfied: setuptools in /usr/local/lib/python3.12/dist-packages (81.0.0)\n",
+          "err": ""
+        },
+        "wheel": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nRequirement already satisfied: wheel in /usr/local/lib/python3.12/dist-packages (0.47.0)\nRequirement already satisfied: packaging>=24.0 in /usr/local/lib/python3.12/dist-packages (from wheel) (26.1)\n",
+          "err": ""
+        },
+        "editables": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/editables-0.6-py3-none-any.whl\nInstalling collected packages: editables\nSuccessfully installed editables-0.6\n",
+          "err": ""
+        }
+      },
+      "optional": {
+        "flit_core": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/flit_core-3.12.0-py3-none-any.whl\nInstalling collected packages: flit_core\nSuccessfully installed flit_core-3.12.0\n",
+          "err": ""
+        },
+        "hatchling": {
+          "rc": 1,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/hatchling-1.30.1-py3-none-any.whl\nRequirement already satisfied: packaging>=24.2 in /usr/local/lib/python3.12/dist-packages (from hatchling) (26.1)\nRequirement already satisfied: pathspec>=0.10.1 in /usr/local/lib/python3.12/dist-packages (from hatchling) (1.1.1)\nRequirement already satisfied: pluggy>=1.0.0 in /usr/local/lib/python3.12/dist-packages (from hatchling) (1.6.0)\nINFO: pip is looking at multiple versions of hatchling to determine which version is compatible with other requirements. This could take a while.\n",
+          "err": "ERROR: Could not find a version that satisfies the requirement trove-classifiers (from hatchling) (from versions: none)\nERROR: No matching distribution found for trove-classifiers\n"
+        },
+        "poetry_core": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/poetry_core-2.4.1-py3-none-any.whl\nInstalling collected packages: poetry_core\nSuccessfully installed poetry_core-2.4.1\n",
+          "err": ""
+        },
+        "pdm_backend": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/pdm_backend-2.4.9-py3-none-any.whl\nInstalling collected packages: pdm_backend\nSuccessfully installed pdm_backend-2.4.9\n",
+          "err": ""
+        }
+      },
+      "phase": "control_reference",
+      "run": {
+        "task": "rich_3535",
+        "candidate": null,
+        "package": "rich"
+      },
+      "editable": {
+        "rc": 0,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nObtaining file:///tmp/swegemma_sandbox_b3282f55-3a7_ldasrbkp/workspace\n  Checking if build backend supports build_editable: started\n  Checking if build backend supports build_editable: finished with status 'done'\n  Preparing editable metadata (pyproject.toml): started\n  Preparing editable metadata (pyproject.toml): finished with status 'done'\nBuilding wheels for collected packages: rich\n  Building editable for rich (pyproject.toml): started\n  Building editable for rich (pyproject.toml): finished with status 'done'\n  Created wheel for rich: filename=rich-13.9.2-py3-none-any.whl size=7752 sha256=e0c6ada92ce56440c59e3099cde271fd1e4de270c3cf2daa7ef1a78d51fe84fc\n  Stored in directory: /tmp/swegemma_sandbox_b3282f55-3a7_ldasrbkp/tmp/pip-ephem-wheel-cache-foouaavr/wheels/f4/e8/eb/9d68eb70132adb537a4ff6a31f7345eaebc4e43471ffe59ed3\nSuccessfully built rich\nInstalling collected packages: rich\n  Attempting uninstall: rich\n    Found existing installation: rich 13.9.4\n    Not uninstalling rich at /usr/local/lib/python3.12/dist-packages, outside environment /tmp/swegemma_sandbox_b3282f55-3a7_ldasrbkp/venv\n    Can't uninstall 'rich'. No files were found to uninstall.\nSuccessfully installed rich-13.9.2\n",
+        "err": ""
+      },
+      "workspace_real": "/tmp/swegemma_sandbox_b3282f55-3a7_ldasrbkp/workspace",
+      "agent": {
+        "rc": 0,
+        "path": "/tmp/swegemma_sandbox_b3282f55-3a7_ldasrbkp/workspace/rich/__init__.py",
+        "executable": "/tmp/swegemma_sandbox_b3282f55-3a7_ldasrbkp/venv/bin/python3",
+        "stderr": ""
+      },
+      "grading_flags": {
+        "rc": 0,
+        "path": "/tmp/swegemma_sandbox_b3282f55-3a7_ldasrbkp/workspace/rich/__init__.py",
+        "executable": "/tmp/swegemma_sandbox_b3282f55-3a7_ldasrbkp/venv/bin/python3",
+        "stderr": ""
+      },
+      "provenance_ok": true
+    },
+    {
+      "container": "ffa53b84-046",
+      "required": {
+        "setuptools": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nRequirement already satisfied: setuptools in /usr/local/lib/python3.12/dist-packages (81.0.0)\n",
+          "err": ""
+        },
+        "wheel": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nRequirement already satisfied: wheel in /usr/local/lib/python3.12/dist-packages (0.47.0)\nRequirement already satisfied: packaging>=24.0 in /usr/local/lib/python3.12/dist-packages (from wheel) (26.1)\n",
+          "err": ""
+        },
+        "editables": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/editables-0.6-py3-none-any.whl\nInstalling collected packages: editables\nSuccessfully installed editables-0.6\n",
+          "err": ""
+        }
+      },
+      "optional": {
+        "flit_core": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/flit_core-3.12.0-py3-none-any.whl\nInstalling collected packages: flit_core\nSuccessfully installed flit_core-3.12.0\n",
+          "err": ""
+        },
+        "hatchling": {
+          "rc": 1,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/hatchling-1.30.1-py3-none-any.whl\nRequirement already satisfied: packaging>=24.2 in /usr/local/lib/python3.12/dist-packages (from hatchling) (26.1)\nRequirement already satisfied: pathspec>=0.10.1 in /usr/local/lib/python3.12/dist-packages (from hatchling) (1.1.1)\nRequirement already satisfied: pluggy>=1.0.0 in /usr/local/lib/python3.12/dist-packages (from hatchling) (1.6.0)\nINFO: pip is looking at multiple versions of hatchling to determine which version is compatible with other requirements. This could take a while.\n",
+          "err": "ERROR: Could not find a version that satisfies the requirement trove-classifiers (from hatchling) (from versions: none)\nERROR: No matching distribution found for trove-classifiers\n"
+        },
+        "poetry_core": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/poetry_core-2.4.1-py3-none-any.whl\nInstalling collected packages: poetry_core\nSuccessfully installed poetry_core-2.4.1\n",
+          "err": ""
+        },
+        "pdm_backend": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/pdm_backend-2.4.9-py3-none-any.whl\nInstalling collected packages: pdm_backend\nSuccessfully installed pdm_backend-2.4.9\n",
+          "err": ""
+        }
+      },
+      "phase": "control_baseline",
+      "run": {
+        "task": "rich_3675",
+        "candidate": null,
+        "package": "rich"
+      },
+      "editable": {
+        "rc": 0,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nObtaining file:///tmp/swegemma_sandbox_ffa53b84-046_cepfs98l/workspace\n  Checking if build backend supports build_editable: started\n  Checking if build backend supports build_editable: finished with status 'done'\n  Preparing editable metadata (pyproject.toml): started\n  Preparing editable metadata (pyproject.toml): finished with status 'done'\nBuilding wheels for collected packages: rich\n  Building editable for rich (pyproject.toml): started\n  Building editable for rich (pyproject.toml): finished with status 'done'\n  Created wheel for rich: filename=rich-13.9.4-py3-none-any.whl size=7750 sha256=f1fcd5fc1328bfa824f13178adca9a3169b8f3a58966e1cc02ab9149d1e132fe\n  Stored in directory: /tmp/swegemma_sandbox_ffa53b84-046_cepfs98l/tmp/pip-ephem-wheel-cache-1rmqom9a/wheels/20/f3/b0/c54d3fc896cf8403e9427d2015fd9c6e59f242616a8b139f91\nSuccessfully built rich\nInstalling collected packages: rich\n  Attempting uninstall: rich\n    Found existing installation: rich 13.9.4\n    Not uninstalling rich at /usr/local/lib/python3.12/dist-packages, outside environment /tmp/swegemma_sandbox_ffa53b84-046_cepfs98l/venv\n    Can't uninstall 'rich'. No files were found to uninstall.\nSuccessfully installed rich-13.9.4\n",
+        "err": ""
+      },
+      "workspace_real": "/tmp/swegemma_sandbox_ffa53b84-046_cepfs98l/workspace",
+      "agent": {
+        "rc": 0,
+        "path": "/tmp/swegemma_sandbox_ffa53b84-046_cepfs98l/workspace/rich/__init__.py",
+        "executable": "/tmp/swegemma_sandbox_ffa53b84-046_cepfs98l/venv/bin/python3",
+        "stderr": ""
+      },
+      "grading_flags": {
+        "rc": 0,
+        "path": "/tmp/swegemma_sandbox_ffa53b84-046_cepfs98l/workspace/rich/__init__.py",
+        "executable": "/tmp/swegemma_sandbox_ffa53b84-046_cepfs98l/venv/bin/python3",
+        "stderr": ""
+      },
+      "provenance_ok": true
+    },
+    {
+      "container": "9559f54c-ddb",
+      "required": {
+        "setuptools": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nRequirement already satisfied: setuptools in /usr/local/lib/python3.12/dist-packages (81.0.0)\n",
+          "err": ""
+        },
+        "wheel": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nRequirement already satisfied: wheel in /usr/local/lib/python3.12/dist-packages (0.47.0)\nRequirement already satisfied: packaging>=24.0 in /usr/local/lib/python3.12/dist-packages (from wheel) (26.1)\n",
+          "err": ""
+        },
+        "editables": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/editables-0.6-py3-none-any.whl\nInstalling collected packages: editables\nSuccessfully installed editables-0.6\n",
+          "err": ""
+        }
+      },
+      "optional": {
+        "flit_core": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/flit_core-3.12.0-py3-none-any.whl\nInstalling collected packages: flit_core\nSuccessfully installed flit_core-3.12.0\n",
+          "err": ""
+        },
+        "hatchling": {
+          "rc": 1,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/hatchling-1.30.1-py3-none-any.whl\nRequirement already satisfied: packaging>=24.2 in /usr/local/lib/python3.12/dist-packages (from hatchling) (26.1)\nRequirement already satisfied: pathspec>=0.10.1 in /usr/local/lib/python3.12/dist-packages (from hatchling) (1.1.1)\nRequirement already satisfied: pluggy>=1.0.0 in /usr/local/lib/python3.12/dist-packages (from hatchling) (1.6.0)\nINFO: pip is looking at multiple versions of hatchling to determine which version is compatible with other requirements. This could take a while.\n",
+          "err": "ERROR: Could not find a version that satisfies the requirement trove-classifiers (from hatchling) (from versions: none)\nERROR: No matching distribution found for trove-classifiers\n"
+        },
+        "poetry_core": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/poetry_core-2.4.1-py3-none-any.whl\nInstalling collected packages: poetry_core\nSuccessfully installed poetry_core-2.4.1\n",
+          "err": ""
+        },
+        "pdm_backend": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/pdm_backend-2.4.9-py3-none-any.whl\nInstalling collected packages: pdm_backend\nSuccessfully installed pdm_backend-2.4.9\n",
+          "err": ""
+        }
+      },
+      "phase": "control_reference",
+      "run": {
+        "task": "rich_3675",
+        "candidate": null,
+        "package": "rich"
+      },
+      "editable": {
+        "rc": 0,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nObtaining file:///tmp/swegemma_sandbox_9559f54c-ddb_r51xnukg/workspace\n  Checking if build backend supports build_editable: started\n  Checking if build backend supports build_editable: finished with status 'done'\n  Preparing editable metadata (pyproject.toml): started\n  Preparing editable metadata (pyproject.toml): finished with status 'done'\nBuilding wheels for collected packages: rich\n  Building editable for rich (pyproject.toml): started\n  Building editable for rich (pyproject.toml): finished with status 'done'\n  Created wheel for rich: filename=rich-13.9.4-py3-none-any.whl size=7750 sha256=271ca61cb6bbc7fb41f23393d7f7e137e3020ddbca44e89fc92452c7fda5d75c\n  Stored in directory: /tmp/swegemma_sandbox_9559f54c-ddb_r51xnukg/tmp/pip-ephem-wheel-cache-yn6ap3_8/wheels/29/91/b3/0af9bd2adff492a5042d609ee4ab1fa63d2e9840c7ac1a9025\nSuccessfully built rich\nInstalling collected packages: rich\n  Attempting uninstall: rich\n    Found existing installation: rich 13.9.4\n    Not uninstalling rich at /usr/local/lib/python3.12/dist-packages, outside environment /tmp/swegemma_sandbox_9559f54c-ddb_r51xnukg/venv\n    Can't uninstall 'rich'. No files were found to uninstall.\nSuccessfully installed rich-13.9.4\n",
+        "err": ""
+      },
+      "workspace_real": "/tmp/swegemma_sandbox_9559f54c-ddb_r51xnukg/workspace",
+      "agent": {
+        "rc": 0,
+        "path": "/tmp/swegemma_sandbox_9559f54c-ddb_r51xnukg/workspace/rich/__init__.py",
+        "executable": "/tmp/swegemma_sandbox_9559f54c-ddb_r51xnukg/venv/bin/python3",
+        "stderr": ""
+      },
+      "grading_flags": {
+        "rc": 0,
+        "path": "/tmp/swegemma_sandbox_9559f54c-ddb_r51xnukg/workspace/rich/__init__.py",
+        "executable": "/tmp/swegemma_sandbox_9559f54c-ddb_r51xnukg/venv/bin/python3",
+        "stderr": ""
+      },
+      "provenance_ok": true
+    },
+    {
+      "container": "68761b08-a19",
+      "required": {
+        "setuptools": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nRequirement already satisfied: setuptools in /usr/local/lib/python3.12/dist-packages (81.0.0)\n",
+          "err": ""
+        },
+        "wheel": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nRequirement already satisfied: wheel in /usr/local/lib/python3.12/dist-packages (0.47.0)\nRequirement already satisfied: packaging>=24.0 in /usr/local/lib/python3.12/dist-packages (from wheel) (26.1)\n",
+          "err": ""
+        },
+        "editables": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/editables-0.6-py3-none-any.whl\nInstalling collected packages: editables\nSuccessfully installed editables-0.6\n",
+          "err": ""
+        }
+      },
+      "optional": {
+        "flit_core": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/flit_core-3.12.0-py3-none-any.whl\nInstalling collected packages: flit_core\nSuccessfully installed flit_core-3.12.0\n",
+          "err": ""
+        },
+        "hatchling": {
+          "rc": 1,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/hatchling-1.30.1-py3-none-any.whl\nRequirement already satisfied: packaging>=24.2 in /usr/local/lib/python3.12/dist-packages (from hatchling) (26.1)\nRequirement already satisfied: pathspec>=0.10.1 in /usr/local/lib/python3.12/dist-packages (from hatchling) (1.1.1)\nRequirement already satisfied: pluggy>=1.0.0 in /usr/local/lib/python3.12/dist-packages (from hatchling) (1.6.0)\nINFO: pip is looking at multiple versions of hatchling to determine which version is compatible with other requirements. This could take a while.\n",
+          "err": "ERROR: Could not find a version that satisfies the requirement trove-classifiers (from hatchling) (from versions: none)\nERROR: No matching distribution found for trove-classifiers\n"
+        },
+        "poetry_core": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/poetry_core-2.4.1-py3-none-any.whl\nInstalling collected packages: poetry_core\nSuccessfully installed poetry_core-2.4.1\n",
+          "err": ""
+        },
+        "pdm_backend": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/pdm_backend-2.4.9-py3-none-any.whl\nInstalling collected packages: pdm_backend\nSuccessfully installed pdm_backend-2.4.9\n",
+          "err": ""
+        }
+      },
+      "phase": "control_baseline",
+      "run": {
+        "task": "rich_3942",
+        "candidate": null,
+        "package": "rich"
+      },
+      "editable": {
+        "rc": 0,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nObtaining file:///tmp/swegemma_sandbox_68761b08-a19_jaeaewoh/workspace\n  Checking if build backend supports build_editable: started\n  Checking if build backend supports build_editable: finished with status 'done'\n  Preparing editable metadata (pyproject.toml): started\n  Preparing editable metadata (pyproject.toml): finished with status 'done'\nBuilding wheels for collected packages: rich\n  Building editable for rich (pyproject.toml): started\n  Building editable for rich (pyproject.toml): finished with status 'done'\n  Created wheel for rich: filename=rich-14.2.0-py3-none-any.whl size=7851 sha256=c7263259442fc0e7ca5f7ada1245abef950ab26f3d77425ba541f5dca373492d\n  Stored in directory: /tmp/swegemma_sandbox_68761b08-a19_jaeaewoh/tmp/pip-ephem-wheel-cache-eaegyfvv/wheels/6a/93/8d/855f380cd773f1cb2394655717cd69e65ddf3f141af7c03189\nSuccessfully built rich\nInstalling collected packages: rich\n  Attempting uninstall: rich\n    Found existing installation: rich 13.9.4\n    Not uninstalling rich at /usr/local/lib/python3.12/dist-packages, outside environment /tmp/swegemma_sandbox_68761b08-a19_jaeaewoh/venv\n    Can't uninstall 'rich'. No files were found to uninstall.\nSuccessfully installed rich-14.2.0\n",
+        "err": ""
+      },
+      "workspace_real": "/tmp/swegemma_sandbox_68761b08-a19_jaeaewoh/workspace",
+      "agent": {
+        "rc": 0,
+        "path": "/tmp/swegemma_sandbox_68761b08-a19_jaeaewoh/workspace/rich/__init__.py",
+        "executable": "/tmp/swegemma_sandbox_68761b08-a19_jaeaewoh/venv/bin/python3",
+        "stderr": ""
+      },
+      "grading_flags": {
+        "rc": 0,
+        "path": "/tmp/swegemma_sandbox_68761b08-a19_jaeaewoh/workspace/rich/__init__.py",
+        "executable": "/tmp/swegemma_sandbox_68761b08-a19_jaeaewoh/venv/bin/python3",
+        "stderr": ""
+      },
+      "provenance_ok": true
+    },
+    {
+      "container": "182ec533-0a8",
+      "required": {
+        "setuptools": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nRequirement already satisfied: setuptools in /usr/local/lib/python3.12/dist-packages (81.0.0)\n",
+          "err": ""
+        },
+        "wheel": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nRequirement already satisfied: wheel in /usr/local/lib/python3.12/dist-packages (0.47.0)\nRequirement already satisfied: packaging>=24.0 in /usr/local/lib/python3.12/dist-packages (from wheel) (26.1)\n",
+          "err": ""
+        },
+        "editables": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/editables-0.6-py3-none-any.whl\nInstalling collected packages: editables\nSuccessfully installed editables-0.6\n",
+          "err": ""
+        }
+      },
+      "optional": {
+        "flit_core": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/flit_core-3.12.0-py3-none-any.whl\nInstalling collected packages: flit_core\nSuccessfully installed flit_core-3.12.0\n",
+          "err": ""
+        },
+        "hatchling": {
+          "rc": 1,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/hatchling-1.30.1-py3-none-any.whl\nRequirement already satisfied: packaging>=24.2 in /usr/local/lib/python3.12/dist-packages (from hatchling) (26.1)\nRequirement already satisfied: pathspec>=0.10.1 in /usr/local/lib/python3.12/dist-packages (from hatchling) (1.1.1)\nRequirement already satisfied: pluggy>=1.0.0 in /usr/local/lib/python3.12/dist-packages (from hatchling) (1.6.0)\nINFO: pip is looking at multiple versions of hatchling to determine which version is compatible with other requirements. This could take a while.\n",
+          "err": "ERROR: Could not find a version that satisfies the requirement trove-classifiers (from hatchling) (from versions: none)\nERROR: No matching distribution found for trove-classifiers\n"
+        },
+        "poetry_core": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/poetry_core-2.4.1-py3-none-any.whl\nInstalling collected packages: poetry_core\nSuccessfully installed poetry_core-2.4.1\n",
+          "err": ""
+        },
+        "pdm_backend": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/pdm_backend-2.4.9-py3-none-any.whl\nInstalling collected packages: pdm_backend\nSuccessfully installed pdm_backend-2.4.9\n",
+          "err": ""
+        }
+      },
+      "phase": "control_reference",
+      "run": {
+        "task": "rich_3942",
+        "candidate": null,
+        "package": "rich"
+      },
+      "editable": {
+        "rc": 0,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nObtaining file:///tmp/swegemma_sandbox_182ec533-0a8_gfk0zcha/workspace\n  Checking if build backend supports build_editable: started\n  Checking if build backend supports build_editable: finished with status 'done'\n  Preparing editable metadata (pyproject.toml): started\n  Preparing editable metadata (pyproject.toml): finished with status 'done'\nBuilding wheels for collected packages: rich\n  Building editable for rich (pyproject.toml): started\n  Building editable for rich (pyproject.toml): finished with status 'done'\n  Created wheel for rich: filename=rich-14.2.0-py3-none-any.whl size=7850 sha256=2253769ef7f6a5cb44eda7475e381a205850c7283a0e917e72f923bbe83489bd\n  Stored in directory: /tmp/swegemma_sandbox_182ec533-0a8_gfk0zcha/tmp/pip-ephem-wheel-cache-xjed4i4n/wheels/10/a1/97/5690b183c3ac176edc24a84ac98d9b45748a57722171cc11bb\nSuccessfully built rich\nInstalling collected packages: rich\n  Attempting uninstall: rich\n    Found existing installation: rich 13.9.4\n    Not uninstalling rich at /usr/local/lib/python3.12/dist-packages, outside environment /tmp/swegemma_sandbox_182ec533-0a8_gfk0zcha/venv\n    Can't uninstall 'rich'. No files were found to uninstall.\nSuccessfully installed rich-14.2.0\n",
+        "err": ""
+      },
+      "workspace_real": "/tmp/swegemma_sandbox_182ec533-0a8_gfk0zcha/workspace",
+      "agent": {
+        "rc": 0,
+        "path": "/tmp/swegemma_sandbox_182ec533-0a8_gfk0zcha/workspace/rich/__init__.py",
+        "executable": "/tmp/swegemma_sandbox_182ec533-0a8_gfk0zcha/venv/bin/python3",
+        "stderr": ""
+      },
+      "grading_flags": {
+        "rc": 0,
+        "path": "/tmp/swegemma_sandbox_182ec533-0a8_gfk0zcha/workspace/rich/__init__.py",
+        "executable": "/tmp/swegemma_sandbox_182ec533-0a8_gfk0zcha/venv/bin/python3",
+        "stderr": ""
+      },
+      "provenance_ok": true
+    },
+    {
+      "container": "56c9d560-f9b",
+      "required": {
+        "setuptools": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nRequirement already satisfied: setuptools in /usr/local/lib/python3.12/dist-packages (81.0.0)\n",
+          "err": ""
+        },
+        "wheel": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nRequirement already satisfied: wheel in /usr/local/lib/python3.12/dist-packages (0.47.0)\nRequirement already satisfied: packaging>=24.0 in /usr/local/lib/python3.12/dist-packages (from wheel) (26.1)\n",
+          "err": ""
+        },
+        "editables": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/editables-0.6-py3-none-any.whl\nInstalling collected packages: editables\nSuccessfully installed editables-0.6\n",
+          "err": ""
+        }
+      },
+      "optional": {
+        "flit_core": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/flit_core-3.12.0-py3-none-any.whl\nInstalling collected packages: flit_core\nSuccessfully installed flit_core-3.12.0\n",
+          "err": ""
+        },
+        "hatchling": {
+          "rc": 1,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/hatchling-1.30.1-py3-none-any.whl\nRequirement already satisfied: packaging>=24.2 in /usr/local/lib/python3.12/dist-packages (from hatchling) (26.1)\nRequirement already satisfied: pathspec>=0.10.1 in /usr/local/lib/python3.12/dist-packages (from hatchling) (1.1.1)\nRequirement already satisfied: pluggy>=1.0.0 in /usr/local/lib/python3.12/dist-packages (from hatchling) (1.6.0)\nINFO: pip is looking at multiple versions of hatchling to determine which version is compatible with other requirements. This could take a while.\n",
+          "err": "ERROR: Could not find a version that satisfies the requirement trove-classifiers (from hatchling) (from versions: none)\nERROR: No matching distribution found for trove-classifiers\n"
+        },
+        "poetry_core": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/poetry_core-2.4.1-py3-none-any.whl\nInstalling collected packages: poetry_core\nSuccessfully installed poetry_core-2.4.1\n",
+          "err": ""
+        },
+        "pdm_backend": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/pdm_backend-2.4.9-py3-none-any.whl\nInstalling collected packages: pdm_backend\nSuccessfully installed pdm_backend-2.4.9\n",
+          "err": ""
+        }
+      },
+      "phase": "agent",
+      "run": {
+        "task": "rich_3278",
+        "candidate": "A",
+        "package": "rich"
+      },
+      "editable": {
+        "rc": 0,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nObtaining file:///tmp/swegemma_sandbox_56c9d560-f9b_i32j8nxn/workspace\n  Checking if build backend supports build_editable: started\n  Checking if build backend supports build_editable: finished with status 'done'\n  Preparing editable metadata (pyproject.toml): started\n  Preparing editable metadata (pyproject.toml): finished with status 'done'\nBuilding wheels for collected packages: rich\n  Building editable for rich (pyproject.toml): started\n  Building editable for rich (pyproject.toml): finished with status 'done'\n  Created wheel for rich: filename=rich-13.7.1-py3-none-any.whl size=7754 sha256=07b10e3401c37147ef81dc04386a0401303bdb6402bcd93048ffac564cb3a38f\n  Stored in directory: /tmp/swegemma_sandbox_56c9d560-f9b_i32j8nxn/tmp/pip-ephem-wheel-cache-309g1mm5/wheels/0a/a1/1b/1c5cbf0d688e518c718ed4191be83ca19cb458d40de1d6c248\nSuccessfully built rich\nInstalling collected packages: rich\n  Attempting uninstall: rich\n    Found existing installation: rich 13.9.4\n    Not uninstalling rich at /usr/local/lib/python3.12/dist-packages, outside environment /tmp/swegemma_sandbox_56c9d560-f9b_i32j8nxn/venv\n    Can't uninstall 'rich'. No files were found to uninstall.\nSuccessfully installed rich-13.7.1\n",
+        "err": ""
+      },
+      "workspace_real": "/tmp/swegemma_sandbox_56c9d560-f9b_i32j8nxn/workspace",
+      "agent": {
+        "rc": 0,
+        "path": "/tmp/swegemma_sandbox_56c9d560-f9b_i32j8nxn/workspace/rich/__init__.py",
+        "executable": "/tmp/swegemma_sandbox_56c9d560-f9b_i32j8nxn/venv/bin/python3",
+        "stderr": ""
+      },
+      "grading_flags": {
+        "rc": 0,
+        "path": "/tmp/swegemma_sandbox_56c9d560-f9b_i32j8nxn/workspace/rich/__init__.py",
+        "executable": "/tmp/swegemma_sandbox_56c9d560-f9b_i32j8nxn/venv/bin/python3",
+        "stderr": ""
+      },
+      "provenance_ok": true
+    },
+    {
+      "container": "1a6cd2d4-f6c",
+      "required": {
+        "setuptools": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nRequirement already satisfied: setuptools in /usr/local/lib/python3.12/dist-packages (81.0.0)\n",
+          "err": ""
+        },
+        "wheel": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nRequirement already satisfied: wheel in /usr/local/lib/python3.12/dist-packages (0.47.0)\nRequirement already satisfied: packaging>=24.0 in /usr/local/lib/python3.12/dist-packages (from wheel) (26.1)\n",
+          "err": ""
+        },
+        "editables": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/editables-0.6-py3-none-any.whl\nInstalling collected packages: editables\nSuccessfully installed editables-0.6\n",
+          "err": ""
+        }
+      },
+      "optional": {
+        "flit_core": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/flit_core-3.12.0-py3-none-any.whl\nInstalling collected packages: flit_core\nSuccessfully installed flit_core-3.12.0\n",
+          "err": ""
+        },
+        "hatchling": {
+          "rc": 1,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/hatchling-1.30.1-py3-none-any.whl\nRequirement already satisfied: packaging>=24.2 in /usr/local/lib/python3.12/dist-packages (from hatchling) (26.1)\nRequirement already satisfied: pathspec>=0.10.1 in /usr/local/lib/python3.12/dist-packages (from hatchling) (1.1.1)\nRequirement already satisfied: pluggy>=1.0.0 in /usr/local/lib/python3.12/dist-packages (from hatchling) (1.6.0)\nINFO: pip is looking at multiple versions of hatchling to determine which version is compatible with other requirements. This could take a while.\n",
+          "err": "ERROR: Could not find a version that satisfies the requirement trove-classifiers (from hatchling) (from versions: none)\nERROR: No matching distribution found for trove-classifiers\n"
+        },
+        "poetry_core": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/poetry_core-2.4.1-py3-none-any.whl\nInstalling collected packages: poetry_core\nSuccessfully installed poetry_core-2.4.1\n",
+          "err": ""
+        },
+        "pdm_backend": {
+          "rc": 0,
+          "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/pdm_backend-2.4.9-py3-none-any.whl\nInstalling collected packages: pdm_backend\nSuccessfully installed pdm_backend-2.4.9\n",
+          "err": ""
+        }
+      },
+      "phase": "agent",
+      "run": {
+        "task": "rich_3278",
+        "candidate": "B",
+        "package": "rich"
+      },
+      "editable": {
+        "rc": 0,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nObtaining file:///tmp/swegemma_sandbox_1a6cd2d4-f6c_ak1qetxu/workspace\n  Checking if build backend supports build_editable: started\n  Checking if build backend supports build_editable: finished with status 'done'\n  Preparing editable metadata (pyproject.toml): started\n  Preparing editable metadata (pyproject.toml): finished with status 'done'\nBuilding wheels for collected packages: rich\n  Building editable for rich (pyproject.toml): started\n  Building editable for rich (pyproject.toml): finished with status 'done'\n  Created wheel for rich: filename=rich-13.7.1-py3-none-any.whl size=7756 sha256=9125d6c45965bf7353b8ab6738035e4f9721b9318a835756aea91d286ed97856\n  Stored in directory: /tmp/swegemma_sandbox_1a6cd2d4-f6c_ak1qetxu/tmp/pip-ephem-wheel-cache-x00cjtg2/wheels/46/1e/a1/d30cf0bebcd16e5f81dbf726e933b77f58e798f0892e508d56\nSuccessfully built rich\nInstalling collected packages: rich\n  Attempting uninstall: rich\n    Found existing installation: rich 13.9.4\n    Not uninstalling rich at /usr/local/lib/python3.12/dist-packages, outside environment /tmp/swegemma_sandbox_1a6cd2d4-f6c_ak1qetxu/venv\n    Can't uninstall 'rich'. No files were found to uninstall.\nSuccessfully installed rich-13.7.1\n",
+        "err": ""
+      },
+      "workspace_real": "/tmp/swegemma_sandbox_1a6cd2d4-f6c_ak1qetxu/workspace",
+      "agent": {
+        "rc": 0,
+        "path": "/tmp/swegemma_sandbox_1a6cd2d4-f6c_ak1qetxu/workspace/rich/__init__.py",
+        "executable": "/tmp/swegemma_sandbox_1a6cd2d4-f6c_ak1qetxu/venv/bin/python3",
+        "stderr": ""
+      },
+      "grading_flags": {
+        "rc": 0,
+        "path": "/tmp/swegemma_sandbox_1a6cd2d4-f6c_ak1qetxu/workspace/rich/__init__.py",
+        "executable": "/tmp/swegemma_sandbox_1a6cd2d4-f6c_ak1qetxu/venv/bin/python3",
+        "stderr": ""
+      },
+      "provenance_ok": true
+    }
+  ],
+  "session_cap_min": 300,
+  "session_cap_kind": "admission limit; no hard kill of in-flight processes",
+  "run_reserve_min": 25,
+  "server_stopped": true,
+  "setup_observation_note": "Fresh import probes with agent and grading flags; not direct in-pytest instrumentation",
+  "task_content_hashes": {
+    "rich_3278": "8fb8127fdb3e069ae02db8a0e3d2e5306b96e7d42a1ab7c3185da2e269cd61bf",
+    "rich_3535": "3c70ac67cc8e78d329459615dd6db711e2715b92f6da4632cc4905f1faf0ad18",
+    "rich_3675": "d651989d2710c16333584401276a29f5c36026b5fff3407204f53d550f3176fb",
+    "rich_3942": "b626009683a3a55af3ad72e8a4cc9cd629cb24444a2c404c073a87778b8148b8"
+  },
+  "notes": [
+    "thinking_budget is NOT forwarded to the server; only enable_thinking is",
+    "subprocess backend is not a filesystem isolation boundary",
+    "repair is evaluation support only and is not part of any submission artifact"
+  ]
+}

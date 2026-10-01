@@ -1,0 +1,37 @@
+[
+  {
+    "label": "environment",
+    "command": "cd /workspace && pwd -P && command -v python3 && git status --short",
+    "rc": 0,
+    "stdout": "/tmp/swegemma_sandbox_a426c87e-e96_n9_h16gq/workspace\n/tmp/swegemma_sandbox_a426c87e-e96_n9_h16gq/venv/bin/python3\n",
+    "stderr": ""
+  },
+  {
+    "label": "original_write",
+    "command": "python3 -c \"import base64,sys,pathlib;pathlib.Path('/tmp/testpatch.patch').write_bytes(base64.b64decode(sys.argv[1]))\" LS0tIGEvdGVzdHMvdGVzdF9hbnNpLnB5CisrKyBiL3Rlc3RzL3Rlc3RfYW5zaS5weQpAQCAtNjgsMyArNjgsMTcgQEAgZGVmIHRlc3RfZGVjb2RlX2lzc3VlXzI2ODgoYW5zaV9ieXRlcywgZXhwZWN0ZWRfdGV4dCk6CiAgICAgdGV4dCA9IFRleHQuZnJvbV9hbnNpKGFuc2lfYnl0ZXMuZGVjb2RlKCkpCiAKICAgICBhc3NlcnQgc3RyKHRleHQpID09IGV4cGVjdGVkX3RleHQKKworCitAcHl0ZXN0Lm1hcmsucGFyYW1ldHJpemUoImNvZGUiLCBbKiIwMTIzNDU2Nzg5Ojs8PT4/Il0pCitkZWYgdGVzdF9zdHJpcF9wcml2YXRlX2VzY2FwZV9zZXF1ZW5jZXMoY29kZSk6CisgICAgdGV4dCA9IFRleHQuZnJvbV9hbnNpKGYiXHgxYntjb2RlfXgiKQorCisgICAgY29uc29sZSA9IENvbnNvbGUoZm9yY2VfdGVybWluYWw9VHJ1ZSkKKworICAgIHdpdGggY29uc29sZS5jYXB0dXJlKCkgYXMgY2FwdHVyZToKKyAgICAgICAgY29uc29sZS5wcmludCh0ZXh0KQorCisgICAgZXhwZWN0ZWQgPSAieFxuIgorCisgICAgYXNzZXJ0IGNhcHR1cmUuZ2V0KCkgPT0gZXhwZWN0ZWQ=",
+    "rc": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "label": "file_probe",
+    "command": "ls -l /tmp/testpatch.patch; wc -c /tmp/testpatch.patch; sha256sum /tmp/testpatch.patch",
+    "rc": 0,
+    "stdout": "-rw-r--r-- 1 root root 545 Sep 29 14:59 /tmp/swegemma_sandbox_a426c87e-e96_n9_h16gq/tmp/testpatch.patch\n545 /tmp/swegemma_sandbox_a426c87e-e96_n9_h16gq/tmp/testpatch.patch\nd0d7c1a9934d393a56e5ea86b7e06c603deb63b399c77740982945ee743ff047  /tmp/swegemma_sandbox_a426c87e-e96_n9_h16gq/tmp/testpatch.patch\n",
+    "stderr": ""
+  },
+  {
+    "label": "original_apply",
+    "command": "cd /workspace && git apply --verbose /tmp/testpatch.patch || git apply -3 /tmp/testpatch.patch",
+    "rc": 128,
+    "stdout": "",
+    "stderr": "error: corrupt patch at line 20\nerror: corrupt patch at line 20\n"
+  },
+  {
+    "label": "after_apply",
+    "command": "cd /workspace && git diff --stat && git status --short",
+    "rc": 0,
+    "stdout": "",
+    "stderr": ""
+  }
+]

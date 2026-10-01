@@ -1,0 +1,245 @@
+{
+  "produced": "task split for later agent comparison",
+  "does_not_measure": [
+    "agent wins",
+    "regressions",
+    "inference runtime",
+    "private-grader behaviour"
+  ],
+  "sampling_plan": {
+    "strata": "repository x patch-size band (small<20, medium<60, large)",
+    "order_within_stratum": "ascending sha256(instance_id)",
+    "quota": {
+      "fastapi/fastapi": 12,
+      "psf/requests": 2,
+      "Textualize/rich": 9,
+      "encode/httpx": 1
+    },
+    "targets": {
+      "dev": 12,
+      "holdout": 12
+    },
+    "screen_cap": 40,
+    "defined_before_any_control_ran": true
+  },
+  "environment": {
+    "versions": {
+      "swegemma": "0.2.7",
+      "adk-submission": "0.2.11",
+      "adk-eval-core": "0.1.0",
+      "google-adk": "1.36.1"
+    },
+    "label": "repaired PUBLIC subprocess environment; NOT the private grader; no parity claimed",
+    "repair": "PEP517 backends installed per-package from /wheels and the competition wheels dir, then an explicit editable install of /workspace",
+    "httpx_preflight": {
+      "wheels_present": "hatchling-1.30.1-py3-none-any.whl",
+      "with_deps_rc": 1,
+      "with_deps_err": "ERROR: Could not find a version that satisfies the requirement trove-classifiers (from hatchling) (from versions: none)\nERROR: No matching distribution found for trove-classifiers\n",
+      "no_deps_out": "ERROR: Could not find a version that satisfies the requirement hatch_vcs (from versions: none)\nERROR: No matching distribution found for hatch_vcs",
+      "importable_rc": 1,
+      "importable": "ceback (most recent call last):\n  File \"<string>\", line 1, in <module>\nModuleNotFoundError: No module named 'hatchling'\n"
+    },
+    "httpx_usable": false
+  },
+  "access_boundary": "The harness builds agent prompts from problem_statement and hints only; reference patches and verification data are not placed in agent inputs. The subprocess backend executes run_command on the host and is NOT a filesystem isolation boundary, so traces must be audited for answer-key access before any agent result is trusted.",
+  "validity_rule": "grading imports from checkout in BOTH controls; reference and verification patches apply; a non-empty node set fails at baseline and passes with reference; reference run has no failed/errored node",
+  "dev": [
+    "rich_3180",
+    "rich_3061",
+    "rich_3938",
+    "rich_3675",
+    "rich_3894",
+    "rich_3278",
+    "rich_3905",
+    "rich_4079",
+    "fastapi_15280",
+    "fastapi_13537",
+    "fastapi_14487"
+  ],
+  "holdout": [
+    "rich_3486",
+    "rich_3942",
+    "rich_3521",
+    "rich_3953",
+    "rich_3535",
+    "rich_4076",
+    "rich_3472",
+    "rich_3470",
+    "fastapi_15800",
+    "fastapi_14479",
+    "fastapi_14301"
+  ],
+  "task_sha256": {
+    "rich_3894": "d8573bbb304794c15d74d3948a1fd423beec616ebc17254ec0922c36dca978e8",
+    "rich_3535": "3c70ac67cc8e78d329459615dd6db711e2715b92f6da4632cc4905f1faf0ad18",
+    "rich_3772": "f35bc82c01e1c4f892218c1dff1bdde62182d0d0347e4b4f0c12f9772cd1eb47",
+    "rich_3278": "8fb8127fdb3e069ae02db8a0e3d2e5306b96e7d42a1ab7c3185da2e269cd61bf",
+    "rich_4076": "cd096e8aab5e7891d02a7d08ed43dd33ef5bbe38a10a4431a19cfb692f06fc23",
+    "rich_3905": "1fcd96e259cc014927d992a5fb8426e03f388757501010dbb4bd45d7e520427c",
+    "rich_3472": "751ec31b30df40d353b7bb8d3d48ce1d57a00a39756990fd266ff02b9322afb1",
+    "rich_4079": "c3cacbe9f2f4dce6220eadf0df8b3998bfa0268fca6e457595d207b7d217d3cd",
+    "rich_3470": "728c43f6383dcb2dbd8fd8fc00af8256ccb3adf34a0a0320e24f058dcac66c88",
+    "rich_3180": "776163701370985632d4b3f874480f5d11fa597bd5f16690875006e8ff7e64a0",
+    "rich_3130": "fec1095fbd2a317b7faf2545bd6697ec793c7edef084da75e89e2ca955d022f9",
+    "rich_3486": "0cd437edcb332716de3d70dd85cc248a2b82b3f4c28cfecbad08e160880969a0",
+    "rich_3938": "43cf363ebb2736211e7cb70930220850d59ca4232ed1f5bde9c292962cddb54a",
+    "rich_3061": "f43be9a8ad4bff5fa4108c0bcf0e65f82db7da1bb673a2653a8118a8afdda43b",
+    "rich_3521": "9d467bdfe7e98567c99087260c7c2d8a0eceaf0bcbd199b78a8e881d92f73c25",
+    "rich_3782": "9ef29510d66f53619c0808842979b18671012d6efdfc212fdc8db2d1b46d9065",
+    "rich_3296": "22de4dba4d4c800b5db8baffa302722741249fac1d95e0de2d4d2c143b9f1156",
+    "rich_3675": "d651989d2710c16333584401276a29f5c36026b5fff3407204f53d550f3176fb",
+    "rich_3953": "e7cc72b8c46d88e17e38c3447bce739a8efd6a6b046b01baf1419ed012efd328",
+    "rich_3942": "b626009683a3a55af3ad72e8a4cc9cd629cb24444a2c404c073a87778b8148b8",
+    "rich_3930": "9fcc93957abf7cf1635a2a3a72da729514743d55dd03531010fde75416718cc8",
+    "fastapi_11355": "3b5a21a1626d793209c1968a6512586ff61580b9dd89849cc334369c8704d92a",
+    "fastapi_14512": "866d8fa0f278916cd7cf6a27144ca4d95781e00c2ea8d034ef85d699862c9cd2",
+    "fastapi_14953": "9211bf5d42113de1a63faeb8b78a25e534039b9567f56e4e2177ff6424129a7f",
+    "fastapi_15661": "59247475c57b2c31df191e441038d4e207e2869919e7c87411d339631ed79381",
+    "fastapi_15280": "2e6b43f033725cb2a5398b1cbe4b8a91b6027962ece919764d4faced4e840be9",
+    "fastapi_13537": "fedfffd2fa3b1f1e251e65891b8f3b2a3163b17bc3ac9ea46aeb07993481eed4",
+    "fastapi_14479": "368f6b6eac0022fdbf2eda6a26e902f2a59f89ec1ede206af5f9eb8c6c93b25b",
+    "fastapi_14349": "2bb80ad92de914f24be7d3006523077befa0234b97a09f5b3fe44339644c6fdd",
+    "fastapi_14266": "34b2ea6a469a23e13dd050d013ea6ad192b70c1742e99ebe96ee85432ed1fbaf",
+    "fastapi_14077": "a973ef3cc60bdc94582b499bf0f3e216a9cd919f06171ee0893e5b43229f5bfd",
+    "fastapi_14487": "12cb36cfab5717353ca691a72dab837b244afb598b5072b6af0166d077231fc7",
+    "fastapi_15030": "6a767db6e3fc1672fa1e5e22a4b2f5c47fcda8f2b3898f222f9576c461f97211",
+    "fastapi_15800": "349aab36d64f6f9ae806c9da6649f387adc72ce448f10a1fb7177b408f6ea2b2",
+    "fastapi_14099": "63da50c26cd46eb985c2bd58e9319125591081f93c143e599281f5d92828c1b9",
+    "fastapi_14246": "31bb479f63943da8dcb448c9a0a957066cb8f15b56875d790ec6582c05d4c639",
+    "fastapi_12942": "6de4b618c95789ad24e7088709880d447b5c7a6020db9d7540fe14203766bc67",
+    "fastapi_14301": "8fb5db647e1a290704a17d4ff32b460da29a9731647e7b6376796c90186018ed",
+    "fastapi_14851": "bb189738dc706df369aa2a18be374a68e2f406561e776371a3c5dc9b4dc2650b"
+  },
+  "target_nodes": {
+    "rich_3894": [
+      "test_inspect::test_qualname_in_slots"
+    ],
+    "rich_3535": [
+      "test_cells::test_is_single_cell_widths"
+    ],
+    "rich_3278": [
+      "test_ansi::test_strip_private_escape_sequences[0]",
+      "test_ansi::test_strip_private_escape_sequences[1]",
+      "test_ansi::test_strip_private_escape_sequences[2]",
+      "test_ansi::test_strip_private_escape_sequences[3]",
+      "test_ansi::test_strip_private_escape_sequences[4]",
+      "test_ansi::test_strip_private_escape_sequences[5]",
+      "test_ansi::test_strip_private_escape_sequences[6]",
+      "test_ansi::test_strip_private_escape_sequences[7]",
+      "test_ansi::test_strip_private_escape_sequences[8]",
+      "test_ansi::test_strip_private_escape_sequences[9]",
+      "test_ansi::test_strip_private_escape_sequences[:]",
+      "test_ansi::test_strip_private_escape_sequences[;]"
+    ],
+    "rich_4076": [
+      "test_ansi::test_decode",
+      "test_ansi::test_decode_example",
+      "test_ansi::test_decode_issue_2688[\\x1b[31mFound 4 errors in 2 files (checked 18 source files)\\x1b(B\\x1b[m\\n-Found 4 errors in 2 files (checked 18 source files)\\n]",
+      "test_ansi::test_decode_newlines"
+    ],
+    "rich_3905": [
+      "test_progress::test_no_output_if_progress_is_disabled_non_interactive"
+    ],
+    "rich_3472": [
+      "test_pretty::test_dataclass_no_attribute"
+    ],
+    "rich_4079": [
+      "test_markdown::test_inline_code_in_table_cells"
+    ],
+    "rich_3470": [
+      "test_console::test_capture_and_record"
+    ],
+    "rich_3180": [
+      "test_cells::test_chop_cells",
+      "test_cells::test_chop_cells_double_width_boundary",
+      "test_cells::test_chop_cells_mixed_width",
+      "test_text::test_wrap_cjk_mixed"
+    ],
+    "rich_3486": [
+      "test_traceback::test_traceback_finely_grained"
+    ],
+    "rich_3938": [
+      "test_segment::test_split_lines_terminator",
+      "test_segment::test_split_lines_terminator_single_line",
+      "test_text::test_soft_wrap_styled"
+    ],
+    "rich_3061": [
+      "test_panel::test_render_size",
+      "test_text::test_extend_style",
+      "test_text::test_tabs_to_spaces_spans[[bold]X\\tY-8-X       Y-expected_spans9]",
+      "test_text::test_tabs_to_spaces_spans[[bold]\\U0001f4a9\\U0001f4a9\\U0001f4a9\\U0001f4a9\\t\\U0001f4a9-8-\\U0001f4a9\\U0001f4a9\\U0001f4a9\\U0001f4a9        \\U0001f4a9-expected_spans11]",
+      "test_text::test_tabs_to_spaces_spans[[bold]\\U0001f4a9\\t\\U0001f4a9-8-\\U0001f4a9      \\U0001f4a9-expected_spans10]",
+      "test_text::test_tabs_to_spaces_spans[[bold]\\tbar-4-    bar-expected_spans6]",
+      "test_text::test_tabs_to_spaces_spans[[bold]foo\\tbar-4-foo bar-expected_spans5]",
+      "test_text::test_tabs_to_spaces_spans[[red]foo\\tbar\\n[green]egg\\tbaz-8-foo     bar\\negg     baz-expected_spans8]",
+      "test_text::test_tabs_to_spaces_spans[\\t-4-    -expected_spans1]",
+      "test_text::test_tabs_to_spaces_spans[\\t[bold]bar-4-    bar-expected_spans7]",
+      "test_text::test_tabs_to_spaces_spans[\\tbar-4-    bar-expected_spans2]",
+      "test_text::test_tabs_to_spaces_spans[foo\\tbar-4-foo bar-expected_spans3]"
+    ],
+    "rich_3521": [
+      "test_segment::test_split_cells_mixed[segment1]",
+      "test_segment::test_split_cells_mixed[segment3]",
+      "test_segment::test_split_cells_mixed[segment4]",
+      "test_segment::test_split_cells_mixed[segment7]"
+    ],
+    "rich_3675": [
+      "test_console::test_tty_compatible"
+    ],
+    "rich_3953": [
+      "test_cells::test_non_printable",
+      "test_cells::test_zwj"
+    ],
+    "rich_3942": [
+      "test_markdown::test_inline_styles_in_table",
+      "test_markdown::test_inline_styles_with_justification",
+      "test_markdown::test_markdown_render",
+      "test_markdown::test_markdown_table",
+      "test_markdown::test_partial_table",
+      "test_markdown_no_hyperlinks::test_markdown_render"
+    ],
+    "fastapi_15280": [
+      "tests.test_vibe::test_vibe_raises"
+    ],
+    "fastapi_13537": [
+      "tests.test_form_default::test_form_default_multi_part",
+      "tests.test_form_default::test_form_default_url_encoded"
+    ],
+    "fastapi_14479": [
+      "tests.test_invalid_sequence_param::test_invalid_dict",
+      "tests.test_invalid_sequence_param::test_invalid_sequence",
+      "tests.test_invalid_sequence_param::test_invalid_simple_dict",
+      "tests.test_invalid_sequence_param::test_invalid_tuple"
+    ],
+    "fastapi_14487": [
+      "tests.test_tutorial.test_handling_errors.test_tutorial004::test_get_validation_error"
+    ],
+    "fastapi_15800": [
+      "tests.test_frontend::test_404_fallback_handles_missing_assets",
+      "tests.test_frontend::test_api_route_404_is_not_replaced_by_frontend_fallback",
+      "tests.test_frontend::test_apirouter_frontend_uses_include_prefix",
+      "tests.test_frontend::test_apirouter_frontend_with_router_prefix_and_frontend_subpath",
+      "tests.test_frontend::test_auto_fallback_prefers_404_over_index",
+      "tests.test_frontend::test_auto_fallback_returns_normal_404_without_fallback_files",
+      "tests.test_frontend::test_auto_fallback_uses_index_when_404_is_missing",
+      "tests.test_frontend::test_basic_file_serving",
+      "tests.test_frontend::test_check_dir_false_allows_missing_directory_and_fails_on_request",
+      "tests.test_frontend::test_check_dir_true_fails_early_for_missing_directory",
+      "tests.test_frontend::test_directory_index_and_redirect",
+      "tests.test_frontend::test_docs_frontend_examples[tutorial001_py310.py-files0-/asset.txt-200-asset]"
+    ],
+    "fastapi_14301": [
+      "tests.test_dependency_yield_scope::test_app_level_dep_scope_function",
+      "tests.test_dependency_yield_scope::test_router_level_dep_scope_function"
+    ]
+  },
+  "shortfall": {
+    "dev": 1,
+    "holdout": 1
+  },
+  "frozen_before_any_agent_comparison": true,
+  "reproduce": [
+    "python scripts/make_evalset_notebook.py",
+    "python -m kaggle kernels push -p notebooks/evalset"
+  ]
+}

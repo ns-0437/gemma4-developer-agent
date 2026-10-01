@@ -1,0 +1,112 @@
+{
+  "task": "fastapi_14349",
+  "arm": "reference",
+  "reached_pytest": true,
+  "pytest_exit": 2,
+  "pytest_cmd": "PYTHONSAFEPATH=1 PYTHONNOUSERSITE=1 python3 -s -m pytest tests/test_schema_ref_pydantic_v2.py",
+  "nodes": {
+    "tests.test_schema_ref_pydantic_v2": "errored"
+  },
+  "failure_details": {
+    "tests.test_schema_ref_pydantic_v2": {
+      "kind": "error",
+      "message": "collection failure",
+      "detail": "ImportError while importing test module '/tmp/swegemma_sandbox_ae4f569d-c3f_gz5nntye/workspace/tests/test_schema_ref_pydantic_v2.py'.\nHint: make sure your test modules/packages have valid Python names.\nTraceback:\n/usr/lib/python3.12/importlib/__init__.py:90: in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ntests/test_schema_ref_pydantic_v2.py:6: in <module>\n    from inline_snapshot import snapshot\nE   ModuleNotFoundError: No module named 'inline_snapshot'"
+    }
+  },
+  "import_in_checkout": true,
+  "grading_import": "/tmp/swegemma_sandbox_ae4f569d-c3f_gz5nntye/workspace/fastapi/__init__.py",
+  "patch_rc": 0,
+  "patch_err": "",
+  "test_patch_rc": 0,
+  "test_patch_err": "",
+  "editable_rc": 0,
+  "collection_error": true,
+  "exception": null,
+  "traceback": null,
+  "task_sha256": "2bb80ad92de914f24be7d3006523077befa0234b97a09f5b3fe44339644c6fdd",
+  "snapshot_sha256": "e72bbdf63c215f098c4292b9a86a2fe51ffcc5620822c0fa0405d02086b3dd21",
+  "environment_versions": {
+    "swegemma": "0.2.7",
+    "adk-submission": "0.2.11",
+    "adk-eval-core": "0.1.0",
+    "google-adk": "1.36.1"
+  },
+  "policy_sha256": "f59934c6b6369e97d529f821c0284cc666d708e340b3654aafd16dfe5f5e37ee",
+  "setup_commands": [
+    {
+      "cmd": "pip setuptools",
+      "rc": 0
+    },
+    {
+      "cmd": "pip wheel",
+      "rc": 0
+    },
+    {
+      "cmd": "pip editables",
+      "rc": 0
+    },
+    {
+      "cmd": "pip flit_core",
+      "rc": 0
+    },
+    {
+      "cmd": "pip poetry_core",
+      "rc": 0
+    },
+    {
+      "cmd": "pip pdm_backend",
+      "rc": 0
+    },
+    {
+      "cmd": "pip -e .",
+      "rc": 0,
+      "tail": "p/swegemma_sandbox_dff8b257-891_jiam05m5/venv\n    Can't uninstall 'fastapi'. No files were found to uninstall.\nSuccessfully installed fastapi-0.121.1\n"
+    },
+    {
+      "cmd": "checkout tests/test_schema_ref_pydantic_v2.py",
+      "rc": 1
+    },
+    {
+      "cmd": "clean tests/test_schema_ref_pydantic_v2.py",
+      "rc": 0
+    },
+    {
+      "cmd": "pip setuptools",
+      "rc": 0
+    },
+    {
+      "cmd": "pip wheel",
+      "rc": 0
+    },
+    {
+      "cmd": "pip editables",
+      "rc": 0
+    },
+    {
+      "cmd": "pip flit_core",
+      "rc": 0
+    },
+    {
+      "cmd": "pip poetry_core",
+      "rc": 0
+    },
+    {
+      "cmd": "pip pdm_backend",
+      "rc": 0
+    },
+    {
+      "cmd": "pip -e .",
+      "rc": 0,
+      "tail": "p/swegemma_sandbox_ae4f569d-c3f_gz5nntye/venv\n    Can't uninstall 'fastapi'. No files were found to uninstall.\nSuccessfully installed fastapi-0.121.1\n"
+    },
+    {
+      "cmd": "checkout tests/test_schema_ref_pydantic_v2.py",
+      "rc": 1
+    },
+    {
+      "cmd": "clean tests/test_schema_ref_pydantic_v2.py",
+      "rc": 0
+    }
+  ]
+}

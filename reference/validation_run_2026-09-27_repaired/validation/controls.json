@@ -1,0 +1,524 @@
+[
+  {
+    "task": "fastapi_11194",
+    "repo": "fastapi/fastapi",
+    "verdict": "USABLE",
+    "reason": "target tests FAIL at baseline, PASS with gold; imports in checkout",
+    "new_tests": [
+      "test_file_form_order",
+      "test_file_list_form_order"
+    ],
+    "neg_pkg_file": "/tmp/swegemma_sandbox_5f10a62f-785_0f6_rfdl/workspace/fastapi/__init__.py",
+    "pos_pkg_file": "/tmp/swegemma_sandbox_4da827ba-f58_56e9a6w4/workspace/fastapi/__init__.py",
+    "imports_in_checkout": true,
+    "pip_available": true,
+    "pip": "pip 24.1.2 from /usr/local/lib/python3.12/dist-packages/pip (python 3.12)",
+    "editable_log": "",
+    "other_copies": [
+      "/usr/local/lib/python3.12/dist-packages/fastapi",
+      "/usr/local/lib/python3.12/dist-packages/model_hosting_container_standards/common/fastapi"
+    ],
+    "neg_exit": 1,
+    "pos_exit": 0,
+    "neg_target_failed": [
+      "test_file_form_order[/file_after_form]",
+      "test_file_list_form_order[/file_list_after_form]"
+    ],
+    "neg_target_errored": [],
+    "neg_target_passed": [
+      "test_file_form_order[/file_before_form]",
+      "test_file_list_form_order[/file_list_before_form]"
+    ],
+    "pos_target_passed": [
+      "test_file_form_order[/file_before_form]",
+      "test_file_form_order[/file_after_form]",
+      "test_file_list_form_order[/file_list_before_form]",
+      "test_file_list_form_order[/file_list_after_form]"
+    ],
+    "pos_target_failed": [],
+    "pos_target_errored": [],
+    "gold_applied": true,
+    "test_patch_applied": true,
+    "neg_tail": "======================== short test summary info ============================\nFAILED tests/test_file_and_form_order_issue_9116.py::test_file_form_order[/file_after_form]\nFAILED tests/test_file_and_form_order_issue_9116.py::test_file_list_form_order[/file_list_after_form]\n2 failed, 2 passed in 0.49s\n",
+    "pos_tail": "....                                                                     [100%]\n- generated xml file: /tmp/swegemma_sandbox_4da827ba-f58_56e9a6w4/tmp/_v_415462c1.xml -\n4 passed in 0.42s\n"
+  },
+  {
+    "task": "fastapi_14246",
+    "repo": "fastapi/fastapi",
+    "verdict": "INFRA_FAILURE",
+    "reason": "target tests neither failed nor errored (not collected?)",
+    "new_tests": [
+      "test_create_message",
+      "test_openapi_schema"
+    ],
+    "neg_pkg_file": "/tmp/swegemma_sandbox_b14f5338-805_k7rthsiq/workspace/fastapi/__init__.py",
+    "pos_pkg_file": "/tmp/swegemma_sandbox_bbb0f5f3-7a1_8k9nqwl_/workspace/fastapi/__init__.py",
+    "imports_in_checkout": true,
+    "pip_available": true,
+    "pip": "pip 24.1.2 from /usr/local/lib/python3.12/dist-packages/pip (python 3.12)",
+    "editable_log": "",
+    "other_copies": [
+      "/usr/local/lib/python3.12/dist-packages/fastapi",
+      "/usr/local/lib/python3.12/dist-packages/model_hosting_container_standards/common/fastapi"
+    ],
+    "neg_exit": 2,
+    "pos_exit": 2,
+    "neg_target_failed": [],
+    "neg_target_errored": [],
+    "neg_target_passed": [],
+    "pos_target_passed": [],
+    "pos_target_failed": [],
+    "pos_target_errored": [],
+    "gold_applied": true,
+    "test_patch_applied": true,
+    "neg_tail": "q/tmp/_v_adddf428.xml -\n=========================== short test summary info ============================\nERROR tests/test_no_schema_split.py\nERROR tests/test_pydantic_v1_v2_multifile/test_multifile.py\n!!!!!!!!!!!!!!!!!!! Interrupted: 2 errors during collection !!!!!!!!!!!!!!!!!!!!\n2 errors in 0.91s\n",
+    "pos_tail": "_/tmp/_v_6d445d52.xml -\n=========================== short test summary info ============================\nERROR tests/test_no_schema_split.py\nERROR tests/test_pydantic_v1_v2_multifile/test_multifile.py\n!!!!!!!!!!!!!!!!!!! Interrupted: 2 errors during collection !!!!!!!!!!!!!!!!!!!!\n2 errors in 0.62s\n"
+  },
+  {
+    "task": "fastapi_14361",
+    "repo": "fastapi/fastapi",
+    "verdict": "INFRA_FAILURE",
+    "reason": "target tests neither failed nor errored (not collected?)",
+    "new_tests": [
+      "test_get",
+      "test_openapi_schema"
+    ],
+    "neg_pkg_file": "/tmp/swegemma_sandbox_8bde310d-3d4_ncypgevo/workspace/fastapi/__init__.py",
+    "pos_pkg_file": "/tmp/swegemma_sandbox_9c806a93-27a_s5otjjl6/workspace/fastapi/__init__.py",
+    "imports_in_checkout": true,
+    "pip_available": true,
+    "pip": "pip 24.1.2 from /usr/local/lib/python3.12/dist-packages/pip (python 3.12)",
+    "editable_log": "",
+    "other_copies": [
+      "/usr/local/lib/python3.12/dist-packages/fastapi",
+      "/usr/local/lib/python3.12/dist-packages/model_hosting_container_standards/common/fastapi"
+    ],
+    "neg_exit": 2,
+    "pos_exit": 2,
+    "neg_target_failed": [],
+    "neg_target_errored": [],
+    "neg_target_passed": [],
+    "pos_target_passed": [],
+    "pos_target_failed": [],
+    "pos_target_errored": [],
+    "gold_applied": true,
+    "test_patch_applied": true,
+    "neg_tail": "ml file: /tmp/swegemma_sandbox_8bde310d-3d4_ncypgevo/tmp/_v_b7caed56.xml -\n=========================== short test summary info ============================\nERROR tests/test_schema_compat_pydantic_v2.py\n!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!\n1 error in 0.55s\n",
+    "pos_tail": "ml file: /tmp/swegemma_sandbox_9c806a93-27a_s5otjjl6/tmp/_v_7b7c015c.xml -\n=========================== short test summary info ============================\nERROR tests/test_schema_compat_pydantic_v2.py\n!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!\n1 error in 0.56s\n"
+  },
+  {
+    "task": "fastapi_14482",
+    "repo": "fastapi/fastapi",
+    "verdict": "INFRA_FAILURE",
+    "reason": "target tests neither failed nor errored (not collected?)",
+    "new_tests": [
+      "test_get",
+      "test_openapi_schema",
+      "test_typeadapter"
+    ],
+    "neg_pkg_file": "/tmp/swegemma_sandbox_a18eedc4-562_741_llt0/workspace/fastapi/__init__.py",
+    "pos_pkg_file": "/tmp/swegemma_sandbox_f6f24e30-247_0hvjr4am/workspace/fastapi/__init__.py",
+    "imports_in_checkout": true,
+    "pip_available": true,
+    "pip": "pip 24.1.2 from /usr/local/lib/python3.12/dist-packages/pip (python 3.12)",
+    "editable_log": "",
+    "other_copies": [
+      "/usr/local/lib/python3.12/dist-packages/fastapi",
+      "/usr/local/lib/python3.12/dist-packages/model_hosting_container_standards/common/fastapi"
+    ],
+    "neg_exit": 2,
+    "pos_exit": 2,
+    "neg_target_failed": [],
+    "neg_target_errored": [],
+    "neg_target_passed": [],
+    "pos_target_passed": [],
+    "pos_target_failed": [],
+    "pos_target_errored": [],
+    "gold_applied": true,
+    "test_patch_applied": true,
+    "neg_tail": "enerated xml file: /tmp/swegemma_sandbox_a18eedc4-562_741_llt0/tmp/_v_f8d4ee25.xml -\n=========================== short test summary info ============================\nERROR tests/test_arbitrary_types.py\n!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!\n1 error in 0.59s\n",
+    "pos_tail": "enerated xml file: /tmp/swegemma_sandbox_f6f24e30-247_0hvjr4am/tmp/_v_9d52f6a1.xml -\n=========================== short test summary info ============================\nERROR tests/test_arbitrary_types.py\n!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!\n1 error in 0.83s\n"
+  },
+  {
+    "task": "fastapi_14794",
+    "repo": "fastapi/fastapi",
+    "verdict": "USABLE",
+    "reason": "target tests FAIL at baseline, PASS with gold; imports in checkout",
+    "new_tests": [
+      "test_background_tasks_with_depends_annotated",
+      "test_request_with_depends_annotated",
+      "test_response_dependency_chain",
+      "test_response_dependency_returns_different_response_instance",
+      "test_response_with_depends_annotated",
+      "test_response_with_depends_default",
+      "test_response_without_depends"
+    ],
+    "neg_pkg_file": "/tmp/swegemma_sandbox_ea783bd9-72f_ffc5hq72/workspace/fastapi/__init__.py",
+    "pos_pkg_file": "/tmp/swegemma_sandbox_02dbf2eb-c9b_pjpozh5j/workspace/fastapi/__init__.py",
+    "imports_in_checkout": true,
+    "pip_available": true,
+    "pip": "pip 24.1.2 from /usr/local/lib/python3.12/dist-packages/pip (python 3.12)",
+    "editable_log": "",
+    "other_copies": [
+      "/usr/local/lib/python3.12/dist-packages/fastapi",
+      "/usr/local/lib/python3.12/dist-packages/model_hosting_container_standards/common/fastapi"
+    ],
+    "neg_exit": 1,
+    "pos_exit": 0,
+    "neg_target_failed": [
+      "test_response_with_depends_annotated",
+      "test_response_with_depends_default",
+      "test_response_dependency_chain",
+      "test_response_dependency_returns_different_response_instance",
+      "test_background_tasks_with_depends_annotated"
+    ],
+    "neg_target_errored": [],
+    "neg_target_passed": [
+      "test_response_without_depends",
+      "test_request_with_depends_annotated"
+    ],
+    "pos_target_passed": [
+      "test_response_with_depends_annotated",
+      "test_response_with_depends_default",
+      "test_response_without_depends",
+      "test_response_dependency_chain",
+      "test_response_dependency_returns_different_response_instance",
+      "test_request_with_depends_annotated",
+      "test_background_tasks_with_depends_annotated"
+    ],
+    "pos_target_failed": [],
+    "pos_target_errored": [],
+    "gold_applied": true,
+    "test_patch_applied": true,
+    "neg_tail": "\nFAILED tests/test_response_dependency.py::test_response_dependency_chain - As...\nFAILED tests/test_response_dependency.py::test_response_dependency_returns_different_response_instance\nFAILED tests/test_response_dependency.py::test_background_tasks_with_depends_annotated\n5 failed, 2 passed in 0.92s\n",
+    "pos_tail": ".......                                                                  [100%]\n- generated xml file: /tmp/swegemma_sandbox_02dbf2eb-c9b_pjpozh5j/tmp/_v_8ecd264f.xml -\n7 passed in 0.44s\n"
+  },
+  {
+    "task": "fastapi_15588",
+    "repo": "fastapi/fastapi",
+    "verdict": "USABLE",
+    "reason": "target tests FAIL at baseline, PASS with gold; imports in checkout",
+    "new_tests": [
+      "test_server_sent_event_negative_retry_rejected",
+      "test_server_sent_event_single_line_fields_reject_newlines"
+    ],
+    "neg_pkg_file": "/tmp/swegemma_sandbox_3e2b98fa-300_1sar90ft/workspace/fastapi/__init__.py",
+    "pos_pkg_file": "/tmp/swegemma_sandbox_bb29422d-235_24zd6by7/workspace/fastapi/__init__.py",
+    "imports_in_checkout": true,
+    "pip_available": true,
+    "pip": "pip 24.1.2 from /usr/local/lib/python3.12/dist-packages/pip (python 3.12)",
+    "editable_log": "",
+    "other_copies": [
+      "/usr/local/lib/python3.12/dist-packages/fastapi",
+      "/usr/local/lib/python3.12/dist-packages/model_hosting_container_standards/common/fastapi"
+    ],
+    "neg_exit": 1,
+    "pos_exit": 0,
+    "neg_target_failed": [
+      "test_server_sent_event_single_line_fields_reject_newlines[first\\nsecond-event]",
+      "test_server_sent_event_single_line_fields_reject_newlines[first\\nsecond-id]",
+      "test_server_sent_event_single_line_fields_reject_newlines[first\\rsecond-event]",
+      "test_server_sent_event_single_line_fields_reject_newlines[first\\rsecond-id]",
+      "test_server_sent_event_single_line_fields_reject_newlines[first\\r\\nsecond-event]",
+      "test_server_sent_event_single_line_fields_reject_newlines[first\\r\\nsecond-id]"
+    ],
+    "neg_target_errored": [],
+    "neg_target_passed": [
+      "test_server_sent_event_negative_retry_rejected"
+    ],
+    "pos_target_passed": [
+      "test_server_sent_event_single_line_fields_reject_newlines[first\\nsecond-event]",
+      "test_server_sent_event_single_line_fields_reject_newlines[first\\nsecond-id]",
+      "test_server_sent_event_single_line_fields_reject_newlines[first\\rsecond-event]",
+      "test_server_sent_event_single_line_fields_reject_newlines[first\\rsecond-id]",
+      "test_server_sent_event_single_line_fields_reject_newlines[first\\r\\nsecond-event]",
+      "test_server_sent_event_single_line_fields_reject_newlines[first\\r\\nsecond-id]",
+      "test_server_sent_event_negative_retry_rejected"
+    ],
+    "pos_target_failed": [],
+    "pos_target_errored": [],
+    "gold_applied": true,
+    "test_patch_applied": true,
+    "neg_tail": "_event_single_line_fields_reject_newlines[first\\rsecond-id]\nFAILED tests/test_sse.py::test_server_sent_event_single_line_fields_reject_newlines[first\\r\\nsecond-event]\nFAILED tests/test_sse.py::test_server_sent_event_single_line_fields_reject_newlines[first\\r\\nsecond-id]\n6 failed, 18 passed in 1.33s\n",
+    "pos_tail": "........................                                                 [100%]\n- generated xml file: /tmp/swegemma_sandbox_bb29422d-235_24zd6by7/tmp/_v_84ca1bb6.xml -\n24 passed in 1.21s\n"
+  },
+  {
+    "task": "rich_2725",
+    "repo": "Textualize/rich",
+    "verdict": "USABLE",
+    "reason": "target tests FAIL at baseline, PASS with gold; imports in checkout",
+    "new_tests": [
+      "test_placement_table_box_elements"
+    ],
+    "neg_pkg_file": "/tmp/swegemma_sandbox_73d51bc5-302_vbiypknb/workspace/rich/__init__.py",
+    "pos_pkg_file": "/tmp/swegemma_sandbox_4b2317f2-897_p5ig5n7c/workspace/rich/__init__.py",
+    "imports_in_checkout": true,
+    "pip_available": true,
+    "pip": "pip 24.1.2 from /usr/local/lib/python3.12/dist-packages/pip (python 3.12)",
+    "editable_log": "",
+    "other_copies": [
+      "/usr/local/lib/python3.12/dist-packages/pip/_vendor/rich",
+      "/usr/local/lib/python3.12/dist-packages/rich"
+    ],
+    "neg_exit": 1,
+    "pos_exit": 0,
+    "neg_target_failed": [
+      "test_placement_table_box_elements[False-False-abbbbbcbbbbbbbbbcbbbbcbbbbbd\\n1Dec  2Skywalker2275M2375M 3\\n4May  5Solo     5275M5393M 6\\nijjjjjkjjjjjjjjjkjjjjkjjjjjl\\n7Dec  8Last Jedi8262M81333M9\\nqrrrrrsrrrrrrrrrsrrrrsrrrrrt\\n]",
+      "test_placement_table_box_elements[True-False-abbbbbcbbbbbbbbbcbbbbcbbbbbd\\n1Month2Nickname 2Cost2Gross3\\nefffffgfffffffffgffffgfffffh\\n4Dec  5Skywalker5275M5375M 6\\n4May  5Solo     5275M5393M 6\\nijjjjjkjjjjjjjjjkjjjjkjjjjjl\\n7Dec  8Last Jedi8262M81333M9\\nqrrrrrsrrrrrrrrrsrrrrsrrrrrt\\n]",
+      "test_placement_table_box_elements[False-True-abbbbbcbbbbbbbbbcbbbbcbbbbbd\\n1Dec  2Skywalker2275M2375M 3\\n4May  5Solo     5275M5393M 6\\nijjjjjkjjjjjjjjjkjjjjkjjjjjl\\n4Dec  5Last Jedi5262M51333M6\\nmnnnnnonnnnnnnnnonnnnonnnnnp\\n7MONTH8NICKNAME 8COST8GROSS9\\nqrrrrrsrrrrrrrrrsrrrrsrrrrrt\\n]",
+      "test_placement_table_box_elements[True-True-abbbbbcbbbbbbbbbcbbbbcbbbbbd\\n1Month2Nickname 2Cost2Gross3\\nefffffgfffffffffgffffgfffffh\\n4Dec  5Skywalker5275M5375M 6\\n4May  5Solo     5275M5393M 6\\nijjjjjkjjjjjjjjjkjjjjkjjjjjl\\n4Dec  5Last Jedi5262M51333M6\\nmnnnnnonnnnnnnnnonnnnonnnnnp\\n7MONTH8NICKNAME 8COST8GROSS9\\nqrrrrrsrrrrrrrrrsrrrrsrrrrrt\\n]"
+    ],
+    "neg_target_errored": [],
+    "neg_target_passed": [],
+    "pos_target_passed": [
+      "test_placement_table_box_elements[False-False-abbbbbcbbbbbbbbbcbbbbcbbbbbd\\n1Dec  2Skywalker2275M2375M 3\\n4May  5Solo     5275M5393M 6\\nijjjjjkjjjjjjjjjkjjjjkjjjjjl\\n7Dec  8Last Jedi8262M81333M9\\nqrrrrrsrrrrrrrrrsrrrrsrrrrrt\\n]",
+      "test_placement_table_box_elements[True-False-abbbbbcbbbbbbbbbcbbbbcbbbbbd\\n1Month2Nickname 2Cost2Gross3\\nefffffgfffffffffgffffgfffffh\\n4Dec  5Skywalker5275M5375M 6\\n4May  5Solo     5275M5393M 6\\nijjjjjkjjjjjjjjjkjjjjkjjjjjl\\n7Dec  8Last Jedi8262M81333M9\\nqrrrrrsrrrrrrrrrsrrrrsrrrrrt\\n]",
+      "test_placement_table_box_elements[False-True-abbbbbcbbbbbbbbbcbbbbcbbbbbd\\n1Dec  2Skywalker2275M2375M 3\\n4May  5Solo     5275M5393M 6\\nijjjjjkjjjjjjjjjkjjjjkjjjjjl\\n4Dec  5Last Jedi5262M51333M6\\nmnnnnnonnnnnnnnnonnnnonnnnnp\\n7MONTH8NICKNAME 8COST8GROSS9\\nqrrrrrsrrrrrrrrrsrrrrsrrrrrt\\n]",
+      "test_placement_table_box_elements[True-True-abbbbbcbbbbbbbbbcbbbbcbbbbbd\\n1Month2Nickname 2Cost2Gross3\\nefffffgfffffffffgffffgfffffh\\n4Dec  5Skywalker5275M5375M 6\\n4May  5Solo     5275M5393M 6\\nijjjjjkjjjjjjjjjkjjjjkjjjjjl\\n4Dec  5Last Jedi5262M51333M6\\nmnnnnnonnnnnnnnnonnnnonnnnnp\\n7MONTH8NICKNAME 8COST8GROSS9\\nqrrrrrsrrrrrrrrrsrrrrsrrrrrt\\n]"
+    ],
+    "pos_target_failed": [],
+    "pos_target_errored": [],
+    "gold_applied": true,
+    "test_patch_applied": true,
+    "neg_tail": "Month2Nickname 2Cost2Gross3\\nefffffgfffffffffgffffgfffffh\\n4Dec  5Skywalker5275M5375M 6\\n4May  5Solo     5275M5393M 6\\nijjjjjkjjjjjjjjjkjjjjkjjjjjl\\n4Dec  5Last Jedi5262M51333M6\\nmnnnnnonnnnnnnnnonnnnonnnnnp\\n7MONTH8NICKNAME 8COST8GROSS9\\nqrrrrrsrrrrrrrrrsrrrrsrrrrrt\\n]\n4 failed, 15 passed in 0.22s\n",
+    "pos_tail": "...................                                                      [100%]\n- generated xml file: /tmp/swegemma_sandbox_4b2317f2-897_p5ig5n7c/tmp/_v_9b58f8b2.xml -\n19 passed in 0.14s\n"
+  },
+  {
+    "task": "rich_3105",
+    "repo": "Textualize/rich",
+    "verdict": "INFRA_FAILURE",
+    "reason": "target tests neither failed nor errored (not collected?)",
+    "new_tests": [],
+    "neg_pkg_file": "/tmp/swegemma_sandbox_513cef5a-091_eww454eu/workspace/rich/__init__.py",
+    "pos_pkg_file": "/tmp/swegemma_sandbox_0fdd0bbb-354_a4ag2vw8/workspace/rich/__init__.py",
+    "imports_in_checkout": true,
+    "pip_available": true,
+    "pip": "pip 24.1.2 from /usr/local/lib/python3.12/dist-packages/pip (python 3.12)",
+    "editable_log": "",
+    "other_copies": [
+      "/usr/local/lib/python3.12/dist-packages/pip/_vendor/rich",
+      "/usr/local/lib/python3.12/dist-packages/rich"
+    ],
+    "neg_exit": 1,
+    "pos_exit": 0,
+    "neg_target_failed": [],
+    "neg_target_errored": [],
+    "neg_target_passed": [],
+    "pos_target_passed": [],
+    "pos_target_failed": [],
+    "pos_target_errored": [],
+    "gold_applied": true,
+    "test_patch_applied": true,
+    "neg_tail": "===========================\nFAILED tests/test_console.py::test_export_html - assert '<!DOCTYPE ht...y>\\n<...\nFAILED tests/test_console.py::test_export_html_inline - assert '<!DOCTYPE ht....\nFAILED tests/test_console.py::test_save_html - assert '<!DOCTYPE ht...y>\\n</h...\n3 failed, 93 passed in 0.36s\n",
+    "pos_tail": "........................................................................ [ 75%]\n........................                                                 [100%]\n- generated xml file: /tmp/swegemma_sandbox_0fdd0bbb-354_a4ag2vw8/tmp/_v_09cd156c.xml -\n96 passed in 0.26s\n"
+  },
+  {
+    "task": "rich_3471",
+    "repo": "Textualize/rich",
+    "verdict": "USABLE",
+    "reason": "target tests FAIL at baseline, PASS with gold; imports in checkout",
+    "new_tests": [
+      "test_append_tokens"
+    ],
+    "neg_pkg_file": "/tmp/swegemma_sandbox_291ea65a-e25_1qceviu4/workspace/rich/__init__.py",
+    "pos_pkg_file": "/tmp/swegemma_sandbox_2e4578b9-32b_48pignhw/workspace/rich/__init__.py",
+    "imports_in_checkout": true,
+    "pip_available": true,
+    "pip": "pip 24.1.2 from /usr/local/lib/python3.12/dist-packages/pip (python 3.12)",
+    "editable_log": "",
+    "other_copies": [
+      "/usr/local/lib/python3.12/dist-packages/pip/_vendor/rich",
+      "/usr/local/lib/python3.12/dist-packages/rich"
+    ],
+    "neg_exit": 1,
+    "pos_exit": 0,
+    "neg_target_failed": [
+      "test_append_tokens"
+    ],
+    "neg_target_errored": [],
+    "neg_target_passed": [],
+    "pos_target_passed": [
+      "test_append_tokens"
+    ],
+    "pos_target_failed": [],
+    "pos_target_errored": [],
+    "gold_applied": true,
+    "test_patch_applied": true,
+    "neg_tail": "py:1164: IndexError\n- generated xml file: /tmp/swegemma_sandbox_291ea65a-e25_1qceviu4/tmp/_v_5fe34bb5.xml -\n=========================== short test summary info ============================\nFAILED tests/test_text.py::test_append_tokens - IndexError: list index out of...\n1 failed, 107 passed in 0.54s\n",
+    "pos_tail": "........................................................................ [ 66%]\n....................................                                     [100%]\n- generated xml file: /tmp/swegemma_sandbox_2e4578b9-32b_48pignhw/tmp/_v_100e2b8e.xml -\n108 passed in 0.36s\n"
+  },
+  {
+    "task": "rich_3676",
+    "repo": "Textualize/rich",
+    "verdict": "USABLE",
+    "reason": "target tests FAIL at baseline, PASS with gold; imports in checkout",
+    "new_tests": [
+      "test_notes"
+    ],
+    "neg_pkg_file": "/tmp/swegemma_sandbox_4daa09cf-0b5__wbp2beo/workspace/rich/__init__.py",
+    "pos_pkg_file": "/tmp/swegemma_sandbox_df3d534a-285_b58blziz/workspace/rich/__init__.py",
+    "imports_in_checkout": true,
+    "pip_available": true,
+    "pip": "pip 24.1.2 from /usr/local/lib/python3.12/dist-packages/pip (python 3.12)",
+    "editable_log": "",
+    "other_copies": [
+      "/usr/local/lib/python3.12/dist-packages/pip/_vendor/rich",
+      "/usr/local/lib/python3.12/dist-packages/rich"
+    ],
+    "neg_exit": 1,
+    "pos_exit": 0,
+    "neg_target_failed": [
+      "test_notes"
+    ],
+    "neg_target_errored": [],
+    "neg_target_passed": [],
+    "pos_target_passed": [
+      "test_notes"
+    ],
+    "pos_target_failed": [],
+    "pos_target_errored": [],
+    "gold_applied": true,
+    "test_patch_applied": true,
+    "neg_tail": "buteError\n- generated xml file: /tmp/swegemma_sandbox_4daa09cf-0b5__wbp2beo/tmp/_v_dae7af66.xml -\n=========================== short test summary info ============================\nFAILED tests/test_traceback.py::test_notes - AttributeError: 'Stack' object h...\n1 failed, 20 passed, 1 skipped in 2.04s\n",
+    "pos_tail": "...................s..                                                   [100%]\n- generated xml file: /tmp/swegemma_sandbox_df3d534a-285_b58blziz/tmp/_v_e247cb30.xml -\n21 passed, 1 skipped in 1.21s\n"
+  },
+  {
+    "task": "rich_3934",
+    "repo": "Textualize/rich",
+    "verdict": "USABLE",
+    "reason": "target tests FAIL at baseline, PASS with gold; imports in checkout",
+    "new_tests": [
+      "test_live_empty"
+    ],
+    "neg_pkg_file": "/tmp/swegemma_sandbox_4439995c-3b5_qpct2w88/workspace/rich/__init__.py",
+    "pos_pkg_file": "/tmp/swegemma_sandbox_d1a6ba1b-721_1aei4leh/workspace/rich/__init__.py",
+    "imports_in_checkout": true,
+    "pip_available": true,
+    "pip": "pip 24.1.2 from /usr/local/lib/python3.12/dist-packages/pip (python 3.12)",
+    "editable_log": "",
+    "other_copies": [
+      "/usr/local/lib/python3.12/dist-packages/pip/_vendor/rich",
+      "/usr/local/lib/python3.12/dist-packages/rich"
+    ],
+    "neg_exit": 1,
+    "pos_exit": 0,
+    "neg_target_failed": [
+      "test_live_empty"
+    ],
+    "neg_target_errored": [],
+    "neg_target_passed": [],
+    "pos_target_passed": [
+      "test_live_empty"
+    ],
+    "pos_target_failed": [],
+    "pos_target_errored": [],
+    "gold_applied": true,
+    "test_patch_applied": true,
+    "neg_tail": "x1b[2K\\n\\x1b[?25h\\r'\n- generated xml file: /tmp/swegemma_sandbox_4439995c-3b5_qpct2w88/tmp/_v_68f6d280.xml -\n=========================== short test summary info ============================\nFAILED tests/test_live.py::test_live_empty - AssertionError: assert '\\n' not ...\n1 failed, 10 passed in 2.15s\n",
+    "pos_tail": "...........                                                              [100%]\n- generated xml file: /tmp/swegemma_sandbox_d1a6ba1b-721_1aei4leh/tmp/_v_b1cc4174.xml -\n11 passed in 2.10s\n"
+  },
+  {
+    "task": "requests_6589",
+    "repo": "psf/requests",
+    "verdict": "INFRA_FAILURE",
+    "reason": "target tests ERROR at setup, not fail: ['test_content_length_for_bytes_data', 'test_content_length_for_string_data_counts_bytes']",
+    "new_tests": [
+      "test_content_length_for_bytes_data",
+      "test_content_length_for_string_data_counts_bytes",
+      "test_nonhttp_schemes_dont_check_URLs"
+    ],
+    "neg_pkg_file": "/tmp/swegemma_sandbox_fd7d21c7-2e4_mgif51ev/workspace/src/requests/__init__.py",
+    "pos_pkg_file": "/tmp/swegemma_sandbox_f1af5859-593_5ry4xmxi/workspace/src/requests/__init__.py",
+    "imports_in_checkout": true,
+    "pip_available": true,
+    "pip": "pip 24.1.2 from /usr/local/lib/python3.12/dist-packages/pip (python 3.12)",
+    "editable_log": "",
+    "other_copies": [
+      "/usr/local/lib/python3.12/dist-packages/pip/_vendor/requests",
+      "/usr/local/lib/python3.12/dist-packages/botocore/vendored/requests",
+      "/usr/local/lib/python3.12/dist-packages/google/resumable_media/requests",
+      "/usr/local/lib/python3.12/dist-packages/google/_async_resumable_media/requests"
+    ],
+    "neg_exit": 1,
+    "pos_exit": 1,
+    "neg_target_failed": [],
+    "neg_target_errored": [
+      "test_content_length_for_bytes_data",
+      "test_content_length_for_string_data_counts_bytes"
+    ],
+    "neg_target_passed": [
+      "test_nonhttp_schemes_dont_check_URLs"
+    ],
+    "pos_target_passed": [
+      "test_nonhttp_schemes_dont_check_URLs"
+    ],
+    "pos_target_failed": [],
+    "pos_target_errored": [
+      "test_content_length_for_bytes_data",
+      "test_content_length_for_string_data_counts_bytes"
+    ],
+    "gold_applied": true,
+    "test_patch_applied": true,
+    "neg_tail": "L]\nERROR tests/test_requests.py::TestPreparingURLs::test_post_json_nan\nERROR tests/test_requests.py::TestPreparingURLs::test_json_decode_compatibility\nERROR tests/test_requests.py::TestPreparingURLs::test_json_decode_persists_doc_attr\n135 passed, 1 skipped, 1 xfailed, 187 errors in 65.26s (0:01:05)\n",
+    "pos_tail": "L]\nERROR tests/test_requests.py::TestPreparingURLs::test_post_json_nan\nERROR tests/test_requests.py::TestPreparingURLs::test_json_decode_compatibility\nERROR tests/test_requests.py::TestPreparingURLs::test_json_decode_persists_doc_attr\n135 passed, 1 skipped, 1 xfailed, 187 errors in 65.47s (0:01:05)\n"
+  },
+  {
+    "task": "requests_7309",
+    "repo": "psf/requests",
+    "verdict": "INFRA_FAILURE",
+    "reason": "target tests neither failed nor errored (not collected?)",
+    "new_tests": [],
+    "neg_pkg_file": "/tmp/swegemma_sandbox_c3d6637c-ec4_4wsap1vk/workspace/src/requests/__init__.py",
+    "pos_pkg_file": "/tmp/swegemma_sandbox_7221b8ef-159_r4rf95c0/workspace/src/requests/__init__.py",
+    "imports_in_checkout": true,
+    "pip_available": true,
+    "pip": "pip 24.1.2 from /usr/local/lib/python3.12/dist-packages/pip (python 3.12)",
+    "editable_log": "",
+    "other_copies": [
+      "/usr/local/lib/python3.12/dist-packages/pip/_vendor/requests",
+      "/usr/local/lib/python3.12/dist-packages/botocore/vendored/requests",
+      "/usr/local/lib/python3.12/dist-packages/google/resumable_media/requests",
+      "/usr/local/lib/python3.12/dist-packages/google/_async_resumable_media/requests"
+    ],
+    "neg_exit": 1,
+    "pos_exit": 0,
+    "neg_target_failed": [],
+    "neg_target_errored": [],
+    "neg_target_passed": [],
+    "pos_target_passed": [],
+    "pos_target_failed": [],
+    "pos_target_errored": [],
+    "gold_applied": true,
+    "test_patch_applied": true,
+    "neg_tail": " ; no_equals -expected6]\nFAILED tests/test_utils.py::test__parse_content_type_header[multipart/form-data; boundary = something ; \"boundary2=something_else\" ; no_equals -expected7]\nFAILED tests/test_utils.py::test_get_encoding_from_headers[value3-ISO-8859-1]\n5 failed, 202 passed, 13 skipped in 0.48s\n",
+    "pos_tail": "............ [ 65%]\n...........................................................sssssssssss.. [ 98%]\n...s                                                                     [100%]\n- generated xml file: /tmp/swegemma_sandbox_7221b8ef-159_r4rf95c0/tmp/_v_8250d9ce.xml -\n207 passed, 13 skipped in 0.34s\n"
+  },
+  {
+    "task": "httpx_3672",
+    "repo": "encode/httpx",
+    "verdict": "UNUSABLE",
+    "reason": "import not in checkout (neg=/usr/local/lib/python3.12/dist-packages/httpx/__init__.py)",
+    "new_tests": [],
+    "neg_pkg_file": "/usr/local/lib/python3.12/dist-packages/httpx/__init__.py",
+    "pos_pkg_file": "/usr/local/lib/python3.12/dist-packages/httpx/__init__.py",
+    "imports_in_checkout": false,
+    "pip_available": true,
+    "pip": "pip 24.1.2 from /usr/local/lib/python3.12/dist-packages/pip (python 3.12)",
+    "editable_log": "",
+    "other_copies": [
+      "/usr/local/lib/python3.12/dist-packages/httpx"
+    ],
+    "neg_exit": 2,
+    "pos_exit": 2,
+    "neg_target_failed": [],
+    "neg_target_errored": [],
+    "neg_target_passed": [],
+    "pos_target_passed": [],
+    "pos_target_failed": [],
+    "pos_target_errored": [],
+    "gold_applied": true,
+    "test_patch_applied": true,
+    "neg_tail": "17c2-b12_76ob6p94/tmp/_v_d0fa70e8.xml -\n=========================== short test summary info ============================\nERROR tests/test_parsers.py - AttributeError: module 'httpx' has no attribute...\n!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!\n1 error in 0.22s\n",
+    "pos_tail": "e7a5-367_me_bdlwx/tmp/_v_5e7510b8.xml -\n=========================== short test summary info ============================\nERROR tests/test_parsers.py - AttributeError: module 'httpx' has no attribute...\n!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!\n1 error in 0.21s\n"
+  }
+]

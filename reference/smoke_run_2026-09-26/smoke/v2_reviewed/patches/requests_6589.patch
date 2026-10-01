@@ -1,0 +1,28 @@
+diff --git a/repro.py b/repro.py
+new file mode 100644
+index 00000000..3b2d6dbd
+--- /dev/null
++++ b/repro.py
+@@ -0,0 +1,22 @@
++import requests.utils
++
++def test_super_len_str():
++    # ASCII string
++    s1 = "hello"
++    assert requests.utils.super_len(s1) == 5
++    
++    # Non-ASCII string (UTF-8)
++    # '🚀' is 4 bytes in UTF-8
++    s2 = "🚀"
++    # Current behavior: len("🚀") is 1
++    # Expected behavior: encoded bytes length is 4
++    print(f"super_len('🚀') = {requests.utils.super_len(s2)}")
++    assert requests.utils.super_len(s2) == 4
++
++if __name__ == "__main__":
++    try:
++        test_super_len_str()
++        print("Test passed!")
++    except AssertionError as e:
++        print(f"Test failed: {e}")
++        exit(1)

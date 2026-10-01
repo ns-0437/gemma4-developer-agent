@@ -1,0 +1,192 @@
+{
+  "task": "fastapi_14099",
+  "arm": "reference",
+  "reached_pytest": true,
+  "pytest_exit": 2,
+  "pytest_cmd": "PYTHONSAFEPATH=1 PYTHONNOUSERSITE=1 python3 -s -m pytest tests/test_dependency_after_yield_raise.py tests/test_dependency_after_yield_streaming.py tests/test_dependency_after_yield_websockets.py tests/test_dependency_contextmanager.py tests/test_route_scope.py tests/test_tutorial/test_dependencies/test_tutorial008c.py",
+  "nodes": {
+    "tests.test_tutorial.test_dependencies.test_tutorial008c": "errored"
+  },
+  "failure_details": {
+    "tests.test_tutorial.test_dependencies.test_tutorial008c": {
+      "kind": "error",
+      "message": "collection failure",
+      "detail": "ImportError while importing test module '/tmp/swegemma_sandbox_8852af08-c96_w6y1huc0/workspace/tests/test_tutorial/test_dependencies/test_tutorial008c.py'.\nHint: make sure your test modules/packages have valid Python names.\nTraceback:\n/usr/lib/python3.12/importlib/__init__.py:90: in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ntests/test_tutorial/test_dependencies/test_tutorial008c.py:8: in <module>\n    from ...utils import needs_py39\ntests/utils.py:5: in <module>\n    from inline_snapshot import Snapshot\nE   ModuleNotFoundError: No module named 'inline_snapshot'"
+    }
+  },
+  "import_in_checkout": true,
+  "grading_import": "/tmp/swegemma_sandbox_8852af08-c96_w6y1huc0/workspace/fastapi/__init__.py",
+  "patch_rc": 0,
+  "patch_err": "",
+  "test_patch_rc": 0,
+  "test_patch_err": "",
+  "editable_rc": 0,
+  "collection_error": true,
+  "exception": null,
+  "traceback": null,
+  "task_sha256": "63da50c26cd46eb985c2bd58e9319125591081f93c143e599281f5d92828c1b9",
+  "snapshot_sha256": "531132dc5d789eda866dc99a0239d5fd5c911b247aec7d1cf1debb27810d8f55",
+  "environment_versions": {
+    "swegemma": "0.2.7",
+    "adk-submission": "0.2.11",
+    "adk-eval-core": "0.1.0",
+    "google-adk": "1.36.1"
+  },
+  "policy_sha256": "f59934c6b6369e97d529f821c0284cc666d708e340b3654aafd16dfe5f5e37ee",
+  "setup_commands": [
+    {
+      "cmd": "pip setuptools",
+      "rc": 0
+    },
+    {
+      "cmd": "pip wheel",
+      "rc": 0
+    },
+    {
+      "cmd": "pip editables",
+      "rc": 0
+    },
+    {
+      "cmd": "pip flit_core",
+      "rc": 0
+    },
+    {
+      "cmd": "pip poetry_core",
+      "rc": 0
+    },
+    {
+      "cmd": "pip pdm_backend",
+      "rc": 0
+    },
+    {
+      "cmd": "pip -e .",
+      "rc": 0,
+      "tail": "p/swegemma_sandbox_125315c7-652_heggx1pd/venv\n    Can't uninstall 'fastapi'. No files were found to uninstall.\nSuccessfully installed fastapi-0.117.1\n"
+    },
+    {
+      "cmd": "checkout tests/test_dependency_after_yield_raise.py",
+      "rc": 1
+    },
+    {
+      "cmd": "clean tests/test_dependency_after_yield_raise.py",
+      "rc": 0
+    },
+    {
+      "cmd": "checkout tests/test_dependency_after_yield_streaming.py",
+      "rc": 1
+    },
+    {
+      "cmd": "clean tests/test_dependency_after_yield_streaming.py",
+      "rc": 0
+    },
+    {
+      "cmd": "checkout tests/test_dependency_after_yield_websockets.py",
+      "rc": 1
+    },
+    {
+      "cmd": "clean tests/test_dependency_after_yield_websockets.py",
+      "rc": 0
+    },
+    {
+      "cmd": "checkout tests/test_dependency_contextmanager.py",
+      "rc": 0
+    },
+    {
+      "cmd": "clean tests/test_dependency_contextmanager.py",
+      "rc": 0
+    },
+    {
+      "cmd": "checkout tests/test_route_scope.py",
+      "rc": 0
+    },
+    {
+      "cmd": "clean tests/test_route_scope.py",
+      "rc": 0
+    },
+    {
+      "cmd": "checkout tests/test_tutorial/test_dependencies/test_tutorial008c.py",
+      "rc": 0
+    },
+    {
+      "cmd": "clean tests/test_tutorial/test_dependencies/test_tutorial008c.py",
+      "rc": 0
+    },
+    {
+      "cmd": "pip setuptools",
+      "rc": 0
+    },
+    {
+      "cmd": "pip wheel",
+      "rc": 0
+    },
+    {
+      "cmd": "pip editables",
+      "rc": 0
+    },
+    {
+      "cmd": "pip flit_core",
+      "rc": 0
+    },
+    {
+      "cmd": "pip poetry_core",
+      "rc": 0
+    },
+    {
+      "cmd": "pip pdm_backend",
+      "rc": 0
+    },
+    {
+      "cmd": "pip -e .",
+      "rc": 0,
+      "tail": "p/swegemma_sandbox_8852af08-c96_w6y1huc0/venv\n    Can't uninstall 'fastapi'. No files were found to uninstall.\nSuccessfully installed fastapi-0.117.1\n"
+    },
+    {
+      "cmd": "checkout tests/test_dependency_after_yield_raise.py",
+      "rc": 1
+    },
+    {
+      "cmd": "clean tests/test_dependency_after_yield_raise.py",
+      "rc": 0
+    },
+    {
+      "cmd": "checkout tests/test_dependency_after_yield_streaming.py",
+      "rc": 1
+    },
+    {
+      "cmd": "clean tests/test_dependency_after_yield_streaming.py",
+      "rc": 0
+    },
+    {
+      "cmd": "checkout tests/test_dependency_after_yield_websockets.py",
+      "rc": 1
+    },
+    {
+      "cmd": "clean tests/test_dependency_after_yield_websockets.py",
+      "rc": 0
+    },
+    {
+      "cmd": "checkout tests/test_dependency_contextmanager.py",
+      "rc": 0
+    },
+    {
+      "cmd": "clean tests/test_dependency_contextmanager.py",
+      "rc": 0
+    },
+    {
+      "cmd": "checkout tests/test_route_scope.py",
+      "rc": 0
+    },
+    {
+      "cmd": "clean tests/test_route_scope.py",
+      "rc": 0
+    },
+    {
+      "cmd": "checkout tests/test_tutorial/test_dependencies/test_tutorial008c.py",
+      "rc": 0
+    },
+    {
+      "cmd": "clean tests/test_tutorial/test_dependencies/test_tutorial008c.py",
+      "rc": 0
+    }
+  ]
+}

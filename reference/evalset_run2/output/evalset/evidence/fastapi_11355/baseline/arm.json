@@ -1,0 +1,75 @@
+{
+  "task": "fastapi_11355",
+  "arm": "baseline",
+  "reached_pytest": true,
+  "pytest_exit": 2,
+  "pytest_cmd": "PYTHONSAFEPATH=1 PYTHONNOUSERSITE=1 python3 -s -m pytest tests/test_stringified_annotations_simple.py",
+  "nodes": {
+    "tests.test_stringified_annotations_simple": "errored"
+  },
+  "failure_details": {
+    "tests.test_stringified_annotations_simple": {
+      "kind": "error",
+      "message": "collection failure",
+      "detail": "ImportError while importing test module '/tmp/swegemma_sandbox_16e19f2a-6cf_xqd5cigd/workspace/tests/test_stringified_annotations_simple.py'.\nHint: make sure your test modules/packages have valid Python names.\nTraceback:\n/usr/lib/python3.12/importlib/__init__.py:90: in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ntests/test_stringified_annotations_simple.py:7: in <module>\n    from .utils import needs_py310\ntests/utils.py:5: in <module>\n    from inline_snapshot import Snapshot\nE   ModuleNotFoundError: No module named 'inline_snapshot'"
+    }
+  },
+  "import_in_checkout": true,
+  "grading_import": "/tmp/swegemma_sandbox_16e19f2a-6cf_xqd5cigd/workspace/fastapi/__init__.py",
+  "patch_rc": 0,
+  "patch_err": null,
+  "test_patch_rc": 0,
+  "test_patch_err": "",
+  "editable_rc": 0,
+  "collection_error": true,
+  "exception": null,
+  "traceback": null,
+  "task_sha256": "3b5a21a1626d793209c1968a6512586ff61580b9dd89849cc334369c8704d92a",
+  "snapshot_sha256": "221c813ac48ec99474ff8c2805e0f4e8f86a978be78760b609f0c15e25c5ec18",
+  "environment_versions": {
+    "swegemma": "0.2.7",
+    "adk-submission": "0.2.11",
+    "adk-eval-core": "0.1.0",
+    "google-adk": "1.36.1"
+  },
+  "policy_sha256": "f59934c6b6369e97d529f821c0284cc666d708e340b3654aafd16dfe5f5e37ee",
+  "setup_commands": [
+    {
+      "cmd": "pip setuptools",
+      "rc": 0
+    },
+    {
+      "cmd": "pip wheel",
+      "rc": 0
+    },
+    {
+      "cmd": "pip editables",
+      "rc": 0
+    },
+    {
+      "cmd": "pip flit_core",
+      "rc": 0
+    },
+    {
+      "cmd": "pip poetry_core",
+      "rc": 0
+    },
+    {
+      "cmd": "pip pdm_backend",
+      "rc": 0
+    },
+    {
+      "cmd": "pip -e .",
+      "rc": 0,
+      "tail": "p/swegemma_sandbox_16e19f2a-6cf_xqd5cigd/venv\n    Can't uninstall 'fastapi'. No files were found to uninstall.\nSuccessfully installed fastapi-0.123.6\n"
+    },
+    {
+      "cmd": "checkout tests/test_stringified_annotations_simple.py",
+      "rc": 1
+    },
+    {
+      "cmd": "clean tests/test_stringified_annotations_simple.py",
+      "rc": 0
+    }
+  ]
+}

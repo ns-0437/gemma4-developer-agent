@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="8" failures="0" skipped="1" tests="9" time="1.579" timestamp="2026-09-28T16:12:40.997184+00:00" hostname="fcac5414f593"><testcase classname="" name="tests.benchmarks.test_general_performance" time="0.000"><skipped message="collection skipped">('/tmp/swegemma_sandbox_0efff448-29e_pe9cpj2f/workspace/tests/benchmarks/test_general_performance.py', 13, 'Skipped: Benchmark tests are skipped by default; run with --codspeed.')</skipped></testcase><testcase classname="" name="tests.test_compat_params_v1" time="0.000"><error message="collection failure">ImportError while importing test module '/tmp/swegemma_sandbox_0efff448-29e_pe9cpj2f/workspace/tests/test_compat_params_v1.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_compat_params_v1.py:27: in &lt;module&gt;
+    from inline_snapshot import snapshot
+E   ModuleNotFoundError: No module named 'inline_snapshot'</error></testcase><testcase classname="" name="tests.test_regex_deprecated_body" time="0.000"><error message="collection failure">ImportError while importing test module '/tmp/swegemma_sandbox_0efff448-29e_pe9cpj2f/workspace/tests/test_regex_deprecated_body.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_regex_deprecated_body.py:4: in &lt;module&gt;
+    from dirty_equals import IsDict
+E   ModuleNotFoundError: No module named 'dirty_equals'</error></testcase><testcase classname="" name="tests.test_regex_deprecated_params" time="0.000"><error message="collection failure">ImportError while importing test module '/tmp/swegemma_sandbox_0efff448-29e_pe9cpj2f/workspace/tests/test_regex_deprecated_params.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_regex_deprecated_params.py:4: in &lt;module&gt;
+    from dirty_equals import IsDict
+E   ModuleNotFoundError: No module named 'dirty_equals'</error></testcase><testcase classname="" name="tests.test_schema_extra_examples" time="0.000"><error message="collection failure">ImportError while importing test module '/tmp/swegemma_sandbox_0efff448-29e_pe9cpj2f/workspace/tests/test_schema_extra_examples.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_schema_extra_examples.py:4: in &lt;module&gt;
+    from dirty_equals import IsDict
+E   ModuleNotFoundError: No module named 'dirty_equals'</error></testcase><testcase classname="" name="tests.test_tutorial.test_pydantic_v1_in_v2.test_tutorial002" time="0.000"><error message="collection failure">ImportError while importing test module '/tmp/swegemma_sandbox_0efff448-29e_pe9cpj2f/workspace/tests/test_tutorial/test_pydantic_v1_in_v2/test_tutorial002.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_tutorial/test_pydantic_v1_in_v2/test_tutorial002.py:6: in &lt;module&gt;
+    from inline_snapshot import snapshot
+E   ModuleNotFoundError: No module named 'inline_snapshot'</error></testcase><testcase classname="" name="tests.test_tutorial.test_pydantic_v1_in_v2.test_tutorial003" time="0.000"><error message="collection failure">ImportError while importing test module '/tmp/swegemma_sandbox_0efff448-29e_pe9cpj2f/workspace/tests/test_tutorial/test_pydantic_v1_in_v2/test_tutorial003.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_tutorial/test_pydantic_v1_in_v2/test_tutorial003.py:6: in &lt;module&gt;
+    from inline_snapshot import snapshot
+E   ModuleNotFoundError: No module named 'inline_snapshot'</error></testcase><testcase classname="" name="tests.test_tutorial.test_pydantic_v1_in_v2.test_tutorial004" time="0.000"><error message="collection failure">ImportError while importing test module '/tmp/swegemma_sandbox_0efff448-29e_pe9cpj2f/workspace/tests/test_tutorial/test_pydantic_v1_in_v2/test_tutorial004.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_tutorial/test_pydantic_v1_in_v2/test_tutorial004.py:6: in &lt;module&gt;
+    from inline_snapshot import snapshot
+E   ModuleNotFoundError: No module named 'inline_snapshot'</error></testcase><testcase classname="" name="tests.test_tutorial.test_schema_extra_example.test_tutorial001_pv1" time="0.000"><error message="collection failure">ImportError while importing test module '/tmp/swegemma_sandbox_0efff448-29e_pe9cpj2f/workspace/tests/test_tutorial/test_schema_extra_example/test_tutorial001_pv1.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_tutorial/test_schema_extra_example/test_tutorial001_pv1.py:7: in &lt;module&gt;
+    from inline_snapshot import snapshot
+E   ModuleNotFoundError: No module named 'inline_snapshot'</error></testcase></testsuite></testsuites>

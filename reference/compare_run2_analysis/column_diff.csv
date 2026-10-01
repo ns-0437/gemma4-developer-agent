@@ -1,0 +1,79 @@
+candidate,task,column,original,corrected,explained
+A,rich_3278,first_source_edit_attempt_step,5,unavailable,"was set by a /tmp scratch write, not by a repository edit"
+A,rich_3278,reclassified_outcome,(absent),candidate,new: the repaired classifier's verdict on the same saved error strings
+A,rich_3278,reclassified_reason,(absent),persisted: turns budget,new: why
+A,rich_3278,rejected_tool_calls,(absent),0,new: calls rejected before execution for unusable arguments
+A,rich_3278,repeated_identical_tool_calls,(absent),48,"new: identical consecutive calls to ANY tool, not just run_command"
+A,rich_3278,shell_edit_hints,54,0,"was matching `> /tmp/repro.py`, which the prompt tells the agent to write"
+A,rich_3278,successful_source_edits,(absent),0,new: accepted edits to a repository .py file
+A,rich_3278,successful_tool_calls,(absent),59,new: calls the tools accepted
+A,rich_3278,tmp_scratch_writes,(absent),54,"new: scratch reproduction writes, counted apart from source edits"
+A,rich_3278,unparsed_tool_call_texts,(absent),0,new: agent turns whose text never became a parsed tool call
+A,rich_3278,would_have_continued,(absent),True,new: whether the repaired rule would have allowed the next planned run
+B,rich_3278,attribution,empty_patch,no_submission,"a run that never submitted is no_submission, not empty_patch"
+B,rich_3278,first_source_edit_attempt_step,5,8,"was set by a /tmp scratch write, not by a repository edit"
+B,rich_3278,reclassified_outcome,(absent),candidate,new: the repaired classifier's verdict on the same saved error strings
+B,rich_3278,reclassified_reason,(absent),persisted: agent ended without submitting a patch (no environment cause found),new: why
+B,rich_3278,rejected_tool_calls,(absent),42,new: calls rejected before execution for unusable arguments
+B,rich_3278,repeated_identical_tool_calls,(absent),39,"new: identical consecutive calls to ANY tool, not just run_command"
+B,rich_3278,shell_edit_hints,2,0,"was matching `> /tmp/repro.py`, which the prompt tells the agent to write"
+B,rich_3278,successful_source_edits,(absent),0,new: accepted edits to a repository .py file
+B,rich_3278,successful_tool_calls,(absent),5,new: calls the tools accepted
+B,rich_3278,tmp_scratch_writes,(absent),2,"new: scratch reproduction writes, counted apart from source edits"
+B,rich_3278,tool_errors,1,43,was counting only {'status':'error'}; a rejected call carries a bare {'error':...}
+B,rich_3278,unparsed_tool_call_texts,(absent),4,new: agent turns whose text never became a parsed tool call
+B,rich_3278,would_have_continued,(absent),True,new: whether the repaired rule would have allowed the next planned run
+B,rich_3535,reclassified_outcome,(absent),not_attempted,new: the repaired classifier's verdict on the same saved error strings
+B,rich_3535,reclassified_reason,(absent),,new: why
+B,rich_3535,rejected_tool_calls,(absent),unavailable,new: calls rejected before execution for unusable arguments
+B,rich_3535,repeated_identical_tool_calls,(absent),unavailable,"new: identical consecutive calls to ANY tool, not just run_command"
+B,rich_3535,successful_source_edits,(absent),unavailable,new: accepted edits to a repository .py file
+B,rich_3535,successful_tool_calls,(absent),unavailable,new: calls the tools accepted
+B,rich_3535,tmp_scratch_writes,(absent),unavailable,"new: scratch reproduction writes, counted apart from source edits"
+B,rich_3535,unparsed_tool_call_texts,(absent),unavailable,new: agent turns whose text never became a parsed tool call
+B,rich_3535,would_have_continued,(absent),unavailable,new: whether the repaired rule would have allowed the next planned run
+A,rich_3535,reclassified_outcome,(absent),not_attempted,new: the repaired classifier's verdict on the same saved error strings
+A,rich_3535,reclassified_reason,(absent),,new: why
+A,rich_3535,rejected_tool_calls,(absent),unavailable,new: calls rejected before execution for unusable arguments
+A,rich_3535,repeated_identical_tool_calls,(absent),unavailable,"new: identical consecutive calls to ANY tool, not just run_command"
+A,rich_3535,successful_source_edits,(absent),unavailable,new: accepted edits to a repository .py file
+A,rich_3535,successful_tool_calls,(absent),unavailable,new: calls the tools accepted
+A,rich_3535,tmp_scratch_writes,(absent),unavailable,"new: scratch reproduction writes, counted apart from source edits"
+A,rich_3535,unparsed_tool_call_texts,(absent),unavailable,new: agent turns whose text never became a parsed tool call
+A,rich_3535,would_have_continued,(absent),unavailable,new: whether the repaired rule would have allowed the next planned run
+A,rich_3675,reclassified_outcome,(absent),not_attempted,new: the repaired classifier's verdict on the same saved error strings
+A,rich_3675,reclassified_reason,(absent),,new: why
+A,rich_3675,rejected_tool_calls,(absent),unavailable,new: calls rejected before execution for unusable arguments
+A,rich_3675,repeated_identical_tool_calls,(absent),unavailable,"new: identical consecutive calls to ANY tool, not just run_command"
+A,rich_3675,successful_source_edits,(absent),unavailable,new: accepted edits to a repository .py file
+A,rich_3675,successful_tool_calls,(absent),unavailable,new: calls the tools accepted
+A,rich_3675,tmp_scratch_writes,(absent),unavailable,"new: scratch reproduction writes, counted apart from source edits"
+A,rich_3675,unparsed_tool_call_texts,(absent),unavailable,new: agent turns whose text never became a parsed tool call
+A,rich_3675,would_have_continued,(absent),unavailable,new: whether the repaired rule would have allowed the next planned run
+B,rich_3675,reclassified_outcome,(absent),not_attempted,new: the repaired classifier's verdict on the same saved error strings
+B,rich_3675,reclassified_reason,(absent),,new: why
+B,rich_3675,rejected_tool_calls,(absent),unavailable,new: calls rejected before execution for unusable arguments
+B,rich_3675,repeated_identical_tool_calls,(absent),unavailable,"new: identical consecutive calls to ANY tool, not just run_command"
+B,rich_3675,successful_source_edits,(absent),unavailable,new: accepted edits to a repository .py file
+B,rich_3675,successful_tool_calls,(absent),unavailable,new: calls the tools accepted
+B,rich_3675,tmp_scratch_writes,(absent),unavailable,"new: scratch reproduction writes, counted apart from source edits"
+B,rich_3675,unparsed_tool_call_texts,(absent),unavailable,new: agent turns whose text never became a parsed tool call
+B,rich_3675,would_have_continued,(absent),unavailable,new: whether the repaired rule would have allowed the next planned run
+B,rich_3942,reclassified_outcome,(absent),not_attempted,new: the repaired classifier's verdict on the same saved error strings
+B,rich_3942,reclassified_reason,(absent),,new: why
+B,rich_3942,rejected_tool_calls,(absent),unavailable,new: calls rejected before execution for unusable arguments
+B,rich_3942,repeated_identical_tool_calls,(absent),unavailable,"new: identical consecutive calls to ANY tool, not just run_command"
+B,rich_3942,successful_source_edits,(absent),unavailable,new: accepted edits to a repository .py file
+B,rich_3942,successful_tool_calls,(absent),unavailable,new: calls the tools accepted
+B,rich_3942,tmp_scratch_writes,(absent),unavailable,"new: scratch reproduction writes, counted apart from source edits"
+B,rich_3942,unparsed_tool_call_texts,(absent),unavailable,new: agent turns whose text never became a parsed tool call
+B,rich_3942,would_have_continued,(absent),unavailable,new: whether the repaired rule would have allowed the next planned run
+A,rich_3942,reclassified_outcome,(absent),not_attempted,new: the repaired classifier's verdict on the same saved error strings
+A,rich_3942,reclassified_reason,(absent),,new: why
+A,rich_3942,rejected_tool_calls,(absent),unavailable,new: calls rejected before execution for unusable arguments
+A,rich_3942,repeated_identical_tool_calls,(absent),unavailable,"new: identical consecutive calls to ANY tool, not just run_command"
+A,rich_3942,successful_source_edits,(absent),unavailable,new: accepted edits to a repository .py file
+A,rich_3942,successful_tool_calls,(absent),unavailable,new: calls the tools accepted
+A,rich_3942,tmp_scratch_writes,(absent),unavailable,"new: scratch reproduction writes, counted apart from source edits"
+A,rich_3942,unparsed_tool_call_texts,(absent),unavailable,new: agent turns whose text never became a parsed tool call
+A,rich_3942,would_have_continued,(absent),unavailable,new: whether the repaired rule would have allowed the next planned run

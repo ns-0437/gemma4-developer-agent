@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="1" failures="0" skipped="0" tests="1" time="0.567" timestamp="2026-09-28T15:05:38.408173+00:00" hostname="fcac5414f593"><testcase classname="" name="tests.test_union_body_discriminator_annotated" time="0.000"><error message="collection failure">ImportError while importing test module '/tmp/swegemma_sandbox_6b69fd6a-56d_r8if5wfp/workspace/tests/test_union_body_discriminator_annotated.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_union_body_discriminator_annotated.py:8: in &lt;module&gt;
+    from inline_snapshot import snapshot
+E   ModuleNotFoundError: No module named 'inline_snapshot'</error></testcase></testsuite></testsuites>

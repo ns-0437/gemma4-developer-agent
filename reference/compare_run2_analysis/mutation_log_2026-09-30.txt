@@ -1,0 +1,14 @@
+BASELINE dispatch: rc=0 137 passed, 0 failed
+BASELINE metrics: rc=0 58 passed, 0 failed
+CAUGHT    classification tier removed entirely  [dispatch] rc=1 127 passed, 10 failed
+CAUGHT    tier moved BEFORE the environment markers  [dispatch] rc=1 135 passed, 2 failed
+CAUGHT    no_submission attribution removed  [dispatch] rc=1 136 passed, 1 failed
+CAUGHT    plain-error observations stop being counted  [metrics] rc=1 49 passed, 9 failed
+CAUGHT    scratch /tmp writes counted as source edits again  [metrics] rc=1 47 passed, 11 failed
+CAUGHT    rejected calls credited as successful source edits  [metrics] rc=1 56 passed, 2 failed
+
+every mutation was caught by a test
+restored dispatch: rc=0 137 passed, 0 failed
+restored metrics: rc=0 58 passed, 0 failed
+
+[exited with code 0]

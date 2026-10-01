@@ -1,0 +1,138 @@
+{
+  "integrity": {
+    "sdist_sha256": "9fb88ce6b50991eba41d183584f65f51d7f6015d86a42cdabf79c1c8bd5d66fa",
+    "digest_verified": true,
+    "parser_file": "vllm/tool_parsers/gemma4_tool_parser.py",
+    "parser_sha256": "682b2152b76c031df9c58c3ffbb5b243945be5d8957ebdce00faef1b9de6b889",
+    "parser_bytes": 27743,
+    "release_url": "https://files.pythonhosted.org/packages/a8/49/60a2a962ecbf780c8fbfd0d5548b208d654d5c4267df94d8d93883641431/vllm-0.19.1.tar.gz"
+  },
+  "parsing_path": "non-streaming extract_tool_calls",
+  "recorded_keys": [
+    "filepath",
+    "new_string",
+    "re_ansi = re.compile(\n    r\\\"\\\"\\\"\n(?",
+    "](.*?)\\\\x1b\\\\\\\\)|\n(?"
+  ],
+  "claim": "A constructed input that reproduces the recorded dictionary demonstrates a POSSIBLE MECHANISM. The model's raw completion was never recorded and is not recoverable, so this is not evidence of what the model emitted.",
+  "candidates": [
+    {
+      "label": "H0_correct_both_delimited",
+      "wire_len": 393,
+      "tools_called": true,
+      "n_keys": 3,
+      "keys": [
+        "filepath",
+        "new_string",
+        "old_string"
+      ],
+      "exact_match": false,
+      "same_key_sequence": false,
+      "args": {
+        "filepath": "rich/ansi.py",
+        "new_string": "re_ansi = re.compile(\n    r\\\"\\\"\\\"\n(?:\\\\x1b\\\\](.*?)\\\\x1b\\\\\\\\)|\n(?:\\\\x1b([0-?@-Z\\\\\\\\\\\\\\\\-_]|\\\\\\\\[[0-?]*[ -/]*[@-~]))\n\\\"\\\"\\\",\n    re.VERBOSE,\n)",
+        "old_string": "re_ansi = re.compile(\n    r\\\"\\\"\\\"\n(?:\\\\x1b\\\\](.*?)\\\\x1b\\\\\\\\)|\n(?:\\\\x1b([(@-Z\\\\\\\\\\\\\\\\-_]|\\\\\\\\[[0-?]*[ -/]*[@-~]))\n\\\"\\\"\\\",\n    re.VERBOSE,\n)"
+      }
+    },
+    {
+      "label": "H1_open_delim_close_backtick",
+      "wire_len": 374,
+      "tools_called": true,
+      "n_keys": 4,
+      "keys": [
+        "filepath",
+        "new_string",
+        "re_ansi = re.compile(\n    r\\\"\\\"\\\"\n(?",
+        "](.*?)\\\\x1b\\\\\\\\)|\n(?"
+      ],
+      "exact_match": true,
+      "same_key_sequence": true,
+      "args": {
+        "filepath": "rich/ansi.py",
+        "new_string": "re_ansi = re.compile(\n    r\\\"\\\"\\\"\n(?:\\\\x1b\\\\](.*?)\\\\x1b\\\\\\\\)|\n(?:\\\\x1b([0-?@-Z\\\\\\\\\\\\\\\\-_]|\\\\\\\\[[0-?]*[ -/]*[@-~]))\n\\\"\\\"\\\",\n    re.VERBOSE,\n)`,old_string:",
+        "re_ansi = re.compile(\n    r\\\"\\\"\\\"\n(?": "\\\\x1b\\\\",
+        "](.*?)\\\\x1b\\\\\\\\)|\n(?": "\\\\x1b([(@-Z\\\\\\\\\\\\\\\\-_"
+      }
+    },
+    {
+      "label": "H2_filepath_delimited_too",
+      "wire_len": 384,
+      "tools_called": true,
+      "n_keys": 4,
+      "keys": [
+        "filepath",
+        "new_string",
+        "re_ansi = re.compile(\n    r\\\"\\\"\\\"\n(?",
+        "](.*?)\\\\x1b\\\\\\\\)|\n(?"
+      ],
+      "exact_match": true,
+      "same_key_sequence": true,
+      "args": {
+        "filepath": "rich/ansi.py",
+        "new_string": "re_ansi = re.compile(\n    r\\\"\\\"\\\"\n(?:\\\\x1b\\\\](.*?)\\\\x1b\\\\\\\\)|\n(?:\\\\x1b([0-?@-Z\\\\\\\\\\\\\\\\-_]|\\\\\\\\[[0-?]*[ -/]*[@-~]))\n\\\"\\\"\\\",\n    re.VERBOSE,\n)`,old_string:",
+        "re_ansi = re.compile(\n    r\\\"\\\"\\\"\n(?": "\\\\x1b\\\\",
+        "](.*?)\\\\x1b\\\\\\\\)|\n(?": "\\\\x1b([(@-Z\\\\\\\\\\\\\\\\-_"
+      }
+    },
+    {
+      "label": "H3_backticks_only",
+      "wire_len": 369,
+      "tools_called": true,
+      "n_keys": 4,
+      "keys": [
+        "filepath",
+        "new_string",
+        "](.*?)\\\\x1b\\\\\\\\)|\n(?",
+        "]|\\\\\\\\[[0-?]*[ -/]*[@-~]))\n\\\"\\\"\\\",\n    re.VERBOSE,\n)`,old_string"
+      ],
+      "exact_match": false,
+      "same_key_sequence": false,
+      "args": {
+        "filepath": "`rich/ansi.py`",
+        "new_string": "`re_ansi = re.compile(\n    r\\\"\\\"\\\"\n(?:\\\\x1b\\\\",
+        "](.*?)\\\\x1b\\\\\\\\)|\n(?": "\\\\x1b([(@-Z\\\\\\\\\\\\\\\\-_",
+        "]|\\\\\\\\[[0-?]*[ -/]*[@-~]))\n\\\"\\\"\\\",\n    re.VERBOSE,\n)`,old_string": "`re_ansi = re.compile(\n    r\\\"\\\"\\\"\n(?:\\\\x1b\\\\"
+      }
+    },
+    {
+      "label": "H4_bare_only",
+      "wire_len": 363,
+      "tools_called": true,
+      "n_keys": 4,
+      "keys": [
+        "filepath",
+        "new_string",
+        "](.*?)\\\\x1b\\\\\\\\)|\n(?",
+        "]|\\\\\\\\[[0-?]*[ -/]*[@-~]))\n\\\"\\\"\\\",\n    re.VERBOSE,\n),old_string"
+      ],
+      "exact_match": false,
+      "same_key_sequence": false,
+      "args": {
+        "filepath": "rich/ansi.py",
+        "new_string": "re_ansi = re.compile(\n    r\\\"\\\"\\\"\n(?:\\\\x1b\\\\",
+        "](.*?)\\\\x1b\\\\\\\\)|\n(?": "\\\\x1b([(@-Z\\\\\\\\\\\\\\\\-_",
+        "]|\\\\\\\\[[0-?]*[ -/]*[@-~]))\n\\\"\\\"\\\",\n    re.VERBOSE,\n),old_string": "re_ansi = re.compile(\n    r\\\"\\\"\\\"\n(?:\\\\x1b\\\\"
+      }
+    },
+    {
+      "label": "H5_bare_new_then_old",
+      "wire_len": 363,
+      "tools_called": true,
+      "n_keys": 4,
+      "keys": [
+        "filepath",
+        "new_string",
+        "](.*?)\\\\x1b\\\\\\\\)|\n(?",
+        "]|\\\\\\\\[[0-?]*[ -/]*[@-~]))\n\\\"\\\"\\\",\n    re.VERBOSE,\n),old_string"
+      ],
+      "exact_match": false,
+      "same_key_sequence": false,
+      "args": {
+        "filepath": "rich/ansi.py",
+        "new_string": "re_ansi = re.compile(\n    r\\\"\\\"\\\"\n(?:\\\\x1b\\\\",
+        "](.*?)\\\\x1b\\\\\\\\)|\n(?": "\\\\x1b([(@-Z\\\\\\\\\\\\\\\\-_",
+        "]|\\\\\\\\[[0-?]*[ -/]*[@-~]))\n\\\"\\\"\\\",\n    re.VERBOSE,\n),old_string": "re_ansi = re.compile(\n    r\\\"\\\"\\\"\n(?:\\\\x1b\\\\"
+      }
+    }
+  ]
+}

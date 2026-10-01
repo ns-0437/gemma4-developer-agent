@@ -1,0 +1,235 @@
+{
+  "task": "rich_3180",
+  "arm": "reference",
+  "reached_pytest": true,
+  "pytest_exit": 0,
+  "pytest_cmd": "PYTHONSAFEPATH=1 PYTHONNOUSERSITE=1 python3 -s -m pytest tests/test_cells.py tests/test_text.py",
+  "nodes": {
+    "test_cells::test_cell_len_long_string": "passed",
+    "test_cells::test_cell_len_short_string": "passed",
+    "test_cells::test_set_cell_size": "passed",
+    "test_cells::test_set_cell_size_infinite": "passed",
+    "test_cells::test_chop_cells": "passed",
+    "test_cells::test_chop_cells_double_width_boundary": "passed",
+    "test_cells::test_chop_cells_mixed_width": "passed",
+    "test_text::test_span": "passed",
+    "test_text::test_span_split": "passed",
+    "test_text::test_span_move": "passed",
+    "test_text::test_span_right_crop": "passed",
+    "test_text::test_len": "passed",
+    "test_text::test_cell_len": "passed",
+    "test_text::test_bool": "passed",
+    "test_text::test_str": "passed",
+    "test_text::test_repr": "passed",
+    "test_text::test_add": "passed",
+    "test_text::test_eq": "passed",
+    "test_text::test_contain": "passed",
+    "test_text::test_plain_property": "passed",
+    "test_text::test_plain_property_setter": "passed",
+    "test_text::test_from_markup": "passed",
+    "test_text::test_from_ansi": "passed",
+    "test_text::test_copy": "passed",
+    "test_text::test_rstrip": "passed",
+    "test_text::test_rstrip_end": "passed",
+    "test_text::test_stylize": "passed",
+    "test_text::test_stylize_before": "passed",
+    "test_text::test_stylize_negative_index": "passed",
+    "test_text::test_highlight_regex": "passed",
+    "test_text::test_highlight_regex_callable": "passed",
+    "test_text::test_highlight_words": "passed",
+    "test_text::test_set_length": "passed",
+    "test_text::test_console_width": "passed",
+    "test_text::test_join": "passed",
+    "test_text::test_trim_spans": "passed",
+    "test_text::test_pad_left": "passed",
+    "test_text::test_pad_right": "passed",
+    "test_text::test_append": "passed",
+    "test_text::test_append_text": "passed",
+    "test_text::test_end": "passed",
+    "test_text::test_split": "passed",
+    "test_text::test_split_spans": "passed",
+    "test_text::test_divide": "passed",
+    "test_text::test_right_crop": "passed",
+    "test_text::test_wrap_3": "passed",
+    "test_text::test_wrap_4": "passed",
+    "test_text::test_wrap_wrapped_word_length_greater_than_available_width": "passed",
+    "test_text::test_wrap_cjk": "passed",
+    "test_text::test_wrap_cjk_width_mid_character": "passed",
+    "test_text::test_wrap_cjk_mixed": "passed",
+    "test_text::test_wrap_long": "passed",
+    "test_text::test_wrap_overflow": "passed",
+    "test_text::test_wrap_overflow_long": "passed",
+    "test_text::test_wrap_long_words": "passed",
+    "test_text::test_wrap_long_words_2": "passed",
+    "test_text::test_wrap_long_words_followed_by_other_words": "passed",
+    "test_text::test_wrap_long_word_preceeded_by_word_of_full_line_length": "passed",
+    "test_text::test_wrap_multiple_consecutive_spaces": "passed",
+    "test_text::test_wrap_long_words_justify_left": "passed",
+    "test_text::test_wrap_leading_and_trailing_whitespace": "passed",
+    "test_text::test_no_wrap_no_crop": "passed",
+    "test_text::test_fit": "passed",
+    "test_text::test_wrap_tabs": "passed",
+    "test_text::test_render": "passed",
+    "test_text::test_render_simple": "passed",
+    "test_text::test_print[.-.\\n]": "passed",
+    "test_text::test_print[print_text1-. .\\n]": "passed",
+    "test_text::test_print[print_text2-Hello World !\\n]": "passed",
+    "test_text::test_print_sep_end[.-.X]": "passed",
+    "test_text::test_print_sep_end[print_text1-..X]": "passed",
+    "test_text::test_print_sep_end[print_text2-HelloWorld!X]": "passed",
+    "test_text::test_tabs_to_spaces": "passed",
+    "test_text::test_tabs_to_spaces_spans[-4--expected_spans0]": "passed",
+    "test_text::test_tabs_to_spaces_spans[\\t-4-    -expected_spans1]": "passed",
+    "test_text::test_tabs_to_spaces_spans[\\tbar-4-    bar-expected_spans2]": "passed",
+    "test_text::test_tabs_to_spaces_spans[foo\\tbar-4-foo bar-expected_spans3]": "passed",
+    "test_text::test_tabs_to_spaces_spans[foo\\nbar\\nbaz-4-foo\\nbar\\nbaz-expected_spans4]": "passed",
+    "test_text::test_tabs_to_spaces_spans[[bold]foo\\tbar-4-foo bar-expected_spans5]": "passed",
+    "test_text::test_tabs_to_spaces_spans[[bold]\\tbar-4-    bar-expected_spans6]": "passed",
+    "test_text::test_tabs_to_spaces_spans[\\t[bold]bar-4-    bar-expected_spans7]": "passed",
+    "test_text::test_tabs_to_spaces_spans[[red]foo\\tbar\\n[green]egg\\tbaz-8-foo     bar\\negg     baz-expected_spans8]": "passed",
+    "test_text::test_tabs_to_spaces_spans[[bold]X\\tY-8-X       Y-expected_spans9]": "passed",
+    "test_text::test_tabs_to_spaces_spans[[bold]\\U0001f4a9\\t\\U0001f4a9-8-\\U0001f4a9      \\U0001f4a9-expected_spans10]": "passed",
+    "test_text::test_tabs_to_spaces_spans[[bold]\\U0001f4a9\\U0001f4a9\\U0001f4a9\\U0001f4a9\\t\\U0001f4a9-8-\\U0001f4a9\\U0001f4a9\\U0001f4a9\\U0001f4a9        \\U0001f4a9-expected_spans11]": "passed",
+    "test_text::test_markup_switch": "passed",
+    "test_text::test_emoji": "passed",
+    "test_text::test_emoji_switch": "passed",
+    "test_text::test_assemble": "passed",
+    "test_text::test_assemble_meta": "passed",
+    "test_text::test_styled": "passed",
+    "test_text::test_strip_control_codes": "passed",
+    "test_text::test_get_style_at_offset": "passed",
+    "test_text::test_truncate_ellipsis[Hello-10-Hello]": "passed",
+    "test_text::test_truncate_ellipsis[Hello-5-Hello]": "passed",
+    "test_text::test_truncate_ellipsis[Hello-4-Hel\\u2026]": "passed",
+    "test_text::test_truncate_ellipsis[Hello-3-He\\u2026]": "passed",
+    "test_text::test_truncate_ellipsis[Hello-2-H\\u2026]": "passed",
+    "test_text::test_truncate_ellipsis[Hello-1-\\u2026]": "passed",
+    "test_text::test_truncate_ellipsis_pad[Hello-5-Hello]": "passed",
+    "test_text::test_truncate_ellipsis_pad[Hello-10-Hello     ]": "passed",
+    "test_text::test_truncate_ellipsis_pad[Hello-3-He\\u2026]": "passed",
+    "test_text::test_pad": "passed",
+    "test_text::test_align_left": "passed",
+    "test_text::test_align_right": "passed",
+    "test_text::test_align_center": "passed",
+    "test_text::test_detect_indentation": "passed",
+    "test_text::test_indentation_guides": "passed",
+    "test_text::test_slice": "passed",
+    "test_text::test_wrap_invalid_style": "passed",
+    "test_text::test_apply_meta": "passed",
+    "test_text::test_on": "passed",
+    "test_text::test_markup_property": "passed",
+    "test_text::test_extend_style": "passed"
+  },
+  "failure_details": {},
+  "import_in_checkout": true,
+  "grading_import": "/tmp/swegemma_sandbox_0151f469-a8d_iwdn88vy/workspace/rich/__init__.py",
+  "patch_rc": 0,
+  "patch_err": "",
+  "test_patch_rc": 0,
+  "test_patch_err": "",
+  "editable_rc": 0,
+  "collection_error": false,
+  "exception": null,
+  "traceback": null,
+  "task_sha256": "776163701370985632d4b3f874480f5d11fa597bd5f16690875006e8ff7e64a0",
+  "snapshot_sha256": "eebbc8e72764dc3a2301061c1d253644153cc94098e76c3671e02cc7ec26b33d",
+  "environment_versions": {
+    "swegemma": "0.2.7",
+    "adk-submission": "0.2.11",
+    "adk-eval-core": "0.1.0",
+    "google-adk": "1.36.1"
+  },
+  "policy_sha256": "f59934c6b6369e97d529f821c0284cc666d708e340b3654aafd16dfe5f5e37ee",
+  "setup_commands": [
+    {
+      "cmd": "pip setuptools",
+      "rc": 0
+    },
+    {
+      "cmd": "pip wheel",
+      "rc": 0
+    },
+    {
+      "cmd": "pip editables",
+      "rc": 0
+    },
+    {
+      "cmd": "pip flit_core",
+      "rc": 0
+    },
+    {
+      "cmd": "pip poetry_core",
+      "rc": 0
+    },
+    {
+      "cmd": "pip pdm_backend",
+      "rc": 0
+    },
+    {
+      "cmd": "pip -e .",
+      "rc": 0,
+      "tail": "ent /tmp/swegemma_sandbox_dde835d9-198_8kq4fchd/venv\n    Can't uninstall 'rich'. No files were found to uninstall.\nSuccessfully installed rich-13.6.0\n"
+    },
+    {
+      "cmd": "checkout tests/test_cells.py",
+      "rc": 0
+    },
+    {
+      "cmd": "clean tests/test_cells.py",
+      "rc": 0
+    },
+    {
+      "cmd": "checkout tests/test_text.py",
+      "rc": 0
+    },
+    {
+      "cmd": "clean tests/test_text.py",
+      "rc": 0
+    },
+    {
+      "cmd": "pip setuptools",
+      "rc": 0
+    },
+    {
+      "cmd": "pip wheel",
+      "rc": 0
+    },
+    {
+      "cmd": "pip editables",
+      "rc": 0
+    },
+    {
+      "cmd": "pip flit_core",
+      "rc": 0
+    },
+    {
+      "cmd": "pip poetry_core",
+      "rc": 0
+    },
+    {
+      "cmd": "pip pdm_backend",
+      "rc": 0
+    },
+    {
+      "cmd": "pip -e .",
+      "rc": 0,
+      "tail": "ent /tmp/swegemma_sandbox_0151f469-a8d_iwdn88vy/venv\n    Can't uninstall 'rich'. No files were found to uninstall.\nSuccessfully installed rich-13.6.0\n"
+    },
+    {
+      "cmd": "checkout tests/test_cells.py",
+      "rc": 0
+    },
+    {
+      "cmd": "clean tests/test_cells.py",
+      "rc": 0
+    },
+    {
+      "cmd": "checkout tests/test_text.py",
+      "rc": 0
+    },
+    {
+      "cmd": "clean tests/test_text.py",
+      "rc": 0
+    }
+  ]
+}

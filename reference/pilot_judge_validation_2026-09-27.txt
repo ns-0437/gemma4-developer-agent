@@ -1,0 +1,1221 @@
+
+[T1] all cells execute in notebook order (DISPATCH_CONFIRM=False)
+pilot config: {'max_time_minutes': 10.0, 'max_tool_calls': 100, 'max_turns': 60, 'timeout_seconds': 300} | session cap 150 min
+DISPATCH_CONFIRM is False: setup and preconditions will run, the four runs will NOT.
+installing 1 wheels...
+{
+  "swegemma": "MISSING: PackageNotFoundError('swegemma')",
+  "adk-submission": "MISSING: PackageNotFoundError('adk-submission')",
+  "adk-eval-core": "MISSING: PackageNotFoundError('adk-eval-core')",
+  "google-adk": "MISSING: PackageNotFoundError('google-adk')",
+  "vllm": "MISSING: PackageNotFoundError('vllm')",
+  "transformers": "MISSING: PackageNotFoundError('transformers')",
+  "litellm": "MISSING: PackageNotFoundError('litellm')"
+}
+GPUs: 4 ['NVIDIA L4', 'NVIDIA L4', 'NVIDIA L4', 'NVIDIA L4']
+model revision dir: 2 | config sha256: b72dd2eaa6e277d6
+architectures: ['Gemma4ForConditionalGeneration']
+quantization: {"format": "pack-quantized", "num_bits": 4}
+loaded 2 tasks
+PILOT TASKS and the evidence they were chosen on:
+
+  requests_7309 psf/requests
+    negative  exit=1 cases=220 failed=5 errored=0
+              agent  import: /tmp/swegemma_sandbox_e873efa6-0ac_5tloj0qc/workspace/src/requests/__init__.py
+              pytest import: /tmp/swegemma_sandbox_e873efa6-0ac_5tloj0qc/workspace/src/requests/__init__.py
+    positive  exit=0 cases=220 failed=0 errored=0
+              agent  import: /tmp/swegemma_sandbox_3833472f-a5e_y4r39p3o/workspace/src/requests/__init__.py
+              pytest import: /tmp/swegemma_sandbox_3833472f-a5e_y4r39p3o/workspace/src/requests/__init__.py
+    baseline-fails / gold-passes / imports-in-checkout: True
+    baseline failures: ["test__parse_content_type_header[multipart/form-data; boundary = something ; boundary2='something_else' ; no_equals -expected4]", 'test__parse_content_type_header[multipart/form-data; boundary = something ; boundary2="something_else" ; no_equals -expected5]', "test__parse_content_type_header[multipart/form-data; boundary = something ; 'boundary2=something_else' ; no_equals -expected6]", 'test__parse_content_type_header[multipart/form-data; boundary = something ; "boundary2=something_else" ; no_equals -expected7]']
+
+  rich_3471 Textualize/rich
+    negative  exit=1 cases=108 failed=1 errored=0
+              agent  import: /tmp/swegemma_sandbox_f08960dc-1da_l796is_3/workspace/rich/__init__.py
+              pytest import: /tmp/swegemma_sandbox_f08960dc-1da_l796is_3/workspace/rich/__init__.py
+    positive  exit=0 cases=108 failed=0 errored=0
+              agent  import: /tmp/swegemma_sandbox_ccbda4f2-225_sj8p8sth/workspace/rich/__init__.py
+              pytest import: /tmp/swegemma_sandbox_ccbda4f2-225_sj8p8sth/workspace/rich/__init__.py
+    baseline-fails / gold-passes / imports-in-checkout: True
+    baseline failures: ['test_append_tokens']
+prompt leakage: CLEAN (0 lines came from the issue text)
+LIMITATION: this is a data-flow check. The subprocess backend runs run_command on the host, so
+answer-key files remain reachable; traces must be audited for contamination before trusting a run.
+A: sha256=f6392b8207a91a52 model=gemma-4-31b-it-qat-w4a16-ct
+B: sha256=194b420a487c48f4 model=gemma-4-31b-it-qat-w4a16-ct
+A vs B sampling delta: ['-  include_thoughts: false', '+  include_thoughts: true']
+every other file is byte-identical between A and B
+repair bound on agent_runner, verification, container_setup (idempotent)
+NOTE: a pip success message alone is not proof; the preconditions below check what actually loads.
+requests_7309    ok=True
+    workspace: /tmp/sbx_test/workspace
+    agent    : /tmp/sbx_test/workspace/requests/__init__.py
+    grading  : /tmp/sbx_test/workspace/requests/__init__.py
+rich_3471        ok=True
+    workspace: /tmp/sbx_test/workspace
+    agent    : /tmp/sbx_test/workspace/requests/__init__.py
+    grading  : /tmp/sbx_test/workspace/requests/__init__.py
+ALL PRECONDITIONS PASSED
+Caveat: passing here does not guarantee the same resolution inside every later sandbox; the
+per-run setup observations verify imports again in the actual sandboxes. These are grading-flags probes, not direct in-pytest observations.
+adapters discovered: none (expected)
+Dispatch disabled: vLLM is not instantiated or started.
+planned run order: [('requests_7309', 'A'), ('requests_7309', 'B'), ('rich_3471', 'B'), ('rich_3471', 'A')]
+DISPATCH_CONFIRM=False: no server was started and no model run is dispatched.
+no runs executed (DISPATCH_CONFIRM was False)
+saved pilot_manifest.json and pilot_results.csv
+  PASS no NameError / ordering is valid
+  PASS TASK_IDS defined before use
+  PASS run_sync available to the repair cell
+  PASS preconditions ran for every task
+  PASS ORDER alternates per task
+  PASS no runs dispatched when DISPATCH_CONFIRM is False
+  PASS manifest written
+
+[T2] wheelhouse install failure must abort (exit status not swallowed)
+pilot config: {'max_time_minutes': 10.0, 'max_tool_calls': 100, 'max_turns': 60, 'timeout_seconds': 300} | session cap 150 min
+DISPATCH_CONFIRM is False: setup and preconditions will run, the four runs will NOT.
+installing 1 wheels...
+
+boom
+  PASS nonzero pip rc raises SystemExit
+
+[T3] repair cell is idempotent and binds all three modules
+pilot config: {'max_time_minutes': 10.0, 'max_tool_calls': 100, 'max_turns': 60, 'timeout_seconds': 300} | session cap 150 min
+DISPATCH_CONFIRM is False: setup and preconditions will run, the four runs will NOT.
+installing 1 wheels...
+{
+  "swegemma": "MISSING: PackageNotFoundError('swegemma')",
+  "adk-submission": "MISSING: PackageNotFoundError('adk-submission')",
+  "adk-eval-core": "MISSING: PackageNotFoundError('adk-eval-core')",
+  "google-adk": "MISSING: PackageNotFoundError('google-adk')",
+  "vllm": "MISSING: PackageNotFoundError('vllm')",
+  "transformers": "MISSING: PackageNotFoundError('transformers')",
+  "litellm": "MISSING: PackageNotFoundError('litellm')"
+}
+GPUs: 4 ['NVIDIA L4', 'NVIDIA L4', 'NVIDIA L4', 'NVIDIA L4']
+model revision dir: 2 | config sha256: b72dd2eaa6e277d6
+architectures: ['Gemma4ForConditionalGeneration']
+quantization: {"format": "pack-quantized", "num_bits": 4}
+loaded 2 tasks
+PILOT TASKS and the evidence they were chosen on:
+
+  requests_7309 psf/requests
+    negative  exit=1 cases=220 failed=5 errored=0
+              agent  import: /tmp/swegemma_sandbox_e873efa6-0ac_5tloj0qc/workspace/src/requests/__init__.py
+              pytest import: /tmp/swegemma_sandbox_e873efa6-0ac_5tloj0qc/workspace/src/requests/__init__.py
+    positive  exit=0 cases=220 failed=0 errored=0
+              agent  import: /tmp/swegemma_sandbox_3833472f-a5e_y4r39p3o/workspace/src/requests/__init__.py
+              pytest import: /tmp/swegemma_sandbox_3833472f-a5e_y4r39p3o/workspace/src/requests/__init__.py
+    baseline-fails / gold-passes / imports-in-checkout: True
+    baseline failures: ["test__parse_content_type_header[multipart/form-data; boundary = something ; boundary2='something_else' ; no_equals -expected4]", 'test__parse_content_type_header[multipart/form-data; boundary = something ; boundary2="something_else" ; no_equals -expected5]', "test__parse_content_type_header[multipart/form-data; boundary = something ; 'boundary2=something_else' ; no_equals -expected6]", 'test__parse_content_type_header[multipart/form-data; boundary = something ; "boundary2=something_else" ; no_equals -expected7]']
+
+  rich_3471 Textualize/rich
+    negative  exit=1 cases=108 failed=1 errored=0
+              agent  import: /tmp/swegemma_sandbox_f08960dc-1da_l796is_3/workspace/rich/__init__.py
+              pytest import: /tmp/swegemma_sandbox_f08960dc-1da_l796is_3/workspace/rich/__init__.py
+    positive  exit=0 cases=108 failed=0 errored=0
+              agent  import: /tmp/swegemma_sandbox_ccbda4f2-225_sj8p8sth/workspace/rich/__init__.py
+              pytest import: /tmp/swegemma_sandbox_ccbda4f2-225_sj8p8sth/workspace/rich/__init__.py
+    baseline-fails / gold-passes / imports-in-checkout: True
+    baseline failures: ['test_append_tokens']
+prompt leakage: CLEAN (0 lines came from the issue text)
+LIMITATION: this is a data-flow check. The subprocess backend runs run_command on the host, so
+answer-key files remain reachable; traces must be audited for contamination before trusting a run.
+A: sha256=f6392b8207a91a52 model=gemma-4-31b-it-qat-w4a16-ct
+B: sha256=194b420a487c48f4 model=gemma-4-31b-it-qat-w4a16-ct
+A vs B sampling delta: ['-  include_thoughts: false', '+  include_thoughts: true']
+every other file is byte-identical between A and B
+repair bound on agent_runner, verification, container_setup (idempotent)
+NOTE: a pip success message alone is not proof; the preconditions below check what actually loads.
+  PASS all three modules share the patch
+  PASS wrapper records the original
+repair bound on agent_runner, verification, container_setup (idempotent)
+NOTE: a pip success message alone is not proof; the preconditions below check what actually loads.
+  PASS re-running does not wrap the wrapper
+  PASS original is not itself a wrapper
+  PASS repair cell really replaced the installed function
+  PASS repeated repair still bound on all modules
+
+[T4] a failed REQUIRED backend or editable install must raise, not pass silently
+pilot config: {'max_time_minutes': 10.0, 'max_tool_calls': 100, 'max_turns': 60, 'timeout_seconds': 300} | session cap 150 min
+DISPATCH_CONFIRM is False: setup and preconditions will run, the four runs will NOT.
+installing 1 wheels...
+{
+  "swegemma": "MISSING: PackageNotFoundError('swegemma')",
+  "adk-submission": "MISSING: PackageNotFoundError('adk-submission')",
+  "adk-eval-core": "MISSING: PackageNotFoundError('adk-eval-core')",
+  "google-adk": "MISSING: PackageNotFoundError('google-adk')",
+  "vllm": "MISSING: PackageNotFoundError('vllm')",
+  "transformers": "MISSING: PackageNotFoundError('transformers')",
+  "litellm": "MISSING: PackageNotFoundError('litellm')"
+}
+GPUs: 4 ['NVIDIA L4', 'NVIDIA L4', 'NVIDIA L4', 'NVIDIA L4']
+model revision dir: 2 | config sha256: b72dd2eaa6e277d6
+architectures: ['Gemma4ForConditionalGeneration']
+quantization: {"format": "pack-quantized", "num_bits": 4}
+loaded 2 tasks
+PILOT TASKS and the evidence they were chosen on:
+
+  requests_7309 psf/requests
+    negative  exit=1 cases=220 failed=5 errored=0
+              agent  import: /tmp/swegemma_sandbox_e873efa6-0ac_5tloj0qc/workspace/src/requests/__init__.py
+              pytest import: /tmp/swegemma_sandbox_e873efa6-0ac_5tloj0qc/workspace/src/requests/__init__.py
+    positive  exit=0 cases=220 failed=0 errored=0
+              agent  import: /tmp/swegemma_sandbox_3833472f-a5e_y4r39p3o/workspace/src/requests/__init__.py
+              pytest import: /tmp/swegemma_sandbox_3833472f-a5e_y4r39p3o/workspace/src/requests/__init__.py
+    baseline-fails / gold-passes / imports-in-checkout: True
+    baseline failures: ["test__parse_content_type_header[multipart/form-data; boundary = something ; boundary2='something_else' ; no_equals -expected4]", 'test__parse_content_type_header[multipart/form-data; boundary = something ; boundary2="something_else" ; no_equals -expected5]', "test__parse_content_type_header[multipart/form-data; boundary = something ; 'boundary2=something_else' ; no_equals -expected6]", 'test__parse_content_type_header[multipart/form-data; boundary = something ; "boundary2=something_else" ; no_equals -expected7]']
+
+  rich_3471 Textualize/rich
+    negative  exit=1 cases=108 failed=1 errored=0
+              agent  import: /tmp/swegemma_sandbox_f08960dc-1da_l796is_3/workspace/rich/__init__.py
+              pytest import: /tmp/swegemma_sandbox_f08960dc-1da_l796is_3/workspace/rich/__init__.py
+    positive  exit=0 cases=108 failed=0 errored=0
+              agent  import: /tmp/swegemma_sandbox_ccbda4f2-225_sj8p8sth/workspace/rich/__init__.py
+              pytest import: /tmp/swegemma_sandbox_ccbda4f2-225_sj8p8sth/workspace/rich/__init__.py
+    baseline-fails / gold-passes / imports-in-checkout: True
+    baseline failures: ['test_append_tokens']
+prompt leakage: CLEAN (0 lines came from the issue text)
+LIMITATION: this is a data-flow check. The subprocess backend runs run_command on the host, so
+answer-key files remain reachable; traces must be audited for contamination before trusting a run.
+A: sha256=f6392b8207a91a52 model=gemma-4-31b-it-qat-w4a16-ct
+B: sha256=194b420a487c48f4 model=gemma-4-31b-it-qat-w4a16-ct
+A vs B sampling delta: ['-  include_thoughts: false', '+  include_thoughts: true']
+every other file is byte-identical between A and B
+repair bound on agent_runner, verification, container_setup (idempotent)
+NOTE: a pip success message alone is not proof; the preconditions below check what actually loads.
+  PASS required backend rc=1 raises RuntimeError
+pilot config: {'max_time_minutes': 10.0, 'max_tool_calls': 100, 'max_turns': 60, 'timeout_seconds': 300} | session cap 150 min
+DISPATCH_CONFIRM is False: setup and preconditions will run, the four runs will NOT.
+installing 1 wheels...
+{
+  "swegemma": "MISSING: PackageNotFoundError('swegemma')",
+  "adk-submission": "MISSING: PackageNotFoundError('adk-submission')",
+  "adk-eval-core": "MISSING: PackageNotFoundError('adk-eval-core')",
+  "google-adk": "MISSING: PackageNotFoundError('google-adk')",
+  "vllm": "MISSING: PackageNotFoundError('vllm')",
+  "transformers": "MISSING: PackageNotFoundError('transformers')",
+  "litellm": "MISSING: PackageNotFoundError('litellm')"
+}
+GPUs: 4 ['NVIDIA L4', 'NVIDIA L4', 'NVIDIA L4', 'NVIDIA L4']
+model revision dir: 2 | config sha256: b72dd2eaa6e277d6
+architectures: ['Gemma4ForConditionalGeneration']
+quantization: {"format": "pack-quantized", "num_bits": 4}
+loaded 2 tasks
+PILOT TASKS and the evidence they were chosen on:
+
+  requests_7309 psf/requests
+    negative  exit=1 cases=220 failed=5 errored=0
+              agent  import: /tmp/swegemma_sandbox_e873efa6-0ac_5tloj0qc/workspace/src/requests/__init__.py
+              pytest import: /tmp/swegemma_sandbox_e873efa6-0ac_5tloj0qc/workspace/src/requests/__init__.py
+    positive  exit=0 cases=220 failed=0 errored=0
+              agent  import: /tmp/swegemma_sandbox_3833472f-a5e_y4r39p3o/workspace/src/requests/__init__.py
+              pytest import: /tmp/swegemma_sandbox_3833472f-a5e_y4r39p3o/workspace/src/requests/__init__.py
+    baseline-fails / gold-passes / imports-in-checkout: True
+    baseline failures: ["test__parse_content_type_header[multipart/form-data; boundary = something ; boundary2='something_else' ; no_equals -expected4]", 'test__parse_content_type_header[multipart/form-data; boundary = something ; boundary2="something_else" ; no_equals -expected5]', "test__parse_content_type_header[multipart/form-data; boundary = something ; 'boundary2=something_else' ; no_equals -expected6]", 'test__parse_content_type_header[multipart/form-data; boundary = something ; "boundary2=something_else" ; no_equals -expected7]']
+
+  rich_3471 Textualize/rich
+    negative  exit=1 cases=108 failed=1 errored=0
+              agent  import: /tmp/swegemma_sandbox_f08960dc-1da_l796is_3/workspace/rich/__init__.py
+              pytest import: /tmp/swegemma_sandbox_f08960dc-1da_l796is_3/workspace/rich/__init__.py
+    positive  exit=0 cases=108 failed=0 errored=0
+              agent  import: /tmp/swegemma_sandbox_ccbda4f2-225_sj8p8sth/workspace/rich/__init__.py
+              pytest import: /tmp/swegemma_sandbox_ccbda4f2-225_sj8p8sth/workspace/rich/__init__.py
+    baseline-fails / gold-passes / imports-in-checkout: True
+    baseline failures: ['test_append_tokens']
+prompt leakage: CLEAN (0 lines came from the issue text)
+LIMITATION: this is a data-flow check. The subprocess backend runs run_command on the host, so
+answer-key files remain reachable; traces must be audited for contamination before trusting a run.
+A: sha256=f6392b8207a91a52 model=gemma-4-31b-it-qat-w4a16-ct
+B: sha256=194b420a487c48f4 model=gemma-4-31b-it-qat-w4a16-ct
+A vs B sampling delta: ['-  include_thoughts: false', '+  include_thoughts: true']
+every other file is byte-identical between A and B
+repair bound on agent_runner, verification, container_setup (idempotent)
+NOTE: a pip success message alone is not proof; the preconditions below check what actually loads.
+  PASS editable install rc=1 raises RuntimeError
+
+[T5] precondition must fail when grading imports outside the checkout
+pilot config: {'max_time_minutes': 10.0, 'max_tool_calls': 100, 'max_turns': 60, 'timeout_seconds': 300} | session cap 150 min
+DISPATCH_CONFIRM is False: setup and preconditions will run, the four runs will NOT.
+installing 1 wheels...
+{
+  "swegemma": "MISSING: PackageNotFoundError('swegemma')",
+  "adk-submission": "MISSING: PackageNotFoundError('adk-submission')",
+  "adk-eval-core": "MISSING: PackageNotFoundError('adk-eval-core')",
+  "google-adk": "MISSING: PackageNotFoundError('google-adk')",
+  "vllm": "MISSING: PackageNotFoundError('vllm')",
+  "transformers": "MISSING: PackageNotFoundError('transformers')",
+  "litellm": "MISSING: PackageNotFoundError('litellm')"
+}
+GPUs: 4 ['NVIDIA L4', 'NVIDIA L4', 'NVIDIA L4', 'NVIDIA L4']
+model revision dir: 2 | config sha256: b72dd2eaa6e277d6
+architectures: ['Gemma4ForConditionalGeneration']
+quantization: {"format": "pack-quantized", "num_bits": 4}
+loaded 2 tasks
+PILOT TASKS and the evidence they were chosen on:
+
+  requests_7309 psf/requests
+    negative  exit=1 cases=220 failed=5 errored=0
+              agent  import: /tmp/swegemma_sandbox_e873efa6-0ac_5tloj0qc/workspace/src/requests/__init__.py
+              pytest import: /tmp/swegemma_sandbox_e873efa6-0ac_5tloj0qc/workspace/src/requests/__init__.py
+    positive  exit=0 cases=220 failed=0 errored=0
+              agent  import: /tmp/swegemma_sandbox_3833472f-a5e_y4r39p3o/workspace/src/requests/__init__.py
+              pytest import: /tmp/swegemma_sandbox_3833472f-a5e_y4r39p3o/workspace/src/requests/__init__.py
+    baseline-fails / gold-passes / imports-in-checkout: True
+    baseline failures: ["test__parse_content_type_header[multipart/form-data; boundary = something ; boundary2='something_else' ; no_equals -expected4]", 'test__parse_content_type_header[multipart/form-data; boundary = something ; boundary2="something_else" ; no_equals -expected5]', "test__parse_content_type_header[multipart/form-data; boundary = something ; 'boundary2=something_else' ; no_equals -expected6]", 'test__parse_content_type_header[multipart/form-data; boundary = something ; "boundary2=something_else" ; no_equals -expected7]']
+
+  rich_3471 Textualize/rich
+    negative  exit=1 cases=108 failed=1 errored=0
+              agent  import: /tmp/swegemma_sandbox_f08960dc-1da_l796is_3/workspace/rich/__init__.py
+              pytest import: /tmp/swegemma_sandbox_f08960dc-1da_l796is_3/workspace/rich/__init__.py
+    positive  exit=0 cases=108 failed=0 errored=0
+              agent  import: /tmp/swegemma_sandbox_ccbda4f2-225_sj8p8sth/workspace/rich/__init__.py
+              pytest import: /tmp/swegemma_sandbox_ccbda4f2-225_sj8p8sth/workspace/rich/__init__.py
+    baseline-fails / gold-passes / imports-in-checkout: True
+    baseline failures: ['test_append_tokens']
+prompt leakage: CLEAN (0 lines came from the issue text)
+LIMITATION: this is a data-flow check. The subprocess backend runs run_command on the host, so
+answer-key files remain reachable; traces must be audited for contamination before trusting a run.
+A: sha256=f6392b8207a91a52 model=gemma-4-31b-it-qat-w4a16-ct
+B: sha256=194b420a487c48f4 model=gemma-4-31b-it-qat-w4a16-ct
+A vs B sampling delta: ['-  include_thoughts: false', '+  include_thoughts: true']
+every other file is byte-identical between A and B
+repair bound on agent_runner, verification, container_setup (idempotent)
+NOTE: a pip success message alone is not proof; the preconditions below check what actually loads.
+  PASS bad grading import aborts
+
+[T6] report: attribution from real artifact schema; missing data is 'unavailable'
+pilot config: {'max_time_minutes': 10.0, 'max_tool_calls': 100, 'max_turns': 60, 'timeout_seconds': 300} | session cap 150 min
+DISPATCH_CONFIRM is False: setup and preconditions will run, the four runs will NOT.
+installing 1 wheels...
+{
+  "swegemma": "MISSING: PackageNotFoundError('swegemma')",
+  "adk-submission": "MISSING: PackageNotFoundError('adk-submission')",
+  "adk-eval-core": "MISSING: PackageNotFoundError('adk-eval-core')",
+  "google-adk": "MISSING: PackageNotFoundError('google-adk')",
+  "vllm": "MISSING: PackageNotFoundError('vllm')",
+  "transformers": "MISSING: PackageNotFoundError('transformers')",
+  "litellm": "MISSING: PackageNotFoundError('litellm')"
+}
+GPUs: 4 ['NVIDIA L4', 'NVIDIA L4', 'NVIDIA L4', 'NVIDIA L4']
+model revision dir: 2 | config sha256: b72dd2eaa6e277d6
+architectures: ['Gemma4ForConditionalGeneration']
+quantization: {"format": "pack-quantized", "num_bits": 4}
+loaded 2 tasks
+PILOT TASKS and the evidence they were chosen on:
+
+  requests_7309 psf/requests
+    negative  exit=1 cases=220 failed=5 errored=0
+              agent  import: /tmp/swegemma_sandbox_e873efa6-0ac_5tloj0qc/workspace/src/requests/__init__.py
+              pytest import: /tmp/swegemma_sandbox_e873efa6-0ac_5tloj0qc/workspace/src/requests/__init__.py
+    positive  exit=0 cases=220 failed=0 errored=0
+              agent  import: /tmp/swegemma_sandbox_3833472f-a5e_y4r39p3o/workspace/src/requests/__init__.py
+              pytest import: /tmp/swegemma_sandbox_3833472f-a5e_y4r39p3o/workspace/src/requests/__init__.py
+    baseline-fails / gold-passes / imports-in-checkout: True
+    baseline failures: ["test__parse_content_type_header[multipart/form-data; boundary = something ; boundary2='something_else' ; no_equals -expected4]", 'test__parse_content_type_header[multipart/form-data; boundary = something ; boundary2="something_else" ; no_equals -expected5]', "test__parse_content_type_header[multipart/form-data; boundary = something ; 'boundary2=something_else' ; no_equals -expected6]", 'test__parse_content_type_header[multipart/form-data; boundary = something ; "boundary2=something_else" ; no_equals -expected7]']
+
+  rich_3471 Textualize/rich
+    negative  exit=1 cases=108 failed=1 errored=0
+              agent  import: /tmp/swegemma_sandbox_f08960dc-1da_l796is_3/workspace/rich/__init__.py
+              pytest import: /tmp/swegemma_sandbox_f08960dc-1da_l796is_3/workspace/rich/__init__.py
+    positive  exit=0 cases=108 failed=0 errored=0
+              agent  import: /tmp/swegemma_sandbox_ccbda4f2-225_sj8p8sth/workspace/rich/__init__.py
+              pytest import: /tmp/swegemma_sandbox_ccbda4f2-225_sj8p8sth/workspace/rich/__init__.py
+    baseline-fails / gold-passes / imports-in-checkout: True
+    baseline failures: ['test_append_tokens']
+prompt leakage: CLEAN (0 lines came from the issue text)
+LIMITATION: this is a data-flow check. The subprocess backend runs run_command on the host, so
+answer-key files remain reachable; traces must be audited for contamination before trusting a run.
+A: sha256=f6392b8207a91a52 model=gemma-4-31b-it-qat-w4a16-ct
+B: sha256=194b420a487c48f4 model=gemma-4-31b-it-qat-w4a16-ct
+A vs B sampling delta: ['-  include_thoughts: false', '+  include_thoughts: true']
+every other file is byte-identical between A and B
+repair bound on agent_runner, verification, container_setup (idempotent)
+NOTE: a pip success message alone is not proof; the preconditions below check what actually loads.
+requests_7309    ok=True
+    workspace: /tmp/sbx_test/workspace
+    agent    : /tmp/sbx_test/workspace/requests/__init__.py
+    grading  : /tmp/sbx_test/workspace/requests/__init__.py
+rich_3471        ok=True
+    workspace: /tmp/sbx_test/workspace
+    agent    : /tmp/sbx_test/workspace/requests/__init__.py
+    grading  : /tmp/sbx_test/workspace/requests/__init__.py
+ALL PRECONDITIONS PASSED
+Caveat: passing here does not guarantee the same resolution inside every later sandbox; the
+per-run setup observations verify imports again in the actual sandboxes. These are grading-flags probes, not direct in-pytest observations.
+adapters discovered: none (expected)
+Dispatch disabled: vLLM is not instantiated or started.
+planned run order: [('requests_7309', 'A'), ('requests_7309', 'B'), ('rich_3471', 'B'), ('rich_3471', 'A')]
+DISPATCH_CONFIRM=False: no server was started and no model run is dispatched.
+no runs executed (DISPATCH_CONFIRM was False)
+saved pilot_manifest.json and pilot_results.csv
+{"candidate": "A", "task": "requests_7309", "resolved": false, "attribution": "suspected_scratch_only_patch", "harness_error": "Agent exceeded turns budget (40 turns)", "test_exit_code": 1, "grading_ran": true, "patch_bytes": 117, "patch_touches_source": false, "patch_files": "repro.py", "wall_s": 160.0, "agent_phase_s": 150.0, "grading_phase_s": "unavailable", "both_setup_imports_verified": "unavailable", "agent_loop_s": "unavailable", "termination_error": "Agent exceeded turns budget (40 turns)", "duration_seconds_harness": 150.7, "tool_calls": 4, "edit_calls": 1, "shell_edit_hints": 0, "repeated_identical_cmds": 1, "tool_errors": 1, "first_source_edit_attempt_step": "unavailable", "finish_reasons": "unavailable", "prompt_tokens": 1000, "completion_tokens": 50, "run_error": ""}
+
+cand       task             resolved  attribution            agent_s
+A          requests_7309    False     suspected_scratch_only_patch 150.0
+
+A two-task pilot establishes that the experiment executes. It does NOT establish which
+candidate is better. agent_phase_s covers container-A setup plus the agent loop;
+grading_phase_s is container B. The harness duration_seconds bundles both and must not be
+multiplied to project the 12-hour scoring runtime.
+saved pilot_manifest.json and pilot_results.csv
+  PASS report produced a row
+  PASS repeated identical commands counted
+  PASS tool errors counted from trace
+  PASS scratch-only patch attributed
+  PASS patch_touches_source False for scratch
+  PASS missing grading phase reported unavailable, not 0
+  PASS harness duration kept separate from phase timing
+
+[T7] disabled dispatch means zero server startup, registry or evaluation calls
+pilot config: {'max_time_minutes': 10.0, 'max_tool_calls': 100, 'max_turns': 60, 'timeout_seconds': 300} | session cap 150 min
+DISPATCH_CONFIRM is False: setup and preconditions will run, the four runs will NOT.
+installing 1 wheels...
+{
+  "swegemma": "MISSING: PackageNotFoundError('swegemma')",
+  "adk-submission": "MISSING: PackageNotFoundError('adk-submission')",
+  "adk-eval-core": "MISSING: PackageNotFoundError('adk-eval-core')",
+  "google-adk": "MISSING: PackageNotFoundError('google-adk')",
+  "vllm": "MISSING: PackageNotFoundError('vllm')",
+  "transformers": "MISSING: PackageNotFoundError('transformers')",
+  "litellm": "MISSING: PackageNotFoundError('litellm')"
+}
+GPUs: 4 ['NVIDIA L4', 'NVIDIA L4', 'NVIDIA L4', 'NVIDIA L4']
+model revision dir: 2 | config sha256: b72dd2eaa6e277d6
+architectures: ['Gemma4ForConditionalGeneration']
+quantization: {"format": "pack-quantized", "num_bits": 4}
+loaded 2 tasks
+PILOT TASKS and the evidence they were chosen on:
+
+  requests_7309 psf/requests
+    negative  exit=1 cases=220 failed=5 errored=0
+              agent  import: /tmp/swegemma_sandbox_e873efa6-0ac_5tloj0qc/workspace/src/requests/__init__.py
+              pytest import: /tmp/swegemma_sandbox_e873efa6-0ac_5tloj0qc/workspace/src/requests/__init__.py
+    positive  exit=0 cases=220 failed=0 errored=0
+              agent  import: /tmp/swegemma_sandbox_3833472f-a5e_y4r39p3o/workspace/src/requests/__init__.py
+              pytest import: /tmp/swegemma_sandbox_3833472f-a5e_y4r39p3o/workspace/src/requests/__init__.py
+    baseline-fails / gold-passes / imports-in-checkout: True
+    baseline failures: ["test__parse_content_type_header[multipart/form-data; boundary = something ; boundary2='something_else' ; no_equals -expected4]", 'test__parse_content_type_header[multipart/form-data; boundary = something ; boundary2="something_else" ; no_equals -expected5]', "test__parse_content_type_header[multipart/form-data; boundary = something ; 'boundary2=something_else' ; no_equals -expected6]", 'test__parse_content_type_header[multipart/form-data; boundary = something ; "boundary2=something_else" ; no_equals -expected7]']
+
+  rich_3471 Textualize/rich
+    negative  exit=1 cases=108 failed=1 errored=0
+              agent  import: /tmp/swegemma_sandbox_f08960dc-1da_l796is_3/workspace/rich/__init__.py
+              pytest import: /tmp/swegemma_sandbox_f08960dc-1da_l796is_3/workspace/rich/__init__.py
+    positive  exit=0 cases=108 failed=0 errored=0
+              agent  import: /tmp/swegemma_sandbox_ccbda4f2-225_sj8p8sth/workspace/rich/__init__.py
+              pytest import: /tmp/swegemma_sandbox_ccbda4f2-225_sj8p8sth/workspace/rich/__init__.py
+    baseline-fails / gold-passes / imports-in-checkout: True
+    baseline failures: ['test_append_tokens']
+prompt leakage: CLEAN (0 lines came from the issue text)
+LIMITATION: this is a data-flow check. The subprocess backend runs run_command on the host, so
+answer-key files remain reachable; traces must be audited for contamination before trusting a run.
+A: sha256=f6392b8207a91a52 model=gemma-4-31b-it-qat-w4a16-ct
+B: sha256=194b420a487c48f4 model=gemma-4-31b-it-qat-w4a16-ct
+A vs B sampling delta: ['-  include_thoughts: false', '+  include_thoughts: true']
+every other file is byte-identical between A and B
+repair bound on agent_runner, verification, container_setup (idempotent)
+NOTE: a pip success message alone is not proof; the preconditions below check what actually loads.
+requests_7309    ok=True
+    workspace: /tmp/sbx_test/workspace
+    agent    : /tmp/sbx_test/workspace/requests/__init__.py
+    grading  : /tmp/sbx_test/workspace/requests/__init__.py
+rich_3471        ok=True
+    workspace: /tmp/sbx_test/workspace
+    agent    : /tmp/sbx_test/workspace/requests/__init__.py
+    grading  : /tmp/sbx_test/workspace/requests/__init__.py
+ALL PRECONDITIONS PASSED
+Caveat: passing here does not guarantee the same resolution inside every later sandbox; the
+per-run setup observations verify imports again in the actual sandboxes. These are grading-flags probes, not direct in-pytest observations.
+adapters discovered: none (expected)
+Dispatch disabled: vLLM is not instantiated or started.
+planned run order: [('requests_7309', 'A'), ('requests_7309', 'B'), ('rich_3471', 'B'), ('rich_3471', 'A')]
+DISPATCH_CONFIRM=False: no server was started and no model run is dispatched.
+no runs executed (DISPATCH_CONFIRM was False)
+saved pilot_manifest.json and pilot_results.csv
+  PASS disabled path never instantiates server
+  PASS disabled path never starts model or registry
+  PASS disabled path never evaluates
+  PASS optional backend failures tolerated after editable/provenance success
+
+[T8] four actual dispatch calls through real harness forwarding method; cleanup and timings
+pilot config: {'max_time_minutes': 10.0, 'max_tool_calls': 100, 'max_turns': 60, 'timeout_seconds': 300} | session cap 150 min
+installing 1 wheels...
+{
+  "swegemma": "MISSING: PackageNotFoundError('swegemma')",
+  "adk-submission": "MISSING: PackageNotFoundError('adk-submission')",
+  "adk-eval-core": "MISSING: PackageNotFoundError('adk-eval-core')",
+  "google-adk": "MISSING: PackageNotFoundError('google-adk')",
+  "vllm": "MISSING: PackageNotFoundError('vllm')",
+  "transformers": "MISSING: PackageNotFoundError('transformers')",
+  "litellm": "MISSING: PackageNotFoundError('litellm')"
+}
+GPUs: 4 ['NVIDIA L4', 'NVIDIA L4', 'NVIDIA L4', 'NVIDIA L4']
+model revision dir: 2 | config sha256: b72dd2eaa6e277d6
+architectures: ['Gemma4ForConditionalGeneration']
+quantization: {"format": "pack-quantized", "num_bits": 4}
+loaded 2 tasks
+PILOT TASKS and the evidence they were chosen on:
+
+  requests_7309 psf/requests
+    negative  exit=1 cases=220 failed=5 errored=0
+              agent  import: /tmp/swegemma_sandbox_e873efa6-0ac_5tloj0qc/workspace/src/requests/__init__.py
+              pytest import: /tmp/swegemma_sandbox_e873efa6-0ac_5tloj0qc/workspace/src/requests/__init__.py
+    positive  exit=0 cases=220 failed=0 errored=0
+              agent  import: /tmp/swegemma_sandbox_3833472f-a5e_y4r39p3o/workspace/src/requests/__init__.py
+              pytest import: /tmp/swegemma_sandbox_3833472f-a5e_y4r39p3o/workspace/src/requests/__init__.py
+    baseline-fails / gold-passes / imports-in-checkout: True
+    baseline failures: ["test__parse_content_type_header[multipart/form-data; boundary = something ; boundary2='something_else' ; no_equals -expected4]", 'test__parse_content_type_header[multipart/form-data; boundary = something ; boundary2="something_else" ; no_equals -expected5]', "test__parse_content_type_header[multipart/form-data; boundary = something ; 'boundary2=something_else' ; no_equals -expected6]", 'test__parse_content_type_header[multipart/form-data; boundary = something ; "boundary2=something_else" ; no_equals -expected7]']
+
+  rich_3471 Textualize/rich
+    negative  exit=1 cases=108 failed=1 errored=0
+              agent  import: /tmp/swegemma_sandbox_f08960dc-1da_l796is_3/workspace/rich/__init__.py
+              pytest import: /tmp/swegemma_sandbox_f08960dc-1da_l796is_3/workspace/rich/__init__.py
+    positive  exit=0 cases=108 failed=0 errored=0
+              agent  import: /tmp/swegemma_sandbox_ccbda4f2-225_sj8p8sth/workspace/rich/__init__.py
+              pytest import: /tmp/swegemma_sandbox_ccbda4f2-225_sj8p8sth/workspace/rich/__init__.py
+    baseline-fails / gold-passes / imports-in-checkout: True
+    baseline failures: ['test_append_tokens']
+prompt leakage: CLEAN (0 lines came from the issue text)
+LIMITATION: this is a data-flow check. The subprocess backend runs run_command on the host, so
+answer-key files remain reachable; traces must be audited for contamination before trusting a run.
+A: sha256=f6392b8207a91a52 model=gemma-4-31b-it-qat-w4a16-ct
+B: sha256=194b420a487c48f4 model=gemma-4-31b-it-qat-w4a16-ct
+A vs B sampling delta: ['-  include_thoughts: false', '+  include_thoughts: true']
+every other file is byte-identical between A and B
+repair bound on agent_runner, verification, container_setup (idempotent)
+NOTE: a pip success message alone is not proof; the preconditions below check what actually loads.
+requests_7309    ok=True
+    workspace: /tmp/sbx_test/workspace
+    agent    : /tmp/sbx_test/workspace/requests/__init__.py
+    grading  : /tmp/sbx_test/workspace/requests/__init__.py
+rich_3471        ok=True
+    workspace: /tmp/sbx_test/workspace
+    agent    : /tmp/sbx_test/workspace/requests/__init__.py
+    grading  : /tmp/sbx_test/workspace/requests/__init__.py
+ALL PRECONDITIONS PASSED
+Caveat: passing here does not guarantee the same resolution inside every later sandbox; the
+per-run setup observations verify imports again in the actual sandboxes. These are grading-flags probes, not direct in-pytest observations.
+adapters discovered: none (expected)
+vLLM up at http://127.0.0.1:8000/v1 (tp=4) in 0.0 min
+NOTE: the server default enable_thinking=True is overridden per-request by each candidate's
+extra_body.chat_template_kwargs, which is what makes A and B differ.
+planned run order: [('requests_7309', 'A'), ('requests_7309', 'B'), ('rich_3471', 'B'), ('rich_3471', 'A')]
+A requests_7309 wall_s= 0.006 phase_s= {'agent_phase_s': [0.0015813000063644722], 'agent_loop_s': [3.25], 'grading_phase_s': [0.0013315000105649233]}
+B requests_7309 wall_s= 0.006 phase_s= {'agent_phase_s': [0.0015057999989949167], 'agent_loop_s': [3.25], 'grading_phase_s': [0.0015103000041563064]}
+B rich_3471 wall_s= 0.007 phase_s= {'agent_phase_s': [0.001909200000227429], 'agent_loop_s': [3.25], 'grading_phase_s': [0.0016582000098424032]}
+A rich_3471 wall_s= 0.007 phase_s= {'agent_phase_s': [0.001941199996508658], 'agent_loop_s': [3.25], 'grading_phase_s': [0.0018975999992107973]}
+{"candidate": "A", "task": "requests_7309", "resolved": true, "attribution": "passed", "harness_error": "unavailable", "test_exit_code": 0, "grading_ran": true, "patch_bytes": 97, "patch_touches_source": true, "patch_files": "pkg/module.py", "wall_s": 0.006, "agent_phase_s": 0.0015813000063644722, "grading_phase_s": 0.0013315000105649233, "both_setup_imports_verified": true, "agent_loop_s": 3.25, "termination_error": "unavailable", "duration_seconds_harness": 4.0, "tool_calls": "unavailable", "edit_calls": "unavailable", "shell_edit_hints": "unavailable", "repeated_identical_cmds": "unavailable", "tool_errors": "unavailable", "first_source_edit_attempt_step": "unavailable", "finish_reasons": "unavailable", "prompt_tokens": "unavailable", "completion_tokens": "unavailable", "run_error": ""}
+{"candidate": "B", "task": "requests_7309", "resolved": true, "attribution": "passed", "harness_error": "unavailable", "test_exit_code": 0, "grading_ran": true, "patch_bytes": 97, "patch_touches_source": true, "patch_files": "pkg/module.py", "wall_s": 0.006, "agent_phase_s": 0.0015057999989949167, "grading_phase_s": 0.0015103000041563064, "both_setup_imports_verified": true, "agent_loop_s": 3.25, "termination_error": "unavailable", "duration_seconds_harness": 4.0, "tool_calls": "unavailable", "edit_calls": "unavailable", "shell_edit_hints": "unavailable", "repeated_identical_cmds": "unavailable", "tool_errors": "unavailable", "first_source_edit_attempt_step": "unavailable", "finish_reasons": "unavailable", "prompt_tokens": "unavailable", "completion_tokens": "unavailable", "run_error": ""}
+{"candidate": "B", "task": "rich_3471", "resolved": true, "attribution": "passed", "harness_error": "unavailable", "test_exit_code": 0, "grading_ran": true, "patch_bytes": 97, "patch_touches_source": true, "patch_files": "pkg/module.py", "wall_s": 0.007, "agent_phase_s": 0.001909200000227429, "grading_phase_s": 0.0016582000098424032, "both_setup_imports_verified": true, "agent_loop_s": 3.25, "termination_error": "unavailable", "duration_seconds_harness": 4.0, "tool_calls": "unavailable", "edit_calls": "unavailable", "shell_edit_hints": "unavailable", "repeated_identical_cmds": "unavailable", "tool_errors": "unavailable", "first_source_edit_attempt_step": "unavailable", "finish_reasons": "unavailable", "prompt_tokens": "unavailable", "completion_tokens": "unavailable", "run_error": ""}
+{"candidate": "A", "task": "rich_3471", "resolved": true, "attribution": "passed", "harness_error": "unavailable", "test_exit_code": 0, "grading_ran": true, "patch_bytes": 97, "patch_touches_source": true, "patch_files": "pkg/module.py", "wall_s": 0.007, "agent_phase_s": 0.001941199996508658, "grading_phase_s": 0.0018975999992107973, "both_setup_imports_verified": true, "agent_loop_s": 3.25, "termination_error": "unavailable", "duration_seconds_harness": 4.0, "tool_calls": "unavailable", "edit_calls": "unavailable", "shell_edit_hints": "unavailable", "repeated_identical_cmds": "unavailable", "tool_errors": "unavailable", "first_source_edit_attempt_step": "unavailable", "finish_reasons": "unavailable", "prompt_tokens": "unavailable", "completion_tokens": "unavailable", "run_error": ""}
+
+cand       task             resolved  attribution            agent_s
+A          requests_7309    True      passed                 0.0015813000063644722
+B          requests_7309    True      passed                 0.0015057999989949167
+B          rich_3471        True      passed                 0.001909200000227429
+A          rich_3471        True      passed                 0.001941199996508658
+
+A two-task pilot establishes that the experiment executes. It does NOT establish which
+candidate is better. agent_phase_s covers container-A setup plus the agent loop;
+grading_phase_s is container B. The harness duration_seconds bundles both and must not be
+multiplied to project the 12-hour scoring runtime.
+saved pilot_manifest.json and pilot_results.csv
+  PASS four evaluations in specified order
+  PASS one model start and one stop
+  PASS server stopped flag recorded
+  PASS actual evaluator bindings record both phases
+  PASS agent loop timing distinct from setup/grading
+  PASS both actual setup paths observed on every run
+  PASS setup evidence tied to current candidate and task
+  PASS four report rows read real schema
+  PASS grading executed as reported
+  PASS manifest contains model, hardware, task and candidate hashes
+
+[T9] startup failure stops partial server and cannot evaluate
+pilot config: {'max_time_minutes': 10.0, 'max_tool_calls': 100, 'max_turns': 60, 'timeout_seconds': 300} | session cap 150 min
+installing 1 wheels...
+{
+  "swegemma": "MISSING: PackageNotFoundError('swegemma')",
+  "adk-submission": "MISSING: PackageNotFoundError('adk-submission')",
+  "adk-eval-core": "MISSING: PackageNotFoundError('adk-eval-core')",
+  "google-adk": "MISSING: PackageNotFoundError('google-adk')",
+  "vllm": "MISSING: PackageNotFoundError('vllm')",
+  "transformers": "MISSING: PackageNotFoundError('transformers')",
+  "litellm": "MISSING: PackageNotFoundError('litellm')"
+}
+GPUs: 4 ['NVIDIA L4', 'NVIDIA L4', 'NVIDIA L4', 'NVIDIA L4']
+model revision dir: 2 | config sha256: b72dd2eaa6e277d6
+architectures: ['Gemma4ForConditionalGeneration']
+quantization: {"format": "pack-quantized", "num_bits": 4}
+loaded 2 tasks
+PILOT TASKS and the evidence they were chosen on:
+
+  requests_7309 psf/requests
+    negative  exit=1 cases=220 failed=5 errored=0
+              agent  import: /tmp/swegemma_sandbox_e873efa6-0ac_5tloj0qc/workspace/src/requests/__init__.py
+              pytest import: /tmp/swegemma_sandbox_e873efa6-0ac_5tloj0qc/workspace/src/requests/__init__.py
+    positive  exit=0 cases=220 failed=0 errored=0
+              agent  import: /tmp/swegemma_sandbox_3833472f-a5e_y4r39p3o/workspace/src/requests/__init__.py
+              pytest import: /tmp/swegemma_sandbox_3833472f-a5e_y4r39p3o/workspace/src/requests/__init__.py
+    baseline-fails / gold-passes / imports-in-checkout: True
+    baseline failures: ["test__parse_content_type_header[multipart/form-data; boundary = something ; boundary2='something_else' ; no_equals -expected4]", 'test__parse_content_type_header[multipart/form-data; boundary = something ; boundary2="something_else" ; no_equals -expected5]', "test__parse_content_type_header[multipart/form-data; boundary = something ; 'boundary2=something_else' ; no_equals -expected6]", 'test__parse_content_type_header[multipart/form-data; boundary = something ; "boundary2=something_else" ; no_equals -expected7]']
+
+  rich_3471 Textualize/rich
+    negative  exit=1 cases=108 failed=1 errored=0
+              agent  import: /tmp/swegemma_sandbox_f08960dc-1da_l796is_3/workspace/rich/__init__.py
+              pytest import: /tmp/swegemma_sandbox_f08960dc-1da_l796is_3/workspace/rich/__init__.py
+    positive  exit=0 cases=108 failed=0 errored=0
+              agent  import: /tmp/swegemma_sandbox_ccbda4f2-225_sj8p8sth/workspace/rich/__init__.py
+              pytest import: /tmp/swegemma_sandbox_ccbda4f2-225_sj8p8sth/workspace/rich/__init__.py
+    baseline-fails / gold-passes / imports-in-checkout: True
+    baseline failures: ['test_append_tokens']
+prompt leakage: CLEAN (0 lines came from the issue text)
+LIMITATION: this is a data-flow check. The subprocess backend runs run_command on the host, so
+answer-key files remain reachable; traces must be audited for contamination before trusting a run.
+A: sha256=f6392b8207a91a52 model=gemma-4-31b-it-qat-w4a16-ct
+B: sha256=194b420a487c48f4 model=gemma-4-31b-it-qat-w4a16-ct
+A vs B sampling delta: ['-  include_thoughts: false', '+  include_thoughts: true']
+every other file is byte-identical between A and B
+repair bound on agent_runner, verification, container_setup (idempotent)
+NOTE: a pip success message alone is not proof; the preconditions below check what actually loads.
+requests_7309    ok=True
+    workspace: /tmp/sbx_test/workspace
+    agent    : /tmp/sbx_test/workspace/requests/__init__.py
+    grading  : /tmp/sbx_test/workspace/requests/__init__.py
+rich_3471        ok=True
+    workspace: /tmp/sbx_test/workspace
+    agent    : /tmp/sbx_test/workspace/requests/__init__.py
+    grading  : /tmp/sbx_test/workspace/requests/__init__.py
+ALL PRECONDITIONS PASSED
+Caveat: passing here does not guarantee the same resolution inside every later sandbox; the
+per-run setup observations verify imports again in the actual sandboxes. These are grading-flags probes, not direct in-pytest observations.
+adapters discovered: none (expected)
+  PASS startup failure propagates
+  PASS partial startup stopped exactly once
+  PASS startup failure prevents evaluations
+
+[T10] evaluator failure persists evidence, stops server, prevents later runs
+pilot config: {'max_time_minutes': 10.0, 'max_tool_calls': 100, 'max_turns': 60, 'timeout_seconds': 300} | session cap 150 min
+installing 1 wheels...
+{
+  "swegemma": "MISSING: PackageNotFoundError('swegemma')",
+  "adk-submission": "MISSING: PackageNotFoundError('adk-submission')",
+  "adk-eval-core": "MISSING: PackageNotFoundError('adk-eval-core')",
+  "google-adk": "MISSING: PackageNotFoundError('google-adk')",
+  "vllm": "MISSING: PackageNotFoundError('vllm')",
+  "transformers": "MISSING: PackageNotFoundError('transformers')",
+  "litellm": "MISSING: PackageNotFoundError('litellm')"
+}
+GPUs: 4 ['NVIDIA L4', 'NVIDIA L4', 'NVIDIA L4', 'NVIDIA L4']
+model revision dir: 2 | config sha256: b72dd2eaa6e277d6
+architectures: ['Gemma4ForConditionalGeneration']
+quantization: {"format": "pack-quantized", "num_bits": 4}
+loaded 2 tasks
+PILOT TASKS and the evidence they were chosen on:
+
+  requests_7309 psf/requests
+    negative  exit=1 cases=220 failed=5 errored=0
+              agent  import: /tmp/swegemma_sandbox_e873efa6-0ac_5tloj0qc/workspace/src/requests/__init__.py
+              pytest import: /tmp/swegemma_sandbox_e873efa6-0ac_5tloj0qc/workspace/src/requests/__init__.py
+    positive  exit=0 cases=220 failed=0 errored=0
+              agent  import: /tmp/swegemma_sandbox_3833472f-a5e_y4r39p3o/workspace/src/requests/__init__.py
+              pytest import: /tmp/swegemma_sandbox_3833472f-a5e_y4r39p3o/workspace/src/requests/__init__.py
+    baseline-fails / gold-passes / imports-in-checkout: True
+    baseline failures: ["test__parse_content_type_header[multipart/form-data; boundary = something ; boundary2='something_else' ; no_equals -expected4]", 'test__parse_content_type_header[multipart/form-data; boundary = something ; boundary2="something_else" ; no_equals -expected5]', "test__parse_content_type_header[multipart/form-data; boundary = something ; 'boundary2=something_else' ; no_equals -expected6]", 'test__parse_content_type_header[multipart/form-data; boundary = something ; "boundary2=something_else" ; no_equals -expected7]']
+
+  rich_3471 Textualize/rich
+    negative  exit=1 cases=108 failed=1 errored=0
+              agent  import: /tmp/swegemma_sandbox_f08960dc-1da_l796is_3/workspace/rich/__init__.py
+              pytest import: /tmp/swegemma_sandbox_f08960dc-1da_l796is_3/workspace/rich/__init__.py
+    positive  exit=0 cases=108 failed=0 errored=0
+              agent  import: /tmp/swegemma_sandbox_ccbda4f2-225_sj8p8sth/workspace/rich/__init__.py
+              pytest import: /tmp/swegemma_sandbox_ccbda4f2-225_sj8p8sth/workspace/rich/__init__.py
+    baseline-fails / gold-passes / imports-in-checkout: True
+    baseline failures: ['test_append_tokens']
+prompt leakage: CLEAN (0 lines came from the issue text)
+LIMITATION: this is a data-flow check. The subprocess backend runs run_command on the host, so
+answer-key files remain reachable; traces must be audited for contamination before trusting a run.
+A: sha256=f6392b8207a91a52 model=gemma-4-31b-it-qat-w4a16-ct
+B: sha256=194b420a487c48f4 model=gemma-4-31b-it-qat-w4a16-ct
+A vs B sampling delta: ['-  include_thoughts: false', '+  include_thoughts: true']
+every other file is byte-identical between A and B
+repair bound on agent_runner, verification, container_setup (idempotent)
+NOTE: a pip success message alone is not proof; the preconditions below check what actually loads.
+requests_7309    ok=True
+    workspace: /tmp/sbx_test/workspace
+    agent    : /tmp/sbx_test/workspace/requests/__init__.py
+    grading  : /tmp/sbx_test/workspace/requests/__init__.py
+rich_3471        ok=True
+    workspace: /tmp/sbx_test/workspace
+    agent    : /tmp/sbx_test/workspace/requests/__init__.py
+    grading  : /tmp/sbx_test/workspace/requests/__init__.py
+ALL PRECONDITIONS PASSED
+Caveat: passing here does not guarantee the same resolution inside every later sandbox; the
+per-run setup observations verify imports again in the actual sandboxes. These are grading-flags probes, not direct in-pytest observations.
+adapters discovered: none (expected)
+vLLM up at http://127.0.0.1:8000/v1 (tp=4) in 0.0 min
+NOTE: the server default enable_thinking=True is overridden per-request by each candidate's
+extra_body.chat_template_kwargs, which is what makes A and B differ.
+planned run order: [('requests_7309', 'A'), ('requests_7309', 'B'), ('rich_3471', 'B'), ('rich_3471', 'A')]
+Traceback (most recent call last):
+  File "<cell 11>", line 65, in <module>
+  File "<cell 4>", line 20, in run_sync
+  File "C:\Users\Navin Kumar\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Navin Kumar\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Navin Kumar\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\Documents2\KaggleMLChallenge\The Gemma 4\scripts\test_pilot_notebook.py", line 199, in run
+    raise RuntimeError("simulated evaluator failure")
+RuntimeError: simulated evaluator failure
+
+A requests_7309 wall_s= 0.002 phase_s= {}
+Stopping further dispatch after infrastructure/provenance failure.
+{"candidate": "A", "task": "requests_7309", "resolved": "unavailable", "attribution": "run_error", "harness_error": "unavailable", "test_exit_code": "unavailable", "grading_ran": "unavailable", "patch_bytes": 0, "patch_touches_source": false, "patch_files": "unavailable", "wall_s": 0.002, "agent_phase_s": "unavailable", "grading_phase_s": "unavailable", "both_setup_imports_verified": false, "agent_loop_s": "unavailable", "termination_error": "unavailable", "duration_seconds_harness": "unavailable", "tool_calls": "unavailable", "edit_calls": "unavailable", "shell_edit_hints": "unavailable", "repeated_identical_cmds": "unavailable", "tool_errors": "unavailable", "first_source_edit_attempt_step": "unavailable", "finish_reasons": "unavailable", "prompt_tokens": "unavailable", "completion_tokens": "unavailable", "run_error": "Traceback (most recent call last):\n  File \"<cell 11>\", line 65, in <module>\n  File \"<cell 4>\", line 20, in run_sync\n  Fi"}
+
+cand       task             resolved  attribution            agent_s
+A          requests_7309    unavailable run_error              unavailable
+
+A two-task pilot establishes that the experiment executes. It does NOT establish which
+candidate is better. agent_phase_s covers container-A setup plus the agent loop;
+grading_phase_s is container B. The harness duration_seconds bundles both and must not be
+multiplied to project the 12-hour scoring runtime.
+saved pilot_manifest.json and pilot_results.csv
+  PASS only first failing run dispatched
+  PASS error run stops server
+  PASS error report preserves missing data
+  PASS runs persisted on evaluator failure
+
+[T11] bad import during actual grading stops further GPU dispatch
+pilot config: {'max_time_minutes': 10.0, 'max_tool_calls': 100, 'max_turns': 60, 'timeout_seconds': 300} | session cap 150 min
+installing 1 wheels...
+{
+  "swegemma": "MISSING: PackageNotFoundError('swegemma')",
+  "adk-submission": "MISSING: PackageNotFoundError('adk-submission')",
+  "adk-eval-core": "MISSING: PackageNotFoundError('adk-eval-core')",
+  "google-adk": "MISSING: PackageNotFoundError('google-adk')",
+  "vllm": "MISSING: PackageNotFoundError('vllm')",
+  "transformers": "MISSING: PackageNotFoundError('transformers')",
+  "litellm": "MISSING: PackageNotFoundError('litellm')"
+}
+GPUs: 4 ['NVIDIA L4', 'NVIDIA L4', 'NVIDIA L4', 'NVIDIA L4']
+model revision dir: 2 | config sha256: b72dd2eaa6e277d6
+architectures: ['Gemma4ForConditionalGeneration']
+quantization: {"format": "pack-quantized", "num_bits": 4}
+loaded 2 tasks
+PILOT TASKS and the evidence they were chosen on:
+
+  requests_7309 psf/requests
+    negative  exit=1 cases=220 failed=5 errored=0
+              agent  import: /tmp/swegemma_sandbox_e873efa6-0ac_5tloj0qc/workspace/src/requests/__init__.py
+              pytest import: /tmp/swegemma_sandbox_e873efa6-0ac_5tloj0qc/workspace/src/requests/__init__.py
+    positive  exit=0 cases=220 failed=0 errored=0
+              agent  import: /tmp/swegemma_sandbox_3833472f-a5e_y4r39p3o/workspace/src/requests/__init__.py
+              pytest import: /tmp/swegemma_sandbox_3833472f-a5e_y4r39p3o/workspace/src/requests/__init__.py
+    baseline-fails / gold-passes / imports-in-checkout: True
+    baseline failures: ["test__parse_content_type_header[multipart/form-data; boundary = something ; boundary2='something_else' ; no_equals -expected4]", 'test__parse_content_type_header[multipart/form-data; boundary = something ; boundary2="something_else" ; no_equals -expected5]', "test__parse_content_type_header[multipart/form-data; boundary = something ; 'boundary2=something_else' ; no_equals -expected6]", 'test__parse_content_type_header[multipart/form-data; boundary = something ; "boundary2=something_else" ; no_equals -expected7]']
+
+  rich_3471 Textualize/rich
+    negative  exit=1 cases=108 failed=1 errored=0
+              agent  import: /tmp/swegemma_sandbox_f08960dc-1da_l796is_3/workspace/rich/__init__.py
+              pytest import: /tmp/swegemma_sandbox_f08960dc-1da_l796is_3/workspace/rich/__init__.py
+    positive  exit=0 cases=108 failed=0 errored=0
+              agent  import: /tmp/swegemma_sandbox_ccbda4f2-225_sj8p8sth/workspace/rich/__init__.py
+              pytest import: /tmp/swegemma_sandbox_ccbda4f2-225_sj8p8sth/workspace/rich/__init__.py
+    baseline-fails / gold-passes / imports-in-checkout: True
+    baseline failures: ['test_append_tokens']
+prompt leakage: CLEAN (0 lines came from the issue text)
+LIMITATION: this is a data-flow check. The subprocess backend runs run_command on the host, so
+answer-key files remain reachable; traces must be audited for contamination before trusting a run.
+A: sha256=f6392b8207a91a52 model=gemma-4-31b-it-qat-w4a16-ct
+B: sha256=194b420a487c48f4 model=gemma-4-31b-it-qat-w4a16-ct
+A vs B sampling delta: ['-  include_thoughts: false', '+  include_thoughts: true']
+every other file is byte-identical between A and B
+repair bound on agent_runner, verification, container_setup (idempotent)
+NOTE: a pip success message alone is not proof; the preconditions below check what actually loads.
+requests_7309    ok=True
+    workspace: /tmp/sbx_test/workspace
+    agent    : /tmp/sbx_test/workspace/requests/__init__.py
+    grading  : /tmp/sbx_test/workspace/requests/__init__.py
+rich_3471        ok=True
+    workspace: /tmp/sbx_test/workspace
+    agent    : /tmp/sbx_test/workspace/requests/__init__.py
+    grading  : /tmp/sbx_test/workspace/requests/__init__.py
+ALL PRECONDITIONS PASSED
+Caveat: passing here does not guarantee the same resolution inside every later sandbox; the
+per-run setup observations verify imports again in the actual sandboxes. These are grading-flags probes, not direct in-pytest observations.
+adapters discovered: none (expected)
+vLLM up at http://127.0.0.1:8000/v1 (tp=4) in 0.0 min
+NOTE: the server default enable_thinking=True is overridden per-request by each candidate's
+extra_body.chat_template_kwargs, which is what makes A and B differ.
+planned run order: [('requests_7309', 'A'), ('requests_7309', 'B'), ('rich_3471', 'B'), ('rich_3471', 'A')]
+cation"].install_editable_package(docker, "grading_" + task.instance_id)
+  File "<cell 8>", line 74, in patched_install_editable_package
+RuntimeError: Actual sandbox import is outside its checkout: {"container": "grading_requests_7309", "required": {"setuptools": {"rc": 0, "out": "ok", "err": "backend boom"}, "wheel": {"rc": 0, "out": "ok", "err": "backend boom"}, "editables": {"rc": 0, "out": "ok", "err": "backend boom"}}, "optional": {"flit_core": {"rc": 1, "out": "ok", "err": "backend boom"}, "hatchling": {"rc": 1, "out": "ok", "err": "backend boom"}, "poetry_core": {"rc": 1, "out": "ok", "err": "backend boom"}, "pdm_backend": {"rc": 1, "out": "ok", "err": "backend boom"}}, "phase": "grading", "run": {"task": "requests_7309", "candidate": "A", "package": "requests"}, "editable": {"rc": 0, "out": "ok", "err": "editable boom"}, "workspace_real": "/tmp/sbx_test/workspace", "agent": {"rc": 0, "path": "/usr/local/lib/python3.12/dist-packages/requests/__init__.py", "executable": "/venv/bin/python3", "stderr": ""}, "grading_flags": {"rc": 0, "path": "/usr/local/lib/python3.12/dist-packages/requests/__init__.py", "executable": "/venv/bin/python3", "stderr": ""}, "provenance_ok": false}
+
+A requests_7309 wall_s= 0.004 phase_s= {'agent_phase_s': [0.0013903999933972955], 'agent_loop_s': [3.25], 'grading_phase_s': [0.0011986000026809052]}
+Stopping further dispatch after infrastructure/provenance failure.
+{"candidate": "A", "task": "requests_7309", "resolved": "unavailable", "attribution": "run_error", "harness_error": "unavailable", "test_exit_code": "unavailable", "grading_ran": "unavailable", "patch_bytes": 0, "patch_touches_source": false, "patch_files": "unavailable", "wall_s": 0.004, "agent_phase_s": 0.0013903999933972955, "grading_phase_s": 0.0011986000026809052, "both_setup_imports_verified": false, "agent_loop_s": 3.25, "termination_error": "unavailable", "duration_seconds_harness": "unavailable", "tool_calls": "unavailable", "edit_calls": "unavailable", "shell_edit_hints": "unavailable", "repeated_identical_cmds": "unavailable", "tool_errors": "unavailable", "first_source_edit_attempt_step": "unavailable", "finish_reasons": "unavailable", "prompt_tokens": "unavailable", "completion_tokens": "unavailable", "run_error": "Traceback (most recent call last):\n  File \"<cell 11>\", line 65, in <module>\n  File \"<cell 4>\", line 20, in run_sync\n  Fi"}
+
+cand       task             resolved  attribution            agent_s
+A          requests_7309    unavailable run_error              0.0013903999933972955
+
+A two-task pilot establishes that the experiment executes. It does NOT establish which
+candidate is better. agent_phase_s covers container-A setup plus the agent loop;
+grading_phase_s is container B. The harness duration_seconds bundles both and must not be
+multiplied to project the 12-hour scoring runtime.
+saved pilot_manifest.json and pilot_results.csv
+  PASS actual grading import failure stops after one run
+  PASS failed setup cannot be reported as verified
+  PASS failed setup probe persisted
+  PASS setup failure stops server
+
+[T12] evidence fails closed: both imports and same failed tests must pass with gold
+pilot config: {'max_time_minutes': 10.0, 'max_tool_calls': 100, 'max_turns': 60, 'timeout_seconds': 300} | session cap 150 min
+DISPATCH_CONFIRM is False: setup and preconditions will run, the four runs will NOT.
+installing 1 wheels...
+{
+  "swegemma": "MISSING: PackageNotFoundError('swegemma')",
+  "adk-submission": "MISSING: PackageNotFoundError('adk-submission')",
+  "adk-eval-core": "MISSING: PackageNotFoundError('adk-eval-core')",
+  "google-adk": "MISSING: PackageNotFoundError('google-adk')",
+  "vllm": "MISSING: PackageNotFoundError('vllm')",
+  "transformers": "MISSING: PackageNotFoundError('transformers')",
+  "litellm": "MISSING: PackageNotFoundError('litellm')"
+}
+GPUs: 4 ['NVIDIA L4', 'NVIDIA L4', 'NVIDIA L4', 'NVIDIA L4']
+model revision dir: 2 | config sha256: b72dd2eaa6e277d6
+architectures: ['Gemma4ForConditionalGeneration']
+quantization: {"format": "pack-quantized", "num_bits": 4}
+loaded 2 tasks
+PILOT TASKS and the evidence they were chosen on:
+
+  requests_7309 psf/requests
+  PASS reject control missing
+  PASS invalid evidence never starts server: missing
+pilot config: {'max_time_minutes': 10.0, 'max_tool_calls': 100, 'max_turns': 60, 'timeout_seconds': 300} | session cap 150 min
+DISPATCH_CONFIRM is False: setup and preconditions will run, the four runs will NOT.
+installing 1 wheels...
+{
+  "swegemma": "MISSING: PackageNotFoundError('swegemma')",
+  "adk-submission": "MISSING: PackageNotFoundError('adk-submission')",
+  "adk-eval-core": "MISSING: PackageNotFoundError('adk-eval-core')",
+  "google-adk": "MISSING: PackageNotFoundError('google-adk')",
+  "vllm": "MISSING: PackageNotFoundError('vllm')",
+  "transformers": "MISSING: PackageNotFoundError('transformers')",
+  "litellm": "MISSING: PackageNotFoundError('litellm')"
+}
+GPUs: 4 ['NVIDIA L4', 'NVIDIA L4', 'NVIDIA L4', 'NVIDIA L4']
+model revision dir: 2 | config sha256: b72dd2eaa6e277d6
+architectures: ['Gemma4ForConditionalGeneration']
+quantization: {"format": "pack-quantized", "num_bits": 4}
+loaded 2 tasks
+PILOT TASKS and the evidence they were chosen on:
+
+  requests_7309 psf/requests
+    negative  exit=1 cases=220 failed=5 errored=0
+              agent  import: /tmp/swegemma_sandbox_e873efa6-0ac_5tloj0qc/workspace/src/requests/__init__.py
+              pytest import: /tmp/swegemma_sandbox_e873efa6-0ac_5tloj0qc/workspace/src/requests/__init__.py
+    positive  exit=0 cases=220 failed=0 errored=0
+              agent  import: /tmp/swegemma_sandbox_3833472f-a5e_y4r39p3o/workspace/src/requests/__init__.py
+              pytest import: /usr/lib/requests/__init__.py
+    baseline-fails / gold-passes / imports-in-checkout: False
+  PASS reject control positive_import
+  PASS invalid evidence never starts server: positive_import
+pilot config: {'max_time_minutes': 10.0, 'max_tool_calls': 100, 'max_turns': 60, 'timeout_seconds': 300} | session cap 150 min
+DISPATCH_CONFIRM is False: setup and preconditions will run, the four runs will NOT.
+installing 1 wheels...
+{
+  "swegemma": "MISSING: PackageNotFoundError('swegemma')",
+  "adk-submission": "MISSING: PackageNotFoundError('adk-submission')",
+  "adk-eval-core": "MISSING: PackageNotFoundError('adk-eval-core')",
+  "google-adk": "MISSING: PackageNotFoundError('google-adk')",
+  "vllm": "MISSING: PackageNotFoundError('vllm')",
+  "transformers": "MISSING: PackageNotFoundError('transformers')",
+  "litellm": "MISSING: PackageNotFoundError('litellm')"
+}
+GPUs: 4 ['NVIDIA L4', 'NVIDIA L4', 'NVIDIA L4', 'NVIDIA L4']
+model revision dir: 2 | config sha256: b72dd2eaa6e277d6
+architectures: ['Gemma4ForConditionalGeneration']
+quantization: {"format": "pack-quantized", "num_bits": 4}
+loaded 2 tasks
+PILOT TASKS and the evidence they were chosen on:
+
+  requests_7309 psf/requests
+    negative  exit=1 cases=220 failed=5 errored=0
+              agent  import: /tmp/swegemma_sandbox_e873efa6-0ac_5tloj0qc/workspace/src/requests/__init__.py
+              pytest import: /tmp/swegemma_sandbox_e873efa6-0ac_5tloj0qc/workspace/src/requests/__init__.py
+    positive  exit=0 cases=220 failed=0 errored=0
+              agent  import: /tmp/swegemma_sandbox_3833472f-a5e_y4r39p3o/workspace/src/requests/__init__.py
+              pytest import: /tmp/swegemma_sandbox_3833472f-a5e_y4r39p3o/workspace/src/requests/__init__.py
+    baseline-fails / gold-passes / imports-in-checkout: False
+  PASS reject control no_matching_nodes
+  PASS invalid evidence never starts server: no_matching_nodes
+pilot config: {'max_time_minutes': 10.0, 'max_tool_calls': 100, 'max_turns': 60, 'timeout_seconds': 300} | session cap 150 min
+DISPATCH_CONFIRM is False: setup and preconditions will run, the four runs will NOT.
+installing 1 wheels...
+{
+  "swegemma": "MISSING: PackageNotFoundError('swegemma')",
+  "adk-submission": "MISSING: PackageNotFoundError('adk-submission')",
+  "adk-eval-core": "MISSING: PackageNotFoundError('adk-eval-core')",
+  "google-adk": "MISSING: PackageNotFoundError('google-adk')",
+  "vllm": "MISSING: PackageNotFoundError('vllm')",
+  "transformers": "MISSING: PackageNotFoundError('transformers')",
+  "litellm": "MISSING: PackageNotFoundError('litellm')"
+}
+GPUs: 4 ['NVIDIA L4', 'NVIDIA L4', 'NVIDIA L4', 'NVIDIA L4']
+model revision dir: 2 | config sha256: b72dd2eaa6e277d6
+architectures: ['Gemma4ForConditionalGeneration']
+quantization: {"format": "pack-quantized", "num_bits": 4}
+loaded 2 tasks
+PILOT TASKS and the evidence they were chosen on:
+
+  requests_7309 psf/requests
+    negative  exit=1 cases=220 failed=5 errored=0
+              agent  import: /tmp/swegemma_sandbox_e873efa6-0ac_5tloj0qc/workspace/src/requests/__init__.py
+              pytest import: /tmp/swegemma_sandbox_e873efa6-0ac_5tloj0qc/workspace/src/requests/__init__.py
+    positive  exit=0 cases=220 failed=0 errored=1
+              agent  import: /tmp/swegemma_sandbox_3833472f-a5e_y4r39p3o/workspace/src/requests/__init__.py
+              pytest import: /tmp/swegemma_sandbox_3833472f-a5e_y4r39p3o/workspace/src/requests/__init__.py
+    baseline-fails / gold-passes / imports-in-checkout: False
+  PASS reject control positive_error
+  PASS invalid evidence never starts server: positive_error
+
+[T13] checkout containment is component-based
+pilot config: {'max_time_minutes': 10.0, 'max_tool_calls': 100, 'max_turns': 60, 'timeout_seconds': 300} | session cap 150 min
+DISPATCH_CONFIRM is False: setup and preconditions will run, the four runs will NOT.
+installing 1 wheels...
+{
+  "swegemma": "MISSING: PackageNotFoundError('swegemma')",
+  "adk-submission": "MISSING: PackageNotFoundError('adk-submission')",
+  "adk-eval-core": "MISSING: PackageNotFoundError('adk-eval-core')",
+  "google-adk": "MISSING: PackageNotFoundError('google-adk')",
+  "vllm": "MISSING: PackageNotFoundError('vllm')",
+  "transformers": "MISSING: PackageNotFoundError('transformers')",
+  "litellm": "MISSING: PackageNotFoundError('litellm')"
+}
+GPUs: 4 ['NVIDIA L4', 'NVIDIA L4', 'NVIDIA L4', 'NVIDIA L4']
+model revision dir: 2 | config sha256: b72dd2eaa6e277d6
+architectures: ['Gemma4ForConditionalGeneration']
+quantization: {"format": "pack-quantized", "num_bits": 4}
+loaded 2 tasks
+  PASS accept actual descendant
+  PASS reject common prefix sibling
+  PASS reject path escaping through parent
+  PASS reject missing workspace and relative path
+
+[T14] B-only files cannot slip through a one-sided candidate comparison
+pilot config: {'max_time_minutes': 10.0, 'max_tool_calls': 100, 'max_turns': 60, 'timeout_seconds': 300} | session cap 150 min
+DISPATCH_CONFIRM is False: setup and preconditions will run, the four runs will NOT.
+installing 1 wheels...
+{
+  "swegemma": "MISSING: PackageNotFoundError('swegemma')",
+  "adk-submission": "MISSING: PackageNotFoundError('adk-submission')",
+  "adk-eval-core": "MISSING: PackageNotFoundError('adk-eval-core')",
+  "google-adk": "MISSING: PackageNotFoundError('google-adk')",
+  "vllm": "MISSING: PackageNotFoundError('vllm')",
+  "transformers": "MISSING: PackageNotFoundError('transformers')",
+  "litellm": "MISSING: PackageNotFoundError('litellm')"
+}
+GPUs: 4 ['NVIDIA L4', 'NVIDIA L4', 'NVIDIA L4', 'NVIDIA L4']
+model revision dir: 2 | config sha256: b72dd2eaa6e277d6
+architectures: ['Gemma4ForConditionalGeneration']
+quantization: {"format": "pack-quantized", "num_bits": 4}
+loaded 2 tasks
+PILOT TASKS and the evidence they were chosen on:
+
+  requests_7309 psf/requests
+    negative  exit=1 cases=220 failed=5 errored=0
+              agent  import: /tmp/swegemma_sandbox_e873efa6-0ac_5tloj0qc/workspace/src/requests/__init__.py
+              pytest import: /tmp/swegemma_sandbox_e873efa6-0ac_5tloj0qc/workspace/src/requests/__init__.py
+    positive  exit=0 cases=220 failed=0 errored=0
+              agent  import: /tmp/swegemma_sandbox_3833472f-a5e_y4r39p3o/workspace/src/requests/__init__.py
+              pytest import: /tmp/swegemma_sandbox_3833472f-a5e_y4r39p3o/workspace/src/requests/__init__.py
+    baseline-fails / gold-passes / imports-in-checkout: True
+    baseline failures: ["test__parse_content_type_header[multipart/form-data; boundary = something ; boundary2='something_else' ; no_equals -expected4]", 'test__parse_content_type_header[multipart/form-data; boundary = something ; boundary2="something_else" ; no_equals -expected5]', "test__parse_content_type_header[multipart/form-data; boundary = something ; 'boundary2=something_else' ; no_equals -expected6]", 'test__parse_content_type_header[multipart/form-data; boundary = something ; "boundary2=something_else" ; no_equals -expected7]']
+
+  rich_3471 Textualize/rich
+    negative  exit=1 cases=108 failed=1 errored=0
+              agent  import: /tmp/swegemma_sandbox_f08960dc-1da_l796is_3/workspace/rich/__init__.py
+              pytest import: /tmp/swegemma_sandbox_f08960dc-1da_l796is_3/workspace/rich/__init__.py
+    positive  exit=0 cases=108 failed=0 errored=0
+              agent  import: /tmp/swegemma_sandbox_ccbda4f2-225_sj8p8sth/workspace/rich/__init__.py
+              pytest import: /tmp/swegemma_sandbox_ccbda4f2-225_sj8p8sth/workspace/rich/__init__.py
+    baseline-fails / gold-passes / imports-in-checkout: True
+    baseline failures: ['test_append_tokens']
+prompt leakage: CLEAN (0 lines came from the issue text)
+LIMITATION: this is a data-flow check. The subprocess backend runs run_command on the host, so
+answer-key files remain reachable; traces must be audited for contamination before trusting a run.
+A: sha256=f6392b8207a91a52 model=gemma-4-31b-it-qat-w4a16-ct
+B: sha256=20ec3245d0ca7099 model=gemma-4-31b-it-qat-w4a16-ct
+A vs B sampling delta: ['-  include_thoughts: false', '+  include_thoughts: true']
+  PASS reject extra file on B
+  PASS candidate mismatch stops before server
+
+[T15] existing results abort before starting model
+pilot config: {'max_time_minutes': 10.0, 'max_tool_calls': 100, 'max_turns': 60, 'timeout_seconds': 300} | session cap 150 min
+installing 1 wheels...
+{
+  "swegemma": "MISSING: PackageNotFoundError('swegemma')",
+  "adk-submission": "MISSING: PackageNotFoundError('adk-submission')",
+  "adk-eval-core": "MISSING: PackageNotFoundError('adk-eval-core')",
+  "google-adk": "MISSING: PackageNotFoundError('google-adk')",
+  "vllm": "MISSING: PackageNotFoundError('vllm')",
+  "transformers": "MISSING: PackageNotFoundError('transformers')",
+  "litellm": "MISSING: PackageNotFoundError('litellm')"
+}
+GPUs: 4 ['NVIDIA L4', 'NVIDIA L4', 'NVIDIA L4', 'NVIDIA L4']
+model revision dir: 2 | config sha256: b72dd2eaa6e277d6
+architectures: ['Gemma4ForConditionalGeneration']
+quantization: {"format": "pack-quantized", "num_bits": 4}
+loaded 2 tasks
+PILOT TASKS and the evidence they were chosen on:
+
+  requests_7309 psf/requests
+    negative  exit=1 cases=220 failed=5 errored=0
+              agent  import: /tmp/swegemma_sandbox_e873efa6-0ac_5tloj0qc/workspace/src/requests/__init__.py
+              pytest import: /tmp/swegemma_sandbox_e873efa6-0ac_5tloj0qc/workspace/src/requests/__init__.py
+    positive  exit=0 cases=220 failed=0 errored=0
+              agent  import: /tmp/swegemma_sandbox_3833472f-a5e_y4r39p3o/workspace/src/requests/__init__.py
+              pytest import: /tmp/swegemma_sandbox_3833472f-a5e_y4r39p3o/workspace/src/requests/__init__.py
+    baseline-fails / gold-passes / imports-in-checkout: True
+    baseline failures: ["test__parse_content_type_header[multipart/form-data; boundary = something ; boundary2='something_else' ; no_equals -expected4]", 'test__parse_content_type_header[multipart/form-data; boundary = something ; boundary2="something_else" ; no_equals -expected5]', "test__parse_content_type_header[multipart/form-data; boundary = something ; 'boundary2=something_else' ; no_equals -expected6]", 'test__parse_content_type_header[multipart/form-data; boundary = something ; "boundary2=something_else" ; no_equals -expected7]']
+
+  rich_3471 Textualize/rich
+    negative  exit=1 cases=108 failed=1 errored=0
+              agent  import: /tmp/swegemma_sandbox_f08960dc-1da_l796is_3/workspace/rich/__init__.py
+              pytest import: /tmp/swegemma_sandbox_f08960dc-1da_l796is_3/workspace/rich/__init__.py
+    positive  exit=0 cases=108 failed=0 errored=0
+              agent  import: /tmp/swegemma_sandbox_ccbda4f2-225_sj8p8sth/workspace/rich/__init__.py
+              pytest import: /tmp/swegemma_sandbox_ccbda4f2-225_sj8p8sth/workspace/rich/__init__.py
+    baseline-fails / gold-passes / imports-in-checkout: True
+    baseline failures: ['test_append_tokens']
+prompt leakage: CLEAN (0 lines came from the issue text)
+LIMITATION: this is a data-flow check. The subprocess backend runs run_command on the host, so
+answer-key files remain reachable; traces must be audited for contamination before trusting a run.
+A: sha256=f6392b8207a91a52 model=gemma-4-31b-it-qat-w4a16-ct
+B: sha256=194b420a487c48f4 model=gemma-4-31b-it-qat-w4a16-ct
+A vs B sampling delta: ['-  include_thoughts: false', '+  include_thoughts: true']
+every other file is byte-identical between A and B
+repair bound on agent_runner, verification, container_setup (idempotent)
+NOTE: a pip success message alone is not proof; the preconditions below check what actually loads.
+requests_7309    ok=True
+    workspace: /tmp/sbx_test/workspace
+    agent    : /tmp/sbx_test/workspace/requests/__init__.py
+    grading  : /tmp/sbx_test/workspace/requests/__init__.py
+rich_3471        ok=True
+    workspace: /tmp/sbx_test/workspace
+    agent    : /tmp/sbx_test/workspace/requests/__init__.py
+    grading  : /tmp/sbx_test/workspace/requests/__init__.py
+ALL PRECONDITIONS PASSED
+Caveat: passing here does not guarantee the same resolution inside every later sandbox; the
+per-run setup observations verify imports again in the actual sandboxes. These are grading-flags probes, not direct in-pytest observations.
+adapters discovered: none (expected)
+  PASS reject stale output
+  PASS stale results never start server
+
+[T16] admission deadline stops new runs and shuts model down
+pilot config: {'max_time_minutes': 10.0, 'max_tool_calls': 100, 'max_turns': 60, 'timeout_seconds': 300} | session cap 150 min
+installing 1 wheels...
+{
+  "swegemma": "MISSING: PackageNotFoundError('swegemma')",
+  "adk-submission": "MISSING: PackageNotFoundError('adk-submission')",
+  "adk-eval-core": "MISSING: PackageNotFoundError('adk-eval-core')",
+  "google-adk": "MISSING: PackageNotFoundError('google-adk')",
+  "vllm": "MISSING: PackageNotFoundError('vllm')",
+  "transformers": "MISSING: PackageNotFoundError('transformers')",
+  "litellm": "MISSING: PackageNotFoundError('litellm')"
+}
+GPUs: 4 ['NVIDIA L4', 'NVIDIA L4', 'NVIDIA L4', 'NVIDIA L4']
+model revision dir: 2 | config sha256: b72dd2eaa6e277d6
+architectures: ['Gemma4ForConditionalGeneration']
+quantization: {"format": "pack-quantized", "num_bits": 4}
+loaded 2 tasks
+PILOT TASKS and the evidence they were chosen on:
+
+  requests_7309 psf/requests
+    negative  exit=1 cases=220 failed=5 errored=0
+              agent  import: /tmp/swegemma_sandbox_e873efa6-0ac_5tloj0qc/workspace/src/requests/__init__.py
+              pytest import: /tmp/swegemma_sandbox_e873efa6-0ac_5tloj0qc/workspace/src/requests/__init__.py
+    positive  exit=0 cases=220 failed=0 errored=0
+              agent  import: /tmp/swegemma_sandbox_3833472f-a5e_y4r39p3o/workspace/src/requests/__init__.py
+              pytest import: /tmp/swegemma_sandbox_3833472f-a5e_y4r39p3o/workspace/src/requests/__init__.py
+    baseline-fails / gold-passes / imports-in-checkout: True
+    baseline failures: ["test__parse_content_type_header[multipart/form-data; boundary = something ; boundary2='something_else' ; no_equals -expected4]", 'test__parse_content_type_header[multipart/form-data; boundary = something ; boundary2="something_else" ; no_equals -expected5]', "test__parse_content_type_header[multipart/form-data; boundary = something ; 'boundary2=something_else' ; no_equals -expected6]", 'test__parse_content_type_header[multipart/form-data; boundary = something ; "boundary2=something_else" ; no_equals -expected7]']
+
+  rich_3471 Textualize/rich
+    negative  exit=1 cases=108 failed=1 errored=0
+              agent  import: /tmp/swegemma_sandbox_f08960dc-1da_l796is_3/workspace/rich/__init__.py
+              pytest import: /tmp/swegemma_sandbox_f08960dc-1da_l796is_3/workspace/rich/__init__.py
+    positive  exit=0 cases=108 failed=0 errored=0
+              agent  import: /tmp/swegemma_sandbox_ccbda4f2-225_sj8p8sth/workspace/rich/__init__.py
+              pytest import: /tmp/swegemma_sandbox_ccbda4f2-225_sj8p8sth/workspace/rich/__init__.py
+    baseline-fails / gold-passes / imports-in-checkout: True
+    baseline failures: ['test_append_tokens']
+prompt leakage: CLEAN (0 lines came from the issue text)
+LIMITATION: this is a data-flow check. The subprocess backend runs run_command on the host, so
+answer-key files remain reachable; traces must be audited for contamination before trusting a run.
+A: sha256=f6392b8207a91a52 model=gemma-4-31b-it-qat-w4a16-ct
+B: sha256=194b420a487c48f4 model=gemma-4-31b-it-qat-w4a16-ct
+A vs B sampling delta: ['-  include_thoughts: false', '+  include_thoughts: true']
+every other file is byte-identical between A and B
+repair bound on agent_runner, verification, container_setup (idempotent)
+NOTE: a pip success message alone is not proof; the preconditions below check what actually loads.
+requests_7309    ok=True
+    workspace: /tmp/sbx_test/workspace
+    agent    : /tmp/sbx_test/workspace/requests/__init__.py
+    grading  : /tmp/sbx_test/workspace/requests/__init__.py
+rich_3471        ok=True
+    workspace: /tmp/sbx_test/workspace
+    agent    : /tmp/sbx_test/workspace/requests/__init__.py
+    grading  : /tmp/sbx_test/workspace/requests/__init__.py
+ALL PRECONDITIONS PASSED
+Caveat: passing here does not guarantee the same resolution inside every later sandbox; the
+per-run setup observations verify imports again in the actual sandboxes. These are grading-flags probes, not direct in-pytest observations.
+adapters discovered: none (expected)
+vLLM up at http://127.0.0.1:8000/v1 (tp=4) in 0.0 min
+NOTE: the server default enable_thinking=True is overridden per-request by each candidate's
+extra_body.chat_template_kwargs, which is what makes A and B differ.
+planned run order: [('requests_7309', 'A'), ('requests_7309', 'B'), ('rich_3471', 'B'), ('rich_3471', 'A')]
+Insufficient session allowance for another run; preserving partial artifacts.
+no runs executed (DISPATCH_CONFIRM was False)
+saved pilot_manifest.json and pilot_results.csv
+  PASS no run admitted without planning reserve
+  PASS admission deadline stops server
+  PASS manifest admits this is not a hard timeout
+
+[T17] artifact schema and Unicode length, sentinels, missing/duplicate results
+pilot config: {'max_time_minutes': 10.0, 'max_tool_calls': 100, 'max_turns': 60, 'timeout_seconds': 300} | session cap 150 min
+installing 1 wheels...
+{
+  "swegemma": "MISSING: PackageNotFoundError('swegemma')",
+  "adk-submission": "MISSING: PackageNotFoundError('adk-submission')",
+  "adk-eval-core": "MISSING: PackageNotFoundError('adk-eval-core')",
+  "google-adk": "MISSING: PackageNotFoundError('google-adk')",
+  "vllm": "MISSING: PackageNotFoundError('vllm')",
+  "transformers": "MISSING: PackageNotFoundError('transformers')",
+  "litellm": "MISSING: PackageNotFoundError('litellm')"
+}
+GPUs: 4 ['NVIDIA L4', 'NVIDIA L4', 'NVIDIA L4', 'NVIDIA L4']
+model revision dir: 2 | config sha256: b72dd2eaa6e277d6
+architectures: ['Gemma4ForConditionalGeneration']
+quantization: {"format": "pack-quantized", "num_bits": 4}
+loaded 2 tasks
+PILOT TASKS and the evidence they were chosen on:
+
+  requests_7309 psf/requests
+    negative  exit=1 cases=220 failed=5 errored=0
+              agent  import: /tmp/swegemma_sandbox_e873efa6-0ac_5tloj0qc/workspace/src/requests/__init__.py
+              pytest import: /tmp/swegemma_sandbox_e873efa6-0ac_5tloj0qc/workspace/src/requests/__init__.py
+    positive  exit=0 cases=220 failed=0 errored=0
+              agent  import: /tmp/swegemma_sandbox_3833472f-a5e_y4r39p3o/workspace/src/requests/__init__.py
+              pytest import: /tmp/swegemma_sandbox_3833472f-a5e_y4r39p3o/workspace/src/requests/__init__.py
+    baseline-fails / gold-passes / imports-in-checkout: True
+    baseline failures: ["test__parse_content_type_header[multipart/form-data; boundary = something ; boundary2='something_else' ; no_equals -expected4]", 'test__parse_content_type_header[multipart/form-data; boundary = something ; boundary2="something_else" ; no_equals -expected5]', "test__parse_content_type_header[multipart/form-data; boundary = something ; 'boundary2=something_else' ; no_equals -expected6]", 'test__parse_content_type_header[multipart/form-data; boundary = something ; "boundary2=something_else" ; no_equals -expected7]']
+
+  rich_3471 Textualize/rich
+    negative  exit=1 cases=108 failed=1 errored=0
+              agent  import: /tmp/swegemma_sandbox_f08960dc-1da_l796is_3/workspace/rich/__init__.py
+              pytest import: /tmp/swegemma_sandbox_f08960dc-1da_l796is_3/workspace/rich/__init__.py
+    positive  exit=0 cases=108 failed=0 errored=0
+              agent  import: /tmp/swegemma_sandbox_ccbda4f2-225_sj8p8sth/workspace/rich/__init__.py
+              pytest import: /tmp/swegemma_sandbox_ccbda4f2-225_sj8p8sth/workspace/rich/__init__.py
+    baseline-fails / gold-passes / imports-in-checkout: True
+    baseline failures: ['test_append_tokens']
+prompt leakage: CLEAN (0 lines came from the issue text)
+LIMITATION: this is a data-flow check. The subprocess backend runs run_command on the host, so
+answer-key files remain reachable; traces must be audited for contamination before trusting a run.
+A: sha256=f6392b8207a91a52 model=gemma-4-31b-it-qat-w4a16-ct
+B: sha256=194b420a487c48f4 model=gemma-4-31b-it-qat-w4a16-ct
+A vs B sampling delta: ['-  include_thoughts: false', '+  include_thoughts: true']
+every other file is byte-identical between A and B
+repair bound on agent_runner, verification, container_setup (idempotent)
+NOTE: a pip success message alone is not proof; the preconditions below check what actually loads.
+requests_7309    ok=True
+    workspace: /tmp/sbx_test/workspace
+    agent    : /tmp/sbx_test/workspace/requests/__init__.py
+    grading  : /tmp/sbx_test/workspace/requests/__init__.py
+rich_3471        ok=True
+    workspace: /tmp/sbx_test/workspace
+    agent    : /tmp/sbx_test/workspace/requests/__init__.py
+    grading  : /tmp/sbx_test/workspace/requests/__init__.py
+ALL PRECONDITIONS PASSED
+Caveat: passing here does not guarantee the same resolution inside every later sandbox; the
+per-run setup observations verify imports again in the actual sandboxes. These are grading-flags probes, not direct in-pytest observations.
+adapters discovered: none (expected)
+vLLM up at http://127.0.0.1:8000/v1 (tp=4) in 0.0 min
+NOTE: the server default enable_thinking=True is overridden per-request by each candidate's
+extra_body.chat_template_kwargs, which is what makes A and B differ.
+planned run order: [('requests_7309', 'A'), ('requests_7309', 'B'), ('rich_3471', 'B'), ('rich_3471', 'A')]
+A requests_7309 wall_s= 0.013 phase_s= {'agent_phase_s': [0.003403099995921366], 'agent_loop_s': [3.25], 'grading_phase_s': [0.0035742999898502603]}
+B requests_7309 wall_s= 0.012 phase_s= {'agent_phase_s': [0.0032368999964091927], 'agent_loop_s': [3.25], 'grading_phase_s': [0.002567200004705228]}
+B rich_3471 wall_s= 0.013 phase_s= {'agent_phase_s': [0.0031504000071436167], 'agent_loop_s': [3.25], 'grading_phase_s': [0.0036811000027228147]}
+A rich_3471 wall_s= 0.015 phase_s= {'agent_phase_s': [0.004953299998305738], 'agent_loop_s': [3.25], 'grading_phase_s': [0.004673999996157363]}
+{"candidate": "A", "task": "requests_7309", "resolved": true, "attribution": "passed", "harness_error": "unavailable", "test_exit_code": 0, "grading_ran": true, "patch_bytes": 97, "patch_touches_source": true, "patch_files": "pkg/module.py", "wall_s": 0.013, "agent_phase_s": 0.003403099995921366, "grading_phase_s": 0.0035742999898502603, "both_setup_imports_verified": true, "agent_loop_s": 3.25, "termination_error": "unavailable", "duration_seconds_harness": 4.0, "tool_calls": "unavailable", "edit_calls": "unavailable", "shell_edit_hints": "unavailable", "repeated_identical_cmds": "unavailable", "tool_errors": "unavailable", "first_source_edit_attempt_step": "unavailable", "finish_reasons": "unavailable", "prompt_tokens": "unavailable", "completion_tokens": "unavailable", "run_error": ""}
+{"candidate": "B", "task": "requests_7309", "resolved": true, "attribution": "passed", "harness_error": "unavailable", "test_exit_code": 0, "grading_ran": true, "patch_bytes": 97, "patch_touches_source": true, "patch_files": "pkg/module.py", "wall_s": 0.012, "agent_phase_s": 0.0032368999964091927, "grading_phase_s": 0.002567200004705228, "both_setup_imports_verified": true, "agent_loop_s": 3.25, "termination_error": "unavailable", "duration_seconds_harness": 4.0, "tool_calls": "unavailable", "edit_calls": "unavailable", "shell_edit_hints": "unavailable", "repeated_identical_cmds": "unavailable", "tool_errors": "unavailable", "first_source_edit_attempt_step": "unavailable", "finish_reasons": "unavailable", "prompt_tokens": "unavailable", "completion_tokens": "unavailable", "run_error": ""}
+{"candidate": "B", "task": "rich_3471", "resolved": true, "attribution": "passed", "harness_error": "unavailable", "test_exit_code": 0, "grading_ran": true, "patch_bytes": 97, "patch_touches_source": true, "patch_files": "pkg/module.py", "wall_s": 0.013, "agent_phase_s": 0.0031504000071436167, "grading_phase_s": 0.0036811000027228147, "both_setup_imports_verified": true, "agent_loop_s": 3.25, "termination_error": "unavailable", "duration_seconds_harness": 4.0, "tool_calls": "unavailable", "edit_calls": "unavailable", "shell_edit_hints": "unavailable", "repeated_identical_cmds": "unavailable", "tool_errors": "unavailable", "first_source_edit_attempt_step": "unavailable", "finish_reasons": "unavailable", "prompt_tokens": "unavailable", "completion_tokens": "unavailable", "run_error": ""}
+{"candidate": "A", "task": "rich_3471", "resolved": true, "attribution": "passed", "harness_error": "unavailable", "test_exit_code": 0, "grading_ran": true, "patch_bytes": 97, "patch_touches_source": true, "patch_files": "pkg/module.py", "wall_s": 0.015, "agent_phase_s": 0.004953299998305738, "grading_phase_s": 0.004673999996157363, "both_setup_imports_verified": true, "agent_loop_s": 3.25, "termination_error": "unavailable", "duration_seconds_harness": 4.0, "tool_calls": "unavailable", "edit_calls": "unavailable", "shell_edit_hints": "unavailable", "repeated_identical_cmds": "unavailable", "tool_errors": "unavailable", "first_source_edit_attempt_step": "unavailable", "finish_reasons": "unavailable", "prompt_tokens": "unavailable", "completion_tokens": "unavailable", "run_error": ""}
+
+cand       task             resolved  attribution            agent_s
+A          requests_7309    True      passed                 0.003403099995921366
+B          requests_7309    True      passed                 0.0032368999964091927
+B          rich_3471        True      passed                 0.0031504000071436167
+A          rich_3471        True      passed                 0.004953299998305738
+
+A two-task pilot establishes that the experiment executes. It does NOT establish which
+candidate is better. agent_phase_s covers container-A setup plus the agent loop;
+grading_phase_s is container B. The harness duration_seconds bundles both and must not be
+multiplied to project the 12-hour scoring runtime.
+saved pilot_manifest.json and pilot_results.csv
+{"candidate": "A", "task": "requests_7309", "resolved": false, "attribution": "budget_turns_or_tools", "harness_error": "Agent exceeded turns budget (40 turns)", "test_exit_code": -1, "grading_ran": false, "patch_bytes": 110, "patch_touches_source": true, "patch_files": "pkg/module.py", "wall_s": 0.013, "agent_phase_s": 0.003403099995921366, "grading_phase_s": 0.0035742999898502603, "both_setup_imports_verified": true, "agent_loop_s": 3.25, "termination_error": "Agent exceeded turns budget (40 turns)", "duration_seconds_harness": 4.0, "tool_calls": "unavailable", "edit_calls": "unavailable", "shell_edit_hints": "unavailable", "repeated_identical_cmds": "unavailable", "tool_errors": "unavailable", "first_source_edit_attempt_step": "unavailable", "finish_reasons": "unavailable", "prompt_tokens": "unavailable", "completion_tokens": "unavailable", "run_error": ""}
+{"candidate": "B", "task": "requests_7309", "resolved": true, "attribution": "passed", "harness_error": "unavailable", "test_exit_code": 0, "grading_ran": true, "patch_bytes": 97, "patch_touches_source": true, "patch_files": "pkg/module.py", "wall_s": 0.012, "agent_phase_s": 0.0032368999964091927, "grading_phase_s": 0.002567200004705228, "both_setup_imports_verified": true, "agent_loop_s": 3.25, "termination_error": "unavailable", "duration_seconds_harness": 4.0, "tool_calls": "unavailable", "edit_calls": "unavailable", "shell_edit_hints": "unavailable", "repeated_identical_cmds": "unavailable", "tool_errors": "unavailable", "first_source_edit_attempt_step": "unavailable", "finish_reasons": "unavailable", "prompt_tokens": "unavailable", "completion_tokens": "unavailable", "run_error": ""}
+{"candidate": "B", "task": "rich_3471", "resolved": true, "attribution": "passed", "harness_error": "unavailable", "test_exit_code": 0, "grading_ran": true, "patch_bytes": 97, "patch_touches_source": true, "patch_files": "pkg/module.py", "wall_s": 0.013, "agent_phase_s": 0.0031504000071436167, "grading_phase_s": 0.0036811000027228147, "both_setup_imports_verified": true, "agent_loop_s": 3.25, "termination_error": "unavailable", "duration_seconds_harness": 4.0, "tool_calls": "unavailable", "edit_calls": "unavailable", "shell_edit_hints": "unavailable", "repeated_identical_cmds": "unavailable", "tool_errors": "unavailable", "first_source_edit_attempt_step": "unavailable", "finish_reasons": "unavailable", "prompt_tokens": "unavailable", "completion_tokens": "unavailable", "run_error": ""}
+{"candidate": "A", "task": "rich_3471", "resolved": true, "attribution": "passed", "harness_error": "unavailable", "test_exit_code": 0, "grading_ran": true, "patch_bytes": 97, "patch_touches_source": true, "patch_files": "pkg/module.py", "wall_s": 0.015, "agent_phase_s": 0.004953299998305738, "grading_phase_s": 0.004673999996157363, "both_setup_imports_verified": true, "agent_loop_s": 3.25, "termination_error": "unavailable", "duration_seconds_harness": 4.0, "tool_calls": "unavailable", "edit_calls": "unavailable", "shell_edit_hints": "unavailable", "repeated_identical_cmds": "unavailable", "tool_errors": "unavailable", "first_source_edit_attempt_step": "unavailable", "finish_reasons": "unavailable", "prompt_tokens": "unavailable", "completion_tokens": "unavailable", "run_error": ""}
+
+cand       task             resolved  attribution            agent_s
+A          requests_7309    False     budget_turns_or_tools  0.003403099995921366
+B          requests_7309    True      passed                 0.0032368999964091927
+B          rich_3471        True      passed                 0.0031504000071436167
+A          rich_3471        True      passed                 0.004953299998305738
+
+A two-task pilot establishes that the experiment executes. It does NOT establish which
+candidate is better. agent_phase_s covers container-A setup plus the agent loop;
+grading_phase_s is container B. The harness duration_seconds bundles both and must not be
+multiplied to project the 12-hour scoring runtime.
+saved pilot_manifest.json and pilot_results.csv
+  PASS Unicode patch compared as chars while bytes reported separately
+  PASS minus-one sentinel never implies grading
+  PASS termination budget recorded independently
+  PASS reject patch mismatch
+  PASS reject duplicate task results
+  PASS reject wrong task result
+  PASS minified tool errors and command nonzero exits counted
+  PASS new root Python module is not assumed scratch
+
+[T18] changed task content cannot reuse prior control evidence
+pilot config: {'max_time_minutes': 10.0, 'max_tool_calls': 100, 'max_turns': 60, 'timeout_seconds': 300} | session cap 150 min
+DISPATCH_CONFIRM is False: setup and preconditions will run, the four runs will NOT.
+installing 1 wheels...
+{
+  "swegemma": "MISSING: PackageNotFoundError('swegemma')",
+  "adk-submission": "MISSING: PackageNotFoundError('adk-submission')",
+  "adk-eval-core": "MISSING: PackageNotFoundError('adk-eval-core')",
+  "google-adk": "MISSING: PackageNotFoundError('google-adk')",
+  "vllm": "MISSING: PackageNotFoundError('vllm')",
+  "transformers": "MISSING: PackageNotFoundError('transformers')",
+  "litellm": "MISSING: PackageNotFoundError('litellm')"
+}
+GPUs: 4 ['NVIDIA L4', 'NVIDIA L4', 'NVIDIA L4', 'NVIDIA L4']
+model revision dir: 2 | config sha256: b72dd2eaa6e277d6
+architectures: ['Gemma4ForConditionalGeneration']
+quantization: {"format": "pack-quantized", "num_bits": 4}
+loaded 2 tasks
+  PASS changed task data aborts
+  PASS changed task data stops before server
+
+78 passed, 0 failed

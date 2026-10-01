@@ -1,0 +1,183 @@
+{"candidate": "A", "task": "rich_3278", "attempted": true, "stop_reason": "", "grading_observed": false, "outcome": "candidate", "outcome_reason": "persisted: turns budget", "cleanup_ok": true, "owned_sandboxes": "", "resolved": false, "attribution": "empty_patch", "harness_error": "Agent exceeded turns budget (60 turns)", "test_exit_code": -1, "grading_ran": false, "patch_bytes": 0, "patch_touches_source": false, "patch_files": "unavailable", "wall_s": 403.086, "agent_phase_s": 403.052222818, "grading_phase_s": "unavailable", "both_setup_imports_verified": false, "phase_status": "{\"agent\": \"passed\", \"grading\": \"not_attempted\"}", "failure_class": "candidate", "agent_loop_s": 377.5272674800001, "termination_error": "Agent exceeded turns budget (60 turns)", "duration_seconds_harness": 403.07, "tool_calls": 60, "edit_calls": 0, "shell_edit_hints": 54, "repeated_identical_cmds": 48, "tool_errors": 1, "first_source_edit_attempt_step": 5, "finish_reasons": "unavailable", "prompt_tokens": 771994, "completion_tokens": 11790, "run_error": ""}
+{"candidate": "B", "task": "rich_3278", "attempted": true, "stop_reason": "", "grading_observed": false, "outcome": "environment", "outcome_reason": "persisted: unclassified error", "cleanup_ok": true, "owned_sandboxes": "", "resolved": false, "attribution": "empty_patch", "harness_error": "Agent completed execution without calling submit_patch.", "test_exit_code": -1, "grading_ran": false, "patch_bytes": 0, "patch_touches_source": false, "patch_files": "unavailable", "wall_s": 269.667, "agent_phase_s": 269.6423843939999, "grading_phase_s": "unavailable", "both_setup_imports_verified": false, "phase_status": "{\"agent\": \"passed\", \"grading\": \"not_attempted\"}", "failure_class": "environment", "agent_loop_s": 243.98447640099994, "termination_error": "Agent completed execution without calling submit_patch.", "duration_seconds_harness": 269.65, "tool_calls": 48, "edit_calls": 42, "shell_edit_hints": 2, "repeated_identical_cmds": 0, "tool_errors": 1, "first_source_edit_attempt_step": 5, "finish_reasons": "unavailable", "prompt_tokens": 755826, "completion_tokens": 7608, "run_error": ""}
+{"candidate": "B", "task": "rich_3535", "attempted": false, "stop_reason": "not reached before the run loop ended", "resolved": "unavailable", "attribution": "not_attempted", "harness_error": "unavailable", "test_exit_code": "unavailable", "grading_ran": "unavailable", "grading_observed": "unavailable", "outcome": "not_attempted", "outcome_reason": "unavailable", "cleanup_ok": "unavailable", "owned_sandboxes": "unavailable", "patch_bytes": "unavailable", "patch_touches_source": "unavailable", "patch_files": "unavailable", "wall_s": "unavailable", "agent_phase_s": "unavailable", "grading_phase_s": "unavailable", "both_setup_imports_verified": "unavailable", "phase_status": "unavailable", "failure_class": "not_attempted", "agent_loop_s": "unavailable", "termination_error": "unavailable", "duration_seconds_harness": "unavailable", "tool_calls": "unavailable", "edit_calls": "unavailable", "shell_edit_hints": "unavailable", "repeated_identical_cmds": "unavailable", "tool_errors": "unavailable", "first_source_edit_attempt_step": "unavailable", "finish_reasons": "unavailable", "prompt_tokens": "unavailable", "completion_tokens": "unavailable", "run_error": ""}
+{"candidate": "A", "task": "rich_3535", "attempted": false, "stop_reason": "not reached before the run loop ended", "resolved": "unavailable", "attribution": "not_attempted", "harness_error": "unavailable", "test_exit_code": "unavailable", "grading_ran": "unavailable", "grading_observed": "unavailable", "outcome": "not_attempted", "outcome_reason": "unavailable", "cleanup_ok": "unavailable", "owned_sandboxes": "unavailable", "patch_bytes": "unavailable", "patch_touches_source": "unavailable", "patch_files": "unavailable", "wall_s": "unavailable", "agent_phase_s": "unavailable", "grading_phase_s": "unavailable", "both_setup_imports_verified": "unavailable", "phase_status": "unavailable", "failure_class": "not_attempted", "agent_loop_s": "unavailable", "termination_error": "unavailable", "duration_seconds_harness": "unavailable", "tool_calls": "unavailable", "edit_calls": "unavailable", "shell_edit_hints": "unavailable", "repeated_identical_cmds": "unavailable", "tool_errors": "unavailable", "first_source_edit_attempt_step": "unavailable", "finish_reasons": "unavailable", "prompt_tokens": "unavailable", "completion_tokens": "unavailable", "run_error": ""}
+{"candidate": "A", "task": "rich_3675", "attempted": false, "stop_reason": "not reached before the run loop ended", "resolved": "unavailable", "attribution": "not_attempted", "harness_error": "unavailable", "test_exit_code": "unavailable", "grading_ran": "unavailable", "grading_observed": "unavailable", "outcome": "not_attempted", "outcome_reason": "unavailable", "cleanup_ok": "unavailable", "owned_sandboxes": "unavailable", "patch_bytes": "unavailable", "patch_touches_source": "unavailable", "patch_files": "unavailable", "wall_s": "unavailable", "agent_phase_s": "unavailable", "grading_phase_s": "unavailable", "both_setup_imports_verified": "unavailable", "phase_status": "unavailable", "failure_class": "not_attempted", "agent_loop_s": "unavailable", "termination_error": "unavailable", "duration_seconds_harness": "unavailable", "tool_calls": "unavailable", "edit_calls": "unavailable", "shell_edit_hints": "unavailable", "repeated_identical_cmds": "unavailable", "tool_errors": "unavailable", "first_source_edit_attempt_step": "unavailable", "finish_reasons": "unavailable", "prompt_tokens": "unavailable", "completion_tokens": "unavailable", "run_error": ""}
+{"candidate": "B", "task": "rich_3675", "attempted": false, "stop_reason": "not reached before the run loop ended", "resolved": "unavailable", "attribution": "not_attempted", "harness_error": "unavailable", "test_exit_code": "unavailable", "grading_ran": "unavailable", "grading_observed": "unavailable", "outcome": "not_attempted", "outcome_reason": "unavailable", "cleanup_ok": "unavailable", "owned_sandboxes": "unavailable", "patch_bytes": "unavailable", "patch_touches_source": "unavailable", "patch_files": "unavailable", "wall_s": "unavailable", "agent_phase_s": "unavailable", "grading_phase_s": "unavailable", "both_setup_imports_verified": "unavailable", "phase_status": "unavailable", "failure_class": "not_attempted", "agent_loop_s": "unavailable", "termination_error": "unavailable", "duration_seconds_harness": "unavailable", "tool_calls": "unavailable", "edit_calls": "unavailable", "shell_edit_hints": "unavailable", "repeated_identical_cmds": "unavailable", "tool_errors": "unavailable", "first_source_edit_attempt_step": "unavailable", "finish_reasons": "unavailable", "prompt_tokens": "unavailable", "completion_tokens": "unavailable", "run_error": ""}
+{"candidate": "B", "task": "rich_3942", "attempted": false, "stop_reason": "not reached before the run loop ended", "resolved": "unavailable", "attribution": "not_attempted", "harness_error": "unavailable", "test_exit_code": "unavailable", "grading_ran": "unavailable", "grading_observed": "unavailable", "outcome": "not_attempted", "outcome_reason": "unavailable", "cleanup_ok": "unavailable", "owned_sandboxes": "unavailable", "patch_bytes": "unavailable", "patch_touches_source": "unavailable", "patch_files": "unavailable", "wall_s": "unavailable", "agent_phase_s": "unavailable", "grading_phase_s": "unavailable", "both_setup_imports_verified": "unavailable", "phase_status": "unavailable", "failure_class": "not_attempted", "agent_loop_s": "unavailable", "termination_error": "unavailable", "duration_seconds_harness": "unavailable", "tool_calls": "unavailable", "edit_calls": "unavailable", "shell_edit_hints": "unavailable", "repeated_identical_cmds": "unavailable", "tool_errors": "unavailable", "first_source_edit_attempt_step": "unavailable", "finish_reasons": "unavailable", "prompt_tokens": "unavailable", "completion_tokens": "unavailable", "run_error": ""}
+{"candidate": "A", "task": "rich_3942", "attempted": false, "stop_reason": "not reached before the run loop ended", "resolved": "unavailable", "attribution": "not_attempted", "harness_error": "unavailable", "test_exit_code": "unavailable", "grading_ran": "unavailable", "grading_observed": "unavailable", "outcome": "not_attempted", "outcome_reason": "unavailable", "cleanup_ok": "unavailable", "owned_sandboxes": "unavailable", "patch_bytes": "unavailable", "patch_touches_source": "unavailable", "patch_files": "unavailable", "wall_s": "unavailable", "agent_phase_s": "unavailable", "grading_phase_s": "unavailable", "both_setup_imports_verified": "unavailable", "phase_status": "unavailable", "failure_class": "not_attempted", "agent_loop_s": "unavailable", "termination_error": "unavailable", "duration_seconds_harness": "unavailable", "tool_calls": "unavailable", "edit_calls": "unavailable", "shell_edit_hints": "unavailable", "repeated_identical_cmds": "unavailable", "tool_errors": "unavailable", "first_source_edit_attempt_step": "unavailable", "finish_reasons": "unavailable", "prompt_tokens": "unavailable", "completion_tokens": "unavailable", "run_error": ""}
+
+cand       task             resolved  attribution            agent_s
+A          rich_3278        False     empty_patch            403.052222818
+B          rich_3278        False     empty_patch            269.6423843939999
+B          rich_3535        unavailable not_attempted          unavailable
+A          rich_3535        unavailable not_attempted          unavailable
+A          rich_3675        unavailable not_attempted          unavailable
+B          rich_3675        unavailable not_attempted          unavailable
+B          rich_3942        unavailable not_attempted          unavailable
+A          rich_3942        unavailable not_attempted          unavailable
+
+Four tasks from ONE repository (Textualize/rich) are a narrow diagnostic, not a general
+ranking: any result here generalises to rich at best, and cannot say which candidate is
+better overall. Both preconditions and evaluation run on the SUBPROCESS backend, which is
+not a filesystem isolation boundary. agent_phase_s covers container-A setup plus the agent loop;
+grading_phase_s is container B. The harness duration_seconds bundles both and must not be
+multiplied to project the 12-hour scoring runtime.
+
+==============================================================================
+1. ALL PLANNED RUNS (frozen plan; one row each, executed or not)
+==============================================================================
+report code from pinned notebook sha256 97873af2210b0f26276efce30c14d1b4c0491320f008e983c20c174328bfdbbc
+planned (frozen): 8   rows produced: 8
+#  cand  task         attempted  comparable  resolved  failure_class       reason if excluded
+1  A     rich_3278    True       NO          False     candidate           sentinel exit -1: grading produced no verdict
+2  B     rich_3278    True       NO          False     environment         sentinel exit -1: grading produced no verdict
+3  B     rich_3535    False      NO          unavailablenot_attempted       not attempted
+      stop_reason: not reached before the run loop ended
+4  A     rich_3535    False      NO          unavailablenot_attempted       not attempted
+      stop_reason: not reached before the run loop ended
+5  A     rich_3675    False      NO          unavailablenot_attempted       not attempted
+      stop_reason: not reached before the run loop ended
+6  B     rich_3675    False      NO          unavailablenot_attempted       not attempted
+      stop_reason: not reached before the run loop ended
+7  B     rich_3942    False      NO          unavailablenot_attempted       not attempted
+      stop_reason: not reached before the run loop ended
+8  A     rich_3942    False      NO          unavailablenot_attempted       not attempted
+      stop_reason: not reached before the run loop ended
+
+==============================================================================
+2. PAIRED OUTCOMES PER TASK
+==============================================================================
+Gated by the same comparison_eligible() used in section 1.
+A pair is decided only when BOTH sides are comparable. Nothing else is a win.
+
+  rich_3278     A=candidate failure        B=excluded (sentinel exit -1) -> UNDECIDED (a side is not comparable)
+  rich_3535     A=not attempted            B=not attempted            -> UNDECIDED (a side is not comparable)
+  rich_3675     A=not attempted            B=not attempted            -> UNDECIDED (a side is not comparable)
+  rich_3942     A=not attempted            B=not attempted            -> UNDECIDED (a side is not comparable)
+
+  pair tally: {'UNDECIDED (a side is not comparable)': 4}
+  decided pairs: 0 of 4
+  Four tasks from ONE repository. No ranking and no leaderboard estimate follow from
+  this tally, whatever it says.
+
+==============================================================================
+3. OUTCOME CLASSES (candidate failures preserved, not discarded)
+==============================================================================
+  candidate             1  A/rich_3278
+  environment           1  B/rich_3278
+  not_attempted         6  B/rich_3535, A/rich_3535, A/rich_3675, B/rich_3675, B/rich_3942, A/rich_3942
+
+  CANDIDATE FAILURES (1): attributable to the agent, reported in full.
+    A/rich_3278: persisted: turns budget
+        comparable for the solve tally: no -> sentinel exit -1: grading produced no verdict
+
+  Environment, provenance and grading failures are excluded from the solve tally and
+  are counted for neither candidate.
+
+==============================================================================
+4. TIMING (separated where observable)
+==============================================================================
+  agent_loop_s  : the agent loop alone
+  setup_s       : agent_phase_s - agent_loop_s, only when both are numbers
+  agent_phase_s : container-A setup PLUS the agent loop, as the harness bundles them
+  grading_phase_s: container B
+
+cand  task           agent_loop_s     setup_s  agent_phase_s   grading_s    wall_s
+A     rich_3278            377.53       25.52         403.05 unavailable    403.09
+B     rich_3278            243.98       25.66         269.64 unavailable    269.67
+B     rich_3535       unavailable unavailable    unavailable unavailableunavailable
+A     rich_3535       unavailable unavailable    unavailable unavailableunavailable
+A     rich_3675       unavailable unavailable    unavailable unavailableunavailable
+B     rich_3675       unavailable unavailable    unavailable unavailableunavailable
+B     rich_3942       unavailable unavailable    unavailable unavailableunavailable
+A     rich_3942       unavailable unavailable    unavailable unavailableunavailable
+
+==============================================================================
+5. CONTROLS, IMPORT PROVENANCE AND CLEANUP
+==============================================================================
+  control arms recorded: 8 (expected 8)
+  rich_3278     baseline   agrees_with_saved=True exit=1 (saved 1) nodes=23/23 cleanup_ok=True
+  rich_3278     reference  agrees_with_saved=True exit=0 (saved 0) nodes=23/23 cleanup_ok=True
+  rich_3535     baseline   agrees_with_saved=True exit=1 (saved 1) nodes=8/8 cleanup_ok=True
+  rich_3535     reference  agrees_with_saved=True exit=0 (saved 0) nodes=8/8 cleanup_ok=True
+  rich_3675     baseline   agrees_with_saved=True exit=1 (saved 1) nodes=99/99 cleanup_ok=True
+  rich_3675     reference  agrees_with_saved=True exit=0 (saved 0) nodes=99/99 cleanup_ok=True
+  rich_3942     baseline   agrees_with_saved=True exit=1 (saved 1) nodes=8/8 cleanup_ok=True
+  rich_3942     reference  agrees_with_saved=True exit=0 (saved 0) nodes=8/8 cleanup_ok=True
+
+  raw control JUnit files preserved : 8
+  arms with NO readable JUnit report: 0 
+
+  precondition probes: 4
+    rich_3278     ok=True cleanup_ok=True
+        agent  import: /tmp/swegemma_sandbox_9fd6efb5-f09_wjbg6duw/workspace/rich/__init__.py
+        grading import: /tmp/swegemma_sandbox_9fd6efb5-f09_wjbg6duw/workspace/rich/__init__.py
+    rich_3535     ok=True cleanup_ok=True
+        agent  import: /tmp/swegemma_sandbox_86d62501-7b9__j94rvtz/workspace/rich/__init__.py
+        grading import: /tmp/swegemma_sandbox_86d62501-7b9__j94rvtz/workspace/rich/__init__.py
+    rich_3675     ok=True cleanup_ok=True
+        agent  import: /tmp/swegemma_sandbox_a4bbf185-5a8_43ltm2qo/workspace/rich/__init__.py
+        grading import: /tmp/swegemma_sandbox_a4bbf185-5a8_43ltm2qo/workspace/rich/__init__.py
+    rich_3942     ok=True cleanup_ok=True
+        agent  import: /tmp/swegemma_sandbox_af15d87a-e52_kq9p60vq/workspace/rich/__init__.py
+        grading import: /tmp/swegemma_sandbox_af15d87a-e52_kq9p60vq/workspace/rich/__init__.py
+
+==============================================================================
+6. PER-RUN CLEANUP
+==============================================================================
+  A/rich_3278     cleanup_ok=True owned=(none)
+  B/rich_3278     cleanup_ok=True owned=(none)
+
+==============================================================================
+7. AGENT BEHAVIOUR: PATCH SHAPE, REPEATS, REJECTED EDITS, CONTEXT ERRORS
+==============================================================================
+cand  task         files changed                       tools  edits  repeat  errors
+A     rich_3278    unavailable                            60      0      48       1
+B     rich_3278    unavailable                            48     42       0       1
+B     rich_3535    unavailable                       unavailableunavailableunavailableunavailable
+A     rich_3535    unavailable                       unavailableunavailableunavailableunavailable
+A     rich_3675    unavailable                       unavailableunavailableunavailableunavailable
+B     rich_3675    unavailable                       unavailableunavailableunavailableunavailable
+B     rich_3942    unavailable                       unavailableunavailableunavailableunavailable
+A     rich_3942    unavailable                       unavailableunavailableunavailableunavailable
+
+  rejected edits and context errors, where recorded:
+    A/rich_3278: shell-edit workarounds=54
+    B/rich_3278: shell-edit workarounds=2
+
+==============================================================================
+8. ANSWER-KEY ACCESS AUDIT
+==============================================================================
+  Ordinary repository test reads are normal engineering and are listed separately from
+  SUSPECTED answer-key access (gold/verification patch files, tasks.jsonl, FAIL_TO_PASS,
+  harness internals). Access is graded: mentioned < requested < read.
+  Absence of a hit is NOT proof of isolation: the subprocess backend is not a filesystem
+  boundary, and this audit sees only what the trace recorded.
+
+  A/rich_3278          complete (1 trace file(s) read)
+                       suspected answer-key access: not observed
+  B/rich_3278          complete (1 trace file(s) read)
+                       suspected answer-key access: not observed
+  B/rich_3535          run not attempted -> no trace expected
+  A/rich_3535          run not attempted -> no trace expected
+  A/rich_3675          run not attempted -> no trace expected
+  B/rich_3675          run not attempted -> no trace expected
+  B/rich_3942          run not attempted -> no trace expected
+  A/rich_3942          run not attempted -> no trace expected
+
+  coverage: {'complete': 2, 'not attempted': 6}
+
+==============================================================================
+9. WHAT THIS REVIEW DOES NOT CLAIM
+==============================================================================
+  * These four tasks are all Textualize/rich. Nothing here generalises beyond them.
+  * No leaderboard score is predicted or implied. There is no extrapolation in this tool.
+  * A row that is not comparable is never counted against either candidate.
+  * Environment, provenance and grading failures are excluded, not scored.
+  * An unobserved answer-key access is not evidence of isolation.
+  * Eight runs on one shared server cannot separate candidate effects from session drift.
+
+artifacts read (unmodified): C:\Users\Navin Kumar\Documents\Codex\2026-09-25\ag\outputs\compare-run2
+wrote C:\Users\Navin Kumar\Documents\Codex\2026-09-25\ag\outputs\compare-run2_review\review_summary.json
+wrote C:\Users\Navin Kumar\Documents\Codex\2026-09-25\ag\outputs\compare-run2_review\pilot_results.csv (from the pinned notebook's own CSV writer)

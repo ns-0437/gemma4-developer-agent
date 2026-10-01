@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="1" failures="0" skipped="0" tests="1" time="0.559" timestamp="2026-09-28T16:03:31.139048+00:00" hostname="fcac5414f593"><testcase classname="" name="tests.test_top_level_security_scheme_in_openapi" time="0.000"><error message="collection failure">ImportError while importing test module '/tmp/swegemma_sandbox_461a2c96-2f0_06k8xibh/workspace/tests/test_top_level_security_scheme_in_openapi.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_top_level_security_scheme_in_openapi.py:7: in &lt;module&gt;
+    from inline_snapshot import snapshot
+E   ModuleNotFoundError: No module named 'inline_snapshot'</error></testcase></testsuite></testsuites>

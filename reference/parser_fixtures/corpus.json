@@ -1,0 +1,102 @@
+{
+  "purpose": "Content shapes to drive through the real vLLM 0.19.1 gemma4 tool parser, chosen so that each one isolates one character class that could break a delimiter-based format. Case p01 is the exact content from the run-2 failure, taken from the file the agent read, not invented.",
+  "provenance": {
+    "p01_source": "reference/compare_run2/pilot/B__rich_3278/traces/trace_rich_3278.json, read_file observation at step 4 (the real rich/ansi.py text)",
+    "recorded_outputs": "reference/compare_run2_malformed_calls.json holds the parser's OUTPUT for the run-2 attempts. It is not a raw model completion and must not be described as one.",
+    "format_status": "UNKNOWN until the parser source is read. Cases carry content only; the wire rendering is supplied by the harness from the parser's own expected format."
+  },
+  "cases": [
+    {
+      "id": "p01_real_failure",
+      "shape": "regex: backslashes, triple quotes, commas, colons",
+      "question": "does old_string survive?",
+      "tool": "edit_file",
+      "args": {
+        "filepath": "rich/ansi.py",
+        "old_string": "re_ansi = re.compile(\n    r\"\"\"\n(?:\\x1b\\](.*?)\\x1b\\\\)|\n(?:\\x1b([(@-Z\\\\-_]|\\[[0-?]*[ -/]*[@-~]))\n\"\"\",\n    re.VERBOSE,\n)",
+        "new_string": "re_ansi = re.compile(\n    r\"\"\"\n(?:\\x1b\\](.*?)\\x1b\\\\)|\n(?:\\x1b([0-?@-Z\\\\-_]|\\[[0-?]*[ -/]*[@-~]))\n\"\"\",\n    re.VERBOSE,\n)"
+      }
+    },
+    {
+      "id": "p02_plain",
+      "shape": "plain ASCII, no special characters",
+      "question": "baseline: does anything survive at all?",
+      "tool": "edit_file",
+      "args": {"filepath": "pkg/mod.py", "old_string": "x = 1", "new_string": "x = 2"}
+    },
+    {
+      "id": "p03_comma",
+      "shape": "commas in both string values",
+      "question": "is a comma a pair separator?",
+      "tool": "edit_file",
+      "args": {"filepath": "pkg/mod.py", "old_string": "f(a, b)", "new_string": "f(a, b, c)"}
+    },
+    {
+      "id": "p04_colon",
+      "shape": "colons in both string values",
+      "question": "is a colon a key/value separator?",
+      "tool": "edit_file",
+      "args": {"filepath": "pkg/mod.py", "old_string": "d = {'k': 1}", "new_string": "d = {'k': 2}"}
+    },
+    {
+      "id": "p05_double_quote",
+      "shape": "double quotes",
+      "question": "are quotes treated as delimiters?",
+      "tool": "edit_file",
+      "args": {"filepath": "pkg/mod.py", "old_string": "s = \"a\"", "new_string": "s = \"b\""}
+    },
+    {
+      "id": "p06_backtick",
+      "shape": "backticks in the content",
+      "question": "the run-2 residue ended with a backtick: is a backtick a quote character here?",
+      "tool": "edit_file",
+      "args": {"filepath": "pkg/mod.py", "old_string": "# see `foo`", "new_string": "# see `bar`"}
+    },
+    {
+      "id": "p07_single_backslash",
+      "shape": "single backslash escapes",
+      "question": "does escaping survive one round trip?",
+      "tool": "edit_file",
+      "args": {"filepath": "pkg/mod.py", "old_string": "p = 'a\\nb'", "new_string": "p = 'a\\tb'"}
+    },
+    {
+      "id": "p08_double_backslash",
+      "shape": "doubled backslashes",
+      "question": "run-2 arrived double-escaped: does the parser or the model double it?",
+      "tool": "edit_file",
+      "args": {"filepath": "pkg/mod.py", "old_string": "r'\\\\x1b'", "new_string": "r'\\\\x1c'"}
+    },
+    {
+      "id": "p09_newlines",
+      "shape": "multi-line values",
+      "question": "is a newline significant to the format?",
+      "tool": "edit_file",
+      "args": {"filepath": "pkg/mod.py", "old_string": "def f():\n    pass\n", "new_string": "def f():\n    return 1\n"}
+    },
+    {
+      "id": "p10_unicode",
+      "shape": "non-ASCII, including the CJK brackets seen in the run-2 variant",
+      "question": "does Unicode survive, and can it appear where the model did not put it?",
+      "tool": "edit_file",
+      "args": {"filepath": "pkg/mod.py", "old_string": "label = \"café\"", "new_string": "label = \"「rich」 — café 🚀\""}
+    },
+    {
+      "id": "p11_missing_required",
+      "shape": "old_string omitted by construction",
+      "question": "control: this is what a genuine missing parameter looks like, distinct from one lost in transit",
+      "tool": "edit_file",
+      "args": {"filepath": "pkg/mod.py", "new_string": "x = 2"}
+    },
+    {
+      "id": "p12_key_lookalike",
+      "shape": "content that literally contains the text 'old_string:'",
+      "question": "can content spell a parameter name and be split on it? this is the run-2 residue's signature",
+      "tool": "edit_file",
+      "args": {
+        "filepath": "pkg/mod.py",
+        "old_string": "doc = 'old_string: here'",
+        "new_string": "doc = 'new_string: there'"
+      }
+    }
+  ]
+}

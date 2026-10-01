@@ -1,0 +1,524 @@
+[
+  {
+    "task": "fastapi_11194",
+    "repo": "fastapi/fastapi",
+    "verdict": "UNUSABLE",
+    "reason": "import not in checkout (neg=/tmp/swegemma_sandbox_996cf892-5ab_ipcndnim/workspace/fastapi/__init__.py)",
+    "new_tests": [
+      "test_file_form_order",
+      "test_file_list_form_order"
+    ],
+    "neg_pkg_file": "/tmp/swegemma_sandbox_996cf892-5ab_ipcndnim/workspace/fastapi/__init__.py",
+    "pos_pkg_file": "/tmp/swegemma_sandbox_11285d9f-1d7_gdrr2m0u/workspace/fastapi/__init__.py",
+    "imports_in_checkout": false,
+    "pip_available": true,
+    "pip": "pip 24.1.2 from /usr/local/lib/python3.12/dist-packages/pip (python 3.12)",
+    "editable_log": "File \"<frozen importlib._bootstrap>\", line 1324, in _find_and_load_unlocked\nModuleNotFoundError: No module named 'pdm'",
+    "other_copies": [
+      "/usr/local/lib/python3.12/dist-packages/fastapi",
+      "/usr/local/lib/python3.12/dist-packages/model_hosting_container_standards/common/fastapi"
+    ],
+    "neg_exit": 1,
+    "pos_exit": 0,
+    "neg_target_failed": [
+      "test_file_form_order[/file_after_form]",
+      "test_file_list_form_order[/file_list_after_form]"
+    ],
+    "neg_target_errored": [],
+    "neg_target_passed": [
+      "test_file_form_order[/file_before_form]",
+      "test_file_list_form_order[/file_list_before_form]"
+    ],
+    "pos_target_passed": [
+      "test_file_form_order[/file_before_form]",
+      "test_file_form_order[/file_after_form]",
+      "test_file_list_form_order[/file_list_before_form]",
+      "test_file_list_form_order[/file_list_after_form]"
+    ],
+    "pos_target_failed": [],
+    "pos_target_errored": [],
+    "gold_applied": true,
+    "test_patch_applied": true,
+    "neg_tail": "======================== short test summary info ============================\nFAILED tests/test_file_and_form_order_issue_9116.py::test_file_form_order[/file_after_form]\nFAILED tests/test_file_and_form_order_issue_9116.py::test_file_list_form_order[/file_list_after_form]\n2 failed, 2 passed in 0.49s\n",
+    "pos_tail": "....                                                                     [100%]\n- generated xml file: /tmp/swegemma_sandbox_11285d9f-1d7_gdrr2m0u/tmp/_v_241e0449.xml -\n4 passed in 0.44s\n"
+  },
+  {
+    "task": "fastapi_14246",
+    "repo": "fastapi/fastapi",
+    "verdict": "UNUSABLE",
+    "reason": "import not in checkout (neg=/tmp/swegemma_sandbox_256320c1-072_ith4pxja/workspace/fastapi/__init__.py)",
+    "new_tests": [
+      "test_create_message",
+      "test_openapi_schema"
+    ],
+    "neg_pkg_file": "/tmp/swegemma_sandbox_256320c1-072_ith4pxja/workspace/fastapi/__init__.py",
+    "pos_pkg_file": "/tmp/swegemma_sandbox_3b04efb7-05b_v8ptt3n7/workspace/fastapi/__init__.py",
+    "imports_in_checkout": false,
+    "pip_available": true,
+    "pip": "pip 24.1.2 from /usr/local/lib/python3.12/dist-packages/pip (python 3.12)",
+    "editable_log": "File \"<frozen importlib._bootstrap>\", line 1324, in _find_and_load_unlocked\nModuleNotFoundError: No module named 'pdm'",
+    "other_copies": [
+      "/usr/local/lib/python3.12/dist-packages/fastapi",
+      "/usr/local/lib/python3.12/dist-packages/model_hosting_container_standards/common/fastapi"
+    ],
+    "neg_exit": 2,
+    "pos_exit": 2,
+    "neg_target_failed": [],
+    "neg_target_errored": [],
+    "neg_target_passed": [],
+    "pos_target_passed": [],
+    "pos_target_failed": [],
+    "pos_target_errored": [],
+    "gold_applied": true,
+    "test_patch_applied": true,
+    "neg_tail": "a/tmp/_v_b7b49ecf.xml -\n=========================== short test summary info ============================\nERROR tests/test_no_schema_split.py\nERROR tests/test_pydantic_v1_v2_multifile/test_multifile.py\n!!!!!!!!!!!!!!!!!!! Interrupted: 2 errors during collection !!!!!!!!!!!!!!!!!!!!\n2 errors in 0.64s\n",
+    "pos_tail": "7/tmp/_v_fd96eb8c.xml -\n=========================== short test summary info ============================\nERROR tests/test_no_schema_split.py\nERROR tests/test_pydantic_v1_v2_multifile/test_multifile.py\n!!!!!!!!!!!!!!!!!!! Interrupted: 2 errors during collection !!!!!!!!!!!!!!!!!!!!\n2 errors in 0.63s\n"
+  },
+  {
+    "task": "fastapi_14361",
+    "repo": "fastapi/fastapi",
+    "verdict": "UNUSABLE",
+    "reason": "import not in checkout (neg=/tmp/swegemma_sandbox_5e9a4ee3-507_9hgvab0e/workspace/fastapi/__init__.py)",
+    "new_tests": [
+      "test_get",
+      "test_openapi_schema"
+    ],
+    "neg_pkg_file": "/tmp/swegemma_sandbox_5e9a4ee3-507_9hgvab0e/workspace/fastapi/__init__.py",
+    "pos_pkg_file": "/tmp/swegemma_sandbox_641b7dda-18c_bnvgzoam/workspace/fastapi/__init__.py",
+    "imports_in_checkout": false,
+    "pip_available": true,
+    "pip": "pip 24.1.2 from /usr/local/lib/python3.12/dist-packages/pip (python 3.12)",
+    "editable_log": "File \"<frozen importlib._bootstrap>\", line 1324, in _find_and_load_unlocked\nModuleNotFoundError: No module named 'pdm'",
+    "other_copies": [
+      "/usr/local/lib/python3.12/dist-packages/fastapi",
+      "/usr/local/lib/python3.12/dist-packages/model_hosting_container_standards/common/fastapi"
+    ],
+    "neg_exit": 2,
+    "pos_exit": 2,
+    "neg_target_failed": [],
+    "neg_target_errored": [],
+    "neg_target_passed": [],
+    "pos_target_passed": [],
+    "pos_target_failed": [],
+    "pos_target_errored": [],
+    "gold_applied": true,
+    "test_patch_applied": true,
+    "neg_tail": "ml file: /tmp/swegemma_sandbox_5e9a4ee3-507_9hgvab0e/tmp/_v_3eacb33e.xml -\n=========================== short test summary info ============================\nERROR tests/test_schema_compat_pydantic_v2.py\n!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!\n1 error in 0.56s\n",
+    "pos_tail": "ml file: /tmp/swegemma_sandbox_641b7dda-18c_bnvgzoam/tmp/_v_252cf989.xml -\n=========================== short test summary info ============================\nERROR tests/test_schema_compat_pydantic_v2.py\n!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!\n1 error in 0.56s\n"
+  },
+  {
+    "task": "fastapi_14482",
+    "repo": "fastapi/fastapi",
+    "verdict": "UNUSABLE",
+    "reason": "import not in checkout (neg=/tmp/swegemma_sandbox_10e31f49-b34_dihi_9_k/workspace/fastapi/__init__.py)",
+    "new_tests": [
+      "test_get",
+      "test_openapi_schema",
+      "test_typeadapter"
+    ],
+    "neg_pkg_file": "/tmp/swegemma_sandbox_10e31f49-b34_dihi_9_k/workspace/fastapi/__init__.py",
+    "pos_pkg_file": "/tmp/swegemma_sandbox_dd633c4c-81f_nnlb67n_/workspace/fastapi/__init__.py",
+    "imports_in_checkout": false,
+    "pip_available": true,
+    "pip": "pip 24.1.2 from /usr/local/lib/python3.12/dist-packages/pip (python 3.12)",
+    "editable_log": "File \"<frozen importlib._bootstrap>\", line 1324, in _find_and_load_unlocked\nModuleNotFoundError: No module named 'pdm'",
+    "other_copies": [
+      "/usr/local/lib/python3.12/dist-packages/fastapi",
+      "/usr/local/lib/python3.12/dist-packages/model_hosting_container_standards/common/fastapi"
+    ],
+    "neg_exit": 2,
+    "pos_exit": 2,
+    "neg_target_failed": [],
+    "neg_target_errored": [],
+    "neg_target_passed": [],
+    "pos_target_passed": [],
+    "pos_target_failed": [],
+    "pos_target_errored": [],
+    "gold_applied": true,
+    "test_patch_applied": true,
+    "neg_tail": "enerated xml file: /tmp/swegemma_sandbox_10e31f49-b34_dihi_9_k/tmp/_v_156ead3a.xml -\n=========================== short test summary info ============================\nERROR tests/test_arbitrary_types.py\n!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!\n1 error in 0.55s\n",
+    "pos_tail": "enerated xml file: /tmp/swegemma_sandbox_dd633c4c-81f_nnlb67n_/tmp/_v_9110813a.xml -\n=========================== short test summary info ============================\nERROR tests/test_arbitrary_types.py\n!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!\n1 error in 0.58s\n"
+  },
+  {
+    "task": "fastapi_14794",
+    "repo": "fastapi/fastapi",
+    "verdict": "UNUSABLE",
+    "reason": "import not in checkout (neg=/tmp/swegemma_sandbox_c8582baf-1d1_8aenksms/workspace/fastapi/__init__.py)",
+    "new_tests": [
+      "test_background_tasks_with_depends_annotated",
+      "test_request_with_depends_annotated",
+      "test_response_dependency_chain",
+      "test_response_dependency_returns_different_response_instance",
+      "test_response_with_depends_annotated",
+      "test_response_with_depends_default",
+      "test_response_without_depends"
+    ],
+    "neg_pkg_file": "/tmp/swegemma_sandbox_c8582baf-1d1_8aenksms/workspace/fastapi/__init__.py",
+    "pos_pkg_file": "/tmp/swegemma_sandbox_cea58231-fde_jxnjfgou/workspace/fastapi/__init__.py",
+    "imports_in_checkout": false,
+    "pip_available": true,
+    "pip": "pip 24.1.2 from /usr/local/lib/python3.12/dist-packages/pip (python 3.12)",
+    "editable_log": "File \"<frozen importlib._bootstrap>\", line 1324, in _find_and_load_unlocked\nModuleNotFoundError: No module named 'pdm'",
+    "other_copies": [
+      "/usr/local/lib/python3.12/dist-packages/fastapi",
+      "/usr/local/lib/python3.12/dist-packages/model_hosting_container_standards/common/fastapi"
+    ],
+    "neg_exit": 1,
+    "pos_exit": 0,
+    "neg_target_failed": [
+      "test_response_with_depends_annotated",
+      "test_response_with_depends_default",
+      "test_response_dependency_chain",
+      "test_response_dependency_returns_different_response_instance",
+      "test_background_tasks_with_depends_annotated"
+    ],
+    "neg_target_errored": [],
+    "neg_target_passed": [
+      "test_response_without_depends",
+      "test_request_with_depends_annotated"
+    ],
+    "pos_target_passed": [
+      "test_response_with_depends_annotated",
+      "test_response_with_depends_default",
+      "test_response_without_depends",
+      "test_response_dependency_chain",
+      "test_response_dependency_returns_different_response_instance",
+      "test_request_with_depends_annotated",
+      "test_background_tasks_with_depends_annotated"
+    ],
+    "pos_target_failed": [],
+    "pos_target_errored": [],
+    "gold_applied": true,
+    "test_patch_applied": true,
+    "neg_tail": "\nFAILED tests/test_response_dependency.py::test_response_dependency_chain - As...\nFAILED tests/test_response_dependency.py::test_response_dependency_returns_different_response_instance\nFAILED tests/test_response_dependency.py::test_background_tasks_with_depends_annotated\n5 failed, 2 passed in 0.93s\n",
+    "pos_tail": ".......                                                                  [100%]\n- generated xml file: /tmp/swegemma_sandbox_cea58231-fde_jxnjfgou/tmp/_v_b3bb517c.xml -\n7 passed in 0.45s\n"
+  },
+  {
+    "task": "fastapi_15588",
+    "repo": "fastapi/fastapi",
+    "verdict": "UNUSABLE",
+    "reason": "import not in checkout (neg=/tmp/swegemma_sandbox_81012c09-4f8_r52kndol/workspace/fastapi/__init__.py)",
+    "new_tests": [
+      "test_server_sent_event_negative_retry_rejected",
+      "test_server_sent_event_single_line_fields_reject_newlines"
+    ],
+    "neg_pkg_file": "/tmp/swegemma_sandbox_81012c09-4f8_r52kndol/workspace/fastapi/__init__.py",
+    "pos_pkg_file": "/tmp/swegemma_sandbox_d5f0032d-bbe_uda9o58m/workspace/fastapi/__init__.py",
+    "imports_in_checkout": false,
+    "pip_available": true,
+    "pip": "pip 24.1.2 from /usr/local/lib/python3.12/dist-packages/pip (python 3.12)",
+    "editable_log": "File \"<frozen importlib._bootstrap>\", line 1324, in _find_and_load_unlocked\nModuleNotFoundError: No module named 'pdm'",
+    "other_copies": [
+      "/usr/local/lib/python3.12/dist-packages/fastapi",
+      "/usr/local/lib/python3.12/dist-packages/model_hosting_container_standards/common/fastapi"
+    ],
+    "neg_exit": 1,
+    "pos_exit": 0,
+    "neg_target_failed": [
+      "test_server_sent_event_single_line_fields_reject_newlines[first\\nsecond-event]",
+      "test_server_sent_event_single_line_fields_reject_newlines[first\\nsecond-id]",
+      "test_server_sent_event_single_line_fields_reject_newlines[first\\rsecond-event]",
+      "test_server_sent_event_single_line_fields_reject_newlines[first\\rsecond-id]",
+      "test_server_sent_event_single_line_fields_reject_newlines[first\\r\\nsecond-event]",
+      "test_server_sent_event_single_line_fields_reject_newlines[first\\r\\nsecond-id]"
+    ],
+    "neg_target_errored": [],
+    "neg_target_passed": [
+      "test_server_sent_event_negative_retry_rejected"
+    ],
+    "pos_target_passed": [
+      "test_server_sent_event_single_line_fields_reject_newlines[first\\nsecond-event]",
+      "test_server_sent_event_single_line_fields_reject_newlines[first\\nsecond-id]",
+      "test_server_sent_event_single_line_fields_reject_newlines[first\\rsecond-event]",
+      "test_server_sent_event_single_line_fields_reject_newlines[first\\rsecond-id]",
+      "test_server_sent_event_single_line_fields_reject_newlines[first\\r\\nsecond-event]",
+      "test_server_sent_event_single_line_fields_reject_newlines[first\\r\\nsecond-id]",
+      "test_server_sent_event_negative_retry_rejected"
+    ],
+    "pos_target_failed": [],
+    "pos_target_errored": [],
+    "gold_applied": true,
+    "test_patch_applied": true,
+    "neg_tail": "_event_single_line_fields_reject_newlines[first\\rsecond-id]\nFAILED tests/test_sse.py::test_server_sent_event_single_line_fields_reject_newlines[first\\r\\nsecond-event]\nFAILED tests/test_sse.py::test_server_sent_event_single_line_fields_reject_newlines[first\\r\\nsecond-id]\n6 failed, 18 passed in 1.34s\n",
+    "pos_tail": "........................                                                 [100%]\n- generated xml file: /tmp/swegemma_sandbox_d5f0032d-bbe_uda9o58m/tmp/_v_026ae8a6.xml -\n24 passed in 1.24s\n"
+  },
+  {
+    "task": "rich_2725",
+    "repo": "Textualize/rich",
+    "verdict": "UNUSABLE",
+    "reason": "import not in checkout (neg=/tmp/swegemma_sandbox_a4e9e52e-ab7_63_9fauw/workspace/rich/__init__.py)",
+    "new_tests": [
+      "test_placement_table_box_elements"
+    ],
+    "neg_pkg_file": "/tmp/swegemma_sandbox_a4e9e52e-ab7_63_9fauw/workspace/rich/__init__.py",
+    "pos_pkg_file": "/tmp/swegemma_sandbox_e4e9ffa4-a45_q4lose7a/workspace/rich/__init__.py",
+    "imports_in_checkout": false,
+    "pip_available": true,
+    "pip": "pip 24.1.2 from /usr/local/lib/python3.12/dist-packages/pip (python 3.12)",
+    "editable_log": "File \"<frozen importlib._bootstrap>\", line 1324, in _find_and_load_unlocked\nModuleNotFoundError: No module named 'poetry'",
+    "other_copies": [
+      "/usr/local/lib/python3.12/dist-packages/pip/_vendor/rich",
+      "/usr/local/lib/python3.12/dist-packages/rich"
+    ],
+    "neg_exit": 1,
+    "pos_exit": 0,
+    "neg_target_failed": [
+      "test_placement_table_box_elements[False-False-abbbbbcbbbbbbbbbcbbbbcbbbbbd\\n1Dec  2Skywalker2275M2375M 3\\n4May  5Solo     5275M5393M 6\\nijjjjjkjjjjjjjjjkjjjjkjjjjjl\\n7Dec  8Last Jedi8262M81333M9\\nqrrrrrsrrrrrrrrrsrrrrsrrrrrt\\n]",
+      "test_placement_table_box_elements[True-False-abbbbbcbbbbbbbbbcbbbbcbbbbbd\\n1Month2Nickname 2Cost2Gross3\\nefffffgfffffffffgffffgfffffh\\n4Dec  5Skywalker5275M5375M 6\\n4May  5Solo     5275M5393M 6\\nijjjjjkjjjjjjjjjkjjjjkjjjjjl\\n7Dec  8Last Jedi8262M81333M9\\nqrrrrrsrrrrrrrrrsrrrrsrrrrrt\\n]",
+      "test_placement_table_box_elements[False-True-abbbbbcbbbbbbbbbcbbbbcbbbbbd\\n1Dec  2Skywalker2275M2375M 3\\n4May  5Solo     5275M5393M 6\\nijjjjjkjjjjjjjjjkjjjjkjjjjjl\\n4Dec  5Last Jedi5262M51333M6\\nmnnnnnonnnnnnnnnonnnnonnnnnp\\n7MONTH8NICKNAME 8COST8GROSS9\\nqrrrrrsrrrrrrrrrsrrrrsrrrrrt\\n]",
+      "test_placement_table_box_elements[True-True-abbbbbcbbbbbbbbbcbbbbcbbbbbd\\n1Month2Nickname 2Cost2Gross3\\nefffffgfffffffffgffffgfffffh\\n4Dec  5Skywalker5275M5375M 6\\n4May  5Solo     5275M5393M 6\\nijjjjjkjjjjjjjjjkjjjjkjjjjjl\\n4Dec  5Last Jedi5262M51333M6\\nmnnnnnonnnnnnnnnonnnnonnnnnp\\n7MONTH8NICKNAME 8COST8GROSS9\\nqrrrrrsrrrrrrrrrsrrrrsrrrrrt\\n]"
+    ],
+    "neg_target_errored": [],
+    "neg_target_passed": [],
+    "pos_target_passed": [
+      "test_placement_table_box_elements[False-False-abbbbbcbbbbbbbbbcbbbbcbbbbbd\\n1Dec  2Skywalker2275M2375M 3\\n4May  5Solo     5275M5393M 6\\nijjjjjkjjjjjjjjjkjjjjkjjjjjl\\n7Dec  8Last Jedi8262M81333M9\\nqrrrrrsrrrrrrrrrsrrrrsrrrrrt\\n]",
+      "test_placement_table_box_elements[True-False-abbbbbcbbbbbbbbbcbbbbcbbbbbd\\n1Month2Nickname 2Cost2Gross3\\nefffffgfffffffffgffffgfffffh\\n4Dec  5Skywalker5275M5375M 6\\n4May  5Solo     5275M5393M 6\\nijjjjjkjjjjjjjjjkjjjjkjjjjjl\\n7Dec  8Last Jedi8262M81333M9\\nqrrrrrsrrrrrrrrrsrrrrsrrrrrt\\n]",
+      "test_placement_table_box_elements[False-True-abbbbbcbbbbbbbbbcbbbbcbbbbbd\\n1Dec  2Skywalker2275M2375M 3\\n4May  5Solo     5275M5393M 6\\nijjjjjkjjjjjjjjjkjjjjkjjjjjl\\n4Dec  5Last Jedi5262M51333M6\\nmnnnnnonnnnnnnnnonnnnonnnnnp\\n7MONTH8NICKNAME 8COST8GROSS9\\nqrrrrrsrrrrrrrrrsrrrrsrrrrrt\\n]",
+      "test_placement_table_box_elements[True-True-abbbbbcbbbbbbbbbcbbbbcbbbbbd\\n1Month2Nickname 2Cost2Gross3\\nefffffgfffffffffgffffgfffffh\\n4Dec  5Skywalker5275M5375M 6\\n4May  5Solo     5275M5393M 6\\nijjjjjkjjjjjjjjjkjjjjkjjjjjl\\n4Dec  5Last Jedi5262M51333M6\\nmnnnnnonnnnnnnnnonnnnonnnnnp\\n7MONTH8NICKNAME 8COST8GROSS9\\nqrrrrrsrrrrrrrrrsrrrrsrrrrrt\\n]"
+    ],
+    "pos_target_failed": [],
+    "pos_target_errored": [],
+    "gold_applied": true,
+    "test_patch_applied": true,
+    "neg_tail": "Month2Nickname 2Cost2Gross3\\nefffffgfffffffffgffffgfffffh\\n4Dec  5Skywalker5275M5375M 6\\n4May  5Solo     5275M5393M 6\\nijjjjjkjjjjjjjjjkjjjjkjjjjjl\\n4Dec  5Last Jedi5262M51333M6\\nmnnnnnonnnnnnnnnonnnnonnnnnp\\n7MONTH8NICKNAME 8COST8GROSS9\\nqrrrrrsrrrrrrrrrsrrrrsrrrrrt\\n]\n4 failed, 15 passed in 0.21s\n",
+    "pos_tail": "...................                                                      [100%]\n- generated xml file: /tmp/swegemma_sandbox_e4e9ffa4-a45_q4lose7a/tmp/_v_14639ef8.xml -\n19 passed in 0.13s\n"
+  },
+  {
+    "task": "rich_3105",
+    "repo": "Textualize/rich",
+    "verdict": "UNUSABLE",
+    "reason": "import not in checkout (neg=/tmp/swegemma_sandbox_4ab05a54-a93_r4pa34bp/workspace/rich/__init__.py)",
+    "new_tests": [],
+    "neg_pkg_file": "/tmp/swegemma_sandbox_4ab05a54-a93_r4pa34bp/workspace/rich/__init__.py",
+    "pos_pkg_file": "/tmp/swegemma_sandbox_2e8f65cc-18e_vuhnyp_m/workspace/rich/__init__.py",
+    "imports_in_checkout": false,
+    "pip_available": true,
+    "pip": "pip 24.1.2 from /usr/local/lib/python3.12/dist-packages/pip (python 3.12)",
+    "editable_log": "File \"<frozen importlib._bootstrap>\", line 1324, in _find_and_load_unlocked\nModuleNotFoundError: No module named 'poetry'",
+    "other_copies": [
+      "/usr/local/lib/python3.12/dist-packages/pip/_vendor/rich",
+      "/usr/local/lib/python3.12/dist-packages/rich"
+    ],
+    "neg_exit": 1,
+    "pos_exit": 0,
+    "neg_target_failed": [],
+    "neg_target_errored": [],
+    "neg_target_passed": [],
+    "pos_target_passed": [],
+    "pos_target_failed": [],
+    "pos_target_errored": [],
+    "gold_applied": true,
+    "test_patch_applied": true,
+    "neg_tail": "===========================\nFAILED tests/test_console.py::test_export_html - assert '<!DOCTYPE ht...y>\\n<...\nFAILED tests/test_console.py::test_export_html_inline - assert '<!DOCTYPE ht....\nFAILED tests/test_console.py::test_save_html - assert '<!DOCTYPE ht...y>\\n</h...\n3 failed, 93 passed in 0.36s\n",
+    "pos_tail": "........................................................................ [ 75%]\n........................                                                 [100%]\n- generated xml file: /tmp/swegemma_sandbox_2e8f65cc-18e_vuhnyp_m/tmp/_v_bb810efc.xml -\n96 passed in 0.27s\n"
+  },
+  {
+    "task": "rich_3471",
+    "repo": "Textualize/rich",
+    "verdict": "UNUSABLE",
+    "reason": "import not in checkout (neg=/tmp/swegemma_sandbox_cfd96103-ce8_r0evvl_w/workspace/rich/__init__.py)",
+    "new_tests": [
+      "test_append_tokens"
+    ],
+    "neg_pkg_file": "/tmp/swegemma_sandbox_cfd96103-ce8_r0evvl_w/workspace/rich/__init__.py",
+    "pos_pkg_file": "/tmp/swegemma_sandbox_fc98de4b-320_hozsw480/workspace/rich/__init__.py",
+    "imports_in_checkout": false,
+    "pip_available": true,
+    "pip": "pip 24.1.2 from /usr/local/lib/python3.12/dist-packages/pip (python 3.12)",
+    "editable_log": "File \"<frozen importlib._bootstrap>\", line 1324, in _find_and_load_unlocked\nModuleNotFoundError: No module named 'poetry'",
+    "other_copies": [
+      "/usr/local/lib/python3.12/dist-packages/pip/_vendor/rich",
+      "/usr/local/lib/python3.12/dist-packages/rich"
+    ],
+    "neg_exit": 1,
+    "pos_exit": 0,
+    "neg_target_failed": [
+      "test_append_tokens"
+    ],
+    "neg_target_errored": [],
+    "neg_target_passed": [],
+    "pos_target_passed": [
+      "test_append_tokens"
+    ],
+    "pos_target_failed": [],
+    "pos_target_errored": [],
+    "gold_applied": true,
+    "test_patch_applied": true,
+    "neg_tail": "py:1164: IndexError\n- generated xml file: /tmp/swegemma_sandbox_cfd96103-ce8_r0evvl_w/tmp/_v_386f4f62.xml -\n=========================== short test summary info ============================\nFAILED tests/test_text.py::test_append_tokens - IndexError: list index out of...\n1 failed, 107 passed in 0.52s\n",
+    "pos_tail": "........................................................................ [ 66%]\n....................................                                     [100%]\n- generated xml file: /tmp/swegemma_sandbox_fc98de4b-320_hozsw480/tmp/_v_72bead5c.xml -\n108 passed in 0.38s\n"
+  },
+  {
+    "task": "rich_3676",
+    "repo": "Textualize/rich",
+    "verdict": "UNUSABLE",
+    "reason": "import not in checkout (neg=/tmp/swegemma_sandbox_7fb0954f-d64_goc_nobj/workspace/rich/__init__.py)",
+    "new_tests": [
+      "test_notes"
+    ],
+    "neg_pkg_file": "/tmp/swegemma_sandbox_7fb0954f-d64_goc_nobj/workspace/rich/__init__.py",
+    "pos_pkg_file": "/tmp/swegemma_sandbox_6cedf313-919_t_xfke3_/workspace/rich/__init__.py",
+    "imports_in_checkout": false,
+    "pip_available": true,
+    "pip": "pip 24.1.2 from /usr/local/lib/python3.12/dist-packages/pip (python 3.12)",
+    "editable_log": "File \"<frozen importlib._bootstrap>\", line 1324, in _find_and_load_unlocked\nModuleNotFoundError: No module named 'poetry'",
+    "other_copies": [
+      "/usr/local/lib/python3.12/dist-packages/pip/_vendor/rich",
+      "/usr/local/lib/python3.12/dist-packages/rich"
+    ],
+    "neg_exit": 1,
+    "pos_exit": 0,
+    "neg_target_failed": [
+      "test_notes"
+    ],
+    "neg_target_errored": [],
+    "neg_target_passed": [],
+    "pos_target_passed": [
+      "test_notes"
+    ],
+    "pos_target_failed": [],
+    "pos_target_errored": [],
+    "gold_applied": true,
+    "test_patch_applied": true,
+    "neg_tail": "buteError\n- generated xml file: /tmp/swegemma_sandbox_7fb0954f-d64_goc_nobj/tmp/_v_3baebe03.xml -\n=========================== short test summary info ============================\nFAILED tests/test_traceback.py::test_notes - AttributeError: 'Stack' object h...\n1 failed, 20 passed, 1 skipped in 2.16s\n",
+    "pos_tail": "...................s..                                                   [100%]\n- generated xml file: /tmp/swegemma_sandbox_6cedf313-919_t_xfke3_/tmp/_v_000097e7.xml -\n21 passed, 1 skipped in 1.20s\n"
+  },
+  {
+    "task": "rich_3934",
+    "repo": "Textualize/rich",
+    "verdict": "UNUSABLE",
+    "reason": "import not in checkout (neg=/tmp/swegemma_sandbox_e227fa19-73a_v32y9jd2/workspace/rich/__init__.py)",
+    "new_tests": [
+      "test_live_empty"
+    ],
+    "neg_pkg_file": "/tmp/swegemma_sandbox_e227fa19-73a_v32y9jd2/workspace/rich/__init__.py",
+    "pos_pkg_file": "/tmp/swegemma_sandbox_c2ae6d0f-649_q06zjoa3/workspace/rich/__init__.py",
+    "imports_in_checkout": false,
+    "pip_available": true,
+    "pip": "pip 24.1.2 from /usr/local/lib/python3.12/dist-packages/pip (python 3.12)",
+    "editable_log": "File \"<frozen importlib._bootstrap>\", line 1324, in _find_and_load_unlocked\nModuleNotFoundError: No module named 'poetry'",
+    "other_copies": [
+      "/usr/local/lib/python3.12/dist-packages/pip/_vendor/rich",
+      "/usr/local/lib/python3.12/dist-packages/rich"
+    ],
+    "neg_exit": 1,
+    "pos_exit": 0,
+    "neg_target_failed": [
+      "test_live_empty"
+    ],
+    "neg_target_errored": [],
+    "neg_target_passed": [],
+    "pos_target_passed": [
+      "test_live_empty"
+    ],
+    "pos_target_failed": [],
+    "pos_target_errored": [],
+    "gold_applied": true,
+    "test_patch_applied": true,
+    "neg_tail": "x1b[2K\\n\\x1b[?25h\\r'\n- generated xml file: /tmp/swegemma_sandbox_e227fa19-73a_v32y9jd2/tmp/_v_b4f20686.xml -\n=========================== short test summary info ============================\nFAILED tests/test_live.py::test_live_empty - AssertionError: assert '\\n' not ...\n1 failed, 10 passed in 2.16s\n",
+    "pos_tail": "...........                                                              [100%]\n- generated xml file: /tmp/swegemma_sandbox_c2ae6d0f-649_q06zjoa3/tmp/_v_b2a1ed25.xml -\n11 passed in 2.11s\n"
+  },
+  {
+    "task": "requests_6589",
+    "repo": "psf/requests",
+    "verdict": "UNUSABLE",
+    "reason": "import not in checkout (neg=/usr/local/lib/python3.12/dist-packages/requests/__init__.py)",
+    "new_tests": [
+      "test_content_length_for_bytes_data",
+      "test_content_length_for_string_data_counts_bytes",
+      "test_nonhttp_schemes_dont_check_URLs"
+    ],
+    "neg_pkg_file": "/usr/local/lib/python3.12/dist-packages/requests/__init__.py",
+    "pos_pkg_file": "/usr/local/lib/python3.12/dist-packages/requests/__init__.py",
+    "imports_in_checkout": false,
+    "pip_available": true,
+    "pip": "pip 24.1.2 from /usr/local/lib/python3.12/dist-packages/pip (python 3.12)",
+    "editable_log": "/python3.12/dist-packages, outside environment /tmp/swegemma_sandbox_c2e848f3-333_9rb3dmar/venv\n    Can't uninstall 'requests'. No files were found to uninstall.\nSuccessfully installed requests-2.31.0",
+    "other_copies": [
+      "/usr/local/lib/python3.12/dist-packages/pip/_vendor/requests",
+      "/usr/local/lib/python3.12/dist-packages/botocore/vendored/requests",
+      "/usr/local/lib/python3.12/dist-packages/google/resumable_media/requests",
+      "/usr/local/lib/python3.12/dist-packages/google/_async_resumable_media/requests"
+    ],
+    "neg_exit": 1,
+    "pos_exit": 1,
+    "neg_target_failed": [],
+    "neg_target_errored": [
+      "test_content_length_for_bytes_data",
+      "test_content_length_for_string_data_counts_bytes"
+    ],
+    "neg_target_passed": [
+      "test_nonhttp_schemes_dont_check_URLs"
+    ],
+    "pos_target_passed": [
+      "test_nonhttp_schemes_dont_check_URLs"
+    ],
+    "pos_target_failed": [],
+    "pos_target_errored": [
+      "test_content_length_for_bytes_data",
+      "test_content_length_for_string_data_counts_bytes"
+    ],
+    "gold_applied": true,
+    "test_patch_applied": true,
+    "neg_tail": "L]\nERROR tests/test_requests.py::TestPreparingURLs::test_post_json_nan\nERROR tests/test_requests.py::TestPreparingURLs::test_json_decode_compatibility\nERROR tests/test_requests.py::TestPreparingURLs::test_json_decode_persists_doc_attr\n135 passed, 1 skipped, 1 xfailed, 187 errors in 65.33s (0:01:05)\n",
+    "pos_tail": "L]\nERROR tests/test_requests.py::TestPreparingURLs::test_post_json_nan\nERROR tests/test_requests.py::TestPreparingURLs::test_json_decode_compatibility\nERROR tests/test_requests.py::TestPreparingURLs::test_json_decode_persists_doc_attr\n135 passed, 1 skipped, 1 xfailed, 187 errors in 65.28s (0:01:05)\n"
+  },
+  {
+    "task": "requests_7309",
+    "repo": "psf/requests",
+    "verdict": "UNUSABLE",
+    "reason": "import not in checkout (neg=/usr/local/lib/python3.12/dist-packages/requests/__init__.py)",
+    "new_tests": [],
+    "neg_pkg_file": "/usr/local/lib/python3.12/dist-packages/requests/__init__.py",
+    "pos_pkg_file": "/usr/local/lib/python3.12/dist-packages/requests/__init__.py",
+    "imports_in_checkout": false,
+    "pip_available": true,
+    "pip": "pip 24.1.2 from /usr/local/lib/python3.12/dist-packages/pip (python 3.12)",
+    "editable_log": "/python3.12/dist-packages, outside environment /tmp/swegemma_sandbox_3bbf6e77-6bd_4hatweor/venv\n    Can't uninstall 'requests'. No files were found to uninstall.\nSuccessfully installed requests-2.33.0",
+    "other_copies": [
+      "/usr/local/lib/python3.12/dist-packages/pip/_vendor/requests",
+      "/usr/local/lib/python3.12/dist-packages/botocore/vendored/requests",
+      "/usr/local/lib/python3.12/dist-packages/google/resumable_media/requests",
+      "/usr/local/lib/python3.12/dist-packages/google/_async_resumable_media/requests"
+    ],
+    "neg_exit": 1,
+    "pos_exit": 0,
+    "neg_target_failed": [],
+    "neg_target_errored": [],
+    "neg_target_passed": [],
+    "pos_target_passed": [],
+    "pos_target_failed": [],
+    "pos_target_errored": [],
+    "gold_applied": true,
+    "test_patch_applied": true,
+    "neg_tail": " ; no_equals -expected6]\nFAILED tests/test_utils.py::test__parse_content_type_header[multipart/form-data; boundary = something ; \"boundary2=something_else\" ; no_equals -expected7]\nFAILED tests/test_utils.py::test_get_encoding_from_headers[value3-ISO-8859-1]\n5 failed, 202 passed, 13 skipped in 0.51s\n",
+    "pos_tail": "............ [ 65%]\n...........................................................sssssssssss.. [ 98%]\n...s                                                                     [100%]\n- generated xml file: /tmp/swegemma_sandbox_0316fe9d-e7f_8csn_a7c/tmp/_v_75d58f2d.xml -\n207 passed, 13 skipped in 0.36s\n"
+  },
+  {
+    "task": "httpx_3672",
+    "repo": "encode/httpx",
+    "verdict": "UNUSABLE",
+    "reason": "import not in checkout (neg=/usr/local/lib/python3.12/dist-packages/httpx/__init__.py)",
+    "new_tests": [],
+    "neg_pkg_file": "/usr/local/lib/python3.12/dist-packages/httpx/__init__.py",
+    "pos_pkg_file": "/usr/local/lib/python3.12/dist-packages/httpx/__init__.py",
+    "imports_in_checkout": false,
+    "pip_available": true,
+    "pip": "pip 24.1.2 from /usr/local/lib/python3.12/dist-packages/pip (python 3.12)",
+    "editable_log": "File \"<frozen importlib._bootstrap>\", line 1324, in _find_and_load_unlocked\nModuleNotFoundError: No module named 'hatchling'",
+    "other_copies": [
+      "/usr/local/lib/python3.12/dist-packages/httpx"
+    ],
+    "neg_exit": 2,
+    "pos_exit": 2,
+    "neg_target_failed": [],
+    "neg_target_errored": [],
+    "neg_target_passed": [],
+    "pos_target_passed": [],
+    "pos_target_failed": [],
+    "pos_target_errored": [],
+    "gold_applied": true,
+    "test_patch_applied": true,
+    "neg_tail": "ee3b-4f8_p4mtw17b/tmp/_v_0fe20225.xml -\n=========================== short test summary info ============================\nERROR tests/test_parsers.py - AttributeError: module 'httpx' has no attribute...\n!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!\n1 error in 0.21s\n",
+    "pos_tail": "d8c1-b7a_6xu_b7yg/tmp/_v_0d66baca.xml -\n=========================== short test summary info ============================\nERROR tests/test_parsers.py - AttributeError: module 'httpx' has no attribute...\n!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!\n1 error in 0.22s\n"
+  }
+]

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="25" time="0.972" timestamp="2026-09-28T15:57:02.434843+00:00" hostname="fcac5414f593"><testcase classname="test_syntax" name="test_blank_lines" file="test_syntax.py" line="42" time="0.089" /><testcase classname="test_syntax" name="test_python_render" file="test_syntax.py" line="55" time="0.006" /><testcase classname="test_syntax" name="test_python_render_simple" file="test_syntax.py" line="74" time="0.005" /><testcase classname="test_syntax" name="test_python_render_simple_passing_lexer_instance" file="test_syntax.py" line="89" time="0.004" /><testcase classname="test_syntax" name="test_python_render_simple_indent_guides" file="test_syntax.py" line="104" time="0.004" /><testcase classname="test_syntax" name="test_python_render_line_range_indent_guides" file="test_syntax.py" line="121" time="0.002" /><testcase classname="test_syntax" name="test_python_render_indent_guides" file="test_syntax.py" line="139" time="0.005" /><testcase classname="test_syntax" name="test_pygments_syntax_theme_non_str" file="test_syntax.py" line="159" time="0.001" /><testcase classname="test_syntax" name="test_pygments_syntax_theme" file="test_syntax.py" line="166" time="0.001" /><testcase classname="test_syntax" name="test_get_line_color_none" file="test_syntax.py" line="171" time="0.001" /><testcase classname="test_syntax" name="test_highlight_background_color" file="test_syntax.py" line="187" time="0.003" /><testcase classname="test_syntax" name="test_get_number_styles" file="test_syntax.py" line="201" time="0.001" /><testcase classname="test_syntax" name="test_get_style_for_token" file="test_syntax.py" line="211" time="0.001" /><testcase classname="test_syntax" name="test_option_no_wrap" file="test_syntax.py" line="232" time="0.003" /><testcase classname="test_syntax" name="test_syntax_highlight_ranges" file="test_syntax.py" line="249" time="0.004" /><testcase classname="test_syntax" name="test_ansi_theme" file="test_syntax.py" line="304" time="0.001" /><testcase classname="test_syntax" name="test_from_path" file="test_syntax.py" line="316" time="0.624" /><testcase classname="test_syntax" name="test_from_path_unknown_lexer" file="test_syntax.py" line="329" time="0.003" /><testcase classname="test_syntax" name="test_from_path_lexer_override" file="test_syntax.py" line="341" time="0.009" /><testcase classname="test_syntax" name="test_from_path_lexer_override_invalid_lexer" file="test_syntax.py" line="353" time="0.001" /><testcase classname="test_syntax" name="test_syntax_guess_lexer" file="test_syntax.py" line="365" time="0.031" /><testcase classname="test_syntax" name="test_syntax_padding" file="test_syntax.py" line="373" time="0.002" /><testcase classname="test_syntax" name="test_syntax_measure" file="test_syntax.py" line="389" time="0.001" /><testcase classname="test_syntax" name="test_background_color_override_includes_padding" file="test_syntax.py" line="404" time="0.002" /><testcase classname="test_syntax" name="test_padding_plus_wrap" file="test_syntax.py" line="421" time="0.002"><failure message="assert &quot;   'Hello, W...p.'        \n&quot; == &quot;   'Hello, W...d wrap.'   \n&quot;&#10;  &#10;  -    'Hello, World.       &#10;  ?                   ^^^&#10;  +    'Hello, World. Thi   &#10;  ?                   ^^^&#10;  -    This should wrap.'   &#10;  ?   -----&#10;  +    should wrap.'        &#10;  ?                    +++++">def test_padding_plus_wrap() -&gt; None:
+        """Regression test for https://github.com/Textualize/rich/issues/3727"""
+        console = Console(width=24, file=io.StringIO(), legacy_windows=False)
+        syntax = Syntax(
+            "'Hello, World. This should wrap.'",
+            lexer="python",
+            padding=(0, 3),
+            word_wrap=True,
+        )
+        console.print(syntax)
+        output = console.file.getvalue()
+        print(repr(output))
+        expected = "   'Hello, World.       \n   This should wrap.'   \n"
+&gt;       assert output == expected
+E       assert "   'Hello, W...p.'        \n" == "   'Hello, W...d wrap.'   \n"
+E         
+E         -    'Hello, World.       
+E         ?                   ^^^
+E         +    'Hello, World. Thi   
+E         ?                   ^^^
+E         -    This should wrap.'   
+E         ?   -----
+E         +    should wrap.'        
+E         ?                    +++++
+
+tests/test_syntax.py:435: AssertionError</failure></testcase></testsuite></testsuites>

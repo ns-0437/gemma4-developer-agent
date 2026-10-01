@@ -1,0 +1,440 @@
+[{"stream_name":"stderr","time":7.002131738,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":7.002177663,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":7.002181285,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":7.002183392,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":7.595997835,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":7.596030578,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":7.596033281,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":7.5960355,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":8.740521892,"data":"pilot config: {'max_time_minutes': 10.0, 'max_tool_calls': 100, 'max_turns': 60, 'timeout_seconds': 300} | session cap 150 min\n"}
+,{"stream_name":"stdout","time":8.941597053,"data":"installing 41 wheels...\n"}
+,{"stream_name":"stdout","time":62.12036656,"data":"{\n"}
+,{"stream_name":"stdout","time":62.12039843,"data":"  \"swegemma\": \"0.2.7\",\n"}
+,{"stream_name":"stdout","time":62.120402439,"data":"  \"adk-submission\": \"0.2.11\",\n"}
+,{"stream_name":"stdout","time":62.1204054,"data":"  \"adk-eval-core\": \"0.1.0\",\n"}
+,{"stream_name":"stdout","time":62.120408089,"data":"  \"google-adk\": \"1.36.1\",\n"}
+,{"stream_name":"stdout","time":62.120410758,"data":"  \"vllm\": \"0.19.1\",\n"}
+,{"stream_name":"stdout","time":62.120413242,"data":"  \"transformers\": \"5.13.1\",\n"}
+,{"stream_name":"stdout","time":62.120415935,"data":"  \"litellm\": \"1.82.4\"\n"}
+,{"stream_name":"stdout","time":62.120418498,"data":"}\n"}
+,{"stream_name":"stdout","time":69.050814059,"data":"GPUs: 4 ['NVIDIA L4', 'NVIDIA L4', 'NVIDIA L4', 'NVIDIA L4']\n"}
+,{"stream_name":"stdout","time":69.050843388,"data":"model revision dir: 2 | config sha256: b100d85e571c25b6\n"}
+,{"stream_name":"stdout","time":69.050847103,"data":"architectures: ['Gemma4ForConditionalGeneration']\n"}
+,{"stream_name":"stdout","time":69.0508499,"data":"quantization: {\"config_groups\": {\"group_0\": {\"format\": \"pack-quantized\", \"input_activations\": null, \"output_activations\": null, \"targets\": [\"Linear\"], \"weights\": {\"actorder\": null, \"block_structure\": null, \"dynamic\n"}
+,{"stream_name":"stdout","time":106.859207897,"data":"loaded 129 tasks\n"}
+,{"stream_name":"stdout","time":106.905067426,"data":"PILOT TASKS and the evidence they were chosen on:\n"}
+,{"stream_name":"stdout","time":106.905087714,"data":"\n"}
+,{"stream_name":"stdout","time":106.905090852,"data":"  requests_7309 psf/requests\n"}
+,{"stream_name":"stdout","time":106.905093553,"data":"    negative  exit=1 cases=220 failed=5 errored=0\n"}
+,{"stream_name":"stdout","time":106.905096179,"data":"              agent  import: /tmp/swegemma_sandbox_e873efa6-0ac_5tloj0qc/workspace/src/requests/__init__.py\n"}
+,{"stream_name":"stdout","time":106.90509873,"data":"              pytest import: /tmp/swegemma_sandbox_e873efa6-0ac_5tloj0qc/workspace/src/requests/__init__.py\n"}
+,{"stream_name":"stdout","time":106.905101324,"data":"    positive  exit=0 cases=220 failed=0 errored=0\n"}
+,{"stream_name":"stdout","time":106.905103696,"data":"              agent  import: /tmp/swegemma_sandbox_3833472f-a5e_y4r39p3o/workspace/src/requests/__init__.py\n"}
+,{"stream_name":"stdout","time":106.905114581,"data":"              pytest import: /tmp/swegemma_sandbox_3833472f-a5e_y4r39p3o/workspace/src/requests/__init__.py\n"}
+,{"stream_name":"stdout","time":106.905116927,"data":"    baseline-fails / gold-passes / imports-in-checkout: True\n"}
+,{"stream_name":"stdout","time":106.905121902,"data":"    baseline failures: [\"test__parse_content_type_header[multipart/form-data; boundary = something ; boundary2='something_else' ; no_equals -expected4]\", 'test__parse_content_type_header[multipart/form-data; boundary = something ; boundary2=\"something_else\" ; no_equals -expected5]', \"test__parse_content_type_header[multipart/form-data; boundary = something ; 'boundary2=something_else' ; no_equals -expected6]\", 'test__parse_content_type_header[multipart/form-data; boundary = something ; \"boundary2=something_else\" ; no_equals -expected7]']\n"}
+,{"stream_name":"stdout","time":106.905126293,"data":"\n"}
+,{"stream_name":"stdout","time":106.905128131,"data":"  rich_3471 Textualize/rich\n"}
+,{"stream_name":"stdout","time":106.905130092,"data":"    negative  exit=1 cases=108 failed=1 errored=0\n"}
+,{"stream_name":"stdout","time":106.905131953,"data":"              agent  import: /tmp/swegemma_sandbox_f08960dc-1da_l796is_3/workspace/rich/__init__.py\n"}
+,{"stream_name":"stdout","time":106.905133873,"data":"              pytest import: /tmp/swegemma_sandbox_f08960dc-1da_l796is_3/workspace/rich/__init__.py\n"}
+,{"stream_name":"stdout","time":106.905135824,"data":"    positive  exit=0 cases=108 failed=0 errored=0\n"}
+,{"stream_name":"stdout","time":106.905137746,"data":"              agent  import: /tmp/swegemma_sandbox_ccbda4f2-225_sj8p8sth/workspace/rich/__init__.py\n"}
+,{"stream_name":"stdout","time":106.905139687,"data":"              pytest import: /tmp/swegemma_sandbox_ccbda4f2-225_sj8p8sth/workspace/rich/__init__.py\n"}
+,{"stream_name":"stdout","time":106.905141709,"data":"    baseline-fails / gold-passes / imports-in-checkout: True\n"}
+,{"stream_name":"stdout","time":106.905143593,"data":"    baseline failures: ['test_append_tokens']\n"}
+,{"stream_name":"stdout","time":106.92721165,"data":"prompt leakage: CLEAN (0 lines came from the issue text)\n"}
+,{"stream_name":"stdout","time":106.927226762,"data":"LIMITATION: this is a data-flow check. The subprocess backend runs run_command on the host, so\n"}
+,{"stream_name":"stdout","time":106.927229688,"data":"answer-key files remain reachable; traces must be audited for contamination before trusting a run.\n"}
+,{"stream_name":"stdout","time":106.972327434,"data":"A: sha256=f6392b8207a91a52 model=gemma-4-31b-it-qat-w4a16-ct\n"}
+,{"stream_name":"stdout","time":106.972338543,"data":"B: sha256=194b420a487c48f4 model=gemma-4-31b-it-qat-w4a16-ct\n"}
+,{"stream_name":"stdout","time":106.972340834,"data":"A vs B sampling delta: ['-  include_thoughts: false', '+  include_thoughts: true']\n"}
+,{"stream_name":"stdout","time":106.972342856,"data":"every other file is byte-identical between A and B\n"}
+,{"stream_name":"stdout","time":106.995163967,"data":"repair bound on agent_runner, verification, container_setup (idempotent)\n"}
+,{"stream_name":"stdout","time":106.995173078,"data":"NOTE: a pip success message alone is not proof; the preconditions below check what actually loads.\n"}
+,{"stream_name":"stderr","time":107.14327912,"data":"WARNING:swegemma.sandbox.subprocess:ensurepip unavailable in sandbox 95e2940a-cee, creating venv without pip: Command '['/tmp/swegemma_sandbox_95e2940a-cee_n0ugnbpa/venv/bin/python3', '-m', 'ensurepip', '--upgrade', '--default-pip']' returned non-zero exit status 1.\n"}
+,{"stream_name":"stderr","time":107.143298703,"data":"\n"}
+,{"stream_name":"stderr","time":107.143301078,"data":"WARNING:swegemma.sandbox.subprocess:ensurepip unavailable in sandbox 95e2940a-cee, creating venv without pip: Command '['/tmp/swegemma_sandbox_95e2940a-cee_n0ugnbpa/venv/bin/python3', '-m', 'ensurepip', '--upgrade', '--default-pip']' returned non-zero exit status 1.\n"}
+,{"stream_name":"stderr","time":135.111246196,"data":"WARNING:swegemma.sandbox.subprocess:ensurepip unavailable in sandbox c611d76e-dc0, creating venv without pip: Command '['/tmp/swegemma_sandbox_c611d76e-dc0_88ofdaq8/venv/bin/python3', '-m', 'ensurepip', '--upgrade', '--default-pip']' returned non-zero exit status 1.\n"}
+,{"stream_name":"stderr","time":135.111287443,"data":"\n"}
+,{"stream_name":"stderr","time":135.1112914,"data":"WARNING:swegemma.sandbox.subprocess:ensurepip unavailable in sandbox c611d76e-dc0, creating venv without pip: Command '['/tmp/swegemma_sandbox_c611d76e-dc0_88ofdaq8/venv/bin/python3', '-m', 'ensurepip', '--upgrade', '--default-pip']' returned non-zero exit status 1.\n"}
+,{"stream_name":"stdout","time":135.183676584,"data":"requests_7309    ok=True\n"}
+,{"stream_name":"stdout","time":135.18369569,"data":"    workspace: /tmp/swegemma_sandbox_95e2940a-cee_n0ugnbpa/workspace\n"}
+,{"stream_name":"stdout","time":135.183707167,"data":"    agent    : /tmp/swegemma_sandbox_95e2940a-cee_n0ugnbpa/workspace/src/requests/__init__.py\n"}
+,{"stream_name":"stdout","time":135.183712126,"data":"    grading  : /tmp/swegemma_sandbox_95e2940a-cee_n0ugnbpa/workspace/src/requests/__init__.py\n"}
+,{"stream_name":"stdout","time":161.440276698,"data":"rich_3471        ok=True\n"}
+,{"stream_name":"stdout","time":161.440304902,"data":"    workspace: /tmp/swegemma_sandbox_c611d76e-dc0_88ofdaq8/workspace\n"}
+,{"stream_name":"stdout","time":161.440308929,"data":"    agent    : /tmp/swegemma_sandbox_c611d76e-dc0_88ofdaq8/workspace/rich/__init__.py\n"}
+,{"stream_name":"stdout","time":161.440311675,"data":"    grading  : /tmp/swegemma_sandbox_c611d76e-dc0_88ofdaq8/workspace/rich/__init__.py\n"}
+,{"stream_name":"stdout","time":161.440314369,"data":"ALL PRECONDITIONS PASSED\n"}
+,{"stream_name":"stdout","time":161.440316818,"data":"Caveat: passing here does not guarantee the same resolution inside every later sandbox; the\n"}
+,{"stream_name":"stdout","time":161.440319416,"data":"per-run setup observations verify imports again in the actual sandboxes. These are grading-flags probes, not direct in-pytest observations.\n"}
+,{"stream_name":"stdout","time":161.63742318,"data":"adapters discovered: none (expected)\n"}
+,{"stream_name":"stdout","time":537.934851589,"data":"vLLM up at http://127.0.0.1:8000/v1 (tp=4) in 6.3 min\n"}
+,{"stream_name":"stdout","time":537.934879781,"data":"NOTE: the server default enable_thinking=True is overridden per-request by each candidate's\n"}
+,{"stream_name":"stdout","time":537.934883721,"data":"extra_body.chat_template_kwargs, which is what makes A and B differ.\n"}
+,{"stream_name":"stderr","time":538.104623741,"data":"/usr/local/lib/python3.12/dist-packages/google/adk/features/_feature_decorator.py:72: UserWarning: [EXPERIMENTAL] feature FeatureName.AGENT_CONFIG is enabled.\n"}
+,{"stream_name":"stderr","time":538.104644785,"data":"  check_feature_enabled()\n"}
+,{"stream_name":"stderr","time":538.104648105,"data":"/tmp/ipykernel_65/1221088210.py:59: UserWarning: [EXPERIMENTAL] EventsCompactionConfig: This feature is experimental and may change or be removed in future versions without notice. It may introduce breaking changes at any time.\n"}
+,{"stream_name":"stderr","time":538.104651838,"data":"  events_compaction_config=EventsCompactionConfig(\n"}
+,{"stream_name":"stderr","time":538.104654703,"data":"WARNING:swegemma.sandbox.subprocess:ensurepip unavailable in sandbox 2fb30f58-df4, creating venv without pip: Command '['/tmp/swegemma_sandbox_2fb30f58-df4_9ij1bikg/venv/bin/python3', '-m', 'ensurepip', '--upgrade', '--default-pip']' returned non-zero exit status 1.\n"}
+,{"stream_name":"stderr","time":538.104666868,"data":"\n"}
+,{"stream_name":"stderr","time":538.104668928,"data":"/usr/local/lib/python3.12/dist-packages/google/adk/features/_feature_decorator.py:72: UserWarning: [EXPERIMENTAL] feature FeatureName.AGENT_CONFIG is enabled.\n"}
+,{"stream_name":"stderr","time":538.104671306,"data":"  check_feature_enabled()\n"}
+,{"stream_name":"stderr","time":538.104673128,"data":"/tmp/ipykernel_65/1221088210.py:59: UserWarning: [EXPERIMENTAL] EventsCompactionConfig: This feature is experimental and may change or be removed in future versions without notice. It may introduce breaking changes at any time.\n"}
+,{"stream_name":"stderr","time":538.104675275,"data":"  events_compaction_config=EventsCompactionConfig(\n"}
+,{"stream_name":"stderr","time":538.104677205,"data":"WARNING:swegemma.sandbox.subprocess:ensurepip unavailable in sandbox 2fb30f58-df4, creating venv without pip: Command '['/tmp/swegemma_sandbox_2fb30f58-df4_9ij1bikg/venv/bin/python3', '-m', 'ensurepip', '--upgrade', '--default-pip']' returned non-zero exit status 1.\n"}
+,{"stream_name":"stdout","time":538.131771921,"data":"planned run order: [('requests_7309', 'A'), ('requests_7309', 'B'), ('rich_3471', 'B'), ('rich_3471', 'A')]\n"}
+,{"stream_name":"stderr","time":672.825630086,"data":"WARNING:swegemma.sandbox.subprocess:ensurepip unavailable in sandbox 0b7bb29a-6a6, creating venv without pip: Command '['/tmp/swegemma_sandbox_0b7bb29a-6a6_2vxorvu8/venv/bin/python3', '-m', 'ensurepip', '--upgrade', '--default-pip']' returned non-zero exit status 1.\n"}
+,{"stream_name":"stderr","time":672.825660759,"data":"\n"}
+,{"stream_name":"stderr","time":672.825664658,"data":"WARNING:swegemma.sandbox.subprocess:ensurepip unavailable in sandbox 0b7bb29a-6a6, creating venv without pip: Command '['/tmp/swegemma_sandbox_0b7bb29a-6a6_2vxorvu8/venv/bin/python3', '-m', 'ensurepip', '--upgrade', '--default-pip']' returned non-zero exit status 1.\n"}
+,{"stream_name":"stderr","time":699.591505941,"data":"ERROR:swegemma.harness.verification:Failed to apply test patch on task requests_7309: git apply /tmp/swegemma_sandbox_0b7bb29a-6a6_2vxorvu8/tmp/tmp9cq02f5j.patch failed (1):\n"}
+,{"stream_name":"stderr","time":699.59153325,"data":"error: patch failed: tests/test_utils.py:593\n"}
+,{"stream_name":"stderr","time":699.59153705,"data":"error: tests/test_utils.py: patch does not apply\n"}
+,{"stream_name":"stderr","time":699.591553453,"data":"\n"}
+,{"stream_name":"stderr","time":699.591556153,"data":"\n"}
+,{"stream_name":"stderr","time":699.591558823,"data":"git apply -3 /tmp/swegemma_sandbox_0b7bb29a-6a6_2vxorvu8/tmp/tmp9cq02f5j.patch failed (1):\n"}
+,{"stream_name":"stderr","time":699.591561401,"data":"error: tests/test_utils.py: does not match index\n"}
+,{"stream_name":"stderr","time":699.591563977,"data":"\n"}
+,{"stream_name":"stderr","time":699.591566272,"data":"\n"}
+,{"stream_name":"stderr","time":699.591568536,"data":"git apply --ignore-space-change --ignore-whitespace /tmp/swegemma_sandbox_0b7bb29a-6a6_2vxorvu8/tmp/tmp9cq02f5j.patch failed (1):\n"}
+,{"stream_name":"stderr","time":699.591571187,"data":"error: patch failed: tests/test_utils.py:593\n"}
+,{"stream_name":"stderr","time":699.591573691,"data":"error: tests/test_utils.py: patch does not apply\n"}
+,{"stream_name":"stderr","time":699.591576021,"data":"\n"}
+,{"stream_name":"stderr","time":699.591578296,"data":"\n"}
+,{"stream_name":"stderr","time":699.591580508,"data":"git apply --recount /tmp/swegemma_sandbox_0b7bb29a-6a6_2vxorvu8/tmp/tmp9cq02f5j.patch failed (1):\n"}
+,{"stream_name":"stderr","time":699.591583138,"data":"error: patch failed: tests/test_utils.py:593\n"}
+,{"stream_name":"stderr","time":699.591585425,"data":"error: tests/test_utils.py: patch does not apply\n"}
+,{"stream_name":"stderr","time":699.591596476,"data":"\n"}
+,{"stream_name":"stderr","time":699.591598457,"data":"\n"}
+,{"stream_name":"stderr","time":699.591600148,"data":"git apply -p0 /tmp/swegemma_sandbox_0b7bb29a-6a6_2vxorvu8/tmp/tmp9cq02f5j.patch failed (1):\n"}
+,{"stream_name":"stderr","time":699.591602044,"data":"error: b/tests/test_utils.py: No such file or directory\n"}
+,{"stream_name":"stderr","time":699.591603949,"data":"\n"}
+,{"stream_name":"stderr","time":699.5916056,"data":"\n"}
+,{"stream_name":"stderr","time":699.591607256,"data":"git apply -p0 -3 /tmp/swegemma_sandbox_0b7bb29a-6a6_2vxorvu8/tmp/tmp9cq02f5j.patch failed (1):\n"}
+,{"stream_name":"stderr","time":699.591609128,"data":"error: b/tests/test_utils.py: does not exist in index\n"}
+,{"stream_name":"stderr","time":699.59161102,"data":"\n"}
+,{"stream_name":"stderr","time":699.591612758,"data":"\n"}
+,{"stream_name":"stderr","time":699.591614478,"data":"git apply -p0 --ignore-space-change --ignore-whitespace /tmp/swegemma_sandbox_0b7bb29a-6a6_2vxorvu8/tmp/tmp9cq02f5j.patch failed (1):\n"}
+,{"stream_name":"stderr","time":699.591616461,"data":"error: b/tests/test_utils.py: No such file or directory\n"}
+,{"stream_name":"stderr","time":699.591618285,"data":"\n"}
+,{"stream_name":"stderr","time":699.591619941,"data":"\n"}
+,{"stream_name":"stderr","time":699.591621673,"data":"git apply -p0 --recount /tmp/swegemma_sandbox_0b7bb29a-6a6_2vxorvu8/tmp/tmp9cq02f5j.patch failed (1):\n"}
+,{"stream_name":"stderr","time":699.591623549,"data":"error: b/tests/test_utils.py: No such file or directory\n"}
+,{"stream_name":"stderr","time":699.591625331,"data":"\n"}
+,{"stream_name":"stderr","time":699.591627076,"data":"\n"}
+,{"stream_name":"stderr","time":699.591628823,"data":"patch -p1 --batch --forward -i /tmp/swegemma_sandbox_0b7bb29a-6a6_2vxorvu8/tmp/tmp9cq02f5j.patch --dry-run dry-run failed (1):\n"}
+,{"stream_name":"stderr","time":699.59163077,"data":"\n"}
+,{"stream_name":"stderr","time":699.591632468,"data":"checking file tests/test_utils.py\n"}
+,{"stream_name":"stderr","time":699.591634244,"data":"Reversed (or previously applied) patch detected!  Skipping patch.\n"}
+,{"stream_name":"stderr","time":699.591636156,"data":"5 out of 5 hunks ignored\n"}
+,{"stream_name":"stderr","time":699.591638082,"data":"\n"}
+,{"stream_name":"stderr","time":699.591639895,"data":"patch -p1 -l --batch --forward -i /tmp/swegemma_sandbox_0b7bb29a-6a6_2vxorvu8/tmp/tmp9cq02f5j.patch --dry-run dry-run failed (1):\n"}
+,{"stream_name":"stderr","time":699.591642015,"data":"\n"}
+,{"stream_name":"stderr","time":699.591643672,"data":"checking file tests/test_utils.py\n"}
+,{"stream_name":"stderr","time":699.591645427,"data":"Reversed (or previously applied) patch detected!  Skipping patch.\n"}
+,{"stream_name":"stderr","time":699.591647353,"data":"5 out of 5 hunks ignored\n"}
+,{"stream_name":"stderr","time":699.591649102,"data":"\n"}
+,{"stream_name":"stderr","time":699.591652018,"data":"patch -p0 --batch --forward -i /tmp/swegemma_sandbox_0b7bb29a-6a6_2vxorvu8/tmp/tmp9cq02f5j.patch --dry-run dry-run failed (1):\n"}
+,{"stream_name":"stderr","time":699.591653995,"data":"\n"}
+,{"stream_name":"stderr","time":699.591655643,"data":"can't find file to patch at input line 3\n"}
+,{"stream_name":"stderr","time":699.591664008,"data":"Perhaps you used the wrong -p or --strip option?\n"}
+,{"stream_name":"stderr","time":699.591665953,"data":"The text leading up to this was:\n"}
+,{"stream_name":"stderr","time":699.591667753,"data":"--------------------------\n"}
+,{"stream_name":"stderr","time":699.591669586,"data":"|--- a/tests/test_utils.py\n"}
+,{"stream_name":"stderr","time":699.591673923,"data":"|+++ b/tests/test_utils.py\n"}
+,{"stream_name":"stderr","time":699.591675864,"data":"--------------------------\n"}
+,{"stream_name":"stderr","time":699.591677638,"data":"No file to patch.  Skipping patch.\n"}
+,{"stream_name":"stderr","time":699.59167949,"data":"5 out of 5 hunks ignored\n"}
+,{"stream_name":"stderr","time":699.591681248,"data":"\n"}
+,{"stream_name":"stderr","time":699.591683244,"data":"patch -p0 -l --batch --forward -i /tmp/swegemma_sandbox_0b7bb29a-6a6_2vxorvu8/tmp/tmp9cq02f5j.patch --dry-run dry-run failed (1):\n"}
+,{"stream_name":"stderr","time":699.591685205,"data":"\n"}
+,{"stream_name":"stderr","time":699.591686976,"data":"can't find file to patch at input line 3\n"}
+,{"stream_name":"stderr","time":699.59168875,"data":"Perhaps you used the wrong -p or --strip option?\n"}
+,{"stream_name":"stderr","time":699.591690941,"data":"The text leading up to this was:\n"}
+,{"stream_name":"stderr","time":699.591692701,"data":"--------------------------\n"}
+,{"stream_name":"stderr","time":699.591694504,"data":"|--- a/tests/test_utils.py\n"}
+,{"stream_name":"stderr","time":699.591696234,"data":"|+++ b/tests/test_utils.py\n"}
+,{"stream_name":"stderr","time":699.591698282,"data":"--------------------------\n"}
+,{"stream_name":"stderr","time":699.591700037,"data":"No file to patch.  Skipping patch.\n"}
+,{"stream_name":"stderr","time":699.591701808,"data":"5 out of 5 hunks ignored\n"}
+,{"stream_name":"stderr","time":699.591703557,"data":"\n"}
+,{"stream_name":"stderr","time":699.591705205,"data":"\n"}
+,{"stream_name":"stderr","time":699.591706857,"data":"\n"}
+,{"stream_name":"stderr","time":699.591708637,"data":"ERROR:swegemma.harness.verification:Failed to apply test patch on task requests_7309: git apply /tmp/swegemma_sandbox_0b7bb29a-6a6_2vxorvu8/tmp/tmp9cq02f5j.patch failed (1):\n"}
+,{"stream_name":"stderr","time":699.591710667,"data":"error: patch failed: tests/test_utils.py:593\n"}
+,{"stream_name":"stderr","time":699.591712473,"data":"error: tests/test_utils.py: patch does not apply\n"}
+,{"stream_name":"stderr","time":699.59171425,"data":"\n"}
+,{"stream_name":"stderr","time":699.591715922,"data":"\n"}
+,{"stream_name":"stderr","time":699.591717613,"data":"git apply -3 /tmp/swegemma_sandbox_0b7bb29a-6a6_2vxorvu8/tmp/tmp9cq02f5j.patch failed (1):\n"}
+,{"stream_name":"stderr","time":699.591719466,"data":"error: tests/test_utils.py: does not match index\n"}
+,{"stream_name":"stderr","time":699.59172123,"data":"\n"}
+,{"stream_name":"stderr","time":699.59172293,"data":"\n"}
+,{"stream_name":"stderr","time":699.591724621,"data":"git apply --ignore-space-change --ignore-whitespace /tmp/swegemma_sandbox_0b7bb29a-6a6_2vxorvu8/tmp/tmp9cq02f5j.patch failed (1):\n"}
+,{"stream_name":"stderr","time":699.591726559,"data":"error: patch failed: tests/test_utils.py:593\n"}
+,{"stream_name":"stderr","time":699.591728365,"data":"error: tests/test_utils.py: patch does not apply\n"}
+,{"stream_name":"stderr","time":699.591730173,"data":"\n"}
+,{"stream_name":"stderr","time":699.591731805,"data":"\n"}
+,{"stream_name":"stderr","time":699.591733485,"data":"git apply --recount /tmp/swegemma_sandbox_0b7bb29a-6a6_2vxorvu8/tmp/tmp9cq02f5j.patch failed (1):\n"}
+,{"stream_name":"stderr","time":699.59173535,"data":"error: patch failed: tests/test_utils.py:593\n"}
+,{"stream_name":"stderr","time":699.591737166,"data":"error: tests/test_utils.py: patch does not apply\n"}
+,{"stream_name":"stderr","time":699.591739081,"data":"\n"}
+,{"stream_name":"stderr","time":699.591740745,"data":"\n"}
+,{"stream_name":"stderr","time":699.591742528,"data":"git apply -p0 /tmp/swegemma_sandbox_0b7bb29a-6a6_2vxorvu8/tmp/tmp9cq02f5j.patch failed (1):\n"}
+,{"stream_name":"stderr","time":699.591747057,"data":"error: b/tests/test_utils.py: No such file or directory\n"}
+,{"stream_name":"stderr","time":699.591748976,"data":"\n"}
+,{"stream_name":"stderr","time":699.591750625,"data":"\n"}
+,{"stream_name":"stderr","time":699.591752287,"data":"git apply -p0 -3 /tmp/swegemma_sandbox_0b7bb29a-6a6_2vxorvu8/tmp/tmp9cq02f5j.patch failed (1):\n"}
+,{"stream_name":"stderr","time":699.591754204,"data":"error: b/tests/test_utils.py: does not exist in index\n"}
+,{"stream_name":"stderr","time":699.591755993,"data":"\n"}
+,{"stream_name":"stderr","time":699.591757656,"data":"\n"}
+,{"stream_name":"stderr","time":699.591759713,"data":"git apply -p0 --ignore-space-change --ignore-whitespace /tmp/swegemma_sandbox_0b7bb29a-6a6_2vxorvu8/tmp/tmp9cq02f5j.patch failed (1):\n"}
+,{"stream_name":"stderr","time":699.591761727,"data":"error: b/tests/test_utils.py: No such file or directory\n"}
+,{"stream_name":"stderr","time":699.591763494,"data":"\n"}
+,{"stream_name":"stderr","time":699.591765135,"data":"\n"}
+,{"stream_name":"stderr","time":699.591766875,"data":"git apply -p0 --recount /tmp/swegemma_sandbox_0b7bb29a-6a6_2vxorvu8/tmp/tmp9cq02f5j.patch failed (1):\n"}
+,{"stream_name":"stderr","time":699.591768798,"data":"error: b/tests/test_utils.py: No such file or directory\n"}
+,{"stream_name":"stderr","time":699.591770599,"data":"\n"}
+,{"stream_name":"stderr","time":699.591772245,"data":"\n"}
+,{"stream_name":"stderr","time":699.591773926,"data":"patch -p1 --batch --forward -i /tmp/swegemma_sandbox_0b7bb29a-6a6_2vxorvu8/tmp/tmp9cq02f5j.patch --dry-run dry-run failed (1):\n"}
+,{"stream_name":"stderr","time":699.591775867,"data":"\n"}
+,{"stream_name":"stderr","time":699.591777502,"data":"checking file tests/test_utils.py\n"}
+,{"stream_name":"stderr","time":699.591779267,"data":"Reversed (or previously applied) patch detected!  Skipping patch.\n"}
+,{"stream_name":"stderr","time":699.591781083,"data":"5 out of 5 hunks ignored\n"}
+,{"stream_name":"stderr","time":699.591782864,"data":"\n"}
+,{"stream_name":"stderr","time":699.591784559,"data":"patch -p1 -l --batch --forward -i /tmp/swegemma_sandbox_0b7bb29a-6a6_2vxorvu8/tmp/tmp9cq02f5j.patch --dry-run dry-run failed (1):\n"}
+,{"stream_name":"stderr","time":699.591786505,"data":"\n"}
+,{"stream_name":"stderr","time":699.591788164,"data":"checking file tests/test_utils.py\n"}
+,{"stream_name":"stderr","time":699.591789955,"data":"Reversed (or previously applied) patch detected!  Skipping patch.\n"}
+,{"stream_name":"stderr","time":699.591791764,"data":"5 out of 5 hunks ignored\n"}
+,{"stream_name":"stderr","time":699.591793472,"data":"\n"}
+,{"stream_name":"stderr","time":699.59179515,"data":"patch -p0 --batch --forward -i /tmp/swegemma_sandbox_0b7bb29a-6a6_2vxorvu8/tmp/tmp9cq02f5j.patch --dry-run dry-run failed (1):\n"}
+,{"stream_name":"stderr","time":699.591797121,"data":"\n"}
+,{"stream_name":"stderr","time":699.591798803,"data":"can't find file to patch at input line 3\n"}
+,{"stream_name":"stderr","time":699.591800565,"data":"Perhaps you used the wrong -p or --strip option?\n"}
+,{"stream_name":"stderr","time":699.59180235,"data":"The text leading up to this was:\n"}
+,{"stream_name":"stderr","time":699.591804133,"data":"--------------------------\n"}
+,{"stream_name":"stderr","time":699.59180586,"data":"|--- a/tests/test_utils.py\n"}
+,{"stream_name":"stderr","time":699.591807567,"data":"|+++ b/tests/test_utils.py\n"}
+,{"stream_name":"stderr","time":699.591809291,"data":"--------------------------\n"}
+,{"stream_name":"stderr","time":699.591811117,"data":"No file to patch.  Skipping patch.\n"}
+,{"stream_name":"stderr","time":699.591814613,"data":"5 out of 5 hunks ignored\n"}
+,{"stream_name":"stderr","time":699.591816486,"data":"\n"}
+,{"stream_name":"stderr","time":699.591818199,"data":"patch -p0 -l --batch --forward -i /tmp/swegemma_sandbox_0b7bb29a-6a6_2vxorvu8/tmp/tmp9cq02f5j.patch --dry-run dry-run failed (1):\n"}
+,{"stream_name":"stderr","time":699.591820172,"data":"\n"}
+,{"stream_name":"stderr","time":699.591821837,"data":"can't find file to patch at input line 3\n"}
+,{"stream_name":"stderr","time":699.591823599,"data":"Perhaps you used the wrong -p or --strip option?\n"}
+,{"stream_name":"stderr","time":699.591825371,"data":"The text leading up to this was:\n"}
+,{"stream_name":"stderr","time":699.591827235,"data":"--------------------------\n"}
+,{"stream_name":"stderr","time":699.591828977,"data":"|--- a/tests/test_utils.py\n"}
+,{"stream_name":"stderr","time":699.591830701,"data":"|+++ b/tests/test_utils.py\n"}
+,{"stream_name":"stderr","time":699.591832421,"data":"--------------------------\n"}
+,{"stream_name":"stderr","time":699.591834279,"data":"No file to patch.  Skipping patch.\n"}
+,{"stream_name":"stderr","time":699.591836065,"data":"5 out of 5 hunks ignored\n"}
+,{"stream_name":"stderr","time":699.591837811,"data":"\n"}
+,{"stream_name":"stderr","time":699.591839456,"data":"\n"}
+,{"stream_name":"stderr","time":699.765408361,"data":"/tmp/ipykernel_65/1221088210.py:59: UserWarning: [EXPERIMENTAL] EventsCompactionConfig: This feature is experimental and may change or be removed in future versions without notice. It may introduce breaking changes at any time.\n"}
+,{"stream_name":"stderr","time":699.765432698,"data":"  events_compaction_config=EventsCompactionConfig(\n"}
+,{"stream_name":"stderr","time":699.765435937,"data":"WARNING:swegemma.sandbox.subprocess:ensurepip unavailable in sandbox 94f9bf4c-f25, creating venv without pip: Command '['/tmp/swegemma_sandbox_94f9bf4c-f25_l5h267pg/venv/bin/python3', '-m', 'ensurepip', '--upgrade', '--default-pip']' returned non-zero exit status 1.\n"}
+,{"stream_name":"stderr","time":699.765438978,"data":"\n"}
+,{"stream_name":"stderr","time":699.765440917,"data":"/tmp/ipykernel_65/1221088210.py:59: UserWarning: [EXPERIMENTAL] EventsCompactionConfig: This feature is experimental and may change or be removed in future versions without notice. It may introduce breaking changes at any time.\n"}
+,{"stream_name":"stderr","time":699.765443292,"data":"  events_compaction_config=EventsCompactionConfig(\n"}
+,{"stream_name":"stderr","time":699.765445301,"data":"WARNING:swegemma.sandbox.subprocess:ensurepip unavailable in sandbox 94f9bf4c-f25, creating venv without pip: Command '['/tmp/swegemma_sandbox_94f9bf4c-f25_l5h267pg/venv/bin/python3', '-m', 'ensurepip', '--upgrade', '--default-pip']' returned non-zero exit status 1.\n"}
+,{"stream_name":"stdout","time":699.821828379,"data":"A requests_7309 wall_s= 161.661 phase_s= {'agent_phase_s': [134.711972231], 'agent_loop_s': [108.16923330700001], 'grading_phase_s': [26.928671877000056]}\n"}
+,{"stream_name":"stderr","time":951.839909003,"data":"WARNING:adk_eval_core.plugins.retry_plugin:Non-retryable model error: ContextWindowExceededError: litellm.ContextWindowExceededError: litellm.BadRequestError: ContextWindowExceededError: OpenAIException - This model's maximum context length is 32768 tokens. However, you requested 8192 output tokens and your prompt contains at least 24577 input tokens, for a total of at least 32769 tokens. Please reduce the length of the input prompt or the number of requested output tokens. (parameter=input_tokens, value=24577)\n"}
+,{"stream_name":"stderr","time":951.83994757,"data":"\n"}
+,{"stream_name":"stderr","time":951.839951439,"data":"WARNING:adk_eval_core.plugins.retry_plugin:Non-retryable model error: ContextWindowExceededError: litellm.ContextWindowExceededError: litellm.BadRequestError: ContextWindowExceededError: OpenAIException - This model's maximum context length is 32768 tokens. However, you requested 8192 output tokens and your prompt contains at least 24577 input tokens, for a total of at least 32769 tokens. Please reduce the length of the input prompt or the number of requested output tokens. (parameter=input_tokens, value=24577)\n"}
+,{"stream_name":"stderr","time":951.840918325,"data":"ERROR:swegemma.harness.agent_runner:Error during sandbox execution for task requests_7309\n"}
+,{"stream_name":"stderr","time":951.840944807,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":951.840949695,"data":"  File \"/usr/local/lib/python3.12/dist-packages/litellm/llms/openai/openai.py\", line 929, in acompletion\n"}
+,{"stream_name":"stderr","time":951.84095409,"data":"    headers, response = await self.make_openai_chat_completion_request(\n"}
+,{"stream_name":"stderr","time":951.840957685,"data":"                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":951.840961564,"data":"  File \"/usr/local/lib/python3.12/dist-packages/litellm/litellm_core_utils/logging_utils.py\", line 297, in async_wrapper\n"}
+,{"stream_name":"stderr","time":951.840965508,"data":"    result = await func(*args, **kwargs)\n"}
+,{"stream_name":"stderr","time":951.84096951,"data":"             ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":951.840972993,"data":"  File \"/usr/local/lib/python3.12/dist-packages/litellm/llms/openai/openai.py\", line 460, in make_openai_chat_completion_request\n"}
+,{"stream_name":"stderr","time":951.840977161,"data":"    raise e\n"}
+,{"stream_name":"stderr","time":951.840980511,"data":"  File \"/usr/local/lib/python3.12/dist-packages/litellm/llms/openai/openai.py\", line 437, in make_openai_chat_completion_request\n"}
+,{"stream_name":"stderr","time":951.840984383,"data":"    await openai_aclient.chat.completions.with_raw_response.create(\n"}
+,{"stream_name":"stderr","time":951.840988185,"data":"  File \"/usr/local/lib/python3.12/dist-packages/openai/_legacy_response.py\", line 384, in wrapped\n"}
+,{"stream_name":"stderr","time":951.840992063,"data":"    return cast(LegacyAPIResponse[R], await func(*args, **kwargs))\n"}
+,{"stream_name":"stderr","time":951.840995853,"data":"                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":951.84099959,"data":"  File \"/usr/local/lib/python3.12/dist-packages/openai/resources/chat/completions/completions.py\", line 2714, in create\n"}
+,{"stream_name":"stderr","time":951.84100372,"data":"    return await self._post(\n"}
+,{"stream_name":"stderr","time":951.841007286,"data":"           ^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":951.841010669,"data":"  File \"/usr/local/lib/python3.12/dist-packages/openai/_base_client.py\", line 1913, in post\n"}
+,{"stream_name":"stderr","time":951.841014603,"data":"    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)\n"}
+,{"stream_name":"stderr","time":951.84101828,"data":"           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":951.841022138,"data":"  File \"/usr/local/lib/python3.12/dist-packages/openai/_base_client.py\", line 1698, in request\n"}
+,{"stream_name":"stderr","time":951.841025918,"data":"    raise self._make_status_error_from_response(err.response) from None\n"}
+,{"stream_name":"stderr","time":951.841031123,"data":"openai.BadRequestError: Error code: 400 - {'error': {'message': \"This model's maximum context length is 32768 tokens. However, you requested 8192 output tokens and your prompt contains at least 24577 input tokens, for a total of at least 32769 tokens. Please reduce the length of the input prompt or the number of requested output tokens. (parameter=input_tokens, value=24577)\", 'type': 'BadRequestError', 'param': 'input_tokens', 'code': 400}}\n"}
+,{"stream_name":"stderr","time":951.841049474,"data":"\n"}
+,{"stream_name":"stderr","time":951.841052944,"data":"During handling of the above exception, another exception occurred:\n"}
+,{"stream_name":"stderr","time":951.841056473,"data":"\n"}
+,{"stream_name":"stderr","time":951.8410599,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":951.841063247,"data":"  File \"/usr/local/lib/python3.12/dist-packages/litellm/main.py\", line 620, in acompletion\n"}
+,{"stream_name":"stderr","time":951.841067039,"data":"    response = await init_response\n"}
+,{"stream_name":"stderr","time":951.841070647,"data":"               ^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":951.841074105,"data":"  File \"/usr/local/lib/python3.12/dist-packages/litellm/llms/openai/openai.py\", line 989, in acompletion\n"}
+,{"stream_name":"stderr","time":951.841077959,"data":"    raise OpenAIError(\n"}
+,{"stream_name":"stderr","time":951.841081559,"data":"litellm.llms.openai.common_utils.OpenAIError: Error code: 400 - {'error': {'message': \"This model's maximum context length is 32768 tokens. However, you requested 8192 output tokens and your prompt contains at least 24577 input tokens, for a total of at least 32769 tokens. Please reduce the length of the input prompt or the number of requested output tokens. (parameter=input_tokens, value=24577)\", 'type': 'BadRequestError', 'param': 'input_tokens', 'code': 400}}\n"}
+,{"stream_name":"stderr","time":951.841087073,"data":"\n"}
+,{"stream_name":"stderr","time":951.841090258,"data":"During handling of the above exception, another exception occurred:\n"}
+,{"stream_name":"stderr","time":951.841093744,"data":"\n"}
+,{"stream_name":"stderr","time":951.84109721,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":951.841100744,"data":"  File \"/usr/local/lib/python3.12/dist-packages/swegemma/harness/agent_runner.py\", line 521, in run_agent_sandbox\n"}
+,{"stream_name":"stderr","time":951.841104873,"data":"    async for _event in runner.run_async(\n"}
+,{"stream_name":"stderr","time":951.841108366,"data":"  File \"/usr/local/lib/python3.12/dist-packages/google/adk/runners.py\", line 613, in run_async\n"}
+,{"stream_name":"stderr","time":951.841112184,"data":"    async for event in agen:\n"}
+,{"stream_name":"stderr","time":951.84111613,"data":"  File \"/usr/local/lib/python3.12/dist-packages/google/adk/runners.py\", line 596, in _run_with_trace\n"}
+,{"stream_name":"stderr","time":951.8411199990001,"data":"    async for event in agen:\n"}
+,{"stream_name":"stderr","time":951.841123534,"data":"  File \"/usr/local/lib/python3.12/dist-packages/google/adk/runners.py\", line 858, in _exec_with_plugin\n"}
+,{"stream_name":"stderr","time":951.841127444,"data":"    async for event in agen:\n"}
+,{"stream_name":"stderr","time":951.841130773,"data":"  File \"/usr/local/lib/python3.12/dist-packages/google/adk/runners.py\", line 585, in execute\n"}
+,{"stream_name":"stderr","time":951.841134806,"data":"    async for event in agen:\n"}
+,{"stream_name":"stderr","time":951.841138132,"data":"  File \"/usr/local/lib/python3.12/dist-packages/google/adk/agents/base_agent.py\", line 295, in run_async\n"}
+,{"stream_name":"stderr","time":951.841142063,"data":"    async for event in agen:\n"}
+,{"stream_name":"stderr","time":951.841145355,"data":"  File \"/usr/local/lib/python3.12/dist-packages/google/adk/agents/llm_agent.py\", line 488, in _run_async_impl\n"}
+,{"stream_name":"stderr","time":951.841153296,"data":"    async for event in agen:\n"}
+,{"stream_name":"stderr","time":951.841156777,"data":"  File \"/usr/local/lib/python3.12/dist-packages/google/adk/flows/llm_flows/base_llm_flow.py\", line 869, in run_async\n"}
+,{"stream_name":"stderr","time":951.841160903,"data":"    async for event in agen:\n"}
+,{"stream_name":"stderr","time":951.841164258,"data":"  File \"/usr/local/lib/python3.12/dist-packages/google/adk/flows/llm_flows/base_llm_flow.py\", line 946, in _run_one_step_async\n"}
+,{"stream_name":"stderr","time":951.841168523,"data":"    async for llm_response in agen:\n"}
+,{"stream_name":"stderr","time":951.841171974,"data":"  File \"/usr/local/lib/python3.12/dist-packages/google/adk/flows/llm_flows/base_llm_flow.py\", line 1328, in _call_llm_async\n"}
+,{"stream_name":"stderr","time":951.841175688,"data":"    async for event in agen:\n"}
+,{"stream_name":"stderr","time":951.841179298,"data":"  File \"/usr/local/lib/python3.12/dist-packages/google/adk/flows/llm_flows/base_llm_flow.py\", line 1306, in _call_llm_with_tracing\n"}
+,{"stream_name":"stderr","time":951.84118319,"data":"    async for llm_response in agen:\n"}
+,{"stream_name":"stderr","time":951.841186835,"data":"  File \"/usr/local/lib/python3.12/dist-packages/google/adk/flows/llm_flows/base_llm_flow.py\", line 1389, in _run_and_handle_error\n"}
+,{"stream_name":"stderr","time":951.841190842,"data":"    async for response in agen:\n"}
+,{"stream_name":"stderr","time":951.841194252,"data":"  File \"/usr/local/lib/python3.12/dist-packages/google/adk/flows/llm_flows/base_llm_flow.py\", line 418, in _run_and_handle_error\n"}
+,{"stream_name":"stderr","time":951.841198417,"data":"    raise model_error\n"}
+,{"stream_name":"stderr","time":951.841201927,"data":"  File \"/usr/local/lib/python3.12/dist-packages/google/adk/flows/llm_flows/base_llm_flow.py\", line 391, in _run_and_handle_error\n"}
+,{"stream_name":"stderr","time":951.841205963,"data":"    async for llm_response in agen:\n"}
+,{"stream_name":"stderr","time":951.841209383,"data":"  File \"/usr/local/lib/python3.12/dist-packages/google/adk/models/lite_llm.py\", line 2467, in generate_content_async\n"}
+,{"stream_name":"stderr","time":951.841213347,"data":"    response = await self.llm_client.acompletion(**completion_args)\n"}
+,{"stream_name":"stderr","time":951.841216903,"data":"               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":951.841220461,"data":"  File \"/usr/local/lib/python3.12/dist-packages/google/adk/models/lite_llm.py\", line 513, in acompletion\n"}
+,{"stream_name":"stderr","time":951.841224472,"data":"    return await acompletion(\n"}
+,{"stream_name":"stderr","time":951.841227895,"data":"           ^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":951.841231303,"data":"  File \"/usr/local/lib/python3.12/dist-packages/litellm/utils.py\", line 2072, in wrapper_async\n"}
+,{"stream_name":"stderr","time":951.841235281,"data":"    raise e\n"}
+,{"stream_name":"stderr","time":951.841238549,"data":"  File \"/usr/local/lib/python3.12/dist-packages/litellm/utils.py\", line 1892, in wrapper_async\n"}
+,{"stream_name":"stderr","time":951.84124216,"data":"    result = await original_function(*args, **kwargs)\n"}
+,{"stream_name":"stderr","time":951.841245819,"data":"             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":951.841249343,"data":"  File \"/usr/local/lib/python3.12/dist-packages/litellm/main.py\", line 639, in acompletion\n"}
+,{"stream_name":"stderr","time":951.841253246,"data":"    raise exception_type(\n"}
+,{"stream_name":"stderr","time":951.841256687,"data":"          ^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":951.841260562,"data":"  File \"/usr/local/lib/python3.12/dist-packages/litellm/litellm_core_utils/exception_mapping_utils.py\", line 2456, in exception_type\n"}
+,{"stream_name":"stderr","time":951.84126799,"data":"    raise e\n"}
+,{"stream_name":"stderr","time":951.841271321,"data":"  File \"/usr/local/lib/python3.12/dist-packages/litellm/litellm_core_utils/exception_mapping_utils.py\", line 400, in exception_type\n"}
+,{"stream_name":"stderr","time":951.841275523,"data":"    raise ContextWindowExceededError(\n"}
+,{"stream_name":"stderr","time":951.841279072,"data":"litellm.exceptions.ContextWindowExceededError: litellm.ContextWindowExceededError: litellm.BadRequestError: ContextWindowExceededError: OpenAIException - This model's maximum context length is 32768 tokens. However, you requested 8192 output tokens and your prompt contains at least 24577 input tokens, for a total of at least 32769 tokens. Please reduce the length of the input prompt or the number of requested output tokens. (parameter=input_tokens, value=24577)\n"}
+,{"stream_name":"stderr","time":951.84128446,"data":"\n"}
+,{"stream_name":"stderr","time":951.841287966,"data":"ERROR:swegemma.harness.agent_runner:Error during sandbox execution for task requests_7309\n"}
+,{"stream_name":"stderr","time":951.84129171,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":951.841295093,"data":"  File \"/usr/local/lib/python3.12/dist-packages/litellm/llms/openai/openai.py\", line 929, in acompletion\n"}
+,{"stream_name":"stderr","time":951.841299097,"data":"    headers, response = await self.make_openai_chat_completion_request(\n"}
+,{"stream_name":"stderr","time":951.841302629,"data":"                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":951.841306447,"data":"  File \"/usr/local/lib/python3.12/dist-packages/litellm/litellm_core_utils/logging_utils.py\", line 297, in async_wrapper\n"}
+,{"stream_name":"stderr","time":951.841310277,"data":"    result = await func(*args, **kwargs)\n"}
+,{"stream_name":"stderr","time":951.841314017,"data":"             ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":951.841317568,"data":"  File \"/usr/local/lib/python3.12/dist-packages/litellm/llms/openai/openai.py\", line 460, in make_openai_chat_completion_request\n"}
+,{"stream_name":"stderr","time":951.841321715,"data":"    raise e\n"}
+,{"stream_name":"stderr","time":951.841324993,"data":"  File \"/usr/local/lib/python3.12/dist-packages/litellm/llms/openai/openai.py\", line 437, in make_openai_chat_completion_request\n"}
+,{"stream_name":"stderr","time":951.841328987,"data":"    await openai_aclient.chat.completions.with_raw_response.create(\n"}
+,{"stream_name":"stderr","time":951.841332701,"data":"  File \"/usr/local/lib/python3.12/dist-packages/openai/_legacy_response.py\", line 384, in wrapped\n"}
+,{"stream_name":"stderr","time":951.84133639,"data":"    return cast(LegacyAPIResponse[R], await func(*args, **kwargs))\n"}
+,{"stream_name":"stderr","time":951.84133987,"data":"                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":951.841343707,"data":"  File \"/usr/local/lib/python3.12/dist-packages/openai/resources/chat/completions/completions.py\", line 2714, in create\n"}
+,{"stream_name":"stderr","time":951.84134756,"data":"    return await self._post(\n"}
+,{"stream_name":"stderr","time":951.841351179,"data":"           ^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":951.841354987,"data":"  File \"/usr/local/lib/python3.12/dist-packages/openai/_base_client.py\", line 1913, in post\n"}
+,{"stream_name":"stderr","time":951.84135902,"data":"    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)\n"}
+,{"stream_name":"stderr","time":951.84136601,"data":"           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":951.841369864,"data":"  File \"/usr/local/lib/python3.12/dist-packages/openai/_base_client.py\", line 1698, in request\n"}
+,{"stream_name":"stderr","time":951.841373603,"data":"    raise self._make_status_error_from_response(err.response) from None\n"}
+,{"stream_name":"stderr","time":951.841377475,"data":"openai.BadRequestError: Error code: 400 - {'error': {'message': \"This model's maximum context length is 32768 tokens. However, you requested 8192 output tokens and your prompt contains at least 24577 input tokens, for a total of at least 32769 tokens. Please reduce the length of the input prompt or the number of requested output tokens. (parameter=input_tokens, value=24577)\", 'type': 'BadRequestError', 'param': 'input_tokens', 'code': 400}}\n"}
+,{"stream_name":"stderr","time":951.841382901,"data":"\n"}
+,{"stream_name":"stderr","time":951.841386252,"data":"During handling of the above exception, another exception occurred:\n"}
+,{"stream_name":"stderr","time":951.841389947,"data":"\n"}
+,{"stream_name":"stderr","time":951.841393081,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":951.841396473,"data":"  File \"/usr/local/lib/python3.12/dist-packages/litellm/main.py\", line 620, in acompletion\n"}
+,{"stream_name":"stderr","time":951.841400126,"data":"    response = await init_response\n"}
+,{"stream_name":"stderr","time":951.841403695,"data":"               ^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":951.841407279,"data":"  File \"/usr/local/lib/python3.12/dist-packages/litellm/llms/openai/openai.py\", line 989, in acompletion\n"}
+,{"stream_name":"stderr","time":951.841411009,"data":"    raise OpenAIError(\n"}
+,{"stream_name":"stderr","time":951.841414699,"data":"litellm.llms.openai.common_utils.OpenAIError: Error code: 400 - {'error': {'message': \"This model's maximum context length is 32768 tokens. However, you requested 8192 output tokens and your prompt contains at least 24577 input tokens, for a total of at least 32769 tokens. Please reduce the length of the input prompt or the number of requested output tokens. (parameter=input_tokens, value=24577)\", 'type': 'BadRequestError', 'param': 'input_tokens', 'code': 400}}\n"}
+,{"stream_name":"stderr","time":951.841420115,"data":"\n"}
+,{"stream_name":"stderr","time":951.841423281,"data":"During handling of the above exception, another exception occurred:\n"}
+,{"stream_name":"stderr","time":951.841426715,"data":"\n"}
+,{"stream_name":"stderr","time":951.841430151,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":951.841433541,"data":"  File \"/usr/local/lib/python3.12/dist-packages/swegemma/harness/agent_runner.py\", line 521, in run_agent_sandbox\n"}
+,{"stream_name":"stderr","time":951.841437333,"data":"    async for _event in runner.run_async(\n"}
+,{"stream_name":"stderr","time":951.841441533,"data":"  File \"/usr/local/lib/python3.12/dist-packages/google/adk/runners.py\", line 613, in run_async\n"}
+,{"stream_name":"stderr","time":951.841445663,"data":"    async for event in agen:\n"}
+,{"stream_name":"stderr","time":951.841449078,"data":"  File \"/usr/local/lib/python3.12/dist-packages/google/adk/runners.py\", line 596, in _run_with_trace\n"}
+,{"stream_name":"stderr","time":951.841452804,"data":"    async for event in agen:\n"}
+,{"stream_name":"stderr","time":951.841456333,"data":"  File \"/usr/local/lib/python3.12/dist-packages/google/adk/runners.py\", line 858, in _exec_with_plugin\n"}
+,{"stream_name":"stderr","time":951.841460101,"data":"    async for event in agen:\n"}
+,{"stream_name":"stderr","time":951.841463436,"data":"  File \"/usr/local/lib/python3.12/dist-packages/google/adk/runners.py\", line 585, in execute\n"}
+,{"stream_name":"stderr","time":951.841470482,"data":"    async for event in agen:\n"}
+,{"stream_name":"stderr","time":951.841473912,"data":"  File \"/usr/local/lib/python3.12/dist-packages/google/adk/agents/base_agent.py\", line 295, in run_async\n"}
+,{"stream_name":"stderr","time":951.841477948,"data":"    async for event in agen:\n"}
+,{"stream_name":"stderr","time":951.841481345,"data":"  File \"/usr/local/lib/python3.12/dist-packages/google/adk/agents/llm_agent.py\", line 488, in _run_async_impl\n"}
+,{"stream_name":"stderr","time":951.841485293,"data":"    async for event in agen:\n"}
+,{"stream_name":"stderr","time":951.841488601,"data":"  File \"/usr/local/lib/python3.12/dist-packages/google/adk/flows/llm_flows/base_llm_flow.py\", line 869, in run_async\n"}
+,{"stream_name":"stderr","time":951.841492369,"data":"    async for event in agen:\n"}
+,{"stream_name":"stderr","time":951.841495644,"data":"  File \"/usr/local/lib/python3.12/dist-packages/google/adk/flows/llm_flows/base_llm_flow.py\", line 946, in _run_one_step_async\n"}
+,{"stream_name":"stderr","time":951.841499743,"data":"    async for llm_response in agen:\n"}
+,{"stream_name":"stderr","time":951.841503164,"data":"  File \"/usr/local/lib/python3.12/dist-packages/google/adk/flows/llm_flows/base_llm_flow.py\", line 1328, in _call_llm_async\n"}
+,{"stream_name":"stderr","time":951.841507364,"data":"    async for event in agen:\n"}
+,{"stream_name":"stderr","time":951.841510746,"data":"  File \"/usr/local/lib/python3.12/dist-packages/google/adk/flows/llm_flows/base_llm_flow.py\", line 1306, in _call_llm_with_tracing\n"}
+,{"stream_name":"stderr","time":951.841514763,"data":"    async for llm_response in agen:\n"}
+,{"stream_name":"stderr","time":951.841518221,"data":"  File \"/usr/local/lib/python3.12/dist-packages/google/adk/flows/llm_flows/base_llm_flow.py\", line 1389, in _run_and_handle_error\n"}
+,{"stream_name":"stderr","time":951.841521987,"data":"    async for response in agen:\n"}
+,{"stream_name":"stderr","time":951.841525599,"data":"  File \"/usr/local/lib/python3.12/dist-packages/google/adk/flows/llm_flows/base_llm_flow.py\", line 418, in _run_and_handle_error\n"}
+,{"stream_name":"stderr","time":951.841529539,"data":"    raise model_error\n"}
+,{"stream_name":"stderr","time":951.841532826,"data":"  File \"/usr/local/lib/python3.12/dist-packages/google/adk/flows/llm_flows/base_llm_flow.py\", line 391, in _run_and_handle_error\n"}
+,{"stream_name":"stderr","time":951.841536933,"data":"    async for llm_response in agen:\n"}
+,{"stream_name":"stderr","time":951.841564881,"data":"  File \"/usr/local/lib/python3.12/dist-packages/google/adk/models/lite_llm.py\", line 2467, in generate_content_async\n"}
+,{"stream_name":"stderr","time":951.841569115,"data":"    response = await self.llm_client.acompletion(**completion_args)\n"}
+,{"stream_name":"stderr","time":951.841573198,"data":"               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":951.841576952,"data":"  File \"/usr/local/lib/python3.12/dist-packages/google/adk/models/lite_llm.py\", line 513, in acompletion\n"}
+,{"stream_name":"stderr","time":951.841580757,"data":"    return await acompletion(\n"}
+,{"stream_name":"stderr","time":951.841584318,"data":"           ^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":951.841587648,"data":"  File \"/usr/local/lib/python3.12/dist-packages/litellm/utils.py\", line 2072, in wrapper_async\n"}
+,{"stream_name":"stderr","time":951.841591744,"data":"    raise e\n"}
+,{"stream_name":"stderr","time":951.841595168,"data":"  File \"/usr/local/lib/python3.12/dist-packages/litellm/utils.py\", line 1892, in wrapper_async\n"}
+,{"stream_name":"stderr","time":951.841603378,"data":"    result = await original_function(*args, **kwargs)\n"}
+,{"stream_name":"stderr","time":951.841606912,"data":"             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":951.841610347,"data":"  File \"/usr/local/lib/python3.12/dist-packages/litellm/main.py\", line 639, in acompletion\n"}
+,{"stream_name":"stderr","time":951.841614398,"data":"    raise exception_type(\n"}
+,{"stream_name":"stderr","time":951.841617836,"data":"          ^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":951.84162143,"data":"  File \"/usr/local/lib/python3.12/dist-packages/litellm/litellm_core_utils/exception_mapping_utils.py\", line 2456, in exception_type\n"}
+,{"stream_name":"stderr","time":951.841625701,"data":"    raise e\n"}
+,{"stream_name":"stderr","time":951.841629234,"data":"  File \"/usr/local/lib/python3.12/dist-packages/litellm/litellm_core_utils/exception_mapping_utils.py\", line 400, in exception_type\n"}
+,{"stream_name":"stderr","time":951.841637066,"data":"    raise ContextWindowExceededError(\n"}
+,{"stream_name":"stderr","time":951.841640556,"data":"litellm.exceptions.ContextWindowExceededError: litellm.ContextWindowExceededError: litellm.BadRequestError: ContextWindowExceededError: OpenAIException - This model's maximum context length is 32768 tokens. However, you requested 8192 output tokens and your prompt contains at least 24577 input tokens, for a total of at least 32769 tokens. Please reduce the length of the input prompt or the number of requested output tokens. (parameter=input_tokens, value=24577)\n"}
+,{"stream_name":"stdout","time":952.072924274,"data":"B requests_7309 wall_s= 252.25 phase_s= {'agent_phase_s': [252.22903208799994], 'agent_loop_s': [225.5039693860001]}\n"}
+,{"stream_name":"stdout","time":952.072947332,"data":"Stopping further dispatch after infrastructure/provenance failure.\n"}
+,{"stream_name":"stdout","time":957.746761749,"data":"{\"candidate\": \"A\", \"task\": \"requests_7309\", \"resolved\": false, \"attribution\": \"patch_apply_failed\", \"harness_error\": \"Failed to apply test_patch: git apply /tmp/swegemma_sandbox_0b7bb29a-6a6_2vxorvu8/tmp/tmp9cq02f5j.patch failed (1):\\nerro\", \"test_exit_code\": -1, \"grading_ran\": false, \"patch_bytes\": 1911, \"patch_touches_source\": true, \"patch_files\": \"src/requests/utils.py;tests/test_utils.py\", \"wall_s\": 161.661, \"agent_phase_s\": 134.711972231, \"grading_phase_s\": 26.928671877000056, \"both_setup_imports_verified\": true, \"agent_loop_s\": 108.16923330700001, \"termination_error\": \"Failed to apply test_patch: git apply /tmp/swegemma_sandbox_0b7bb29a-6a6_2vxorvu8/tmp/tmp9cq02f5j.patch failed (1):\\nerror: patch failed: tests/test_utils.py:593\\nerror: tests/test_utils.py: patch does not apply\\n\\n\\ngit apply -3 /tmp/swegemma_sandbox_0b7bb29a-6a6_2vxorvu8/tmp/tmp9cq02f5j.patch failed (1):\\nerror: tests/test_utils.py: does not match index\\n\\n\\ngit apply --ignore-space-change --ignore-whitespace /tmp/swegemma_sandbox_0b7bb29a-6a6_2vxorvu8/tmp/tmp9cq02f5j.patch failed (1):\\nerror: patch failed: tests/test_utils.py:593\\nerror: tests/test_utils.py: patch does not apply\\n\\n\\ngit apply --recount /tmp/swegemma_sandbox_0b7bb29a-6a6_2vxorvu8/tmp/tmp9cq02f5j.patch failed (1):\\nerror: patch failed: tests/test_utils.py:593\\nerror: tests/test_utils.py: patch does not apply\\n\\n\\ngit apply -p0 /tmp/swegemma_sandbox_0b7bb29a-6a6_2vxorvu8/tmp/tmp9cq02f5j.patch failed (1):\\nerror: b/tests/test_utils.py: No such file or directory\\n\\n\\ngit apply -p0 -3 /tmp/swegemma_sandbox_0b7bb29a-6a6_2vxorvu8/tmp/tmp9cq02f5j.patch failed (1):\\nerror: b/tests/test_utils.py: does not exist in index\\n\\n\\ngit apply -p0 --ignore-space-change --ignore-whitespace /tmp/swegemma_sandbox_0b7bb29a-6a6_2vxorvu8/tmp/tmp9cq02f5j.patch failed (1):\\nerror: b/tests/test_utils.py: No such file or directory\\n\\n\\ngit apply -p0 --recount /tmp/swegemma_sandbox_0b7bb29a-6a6_2vxorvu8/tmp/tmp9cq02f5j.patch failed (1):\\nerror: b/tests/test_utils.py: No such file or directory\\n\\n\\npatch -p1 --batch --forward -i /tmp/swegemma_sandbox_0b7bb29a-6a6_2vxorvu8/tmp/tmp9cq02f5j.patch --dry-run dry-run failed (1):\\n\\nchecking file tests/test_utils.py\\nReversed (or previously applied) patch detected!  Skipping patch.\\n5 out of 5 hunks ignored\\n\\npatch -p1 -l --batch --forward -i /tmp/swegemma_sandbox_0b7bb29a-6a6_2vxorvu8/tmp/tmp9cq02f5j.patch --dry-run dry-run failed (1):\\n\\nchecking file tests/test_utils.py\\nReversed (or previously applied) patch detected!  Skipping patch.\\n5 out of 5 hunks ignored\\n\\npatch -p0 --batch --forward -i /tmp/swegemma_sandbox_0b7bb29a-6a6_2vxorvu8/tmp/tmp9cq02f5j.patch --dry-run dry-run failed (1):\\n\\ncan't find file to patch at input line 3\\nPerhaps you used the wrong -p or --strip option?\\nThe text leading up to this was:\\n--------------------------\\n|--- a/tests/test_utils.py\\n|+++ b/tests/test_utils.py\\n--------------------------\\nNo file to patch.  Skipping patch.\\n5 out of 5 hunks ignored\\n\\npatch -p0 -l --batch --forward -i /tmp/swegemma_sandbox_0b7bb29a-6a6_2vxorvu8/tmp/tmp9cq02f5j.patch --dry-run dry-run failed (1):\\n\\ncan't find file to patch at input line 3\\nPerhaps you used the wrong -p or --strip option?\\nThe text leading up to this was:\\n--------------------------\\n|--- a/tests/test_utils.py\\n|+++ b/tests/test_utils.py\\n--------------------------\\nNo file to patch.  Skipping patch.\\n5 out of 5 hunks ignored\\n\\n\", \"duration_seconds_harness\": 161.62, \"tool_calls\": 23, \"edit_calls\": 8, \"shell_edit_hints\": 0, \"repeated_identical_cmds\": 2, \"tool_errors\": 5, \"first_source_edit_attempt_step\": 8, \"finish_reasons\": \"unavailable\", \"prompt_tokens\": 177719, \"completion_tokens\": 3327, \"run_error\": \"\"}\n"}
+,{"stream_name":"stdout","time":957.746813253,"data":"{\"candidate\": \"B\", \"task\": \"requests_7309\", \"resolved\": false, \"attribution\": \"empty_patch\", \"harness_error\": \"Sandbox execution error: litellm.ContextWindowExceededError: litellm.BadRequestError: ContextWindowExceededError: OpenAI\", \"test_exit_code\": -1, \"grading_ran\": false, \"patch_bytes\": 0, \"patch_touches_source\": false, \"patch_files\": \"unavailable\", \"wall_s\": 252.25, \"agent_phase_s\": 252.22903208799994, \"grading_phase_s\": \"unavailable\", \"both_setup_imports_verified\": false, \"agent_loop_s\": 225.5039693860001, \"termination_error\": \"Sandbox execution error: litellm.ContextWindowExceededError: litellm.BadRequestError: ContextWindowExceededError: OpenAIException - This model's maximum context length is 32768 tokens. However, you requested 8192 output tokens and your prompt contains at least 24577 input tokens, for a total of at least 32769 tokens. Please reduce the length of the input prompt or the number of requested output tokens. (parameter=input_tokens, value=24577)\", \"duration_seconds_harness\": 252.23, \"tool_calls\": 44, \"edit_calls\": 5, \"shell_edit_hints\": 0, \"repeated_identical_cmds\": 2, \"tool_errors\": 1, \"first_source_edit_attempt_step\": 8, \"finish_reasons\": \"unavailable\", \"prompt_tokens\": 646691, \"completion_tokens\": 7085, \"run_error\": \"\"}\n"}
+,{"stream_name":"stdout","time":957.746820621,"data":"\n"}
+,{"stream_name":"stdout","time":957.746822732,"data":"cand       task             resolved  attribution            agent_s\n"}
+,{"stream_name":"stdout","time":957.746824708,"data":"A          requests_7309    False     patch_apply_failed     134.711972231\n"}
+,{"stream_name":"stdout","time":957.746826974,"data":"B          requests_7309    False     empty_patch            252.22903208799994\n"}
+,{"stream_name":"stdout","time":957.746829007,"data":"\n"}
+,{"stream_name":"stdout","time":957.74683126,"data":"A two-task pilot establishes that the experiment executes. It does NOT establish which\n"}
+,{"stream_name":"stdout","time":957.746833163,"data":"candidate is better. agent_phase_s covers container-A setup plus the agent loop;\n"}
+,{"stream_name":"stdout","time":957.746837488,"data":"grading_phase_s is container B. The harness duration_seconds bundles both and must not be\n"}
+,{"stream_name":"stdout","time":957.746839657,"data":"multiplied to project the 12-hour scoring runtime.\n"}
+,{"stream_name":"stdout","time":957.746841534,"data":"saved pilot_manifest.json and pilot_results.csv\n"}
+,{"stream_name":"stderr","time":963.86929301,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":963.869338747,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":964.023710095,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":964.023732983,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":964.782897431,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":965.117167462,"data":"[NbConvertApp] Writing 141857 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":967.852823775,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":968.900225966,"data":"[NbConvertApp] Writing 602720 bytes to __results__.html\n"}
+]

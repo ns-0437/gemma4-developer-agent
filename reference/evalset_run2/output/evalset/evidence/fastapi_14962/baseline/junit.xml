@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="2" failures="0" skipped="0" tests="2" time="0.569" timestamp="2026-09-28T16:01:44.477870+00:00" hostname="fcac5414f593"><testcase classname="" name="tests.test_tutorial.test_custom_response.test_tutorial001" time="0.000"><error message="collection failure">ImportError while importing test module '/tmp/swegemma_sandbox_10290372-7ce_yb1au076/workspace/tests/test_tutorial/test_custom_response/test_tutorial001.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_tutorial/test_custom_response/test_tutorial001.py:5: in &lt;module&gt;
+    from inline_snapshot import snapshot
+E   ModuleNotFoundError: No module named 'inline_snapshot'</error></testcase><testcase classname="" name="tests.test_tutorial.test_custom_response.test_tutorial010" time="0.000"><error message="collection failure">ImportError while importing test module '/tmp/swegemma_sandbox_10290372-7ce_yb1au076/workspace/tests/test_tutorial/test_custom_response/test_tutorial010.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_tutorial/test_custom_response/test_tutorial010.py:5: in &lt;module&gt;
+    from inline_snapshot import snapshot
+E   ModuleNotFoundError: No module named 'inline_snapshot'</error></testcase></testsuite></testsuites>

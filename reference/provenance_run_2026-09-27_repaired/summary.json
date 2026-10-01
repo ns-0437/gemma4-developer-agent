@@ -1,0 +1,42 @@
+{
+  "requests_7309": {
+    "negative": {
+      "agent_ok": true,
+      "pytest_ok": true,
+      "agent_file": "/tmp/swegemma_sandbox_e873efa6-0ac_5tloj0qc/workspace/src/requests/__init__.py",
+      "pytest_file": "/tmp/swegemma_sandbox_e873efa6-0ac_5tloj0qc/workspace/src/requests/__init__.py",
+      "exit": 1,
+      "sys_exe_agent": "/tmp/swegemma_sandbox_e873efa6-0ac_5tloj0qc/venv/bin/python3",
+      "sys_exe_pytest": "/tmp/swegemma_sandbox_e873efa6-0ac_5tloj0qc/venv/bin/python3"
+    },
+    "positive": {
+      "agent_ok": true,
+      "pytest_ok": true,
+      "agent_file": "/tmp/swegemma_sandbox_3833472f-a5e_y4r39p3o/workspace/src/requests/__init__.py",
+      "pytest_file": "/tmp/swegemma_sandbox_3833472f-a5e_y4r39p3o/workspace/src/requests/__init__.py",
+      "exit": 0,
+      "sys_exe_agent": "/tmp/swegemma_sandbox_3833472f-a5e_y4r39p3o/venv/bin/python3",
+      "sys_exe_pytest": "/tmp/swegemma_sandbox_3833472f-a5e_y4r39p3o/venv/bin/python3"
+    }
+  },
+  "rich_3471": {
+    "negative": {
+      "agent_ok": true,
+      "pytest_ok": true,
+      "agent_file": "/tmp/swegemma_sandbox_f08960dc-1da_l796is_3/workspace/rich/__init__.py",
+      "pytest_file": "/tmp/swegemma_sandbox_f08960dc-1da_l796is_3/workspace/rich/__init__.py",
+      "exit": 1,
+      "sys_exe_agent": "/tmp/swegemma_sandbox_f08960dc-1da_l796is_3/venv/bin/python3",
+      "sys_exe_pytest": "/tmp/swegemma_sandbox_f08960dc-1da_l796is_3/venv/bin/python3"
+    },
+    "positive": {
+      "agent_ok": true,
+      "pytest_ok": true,
+      "agent_file": "/tmp/swegemma_sandbox_ccbda4f2-225_sj8p8sth/workspace/rich/__init__.py",
+      "pytest_file": "/tmp/swegemma_sandbox_ccbda4f2-225_sj8p8sth/workspace/rich/__init__.py",
+      "exit": 0,
+      "sys_exe_agent": "/tmp/swegemma_sandbox_ccbda4f2-225_sj8p8sth/venv/bin/python3",
+      "sys_exe_pytest": "/tmp/swegemma_sandbox_ccbda4f2-225_sj8p8sth/venv/bin/python3"
+    }
+  }
+}

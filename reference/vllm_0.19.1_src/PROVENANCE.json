@@ -1,0 +1,242 @@
+{
+  "recorded": "2026-09-30",
+  "metadata_url": "https://pypi.org/pypi/vllm/0.19.1/json",
+  "distribution": "vllm-0.19.1.tar.gz",
+  "packagetype": "sdist",
+  "release_url": "https://files.pythonhosted.org/packages/a8/49/60a2a962ecbf780c8fbfd0d5548b208d654d5c4267df94d8d93883641431/vllm-0.19.1.tar.gz",
+  "published_size": 31105401,
+  "published_sha256": "9fb88ce6b50991eba41d183584f65f51d7f6015d86a42cdabf79c1c8bd5d66fa",
+  "computed_sha256": "9fb88ce6b50991eba41d183584f65f51d7f6015d86a42cdabf79c1c8bd5d66fa",
+  "digest_verified": true,
+  "upload_time": "2026-04-18T05:50:15.143159Z",
+  "requires_python": "<3.14,>=3.10",
+  "installed": false,
+  "extraction": "allow-listed prefixes only; members checked to resolve inside the destination",
+  "files": {
+    "PKG-INFO": {
+      "bytes": 10013,
+      "sha256": "f76ea566acba199ef8dd91bde6bb162795c7f8876c206a865cbb3b94fbcf7bc2"
+    },
+    "examples/tool_chat_template_gemma4.jinja": {
+      "bytes": 15429,
+      "sha256": "729e3b84baa79a988a5b98994f2d413953370dcbd466e75c560172c5e972361d"
+    },
+    "tests/reasoning/test_gemma4_reasoning_parser.py": {
+      "bytes": 9743,
+      "sha256": "3b30c331ad578ce6edefdfeb9f742fb679cc3bc53477f91893e69bc26048af17"
+    },
+    "tests/tool_parsers/common_tests.py": {
+      "bytes": 14658,
+      "sha256": "e6f37a98a71c0804e451deaab4b93adff28c2fab709c5f731d2103a531538bae"
+    },
+    "tests/tool_parsers/conftest.py": {
+      "bytes": 329,
+      "sha256": "7fd4e134b09fc06f0b6cc2e7cd2bff8a5ab04b9745331e9755bf0756088d010a"
+    },
+    "tests/tool_parsers/test_gemma4_tool_parser.py": {
+      "bytes": 25380,
+      "sha256": "d671478331379fa1594aa133274bebaacdc36d00e962bad19d1b8048a9795422"
+    },
+    "vllm/entrypoints/chat_utils.py": {
+      "bytes": 59672,
+      "sha256": "8d1ed2b6321d587f89d3f59dbd6e6b4a942328bcdc0673fb30ec8e45559f834d"
+    },
+    "vllm/entrypoints/openai/chat_completion/__init__.py": {
+      "bytes": 107,
+      "sha256": "e3c55cbb0d7a8bd47df6f3378835644645f5d3bc89b45793b5d5a02d013e5c58"
+    },
+    "vllm/entrypoints/openai/chat_completion/api_router.py": {
+      "bytes": 3648,
+      "sha256": "be4b0dfcb75fe511056718d15e3d9ce08da37b7737e56d98fb9f618aef47fd9a"
+    },
+    "vllm/entrypoints/openai/chat_completion/batch_serving.py": {
+      "bytes": 12944,
+      "sha256": "2ecea94834f90f89468bf622bc1697fecb54d6ed3d8aafae3157755482deffb5"
+    },
+    "vllm/entrypoints/openai/chat_completion/protocol.py": {
+      "bytes": 34428,
+      "sha256": "1a2492bdb99e944ca177853496408a2a00d578bb2fa51c6e49241567d6601a82"
+    },
+    "vllm/entrypoints/openai/chat_completion/serving.py": {
+      "bytes": 81311,
+      "sha256": "1f60379d22c80bbea2580ff6674ea679f932af401c7934c786ded98682e91f24"
+    },
+    "vllm/entrypoints/openai/chat_completion/stream_harmony.py": {
+      "bytes": 6158,
+      "sha256": "75ed5c2a675511f25f91854a3cba47fd1d951010be65e7e1e31f337c792f8962"
+    },
+    "vllm/entrypoints/openai/cli_args.py": {
+      "bytes": 16109,
+      "sha256": "095d24532102f71586197b2a2cd84701e00cfa35aa97f3a6121e6ec66eb752cf"
+    },
+    "vllm/reasoning/__init__.py": {
+      "bytes": 2752,
+      "sha256": "6934a22cd1eddaca6a876aff0769abb767cec9116d5158ba5106b1266c44df71"
+    },
+    "vllm/reasoning/abs_reasoning_parsers.py": {
+      "bytes": 11542,
+      "sha256": "24648adde3f5c35f360838c6c1cca00ec95c19c9d0530ea115eadb7fe73b0431"
+    },
+    "vllm/reasoning/gemma4_reasoning_parser.py": {
+      "bytes": 9297,
+      "sha256": "64a1d3f05e22cee893ebc1f2507a150eaadf4d06e3efac5035c6ab94480a739e"
+    },
+    "vllm/reasoning/gemma4_utils.py": {
+      "bytes": 5035,
+      "sha256": "04de3d31c3512ed487b5dfa8fcd57fe56c54edd8359ba932ab5b6347c63843df"
+    },
+    "vllm/tool_parsers/__init__.py": {
+      "bytes": 3834,
+      "sha256": "4873b1018c385aaec0af081b1cea30f961c5fff5fb1c24dadf64867c7a209417"
+    },
+    "vllm/tool_parsers/abstract_tool_parser.py": {
+      "bytes": 10069,
+      "sha256": "4a6ed7fa3dabb3318136251bd0bc95fa15407ef3089d9017391d5bd0aa9078ce"
+    },
+    "vllm/tool_parsers/deepseekv31_tool_parser.py": {
+      "bytes": 16546,
+      "sha256": "97e0afcc16f7ebdad0747f420d8a36ff452f065746f310a1940ee1bede1863ec"
+    },
+    "vllm/tool_parsers/deepseekv32_tool_parser.py": {
+      "bytes": 12063,
+      "sha256": "ea2b6054a900184a1b1df6751c18b9900f80f0bf2ece30616fe71ce41fa8d3cb"
+    },
+    "vllm/tool_parsers/deepseekv3_tool_parser.py": {
+      "bytes": 16657,
+      "sha256": "dde077a599a516d59f0f77ca20fe3938fbaea061057ecdbeba2df27bbbca8e41"
+    },
+    "vllm/tool_parsers/ernie45_tool_parser.py": {
+      "bytes": 8460,
+      "sha256": "3cdbbc4297508cc53b6ad5e69cf9bea8aa9fadba1aa988e8a1d9a0e910212fa3"
+    },
+    "vllm/tool_parsers/functiongemma_tool_parser.py": {
+      "bytes": 12801,
+      "sha256": "b65f7d18db4d0948aaa3a5da6f214933262cf9693875bd03526b457d2fc4971b"
+    },
+    "vllm/tool_parsers/gemma4_tool_parser.py": {
+      "bytes": 27743,
+      "sha256": "682b2152b76c031df9c58c3ffbb5b243945be5d8957ebdce00faef1b9de6b889"
+    },
+    "vllm/tool_parsers/gemma4_utils.py": {
+      "bytes": 6637,
+      "sha256": "be0bd9606566986343c1ec0cf9c6ed9a646314b999c7c359a4977df0a014392d"
+    },
+    "vllm/tool_parsers/gigachat3_tool_parser.py": {
+      "bytes": 7298,
+      "sha256": "e32c6ae8d25088f5e1f54fb169f89f4a63a1e94dec28422dbe522212d8a69707"
+    },
+    "vllm/tool_parsers/glm47_moe_tool_parser.py": {
+      "bytes": 1507,
+      "sha256": "aab9971ad815f0a06c987109d2af1ccf2ef8ba23393c94e5aaae48447fc40389"
+    },
+    "vllm/tool_parsers/glm4_moe_tool_parser.py": {
+      "bytes": 21008,
+      "sha256": "59a0886af510e0c45572fecae18c35f75c6ed88c6c739b4581b2c31ea9500ed3"
+    },
+    "vllm/tool_parsers/granite4_tool_parser.py": {
+      "bytes": 9245,
+      "sha256": "213e8e671abcde1cd334fe5747f7ecff78c2a1ab7b7140f55f2d2494d3bf1a17"
+    },
+    "vllm/tool_parsers/granite_20b_fc_tool_parser.py": {
+      "bytes": 11108,
+      "sha256": "313738af90c1184a120f3fbbacff780c14dfbed3f1a158e0171f10653b1055d0"
+    },
+    "vllm/tool_parsers/granite_tool_parser.py": {
+      "bytes": 10364,
+      "sha256": "c0a65162a9d14091b00fe24dd9bdc4bbbccf68bad24ba390155083d5114fa04d"
+    },
+    "vllm/tool_parsers/hermes_tool_parser.py": {
+      "bytes": 11437,
+      "sha256": "9ab90b436d576ae4d970bebfd1d39157dbafb42e26cbb61dff2ef247a77c37de"
+    },
+    "vllm/tool_parsers/hunyuan_a13b_tool_parser.py": {
+      "bytes": 16798,
+      "sha256": "e2580a2a81d2b25384d90bcc185246bffc7a71cad20eb57c35b5cfbabe755be7"
+    },
+    "vllm/tool_parsers/internlm2_tool_parser.py": {
+      "bytes": 9191,
+      "sha256": "9d3a8e1a477262a13b3fd02db43b9e51a790fd69f12451e9356c347f62f1ea02"
+    },
+    "vllm/tool_parsers/jamba_tool_parser.py": {
+      "bytes": 13838,
+      "sha256": "670bb66a16e92a4af95c3f639848616e7cfe474f3f1e29804f91cb3bf1af63e5"
+    },
+    "vllm/tool_parsers/kimi_k2_tool_parser.py": {
+      "bytes": 26799,
+      "sha256": "d7637aa60123c8344c07d188af5f82ecc290003ca8a999595097290c4a7c916f"
+    },
+    "vllm/tool_parsers/llama4_pythonic_tool_parser.py": {
+      "bytes": 8226,
+      "sha256": "aa6636d5aa43b567c59dcdf4b11fc07b254ccf4663de1e756ab5a7a5947766eb"
+    },
+    "vllm/tool_parsers/llama_tool_parser.py": {
+      "bytes": 13783,
+      "sha256": "9e103f93b2158bcf215a292d1d72f6dcafb20057fce60ff8822c12d98d6f6b0f"
+    },
+    "vllm/tool_parsers/longcat_tool_parser.py": {
+      "bytes": 782,
+      "sha256": "90fd5d99e7e72128b1b4f5fd1014710b3236b7ce9e6da3c08a8cd885e75fcc1e"
+    },
+    "vllm/tool_parsers/minimax_m2_tool_parser.py": {
+      "bytes": 16120,
+      "sha256": "cf4af848c2e3e327f0678f752769e254f6d64b403ec71accdb5f40e180808f7a"
+    },
+    "vllm/tool_parsers/minimax_tool_parser.py": {
+      "bytes": 28603,
+      "sha256": "b6781babf9e1434b836643a8996237f133a361725ab5e1654d58f09f4c6a4a67"
+    },
+    "vllm/tool_parsers/mistral_tool_parser.py": {
+      "bytes": 26387,
+      "sha256": "faa8d7d6a72d5d011ecd07b884b14f25793f3f3360ecd64537d4d3bb90b7f465"
+    },
+    "vllm/tool_parsers/olmo3_tool_parser.py": {
+      "bytes": 8944,
+      "sha256": "7d4533dd62a33200e7260b189ac9864608faa19b033a916db0f0dcd1b83f8472"
+    },
+    "vllm/tool_parsers/openai_tool_parser.py": {
+      "bytes": 4329,
+      "sha256": "10982bfad3632f6e3abcbd976f81836a607e7340be5101d163f454235d550aba"
+    },
+    "vllm/tool_parsers/phi4mini_tool_parser.py": {
+      "bytes": 4165,
+      "sha256": "40b3421f99d9c723a12a6740e506356acf1791aa2a5c4d3cca000f75345e5763"
+    },
+    "vllm/tool_parsers/pythonic_tool_parser.py": {
+      "bytes": 7565,
+      "sha256": "1899476502dd0d8530980b9f6aeaa6225f99ad88314b0c043af7ad900ea22d7b"
+    },
+    "vllm/tool_parsers/qwen3coder_tool_parser.py": {
+      "bytes": 29615,
+      "sha256": "88c22e0e6af8831898d595c5857345d0870fd12afbf6d9574182b5d256b5735e"
+    },
+    "vllm/tool_parsers/qwen3xml_tool_parser.py": {
+      "bytes": 53837,
+      "sha256": "7c2ba229b0b6dcd061b9f581390a5fb892a2fc20023b20656d91706522f311bd"
+    },
+    "vllm/tool_parsers/seed_oss_tool_parser.py": {
+      "bytes": 31404,
+      "sha256": "1728ac6aa83affa4e815dea5d1f42dbf142a93ca94bbd95fdd1510d0ec26697b"
+    },
+    "vllm/tool_parsers/step3_tool_parser.py": {
+      "bytes": 12209,
+      "sha256": "05a0b06f569bee469ef65aa2179c48e4ad079fd2bef86d1a637079a8dbcdcf42"
+    },
+    "vllm/tool_parsers/step3p5_tool_parser.py": {
+      "bytes": 61757,
+      "sha256": "321c7c0ba8ed1030e20e9a020a5734e969b0ff342cb38b83e9a0e47553a800eb"
+    },
+    "vllm/tool_parsers/utils.py": {
+      "bytes": 14102,
+      "sha256": "fbce1903ffb8bf7d805a687d6f9f8034f340572de930facd2b37abd0fa862d9c"
+    },
+    "vllm/tool_parsers/xlam_tool_parser.py": {
+      "bytes": 24740,
+      "sha256": "fc86404c5384a74e2c005f2b7e4d352dd76511f847d487fa52974a3afaf8b5b2"
+    },
+    "vllm/version.py": {
+      "bytes": 1339,
+      "sha256": "bd7a42776b630b611e2f5fa4698bc97e1f4f2583c35ccb246ec2e7bd43c83313"
+    }
+  },
+  "caveat": "This is the UPSTREAM PyPI release. The evaluation ran a wheel installed from the host's Kaggle dataset metric/gemma-4-developer-agent-wheelhouse with pip --no-deps --force-reinstall, and that wheel is not available here. Its distribution metadata reports 0.19.1, but byte equivalence with this upstream release is NOT established."
+}

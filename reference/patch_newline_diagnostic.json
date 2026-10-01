@@ -1,0 +1,114 @@
+[
+  {
+    "task": "rich_3942",
+    "kind": "patch",
+    "original": {
+      "rc": 128,
+      "stdout": "",
+      "stderr": "error: corrupt patch at line 134\n"
+    },
+    "newline": {
+      "rc": 0,
+      "stdout": "11\t9\trich/default_styles.py\n32\t18\trich/markdown.py\n",
+      "stderr": ""
+    }
+  },
+  {
+    "task": "rich_3942",
+    "kind": "test_patch",
+    "original": {
+      "rc": 128,
+      "stdout": "",
+      "stderr": "error: corrupt patch at line 76\n"
+    },
+    "newline": {
+      "rc": 0,
+      "stdout": "1\t1\ttests/_card_render.py\n5\t5\ttests/test_markdown.py\n3\t3\ttests/test_markdown_no_hyperlinks.py\n",
+      "stderr": ""
+    }
+  },
+  {
+    "task": "rich_3675",
+    "kind": "patch",
+    "original": {
+      "rc": 128,
+      "stdout": "",
+      "stderr": "error: corrupt patch at line 90\n"
+    },
+    "newline": {
+      "rc": 0,
+      "stdout": "21\t7\trich/console.py\n7\t6\trich/diagnose.py\n",
+      "stderr": ""
+    }
+  },
+  {
+    "task": "rich_3675",
+    "kind": "test_patch",
+    "original": {
+      "rc": 128,
+      "stdout": "",
+      "stderr": "error: corrupt patch at line 769\n"
+    },
+    "newline": {
+      "rc": 0,
+      "stdout": "151\t85\ttests/test_console.py\n",
+      "stderr": ""
+    }
+  },
+  {
+    "task": "rich_3535",
+    "kind": "patch",
+    "original": {
+      "rc": 128,
+      "stdout": "",
+      "stderr": "error: corrupt patch at line 30\n"
+    },
+    "newline": {
+      "rc": 0,
+      "stdout": "3\t1\trich/cells.py\n4\t0\trich/segment.py\n",
+      "stderr": ""
+    }
+  },
+  {
+    "task": "rich_3535",
+    "kind": "test_patch",
+    "original": {
+      "rc": 128,
+      "stdout": "",
+      "stderr": "error: corrupt patch at line 33\n"
+    },
+    "newline": {
+      "rc": 0,
+      "stdout": "21\t1\ttests/test_cells.py\n",
+      "stderr": ""
+    }
+  },
+  {
+    "task": "rich_3278",
+    "kind": "patch",
+    "original": {
+      "rc": 128,
+      "stdout": "",
+      "stderr": "error: corrupt patch at line 10\n"
+    },
+    "newline": {
+      "rc": 0,
+      "stdout": "1\t0\trich/ansi.py\n",
+      "stderr": ""
+    }
+  },
+  {
+    "task": "rich_3278",
+    "kind": "test_patch",
+    "original": {
+      "rc": 128,
+      "stdout": "",
+      "stderr": "error: corrupt patch at line 20\n"
+    },
+    "newline": {
+      "rc": 0,
+      "stdout": "14\t0\ttests/test_ansi.py\n",
+      "stderr": ""
+    }
+  }
+]

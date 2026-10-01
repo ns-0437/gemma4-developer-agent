@@ -1,0 +1,100 @@
+{
+  "task": "rich_3486",
+  "arm": "baseline",
+  "reached_pytest": true,
+  "pytest_exit": 1,
+  "pytest_cmd": "PYTHONSAFEPATH=1 PYTHONNOUSERSITE=1 python3 -s -m pytest tests/test_traceback.py",
+  "nodes": {
+    "test_traceback::test_handler": "passed",
+    "test_traceback::test_capture": "passed",
+    "test_traceback::test_no_exception": "passed",
+    "test_traceback::test_print_exception": "passed",
+    "test_traceback::test_print_exception_no_msg": "passed",
+    "test_traceback::test_print_exception_locals": "passed",
+    "test_traceback::test_syntax_error": "passed",
+    "test_traceback::test_nested_exception": "passed",
+    "test_traceback::test_caused_exception": "passed",
+    "test_traceback::test_filename_with_bracket": "passed",
+    "test_traceback::test_filename_not_a_file": "passed",
+    "test_traceback::test_traceback_console_theme_applies": "passed",
+    "test_traceback::test_broken_str": "passed",
+    "test_traceback::test_guess_lexer": "passed",
+    "test_traceback::test_guess_lexer_yaml_j2": "passed",
+    "test_traceback::test_recursive": "passed",
+    "test_traceback::test_suppress": "passed",
+    "test_traceback::test_rich_traceback_omit_optional_local_flag[True-3-expected_frame_names0]": "passed",
+    "test_traceback::test_rich_traceback_omit_optional_local_flag[False-4-expected_frame_names1]": "passed",
+    "test_traceback::test_traceback_finely_grained_missing": "skipped",
+    "test_traceback::test_traceback_finely_grained": "failed"
+  },
+  "failure_details": {
+    "test_traceback::test_traceback_finely_grained_missing": {
+      "kind": "skipped",
+      "message": "Not applicable after Python 3.11",
+      "detail": "/tmp/swegemma_sandbox_9c1e0c40-4a3_sw83os8g/workspace/tests/test_traceback.py:332: Not applicable after Python 3.11"
+    },
+    "test_traceback::test_traceback_finely_grained": {
+      "kind": "failure",
+      "message": "AttributeError: 'Frame' object has no attribute 'last_instruction'",
+      "detail": "@pytest.mark.skipif(\n        sys.version_info.minor < 11, reason=\"Not applicable before Python 3.11\"\n    )\n    def test_traceback_finely_grained() -> None:\n        \"\"\"Check that last instruction is populated.\"\"\"\n        try:\n>           1 / 0\nE           ZeroDivisionError: division by zero\n\ntests/test_traceback.py:351: ZeroDivisionError\n\nDuring handling of the above exception, another exception occurred:\n\n    @pytest.mark.skipif(\n        sys.version_info.minor < 11, reason=\"Not applicable before Python 3.11\"\n    )\n    def test_traceback_finely_grained() -> None:\n        \"\"\"Check that last instruction is populated.\"\"\"\n        try:\n            1 / 0\n        except:\n            traceback = Traceback()\n>           last_instruction = traceback.trace.stacks[-1].frames[-1].last_instruction\n                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE           AttributeError: 'Frame' object has no attribute 'last_instruction'\n\ntests/test_traceback.py:354: AttributeError"
+    }
+  },
+  "import_in_checkout": true,
+  "grading_import": "/tmp/swegemma_sandbox_9c1e0c40-4a3_sw83os8g/workspace/rich/__init__.py",
+  "patch_rc": 0,
+  "patch_err": null,
+  "test_patch_rc": 0,
+  "test_patch_err": "",
+  "editable_rc": 0,
+  "collection_error": false,
+  "exception": null,
+  "traceback": null,
+  "task_sha256": "0cd437edcb332716de3d70dd85cc248a2b82b3f4c28cfecbad08e160880969a0",
+  "snapshot_sha256": "a051941a18c5843335a2fe9485b8d57400a9f038c1c7b65e479a2e97cd203396",
+  "environment_versions": {
+    "swegemma": "0.2.7",
+    "adk-submission": "0.2.11",
+    "adk-eval-core": "0.1.0",
+    "google-adk": "1.36.1"
+  },
+  "policy_sha256": "f59934c6b6369e97d529f821c0284cc666d708e340b3654aafd16dfe5f5e37ee",
+  "setup_commands": [
+    {
+      "cmd": "pip setuptools",
+      "rc": 0
+    },
+    {
+      "cmd": "pip wheel",
+      "rc": 0
+    },
+    {
+      "cmd": "pip editables",
+      "rc": 0
+    },
+    {
+      "cmd": "pip flit_core",
+      "rc": 0
+    },
+    {
+      "cmd": "pip poetry_core",
+      "rc": 0
+    },
+    {
+      "cmd": "pip pdm_backend",
+      "rc": 0
+    },
+    {
+      "cmd": "pip -e .",
+      "rc": 0,
+      "tail": "ent /tmp/swegemma_sandbox_9c1e0c40-4a3_sw83os8g/venv\n    Can't uninstall 'rich'. No files were found to uninstall.\nSuccessfully installed rich-13.8.1\n"
+    },
+    {
+      "cmd": "checkout tests/test_traceback.py",
+      "rc": 0
+    },
+    {
+      "cmd": "clean tests/test_traceback.py",
+      "rc": 0
+    }
+  ]
+}

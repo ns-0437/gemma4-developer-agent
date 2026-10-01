@@ -1,0 +1,164 @@
+{
+  "task": "rich_3521",
+  "arm": "reference",
+  "reached_pytest": true,
+  "pytest_exit": 0,
+  "pytest_cmd": "PYTHONSAFEPATH=1 PYTHONNOUSERSITE=1 python3 -s -m pytest tests/test_segment.py",
+  "nodes": {
+    "test_segment::test_repr": "passed",
+    "test_segment::test_line": "passed",
+    "test_segment::test_apply_style": "passed",
+    "test_segment::test_split_lines": "passed",
+    "test_segment::test_split_and_crop_lines": "passed",
+    "test_segment::test_adjust_line_length": "passed",
+    "test_segment::test_get_line_length": "passed",
+    "test_segment::test_get_shape": "passed",
+    "test_segment::test_set_shape": "passed",
+    "test_segment::test_simplify": "passed",
+    "test_segment::test_filter_control": "passed",
+    "test_segment::test_strip_styles": "passed",
+    "test_segment::test_strip_links": "passed",
+    "test_segment::test_remove_color": "passed",
+    "test_segment::test_is_control": "passed",
+    "test_segment::test_segments_renderable": "passed",
+    "test_segment::test_divide": "passed",
+    "test_segment::test_divide_complex": "passed",
+    "test_segment::test_divide_emoji": "passed",
+    "test_segment::test_divide_edge": "passed",
+    "test_segment::test_divide_edge_2": "passed",
+    "test_segment::test_split_cells_emoji[XX-4-result0]": "passed",
+    "test_segment::test_split_cells_emoji[X-1-result1]": "passed",
+    "test_segment::test_split_cells_emoji[\\U0001f4a9-1-result2]": "passed",
+    "test_segment::test_split_cells_emoji[XY-1-result3]": "passed",
+    "test_segment::test_split_cells_emoji[\\U0001f4a9X-1-result4]": "passed",
+    "test_segment::test_split_cells_emoji[\\U0001f4a9\\U0001f4a9-1-result5]": "passed",
+    "test_segment::test_split_cells_emoji[X\\U0001f4a9Y-2-result6]": "passed",
+    "test_segment::test_split_cells_emoji[X\\U0001f4a9YZ-2-result7]": "passed",
+    "test_segment::test_split_cells_emoji[X\\U0001f4a9\\U0001f4a9Z-2-result8]": "passed",
+    "test_segment::test_split_cells_emoji[X\\U0001f4a9\\U0001f4a9Z-3-result9]": "passed",
+    "test_segment::test_split_cells_emoji[X\\U0001f4a9\\U0001f4a9Z-4-result10]": "passed",
+    "test_segment::test_split_cells_emoji[X\\U0001f4a9\\U0001f4a9Z-5-result11]": "passed",
+    "test_segment::test_split_cells_emoji[X\\U0001f4a9\\U0001f4a9Z-6-result12]": "passed",
+    "test_segment::test_split_cells_emoji[XYZABC\\U0001f4a9\\U0001f4a9-6-result13]": "passed",
+    "test_segment::test_split_cells_emoji[XYZABC\\U0001f4a9\\U0001f4a9-7-result14]": "passed",
+    "test_segment::test_split_cells_emoji[XYZABC\\U0001f4a9\\U0001f4a9-8-result15]": "passed",
+    "test_segment::test_split_cells_emoji[XYZABC\\U0001f4a9\\U0001f4a9-9-result16]": "passed",
+    "test_segment::test_split_cells_emoji[XYZABC\\U0001f4a9\\U0001f4a9-10-result17]": "passed",
+    "test_segment::test_split_cells_emoji[\\U0001f4a9\\U0001f4a9\\U0001f4a9\\U0001f4a9\\U0001f4a9-3-result18]": "passed",
+    "test_segment::test_split_cells_emoji[\\U0001f4a9\\U0001f4a9\\U0001f4a9\\U0001f4a9\\U0001f4a9-4-result19]": "passed",
+    "test_segment::test_split_cells_emoji[\\U0001f4a9X\\U0001f4a9Y\\U0001f4a9Z\\U0001f4a9A\\U0001f4a9-4-result20]": "passed",
+    "test_segment::test_split_cells_emoji[XYZABC-4-result21]": "passed",
+    "test_segment::test_split_cells_emoji[XYZABC-5-result22]": "passed",
+    "test_segment::test_split_cells_emoji[a1\\u3042\\uff11\\uff11bcdaef-9-result23]": "passed",
+    "test_segment::test_split_cells_mixed[segment0]": "passed",
+    "test_segment::test_split_cells_mixed[segment1]": "passed",
+    "test_segment::test_split_cells_mixed[segment2]": "passed",
+    "test_segment::test_split_cells_mixed[segment3]": "passed",
+    "test_segment::test_split_cells_mixed[segment4]": "passed",
+    "test_segment::test_split_cells_mixed[segment5]": "passed",
+    "test_segment::test_split_cells_mixed[segment6]": "passed",
+    "test_segment::test_split_cells_mixed[segment7]": "passed",
+    "test_segment::test_split_cells_doubles": "passed",
+    "test_segment::test_split_cells_single": "passed",
+    "test_segment::test_segment_lines_renderable": "passed",
+    "test_segment::test_align_top": "passed",
+    "test_segment::test_align_middle": "passed",
+    "test_segment::test_align_bottom": "passed"
+  },
+  "failure_details": {},
+  "import_in_checkout": true,
+  "grading_import": "/tmp/swegemma_sandbox_d6efde41-165_b3lbnzfa/workspace/rich/__init__.py",
+  "patch_rc": 0,
+  "patch_err": "",
+  "test_patch_rc": 0,
+  "test_patch_err": "",
+  "editable_rc": 0,
+  "collection_error": false,
+  "exception": null,
+  "traceback": null,
+  "task_sha256": "9d467bdfe7e98567c99087260c7c2d8a0eceaf0bcbd199b78a8e881d92f73c25",
+  "snapshot_sha256": "25c32265f1649c4eef6c0f9c295b3f5d16239d0207edb0e0851fe88b15c5d8fd",
+  "environment_versions": {
+    "swegemma": "0.2.7",
+    "adk-submission": "0.2.11",
+    "adk-eval-core": "0.1.0",
+    "google-adk": "1.36.1"
+  },
+  "policy_sha256": "f59934c6b6369e97d529f821c0284cc666d708e340b3654aafd16dfe5f5e37ee",
+  "setup_commands": [
+    {
+      "cmd": "pip setuptools",
+      "rc": 0
+    },
+    {
+      "cmd": "pip wheel",
+      "rc": 0
+    },
+    {
+      "cmd": "pip editables",
+      "rc": 0
+    },
+    {
+      "cmd": "pip flit_core",
+      "rc": 0
+    },
+    {
+      "cmd": "pip poetry_core",
+      "rc": 0
+    },
+    {
+      "cmd": "pip pdm_backend",
+      "rc": 0
+    },
+    {
+      "cmd": "pip -e .",
+      "rc": 0,
+      "tail": "ent /tmp/swegemma_sandbox_b4d88506-f46_bw1qvizb/venv\n    Can't uninstall 'rich'. No files were found to uninstall.\nSuccessfully installed rich-13.9.1\n"
+    },
+    {
+      "cmd": "checkout tests/test_segment.py",
+      "rc": 0
+    },
+    {
+      "cmd": "clean tests/test_segment.py",
+      "rc": 0
+    },
+    {
+      "cmd": "pip setuptools",
+      "rc": 0
+    },
+    {
+      "cmd": "pip wheel",
+      "rc": 0
+    },
+    {
+      "cmd": "pip editables",
+      "rc": 0
+    },
+    {
+      "cmd": "pip flit_core",
+      "rc": 0
+    },
+    {
+      "cmd": "pip poetry_core",
+      "rc": 0
+    },
+    {
+      "cmd": "pip pdm_backend",
+      "rc": 0
+    },
+    {
+      "cmd": "pip -e .",
+      "rc": 0,
+      "tail": "ent /tmp/swegemma_sandbox_d6efde41-165_b3lbnzfa/venv\n    Can't uninstall 'rich'. No files were found to uninstall.\nSuccessfully installed rich-13.9.1\n"
+    },
+    {
+      "cmd": "checkout tests/test_segment.py",
+      "rc": 0
+    },
+    {
+      "cmd": "clean tests/test_segment.py",
+      "rc": 0
+    }
+  ]
+}

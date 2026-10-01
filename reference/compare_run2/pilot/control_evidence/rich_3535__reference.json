@@ -1,0 +1,63 @@
+{
+  "task": "rich_3535",
+  "arm": "reference",
+  "test_patch_rc": 0,
+  "test_patch_evidence": {
+    "label": "testpatch",
+    "requested": true,
+    "sandbox_path": "/tmp/tmpmv3v0qj5_testpatch.patch",
+    "bytes": 1067,
+    "sha256": "053e9b441d3b9bef3c029a1d4583eb95bd9f408fcb2fced68d42d4220ebc7db5",
+    "created_bytes": "1068",
+    "create_probe_rc": 0,
+    "apply_rc": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "patch_rc": 0,
+  "patch_evidence": {
+    "label": "gold",
+    "requested": true,
+    "sandbox_path": "/tmp/tmpkw22ao4o_gold.patch",
+    "bytes": 1001,
+    "sha256": "0544c4e93a27df1966eba759a2c9a1f83355ef22bdab938c2cf7c52a778d749a",
+    "created_bytes": "1002",
+    "create_probe_rc": 0,
+    "apply_rc": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "pytest_exit": 0,
+  "pytest_cmd": "PYTHONSAFEPATH=1 PYTHONNOUSERSITE=1 python3 -s -m pytest tests/test_cells.py",
+  "pytest_stdout": "........                                                                 [100%]\n- generated xml file: /tmp/swegemma_sandbox_b3282f55-3a7_ldasrbkp/tmp/ctl_reference.xml -\n8 passed in 0.05s\n",
+  "pytest_stderr": "",
+  "junit_read_rc": 0,
+  "nodes": {
+    "test_cells::test_cell_len_long_string": "passed",
+    "test_cells::test_cell_len_short_string": "passed",
+    "test_cells::test_set_cell_size": "passed",
+    "test_cells::test_set_cell_size_infinite": "passed",
+    "test_cells::test_chop_cells": "passed",
+    "test_cells::test_chop_cells_double_width_boundary": "passed",
+    "test_cells::test_chop_cells_mixed_width": "passed",
+    "test_cells::test_is_single_cell_widths": "passed"
+  },
+  "duplicate_nodes": [],
+  "junit_parse_error": null,
+  "environment_versions": "{'swegemma': '0.2.7', 'adk-submission': '0.2.11', 'adk-eval-core': '0.1.0', 'google-adk': '1.36.1'}",
+  "cleanup_ok": true,
+  "owned_sandboxes": [],
+  "agrees_with_saved": true,
+  "saved_exit": 0,
+  "node_comparison": {
+    "missing": [],
+    "extra": [],
+    "changed": [],
+    "skipped": [],
+    "targets_wrong": [],
+    "n_observed": 8,
+    "n_expected": 8,
+    "reason": ""
+  },
+  "n_targets": 1
+}

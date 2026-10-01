@@ -1,0 +1,113 @@
+{
+  "task": "rich_4076",
+  "arm": "baseline",
+  "reached_pytest": true,
+  "pytest_exit": 1,
+  "pytest_cmd": "PYTHONSAFEPATH=1 PYTHONNOUSERSITE=1 python3 -s -m pytest tests/test_ansi.py",
+  "nodes": {
+    "test_ansi::test_decode": "failed",
+    "test_ansi::test_decode_example": "failed",
+    "test_ansi::test_decode_issue_2688[\\x1b[31mFound 4 errors in 2 files (checked 18 source files)\\x1b(B\\x1b[m\\n-Found 4 errors in 2 files (checked 18 source files)\\n]": "failed",
+    "test_ansi::test_decode_issue_2688[Hallo-Hallo]": "passed",
+    "test_ansi::test_decode_issue_2688[\\x1b(BHallo-Hallo]": "passed",
+    "test_ansi::test_decode_issue_2688[\\x1b(JHallo-Hallo]": "passed",
+    "test_ansi::test_decode_issue_2688[\\x1b(BHal\\x1b(Jlo-Hallo]": "passed",
+    "test_ansi::test_strip_private_escape_sequences[0]": "passed",
+    "test_ansi::test_strip_private_escape_sequences[1]": "passed",
+    "test_ansi::test_strip_private_escape_sequences[2]": "passed",
+    "test_ansi::test_strip_private_escape_sequences[3]": "passed",
+    "test_ansi::test_strip_private_escape_sequences[4]": "passed",
+    "test_ansi::test_strip_private_escape_sequences[5]": "passed",
+    "test_ansi::test_strip_private_escape_sequences[6]": "passed",
+    "test_ansi::test_strip_private_escape_sequences[7]": "passed",
+    "test_ansi::test_strip_private_escape_sequences[8]": "passed",
+    "test_ansi::test_strip_private_escape_sequences[9]": "passed",
+    "test_ansi::test_strip_private_escape_sequences[:]": "passed",
+    "test_ansi::test_strip_private_escape_sequences[;]": "passed",
+    "test_ansi::test_strip_private_escape_sequences[<]": "passed",
+    "test_ansi::test_strip_private_escape_sequences[=]": "passed",
+    "test_ansi::test_strip_private_escape_sequences[>]": "passed",
+    "test_ansi::test_strip_private_escape_sequences[?]": "passed",
+    "test_ansi::test_decode_newlines": "failed"
+  },
+  "failure_details": {
+    "test_ansi::test_decode": {
+      "kind": "failure",
+      "message": "AssertionError: assert [<text 'Hello...ue=0))))] ''>] == [<text 'Hello...ext '' [] ''>]\n  \n  Right contains one more item: <text '' [] ''>\n  Use -v to get more diff",
+      "detail": "def test_decode():\n        console = Console(\n            force_terminal=True, legacy_windows=False, color_system=\"truecolor\"\n        )\n        console.begin_capture()\n        console.print(\"Hello\")\n        console.print(\"[b]foo[/b]\")\n        console.print(\"[link http://example.org]bar\")\n        console.print(\"[#ff0000 on color(200)]red\")\n        console.print(\"[color(200) on #ff0000]red\")\n        terminal_codes = console.end_capture()\n    \n        decoder = AnsiDecoder()\n        lines = list(decoder.decode(terminal_codes))\n        print(repr(lines))\n        expected = [\n            Text(\"Hello\"),\n            Text(\"foo\", spans=[Span(0, 3, Style.parse(\"bold\"))]),\n            Text(\"bar\", spans=[Span(0, 3, Style.parse(\"link http://example.org\"))]),\n            Text(\"red\", spans=[Span(0, 3, Style.parse(\"#ff0000 on color(200)\"))]),\n            Text(\"red\", spans=[Span(0, 3, Style.parse(\"color(200) on #ff0000\"))]),\n            Text(\"\"),\n        ]\n    \n>       assert lines == expected\nE       AssertionError: assert [<text 'Hello...ue=0))))] ''>] == [<text 'Hello...ext '' [] ''>]\nE         \nE         Right contains one more item: <text '' [] ''>\nE         Use -v to get more diff\n\ntests/test_ansi.py:33: AssertionError"
+    },
+    "test_ansi::test_decode_example": {
+      "kind": "failure",
+      "message": "AssertionError: assert '\\x1b[1mC:\\\\U...35m^\\x1b[0m\\n' == '\\x1b[1mC:\\\\U...m^\\x1b[0m\\n\\n'\n  \n  Skipping 264 identical leading characters in diff, use -v to show\n    1;35m^#x1B[0m\n  -",
+      "detail": "def test_decode_example():\n        ansi_bytes = b\"\\x1b[01m\\x1b[KC:\\\\Users\\\\stefa\\\\AppData\\\\Local\\\\Temp\\\\tmp3ydingba:\\x1b[m\\x1b[K In function '\\x1b[01m\\x1b[Kmain\\x1b[m\\x1b[K':\\n\\x1b[01m\\x1b[KC:\\\\Users\\\\stefa\\\\AppData\\\\Local\\\\Temp\\\\tmp3ydingba:3:5:\\x1b[m\\x1b[K \\x1b[01;35m\\x1b[Kwarning: \\x1b[m\\x1b[Kunused variable '\\x1b[01m\\x1b[Ka\\x1b[m\\x1b[K' [\\x1b[01;35m\\x1b[K-Wunused-variable\\x1b[m\\x1b[K]\\n    3 | int \\x1b[01;35m\\x1b[Ka\\x1b[m\\x1b[K=1;\\n      |     \\x1b[01;35m\\x1b[K^\\x1b[m\\x1b[K\\n\"\n        ansi_text = ansi_bytes.decode(\"utf-8\")\n    \n        text = Text.from_ansi(ansi_text)\n    \n        console = Console(\n            force_terminal=True, legacy_windows=False, color_system=\"truecolor\"\n        )\n        with console.capture() as capture:\n            console.print(text)\n        result = capture.get()\n        print(repr(result))\n        print(result)\n        expected = \"\\x1b[1mC:\\\\Users\\\\stefa\\\\AppData\\\\Local\\\\Temp\\\\tmp3ydingba:\\x1b[0m In function '\\x1b[1mmain\\x1b[0m':\\n\\x1b[1mC:\\\\Users\\\\stefa\\\\AppData\\\\Local\\\\Temp\\\\tmp3ydingba:3:5:\\x1b[0m \\x1b[1;35mwarning: \\x1b[0munused variable '\\x1b[1ma\\x1b[0m' \\n[\\x1b[1;35m-Wunused-variable\\x1b[0m]\\n    3 | int \\x1b[1;35ma\\x1b[0m=1;\\n      |     \\x1b[1;35m^\\x1b[0m\\n\\n\"\n>       assert result == expected\nE       AssertionError: assert '\\x1b[1mC:\\\\U...35m^\\x1b[0m\\n' == '\\x1b[1mC:\\\\U...m^\\x1b[0m\\n\\n'\nE         \nE         Skipping 264 identical leading characters in diff, use -v to show\nE           1;35m^#x1B[0m\nE         -\n\ntests/test_ansi.py:51: "
+    },
+    "test_ansi::test_decode_issue_2688[\\x1b[31mFound 4 errors in 2 files (checked 18 source files)\\x1b(B\\x1b[m\\n-Found 4 errors in 2 files (checked 18 source files)\\n]": {
+      "kind": "failure",
+      "message": "AssertionError: assert 'Found 4 erro...source files)' == 'Found 4 erro...urce files)\\n'\n  \n  Skipping 40 identical leading characters in diff, use -v to show\n  - urce files)\n  ?            -\n  + urce files)",
+      "detail": "ansi_bytes = b'\\x1b[31mFound 4 errors in 2 files (checked 18 source files)\\x1b(B\\x1b[m\\n'\nexpected_text = 'Found 4 errors in 2 files (checked 18 source files)\\n'\n\n    @pytest.mark.parametrize(\n        \"ansi_bytes, expected_text\",\n        [\n            # https://github.com/Textualize/rich/issues/2688\n            (\n                b\"\\x1b[31mFound 4 errors in 2 files (checked 18 source files)\\x1b(B\\x1b[m\\n\",\n                \"Found 4 errors in 2 files (checked 18 source files)\\n\",\n            ),\n            # https://mail.python.org/pipermail/python-list/2007-December/424756.html\n            (b\"Hallo\", \"Hallo\"),\n            (b\"\\x1b(BHallo\", \"Hallo\"),\n            (b\"\\x1b(JHallo\", \"Hallo\"),\n            (b\"\\x1b(BHal\\x1b(Jlo\", \"Hallo\"),\n        ],\n    )\n    def test_decode_issue_2688(ansi_bytes, expected_text):\n        text = Text.from_ansi(ansi_bytes.decode())\n    \n>       assert str(text) == expected_text\nE       AssertionError: assert 'Found 4 erro...source files)' == 'Found 4 erro...urce files)\\n'\nE         \nE         Skipping 40 identical leading characters in diff, use -v to show\nE         - urce files)\nE         ?            -\nE         + urce files)\n\ntests/test_ansi.py:72: AssertionError"
+    },
+    "test_ansi::test_decode_newlines": {
+      "kind": "failure",
+      "message": "AssertionError: assert '' == '\\n'\n  \n  Strings contain only whitespace, escaping them using repr()\n  - '\\n'\n  + ''",
+      "detail": "def test_decode_newlines():\n        \"\"\"Test newlines are preserved.\n        Regression test for https://github.com/Textualize/rich/issues/3577\n        \"\"\"\n        assert Text.from_ansi(\"\").plain == \"\"\n>       assert Text.from_ansi(\"\\n\").plain == \"\\n\"\nE       AssertionError: assert '' == '\\n'\nE         \nE         Strings contain only whitespace, escaping them using repr()\nE         - '\\n'\nE         + ''\n\ntests/test_ansi.py:94: AssertionError"
+    }
+  },
+  "import_in_checkout": true,
+  "grading_import": "/tmp/swegemma_sandbox_3004172b-0d5_53m_f8ch/workspace/rich/__init__.py",
+  "patch_rc": 0,
+  "patch_err": null,
+  "test_patch_rc": 0,
+  "test_patch_err": "",
+  "editable_rc": 0,
+  "collection_error": false,
+  "exception": null,
+  "traceback": null,
+  "task_sha256": "cd096e8aab5e7891d02a7d08ed43dd33ef5bbe38a10a4431a19cfb692f06fc23",
+  "snapshot_sha256": "ce4e70e99012038bd557bab4f677901f7a5da165f8ea661ad1cc72ebc18f4a58",
+  "environment_versions": {
+    "swegemma": "0.2.7",
+    "adk-submission": "0.2.11",
+    "adk-eval-core": "0.1.0",
+    "google-adk": "1.36.1"
+  },
+  "policy_sha256": "f59934c6b6369e97d529f821c0284cc666d708e340b3654aafd16dfe5f5e37ee",
+  "setup_commands": [
+    {
+      "cmd": "pip setuptools",
+      "rc": 0
+    },
+    {
+      "cmd": "pip wheel",
+      "rc": 0
+    },
+    {
+      "cmd": "pip editables",
+      "rc": 0
+    },
+    {
+      "cmd": "pip flit_core",
+      "rc": 0
+    },
+    {
+      "cmd": "pip poetry_core",
+      "rc": 0
+    },
+    {
+      "cmd": "pip pdm_backend",
+      "rc": 0
+    },
+    {
+      "cmd": "pip -e .",
+      "rc": 0,
+      "tail": "ent /tmp/swegemma_sandbox_3004172b-0d5_53m_f8ch/venv\n    Can't uninstall 'rich'. No files were found to uninstall.\nSuccessfully installed rich-14.3.4\n"
+    },
+    {
+      "cmd": "checkout tests/test_ansi.py",
+      "rc": 0
+    },
+    {
+      "cmd": "clean tests/test_ansi.py",
+      "rc": 0
+    }
+  ]
+}

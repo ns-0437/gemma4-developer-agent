@@ -1,0 +1,2 @@
+candidate,task,resolved,cause,total_minutes,tool_calls,patch_bytes,artifact_ok,test_exit,grading_ran,trace_saved,log_saved,truncation_mentions,tool_error_mentions,error
+v2_reviewed,requests_6589,False,budget_exhausted,2.512,39,743,True,1,True,True,True,0,0,Agent exceeded turns budget (40 turns)

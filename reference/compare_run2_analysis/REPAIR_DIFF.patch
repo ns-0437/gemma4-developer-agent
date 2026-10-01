@@ -1,0 +1,421 @@
+--- a/scripts/compare_cells.py
++++ b/scripts/compare_cells.py
+@@ -65,6 +65,17 @@
+ _UNOBSERVED_MARKERS = ('missing junit xml report',)
+ # A graded run with zero passes is an OUTCOME, not a failure of the run.
+ _RESULT_MARKERS = ('indicates zero or no passing tests',)
++# The agent loop ended with no patch submitted. Observed in compare kernel version 2 (candidate B on
++# rich_3278): the model emitted `<|tool_call>...<tool_call|>` with mismatched delimiters, the server's
++# tool parser did not recognise it as a tool call, the harness treated the text as a final answer,
++# and swegemma persisted exactly this message. Nothing about the environment failed: four L4s were
++# up, the sandbox was clean, both setup provenance probes passed, and the SAME server had just
++# carried candidate A through 60 turns. This is the candidate's own tool use, so it is a candidate
++# outcome and must not stop the other candidate's runs.
++#
++# Deliberately checked AFTER _ENVIRONMENT_MARKERS: when a real environment cause is named in the
++# same string, that cause wins. A missing submission is what remains when nothing else is wrong.
++_CANDIDATE_NO_SUBMISSION_MARKERS = ('completed execution without calling submit_patch',)
+ 
+ # Worst-first. A genuine environment failure must never be hidden behind a candidate error, and a
+ # candidate error must never be hidden behind a clean-looking second source.
+@@ -88,6 +99,11 @@
+     for m in _ENVIRONMENT_MARKERS:
+         if m in low:
+             return 'environment', m
++    # After the specific environment causes, before the generic wrappers: a run that simply never
++    # submitted has an identified cause, and that cause is the candidate's.
++    for m in _CANDIDATE_NO_SUBMISSION_MARKERS:
++        if m in low:
++            return 'candidate', 'agent ended without submitting a patch (no environment cause found)'
+     if 'badrequesterror' in low or 'invalidrequesterror' in low:
+         return 'environment', 'BadRequest/InvalidRequest with no identified cause (not charged to the candidate)'
+     for m in _WRAPPER_MARKERS:
+@@ -291,7 +307,10 @@
+             "failure_class", "agent_loop_s", "termination_error", "duration_seconds_harness",
+             "tool_calls", "edit_calls", "shell_edit_hints", "repeated_identical_cmds",
+             "tool_errors", "first_source_edit_attempt_step", "finish_reasons",
+-            "prompt_tokens", "completion_tokens", "run_error"]
++            "prompt_tokens", "completion_tokens",
++            "successful_tool_calls", "rejected_tool_calls", "successful_source_edits",
++            "tmp_scratch_writes", "repeated_identical_tool_calls", "unparsed_tool_call_texts",
++            "run_error"]
+ 
+ _runs = RUNS if "RUNS" in dir() else []
+ RUN_BY_KEY = {}
+--- a/scripts/make_compare_notebook.py
++++ b/scripts/make_compare_notebook.py
+@@ -34,7 +34,7 @@
+ TASKS = ["rich_3278", "rich_3535", "rich_3675", "rich_3942"]
+ 
+ # 8 runs at a 10-minute agent budget, plus grading, plus ~20 min server startup.
+-ARM_FOR_LAUNCH = True   # authorised 2026-09-29: one launch only
++ARM_FOR_LAUNCH = False  # the single authorised launch (2026-09-29) has been used; disarmed 2026-09-30
+ SESSION_CAP_MIN = 300
+ RUN_RESERVE_MIN = 25
+ 
+--- a/scripts/make_pilot_notebook.py
++++ b/scripts/make_pilot_notebook.py
+@@ -641,51 +641,149 @@
+     except Exception:
+         return None
+ 
++TRACE_STAT_KEYS = ("tool_calls", "edit_calls", "shell_edit_hints",
++                   "repeated_identical_cmds", "tool_errors",
++                   "first_source_edit_attempt_step", "finish_reasons",
++                   "prompt_tokens", "completion_tokens",
++                   "successful_tool_calls", "rejected_tool_calls",
++                   "successful_source_edits", "tmp_scratch_writes",
++                   "repeated_identical_tool_calls", "unparsed_tool_call_texts")
++
++# Scratch reproduction files. The system prompt tells the agent to keep them in /tmp, and
++# write_file/edit_file refuse /tmp, so they arrive as shell heredocs. Counting them as source edits
++# made compare kernel version 2 credit candidate A with 54 "shell-edit workarounds" on a run that
++# touched no repository file at all.
++_SCRATCH_DIRS = ("/tmp/", "/var/tmp/", "/dev/")
++_SCRATCH_NAMES = {"repro.py", "repro2.py", "debug.py", "scratch.py", "test_repro.py", "check.py"}
++
++_REDIRECT_TARGET = re.compile(r">>?\s*(?P<p>[^\s;|&<>()]+)")
++_TEE_TARGET = re.compile(r"\btee\b(?:\s+-\S+)*\s+(?P<p>[^\s;|&<>()]+)")
++_INPLACE_EDIT = re.compile(r"(^|[\s;|&])(sed\s+-i|patch\b|python3?\s+-c\s+.{0,40}(write|replace))")
++_PY_TOKEN = re.compile(r"[^\s;|&<>()]+\.py\b")
++
++# The tool rejected the call before running it: the arguments never formed a usable request. This
++# is the shape seen 42 times in compare kernel version 2, where the payload was split on its own
++# content and old_string was lost.
++_REJECTION_MARKERS = ("mandatory input parameters are not present",
++                      "unknown tool", "no such tool", "unexpected keyword argument",
++                      "missing required", "invalid arguments")
++
++
++def _is_scratch_path(p):
++    return p.startswith(_SCRATCH_DIRS) or p.rsplit("/", 1)[-1] in _SCRATCH_NAMES
++
++
++def shell_write_targets(cmd):
++    """(source_targets, scratch_targets) a shell command names as write destinations.
++
++    Only paths ending in .py count, because a repository source edit is what this metric claims to
++    measure. `cat > /tmp/repro.py <<EOF` yields a scratch target and no source target.
++    """
++    cand = [m.group("p") for m in _REDIRECT_TARGET.finditer(cmd)]
++    cand += [m.group("p") for m in _TEE_TARGET.finditer(cmd)]
++    if _INPLACE_EDIT.search(cmd):
++        cand += _PY_TOKEN.findall(cmd)
++    src, scratch = [], []
++    for p in cand:
++        if not p.endswith(".py"):
++            continue
++        (scratch if _is_scratch_path(p) else src).append(p)
++    return src, scratch
++
++
++def observation_status(step):
++    """('ok'|'rejected'|'error'|'none', text) for one step's tool observation.
++
++    swegemma reports tool failures in two different shapes and the previous implementation saw only
++    one of them. A rejected call carries a bare {"error": ...} with no `status` key, so counting
++    `status == "error"` alone reported 1 error for a run that had 43.
++    """
++    obs = step.get("observation")
++    if not obs:
++        return "none", ""
++    content = obs.get("content", "")
++    parsed = None
++    if isinstance(content, dict):
++        parsed = content
++    elif isinstance(content, str):
++        try:
++            parsed = json.loads(content)
++        except (ValueError, TypeError):
++            parsed = None
++    if not isinstance(parsed, dict):
++        return ("ok", "") if content else ("none", "")
++    text = str(parsed.get("error") or parsed.get("error_message") or "")
++    is_error = ("error" in parsed or parsed.get("status") == "error"
++                or (isinstance(parsed.get("exit_code"), int) and parsed["exit_code"] != 0))
++    if not is_error:
++        return "ok", ""
++    low = text.lower()
++    if any(m in low for m in _REJECTION_MARKERS):
++        return "rejected", text
++    return "error", text
++
++
+ def trace_stats(tr):
+     if tr is None:
+-        return {k: UNAVAILABLE for k in ("tool_calls", "edit_calls", "shell_edit_hints",
+-                                         "repeated_identical_cmds", "tool_errors",
+-                                         "first_source_edit_attempt_step", "finish_reasons",
+-                                         "prompt_tokens", "completion_tokens")}
+-    cmds, tools, errors, finish = [], [], 0, []
+-    edit_calls = shell_edits = 0
++        return {k: UNAVAILABLE for k in TRACE_STAT_KEYS}
++    cmds, tools, calls, finish = [], [], [], []
++    errors = rejected = ok_calls = 0
++    edit_calls = shell_edits = scratch_writes = source_edits = unparsed_texts = 0
+     first_edit = None
+-    SHELL_EDIT = re.compile(r"(^|\s|\|)(sed\s+-i|tee\b|patch\b|python3?\s+-c\s+.{0,40}(write|replace)|>\s*\S+\.py)")
+     for step in tr.get("steps", []):
+-        for tc in step.get("tool_calls") or []:
++        status, _text = observation_status(step)
++        if status == "rejected":
++            rejected += 1
++            errors += 1
++        elif status == "error":
++            errors += 1
++        elif status == "ok":
++            ok_calls += 1
++        step_calls = step.get("tool_calls") or []
++        for tc in step_calls:
+             fn = tc.get("function_name", "")
+             tools.append(fn)
+             args = tc.get("arguments") or {}
++            calls.append(json.dumps([fn, args], sort_keys=True, default=str))
+             if fn in ("edit_file", "write_file"):
+                 edit_calls += 1
+                 fp = str(args.get("filepath", ""))
+-                if first_edit is None and not fp.startswith("/tmp") and Path(fp).name not in {"repro.py", "debug.py"} and fp.endswith(".py"):
+-                    first_edit = step.get("step_id")
++                if fp.endswith(".py") and not _is_scratch_path(fp):
++                    if first_edit is None:
++                        first_edit = step.get("step_id")
++                    # Only a call the tool accepted can have changed a file.
++                    if status == "ok":
++                        source_edits += 1
+             if fn == "run_command":
+                 c = str(args.get("command", ""))
+                 cmds.append(c)
+-                if SHELL_EDIT.search(c):
++                src, scratch = shell_write_targets(c)
++                if scratch:
++                    scratch_writes += 1
++                if src:
+                     shell_edits += 1
+                     if first_edit is None:
+                         first_edit = step.get("step_id")
+-        obs = (step.get("observation") or {}).get("content", "")
+-        try:
+-            parsed_obs = json.loads(obs) if isinstance(obs, str) else obs
+-        except (ValueError, TypeError):
+-            parsed_obs = None
+-        if isinstance(parsed_obs, dict) and (parsed_obs.get('status') == 'error' or
+-                isinstance(parsed_obs.get('exit_code'), int) and parsed_obs['exit_code'] != 0):
+-            errors += 1
++                    if status == "ok":
++                        source_edits += 1
++        # An agent turn that produced text but no parsed tool call, where the text still looks like
++        # an attempted call. This is how candidate B's run ended in compare kernel version 2.
++        if not step_calls and step.get("source") == "agent":
++            msg = str(step.get("message") or "")
++            if "tool_call" in msg or "tool_code" in msg:
++                unparsed_texts += 1
+         fr = step.get("finish_reason") or (step.get("extra") or {}).get("finish_reason")
+         if fr:
+             finish.append(str(fr))
+-    rep = 0
+-    for i in range(1, len(cmds)):
+-        if cmds[i] == cmds[i - 1]:
+-            rep += 1
++    rep = sum(1 for i in range(1, len(cmds)) if cmds[i] == cmds[i - 1])
++    rep_tools = sum(1 for i in range(1, len(calls)) if calls[i] == calls[i - 1])
+     fm = tr.get("final_metrics") or {}
+     return {"tool_calls": len(tools), "edit_calls": edit_calls, "shell_edit_hints": shell_edits,
+             "repeated_identical_cmds": rep, "tool_errors": errors,
++            "successful_tool_calls": ok_calls, "rejected_tool_calls": rejected,
++            "successful_source_edits": source_edits, "tmp_scratch_writes": scratch_writes,
++            "repeated_identical_tool_calls": rep_tools,
++            "unparsed_tool_call_texts": unparsed_texts,
+             "first_source_edit_attempt_step": first_edit if first_edit is not None else UNAVAILABLE,
+             "finish_reasons": ";".join(sorted(set(finish))) or UNAVAILABLE,
+             "prompt_tokens": fm.get("total_prompt_tokens", UNAVAILABLE),
+@@ -719,6 +817,10 @@
+     if row.get("resolved"):
+         return "passed"
+     err = (row.get("error") or "")
++    # Distinguish "the agent never submitted" from "a patch was produced and was empty". Both leave
++    # no grade, and neither is a graded loss.
++    if "completed execution without calling submit_patch" in err.lower():
++        return "no_submission"
+     if not patch.strip():
+         return "empty_patch"
+     if not shape["patch_touches_source"]:
+--- a/scripts/test_pilot_notebook.py
++++ b/scripts/test_pilot_notebook.py
+@@ -26,6 +26,44 @@
+ _REAL_SYMLINK = os.symlink
+ import subprocess as _subprocess
+ _REAL_RUN = _subprocess.run
++_HEALTHY_SERVERS = []
++
++
++def _healthy_model_server():
++    """A real HTTP server answering /v1/models with 200, started once per process.
++
++    The dispatch cell probes the model server with urllib before continuing after a candidate
++    failure. Until now the suite could only make that probe FAIL (port 9 refuses), so no test could
++    reach the "continue to the next planned run" branch at all. Stubbing urllib would remove the
++    very code under test, so a real socket is opened instead.
++    """
++    if _HEALTHY_SERVERS:
++        return _HEALTHY_SERVERS[0]
++    import atexit
++    from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
++    import threading
++
++    class _Handler(BaseHTTPRequestHandler):
++        def do_GET(self):
++            body = b'{"data": [{"id": "gemma-4-31b-it-qat-w4a16-ct"}]}'
++            self.send_response(200 if self.path.endswith("/models") else 404)
++            self.send_header("Content-Type", "application/json")
++            self.send_header("Content-Length", str(len(body)))
++            self.end_headers()
++            self.wfile.write(body)
++
++        def log_message(self, *a):
++            pass
++
++    srv = ThreadingHTTPServer(("127.0.0.1", 0), _Handler)
++    srv.daemon_threads = True
++    threading.Thread(target=srv.serve_forever, daemon=True).start()
++    atexit.register(srv.shutdown)
++    url = "http://127.0.0.1:%d/v1" % srv.server_address[1]
++    _HEALTHY_SERVERS.append(url)
++    return url
++
++
+ def _symlink_or_copy(src, dst, **kw):
+     try:
+         _REAL_SYMLINK(src, dst, **kw)
+@@ -103,7 +141,8 @@
+              grading_import_in_checkout=True, startup_failure=False, eval_failure=False, bad_phase=None,
+              persisted_error=None, skip_grading=False, server_unhealthy=False, leak_sandbox=False,
+              escaped_error=None, control_stop_raises=False, control_leak=False,
+-             all_stop_raises=False, control_stop_raises_after_cleanup=False):
++             all_stop_raises=False, control_stop_raises_after_cleanup=False,
++             server_healthy=False):
+     """Build a temp Kaggle-like tree and install stub modules. Returns (data_dir, working_dir)."""
+     SANDBOX_ROOT_FOR_TEST[0] = (tmp / "working" / "sbxroot").as_posix()
+     data = tmp / "input" / "competitions" / "gemma-4-developer-agent"
+@@ -384,8 +423,11 @@
+ 
+     class FakeServer:
+         # port 9 (discard) refuses immediately, so the REAL health probe in the dispatch
+-        # cell fails for real rather than being stubbed out.
+-        base_url = "http://127.0.0.1:9/v1" if server_unhealthy else "http://127.0.0.1:8000/v1"
++        # cell fails for real rather than being stubbed out. server_healthy points it at a real
++        # listening socket instead, so the same probe can also genuinely succeed.
++        base_url = ("http://127.0.0.1:9/v1" if server_unhealthy else
++                    _healthy_model_server() if server_healthy else
++                    "http://127.0.0.1:8000/v1")
+         def __init__(self, *args, **kwargs):
+             counts["server_created"] += 1
+         def start(self):
+
+--- a/scripts/test_compare_dispatch.py
++++ b/scripts/test_compare_dispatch.py
+@@ added: six executable tests plus their registration @@
++# [D14]-[D18] the termination message compare kernel version 2 actually produced.
++#
++# Candidate B on rich_3278 ended with swegemma persisting exactly this string. No marker matched
++# it, so it fell through to 'unclassified error' -> environment -> stop, and six planned runs of
++# BOTH candidates were cancelled on the strength of one candidate's tool use. These tests use the
++# real message verbatim, not a paraphrase.
++# ==============================================================================================
++NO_SUBMIT = "Agent completed execution without calling submit_patch."
++
++
++def test_no_submission_is_a_candidate_outcome(tmp):
++    print("\n[D14] the real 'without calling submit_patch' message is a CANDIDATE outcome")
++    # skip_grading mirrors the real run: the agent never submitted, so grading never started.
++    ns = H.run_cells(tmp / "d14", dispatch=True, server_healthy=True, persisted_error=NO_SUBMIT,
++                     skip_grading=True)
++    r = first_run(ns)
++    check("the real message was read from task_results.jsonl",
++          r and r["persisted_error"] == NO_SUBMIT, str(r and r["persisted_error"]))
++    check("classified as a candidate outcome", r and r["outcome"] == "candidate", str(r and r["outcome"]))
++    check("not an environment failure", r and not r["environment_error"])
++    check("reason says no environment cause was found",
++          r and "no environment cause" in r["outcome_reason"], str(r and r["outcome_reason"]))
++    check("grading is recorded as not observed, not stopped over",
++          r and r["grading_observed"] is False and r["unobserved_grading"] is False,
++          str(r and (r["grading_observed"], r["unobserved_grading"])))
++    row = rows_by_key(ns)[(r["task"], r["candidate"])]
++    check("report class is candidate, not environment", row["failure_class"] == "candidate", str(row["failure_class"]))
++    check("attributed as a missing submission, not an empty patch",
++          row["attribution"] == "no_submission", str(row["attribution"]))
++    check("not recorded as resolved", row["resolved"] is False, str(row["resolved"]))
++
++
++def test_no_submission_allows_the_next_planned_run(tmp):
++    print("\n[D15] a clean missing submission does NOT cancel the other candidate's runs")
++    ns = H.run_cells(tmp / "d15", dispatch=True, server_healthy=True, persisted_error=NO_SUBMIT,
++                     skip_grading=True)
++    n = H.counts()["evaluations"]
++    check("dispatch continued past the first run", n > 1, f"evaluations={n}")
++    check("every planned run was dispatched", n == len(ns["ORDER"]), f"{n} of {len(ns['ORDER'])}")
++    check("no stop reason was recorded", not ns.get("STOP_REASON"), str(ns.get("STOP_REASON")))
++    both = {r["candidate"] for r in ns["RUNS"]}
++    check("runs of BOTH candidates went ahead", both == {"A", "B"}, str(both))
++    check("all eight rows present and attempted",
++          len(ns["rows"]) == 8 and all(r["attempted"] for r in ns["rows"]),
++          str(len(ns["rows"])))
++    check("server stopped exactly once",
++          H.counts()["server_started"] == H.counts()["server_stopped"] == 1)
++
++
++def test_genuine_environment_failure_still_stops(tmp):
++    print("\n[D16] a genuine environment failure still stops dispatch")
++    ns = H.run_cells(tmp / "d16", dispatch=True, server_healthy=True,
++                     persisted_error="Sandbox execution error: container exited during setup")
++    r = first_run(ns)
++    check("classified as an environment failure", r and r["outcome"] == "environment", str(r and r["outcome"]))
++    check("dispatch stopped after one run", H.counts()["evaluations"] == 1, str(H.counts()["evaluations"]))
++    check("stop reason names the environment", "environment failure" in (ns.get("STOP_REASON") or ""),
++          str(ns.get("STOP_REASON")))
++
++
++def test_environment_takes_precedence_over_no_submission(tmp):
++    print("\n[D17] environment failure wins when it occurs WITH a missing submission")
++    ns = H.run_cells(tmp / "d17", dispatch=True, server_healthy=True, persisted_error=NO_SUBMIT,
++                     escaped_error="Failed to apply test_patch: git apply failed (1): patch does not apply")
++    r = first_run(ns)
++    check("environment wins over the candidate outcome",
++          r and r["outcome"] == "environment", str(r and r["outcome"]))
++    check("not charged to the candidate", r and not r["candidate_error"])
++    check("reason records both sources", r and "also" in r["outcome_reason"], str(r and r["outcome_reason"]))
++    check("dispatch stopped", H.counts()["evaluations"] == 1, str(H.counts()["evaluations"]))
++
++
++def test_cleanup_failure_still_stops_on_no_submission(tmp):
++    print("\n[D18] a leaked sandbox stops dispatch even when the run is only a missing submission")
++    ns = H.run_cells(tmp / "d18", dispatch=True, server_healthy=True, persisted_error=NO_SUBMIT,
++                     leak_sandbox=True)
++    r = first_run(ns)
++    check("still classified as a candidate outcome", r and r["outcome"] == "candidate", str(r and r["outcome"]))
++    check("cleanup was not confirmed", r and r["cleanup_ok"] is False, str(r and r["cleanup_ok"]))
++    check("dispatch stopped on cleanup, not on classification",
++          H.counts()["evaluations"] == 1 and "cleanup" in (ns.get("STOP_REASON") or ""),
++          f"evals={H.counts()['evaluations']} stop={ns.get('STOP_REASON')}")
++    rows = ns["rows"]
++    check("all eight planned rows still present after the early stop", len(rows) == 8, str(len(rows)))
++    check("seven rows carry the stop reason",
++          sum(1 for r2 in rows if r2["attempted"] is False) == 7, str(rows and len(rows)))
++    check("unattempted rows are not scored",
++          all(r2["resolved"] == "unavailable" for r2 in rows if r2["attempted"] is False))
++
++
++def test_environment_cause_inside_the_same_message_wins(tmp):
++    print("\n[D19] one string naming BOTH a real environment cause and the missing submission")
++    # Pins the ORDER of the checks inside _classify_one, which D17 cannot: there the two causes
++    # arrive as two separate sources and _PRECEDENCE decides. Here they are one string, so only the
++    # position of the missing-submission tier relative to _ENVIRONMENT_MARKERS can produce the
++    # right answer.
++    ns = H.run_cells(tmp / "d19", dispatch=True, server_healthy=True, skip_grading=True,
++                     persisted_error="Sandbox execution error: no such file or directory; "
++                                     + NO_SUBMIT)
++    r = first_run(ns)
++    check("the named environment cause wins inside one message",
++          r and r["outcome"] == "environment", str(r and (r["outcome"], r["outcome_reason"])))
++    check("dispatch stopped", H.counts()["evaluations"] == 1, str(H.counts()["evaluations"]))
++
++

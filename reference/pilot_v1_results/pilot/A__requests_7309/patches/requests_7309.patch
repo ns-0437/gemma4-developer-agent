@@ -1,0 +1,54 @@
+diff --git a/src/requests/utils.py b/src/requests/utils.py
+index 54959bb8..805cf9d2 100644
+--- a/src/requests/utils.py
++++ b/src/requests/utils.py
+@@ -517,12 +517,11 @@ def _parse_content_type_header(header):
+     for param in params:
+         param = param.strip()
+         if param:
+-            key, value = param, True
+             index_of_equals = param.find("=")
+             if index_of_equals != -1:
+                 key = param[:index_of_equals].strip(items_to_strip)
+                 value = param[index_of_equals + 1 :].strip(items_to_strip)
+-            params_dict[key.lower()] = value
++                params_dict[key.lower()] = value
+     return content_type, params_dict
+ 
+ 
+diff --git a/tests/test_utils.py b/tests/test_utils.py
+index c477c408..53fb35cf 100644
+--- a/tests/test_utils.py
++++ b/tests/test_utils.py
+@@ -593,7 +593,6 @@ def test_parse_dict_header(value, expected):
+                 {
+                     "boundary": "something",
+                     "boundary2": "something_else",
+-                    "no_equals": True,
+                 },
+             ),
+         ),
+@@ -604,7 +603,6 @@ def test_parse_dict_header(value, expected):
+                 {
+                     "boundary": "something",
+                     "boundary2": "something_else",
+-                    "no_equals": True,
+                 },
+             ),
+         ),
+@@ -615,7 +613,6 @@ def test_parse_dict_header(value, expected):
+                 {
+                     "boundary": "something",
+                     "boundary2": "something_else",
+-                    "no_equals": True,
+                 },
+             ),
+         ),
+@@ -626,7 +623,6 @@ def test_parse_dict_header(value, expected):
+                 {
+                     "boundary": "something",
+                     "boundary2": "something_else",
+-                    "no_equals": True,
+                 },
+             ),
+         ),

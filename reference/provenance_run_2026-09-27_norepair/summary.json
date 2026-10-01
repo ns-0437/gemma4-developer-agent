@@ -1,0 +1,42 @@
+{
+  "requests_7309": {
+    "negative": {
+      "agent_ok": false,
+      "pytest_ok": false,
+      "agent_file": "/usr/local/lib/python3.12/dist-packages/requests/__init__.py",
+      "pytest_file": "/usr/local/lib/python3.12/dist-packages/requests/__init__.py",
+      "exit": 1,
+      "sys_exe_agent": "/tmp/swegemma_sandbox_0faba72f-db1_9csatdlv/venv/bin/python3",
+      "sys_exe_pytest": "/tmp/swegemma_sandbox_0faba72f-db1_9csatdlv/venv/bin/python3"
+    },
+    "positive": {
+      "agent_ok": false,
+      "pytest_ok": false,
+      "agent_file": "/usr/local/lib/python3.12/dist-packages/requests/__init__.py",
+      "pytest_file": "/usr/local/lib/python3.12/dist-packages/requests/__init__.py",
+      "exit": 1,
+      "sys_exe_agent": "/tmp/swegemma_sandbox_2b5e75bb-d61_kdg2q4as/venv/bin/python3",
+      "sys_exe_pytest": "/tmp/swegemma_sandbox_2b5e75bb-d61_kdg2q4as/venv/bin/python3"
+    }
+  },
+  "rich_3471": {
+    "negative": {
+      "agent_ok": true,
+      "pytest_ok": false,
+      "agent_file": "/tmp/swegemma_sandbox_adbf6c7d-2d5_5p86ah69/workspace/rich/__init__.py",
+      "pytest_file": "/usr/local/lib/python3.12/dist-packages/rich/__init__.py",
+      "exit": 0,
+      "sys_exe_agent": "/tmp/swegemma_sandbox_adbf6c7d-2d5_5p86ah69/venv/bin/python3",
+      "sys_exe_pytest": "/tmp/swegemma_sandbox_adbf6c7d-2d5_5p86ah69/venv/bin/python3"
+    },
+    "positive": {
+      "agent_ok": true,
+      "pytest_ok": false,
+      "agent_file": "/tmp/swegemma_sandbox_126662f9-b6e__r0m_1yw/workspace/rich/__init__.py",
+      "pytest_file": "/usr/local/lib/python3.12/dist-packages/rich/__init__.py",
+      "exit": 0,
+      "sys_exe_agent": "/tmp/swegemma_sandbox_126662f9-b6e__r0m_1yw/venv/bin/python3",
+      "sys_exe_pytest": "/tmp/swegemma_sandbox_126662f9-b6e__r0m_1yw/venv/bin/python3"
+    }
+  }
+}

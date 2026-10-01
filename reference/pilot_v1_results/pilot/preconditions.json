@@ -1,0 +1,20 @@
+[
+  {
+    "task": "requests_7309",
+    "ws": "/tmp/swegemma_sandbox_95e2940a-cee_n0ugnbpa/workspace",
+    "agent_file": "/tmp/swegemma_sandbox_95e2940a-cee_n0ugnbpa/workspace/src/requests/__init__.py",
+    "agent_exe": "/tmp/swegemma_sandbox_95e2940a-cee_n0ugnbpa/venv/bin/python3",
+    "grading_file": "/tmp/swegemma_sandbox_95e2940a-cee_n0ugnbpa/workspace/src/requests/__init__.py",
+    "grading_exe": "/tmp/swegemma_sandbox_95e2940a-cee_n0ugnbpa/venv/bin/python3",
+    "ok": true
+  },
+  {
+    "task": "rich_3471",
+    "ws": "/tmp/swegemma_sandbox_c611d76e-dc0_88ofdaq8/workspace",
+    "agent_file": "/tmp/swegemma_sandbox_c611d76e-dc0_88ofdaq8/workspace/rich/__init__.py",
+    "agent_exe": "/tmp/swegemma_sandbox_c611d76e-dc0_88ofdaq8/venv/bin/python3",
+    "grading_file": "/tmp/swegemma_sandbox_c611d76e-dc0_88ofdaq8/workspace/rich/__init__.py",
+    "grading_exe": "/tmp/swegemma_sandbox_c611d76e-dc0_88ofdaq8/venv/bin/python3",
+    "ok": true
+  }
+]

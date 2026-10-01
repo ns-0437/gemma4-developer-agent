@@ -1,0 +1,13 @@
+[
+  {
+    "task": "rich_3278",
+    "ws": "/tmp/swegemma_sandbox_17bd3b92-cdd_f_p51tse/workspace",
+    "agent_file": "/tmp/swegemma_sandbox_17bd3b92-cdd_f_p51tse/workspace/rich/__init__.py",
+    "agent_exe": "/tmp/swegemma_sandbox_17bd3b92-cdd_f_p51tse/venv/bin/python3",
+    "grading_file": "/tmp/swegemma_sandbox_17bd3b92-cdd_f_p51tse/workspace/rich/__init__.py",
+    "grading_exe": "/tmp/swegemma_sandbox_17bd3b92-cdd_f_p51tse/venv/bin/python3",
+    "cleanup_ok": true,
+    "owned_sandboxes": [],
+    "ok": true
+  }
+]

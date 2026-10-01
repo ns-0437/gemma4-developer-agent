@@ -1,0 +1,161 @@
+{
+  "pinned_notebook": {
+    "path": "C:\\Documents2\\KaggleMLChallenge\\The Gemma 4\\notebooks\\stage1\\stage1.ipynb",
+    "sha256": "775d88dfe3b91ee8b4d5b30cffdd9f2957556b1f045f2b87a1a6b4e3aacd3158"
+  },
+  "artifacts_dir": "C:\\Documents2\\KaggleMLChallenge\\The Gemma 4\\reference\\stage1_run_2026-09-30",
+  "artifacts_present": {
+    "runs.json": true,
+    "control_recheck.json": true,
+    "preconditions.json": true,
+    "pilot_manifest.json": true
+  },
+  "experiment_identity": {
+    "errors": [],
+    "run_keys": [
+      [
+        "rich_3278",
+        "R"
+      ]
+    ],
+    "manifest_run_order": [
+      [
+        "rich_3278",
+        "R"
+      ]
+    ],
+    "control_arms": [
+      [
+        "rich_3278",
+        "baseline"
+      ],
+      [
+        "rich_3278",
+        "reference"
+      ]
+    ]
+  },
+  "instrument_validity": {
+    "checks": {
+      "controls_present": true,
+      "controls_not_duplicated": true,
+      "controls_agree": true,
+      "controls_cleanup_ok": true,
+      "preconditions_passed": true,
+      "experiment_identity_ok": true,
+      "run_record_present": true,
+      "provenance_not_failed": true,
+      "agent_provenance_observed": true,
+      "grading_provenance_observed": false,
+      "one_result_record": true,
+      "result_record_readable": true,
+      "cleanup_ok": true,
+      "report_cell_accepted_artifacts": true
+    },
+    "notes": [
+      "agent-side provenance only: the graded path is NOT verified"
+    ],
+    "phases_observed_ok": [
+      "agent"
+    ],
+    "valid": false,
+    "report_cell_error": null,
+    "state": {
+      "state": "grading_path_unobserved",
+      "note": "every check that could run, passed. The unmet checks (grading_provenance_observed) depend on grading having run, and grading never ran. That is an UNEXERCISED path, not a demonstrated fault.",
+      "failed_checks_that_ran": [],
+      "unmet_checks_requiring_grading": [
+        "grading_provenance_observed"
+      ]
+    }
+  },
+  "grading": {
+    "observed": false,
+    "test_exit_code": -1,
+    "verdict_exit": false,
+    "state": "unobserved",
+    "note": "grading did not run, and no missing-submission message explains it."
+  },
+  "candidate_reliability": {
+    "counts": {
+      "rejected_tool_calls": 0,
+      "repeated_identical_tool_calls": 54,
+      "unparsed_tool_call_texts": 0,
+      "acknowledged_source_edit_calls": 0,
+      "tool_calls": 60,
+      "tool_errors": 1,
+      "tool_use_flags": "identical_repeats;no_acknowledged_source_edit"
+    },
+    "notes": [
+      "submit_patch call count is 0"
+    ],
+    "missing_submission_message": false,
+    "missing_submission": false,
+    "termination_error": "Agent exceeded turns budget (60 turns)",
+    "trace_present": true,
+    "submit_patch_calls": 0,
+    "submission_evidence": "submit_patch was NEVER called (0 occurrences in the trace). The missing-submission message is absent only because the run ended on a different path, not because a submission happened."
+  },
+  "task_performance": {
+    "patch": {
+      "bytes": 0,
+      "chars": 0,
+      "paths": [],
+      "source_paths": [],
+      "test_paths": [],
+      "scratch_paths": [],
+      "non_empty": false,
+      "touches_source": false,
+      "n_hunks": 0,
+      "n_changed_lines": 0,
+      "syntax_errors": [],
+      "syntactically_valid": false
+    },
+    "notes": [],
+    "persisted_record_error": null,
+    "size_recorded": 0,
+    "size_type_ok": true,
+    "size_matches": true,
+    "syntactically_valid": false,
+    "application_evidence": false,
+    "changes_source": false,
+    "valid_source_patch": false,
+    "resolved": false
+  },
+  "recovery": {
+    "rejections": [],
+    "candidates": [],
+    "read_only_after": [],
+    "verdict": "recovery unproven",
+    "link": null,
+    "reason": "no rejected call in the trace"
+  },
+  "stage1_gate": {
+    "instrument valid": false,
+    "grading exercised": false,
+    "verdict exit code": false,
+    "valid non-empty source patch": false,
+    "patch tied to the recorded size": true,
+    "no missing-submission message": true,
+    "submit_patch was actually called": false
+  },
+  "stage1_passed": false,
+  "instrument_state": {
+    "state": "grading_path_unobserved",
+    "note": "every check that could run, passed. The unmet checks (grading_provenance_observed) depend on grading having run, and grading never ran. That is an UNEXERCISED path, not a demonstrated fault.",
+    "failed_checks_that_ran": [],
+    "unmet_checks_requiring_grading": [
+      "grading_provenance_observed"
+    ]
+  },
+  "claims": [
+    "Instrument reporting has three states: observed checks passed, grading path unobserved, and demonstrated failure. Unobserved is never reported as broken.",
+    "The absence of a missing-submission message is not evidence that submit_patch was called; the observed call count is reported instead.",
+    "A pass shows the path produces a grade, not that the rule helped.",
+    "An accepted tool call does not prove a source change.",
+    "A missing submission means grading was not exercised: UNOBSERVED, not a fault.",
+    "Read-only operations never qualify as recovery writes.",
+    "A write_file acknowledgment (filepath plus size) does not establish a byte change: it cannot distinguish a real change from a no-op write of identical bytes.",
+    "Recovery is 'observed' only with a rejection, a different accepted MODIFYING operation on an exactly matching changed source path, and that operation's own BEFORE/AFTER change evidence; otherwise 'consistent with recovery; attribution unproven' or 'recovery unproven'."
+  ]
+}

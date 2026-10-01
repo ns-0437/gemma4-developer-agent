@@ -1,0 +1,140 @@
+{
+  "task": "rich_3894",
+  "arm": "baseline",
+  "reached_pytest": true,
+  "pytest_exit": 1,
+  "pytest_cmd": "PYTHONSAFEPATH=1 PYTHONNOUSERSITE=1 python3 -s -m pytest tests/test_inspect.py",
+  "nodes": {
+    "test_inspect::test_render": "passed",
+    "test_inspect::test_inspect_text": "passed",
+    "test_inspect::test_inspect_empty_dict": "passed",
+    "test_inspect::test_inspect_builtin_function_except_python311": "skipped",
+    "test_inspect::test_inspect_builtin_function_only_python311": "passed",
+    "test_inspect::test_inspect_coroutine": "passed",
+    "test_inspect::test_inspect_integer": "passed",
+    "test_inspect::test_inspect_integer_with_value": "passed",
+    "test_inspect::test_inspect_integer_with_methods_python38_and_python39": "skipped",
+    "test_inspect::test_inspect_integer_with_methods_python310only": "skipped",
+    "test_inspect::test_inspect_integer_with_methods_python311": "skipped",
+    "test_inspect::test_broken_call_attr": "passed",
+    "test_inspect::test_inspect_swig_edge_case": "passed",
+    "test_inspect::test_inspect_module_with_class": "passed",
+    "test_inspect::test_qualname_in_slots": "failed",
+    "test_inspect::test_can_handle_special_characters_in_docstrings[\\x07-\\\\a]": "passed",
+    "test_inspect::test_can_handle_special_characters_in_docstrings[\\x08-\\\\b]": "passed",
+    "test_inspect::test_can_handle_special_characters_in_docstrings[\\x0c-\\\\f]": "passed",
+    "test_inspect::test_can_handle_special_characters_in_docstrings[\\r-\\\\r]": "passed",
+    "test_inspect::test_can_handle_special_characters_in_docstrings[\\x0b-\\\\v]": "passed",
+    "test_inspect::test_object_types_mro[object-expected_result0]": "passed",
+    "test_inspect::test_object_types_mro[obj1-expected_result1]": "passed",
+    "test_inspect::test_object_types_mro[hi-expected_result2]": "passed",
+    "test_inspect::test_object_types_mro[str-expected_result3]": "passed",
+    "test_inspect::test_object_types_mro[obj4-expected_result4]": "passed",
+    "test_inspect::test_object_types_mro[Foo-expected_result5]": "passed",
+    "test_inspect::test_object_types_mro[obj6-expected_result6]": "passed",
+    "test_inspect::test_object_types_mro[FooSubclass-expected_result7]": "passed",
+    "test_inspect::test_object_types_mro_as_strings[hi-expected_result0]": "passed",
+    "test_inspect::test_object_types_mro_as_strings[str-expected_result1]": "passed",
+    "test_inspect::test_object_types_mro_as_strings[obj2-expected_result2]": "passed",
+    "test_inspect::test_object_types_mro_as_strings[Foo-expected_result3]": "passed",
+    "test_inspect::test_object_types_mro_as_strings[obj4-expected_result4]": "passed",
+    "test_inspect::test_object_types_mro_as_strings[FooSubclass-expected_result5]": "passed",
+    "test_inspect::test_object_is_one_of_types[hi-types0-True]": "passed",
+    "test_inspect::test_object_is_one_of_types[str-types1-True]": "passed",
+    "test_inspect::test_object_is_one_of_types[hi-types2-True]": "passed",
+    "test_inspect::test_object_is_one_of_types[str-types3-True]": "passed",
+    "test_inspect::test_object_is_one_of_types[obj4-types4-True]": "passed",
+    "test_inspect::test_object_is_one_of_types[Foo-types5-True]": "passed",
+    "test_inspect::test_object_is_one_of_types[obj6-types6-True]": "passed",
+    "test_inspect::test_object_is_one_of_types[Foo-types7-True]": "passed",
+    "test_inspect::test_object_is_one_of_types[obj8-types8-False]": "passed",
+    "test_inspect::test_object_is_one_of_types[Foo-types9-False]": "passed",
+    "test_inspect::test_object_is_one_of_types[obj10-types10-True]": "passed",
+    "test_inspect::test_object_is_one_of_types[Foo-types11-True]": "passed"
+  },
+  "failure_details": {
+    "test_inspect::test_inspect_builtin_function_except_python311": {
+      "kind": "skipped",
+      "message": "rendered differently on py3.12",
+      "detail": "/tmp/swegemma_sandbox_dbea203a-cea_fcwlgpl2/workspace/tests/test_inspect.py:148: rendered differently on py3.12"
+    },
+    "test_inspect::test_inspect_integer_with_methods_python38_and_python39": {
+      "kind": "skipped",
+      "message": "rendered differently on py3.12",
+      "detail": "/tmp/swegemma_sandbox_dbea203a-cea_fcwlgpl2/workspace/tests/test_inspect.py:225: rendered differently on py3.12"
+    },
+    "test_inspect::test_inspect_integer_with_methods_python310only": {
+      "kind": "skipped",
+      "message": "rendered differently on py3.12",
+      "detail": "/tmp/swegemma_sandbox_dbea203a-cea_fcwlgpl2/workspace/tests/test_inspect.py:263: rendered differently on py3.12"
+    },
+    "test_inspect::test_inspect_integer_with_methods_python311": {
+      "kind": "skipped",
+      "message": "rendered differently on py3.12",
+      "detail": "/tmp/swegemma_sandbox_dbea203a-cea_fcwlgpl2/workspace/tests/test_inspect.py:306: rendered differently on py3.12"
+    },
+    "test_inspect::test_qualname_in_slots": {
+      "kind": "failure",
+      "message": "AssertionError: Class with __qualname__ in __slots__ shouldn't raise Only str or Text can be appended to Text\nassert False",
+      "detail": "def test_qualname_in_slots():\n        from functools import lru_cache\n    \n        @lru_cache\n        class Klass:\n            __slots__ = (\"__qualname__\",)\n    \n        try:\n>           inspect(Klass)\n\ntests/test_inspect.py:415: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \nrich/__init__.py:173: in inspect\n    _console.print(_inspect)\nrich/console.py:1698: in print\n    renderables = self._collect_renderables(\nrich/console.py:1555: in _collect_renderables\n    renderable = rich_cast(renderable)\n                 ^^^^^^^^^^^^^^^^^^^^^\nrich/protocol.py:36: in rich_cast\n    renderable = cast_method()\n                 ^^^^^^^^^^^^^\nrich/_inspect.py:76: in __rich__\n    Group(*self._render()),\n    ^^^^^^^^^^^^^^^^^^^^^^\nrich/_inspect.py:153: in _render\n    signature = self._get_signature(\"\", obj)\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nrich/_inspect.py:113: in _get_signature\n    qual_signature = Text.assemble(\nrich/text.py:397: in assemble\n    append(*part)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <text 'def ' [Span(0, 4, 'inspect.def')] ''>\ntext = <member '__qualname__' of 'Klass' objects>, style = 'inspect.callable'\n\n    def append(\n        self, text: Union[\"Text\", str], style: Optional[Union[str, \"Style\"]] = None\n    ) -> \"Text\":\n        \"\"\"Add text with an optional style.\n    \n        Args:\n            text (Union[Text, str]): A str or Text to append.\n            style (str, optional): A sty"
+    }
+  },
+  "import_in_checkout": true,
+  "grading_import": "/tmp/swegemma_sandbox_dbea203a-cea_fcwlgpl2/workspace/rich/__init__.py",
+  "patch_rc": 0,
+  "patch_err": null,
+  "test_patch_rc": 0,
+  "test_patch_err": "",
+  "editable_rc": 0,
+  "collection_error": false,
+  "exception": null,
+  "traceback": null,
+  "task_sha256": "d8573bbb304794c15d74d3948a1fd423beec616ebc17254ec0922c36dca978e8",
+  "snapshot_sha256": "0f5d343dab89018c837a58bc0d472434f2eb8abf4bd95a479461fd2e268103a1",
+  "environment_versions": {
+    "swegemma": "0.2.7",
+    "adk-submission": "0.2.11",
+    "adk-eval-core": "0.1.0",
+    "google-adk": "1.36.1"
+  },
+  "policy_sha256": "f59934c6b6369e97d529f821c0284cc666d708e340b3654aafd16dfe5f5e37ee",
+  "setup_commands": [
+    {
+      "cmd": "pip setuptools",
+      "rc": 0
+    },
+    {
+      "cmd": "pip wheel",
+      "rc": 0
+    },
+    {
+      "cmd": "pip editables",
+      "rc": 0
+    },
+    {
+      "cmd": "pip flit_core",
+      "rc": 0
+    },
+    {
+      "cmd": "pip poetry_core",
+      "rc": 0
+    },
+    {
+      "cmd": "pip pdm_backend",
+      "rc": 0
+    },
+    {
+      "cmd": "pip -e .",
+      "rc": 0,
+      "tail": "ent /tmp/swegemma_sandbox_dbea203a-cea_fcwlgpl2/venv\n    Can't uninstall 'rich'. No files were found to uninstall.\nSuccessfully installed rich-14.2.0\n"
+    },
+    {
+      "cmd": "checkout tests/test_inspect.py",
+      "rc": 0
+    },
+    {
+      "cmd": "clean tests/test_inspect.py",
+      "rc": 0
+    }
+  ]
+}

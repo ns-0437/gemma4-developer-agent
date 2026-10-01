@@ -1,0 +1,32 @@
+{
+  "artifacts_dir": "reference\\stage1_run_2026-09-30",
+  "recorded": "2026-09-30",
+  "note": "recorded before any analysis; raw files are never modified",
+  "files": {
+    "candidates/A/agent.yaml": "8e890bec4c5e146402c6ef9ee22eb40388207ad8416cfd3405e040aa038ffb83",
+    "candidates/A/configs/sampling.yaml": "78eb4bf20538c713e6208d89743728dc70701c8e4ac2f2de91ad2bdb5d432c95",
+    "candidates/A/prompts/analyzer.md": "5011d37145d981e616d58fb56c5191ccbf336574fa01b3f65c2feab7d697b3a3",
+    "candidates/A/prompts/system.md": "4d42f2b7d48143cd06c31fe4c33b17a3f78da21ec2c53d9569cf6a336f6e5e79",
+    "candidates/A/sub_agents/code_analyzer.yaml": "396b75ffd1315ef93f3d1806b814a49758b9f8dd8b8caef6a092bd6cb2c2d9bb",
+    "candidates/R/agent.yaml": "8e890bec4c5e146402c6ef9ee22eb40388207ad8416cfd3405e040aa038ffb83",
+    "candidates/R/configs/sampling.yaml": "78eb4bf20538c713e6208d89743728dc70701c8e4ac2f2de91ad2bdb5d432c95",
+    "candidates/R/prompts/analyzer.md": "5011d37145d981e616d58fb56c5191ccbf336574fa01b3f65c2feab7d697b3a3",
+    "candidates/R/prompts/system.md": "74a12c7d241371f7e8a26aad9b061780bac2a5c8c5b8fd4fd9ed80f5eedea8c3",
+    "candidates/R/sub_agents/code_analyzer.yaml": "396b75ffd1315ef93f3d1806b814a49758b9f8dd8b8caef6a092bd6cb2c2d9bb",
+    "gemma4-swe-agent-stage1.log": "4dcb5f0d1d32f1e896cb44bc0c8ec2742dd0a75b8c45917d972b710ef0ea99e5",
+    "pilot/control_evidence/rich_3278__baseline.json": "d5df2feefe2359fc67fe3d5ba14b950dd1ca45e65fb166a16abbdfdf243d9d1b",
+    "pilot/control_evidence/rich_3278__baseline.junit.xml": "766360386addd911328734e68b0925c7b8366fd27a8047d2e8a57f0ade2811f1",
+    "pilot/control_evidence/rich_3278__reference.json": "1fa7cbf4d56c150d050942a29161fbf551c7023689730e77e34ac35a54e2702e",
+    "pilot/control_evidence/rich_3278__reference.junit.xml": "21b1ff2847c8c2387dc8a53f4ec5cc8743110b01f3481794d83eeda7860df606",
+    "pilot/control_recheck.json": "9475f4eb2909d717a898cdc3de8c5d5bd6dfdcf2f604e700e9049059c0b0f71f",
+    "pilot/preconditions.json": "9e3c094234e5e1728a301cbc3ac0f20dcd6083e457c211c3e25fce41f4964367",
+    "pilot/R__rich_3278/logs/rich_3278.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "pilot/R__rich_3278/summary.json": "b345b462d37184250b209f9885066372b9909e94ea50049a4c3ffd98547909de",
+    "pilot/R__rich_3278/task_results.jsonl": "bf793b923765baa2594fcc53e0a2a20116fda5bf0adf48f4f1fda9ea438ef04d",
+    "pilot/R__rich_3278/traces/trace_rich_3278.json": "e6fddbc6819556af7bf23c4a5ecb908c7ecf1cee63001fe4f0c2cc85b62932e2",
+    "pilot/runs.json": "39b21939bca028054b8640b7e8ac62250c7bcb756b3f90c10832b2f8fe4615be",
+    "pilot/setup_observations.json": "5b0ba87fac46a410d1dba51ab55e29b8bd24aa4f7b56e2c85d14546e750ad012",
+    "pilot_manifest.json": "e34e78538869758d698cb6580b0d8e1154d5297ce4c1509cc74add3c2815dbd7",
+    "pilot_results.csv": "129caa3278df8b68475b0dc2d84ab63659e2808e54047fbe429779d02a145dcc"
+  }
+}

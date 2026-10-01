@@ -1,0 +1,4668 @@
+[
+  {
+    "id": "rich_3894",
+    "repo": "Textualize/rich",
+    "size": "small",
+    "task_sha256": "d8573bbb304794c15d74d3948a1fd423beec616ebc17254ec0922c36dca978e8",
+    "valid": true,
+    "exclusion_reasons": [],
+    "target_nodes": [
+      "test_inspect::test_qualname_in_slots"
+    ],
+    "n_target_nodes": 1,
+    "baseline": {
+      "pytest_exit": 1,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_0b68d171-6c3_yeqgesq6/workspace/rich/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": false
+    },
+    "reference": {
+      "pytest_exit": 0,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_a80209a3-4c8_t200amlx/workspace/rich/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": false
+    },
+    "commands": [
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "ent /tmp/swegemma_sandbox_0b68d171-6c3_yeqgesq6/venv\n    Can't uninstall 'rich'. No files were found to uninstall.\nSuccessfully installed rich-14.2.0\n"
+      },
+      {
+        "cmd": "checkout tests/test_inspect.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_inspect.py",
+        "rc": 0
+      },
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "ent /tmp/swegemma_sandbox_a80209a3-4c8_t200amlx/venv\n    Can't uninstall 'rich'. No files were found to uninstall.\nSuccessfully installed rich-14.2.0\n"
+      },
+      {
+        "cmd": "checkout tests/test_inspect.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_inspect.py",
+        "rc": 0
+      }
+    ]
+  },
+  {
+    "id": "rich_3535",
+    "repo": "Textualize/rich",
+    "size": "small",
+    "task_sha256": "3c70ac67cc8e78d329459615dd6db711e2715b92f6da4632cc4905f1faf0ad18",
+    "valid": true,
+    "exclusion_reasons": [],
+    "target_nodes": [
+      "test_cells::test_is_single_cell_widths"
+    ],
+    "n_target_nodes": 1,
+    "baseline": {
+      "pytest_exit": 1,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_1cba8163-e0c_4yhgbck4/workspace/rich/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": false
+    },
+    "reference": {
+      "pytest_exit": 0,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_c3868f91-65d_ja05os_1/workspace/rich/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": false
+    },
+    "commands": [
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "ent /tmp/swegemma_sandbox_1cba8163-e0c_4yhgbck4/venv\n    Can't uninstall 'rich'. No files were found to uninstall.\nSuccessfully installed rich-13.9.2\n"
+      },
+      {
+        "cmd": "checkout tests/test_cells.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_cells.py",
+        "rc": 0
+      },
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "ent /tmp/swegemma_sandbox_c3868f91-65d_ja05os_1/venv\n    Can't uninstall 'rich'. No files were found to uninstall.\nSuccessfully installed rich-13.9.2\n"
+      },
+      {
+        "cmd": "checkout tests/test_cells.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_cells.py",
+        "rc": 0
+      }
+    ]
+  },
+  {
+    "id": "rich_3772",
+    "repo": "Textualize/rich",
+    "size": "medium",
+    "task_sha256": "f35bc82c01e1c4f892218c1dff1bdde62182d0d0347e4b4f0c12f9772cd1eb47",
+    "valid": false,
+    "exclusion_reasons": [
+      "no JUnit report (tests never ran)",
+      "no node fails at baseline and passes with reference"
+    ],
+    "target_nodes": [],
+    "n_target_nodes": 0,
+    "baseline": {
+      "pytest_exit": 124,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_bf100729-65c_wppjc2np/workspace/rich/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": false
+    },
+    "reference": {
+      "pytest_exit": 0,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_44a949ac-6c8_kms30l2c/workspace/rich/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": false
+    },
+    "commands": [
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "ent /tmp/swegemma_sandbox_bf100729-65c_wppjc2np/venv\n    Can't uninstall 'rich'. No files were found to uninstall.\nSuccessfully installed rich-14.0.0\n"
+      },
+      {
+        "cmd": "checkout tests/test_traceback.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_traceback.py",
+        "rc": 0
+      },
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "ent /tmp/swegemma_sandbox_44a949ac-6c8_kms30l2c/venv\n    Can't uninstall 'rich'. No files were found to uninstall.\nSuccessfully installed rich-14.0.0\n"
+      },
+      {
+        "cmd": "checkout tests/test_traceback.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_traceback.py",
+        "rc": 0
+      }
+    ]
+  },
+  {
+    "id": "rich_3278",
+    "repo": "Textualize/rich",
+    "size": "small",
+    "task_sha256": "8fb8127fdb3e069ae02db8a0e3d2e5306b96e7d42a1ab7c3185da2e269cd61bf",
+    "valid": true,
+    "exclusion_reasons": [],
+    "target_nodes": [
+      "test_ansi::test_strip_private_escape_sequences[0]",
+      "test_ansi::test_strip_private_escape_sequences[1]",
+      "test_ansi::test_strip_private_escape_sequences[2]",
+      "test_ansi::test_strip_private_escape_sequences[3]",
+      "test_ansi::test_strip_private_escape_sequences[4]",
+      "test_ansi::test_strip_private_escape_sequences[5]",
+      "test_ansi::test_strip_private_escape_sequences[6]",
+      "test_ansi::test_strip_private_escape_sequences[7]",
+      "test_ansi::test_strip_private_escape_sequences[8]",
+      "test_ansi::test_strip_private_escape_sequences[9]",
+      "test_ansi::test_strip_private_escape_sequences[:]",
+      "test_ansi::test_strip_private_escape_sequences[;]"
+    ],
+    "n_target_nodes": 16,
+    "baseline": {
+      "pytest_exit": 1,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_62cc3395-b14_dd9_qr8z/workspace/rich/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": false
+    },
+    "reference": {
+      "pytest_exit": 0,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_3f5db582-163_nyre_gxb/workspace/rich/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": false
+    },
+    "commands": [
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "ent /tmp/swegemma_sandbox_62cc3395-b14_dd9_qr8z/venv\n    Can't uninstall 'rich'. No files were found to uninstall.\nSuccessfully installed rich-13.7.1\n"
+      },
+      {
+        "cmd": "checkout tests/test_ansi.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_ansi.py",
+        "rc": 0
+      },
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "ent /tmp/swegemma_sandbox_3f5db582-163_nyre_gxb/venv\n    Can't uninstall 'rich'. No files were found to uninstall.\nSuccessfully installed rich-13.7.1\n"
+      },
+      {
+        "cmd": "checkout tests/test_ansi.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_ansi.py",
+        "rc": 0
+      }
+    ]
+  },
+  {
+    "id": "rich_4076",
+    "repo": "Textualize/rich",
+    "size": "small",
+    "task_sha256": "cd096e8aab5e7891d02a7d08ed43dd33ef5bbe38a10a4431a19cfb692f06fc23",
+    "valid": true,
+    "exclusion_reasons": [],
+    "target_nodes": [
+      "test_ansi::test_decode",
+      "test_ansi::test_decode_example",
+      "test_ansi::test_decode_issue_2688[\\x1b[31mFound 4 errors in 2 files (checked 18 source files)\\x1b(B\\x1b[m\\n-Found 4 errors in 2 files (checked 18 source files)\\n]",
+      "test_ansi::test_decode_newlines"
+    ],
+    "n_target_nodes": 4,
+    "baseline": {
+      "pytest_exit": 1,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_76b5ed41-b9b_s_rg91gv/workspace/rich/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": false
+    },
+    "reference": {
+      "pytest_exit": 0,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_42fecad2-e90_hjvc2x3_/workspace/rich/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": false
+    },
+    "commands": [
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "ent /tmp/swegemma_sandbox_76b5ed41-b9b_s_rg91gv/venv\n    Can't uninstall 'rich'. No files were found to uninstall.\nSuccessfully installed rich-14.3.4\n"
+      },
+      {
+        "cmd": "checkout tests/test_ansi.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_ansi.py",
+        "rc": 0
+      },
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "ent /tmp/swegemma_sandbox_42fecad2-e90_hjvc2x3_/venv\n    Can't uninstall 'rich'. No files were found to uninstall.\nSuccessfully installed rich-14.3.4\n"
+      },
+      {
+        "cmd": "checkout tests/test_ansi.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_ansi.py",
+        "rc": 0
+      }
+    ]
+  },
+  {
+    "id": "rich_3905",
+    "repo": "Textualize/rich",
+    "size": "small",
+    "task_sha256": "1fcd96e259cc014927d992a5fb8426e03f388757501010dbb4bd45d7e520427c",
+    "valid": true,
+    "exclusion_reasons": [],
+    "target_nodes": [
+      "test_progress::test_no_output_if_progress_is_disabled_non_interactive"
+    ],
+    "n_target_nodes": 1,
+    "baseline": {
+      "pytest_exit": 1,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_69582205-30e_8xvo3zdr/workspace/rich/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": false
+    },
+    "reference": {
+      "pytest_exit": 0,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_2096c549-313_r6y40rkn/workspace/rich/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": false
+    },
+    "commands": [
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "ent /tmp/swegemma_sandbox_69582205-30e_8xvo3zdr/venv\n    Can't uninstall 'rich'. No files were found to uninstall.\nSuccessfully installed rich-14.2.0\n"
+      },
+      {
+        "cmd": "checkout tests/test_progress.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_progress.py",
+        "rc": 0
+      },
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "ent /tmp/swegemma_sandbox_2096c549-313_r6y40rkn/venv\n    Can't uninstall 'rich'. No files were found to uninstall.\nSuccessfully installed rich-14.2.0\n"
+      },
+      {
+        "cmd": "checkout tests/test_progress.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_progress.py",
+        "rc": 0
+      }
+    ]
+  },
+  {
+    "id": "rich_3472",
+    "repo": "Textualize/rich",
+    "size": "small",
+    "task_sha256": "751ec31b30df40d353b7bb8d3d48ce1d57a00a39756990fd266ff02b9322afb1",
+    "valid": true,
+    "exclusion_reasons": [],
+    "target_nodes": [
+      "test_pretty::test_dataclass_no_attribute"
+    ],
+    "n_target_nodes": 1,
+    "baseline": {
+      "pytest_exit": 1,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_960d4722-25a_jta3vnh3/workspace/rich/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": false
+    },
+    "reference": {
+      "pytest_exit": 0,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_f5a8ff50-018_ug9ncrpj/workspace/rich/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": false
+    },
+    "commands": [
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "ent /tmp/swegemma_sandbox_960d4722-25a_jta3vnh3/venv\n    Can't uninstall 'rich'. No files were found to uninstall.\nSuccessfully installed rich-13.7.1\n"
+      },
+      {
+        "cmd": "checkout tests/test_pretty.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_pretty.py",
+        "rc": 0
+      },
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "ent /tmp/swegemma_sandbox_f5a8ff50-018_ug9ncrpj/venv\n    Can't uninstall 'rich'. No files were found to uninstall.\nSuccessfully installed rich-13.7.1\n"
+      },
+      {
+        "cmd": "checkout tests/test_pretty.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_pretty.py",
+        "rc": 0
+      }
+    ]
+  },
+  {
+    "id": "rich_4079",
+    "repo": "Textualize/rich",
+    "size": "small",
+    "task_sha256": "c3cacbe9f2f4dce6220eadf0df8b3998bfa0268fca6e457595d207b7d217d3cd",
+    "valid": true,
+    "exclusion_reasons": [],
+    "target_nodes": [
+      "test_markdown::test_inline_code_in_table_cells"
+    ],
+    "n_target_nodes": 1,
+    "baseline": {
+      "pytest_exit": 1,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_c0109ec3-207_wc9hc2sz/workspace/rich/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": false
+    },
+    "reference": {
+      "pytest_exit": 0,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_6d249827-ec6_dkmv7klk/workspace/rich/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": false
+    },
+    "commands": [
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "ent /tmp/swegemma_sandbox_c0109ec3-207_wc9hc2sz/venv\n    Can't uninstall 'rich'. No files were found to uninstall.\nSuccessfully installed rich-14.3.4\n"
+      },
+      {
+        "cmd": "checkout tests/test_markdown.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_markdown.py",
+        "rc": 0
+      },
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "ent /tmp/swegemma_sandbox_6d249827-ec6_dkmv7klk/venv\n    Can't uninstall 'rich'. No files were found to uninstall.\nSuccessfully installed rich-14.3.4\n"
+      },
+      {
+        "cmd": "checkout tests/test_markdown.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_markdown.py",
+        "rc": 0
+      }
+    ]
+  },
+  {
+    "id": "rich_3470",
+    "repo": "Textualize/rich",
+    "size": "small",
+    "task_sha256": "728c43f6383dcb2dbd8fd8fc00af8256ccb3adf34a0a0320e24f058dcac66c88",
+    "valid": true,
+    "exclusion_reasons": [],
+    "target_nodes": [
+      "test_console::test_capture_and_record"
+    ],
+    "n_target_nodes": 1,
+    "baseline": {
+      "pytest_exit": 1,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_5935751f-990_6x47_bfj/workspace/rich/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": false
+    },
+    "reference": {
+      "pytest_exit": 0,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_30d146e9-b80_493k73uk/workspace/rich/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": false
+    },
+    "commands": [
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "ent /tmp/swegemma_sandbox_5935751f-990_6x47_bfj/venv\n    Can't uninstall 'rich'. No files were found to uninstall.\nSuccessfully installed rich-13.7.1\n"
+      },
+      {
+        "cmd": "checkout tests/test_console.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_console.py",
+        "rc": 0
+      },
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "ent /tmp/swegemma_sandbox_30d146e9-b80_493k73uk/venv\n    Can't uninstall 'rich'. No files were found to uninstall.\nSuccessfully installed rich-13.7.1\n"
+      },
+      {
+        "cmd": "checkout tests/test_console.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_console.py",
+        "rc": 0
+      }
+    ]
+  },
+  {
+    "id": "rich_3180",
+    "repo": "Textualize/rich",
+    "size": "large",
+    "task_sha256": "776163701370985632d4b3f874480f5d11fa597bd5f16690875006e8ff7e64a0",
+    "valid": true,
+    "exclusion_reasons": [],
+    "target_nodes": [
+      "test_cells::test_chop_cells",
+      "test_cells::test_chop_cells_double_width_boundary",
+      "test_cells::test_chop_cells_mixed_width",
+      "test_text::test_wrap_cjk_mixed"
+    ],
+    "n_target_nodes": 4,
+    "baseline": {
+      "pytest_exit": 1,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_76258f89-dff_bhiffslg/workspace/rich/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": false
+    },
+    "reference": {
+      "pytest_exit": 0,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_d7e1719b-9c8_4tm3zd9l/workspace/rich/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": false
+    },
+    "commands": [
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "ent /tmp/swegemma_sandbox_76258f89-dff_bhiffslg/venv\n    Can't uninstall 'rich'. No files were found to uninstall.\nSuccessfully installed rich-13.6.0\n"
+      },
+      {
+        "cmd": "checkout tests/test_cells.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_cells.py",
+        "rc": 0
+      },
+      {
+        "cmd": "checkout tests/test_text.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_text.py",
+        "rc": 0
+      },
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "ent /tmp/swegemma_sandbox_d7e1719b-9c8_4tm3zd9l/venv\n    Can't uninstall 'rich'. No files were found to uninstall.\nSuccessfully installed rich-13.6.0\n"
+      },
+      {
+        "cmd": "checkout tests/test_cells.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_cells.py",
+        "rc": 0
+      },
+      {
+        "cmd": "checkout tests/test_text.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_text.py",
+        "rc": 0
+      }
+    ]
+  },
+  {
+    "id": "rich_3130",
+    "repo": "Textualize/rich",
+    "size": "small",
+    "task_sha256": "fec1095fbd2a317b7faf2545bd6697ec793c7edef084da75e89e2ca955d022f9",
+    "valid": false,
+    "exclusion_reasons": [
+      "reference run has failing/erroring nodes"
+    ],
+    "target_nodes": [
+      "test_markdown::test_inline_styles_in_table",
+      "test_markdown::test_inline_styles_with_justification",
+      "test_markdown::test_markdown_table"
+    ],
+    "n_target_nodes": 3,
+    "baseline": {
+      "pytest_exit": 1,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_7552d707-f3f_kysnvkif/workspace/rich/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": false
+    },
+    "reference": {
+      "pytest_exit": 1,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_e1dc8e6c-58d_m2unvkad/workspace/rich/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": false
+    },
+    "commands": [
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "ent /tmp/swegemma_sandbox_7552d707-f3f_kysnvkif/venv\n    Can't uninstall 'rich'. No files were found to uninstall.\nSuccessfully installed rich-13.5.2\n"
+      },
+      {
+        "cmd": "checkout tests/test_markdown.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_markdown.py",
+        "rc": 0
+      },
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "ent /tmp/swegemma_sandbox_e1dc8e6c-58d_m2unvkad/venv\n    Can't uninstall 'rich'. No files were found to uninstall.\nSuccessfully installed rich-13.5.2\n"
+      },
+      {
+        "cmd": "checkout tests/test_markdown.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_markdown.py",
+        "rc": 0
+      }
+    ]
+  },
+  {
+    "id": "rich_3486",
+    "repo": "Textualize/rich",
+    "size": "large",
+    "task_sha256": "0cd437edcb332716de3d70dd85cc248a2b82b3f4c28cfecbad08e160880969a0",
+    "valid": true,
+    "exclusion_reasons": [],
+    "target_nodes": [
+      "test_traceback::test_traceback_finely_grained"
+    ],
+    "n_target_nodes": 1,
+    "baseline": {
+      "pytest_exit": 1,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_d6a35d87-bac_f8xbjjn8/workspace/rich/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": false
+    },
+    "reference": {
+      "pytest_exit": 0,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_995a55b8-830_625i5z_p/workspace/rich/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": false
+    },
+    "commands": [
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "ent /tmp/swegemma_sandbox_d6a35d87-bac_f8xbjjn8/venv\n    Can't uninstall 'rich'. No files were found to uninstall.\nSuccessfully installed rich-13.8.1\n"
+      },
+      {
+        "cmd": "checkout tests/test_traceback.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_traceback.py",
+        "rc": 0
+      },
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "ent /tmp/swegemma_sandbox_995a55b8-830_625i5z_p/venv\n    Can't uninstall 'rich'. No files were found to uninstall.\nSuccessfully installed rich-13.8.1\n"
+      },
+      {
+        "cmd": "checkout tests/test_traceback.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_traceback.py",
+        "rc": 0
+      }
+    ]
+  },
+  {
+    "id": "rich_3938",
+    "repo": "Textualize/rich",
+    "size": "medium",
+    "task_sha256": "43cf363ebb2736211e7cb70930220850d59ca4232ed1f5bde9c292962cddb54a",
+    "valid": true,
+    "exclusion_reasons": [],
+    "target_nodes": [
+      "test_segment::test_split_lines_terminator",
+      "test_segment::test_split_lines_terminator_single_line",
+      "test_text::test_soft_wrap_styled"
+    ],
+    "n_target_nodes": 3,
+    "baseline": {
+      "pytest_exit": 1,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_8346af4d-e67_6iy7700n/workspace/rich/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": false
+    },
+    "reference": {
+      "pytest_exit": 0,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_86a81aec-fcf_86m0o9a4/workspace/rich/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": false
+    },
+    "commands": [
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "ent /tmp/swegemma_sandbox_8346af4d-e67_6iy7700n/venv\n    Can't uninstall 'rich'. No files were found to uninstall.\nSuccessfully installed rich-14.2.0\n"
+      },
+      {
+        "cmd": "checkout tests/test_segment.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_segment.py",
+        "rc": 0
+      },
+      {
+        "cmd": "checkout tests/test_text.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_text.py",
+        "rc": 0
+      },
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "ent /tmp/swegemma_sandbox_86a81aec-fcf_86m0o9a4/venv\n    Can't uninstall 'rich'. No files were found to uninstall.\nSuccessfully installed rich-14.2.0\n"
+      },
+      {
+        "cmd": "checkout tests/test_segment.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_segment.py",
+        "rc": 0
+      },
+      {
+        "cmd": "checkout tests/test_text.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_text.py",
+        "rc": 0
+      }
+    ]
+  },
+  {
+    "id": "rich_3061",
+    "repo": "Textualize/rich",
+    "size": "large",
+    "task_sha256": "f43be9a8ad4bff5fa4108c0bcf0e65f82db7da1bb673a2653a8118a8afdda43b",
+    "valid": true,
+    "exclusion_reasons": [],
+    "target_nodes": [
+      "test_panel::test_render_size",
+      "test_text::test_extend_style",
+      "test_text::test_tabs_to_spaces_spans[[bold]X\\tY-8-X       Y-expected_spans9]",
+      "test_text::test_tabs_to_spaces_spans[[bold]\\U0001f4a9\\U0001f4a9\\U0001f4a9\\U0001f4a9\\t\\U0001f4a9-8-\\U0001f4a9\\U0001f4a9\\U0001f4a9\\U0001f4a9        \\U0001f4a9-expected_spans11]",
+      "test_text::test_tabs_to_spaces_spans[[bold]\\U0001f4a9\\t\\U0001f4a9-8-\\U0001f4a9      \\U0001f4a9-expected_spans10]",
+      "test_text::test_tabs_to_spaces_spans[[bold]\\tbar-4-    bar-expected_spans6]",
+      "test_text::test_tabs_to_spaces_spans[[bold]foo\\tbar-4-foo bar-expected_spans5]",
+      "test_text::test_tabs_to_spaces_spans[[red]foo\\tbar\\n[green]egg\\tbaz-8-foo     bar\\negg     baz-expected_spans8]",
+      "test_text::test_tabs_to_spaces_spans[\\t-4-    -expected_spans1]",
+      "test_text::test_tabs_to_spaces_spans[\\t[bold]bar-4-    bar-expected_spans7]",
+      "test_text::test_tabs_to_spaces_spans[\\tbar-4-    bar-expected_spans2]",
+      "test_text::test_tabs_to_spaces_spans[foo\\tbar-4-foo bar-expected_spans3]"
+    ],
+    "n_target_nodes": 12,
+    "baseline": {
+      "pytest_exit": 1,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_1c1086c1-107_t8arq63p/workspace/rich/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": false
+    },
+    "reference": {
+      "pytest_exit": 0,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_7012326c-a36_34q9cx9f/workspace/rich/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": false
+    },
+    "commands": [
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "ent /tmp/swegemma_sandbox_1c1086c1-107_t8arq63p/venv\n    Can't uninstall 'rich'. No files were found to uninstall.\nSuccessfully installed rich-13.4.2\n"
+      },
+      {
+        "cmd": "checkout tests/test_panel.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_panel.py",
+        "rc": 0
+      },
+      {
+        "cmd": "checkout tests/test_text.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_text.py",
+        "rc": 0
+      },
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "ent /tmp/swegemma_sandbox_7012326c-a36_34q9cx9f/venv\n    Can't uninstall 'rich'. No files were found to uninstall.\nSuccessfully installed rich-13.4.2\n"
+      },
+      {
+        "cmd": "checkout tests/test_panel.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_panel.py",
+        "rc": 0
+      },
+      {
+        "cmd": "checkout tests/test_text.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_text.py",
+        "rc": 0
+      }
+    ]
+  },
+  {
+    "id": "rich_3521",
+    "repo": "Textualize/rich",
+    "size": "medium",
+    "task_sha256": "9d467bdfe7e98567c99087260c7c2d8a0eceaf0bcbd199b78a8e881d92f73c25",
+    "valid": true,
+    "exclusion_reasons": [],
+    "target_nodes": [
+      "test_segment::test_split_cells_mixed[segment1]",
+      "test_segment::test_split_cells_mixed[segment3]",
+      "test_segment::test_split_cells_mixed[segment4]",
+      "test_segment::test_split_cells_mixed[segment7]"
+    ],
+    "n_target_nodes": 4,
+    "baseline": {
+      "pytest_exit": 1,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_0311698e-54e_q5jj7b7e/workspace/rich/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": false
+    },
+    "reference": {
+      "pytest_exit": 0,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_93910d7b-da8_jci73ck1/workspace/rich/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": false
+    },
+    "commands": [
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "ent /tmp/swegemma_sandbox_0311698e-54e_q5jj7b7e/venv\n    Can't uninstall 'rich'. No files were found to uninstall.\nSuccessfully installed rich-13.9.1\n"
+      },
+      {
+        "cmd": "checkout tests/test_segment.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_segment.py",
+        "rc": 0
+      },
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "ent /tmp/swegemma_sandbox_93910d7b-da8_jci73ck1/venv\n    Can't uninstall 'rich'. No files were found to uninstall.\nSuccessfully installed rich-13.9.1\n"
+      },
+      {
+        "cmd": "checkout tests/test_segment.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_segment.py",
+        "rc": 0
+      }
+    ]
+  },
+  {
+    "id": "rich_3782",
+    "repo": "Textualize/rich",
+    "size": "medium",
+    "task_sha256": "9ef29510d66f53619c0808842979b18671012d6efdfc212fdc8db2d1b46d9065",
+    "valid": false,
+    "exclusion_reasons": [
+      "reference run has failing/erroring nodes"
+    ],
+    "target_nodes": [
+      "test_syntax::test_padding_plus_wrap"
+    ],
+    "n_target_nodes": 1,
+    "baseline": {
+      "pytest_exit": 1,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_eb1c3df2-939_uahoi838/workspace/rich/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": false
+    },
+    "reference": {
+      "pytest_exit": 1,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_d584f92c-4f6_m1t3vh0z/workspace/rich/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": false
+    },
+    "commands": [
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "ent /tmp/swegemma_sandbox_eb1c3df2-939_uahoi838/venv\n    Can't uninstall 'rich'. No files were found to uninstall.\nSuccessfully installed rich-14.0.0\n"
+      },
+      {
+        "cmd": "checkout tests/test_syntax.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_syntax.py",
+        "rc": 0
+      },
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "ent /tmp/swegemma_sandbox_d584f92c-4f6_m1t3vh0z/venv\n    Can't uninstall 'rich'. No files were found to uninstall.\nSuccessfully installed rich-14.0.0\n"
+      },
+      {
+        "cmd": "checkout tests/test_syntax.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_syntax.py",
+        "rc": 0
+      }
+    ]
+  },
+  {
+    "id": "rich_3296",
+    "repo": "Textualize/rich",
+    "size": "small",
+    "task_sha256": "22de4dba4d4c800b5db8baffa302722741249fac1d95e0de2d4d2c143b9f1156",
+    "valid": false,
+    "exclusion_reasons": [
+      "reference run has failing/erroring nodes"
+    ],
+    "target_nodes": [
+      "test_syntax::test_background_color_override_includes_padding"
+    ],
+    "n_target_nodes": 1,
+    "baseline": {
+      "pytest_exit": 1,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_4436ff63-a21_u9u2045_/workspace/rich/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": false
+    },
+    "reference": {
+      "pytest_exit": 1,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_c420cb0e-cfa_kc3n2bt0/workspace/rich/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": false
+    },
+    "commands": [
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "ent /tmp/swegemma_sandbox_4436ff63-a21_u9u2045_/venv\n    Can't uninstall 'rich'. No files were found to uninstall.\nSuccessfully installed rich-13.7.1\n"
+      },
+      {
+        "cmd": "checkout tests/test_syntax.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_syntax.py",
+        "rc": 0
+      },
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "ent /tmp/swegemma_sandbox_c420cb0e-cfa_kc3n2bt0/venv\n    Can't uninstall 'rich'. No files were found to uninstall.\nSuccessfully installed rich-13.7.1\n"
+      },
+      {
+        "cmd": "checkout tests/test_syntax.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_syntax.py",
+        "rc": 0
+      }
+    ]
+  },
+  {
+    "id": "rich_3675",
+    "repo": "Textualize/rich",
+    "size": "medium",
+    "task_sha256": "d651989d2710c16333584401276a29f5c36026b5fff3407204f53d550f3176fb",
+    "valid": true,
+    "exclusion_reasons": [],
+    "target_nodes": [
+      "test_console::test_tty_compatible"
+    ],
+    "n_target_nodes": 1,
+    "baseline": {
+      "pytest_exit": 1,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_5a742c8f-ab8_lj817ipl/workspace/rich/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": false
+    },
+    "reference": {
+      "pytest_exit": 0,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_a7b60ef7-fe4_nlj5s01t/workspace/rich/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": false
+    },
+    "commands": [
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "ent /tmp/swegemma_sandbox_5a742c8f-ab8_lj817ipl/venv\n    Can't uninstall 'rich'. No files were found to uninstall.\nSuccessfully installed rich-13.9.4\n"
+      },
+      {
+        "cmd": "checkout tests/test_console.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_console.py",
+        "rc": 0
+      },
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "ent /tmp/swegemma_sandbox_a7b60ef7-fe4_nlj5s01t/venv\n    Can't uninstall 'rich'. No files were found to uninstall.\nSuccessfully installed rich-13.9.4\n"
+      },
+      {
+        "cmd": "checkout tests/test_console.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_console.py",
+        "rc": 0
+      }
+    ]
+  },
+  {
+    "id": "rich_3953",
+    "repo": "Textualize/rich",
+    "size": "medium",
+    "task_sha256": "e7cc72b8c46d88e17e38c3447bce739a8efd6a6b046b01baf1419ed012efd328",
+    "valid": true,
+    "exclusion_reasons": [],
+    "target_nodes": [
+      "test_cells::test_non_printable",
+      "test_cells::test_zwj"
+    ],
+    "n_target_nodes": 2,
+    "baseline": {
+      "pytest_exit": 1,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_93f02707-286_29828u7d/workspace/rich/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": false
+    },
+    "reference": {
+      "pytest_exit": 0,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_b8c5dfe0-e0e_nx5s8b4u/workspace/rich/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": false
+    },
+    "commands": [
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "ent /tmp/swegemma_sandbox_93f02707-286_29828u7d/venv\n    Can't uninstall 'rich'. No files were found to uninstall.\nSuccessfully installed rich-14.3.1\n"
+      },
+      {
+        "cmd": "checkout tests/test_cells.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_cells.py",
+        "rc": 0
+      },
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "ent /tmp/swegemma_sandbox_b8c5dfe0-e0e_nx5s8b4u/venv\n    Can't uninstall 'rich'. No files were found to uninstall.\nSuccessfully installed rich-14.3.1\n"
+      },
+      {
+        "cmd": "checkout tests/test_cells.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_cells.py",
+        "rc": 0
+      }
+    ]
+  },
+  {
+    "id": "rich_3942",
+    "repo": "Textualize/rich",
+    "size": "large",
+    "task_sha256": "b626009683a3a55af3ad72e8a4cc9cd629cb24444a2c404c073a87778b8148b8",
+    "valid": true,
+    "exclusion_reasons": [],
+    "target_nodes": [
+      "test_markdown::test_inline_styles_in_table",
+      "test_markdown::test_inline_styles_with_justification",
+      "test_markdown::test_markdown_render",
+      "test_markdown::test_markdown_table",
+      "test_markdown::test_partial_table",
+      "test_markdown_no_hyperlinks::test_markdown_render"
+    ],
+    "n_target_nodes": 6,
+    "baseline": {
+      "pytest_exit": 1,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_df9c5895-d17_pjsthjfx/workspace/rich/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": false
+    },
+    "reference": {
+      "pytest_exit": 0,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_c99bdbc7-6a1_zy_voes8/workspace/rich/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": false
+    },
+    "commands": [
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "ent /tmp/swegemma_sandbox_df9c5895-d17_pjsthjfx/venv\n    Can't uninstall 'rich'. No files were found to uninstall.\nSuccessfully installed rich-14.2.0\n"
+      },
+      {
+        "cmd": "checkout tests/_card_render.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/_card_render.py",
+        "rc": 0
+      },
+      {
+        "cmd": "checkout tests/test_markdown.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_markdown.py",
+        "rc": 0
+      },
+      {
+        "cmd": "checkout tests/test_markdown_no_hyperlinks.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_markdown_no_hyperlinks.py",
+        "rc": 0
+      },
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "ent /tmp/swegemma_sandbox_c99bdbc7-6a1_zy_voes8/venv\n    Can't uninstall 'rich'. No files were found to uninstall.\nSuccessfully installed rich-14.2.0\n"
+      },
+      {
+        "cmd": "checkout tests/_card_render.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/_card_render.py",
+        "rc": 0
+      },
+      {
+        "cmd": "checkout tests/test_markdown.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_markdown.py",
+        "rc": 0
+      },
+      {
+        "cmd": "checkout tests/test_markdown_no_hyperlinks.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_markdown_no_hyperlinks.py",
+        "rc": 0
+      }
+    ]
+  },
+  {
+    "id": "rich_3930",
+    "repo": "Textualize/rich",
+    "size": "large",
+    "task_sha256": "9fcc93957abf7cf1635a2a3a72da729514743d55dd03531010fde75416718cc8",
+    "valid": false,
+    "exclusion_reasons": [
+      "collection error",
+      "no node fails at baseline and passes with reference"
+    ],
+    "target_nodes": [],
+    "n_target_nodes": 0,
+    "baseline": {
+      "pytest_exit": 2,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_f47ada8e-e8e_szt87_ga/workspace/rich/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": true
+    },
+    "reference": {
+      "pytest_exit": 0,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_2cdeb5ad-c2d_7ycjnjd8/workspace/rich/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": false
+    },
+    "commands": [
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "ent /tmp/swegemma_sandbox_f47ada8e-e8e_szt87_ga/venv\n    Can't uninstall 'rich'. No files were found to uninstall.\nSuccessfully installed rich-14.2.0\n"
+      },
+      {
+        "cmd": "checkout tests/test_cells.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_cells.py",
+        "rc": 0
+      },
+      {
+        "cmd": "checkout tests/test_text.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_text.py",
+        "rc": 0
+      },
+      {
+        "cmd": "checkout tests/test_unicode_data.py",
+        "rc": 1
+      },
+      {
+        "cmd": "clean tests/test_unicode_data.py",
+        "rc": 0
+      },
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "ent /tmp/swegemma_sandbox_2cdeb5ad-c2d_7ycjnjd8/venv\n    Can't uninstall 'rich'. No files were found to uninstall.\nSuccessfully installed rich-14.2.0\n"
+      },
+      {
+        "cmd": "checkout tests/test_cells.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_cells.py",
+        "rc": 0
+      },
+      {
+        "cmd": "checkout tests/test_text.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_text.py",
+        "rc": 0
+      },
+      {
+        "cmd": "checkout tests/test_unicode_data.py",
+        "rc": 1
+      },
+      {
+        "cmd": "clean tests/test_unicode_data.py",
+        "rc": 0
+      }
+    ]
+  },
+  {
+    "id": "fastapi_11355",
+    "repo": "fastapi/fastapi",
+    "size": "small",
+    "task_sha256": "3b5a21a1626d793209c1968a6512586ff61580b9dd89849cc334369c8704d92a",
+    "valid": false,
+    "exclusion_reasons": [
+      "collection error",
+      "reference run has failing/erroring nodes",
+      "no node fails at baseline and passes with reference"
+    ],
+    "target_nodes": [],
+    "n_target_nodes": 0,
+    "baseline": {
+      "pytest_exit": 2,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_7a3006e6-bfc_o2c2h85g/workspace/fastapi/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": true
+    },
+    "reference": {
+      "pytest_exit": 2,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_14b0dd9f-6b4_rzs5w6l8/workspace/fastapi/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": true
+    },
+    "commands": [
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "p/swegemma_sandbox_7a3006e6-bfc_o2c2h85g/venv\n    Can't uninstall 'fastapi'. No files were found to uninstall.\nSuccessfully installed fastapi-0.123.6\n"
+      },
+      {
+        "cmd": "checkout tests/test_stringified_annotations_simple.py",
+        "rc": 1
+      },
+      {
+        "cmd": "clean tests/test_stringified_annotations_simple.py",
+        "rc": 0
+      },
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "p/swegemma_sandbox_14b0dd9f-6b4_rzs5w6l8/venv\n    Can't uninstall 'fastapi'. No files were found to uninstall.\nSuccessfully installed fastapi-0.123.6\n"
+      },
+      {
+        "cmd": "checkout tests/test_stringified_annotations_simple.py",
+        "rc": 1
+      },
+      {
+        "cmd": "clean tests/test_stringified_annotations_simple.py",
+        "rc": 0
+      }
+    ]
+  },
+  {
+    "id": "fastapi_14512",
+    "repo": "fastapi/fastapi",
+    "size": "medium",
+    "task_sha256": "866d8fa0f278916cd7cf6a27144ca4d95781e00c2ea8d034ef85d699862c9cd2",
+    "valid": false,
+    "exclusion_reasons": [
+      "collection error",
+      "reference run has failing/erroring nodes",
+      "no node fails at baseline and passes with reference"
+    ],
+    "target_nodes": [],
+    "n_target_nodes": 0,
+    "baseline": {
+      "pytest_exit": 2,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_ac72bea4-ddc_fv6e8vzb/workspace/fastapi/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": true
+    },
+    "reference": {
+      "pytest_exit": 2,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_bd8fe964-c73_9jmokb5n/workspace/fastapi/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": true
+    },
+    "commands": [
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "p/swegemma_sandbox_ac72bea4-ddc_fv6e8vzb/venv\n    Can't uninstall 'fastapi'. No files were found to uninstall.\nSuccessfully installed fastapi-0.124.2\n"
+      },
+      {
+        "cmd": "checkout tests/test_union_body_discriminator_annotated.py",
+        "rc": 1
+      },
+      {
+        "cmd": "clean tests/test_union_body_discriminator_annotated.py",
+        "rc": 0
+      },
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "p/swegemma_sandbox_bd8fe964-c73_9jmokb5n/venv\n    Can't uninstall 'fastapi'. No files were found to uninstall.\nSuccessfully installed fastapi-0.124.2\n"
+      },
+      {
+        "cmd": "checkout tests/test_union_body_discriminator_annotated.py",
+        "rc": 1
+      },
+      {
+        "cmd": "clean tests/test_union_body_discriminator_annotated.py",
+        "rc": 0
+      }
+    ]
+  },
+  {
+    "id": "fastapi_14953",
+    "repo": "fastapi/fastapi",
+    "size": "large",
+    "task_sha256": "9211bf5d42113de1a63faeb8b78a25e534039b9567f56e4e2177ff6424129a7f",
+    "valid": false,
+    "exclusion_reasons": [
+      "collection error",
+      "reference run has failing/erroring nodes",
+      "no node fails at baseline and passes with reference"
+    ],
+    "target_nodes": [],
+    "n_target_nodes": 0,
+    "baseline": {
+      "pytest_exit": 2,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_93400b18-72f_l9_b081f/workspace/fastapi/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": true
+    },
+    "reference": {
+      "pytest_exit": 2,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_9dbc3500-70d_jq_sfd6h/workspace/fastapi/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": true
+    },
+    "commands": [
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "p/swegemma_sandbox_93400b18-72f_l9_b081f/venv\n    Can't uninstall 'fastapi'. No files were found to uninstall.\nSuccessfully installed fastapi-0.129.0\n"
+      },
+      {
+        "cmd": "checkout tests/test_request_params/test_file/test_list.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_request_params/test_file/test_list.py",
+        "rc": 0
+      },
+      {
+        "cmd": "checkout tests/test_request_params/test_file/test_optional.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_request_params/test_file/test_optional.py",
+        "rc": 0
+      },
+      {
+        "cmd": "checkout tests/test_request_params/test_file/test_optional_list.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_request_params/test_file/test_optional_list.py",
+        "rc": 0
+      },
+      {
+        "cmd": "checkout tests/test_request_params/test_file/test_required.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_request_params/test_file/test_required.py",
+        "rc": 0
+      },
+      {
+        "cmd": "checkout tests/test_tutorial/test_json_base64_bytes/test_tutorial001.py",
+        "rc": 1
+      },
+      {
+        "cmd": "clean tests/test_tutorial/test_json_base64_bytes/test_tutorial001.py",
+        "rc": 0
+      },
+      {
+        "cmd": "checkout tests/test_tutorial/test_request_files/test_tutorial001.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_tutorial/test_request_files/test_tutorial001.py",
+        "rc": 0
+      },
+      {
+        "cmd": "checkout tests/test_tutorial/test_request_files/test_tutorial001_02.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_tutorial/test_request_files/test_tutorial001_02.py",
+        "rc": 0
+      },
+      {
+        "cmd": "checkout tests/test_tutorial/test_request_files/test_tutorial001_03.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_tutorial/test_request_files/test_tutorial001_03.py",
+        "rc": 0
+      },
+      {
+        "cmd": "checkout tests/test_tutorial/test_request_files/test_tutorial002.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_tutorial/test_request_files/test_tutorial002.py",
+        "rc": 0
+      },
+      {
+        "cmd": "checkout tests/test_tutorial/test_request_files/test_tutorial003.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_tutorial/test_request_files/test_tutorial003.py",
+        "rc": 0
+      },
+      {
+        "cmd": "checkout tests/test_tutorial/test_request_forms_and_files/test_tutorial001.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_tutorial/test_request_forms_and_files/test_tutorial001.py",
+        "rc": 0
+      },
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "p/swegemma_sandbox_9dbc3500-70d_jq_sfd6h/venv\n    Can't uninstall 'fastapi'. No files were found to uninstall.\nSuccessfully installed fastapi-0.129.0\n"
+      },
+      {
+        "cmd": "checkout tests/test_request_params/test_file/test_list.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_request_params/test_file/test_list.py",
+        "rc": 0
+      },
+      {
+        "cmd": "checkout tests/test_request_params/test_file/test_optional.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_request_params/test_file/test_optional.py",
+        "rc": 0
+      },
+      {
+        "cmd": "checkout tests/test_request_params/test_file/test_optional_list.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_request_params/test_file/test_optional_list.py",
+        "rc": 0
+      },
+      {
+        "cmd": "checkout tests/test_request_params/test_file/test_required.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_request_params/test_file/test_required.py",
+        "rc": 0
+      },
+      {
+        "cmd": "checkout tests/test_tutorial/test_json_base64_bytes/test_tutorial001.py",
+        "rc": 1
+      },
+      {
+        "cmd": "clean tests/test_tutorial/test_json_base64_bytes/test_tutorial001.py",
+        "rc": 0
+      },
+      {
+        "cmd": "checkout tests/test_tutorial/test_request_files/test_tutorial001.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_tutorial/test_request_files/test_tutorial001.py",
+        "rc": 0
+      },
+      {
+        "cmd": "checkout tests/test_tutorial/test_request_files/test_tutorial001_02.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_tutorial/test_request_files/test_tutorial001_02.py",
+        "rc": 0
+      },
+      {
+        "cmd": "checkout tests/test_tutorial/test_request_files/test_tutorial001_03.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_tutorial/test_request_files/test_tutorial001_03.py",
+        "rc": 0
+      },
+      {
+        "cmd": "checkout tests/test_tutorial/test_request_files/test_tutorial002.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_tutorial/test_request_files/test_tutorial002.py",
+        "rc": 0
+      },
+      {
+        "cmd": "checkout tests/test_tutorial/test_request_files/test_tutorial003.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_tutorial/test_request_files/test_tutorial003.py",
+        "rc": 0
+      },
+      {
+        "cmd": "checkout tests/test_tutorial/test_request_forms_and_files/test_tutorial001.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_tutorial/test_request_forms_and_files/test_tutorial001.py",
+        "rc": 0
+      }
+    ]
+  },
+  {
+    "id": "fastapi_15661",
+    "repo": "fastapi/fastapi",
+    "size": "large",
+    "task_sha256": "59247475c57b2c31df191e441038d4e207e2869919e7c87411d339631ed79381",
+    "valid": false,
+    "exclusion_reasons": [
+      "collection error",
+      "no node fails at baseline and passes with reference"
+    ],
+    "target_nodes": [],
+    "n_target_nodes": 0,
+    "baseline": {
+      "pytest_exit": 2,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_3a147f98-d0a_7t9ce7ng/workspace/fastapi/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": true
+    },
+    "reference": {
+      "pytest_exit": 0,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_763678c5-a5d_qz3gz_ga/workspace/fastapi/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": false
+    },
+    "commands": [
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "p/swegemma_sandbox_3a147f98-d0a_7t9ce7ng/venv\n    Can't uninstall 'fastapi'. No files were found to uninstall.\nSuccessfully installed fastapi-0.136.3\n"
+      },
+      {
+        "cmd": "checkout tests/test_prepare_release.py",
+        "rc": 1
+      },
+      {
+        "cmd": "clean tests/test_prepare_release.py",
+        "rc": 0
+      },
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "p/swegemma_sandbox_763678c5-a5d_qz3gz_ga/venv\n    Can't uninstall 'fastapi'. No files were found to uninstall.\nSuccessfully installed fastapi-0.136.3\n"
+      },
+      {
+        "cmd": "checkout tests/test_prepare_release.py",
+        "rc": 1
+      },
+      {
+        "cmd": "clean tests/test_prepare_release.py",
+        "rc": 0
+      }
+    ]
+  },
+  {
+    "id": "fastapi_15280",
+    "repo": "fastapi/fastapi",
+    "size": "large",
+    "task_sha256": "2e6b43f033725cb2a5398b1cbe4b8a91b6027962ece919764d4faced4e840be9",
+    "valid": true,
+    "exclusion_reasons": [],
+    "target_nodes": [
+      "tests.test_vibe::test_vibe_raises"
+    ],
+    "n_target_nodes": 1,
+    "baseline": {
+      "pytest_exit": 1,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_7deafd2b-aef_m23cito5/workspace/fastapi/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": false
+    },
+    "reference": {
+      "pytest_exit": 0,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_447e649d-158_qjrogd07/workspace/fastapi/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": false
+    },
+    "commands": [
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "p/swegemma_sandbox_7deafd2b-aef_m23cito5/venv\n    Can't uninstall 'fastapi'. No files were found to uninstall.\nSuccessfully installed fastapi-0.135.2\n"
+      },
+      {
+        "cmd": "checkout tests/test_vibe.py",
+        "rc": 1
+      },
+      {
+        "cmd": "clean tests/test_vibe.py",
+        "rc": 0
+      },
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "p/swegemma_sandbox_447e649d-158_qjrogd07/venv\n    Can't uninstall 'fastapi'. No files were found to uninstall.\nSuccessfully installed fastapi-0.135.2\n"
+      },
+      {
+        "cmd": "checkout tests/test_vibe.py",
+        "rc": 1
+      },
+      {
+        "cmd": "clean tests/test_vibe.py",
+        "rc": 0
+      }
+    ]
+  },
+  {
+    "id": "fastapi_13537",
+    "repo": "fastapi/fastapi",
+    "size": "small",
+    "task_sha256": "fedfffd2fa3b1f1e251e65891b8f3b2a3163b17bc3ac9ea46aeb07993481eed4",
+    "valid": true,
+    "exclusion_reasons": [],
+    "target_nodes": [
+      "tests.test_form_default::test_form_default_multi_part",
+      "tests.test_form_default::test_form_default_url_encoded"
+    ],
+    "n_target_nodes": 2,
+    "baseline": {
+      "pytest_exit": 1,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_3d19093e-099_c81n700e/workspace/fastapi/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": false
+    },
+    "reference": {
+      "pytest_exit": 0,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_89230353-6e7_t4pw7twf/workspace/fastapi/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": false
+    },
+    "commands": [
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "p/swegemma_sandbox_3d19093e-099_c81n700e/venv\n    Can't uninstall 'fastapi'. No files were found to uninstall.\nSuccessfully installed fastapi-0.123.0\n"
+      },
+      {
+        "cmd": "checkout tests/test_form_default.py",
+        "rc": 1
+      },
+      {
+        "cmd": "clean tests/test_form_default.py",
+        "rc": 0
+      },
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "p/swegemma_sandbox_89230353-6e7_t4pw7twf/venv\n    Can't uninstall 'fastapi'. No files were found to uninstall.\nSuccessfully installed fastapi-0.123.0\n"
+      },
+      {
+        "cmd": "checkout tests/test_form_default.py",
+        "rc": 1
+      },
+      {
+        "cmd": "clean tests/test_form_default.py",
+        "rc": 0
+      }
+    ]
+  },
+  {
+    "id": "fastapi_14479",
+    "repo": "fastapi/fastapi",
+    "size": "small",
+    "task_sha256": "368f6b6eac0022fdbf2eda6a26e902f2a59f89ec1ede206af5f9eb8c6c93b25b",
+    "valid": true,
+    "exclusion_reasons": [],
+    "target_nodes": [
+      "tests.test_invalid_sequence_param::test_invalid_dict",
+      "tests.test_invalid_sequence_param::test_invalid_sequence",
+      "tests.test_invalid_sequence_param::test_invalid_simple_dict",
+      "tests.test_invalid_sequence_param::test_invalid_tuple"
+    ],
+    "n_target_nodes": 4,
+    "baseline": {
+      "pytest_exit": 1,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_e39dfb7a-1f8_wuska4lf/workspace/fastapi/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": false
+    },
+    "reference": {
+      "pytest_exit": 0,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_bd9919cd-417_00wt7lr5/workspace/fastapi/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": false
+    },
+    "commands": [
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "p/swegemma_sandbox_e39dfb7a-1f8_wuska4lf/venv\n    Can't uninstall 'fastapi'. No files were found to uninstall.\nSuccessfully installed fastapi-0.127.0\n"
+      },
+      {
+        "cmd": "checkout tests/test_invalid_sequence_param.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_invalid_sequence_param.py",
+        "rc": 0
+      },
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "p/swegemma_sandbox_bd9919cd-417_00wt7lr5/venv\n    Can't uninstall 'fastapi'. No files were found to uninstall.\nSuccessfully installed fastapi-0.127.0\n"
+      },
+      {
+        "cmd": "checkout tests/test_invalid_sequence_param.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_invalid_sequence_param.py",
+        "rc": 0
+      }
+    ]
+  },
+  {
+    "id": "fastapi_14349",
+    "repo": "fastapi/fastapi",
+    "size": "small",
+    "task_sha256": "2bb80ad92de914f24be7d3006523077befa0234b97a09f5b3fe44339644c6fdd",
+    "valid": false,
+    "exclusion_reasons": [
+      "collection error",
+      "reference run has failing/erroring nodes",
+      "no node fails at baseline and passes with reference"
+    ],
+    "target_nodes": [],
+    "n_target_nodes": 0,
+    "baseline": {
+      "pytest_exit": 2,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_deadc563-978_uc0pxyiv/workspace/fastapi/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": true
+    },
+    "reference": {
+      "pytest_exit": 2,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_b9f93aee-ea4_c3z3ecjh/workspace/fastapi/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": true
+    },
+    "commands": [
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "p/swegemma_sandbox_deadc563-978_uc0pxyiv/venv\n    Can't uninstall 'fastapi'. No files were found to uninstall.\nSuccessfully installed fastapi-0.121.1\n"
+      },
+      {
+        "cmd": "checkout tests/test_schema_ref_pydantic_v2.py",
+        "rc": 1
+      },
+      {
+        "cmd": "clean tests/test_schema_ref_pydantic_v2.py",
+        "rc": 0
+      },
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "p/swegemma_sandbox_b9f93aee-ea4_c3z3ecjh/venv\n    Can't uninstall 'fastapi'. No files were found to uninstall.\nSuccessfully installed fastapi-0.121.1\n"
+      },
+      {
+        "cmd": "checkout tests/test_schema_ref_pydantic_v2.py",
+        "rc": 1
+      },
+      {
+        "cmd": "clean tests/test_schema_ref_pydantic_v2.py",
+        "rc": 0
+      }
+    ]
+  },
+  {
+    "id": "fastapi_14266",
+    "repo": "fastapi/fastapi",
+    "size": "small",
+    "task_sha256": "34b2ea6a469a23e13dd050d013ea6ad192b70c1742e99ebe96ee85432ed1fbaf",
+    "valid": false,
+    "exclusion_reasons": [
+      "collection error",
+      "reference run has failing/erroring nodes",
+      "no node fails at baseline and passes with reference"
+    ],
+    "target_nodes": [],
+    "n_target_nodes": 0,
+    "baseline": {
+      "pytest_exit": 2,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_54eb8791-aa0_tp4402tp/workspace/fastapi/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": true
+    },
+    "reference": {
+      "pytest_exit": 2,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_c6eeb7b7-92c_2gqduwxc/workspace/fastapi/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": true
+    },
+    "commands": [
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "p/swegemma_sandbox_54eb8791-aa0_tp4402tp/venv\n    Can't uninstall 'fastapi'. No files were found to uninstall.\nSuccessfully installed fastapi-0.120.3\n"
+      },
+      {
+        "cmd": "checkout tests/test_top_level_security_scheme_in_openapi.py",
+        "rc": 1
+      },
+      {
+        "cmd": "clean tests/test_top_level_security_scheme_in_openapi.py",
+        "rc": 0
+      },
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "p/swegemma_sandbox_c6eeb7b7-92c_2gqduwxc/venv\n    Can't uninstall 'fastapi'. No files were found to uninstall.\nSuccessfully installed fastapi-0.120.3\n"
+      },
+      {
+        "cmd": "checkout tests/test_top_level_security_scheme_in_openapi.py",
+        "rc": 1
+      },
+      {
+        "cmd": "clean tests/test_top_level_security_scheme_in_openapi.py",
+        "rc": 0
+      }
+    ]
+  },
+  {
+    "id": "fastapi_14077",
+    "repo": "fastapi/fastapi",
+    "size": "small",
+    "task_sha256": "a973ef3cc60bdc94582b499bf0f3e216a9cd919f06171ee0893e5b43229f5bfd",
+    "valid": false,
+    "exclusion_reasons": [
+      "no node fails at baseline and passes with reference"
+    ],
+    "target_nodes": [],
+    "n_target_nodes": 0,
+    "baseline": {
+      "pytest_exit": 0,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_c0f42593-5b3_zzznhy98/workspace/fastapi/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": false
+    },
+    "reference": {
+      "pytest_exit": 0,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_23bdf994-3c7_jpvim6l5/workspace/fastapi/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": false
+    },
+    "commands": [
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "p/swegemma_sandbox_c0f42593-5b3_zzznhy98/venv\n    Can't uninstall 'fastapi'. No files were found to uninstall.\nSuccessfully installed fastapi-0.116.1\n"
+      },
+      {
+        "cmd": "checkout tests/test_enforce_once_required_parameter.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_enforce_once_required_parameter.py",
+        "rc": 0
+      },
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "p/swegemma_sandbox_23bdf994-3c7_jpvim6l5/venv\n    Can't uninstall 'fastapi'. No files were found to uninstall.\nSuccessfully installed fastapi-0.116.1\n"
+      },
+      {
+        "cmd": "checkout tests/test_enforce_once_required_parameter.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_enforce_once_required_parameter.py",
+        "rc": 0
+      }
+    ]
+  },
+  {
+    "id": "fastapi_14487",
+    "repo": "fastapi/fastapi",
+    "size": "small",
+    "task_sha256": "12cb36cfab5717353ca691a72dab837b244afb598b5072b6af0166d077231fc7",
+    "valid": true,
+    "exclusion_reasons": [],
+    "target_nodes": [
+      "tests.test_tutorial.test_handling_errors.test_tutorial004::test_get_validation_error"
+    ],
+    "n_target_nodes": 1,
+    "baseline": {
+      "pytest_exit": 1,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_b3e8e348-7e7_jjwyov00/workspace/fastapi/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": false
+    },
+    "reference": {
+      "pytest_exit": 0,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_957886fe-4c4_qx9ul3p3/workspace/fastapi/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": false
+    },
+    "commands": [
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "p/swegemma_sandbox_b3e8e348-7e7_jjwyov00/venv\n    Can't uninstall 'fastapi'. No files were found to uninstall.\nSuccessfully installed fastapi-0.124.2\n"
+      },
+      {
+        "cmd": "checkout tests/test_tutorial/test_handling_errors/test_tutorial004.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_tutorial/test_handling_errors/test_tutorial004.py",
+        "rc": 0
+      },
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "p/swegemma_sandbox_957886fe-4c4_qx9ul3p3/venv\n    Can't uninstall 'fastapi'. No files were found to uninstall.\nSuccessfully installed fastapi-0.124.2\n"
+      },
+      {
+        "cmd": "checkout tests/test_tutorial/test_handling_errors/test_tutorial004.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_tutorial/test_handling_errors/test_tutorial004.py",
+        "rc": 0
+      }
+    ]
+  },
+  {
+    "id": "fastapi_15030",
+    "repo": "fastapi/fastapi",
+    "size": "large",
+    "task_sha256": "6a767db6e3fc1672fa1e5e22a4b2f5c47fcda8f2b3898f222f9576c461f97211",
+    "valid": false,
+    "exclusion_reasons": [
+      "collection error",
+      "reference run has failing/erroring nodes",
+      "no node fails at baseline and passes with reference"
+    ],
+    "target_nodes": [],
+    "n_target_nodes": 0,
+    "baseline": {
+      "pytest_exit": 2,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_9e52d455-cbb_rwy_vi5m/workspace/fastapi/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": true
+    },
+    "reference": {
+      "pytest_exit": 2,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_d98398ff-4a3_7zqe9zqx/workspace/fastapi/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": true
+    },
+    "commands": [
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "p/swegemma_sandbox_9e52d455-cbb_rwy_vi5m/venv\n    Can't uninstall 'fastapi'. No files were found to uninstall.\nSuccessfully installed fastapi-0.134.0\n"
+      },
+      {
+        "cmd": "checkout tests/test_sse.py",
+        "rc": 1
+      },
+      {
+        "cmd": "clean tests/test_sse.py",
+        "rc": 0
+      },
+      {
+        "cmd": "checkout tests/test_tutorial/test_server_sent_events/test_tutorial001.py",
+        "rc": 1
+      },
+      {
+        "cmd": "clean tests/test_tutorial/test_server_sent_events/test_tutorial001.py",
+        "rc": 0
+      },
+      {
+        "cmd": "checkout tests/test_tutorial/test_server_sent_events/test_tutorial002.py",
+        "rc": 1
+      },
+      {
+        "cmd": "clean tests/test_tutorial/test_server_sent_events/test_tutorial002.py",
+        "rc": 0
+      },
+      {
+        "cmd": "checkout tests/test_tutorial/test_server_sent_events/test_tutorial003.py",
+        "rc": 1
+      },
+      {
+        "cmd": "clean tests/test_tutorial/test_server_sent_events/test_tutorial003.py",
+        "rc": 0
+      },
+      {
+        "cmd": "checkout tests/test_tutorial/test_server_sent_events/test_tutorial004.py",
+        "rc": 1
+      },
+      {
+        "cmd": "clean tests/test_tutorial/test_server_sent_events/test_tutorial004.py",
+        "rc": 0
+      },
+      {
+        "cmd": "checkout tests/test_tutorial/test_server_sent_events/test_tutorial005.py",
+        "rc": 1
+      },
+      {
+        "cmd": "clean tests/test_tutorial/test_server_sent_events/test_tutorial005.py",
+        "rc": 0
+      },
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "p/swegemma_sandbox_d98398ff-4a3_7zqe9zqx/venv\n    Can't uninstall 'fastapi'. No files were found to uninstall.\nSuccessfully installed fastapi-0.134.0\n"
+      },
+      {
+        "cmd": "checkout tests/test_sse.py",
+        "rc": 1
+      },
+      {
+        "cmd": "clean tests/test_sse.py",
+        "rc": 0
+      },
+      {
+        "cmd": "checkout tests/test_tutorial/test_server_sent_events/test_tutorial001.py",
+        "rc": 1
+      },
+      {
+        "cmd": "clean tests/test_tutorial/test_server_sent_events/test_tutorial001.py",
+        "rc": 0
+      },
+      {
+        "cmd": "checkout tests/test_tutorial/test_server_sent_events/test_tutorial002.py",
+        "rc": 1
+      },
+      {
+        "cmd": "clean tests/test_tutorial/test_server_sent_events/test_tutorial002.py",
+        "rc": 0
+      },
+      {
+        "cmd": "checkout tests/test_tutorial/test_server_sent_events/test_tutorial003.py",
+        "rc": 1
+      },
+      {
+        "cmd": "clean tests/test_tutorial/test_server_sent_events/test_tutorial003.py",
+        "rc": 0
+      },
+      {
+        "cmd": "checkout tests/test_tutorial/test_server_sent_events/test_tutorial004.py",
+        "rc": 1
+      },
+      {
+        "cmd": "clean tests/test_tutorial/test_server_sent_events/test_tutorial004.py",
+        "rc": 0
+      },
+      {
+        "cmd": "checkout tests/test_tutorial/test_server_sent_events/test_tutorial005.py",
+        "rc": 1
+      },
+      {
+        "cmd": "clean tests/test_tutorial/test_server_sent_events/test_tutorial005.py",
+        "rc": 0
+      }
+    ]
+  },
+  {
+    "id": "fastapi_15800",
+    "repo": "fastapi/fastapi",
+    "size": "large",
+    "task_sha256": "349aab36d64f6f9ae806c9da6649f387adc72ce448f10a1fb7177b408f6ea2b2",
+    "valid": true,
+    "exclusion_reasons": [],
+    "target_nodes": [
+      "tests.test_frontend::test_404_fallback_handles_missing_assets",
+      "tests.test_frontend::test_api_route_404_is_not_replaced_by_frontend_fallback",
+      "tests.test_frontend::test_apirouter_frontend_uses_include_prefix",
+      "tests.test_frontend::test_apirouter_frontend_with_router_prefix_and_frontend_subpath",
+      "tests.test_frontend::test_auto_fallback_prefers_404_over_index",
+      "tests.test_frontend::test_auto_fallback_returns_normal_404_without_fallback_files",
+      "tests.test_frontend::test_auto_fallback_uses_index_when_404_is_missing",
+      "tests.test_frontend::test_basic_file_serving",
+      "tests.test_frontend::test_check_dir_false_allows_missing_directory_and_fails_on_request",
+      "tests.test_frontend::test_check_dir_true_fails_early_for_missing_directory",
+      "tests.test_frontend::test_directory_index_and_redirect",
+      "tests.test_frontend::test_docs_frontend_examples[tutorial001_py310.py-files0-/asset.txt-200-asset]"
+    ],
+    "n_target_nodes": 60,
+    "baseline": {
+      "pytest_exit": 1,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_4b307ece-14c_a91jg62h/workspace/fastapi/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": false
+    },
+    "reference": {
+      "pytest_exit": 0,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_78ef541b-27b_7mzk26iz/workspace/fastapi/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": false
+    },
+    "commands": [
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "p/swegemma_sandbox_4b307ece-14c_a91jg62h/venv\n    Can't uninstall 'fastapi'. No files were found to uninstall.\nSuccessfully installed fastapi-0.137.2\n"
+      },
+      {
+        "cmd": "checkout tests/test_frontend.py",
+        "rc": 1
+      },
+      {
+        "cmd": "clean tests/test_frontend.py",
+        "rc": 0
+      },
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "p/swegemma_sandbox_78ef541b-27b_7mzk26iz/venv\n    Can't uninstall 'fastapi'. No files were found to uninstall.\nSuccessfully installed fastapi-0.137.2\n"
+      },
+      {
+        "cmd": "checkout tests/test_frontend.py",
+        "rc": 1
+      },
+      {
+        "cmd": "clean tests/test_frontend.py",
+        "rc": 0
+      }
+    ]
+  },
+  {
+    "id": "fastapi_14099",
+    "repo": "fastapi/fastapi",
+    "size": "large",
+    "task_sha256": "63da50c26cd46eb985c2bd58e9319125591081f93c143e599281f5d92828c1b9",
+    "valid": false,
+    "exclusion_reasons": [
+      "collection error",
+      "reference run has failing/erroring nodes",
+      "no node fails at baseline and passes with reference"
+    ],
+    "target_nodes": [],
+    "n_target_nodes": 0,
+    "baseline": {
+      "pytest_exit": 2,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_a57f33e8-495_lpz_s1ly/workspace/fastapi/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": true
+    },
+    "reference": {
+      "pytest_exit": 2,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_9cc5a6fc-51b_ssg2h0zi/workspace/fastapi/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": true
+    },
+    "commands": [
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "p/swegemma_sandbox_a57f33e8-495_lpz_s1ly/venv\n    Can't uninstall 'fastapi'. No files were found to uninstall.\nSuccessfully installed fastapi-0.117.1\n"
+      },
+      {
+        "cmd": "checkout tests/test_dependency_after_yield_raise.py",
+        "rc": 1
+      },
+      {
+        "cmd": "clean tests/test_dependency_after_yield_raise.py",
+        "rc": 0
+      },
+      {
+        "cmd": "checkout tests/test_dependency_after_yield_streaming.py",
+        "rc": 1
+      },
+      {
+        "cmd": "clean tests/test_dependency_after_yield_streaming.py",
+        "rc": 0
+      },
+      {
+        "cmd": "checkout tests/test_dependency_after_yield_websockets.py",
+        "rc": 1
+      },
+      {
+        "cmd": "clean tests/test_dependency_after_yield_websockets.py",
+        "rc": 0
+      },
+      {
+        "cmd": "checkout tests/test_dependency_contextmanager.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_dependency_contextmanager.py",
+        "rc": 0
+      },
+      {
+        "cmd": "checkout tests/test_route_scope.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_route_scope.py",
+        "rc": 0
+      },
+      {
+        "cmd": "checkout tests/test_tutorial/test_dependencies/test_tutorial008c.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_tutorial/test_dependencies/test_tutorial008c.py",
+        "rc": 0
+      },
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "p/swegemma_sandbox_9cc5a6fc-51b_ssg2h0zi/venv\n    Can't uninstall 'fastapi'. No files were found to uninstall.\nSuccessfully installed fastapi-0.117.1\n"
+      },
+      {
+        "cmd": "checkout tests/test_dependency_after_yield_raise.py",
+        "rc": 1
+      },
+      {
+        "cmd": "clean tests/test_dependency_after_yield_raise.py",
+        "rc": 0
+      },
+      {
+        "cmd": "checkout tests/test_dependency_after_yield_streaming.py",
+        "rc": 1
+      },
+      {
+        "cmd": "clean tests/test_dependency_after_yield_streaming.py",
+        "rc": 0
+      },
+      {
+        "cmd": "checkout tests/test_dependency_after_yield_websockets.py",
+        "rc": 1
+      },
+      {
+        "cmd": "clean tests/test_dependency_after_yield_websockets.py",
+        "rc": 0
+      },
+      {
+        "cmd": "checkout tests/test_dependency_contextmanager.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_dependency_contextmanager.py",
+        "rc": 0
+      },
+      {
+        "cmd": "checkout tests/test_route_scope.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_route_scope.py",
+        "rc": 0
+      },
+      {
+        "cmd": "checkout tests/test_tutorial/test_dependencies/test_tutorial008c.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_tutorial/test_dependencies/test_tutorial008c.py",
+        "rc": 0
+      }
+    ]
+  },
+  {
+    "id": "fastapi_14246",
+    "repo": "fastapi/fastapi",
+    "size": "medium",
+    "task_sha256": "31bb479f63943da8dcb448c9a0a957066cb8f15b56875d790ec6582c05d4c639",
+    "valid": false,
+    "exclusion_reasons": [
+      "collection error",
+      "reference run has failing/erroring nodes",
+      "no node fails at baseline and passes with reference"
+    ],
+    "target_nodes": [],
+    "n_target_nodes": 0,
+    "baseline": {
+      "pytest_exit": 2,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_5406f466-793_fc9_74m9/workspace/fastapi/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": true
+    },
+    "reference": {
+      "pytest_exit": 2,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_bcccd41d-c07_dg4fhj7i/workspace/fastapi/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": true
+    },
+    "commands": [
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "p/swegemma_sandbox_5406f466-793_fc9_74m9/venv\n    Can't uninstall 'fastapi'. No files were found to uninstall.\nSuccessfully installed fastapi-0.120.1\n"
+      },
+      {
+        "cmd": "checkout tests/test_no_schema_split.py",
+        "rc": 1
+      },
+      {
+        "cmd": "clean tests/test_no_schema_split.py",
+        "rc": 0
+      },
+      {
+        "cmd": "checkout tests/test_pydantic_v1_v2_multifile/test_multifile.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_pydantic_v1_v2_multifile/test_multifile.py",
+        "rc": 0
+      },
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "p/swegemma_sandbox_bcccd41d-c07_dg4fhj7i/venv\n    Can't uninstall 'fastapi'. No files were found to uninstall.\nSuccessfully installed fastapi-0.120.1\n"
+      },
+      {
+        "cmd": "checkout tests/test_no_schema_split.py",
+        "rc": 1
+      },
+      {
+        "cmd": "clean tests/test_no_schema_split.py",
+        "rc": 0
+      },
+      {
+        "cmd": "checkout tests/test_pydantic_v1_v2_multifile/test_multifile.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_pydantic_v1_v2_multifile/test_multifile.py",
+        "rc": 0
+      }
+    ]
+  },
+  {
+    "id": "fastapi_12942",
+    "repo": "fastapi/fastapi",
+    "size": "small",
+    "task_sha256": "6de4b618c95789ad24e7088709880d447b5c7a6020db9d7540fe14203766bc67",
+    "valid": false,
+    "exclusion_reasons": [
+      "collection error",
+      "reference run has failing/erroring nodes",
+      "no node fails at baseline and passes with reference"
+    ],
+    "target_nodes": [],
+    "n_target_nodes": 0,
+    "baseline": {
+      "pytest_exit": 2,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_48157ae9-cfa_y51jqwy4/workspace/fastapi/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": true
+    },
+    "reference": {
+      "pytest_exit": 2,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_685479bd-a2d_3pv_3ooi/workspace/fastapi/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": true
+    },
+    "commands": [
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "p/swegemma_sandbox_48157ae9-cfa_y51jqwy4/venv\n    Can't uninstall 'fastapi'. No files were found to uninstall.\nSuccessfully installed fastapi-0.118.1\n"
+      },
+      {
+        "cmd": "checkout tests/test_union_body_discriminator.py",
+        "rc": 1
+      },
+      {
+        "cmd": "clean tests/test_union_body_discriminator.py",
+        "rc": 0
+      },
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "p/swegemma_sandbox_685479bd-a2d_3pv_3ooi/venv\n    Can't uninstall 'fastapi'. No files were found to uninstall.\nSuccessfully installed fastapi-0.118.1\n"
+      },
+      {
+        "cmd": "checkout tests/test_union_body_discriminator.py",
+        "rc": 1
+      },
+      {
+        "cmd": "clean tests/test_union_body_discriminator.py",
+        "rc": 0
+      }
+    ]
+  },
+  {
+    "id": "fastapi_14301",
+    "repo": "fastapi/fastapi",
+    "size": "small",
+    "task_sha256": "8fb5db647e1a290704a17d4ff32b460da29a9731647e7b6376796c90186018ed",
+    "valid": true,
+    "exclusion_reasons": [],
+    "target_nodes": [
+      "tests.test_dependency_yield_scope::test_app_level_dep_scope_function",
+      "tests.test_dependency_yield_scope::test_router_level_dep_scope_function"
+    ],
+    "n_target_nodes": 2,
+    "baseline": {
+      "pytest_exit": 1,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_e0a4f1b1-bfd_q_kpye2w/workspace/fastapi/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": false
+    },
+    "reference": {
+      "pytest_exit": 0,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_8ba888db-8d7_bgkvw5w0/workspace/fastapi/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": false
+    },
+    "commands": [
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "p/swegemma_sandbox_e0a4f1b1-bfd_q_kpye2w/venv\n    Can't uninstall 'fastapi'. No files were found to uninstall.\nSuccessfully installed fastapi-0.121.0\n"
+      },
+      {
+        "cmd": "checkout tests/test_dependency_yield_scope.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_dependency_yield_scope.py",
+        "rc": 0
+      },
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "p/swegemma_sandbox_8ba888db-8d7_bgkvw5w0/venv\n    Can't uninstall 'fastapi'. No files were found to uninstall.\nSuccessfully installed fastapi-0.121.0\n"
+      },
+      {
+        "cmd": "checkout tests/test_dependency_yield_scope.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_dependency_yield_scope.py",
+        "rc": 0
+      }
+    ]
+  },
+  {
+    "id": "fastapi_14851",
+    "repo": "fastapi/fastapi",
+    "size": "large",
+    "task_sha256": "bb189738dc706df369aa2a18be374a68e2f406561e776371a3c5dc9b4dc2650b",
+    "valid": false,
+    "exclusion_reasons": [
+      "no node fails at baseline and passes with reference"
+    ],
+    "target_nodes": [],
+    "n_target_nodes": 0,
+    "baseline": {
+      "pytest_exit": 0,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_bbb92543-272_9rz2oyu_/workspace/fastapi/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": false
+    },
+    "reference": {
+      "pytest_exit": 0,
+      "import_in_checkout": true,
+      "grading_import": "/tmp/swegemma_sandbox_58657baa-cb8_ajrbe2cn/workspace/fastapi/__init__.py",
+      "patch_rc": 0,
+      "test_patch_rc": 0,
+      "editable_rc": 0,
+      "collection_error": false
+    },
+    "commands": [
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "p/swegemma_sandbox_bbb92543-272_9rz2oyu_/venv\n    Can't uninstall 'fastapi'. No files were found to uninstall.\nSuccessfully installed fastapi-0.128.2\n"
+      },
+      {
+        "cmd": "checkout tests/test_router_events.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_router_events.py",
+        "rc": 0
+      },
+      {
+        "cmd": "pip setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip -e .",
+        "rc": 0,
+        "tail": "p/swegemma_sandbox_58657baa-cb8_ajrbe2cn/venv\n    Can't uninstall 'fastapi'. No files were found to uninstall.\nSuccessfully installed fastapi-0.128.2\n"
+      },
+      {
+        "cmd": "checkout tests/test_router_events.py",
+        "rc": 0
+      },
+      {
+        "cmd": "clean tests/test_router_events.py",
+        "rc": 0
+      }
+    ]
+  }
+]

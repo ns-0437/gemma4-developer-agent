@@ -1,0 +1,165 @@
+{
+  "task": "fastapi_15800",
+  "arm": "reference",
+  "reached_pytest": true,
+  "pytest_exit": 0,
+  "pytest_cmd": "PYTHONSAFEPATH=1 PYTHONNOUSERSITE=1 python3 -s -m pytest tests/test_frontend.py",
+  "nodes": {
+    "tests.test_frontend::test_frontend_exact_prefix_path_serves_index": "passed",
+    "tests.test_frontend::test_apirouter_frontend_with_router_prefix_and_frontend_subpath": "passed",
+    "tests.test_frontend::test_frontend_fallback_rejects_invalid_fallback": "passed",
+    "tests.test_frontend::test_index_fallback_ignores_invalid_q_value": "passed",
+    "tests.test_frontend::test_frontend_static_files_lookup_errors": "passed",
+    "tests.test_frontend::test_frontend_route_group_helpers": "passed",
+    "tests.test_frontend::test_included_low_priority_routes_cache_is_reused": "passed",
+    "tests.test_frontend::test_low_priority_api_route_handles_with_context": "passed",
+    "tests.test_frontend::test_included_low_priority_api_route_handles_with_context": "passed",
+    "tests.test_frontend::test_normal_route_partial_match_returns_before_frontend": "passed",
+    "tests.test_frontend::test_normal_route_partial_match_wins_before_frontend": "passed",
+    "tests.test_frontend::test_basic_file_serving": "passed",
+    "tests.test_frontend::test_existing_api_route_wins_over_frontend": "passed",
+    "tests.test_frontend::test_api_route_404_is_not_replaced_by_frontend_fallback": "passed",
+    "tests.test_frontend::test_index_fallback_for_navigation_request": "passed",
+    "tests.test_frontend::test_index_fallback_parses_accept_parameters": "passed",
+    "tests.test_frontend::test_index_fallback_ignores_q_zero_accept": "passed",
+    "tests.test_frontend::test_index_fallback_respects_explicit_html_rejection_with_wildcard": "passed",
+    "tests.test_frontend::test_index_fallback_respects_explicit_xhtml_rejection_with_wildcard": "passed",
+    "tests.test_frontend::test_index_fallback_does_not_handle_asset_like_or_non_html_requests[/assets/missing.js-*/*]": "passed",
+    "tests.test_frontend::test_index_fallback_does_not_handle_asset_like_or_non_html_requests[/assets/missing.css-text/css]": "passed",
+    "tests.test_frontend::test_index_fallback_does_not_handle_asset_like_or_non_html_requests[/assets/missing.png-image/png]": "passed",
+    "tests.test_frontend::test_index_fallback_does_not_handle_asset_like_or_non_html_requests[/api/missing-application/json]": "passed",
+    "tests.test_frontend::test_index_fallback_does_not_handle_asset_like_or_non_html_requests[/users/jane.doe-text/html]": "passed",
+    "tests.test_frontend::test_404_fallback_handles_missing_assets": "passed",
+    "tests.test_frontend::test_auto_fallback_prefers_404_over_index": "passed",
+    "tests.test_frontend::test_auto_fallback_uses_index_when_404_is_missing": "passed",
+    "tests.test_frontend::test_auto_fallback_returns_normal_404_without_fallback_files": "passed",
+    "tests.test_frontend::test_no_fallback_returns_normal_404": "passed",
+    "tests.test_frontend::test_directory_index_and_redirect": "passed",
+    "tests.test_frontend::test_path_validation_and_trailing_slash_normalization": "passed",
+    "tests.test_frontend::test_frontend_path_matching_uses_segment_boundaries": "passed",
+    "tests.test_frontend::test_multiple_frontends_use_longest_matching_prefix": "passed",
+    "tests.test_frontend::test_apirouter_frontend_uses_include_prefix": "passed",
+    "tests.test_frontend::test_global_priority_across_included_routers": "passed",
+    "tests.test_frontend::test_nested_apirouter_frontend_uses_all_include_prefixes": "passed",
+    "tests.test_frontend::test_low_priority_cache_updates_after_route_added_to_included_router": "passed",
+    "tests.test_frontend::test_normal_route_slash_redirect_wins_before_frontend_redirect": "passed",
+    "tests.test_frontend::test_frontend_respects_root_path": "passed",
+    "tests.test_frontend::test_websocket_route_wins_over_frontend": "passed",
+    "tests.test_frontend::test_head_requests_work": "passed",
+    "tests.test_frontend::test_unsupported_methods_return_405": "passed",
+    "tests.test_frontend::test_path_traversal_cannot_escape_directory[/../secret.txt]": "passed",
+    "tests.test_frontend::test_path_traversal_cannot_escape_directory[/%2e%2e/secret.txt]": "passed",
+    "tests.test_frontend::test_path_traversal_cannot_escape_directory[/..%2fsecret.txt]": "passed",
+    "tests.test_frontend::test_path_traversal_cannot_escape_directory[/%5c..%5csecret.txt]": "passed",
+    "tests.test_frontend::test_path_traversal_cannot_escape_directory[/..%5csecret.txt]": "passed",
+    "tests.test_frontend::test_symlink_outside_directory_is_not_served": "passed",
+    "tests.test_frontend::test_check_dir_true_fails_early_for_missing_directory": "passed",
+    "tests.test_frontend::test_check_dir_false_allows_missing_directory_and_fails_on_request": "passed",
+    "tests.test_frontend::test_explicit_fallback_files_fail_clearly_when_missing": "passed",
+    "tests.test_frontend::test_frontend_routes_are_not_in_openapi": "passed",
+    "tests.test_frontend::test_docs_frontend_examples[tutorial001_py310.py-files0-/asset.txt-200-asset]": "passed",
+    "tests.test_frontend::test_docs_frontend_examples[tutorial002_py310.py-files1-/dashboard-200-index]": "passed",
+    "tests.test_frontend::test_docs_frontend_examples[tutorial003_py310.py-files2-/missing-404-missing]": "passed",
+    "tests.test_frontend::test_docs_frontend_examples[tutorial004_py310.py-files3-/app/dashboard-200-index]": "passed",
+    "tests.test_frontend::test_docs_frontend_examples[tutorial005_py310.py-files4-/dashboard-404-{\"detail\":\"Not Found\"}]": "passed",
+    "tests.test_frontend::test_docs_frontend_examples[tutorial006_py310.py-files5-/asset.txt-200-asset]": "passed",
+    "tests.test_frontend::test_low_priority_routes_can_store_non_frontend_routes": "passed",
+    "tests.test_frontend::test_included_low_priority_routes_can_store_non_frontend_routes": "passed"
+  },
+  "failure_details": {},
+  "import_in_checkout": true,
+  "grading_import": "/tmp/swegemma_sandbox_4de80b75-45f_9frfp620/workspace/fastapi/__init__.py",
+  "patch_rc": 0,
+  "patch_err": "",
+  "test_patch_rc": 0,
+  "test_patch_err": "",
+  "editable_rc": 0,
+  "collection_error": false,
+  "exception": null,
+  "traceback": null,
+  "task_sha256": "349aab36d64f6f9ae806c9da6649f387adc72ce448f10a1fb7177b408f6ea2b2",
+  "snapshot_sha256": "39db9ef995f8066b5f3cc70a7d8c54325e7bdc4faa9599e76099b533a4e034c0",
+  "environment_versions": {
+    "swegemma": "0.2.7",
+    "adk-submission": "0.2.11",
+    "adk-eval-core": "0.1.0",
+    "google-adk": "1.36.1"
+  },
+  "policy_sha256": "f59934c6b6369e97d529f821c0284cc666d708e340b3654aafd16dfe5f5e37ee",
+  "setup_commands": [
+    {
+      "cmd": "pip setuptools",
+      "rc": 0
+    },
+    {
+      "cmd": "pip wheel",
+      "rc": 0
+    },
+    {
+      "cmd": "pip editables",
+      "rc": 0
+    },
+    {
+      "cmd": "pip flit_core",
+      "rc": 0
+    },
+    {
+      "cmd": "pip poetry_core",
+      "rc": 0
+    },
+    {
+      "cmd": "pip pdm_backend",
+      "rc": 0
+    },
+    {
+      "cmd": "pip -e .",
+      "rc": 0,
+      "tail": "p/swegemma_sandbox_e5c8deaa-2c6_box_y9c1/venv\n    Can't uninstall 'fastapi'. No files were found to uninstall.\nSuccessfully installed fastapi-0.137.2\n"
+    },
+    {
+      "cmd": "checkout tests/test_frontend.py",
+      "rc": 1
+    },
+    {
+      "cmd": "clean tests/test_frontend.py",
+      "rc": 0
+    },
+    {
+      "cmd": "pip setuptools",
+      "rc": 0
+    },
+    {
+      "cmd": "pip wheel",
+      "rc": 0
+    },
+    {
+      "cmd": "pip editables",
+      "rc": 0
+    },
+    {
+      "cmd": "pip flit_core",
+      "rc": 0
+    },
+    {
+      "cmd": "pip poetry_core",
+      "rc": 0
+    },
+    {
+      "cmd": "pip pdm_backend",
+      "rc": 0
+    },
+    {
+      "cmd": "pip -e .",
+      "rc": 0,
+      "tail": "p/swegemma_sandbox_4de80b75-45f_9frfp620/venv\n    Can't uninstall 'fastapi'. No files were found to uninstall.\nSuccessfully installed fastapi-0.137.2\n"
+    },
+    {
+      "cmd": "checkout tests/test_frontend.py",
+      "rc": 1
+    },
+    {
+      "cmd": "clean tests/test_frontend.py",
+      "rc": 0
+    }
+  ]
+}

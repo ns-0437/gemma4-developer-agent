@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="0" skipped="0" tests="1" time="0.023" timestamp="2026-09-28T15:59:43.689204+00:00" hostname="fcac5414f593"><testcase classname="tests.test_adapters" name="test_request_url_trims_leading_path_separators" time="0.001" /></testsuite></testsuites>

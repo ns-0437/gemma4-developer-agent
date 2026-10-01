@@ -1,0 +1,113 @@
+{
+  "task": "rich_3905",
+  "arm": "baseline",
+  "reached_pytest": true,
+  "pytest_exit": 1,
+  "pytest_cmd": "PYTHONSAFEPATH=1 PYTHONNOUSERSITE=1 python3 -s -m pytest tests/test_progress.py",
+  "nodes": {
+    "test_progress::test_bar_columns": "passed",
+    "test_progress::test_text_column": "passed",
+    "test_progress::test_time_elapsed_column": "passed",
+    "test_progress::test_time_remaining_column": "passed",
+    "test_progress::test_compact_time_remaining_column[None---:--]": "passed",
+    "test_progress::test_compact_time_remaining_column[0-00:00]": "passed",
+    "test_progress::test_compact_time_remaining_column[59-00:59]": "passed",
+    "test_progress::test_compact_time_remaining_column[71-01:11]": "passed",
+    "test_progress::test_compact_time_remaining_column[4210-1:10:10]": "passed",
+    "test_progress::test_time_remaining_column_elapsed_when_finished": "passed",
+    "test_progress::test_renderable_column": "passed",
+    "test_progress::test_spinner_column": "passed",
+    "test_progress::test_download_progress_uses_decimal_units": "passed",
+    "test_progress::test_download_progress_uses_binary_units": "passed",
+    "test_progress::test_task_ids": "passed",
+    "test_progress::test_finished": "passed",
+    "test_progress::test_expand_bar": "passed",
+    "test_progress::test_progress_with_none_total_renders_a_pulsing_bar": "passed",
+    "test_progress::test_render": "passed",
+    "test_progress::test_track": "passed",
+    "test_progress::test_progress_track": "passed",
+    "test_progress::test_columns": "passed",
+    "test_progress::test_using_default_columns": "passed",
+    "test_progress::test_task_create": "passed",
+    "test_progress::test_task_start": "passed",
+    "test_progress::test_task_zero_total": "passed",
+    "test_progress::test_progress_create": "passed",
+    "test_progress::test_track_thread": "passed",
+    "test_progress::test_reset": "passed",
+    "test_progress::test_progress_max_refresh": "passed",
+    "test_progress::test_live_is_started_if_progress_is_enabled": "passed",
+    "test_progress::test_live_is_not_started_if_progress_is_disabled": "passed",
+    "test_progress::test_no_output_if_progress_is_disabled": "passed",
+    "test_progress::test_no_output_if_progress_is_disabled_non_interactive": "failed",
+    "test_progress::test_open": "passed",
+    "test_progress::test_open_text_mode": "passed",
+    "test_progress::test_wrap_file": "passed",
+    "test_progress::test_wrap_file_task_total": "passed",
+    "test_progress::test_task_progress_column_speed": "passed"
+  },
+  "failure_details": {
+    "test_progress::test_no_output_if_progress_is_disabled_non_interactive": {
+      "kind": "failure",
+      "message": "AssertionError: assert '\\n' == ''\n  \n  Strings contain only whitespace, escaping them using repr()\n  - ''\n  + '\\n'",
+      "detail": "def test_no_output_if_progress_is_disabled_non_interactive() -> None:\n        console = Console(\n            file=io.StringIO(),\n            force_interactive=False,\n            width=60,\n            color_system=\"truecolor\",\n            legacy_windows=False,\n            _environ={},\n        )\n        progress = Progress(\n            console=console,\n            disable=True,\n        )\n        test = [\"foo\", \"bar\", \"baz\"]\n        expected_values = iter(test)\n        with progress:\n            for value in progress.track(test, description=\"test\"):\n                assert value == next(expected_values)\n        result = console.file.getvalue()\n        print(repr(result))\n        expected = \"\"\n>       assert result == expected\nE       AssertionError: assert '\\n' == ''\nE         \nE         Strings contain only whitespace, escaping them using repr()\nE         - ''\nE         + '\\n'\n\ntests/test_progress.py:589: AssertionError"
+    }
+  },
+  "import_in_checkout": true,
+  "grading_import": "/tmp/swegemma_sandbox_adb2140d-a6d_1zpqisse/workspace/rich/__init__.py",
+  "patch_rc": 0,
+  "patch_err": null,
+  "test_patch_rc": 0,
+  "test_patch_err": "",
+  "editable_rc": 0,
+  "collection_error": false,
+  "exception": null,
+  "traceback": null,
+  "task_sha256": "1fcd96e259cc014927d992a5fb8426e03f388757501010dbb4bd45d7e520427c",
+  "snapshot_sha256": "ced2a0bc6fdd8e5b663f7f5cd078b609df2bf3666f8535263f0455f3679fad5f",
+  "environment_versions": {
+    "swegemma": "0.2.7",
+    "adk-submission": "0.2.11",
+    "adk-eval-core": "0.1.0",
+    "google-adk": "1.36.1"
+  },
+  "policy_sha256": "f59934c6b6369e97d529f821c0284cc666d708e340b3654aafd16dfe5f5e37ee",
+  "setup_commands": [
+    {
+      "cmd": "pip setuptools",
+      "rc": 0
+    },
+    {
+      "cmd": "pip wheel",
+      "rc": 0
+    },
+    {
+      "cmd": "pip editables",
+      "rc": 0
+    },
+    {
+      "cmd": "pip flit_core",
+      "rc": 0
+    },
+    {
+      "cmd": "pip poetry_core",
+      "rc": 0
+    },
+    {
+      "cmd": "pip pdm_backend",
+      "rc": 0
+    },
+    {
+      "cmd": "pip -e .",
+      "rc": 0,
+      "tail": "ent /tmp/swegemma_sandbox_adb2140d-a6d_1zpqisse/venv\n    Can't uninstall 'rich'. No files were found to uninstall.\nSuccessfully installed rich-14.2.0\n"
+    },
+    {
+      "cmd": "checkout tests/test_progress.py",
+      "rc": 0
+    },
+    {
+      "cmd": "clean tests/test_progress.py",
+      "rc": 0
+    }
+  ]
+}

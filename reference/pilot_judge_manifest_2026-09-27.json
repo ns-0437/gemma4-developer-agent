@@ -1,0 +1,30 @@
+{
+  "date": "2026-09-27",
+  "project": "C:\\Documents2\\KaggleMLChallenge\\The Gemma 4",
+  "candidate_archive_sha256": {
+    "v2": "6918f2c4adccccd9cdcaf51f354cd04aefb7d08eebef5f04d6c1ccb148cd5324",
+    "v2_reviewed": "f6392b8207a91a521c2434e1b5ce9f3f8d68d881298615725230d678bf04b3e3",
+    "pilot_A": "f6392b8207a91a521c2434e1b5ce9f3f8d68d881298615725230d678bf04b3e3",
+    "pilot_B": "194b420a487c48f475267bf2a35b33a813c13bd2e2410e23d0ea405835bf913d"
+  },
+  "file_sha256": {
+    "scripts/make_pilot_notebook.py": "8d7d18d111da630f4e1e44525a38e71e6c4bd9a0a6c21b630e0ee06763143f00",
+    "scripts/test_pilot_notebook.py": "29d71637af33995f1ee552a08832e4be61c2a1f202ea7a4961e53b67155d05b5",
+    "notebooks/pilot/pilot.ipynb": "30b500e01d762bee70ec406f47bbe7d690a8e5cdbe40a3aa430cf0b0d3147d24",
+    "notebooks/pilot/kernel-metadata.json": "85b6ca2acacdbfd0bcc379d8ee34516556a2bd38b517c92f6bd4c6be89111344",
+    "reference/public_baselines.json": "eb157d5650ba8388b63ed1a1a2d723712533f53d8a5a073e1d0ed1c16b7e8ba0",
+    "reference/effective_settings.json": "3fc6dfcdc31ae4097e9a6d1b935abb3ecca1935cb725a11e38d8a95ec65e655e",
+    "reference/pilot_judge_validation_2026-09-27.txt": "2378117fe8374bb16558c6af59496bf4021527511656dccd51cc8c5032c66185",
+    "reference/pilot_compiler_audit_2026-09-27.txt": "75379eeb6834420d25d9027579a326cbf8324c6228d9d1f0e63346aeb8b812cf"
+  },
+  "offline_assertions_passed": 78,
+  "offline_assertions_failed": 0,
+  "gpu_launched": false,
+  "submitted": false,
+  "dispatch_enabled": false,
+  "evidence_limits": "Simulated dependencies; no model task solving measured. Official candidate compiler run separately.",
+  "public_leaderboard_observed": {
+    "first": 0.15,
+    "third": 0.13
+  }
+}

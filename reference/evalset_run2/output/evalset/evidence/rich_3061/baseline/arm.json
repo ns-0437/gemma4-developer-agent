@@ -1,0 +1,249 @@
+{
+  "task": "rich_3061",
+  "arm": "baseline",
+  "reached_pytest": true,
+  "pytest_exit": 1,
+  "pytest_cmd": "PYTHONSAFEPATH=1 PYTHONNOUSERSITE=1 python3 -s -m pytest tests/test_panel.py tests/test_text.py",
+  "nodes": {
+    "test_panel::test_render_panel[panel0-\\u256d\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u256e\\n\\u2502Hello, World                                    \\u2502\\n\\u2570\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u256f\\n]": "passed",
+    "test_panel::test_render_panel[panel1-\\u256d\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u256e\\n\\u2502Hello, World\\u2502\\n\\u2570\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u256f\\n]": "passed",
+    "test_panel::test_render_panel[panel2-\\u256d\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u256e\\n\\u2502Hello, World\\u2502\\n\\u2570\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u256f\\n]": "passed",
+    "test_panel::test_render_panel[panel3-\\u256d\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u256e\\n\\u2502Hello,\\u2502\\n\\u2502World \\u2502\\n\\u2570\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u256f\\n]": "passed",
+    "test_panel::test_render_panel[panel4-\\u256d\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u256e\\n\\u2502\\u256d\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u256e\\u2502\\n\\u2502\\u2502Hello, World                                  \\u2502\\u2502\\n\\u2502\\u2570\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u256f\\u2502\\n\\u2570\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u256f\\n]": "passed",
+    "test_panel::test_render_panel[panel5-\\u256d\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500 FOO \\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u256e\\n\\u2502Hello, World                                    \\u2502\\n\\u2570\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u256f\\n]": "passed",
+    "test_panel::test_render_panel[panel6-\\u256d\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u256e\\n\\u2502Hello, World                                    \\u2502\\n\\u2570\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500 FOO \\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u256f\\n]": "passed",
+    "test_panel::test_console_width": "passed",
+    "test_panel::test_fixed_width": "passed",
+    "test_panel::test_render_size": "failed",
+    "test_text::test_span": "passed",
+    "test_text::test_span_split": "passed",
+    "test_text::test_span_move": "passed",
+    "test_text::test_span_right_crop": "passed",
+    "test_text::test_len": "passed",
+    "test_text::test_cell_len": "passed",
+    "test_text::test_bool": "passed",
+    "test_text::test_str": "passed",
+    "test_text::test_repr": "passed",
+    "test_text::test_add": "passed",
+    "test_text::test_eq": "passed",
+    "test_text::test_contain": "passed",
+    "test_text::test_plain_property": "passed",
+    "test_text::test_plain_property_setter": "passed",
+    "test_text::test_from_markup": "passed",
+    "test_text::test_from_ansi": "passed",
+    "test_text::test_copy": "passed",
+    "test_text::test_rstrip": "passed",
+    "test_text::test_rstrip_end": "passed",
+    "test_text::test_stylize": "passed",
+    "test_text::test_stylize_before": "passed",
+    "test_text::test_stylize_negative_index": "passed",
+    "test_text::test_highlight_regex": "passed",
+    "test_text::test_highlight_regex_callable": "passed",
+    "test_text::test_highlight_words": "passed",
+    "test_text::test_set_length": "passed",
+    "test_text::test_console_width": "passed",
+    "test_text::test_join": "passed",
+    "test_text::test_trim_spans": "passed",
+    "test_text::test_pad_left": "passed",
+    "test_text::test_pad_right": "passed",
+    "test_text::test_append": "passed",
+    "test_text::test_append_text": "passed",
+    "test_text::test_end": "passed",
+    "test_text::test_split": "passed",
+    "test_text::test_split_spans": "passed",
+    "test_text::test_divide": "passed",
+    "test_text::test_right_crop": "passed",
+    "test_text::test_wrap_3": "passed",
+    "test_text::test_wrap_4": "passed",
+    "test_text::test_wrap_wrapped_word_length_greater_than_available_width": "passed",
+    "test_text::test_wrap_cjk": "passed",
+    "test_text::test_wrap_cjk_width_mid_character": "passed",
+    "test_text::test_wrap_long": "passed",
+    "test_text::test_wrap_overflow": "passed",
+    "test_text::test_wrap_overflow_long": "passed",
+    "test_text::test_wrap_long_words": "passed",
+    "test_text::test_wrap_long_words_2": "passed",
+    "test_text::test_wrap_long_words_justify_left": "passed",
+    "test_text::test_no_wrap_no_crop": "passed",
+    "test_text::test_fit": "passed",
+    "test_text::test_wrap_tabs": "passed",
+    "test_text::test_render": "passed",
+    "test_text::test_render_simple": "passed",
+    "test_text::test_print[.-.\\n]": "passed",
+    "test_text::test_print[print_text1-. .\\n]": "passed",
+    "test_text::test_print[print_text2-Hello World !\\n]": "passed",
+    "test_text::test_print_sep_end[.-.X]": "passed",
+    "test_text::test_print_sep_end[print_text1-..X]": "passed",
+    "test_text::test_print_sep_end[print_text2-HelloWorld!X]": "passed",
+    "test_text::test_tabs_to_spaces": "passed",
+    "test_text::test_tabs_to_spaces_spans[-4--expected_spans0]": "passed",
+    "test_text::test_tabs_to_spaces_spans[\\t-4-    -expected_spans1]": "failed",
+    "test_text::test_tabs_to_spaces_spans[\\tbar-4-    bar-expected_spans2]": "failed",
+    "test_text::test_tabs_to_spaces_spans[foo\\tbar-4-foo bar-expected_spans3]": "failed",
+    "test_text::test_tabs_to_spaces_spans[foo\\nbar\\nbaz-4-foo\\nbar\\nbaz-expected_spans4]": "passed",
+    "test_text::test_tabs_to_spaces_spans[[bold]foo\\tbar-4-foo bar-expected_spans5]": "failed",
+    "test_text::test_tabs_to_spaces_spans[[bold]\\tbar-4-    bar-expected_spans6]": "failed",
+    "test_text::test_tabs_to_spaces_spans[\\t[bold]bar-4-    bar-expected_spans7]": "failed",
+    "test_text::test_tabs_to_spaces_spans[[red]foo\\tbar\\n[green]egg\\tbaz-8-foo     bar\\negg     baz-expected_spans8]": "failed",
+    "test_text::test_tabs_to_spaces_spans[[bold]X\\tY-8-X       Y-expected_spans9]": "failed",
+    "test_text::test_tabs_to_spaces_spans[[bold]\\U0001f4a9\\t\\U0001f4a9-8-\\U0001f4a9      \\U0001f4a9-expected_spans10]": "failed",
+    "test_text::test_tabs_to_spaces_spans[[bold]\\U0001f4a9\\U0001f4a9\\U0001f4a9\\U0001f4a9\\t\\U0001f4a9-8-\\U0001f4a9\\U0001f4a9\\U0001f4a9\\U0001f4a9        \\U0001f4a9-expected_spans11]": "failed",
+    "test_text::test_markup_switch": "passed",
+    "test_text::test_emoji": "passed",
+    "test_text::test_emoji_switch": "passed",
+    "test_text::test_assemble": "passed",
+    "test_text::test_assemble_meta": "passed",
+    "test_text::test_styled": "passed",
+    "test_text::test_strip_control_codes": "passed",
+    "test_text::test_get_style_at_offset": "passed",
+    "test_text::test_truncate_ellipsis[Hello-10-Hello]": "passed",
+    "test_text::test_truncate_ellipsis[Hello-5-Hello]": "passed",
+    "test_text::test_truncate_ellipsis[Hello-4-Hel\\u2026]": "passed",
+    "test_text::test_truncate_ellipsis[Hello-3-He\\u2026]": "passed",
+    "test_text::test_truncate_ellipsis[Hello-2-H\\u2026]": "passed",
+    "test_text::test_truncate_ellipsis[Hello-1-\\u2026]": "passed",
+    "test_text::test_truncate_ellipsis_pad[Hello-5-Hello]": "passed",
+    "test_text::test_truncate_ellipsis_pad[Hello-10-Hello     ]": "passed",
+    "test_text::test_truncate_ellipsis_pad[Hello-3-He\\u2026]": "passed",
+    "test_text::test_pad": "passed",
+    "test_text::test_align_left": "passed",
+    "test_text::test_align_right": "passed",
+    "test_text::test_align_center": "passed",
+    "test_text::test_detect_indentation": "passed",
+    "test_text::test_indentation_guides": "passed",
+    "test_text::test_slice": "passed",
+    "test_text::test_wrap_invalid_style": "passed",
+    "test_text::test_apply_meta": "passed",
+    "test_text::test_on": "passed",
+    "test_text::test_markup_property": "passed",
+    "test_text::test_extend_style": "failed"
+  },
+  "failure_details": {
+    "test_panel::test_render_size": {
+      "kind": "failure",
+      "message": "AssertionError: assert [[Segment('\u256d\u2500...\u256f', Style())]] == [[Segment('\u256d\u2500...\u256f', Style())]]\n  \n  At index 0 diff: [Segment('\u256d\u2500', Style()), Segment('\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500', Style()), Segment(' Hello ', Style()), Segment('\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500', Style()), Segment('\u2500\u256e', Style())] != [Segment('\u256d\u2500', Style()), Segment('\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 Hello \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500'), Segment('\u2500\u256e', Style())]\n  Use -v to get more diff",
+      "detail": "def test_render_size():\n        console = Console(width=63, height=46, legacy_windows=False)\n        options = console.options.update_dimensions(80, 4)\n        lines = console.render_lines(Panel(\"foo\", title=\"Hello\"), options=options)\n        print(repr(lines))\n        expected = [\n            [\n                Segment(\"\u256d\u2500\", Style()),\n                Segment(\n                    \"\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 Hello \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\"\n                ),\n                Segment(\"\u2500\u256e\", Style()),\n            ],\n            [\n                Segment(\"\u2502\", Style()),\n                Segment(\" \", Style()),\n                Segment(\"foo\"),\n                Segment(\n                    \"                                                                         \",\n                    Style(),\n                ),\n                Segment(\" \", Style()),\n                Segment(\"\u2502\", Style()),\n            ],\n            [\n                Segment(\"\u2502\", Style()),\n                Segment(\" \", Style()),\n                Segment(\n                    \"                                                                            \",\n                    Style(),\n                ),\n                Segment(\" \", Style()),\n                Segment(\"\u2502\", Style()),\n            ],\n            [\n                Segment(\n                    \"\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\",\n                    Style(),\n                )\n            ],\n        ]\n>    "
+    },
+    "test_text::test_tabs_to_spaces_spans[\\t-4-    -expected_spans1]": {
+      "kind": "failure",
+      "message": "AssertionError: assert [Span(0, 1, '...pan(1, 4, '')] == []\n  \n  Left contains 2 more items, first extra item: Span(0, 1, '')\n  Use -v to get more diff",
+      "detail": "markup = '\\t', tab_size = 4, expected_text = '    ', expected_spans = []\n\n    @pytest.mark.parametrize(\n        \"markup,tab_size,expected_text,expected_spans\",\n        [\n            (\"\", 4, \"\", []),\n            (\"\\t\", 4, \"    \", []),\n            (\"\\tbar\", 4, \"    bar\", []),\n            (\"foo\\tbar\", 4, \"foo bar\", []),\n            (\"foo\\nbar\\nbaz\", 4, \"foo\\nbar\\nbaz\", []),\n            (\n                \"[bold]foo\\tbar\",\n                4,\n                \"foo bar\",\n                [\n                    Span(0, 4, \"bold\"),\n                    Span(4, 7, \"bold\"),\n                ],\n            ),\n            (\n                \"[bold]\\tbar\",\n                4,\n                \"    bar\",\n                [\n                    Span(0, 4, \"bold\"),\n                    Span(4, 7, \"bold\"),\n                ],\n            ),\n            (\n                \"\\t[bold]bar\",\n                4,\n                \"    bar\",\n                [\n                    Span(4, 7, \"bold\"),\n                ],\n            ),\n            (\n                \"[red]foo\\tbar\\n[green]egg\\tbaz\",\n                8,\n                \"foo     bar\\negg     baz\",\n                [\n                    Span(0, 8, \"red\"),\n                    Span(8, 12, \"red\"),\n                    Span(12, 20, \"red\"),\n                    Span(12, 20, \"green\"),\n                    Span(20, 23, \"red\"),\n                    Span(20, 23, \"green\"),\n                ],\n            ),\n            (\n                \"[bold]X\\tY\",\n                8,\n     "
+    },
+    "test_text::test_tabs_to_spaces_spans[\\tbar-4-    bar-expected_spans2]": {
+      "kind": "failure",
+      "message": "AssertionError: assert [Span(0, 1, '...pan(4, 7, '')] == []\n  \n  Left contains 3 more items, first extra item: Span(0, 1, '')\n  Use -v to get more diff",
+      "detail": "markup = '\\tbar', tab_size = 4, expected_text = '    bar', expected_spans = []\n\n    @pytest.mark.parametrize(\n        \"markup,tab_size,expected_text,expected_spans\",\n        [\n            (\"\", 4, \"\", []),\n            (\"\\t\", 4, \"    \", []),\n            (\"\\tbar\", 4, \"    bar\", []),\n            (\"foo\\tbar\", 4, \"foo bar\", []),\n            (\"foo\\nbar\\nbaz\", 4, \"foo\\nbar\\nbaz\", []),\n            (\n                \"[bold]foo\\tbar\",\n                4,\n                \"foo bar\",\n                [\n                    Span(0, 4, \"bold\"),\n                    Span(4, 7, \"bold\"),\n                ],\n            ),\n            (\n                \"[bold]\\tbar\",\n                4,\n                \"    bar\",\n                [\n                    Span(0, 4, \"bold\"),\n                    Span(4, 7, \"bold\"),\n                ],\n            ),\n            (\n                \"\\t[bold]bar\",\n                4,\n                \"    bar\",\n                [\n                    Span(4, 7, \"bold\"),\n                ],\n            ),\n            (\n                \"[red]foo\\tbar\\n[green]egg\\tbaz\",\n                8,\n                \"foo     bar\\negg     baz\",\n                [\n                    Span(0, 8, \"red\"),\n                    Span(8, 12, \"red\"),\n                    Span(12, 20, \"red\"),\n                    Span(12, 20, \"green\"),\n                    Span(20, 23, \"red\"),\n                    Span(20, 23, \"green\"),\n                ],\n            ),\n            (\n                \"[bold]X\\tY\",\n                8,"
+    },
+    "test_text::test_tabs_to_spaces_spans[foo\\tbar-4-foo bar-expected_spans3]": {
+      "kind": "failure",
+      "message": "AssertionError: assert [Span(0, 4, '...pan(4, 7, '')] == []\n  \n  Left contains 2 more items, first extra item: Span(0, 4, '')\n  Use -v to get more diff",
+      "detail": "markup = 'foo\\tbar', tab_size = 4, expected_text = 'foo bar'\nexpected_spans = []\n\n    @pytest.mark.parametrize(\n        \"markup,tab_size,expected_text,expected_spans\",\n        [\n            (\"\", 4, \"\", []),\n            (\"\\t\", 4, \"    \", []),\n            (\"\\tbar\", 4, \"    bar\", []),\n            (\"foo\\tbar\", 4, \"foo bar\", []),\n            (\"foo\\nbar\\nbaz\", 4, \"foo\\nbar\\nbaz\", []),\n            (\n                \"[bold]foo\\tbar\",\n                4,\n                \"foo bar\",\n                [\n                    Span(0, 4, \"bold\"),\n                    Span(4, 7, \"bold\"),\n                ],\n            ),\n            (\n                \"[bold]\\tbar\",\n                4,\n                \"    bar\",\n                [\n                    Span(0, 4, \"bold\"),\n                    Span(4, 7, \"bold\"),\n                ],\n            ),\n            (\n                \"\\t[bold]bar\",\n                4,\n                \"    bar\",\n                [\n                    Span(4, 7, \"bold\"),\n                ],\n            ),\n            (\n                \"[red]foo\\tbar\\n[green]egg\\tbaz\",\n                8,\n                \"foo     bar\\negg     baz\",\n                [\n                    Span(0, 8, \"red\"),\n                    Span(8, 12, \"red\"),\n                    Span(12, 20, \"red\"),\n                    Span(12, 20, \"green\"),\n                    Span(20, 23, \"red\"),\n                    Span(20, 23, \"green\"),\n                ],\n            ),\n            (\n                \"[bold]X\\tY\",\n                "
+    },
+    "test_text::test_tabs_to_spaces_spans[[bold]foo\\tbar-4-foo bar-expected_spans5]": {
+      "kind": "failure",
+      "message": "AssertionError: assert [Span(0, 4, '...4, 7, 'bold')] == [Span(0, 4, '...4, 7, 'bold')]\n  \n  At index 0 diff: Span(0, 4, '') != Span(0, 4, 'bold')\n  Left contains 2 more items, first extra item: Span(4, 7, '')\n  Use -v to get more diff",
+      "detail": "markup = '[bold]foo\\tbar', tab_size = 4, expected_text = 'foo bar'\nexpected_spans = [Span(0, 4, 'bold'), Span(4, 7, 'bold')]\n\n    @pytest.mark.parametrize(\n        \"markup,tab_size,expected_text,expected_spans\",\n        [\n            (\"\", 4, \"\", []),\n            (\"\\t\", 4, \"    \", []),\n            (\"\\tbar\", 4, \"    bar\", []),\n            (\"foo\\tbar\", 4, \"foo bar\", []),\n            (\"foo\\nbar\\nbaz\", 4, \"foo\\nbar\\nbaz\", []),\n            (\n                \"[bold]foo\\tbar\",\n                4,\n                \"foo bar\",\n                [\n                    Span(0, 4, \"bold\"),\n                    Span(4, 7, \"bold\"),\n                ],\n            ),\n            (\n                \"[bold]\\tbar\",\n                4,\n                \"    bar\",\n                [\n                    Span(0, 4, \"bold\"),\n                    Span(4, 7, \"bold\"),\n                ],\n            ),\n            (\n                \"\\t[bold]bar\",\n                4,\n                \"    bar\",\n                [\n                    Span(4, 7, \"bold\"),\n                ],\n            ),\n            (\n                \"[red]foo\\tbar\\n[green]egg\\tbaz\",\n                8,\n                \"foo     bar\\negg     baz\",\n                [\n                    Span(0, 8, \"red\"),\n                    Span(8, 12, \"red\"),\n                    Span(12, 20, \"red\"),\n                    Span(12, 20, \"green\"),\n                    Span(20, 23, \"red\"),\n                    Span(20, 23, \"green\"),\n                ],\n            ),\n            (\n  "
+    },
+    "test_text::test_tabs_to_spaces_spans[[bold]\\tbar-4-    bar-expected_spans6]": {
+      "kind": "failure",
+      "message": "AssertionError: assert [Span(0, 1, '...4, 7, 'bold')] == [Span(0, 4, '...4, 7, 'bold')]\n  \n  At index 0 diff: Span(0, 1, '') != Span(0, 4, 'bold')\n  Left contains 3 more items, first extra item: Span(1, 4, '')\n  Use -v to get more diff",
+      "detail": "markup = '[bold]\\tbar', tab_size = 4, expected_text = '    bar'\nexpected_spans = [Span(0, 4, 'bold'), Span(4, 7, 'bold')]\n\n    @pytest.mark.parametrize(\n        \"markup,tab_size,expected_text,expected_spans\",\n        [\n            (\"\", 4, \"\", []),\n            (\"\\t\", 4, \"    \", []),\n            (\"\\tbar\", 4, \"    bar\", []),\n            (\"foo\\tbar\", 4, \"foo bar\", []),\n            (\"foo\\nbar\\nbaz\", 4, \"foo\\nbar\\nbaz\", []),\n            (\n                \"[bold]foo\\tbar\",\n                4,\n                \"foo bar\",\n                [\n                    Span(0, 4, \"bold\"),\n                    Span(4, 7, \"bold\"),\n                ],\n            ),\n            (\n                \"[bold]\\tbar\",\n                4,\n                \"    bar\",\n                [\n                    Span(0, 4, \"bold\"),\n                    Span(4, 7, \"bold\"),\n                ],\n            ),\n            (\n                \"\\t[bold]bar\",\n                4,\n                \"    bar\",\n                [\n                    Span(4, 7, \"bold\"),\n                ],\n            ),\n            (\n                \"[red]foo\\tbar\\n[green]egg\\tbaz\",\n                8,\n                \"foo     bar\\negg     baz\",\n                [\n                    Span(0, 8, \"red\"),\n                    Span(8, 12, \"red\"),\n                    Span(12, 20, \"red\"),\n                    Span(12, 20, \"green\"),\n                    Span(20, 23, \"red\"),\n                    Span(20, 23, \"green\"),\n                ],\n            ),\n            (\n     "
+    },
+    "test_text::test_tabs_to_spaces_spans[\\t[bold]bar-4-    bar-expected_spans7]": {
+      "kind": "failure",
+      "message": "AssertionError: assert [Span(0, 1, '...4, 7, 'bold')] == [Span(4, 7, 'bold')]\n  \n  At index 0 diff: Span(0, 1, '') != Span(4, 7, 'bold')\n  Left contains 3 more items, first extra item: Span(1, 4, '')\n  Use -v to get more diff",
+      "detail": "markup = '\\t[bold]bar', tab_size = 4, expected_text = '    bar'\nexpected_spans = [Span(4, 7, 'bold')]\n\n    @pytest.mark.parametrize(\n        \"markup,tab_size,expected_text,expected_spans\",\n        [\n            (\"\", 4, \"\", []),\n            (\"\\t\", 4, \"    \", []),\n            (\"\\tbar\", 4, \"    bar\", []),\n            (\"foo\\tbar\", 4, \"foo bar\", []),\n            (\"foo\\nbar\\nbaz\", 4, \"foo\\nbar\\nbaz\", []),\n            (\n                \"[bold]foo\\tbar\",\n                4,\n                \"foo bar\",\n                [\n                    Span(0, 4, \"bold\"),\n                    Span(4, 7, \"bold\"),\n                ],\n            ),\n            (\n                \"[bold]\\tbar\",\n                4,\n                \"    bar\",\n                [\n                    Span(0, 4, \"bold\"),\n                    Span(4, 7, \"bold\"),\n                ],\n            ),\n            (\n                \"\\t[bold]bar\",\n                4,\n                \"    bar\",\n                [\n                    Span(4, 7, \"bold\"),\n                ],\n            ),\n            (\n                \"[red]foo\\tbar\\n[green]egg\\tbaz\",\n                8,\n                \"foo     bar\\negg     baz\",\n                [\n                    Span(0, 8, \"red\"),\n                    Span(8, 12, \"red\"),\n                    Span(12, 20, \"red\"),\n                    Span(12, 20, \"green\"),\n                    Span(20, 23, \"red\"),\n                    Span(20, 23, \"green\"),\n                ],\n            ),\n            (\n                \"[bold]X\\"
+    },
+    "test_text::test_tabs_to_spaces_spans[[red]foo\\tbar\\n[green]egg\\tbaz-8-foo     bar\\negg     baz-expected_spans8]": {
+      "kind": "failure",
+      "message": "AssertionError: assert [Span(0, 4, '... 16, ''), ...] == [Span(0, 8, '... 23, 'green')]\n  \n  At index 0 diff: Span(0, 4, '') != Span(0, 8, 'red')\n  Left contains 6 more items, first extra item: Span(12, 16, 'red')\n  Use -v to get more diff",
+      "detail": "markup = '[red]foo\\tbar\\n[green]egg\\tbaz', tab_size = 8\nexpected_text = 'foo     bar\\negg     baz'\nexpected_spans = [Span(0, 8, 'red'), Span(8, 12, 'red'), Span(12, 20, 'red'), Span(12, 20, 'green'), Span(20, 23, 'red'), Span(20, 23, 'green')]\n\n    @pytest.mark.parametrize(\n        \"markup,tab_size,expected_text,expected_spans\",\n        [\n            (\"\", 4, \"\", []),\n            (\"\\t\", 4, \"    \", []),\n            (\"\\tbar\", 4, \"    bar\", []),\n            (\"foo\\tbar\", 4, \"foo bar\", []),\n            (\"foo\\nbar\\nbaz\", 4, \"foo\\nbar\\nbaz\", []),\n            (\n                \"[bold]foo\\tbar\",\n                4,\n                \"foo bar\",\n                [\n                    Span(0, 4, \"bold\"),\n                    Span(4, 7, \"bold\"),\n                ],\n            ),\n            (\n                \"[bold]\\tbar\",\n                4,\n                \"    bar\",\n                [\n                    Span(0, 4, \"bold\"),\n                    Span(4, 7, \"bold\"),\n                ],\n            ),\n            (\n                \"\\t[bold]bar\",\n                4,\n                \"    bar\",\n                [\n                    Span(4, 7, \"bold\"),\n                ],\n            ),\n            (\n                \"[red]foo\\tbar\\n[green]egg\\tbaz\",\n                8,\n                \"foo     bar\\negg     baz\",\n                [\n                    Span(0, 8, \"red\"),\n                    Span(8, 12, \"red\"),\n                    Span(12, 20, \"red\"),\n                    Span(12, 20, \"green\"),\n               "
+    },
+    "test_text::test_tabs_to_spaces_spans[[bold]X\\tY-8-X       Y-expected_spans9]": {
+      "kind": "failure",
+      "message": "AssertionError: assert [Span(0, 2, '...8, 9, 'bold')] == [Span(0, 8, '...8, 9, 'bold')]\n  \n  At index 0 diff: Span(0, 2, '') != Span(0, 8, 'bold')\n  Left contains 3 more items, first extra item: Span(2, 8, '')\n  Use -v to get more diff",
+      "detail": "markup = '[bold]X\\tY', tab_size = 8, expected_text = 'X       Y'\nexpected_spans = [Span(0, 8, 'bold'), Span(8, 9, 'bold')]\n\n    @pytest.mark.parametrize(\n        \"markup,tab_size,expected_text,expected_spans\",\n        [\n            (\"\", 4, \"\", []),\n            (\"\\t\", 4, \"    \", []),\n            (\"\\tbar\", 4, \"    bar\", []),\n            (\"foo\\tbar\", 4, \"foo bar\", []),\n            (\"foo\\nbar\\nbaz\", 4, \"foo\\nbar\\nbaz\", []),\n            (\n                \"[bold]foo\\tbar\",\n                4,\n                \"foo bar\",\n                [\n                    Span(0, 4, \"bold\"),\n                    Span(4, 7, \"bold\"),\n                ],\n            ),\n            (\n                \"[bold]\\tbar\",\n                4,\n                \"    bar\",\n                [\n                    Span(0, 4, \"bold\"),\n                    Span(4, 7, \"bold\"),\n                ],\n            ),\n            (\n                \"\\t[bold]bar\",\n                4,\n                \"    bar\",\n                [\n                    Span(4, 7, \"bold\"),\n                ],\n            ),\n            (\n                \"[red]foo\\tbar\\n[green]egg\\tbaz\",\n                8,\n                \"foo     bar\\negg     baz\",\n                [\n                    Span(0, 8, \"red\"),\n                    Span(8, 12, \"red\"),\n                    Span(12, 20, \"red\"),\n                    Span(12, 20, \"green\"),\n                    Span(20, 23, \"red\"),\n                    Span(20, 23, \"green\"),\n                ],\n            ),\n            (\n    "
+    },
+    "test_text::test_tabs_to_spaces_spans[[bold]\\U0001f4a9\\t\\U0001f4a9-8-\\U0001f4a9      \\U0001f4a9-expected_spans10]": {
+      "kind": "failure",
+      "message": "AssertionError: assert '#x1F4A9       #x1F4A9' == '#x1F4A9      #x1F4A9'\n  \n  - #x1F4A9      #x1F4A9\n  + #x1F4A9       #x1F4A9\n  ?        +",
+      "detail": "markup = '[bold]#x1F4A9\\t#x1F4A9', tab_size = 8, expected_text = '#x1F4A9      #x1F4A9'\nexpected_spans = [Span(0, 7, 'bold'), Span(7, 8, 'bold')]\n\n    @pytest.mark.parametrize(\n        \"markup,tab_size,expected_text,expected_spans\",\n        [\n            (\"\", 4, \"\", []),\n            (\"\\t\", 4, \"    \", []),\n            (\"\\tbar\", 4, \"    bar\", []),\n            (\"foo\\tbar\", 4, \"foo bar\", []),\n            (\"foo\\nbar\\nbaz\", 4, \"foo\\nbar\\nbaz\", []),\n            (\n                \"[bold]foo\\tbar\",\n                4,\n                \"foo bar\",\n                [\n                    Span(0, 4, \"bold\"),\n                    Span(4, 7, \"bold\"),\n                ],\n            ),\n            (\n                \"[bold]\\tbar\",\n                4,\n                \"    bar\",\n                [\n                    Span(0, 4, \"bold\"),\n                    Span(4, 7, \"bold\"),\n                ],\n            ),\n            (\n                \"\\t[bold]bar\",\n                4,\n                \"    bar\",\n                [\n                    Span(4, 7, \"bold\"),\n                ],\n            ),\n            (\n                \"[red]foo\\tbar\\n[green]egg\\tbaz\",\n                8,\n                \"foo     bar\\negg     baz\",\n                [\n                    Span(0, 8, \"red\"),\n                    Span(8, 12, \"red\"),\n                    Span(12, 20, \"red\"),\n                    Span(12, 20, \"green\"),\n                    Span(20, 23, \"red\"),\n                    Span(20, 23, \"green\"),\n                ],\n          "
+    },
+    "test_text::test_tabs_to_spaces_spans[[bold]\\U0001f4a9\\U0001f4a9\\U0001f4a9\\U0001f4a9\\t\\U0001f4a9-8-\\U0001f4a9\\U0001f4a9\\U0001f4a9\\U0001f4a9        \\U0001f4a9-expected_spans11]": {
+      "kind": "failure",
+      "message": "AssertionError: assert '#x1F4A9#x1F4A9#x1F4A9#x1F4A9    #x1F4A9' == '#x1F4A9#x1F4A9#x1F4A9#x1F4A9        #x1F4A9'\n  \n  - #x1F4A9#x1F4A9#x1F4A9#x1F4A9        #x1F4A9\n  ?         ----\n  + #x1F4A9#x1F4A9#x1F4A9#x1F4A9    #x1F4A9",
+      "detail": "markup = '[bold]#x1F4A9#x1F4A9#x1F4A9#x1F4A9\\t#x1F4A9', tab_size = 8, expected_text = '#x1F4A9#x1F4A9#x1F4A9#x1F4A9        #x1F4A9'\nexpected_spans = [Span(0, 12, 'bold'), Span(12, 13, 'bold')]\n\n    @pytest.mark.parametrize(\n        \"markup,tab_size,expected_text,expected_spans\",\n        [\n            (\"\", 4, \"\", []),\n            (\"\\t\", 4, \"    \", []),\n            (\"\\tbar\", 4, \"    bar\", []),\n            (\"foo\\tbar\", 4, \"foo bar\", []),\n            (\"foo\\nbar\\nbaz\", 4, \"foo\\nbar\\nbaz\", []),\n            (\n                \"[bold]foo\\tbar\",\n                4,\n                \"foo bar\",\n                [\n                    Span(0, 4, \"bold\"),\n                    Span(4, 7, \"bold\"),\n                ],\n            ),\n            (\n                \"[bold]\\tbar\",\n                4,\n                \"    bar\",\n                [\n                    Span(0, 4, \"bold\"),\n                    Span(4, 7, \"bold\"),\n                ],\n            ),\n            (\n                \"\\t[bold]bar\",\n                4,\n                \"    bar\",\n                [\n                    Span(4, 7, \"bold\"),\n                ],\n            ),\n            (\n                \"[red]foo\\tbar\\n[green]egg\\tbaz\",\n                8,\n                \"foo     bar\\negg     baz\",\n                [\n                    Span(0, 8, \"red\"),\n                    Span(8, 12, \"red\"),\n                    Span(12, 20, \"red\"),\n                    Span(12, 20, \"green\"),\n                    Span(20, 23, \"red\"),\n                    Span("
+    },
+    "test_text::test_extend_style": {
+      "kind": "failure",
+      "message": "AttributeError: 'Text' object has no attribute 'extend_style'",
+      "detail": "def test_extend_style():\n        text = Text.from_markup(\"[red]foo[/red] [bold]bar\")\n>       text.extend_style(0)\n        ^^^^^^^^^^^^^^^^^\nE       AttributeError: 'Text' object has no attribute 'extend_style'\n\ntests/test_text.py:906: AttributeError"
+    }
+  },
+  "import_in_checkout": true,
+  "grading_import": "/tmp/swegemma_sandbox_2ae266ab-04d_sxdseybz/workspace/rich/__init__.py",
+  "patch_rc": 0,
+  "patch_err": null,
+  "test_patch_rc": 0,
+  "test_patch_err": "",
+  "editable_rc": 0,
+  "collection_error": false,
+  "exception": null,
+  "traceback": null,
+  "task_sha256": "f43be9a8ad4bff5fa4108c0bcf0e65f82db7da1bb673a2653a8118a8afdda43b",
+  "snapshot_sha256": "f32c9ed11538db2bf049314ff7c8f08c01ca23006bbd994c25ad72c2815fe905",
+  "environment_versions": {
+    "swegemma": "0.2.7",
+    "adk-submission": "0.2.11",
+    "adk-eval-core": "0.1.0",
+    "google-adk": "1.36.1"
+  },
+  "policy_sha256": "f59934c6b6369e97d529f821c0284cc666d708e340b3654aafd16dfe5f5e37ee",
+  "setup_commands": [
+    {
+      "cmd": "pip setuptools",
+      "rc": 0
+    },
+    {
+      "cmd": "pip wheel",
+      "rc": 0
+    },
+    {
+      "cmd": "pip editables",
+      "rc": 0
+    },
+    {
+      "cmd": "pip flit_core",
+      "rc": 0
+    },
+    {
+      "cmd": "pip poetry_core",
+      "rc": 0
+    },
+    {
+      "cmd": "pip pdm_backend",
+      "rc": 0
+    },
+    {
+      "cmd": "pip -e .",
+      "rc": 0,
+      "tail": "ent /tmp/swegemma_sandbox_2ae266ab-04d_sxdseybz/venv\n    Can't uninstall 'rich'. No files were found to uninstall.\nSuccessfully installed rich-13.4.2\n"
+    },
+    {
+      "cmd": "checkout tests/test_panel.py",
+      "rc": 0
+    },
+    {
+      "cmd": "clean tests/test_panel.py",
+      "rc": 0
+    },
+    {
+      "cmd": "checkout tests/test_text.py",
+      "rc": 0
+    },
+    {
+      "cmd": "clean tests/test_text.py",
+      "rc": 0
+    }
+  ]
+}

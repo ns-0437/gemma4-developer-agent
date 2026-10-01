@@ -1,0 +1,60 @@
+{
+  "requests_7309": {
+    "task": "requests_7309",
+    "pkg": "requests",
+    "repair_log": {
+      "wheels_present_sandbox": "41",
+      "wheels_present_competition": "124",
+      "backends_install": {
+        "setuptools": "ut/competitions/gemma-4-developer-agent/wheels\nRequirement already satisfied: setuptools in /usr/local/lib/python3.12/dist-packages (81.0.0)",
+        "wheel": "hon3.12/dist-packages (0.47.0)\nRequirement already satisfied: packaging>=24.0 in /usr/local/lib/python3.12/dist-packages (from wheel) (26.1)",
+        "editables": "Installing collected packages: editables\nSuccessfully installed editables-0.6",
+        "flit_core": "Installing collected packages: flit_core\nSuccessfully installed flit_core-3.12.0",
+        "hatchling": "tisfies the requirement trove-classifiers (from hatchling) (from versions: none)\nERROR: No matching distribution found for trove-classifiers",
+        "poetry_core": "Installing collected packages: poetry_core\nSuccessfully installed poetry_core-2.4.1",
+        "pdm_backend": "Installing collected packages: pdm_backend\nSuccessfully installed pdm_backend-2.4.9"
+      },
+      "backends_importable": "ModuleNotFoundError: No module named 'hatchling'",
+      "editable_install": "Not uninstalling requests at /usr/local/lib/python3.12/dist-packages, outside environment /tmp/swegemma_sandbox_cdacbf36-0ec_hayqpyo3/venv\n    Can't uninstall 'requests'. No files were found to uninstall.\nSuccessfully installed requests-2.33.0",
+      "editable_artifacts": "/tmp/swegemma_sandbox_cdacbf36-0ec_hayqpyo3/venv/lib/python3.12/site-packages/__editable__.requests-2.33.0.pth"
+    },
+    "pip_version": "pip 24.1.2 from /usr/local/lib/python3.12/dist-packages/pip (python 3.12)",
+    "which_python": "/tmp/swegemma_sandbox_cdacbf36-0ec_hayqpyo3/venv/bin/python3\n/usr/bin/python3\n/usr/bin/python3",
+    "layout": "src",
+    "pth_files": "/tmp/swegemma_sandbox_cdacbf36-0ec_hayqpyo3/venv/lib/python3.12/site-packages/__editable__.requests-2.33.0.pth\n/tmp/swegemma_sandbox_cdacbf36-0ec_hayqpyo3/venv/lib/python3.12/site-packages/_host_env.pth",
+    "editable_finder": "/tmp/swegemma_sandbox_cdacbf36-0ec_hayqpyo3/venv/lib/python3.12/site-packages/__editable__.requests-2.33.0.pth",
+    "egg_info": "",
+    "other_copies": "/tmp/swegemma_sandbox_cdacbf36-0ec_hayqpyo3/workspace/src/requests\n/usr/local/lib/python3.12/dist-packages/pip/_vendor/requests\n/usr/local/lib/python3.12/dist-packages/botocore/vendored/requests\n/usr/local/lib/python3.12/dist-packages/google/resumable_media/requests\n/usr/local/lib/python3.12/dist-packages/google/_async_resumable_media/requests\n/usr/local/lib/python3.12/dist-packages/curl_cffi/requ",
+    "editable_rerun": "Found existing installation: requests 2.33.0\n    Uninstalling requests-2.33.0:\n      Successfully uninstalled requests-2.33.0\nSuccessfully installed requests-2.33.0",
+    "after_rerun_import": "/tmp/swegemma_sandbox_cdacbf36-0ec_hayqpyo3/workspace/src/requests/__init__.py"
+  },
+  "rich_3471": {
+    "task": "rich_3471",
+    "pkg": "rich",
+    "repair_log": {
+      "wheels_present_sandbox": "41",
+      "wheels_present_competition": "124",
+      "backends_install": {
+        "setuptools": "ut/competitions/gemma-4-developer-agent/wheels\nRequirement already satisfied: setuptools in /usr/local/lib/python3.12/dist-packages (81.0.0)",
+        "wheel": "hon3.12/dist-packages (0.47.0)\nRequirement already satisfied: packaging>=24.0 in /usr/local/lib/python3.12/dist-packages (from wheel) (26.1)",
+        "editables": "Installing collected packages: editables\nSuccessfully installed editables-0.6",
+        "flit_core": "Installing collected packages: flit_core\nSuccessfully installed flit_core-3.12.0",
+        "hatchling": "tisfies the requirement trove-classifiers (from hatchling) (from versions: none)\nERROR: No matching distribution found for trove-classifiers",
+        "poetry_core": "Installing collected packages: poetry_core\nSuccessfully installed poetry_core-2.4.1",
+        "pdm_backend": "Installing collected packages: pdm_backend\nSuccessfully installed pdm_backend-2.4.9"
+      },
+      "backends_importable": "ModuleNotFoundError: No module named 'hatchling'",
+      "editable_install": "Not uninstalling rich at /usr/local/lib/python3.12/dist-packages, outside environment /tmp/swegemma_sandbox_97d3a1c4-f97_ztzekxix/venv\n    Can't uninstall 'rich'. No files were found to uninstall.\nSuccessfully installed rich-13.7.1",
+      "editable_artifacts": ""
+    },
+    "pip_version": "pip 24.1.2 from /usr/local/lib/python3.12/dist-packages/pip (python 3.12)",
+    "which_python": "/tmp/swegemma_sandbox_97d3a1c4-f97_ztzekxix/venv/bin/python3\n/usr/bin/python3\n/usr/bin/python3",
+    "layout": "rich",
+    "pth_files": "/tmp/swegemma_sandbox_97d3a1c4-f97_ztzekxix/venv/lib/python3.12/site-packages/rich.pth\n/tmp/swegemma_sandbox_97d3a1c4-f97_ztzekxix/venv/lib/python3.12/site-packages/_host_env.pth",
+    "editable_finder": "",
+    "egg_info": "",
+    "other_copies": "/tmp/swegemma_sandbox_97d3a1c4-f97_ztzekxix/workspace/rich\n/usr/local/lib/python3.12/dist-packages/pip/_vendor/rich\n/usr/local/lib/python3.12/dist-packages/rich",
+    "editable_rerun": "Found existing installation: rich 13.7.1\n    Uninstalling rich-13.7.1:\n      Successfully uninstalled rich-13.7.1\nSuccessfully installed rich-13.7.1",
+    "after_rerun_import": "/tmp/swegemma_sandbox_97d3a1c4-f97_ztzekxix/workspace/rich/__init__.py"
+  }
+}

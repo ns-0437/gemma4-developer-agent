@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="2" time="0.485" timestamp="2026-09-28T15:37:08.016546+00:00" hostname="fcac5414f593"><testcase classname="tests.test_form_default" name="test_form_default_url_encoded" time="0.022"><failure message="assert 422 == 200&#10; +  where 422 = &lt;Response [422 Unprocessable Entity]&gt;.status_code">def test_form_default_url_encoded():
+        response = client.post("/urlencoded", data={"age": ""})
+&gt;       assert response.status_code == 200
+E       assert 422 == 200
+E        +  where 422 = &lt;Response [422 Unprocessable Entity]&gt;.status_code
+
+tests/test_form_default.py:28: AssertionError</failure></testcase><testcase classname="tests.test_form_default" name="test_form_default_multi_part" time="0.004"><failure message="assert 422 == 200&#10; +  where 422 = &lt;Response [422 Unprocessable Entity]&gt;.status_code">def test_form_default_multi_part():
+        response = client.post("/multipart", data={"age": ""})
+&gt;       assert response.status_code == 200
+E       assert 422 == 200
+E        +  where 422 = &lt;Response [422 Unprocessable Entity]&gt;.status_code
+
+tests/test_form_default.py:34: AssertionError</failure></testcase></testsuite></testsuites>

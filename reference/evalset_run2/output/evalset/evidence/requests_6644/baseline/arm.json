@@ -1,0 +1,75 @@
+{
+  "task": "requests_6644",
+  "arm": "baseline",
+  "reached_pytest": true,
+  "pytest_exit": 1,
+  "pytest_cmd": "PYTHONSAFEPATH=1 PYTHONNOUSERSITE=1 python3 -s -m pytest tests/test_adapters.py",
+  "nodes": {
+    "tests.test_adapters::test_request_url_trims_leading_path_separators": "failed"
+  },
+  "failure_details": {
+    "tests.test_adapters::test_request_url_trims_leading_path_separators": {
+      "kind": "failure",
+      "message": "AssertionError: assert '/v:h' == '//v:h'\n  \n  - //v:h\n  ? -\n  + /v:h",
+      "detail": "def test_request_url_trims_leading_path_separators():\n        \"\"\"See also https://github.com/psf/requests/issues/6643.\"\"\"\n        a = requests.adapters.HTTPAdapter()\n        p = requests.Request(method=\"GET\", url=\"http://127.0.0.1:10000//v:h\").prepare()\n>       assert \"/v:h\" == a.request_url(p, {})\nE       AssertionError: assert '/v:h' == '//v:h'\nE         \nE         - //v:h\nE         ? -\nE         + /v:h\n\ntests/test_adapters.py:8: AssertionError"
+    }
+  },
+  "import_in_checkout": true,
+  "grading_import": "/tmp/swegemma_sandbox_a73328e5-d0b_3pwuoyqw/workspace/src/requests/__init__.py",
+  "patch_rc": 0,
+  "patch_err": null,
+  "test_patch_rc": 0,
+  "test_patch_err": "",
+  "editable_rc": 0,
+  "collection_error": false,
+  "exception": null,
+  "traceback": null,
+  "task_sha256": "b50c1de8b7e76a89f7fa3191feb70f4842b9d82afe2b2c2d2e0e340ed6a44747",
+  "snapshot_sha256": "1670706e5dd9eb9c83e36a5ddae23ecbf8cf1d5e77ee6cc50ecd1c66221397cc",
+  "environment_versions": {
+    "swegemma": "0.2.7",
+    "adk-submission": "0.2.11",
+    "adk-eval-core": "0.1.0",
+    "google-adk": "1.36.1"
+  },
+  "policy_sha256": "f59934c6b6369e97d529f821c0284cc666d708e340b3654aafd16dfe5f5e37ee",
+  "setup_commands": [
+    {
+      "cmd": "pip setuptools",
+      "rc": 0
+    },
+    {
+      "cmd": "pip wheel",
+      "rc": 0
+    },
+    {
+      "cmd": "pip editables",
+      "rc": 0
+    },
+    {
+      "cmd": "pip flit_core",
+      "rc": 0
+    },
+    {
+      "cmd": "pip poetry_core",
+      "rc": 0
+    },
+    {
+      "cmd": "pip pdm_backend",
+      "rc": 0
+    },
+    {
+      "cmd": "pip -e .",
+      "rc": 0,
+      "tail": "/swegemma_sandbox_a73328e5-d0b_3pwuoyqw/venv\n    Can't uninstall 'requests'. No files were found to uninstall.\nSuccessfully installed requests-2.31.0\n"
+    },
+    {
+      "cmd": "checkout tests/test_adapters.py",
+      "rc": 1
+    },
+    {
+      "cmd": "clean tests/test_adapters.py",
+      "rc": 0
+    }
+  ]
+}

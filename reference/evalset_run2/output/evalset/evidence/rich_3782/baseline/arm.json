@@ -1,0 +1,99 @@
+{
+  "task": "rich_3782",
+  "arm": "baseline",
+  "reached_pytest": true,
+  "pytest_exit": 1,
+  "pytest_cmd": "PYTHONSAFEPATH=1 PYTHONNOUSERSITE=1 python3 -s -m pytest tests/test_syntax.py",
+  "nodes": {
+    "test_syntax::test_blank_lines": "passed",
+    "test_syntax::test_python_render": "passed",
+    "test_syntax::test_python_render_simple": "passed",
+    "test_syntax::test_python_render_simple_passing_lexer_instance": "passed",
+    "test_syntax::test_python_render_simple_indent_guides": "passed",
+    "test_syntax::test_python_render_line_range_indent_guides": "passed",
+    "test_syntax::test_python_render_indent_guides": "passed",
+    "test_syntax::test_pygments_syntax_theme_non_str": "passed",
+    "test_syntax::test_pygments_syntax_theme": "passed",
+    "test_syntax::test_get_line_color_none": "passed",
+    "test_syntax::test_highlight_background_color": "passed",
+    "test_syntax::test_get_number_styles": "passed",
+    "test_syntax::test_get_style_for_token": "passed",
+    "test_syntax::test_option_no_wrap": "passed",
+    "test_syntax::test_syntax_highlight_ranges": "passed",
+    "test_syntax::test_ansi_theme": "passed",
+    "test_syntax::test_from_path": "passed",
+    "test_syntax::test_from_path_unknown_lexer": "passed",
+    "test_syntax::test_from_path_lexer_override": "passed",
+    "test_syntax::test_from_path_lexer_override_invalid_lexer": "passed",
+    "test_syntax::test_syntax_guess_lexer": "passed",
+    "test_syntax::test_syntax_padding": "passed",
+    "test_syntax::test_syntax_measure": "passed",
+    "test_syntax::test_background_color_override_includes_padding": "passed",
+    "test_syntax::test_padding_plus_wrap": "failed"
+  },
+  "failure_details": {
+    "test_syntax::test_padding_plus_wrap": {
+      "kind": "failure",
+      "message": "assert \"   'Hello, W...p.'        \\n\" == \"   'Hello, W...d wrap.'   \\n\"\n  \n  -    'Hello, World.       \n  ?                   ^^^\n  +    'Hello, World. Thi   \n  ?                   ^^^\n  -    This should wrap.'   \n  ?   -----\n  +    should wrap.'        \n  ?                    +++++",
+      "detail": "def test_padding_plus_wrap() -> None:\n        \"\"\"Regression test for https://github.com/Textualize/rich/issues/3727\"\"\"\n        console = Console(width=24, file=io.StringIO(), legacy_windows=False)\n        syntax = Syntax(\n            \"'Hello, World. This should wrap.'\",\n            lexer=\"python\",\n            padding=(0, 3),\n            word_wrap=True,\n        )\n        console.print(syntax)\n        output = console.file.getvalue()\n        print(repr(output))\n        expected = \"   'Hello, World.       \\n   This should wrap.'   \\n\"\n>       assert output == expected\nE       assert \"   'Hello, W...p.'        \\n\" == \"   'Hello, W...d wrap.'   \\n\"\nE         \nE         -    'Hello, World.       \nE         ?                   ^^^\nE         +    'Hello, World. Thi   \nE         ?                   ^^^\nE         -    This should wrap.'   \nE         ?   -----\nE         +    should wrap.'        \nE         ?                    +++++\n\ntests/test_syntax.py:435: AssertionError"
+    }
+  },
+  "import_in_checkout": true,
+  "grading_import": "/tmp/swegemma_sandbox_a67c0c10-cd9_y378m51v/workspace/rich/__init__.py",
+  "patch_rc": 0,
+  "patch_err": null,
+  "test_patch_rc": 0,
+  "test_patch_err": "",
+  "editable_rc": 0,
+  "collection_error": false,
+  "exception": null,
+  "traceback": null,
+  "task_sha256": "9ef29510d66f53619c0808842979b18671012d6efdfc212fdc8db2d1b46d9065",
+  "snapshot_sha256": "7bf98038a7fc6ea522b38d840c1a0e56b5f528f30fe6565cf52247af9afa97f1",
+  "environment_versions": {
+    "swegemma": "0.2.7",
+    "adk-submission": "0.2.11",
+    "adk-eval-core": "0.1.0",
+    "google-adk": "1.36.1"
+  },
+  "policy_sha256": "f59934c6b6369e97d529f821c0284cc666d708e340b3654aafd16dfe5f5e37ee",
+  "setup_commands": [
+    {
+      "cmd": "pip setuptools",
+      "rc": 0
+    },
+    {
+      "cmd": "pip wheel",
+      "rc": 0
+    },
+    {
+      "cmd": "pip editables",
+      "rc": 0
+    },
+    {
+      "cmd": "pip flit_core",
+      "rc": 0
+    },
+    {
+      "cmd": "pip poetry_core",
+      "rc": 0
+    },
+    {
+      "cmd": "pip pdm_backend",
+      "rc": 0
+    },
+    {
+      "cmd": "pip -e .",
+      "rc": 0,
+      "tail": "ent /tmp/swegemma_sandbox_a67c0c10-cd9_y378m51v/venv\n    Can't uninstall 'rich'. No files were found to uninstall.\nSuccessfully installed rich-14.0.0\n"
+    },
+    {
+      "cmd": "checkout tests/test_syntax.py",
+      "rc": 0
+    },
+    {
+      "cmd": "clean tests/test_syntax.py",
+      "rc": 0
+    }
+  ]
+}

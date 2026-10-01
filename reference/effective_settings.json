@@ -1,0 +1,142 @@
+[
+  {
+    "dir": "releases\\pilot_A",
+    "content_sha256": "4212efcd14ebf3f389c5de5665cf17d2920f7f63679e568d5ab71f660c37c500",
+    "sampling_yaml_raw": "temperature: 0.2\ntop_p: 0.95\ntop_k: 40\nmax_output_tokens: 8192\nseed: 42\nthinking_config:\n  thinking_budget: 4096\n  include_thoughts: false\n",
+    "sampling_yaml_parsed": {
+      "temperature": 0.2,
+      "top_p": 0.95,
+      "top_k": 40,
+      "max_output_tokens": 8192,
+      "seed": 42,
+      "thinking_config": {
+        "thinking_budget": 4096,
+        "include_thoughts": false
+      }
+    },
+    "agents": [
+      {
+        "agent": "swe_coder",
+        "class": "LlmAgent",
+        "depth": 0,
+        "model": "openai/gemma-4-31b-it-qat-w4a16-ct",
+        "additional_args": {
+          "api_base": "http://localhost:8000/v1",
+          "api_key": "EMPTY",
+          "extra_body": {
+            "chat_template_kwargs": {
+              "enable_thinking": false
+            }
+          }
+        },
+        "generate_content_config": {
+          "temperature": 0.2,
+          "top_p": 0.95,
+          "top_k": 40.0,
+          "max_output_tokens": 8192,
+          "seed": 42,
+          "thinking_config": {
+            "include_thoughts": false,
+            "thinking_budget": 4096
+          }
+        }
+      },
+      {
+        "agent": "code_analyzer",
+        "class": "LlmAgent",
+        "depth": 1,
+        "model": "openai/gemma-4-31b-it-qat-w4a16-ct",
+        "additional_args": {
+          "api_base": "http://localhost:8000/v1",
+          "api_key": "EMPTY",
+          "extra_body": {
+            "chat_template_kwargs": {
+              "enable_thinking": false
+            }
+          }
+        },
+        "generate_content_config": {
+          "temperature": 0.2,
+          "top_p": 0.95,
+          "top_k": 40.0,
+          "max_output_tokens": 8192,
+          "seed": 42,
+          "thinking_config": {
+            "include_thoughts": false,
+            "thinking_budget": 4096
+          }
+        }
+      }
+    ]
+  },
+  {
+    "dir": "releases\\pilot_B",
+    "content_sha256": "f9b3c2700859c3a93fc2022d64ef5cf6bceb90a747340ad475773ee3e7560f19",
+    "sampling_yaml_raw": "temperature: 0.2\ntop_p: 0.95\ntop_k: 40\nmax_output_tokens: 8192\nseed: 42\nthinking_config:\n  thinking_budget: 4096\n  include_thoughts: true\n",
+    "sampling_yaml_parsed": {
+      "temperature": 0.2,
+      "top_p": 0.95,
+      "top_k": 40,
+      "max_output_tokens": 8192,
+      "seed": 42,
+      "thinking_config": {
+        "thinking_budget": 4096,
+        "include_thoughts": true
+      }
+    },
+    "agents": [
+      {
+        "agent": "swe_coder",
+        "class": "LlmAgent",
+        "depth": 0,
+        "model": "openai/gemma-4-31b-it-qat-w4a16-ct",
+        "additional_args": {
+          "api_base": "http://localhost:8000/v1",
+          "api_key": "EMPTY",
+          "extra_body": {
+            "chat_template_kwargs": {
+              "enable_thinking": true
+            }
+          }
+        },
+        "generate_content_config": {
+          "temperature": 0.2,
+          "top_p": 0.95,
+          "top_k": 40.0,
+          "max_output_tokens": 8192,
+          "seed": 42,
+          "thinking_config": {
+            "include_thoughts": true,
+            "thinking_budget": 4096
+          }
+        }
+      },
+      {
+        "agent": "code_analyzer",
+        "class": "LlmAgent",
+        "depth": 1,
+        "model": "openai/gemma-4-31b-it-qat-w4a16-ct",
+        "additional_args": {
+          "api_base": "http://localhost:8000/v1",
+          "api_key": "EMPTY",
+          "extra_body": {
+            "chat_template_kwargs": {
+              "enable_thinking": true
+            }
+          }
+        },
+        "generate_content_config": {
+          "temperature": 0.2,
+          "top_p": 0.95,
+          "top_k": 40.0,
+          "max_output_tokens": 8192,
+          "seed": 42,
+          "thinking_config": {
+            "include_thoughts": true,
+            "thinking_budget": 4096
+          }
+        }
+      }
+    ]
+  }
+]

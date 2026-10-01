@@ -1,0 +1,72 @@
+[
+  {
+    "instance_id": "fastapi_11194",
+    "repo": "fastapi/fastapi",
+    "probe_exception": "NameError: name 'repair_editable_install' is not defined"
+  },
+  {
+    "instance_id": "fastapi_14246",
+    "repo": "fastapi/fastapi",
+    "probe_exception": "NameError: name 'repair_editable_install' is not defined"
+  },
+  {
+    "instance_id": "fastapi_14361",
+    "repo": "fastapi/fastapi",
+    "probe_exception": "NameError: name 'repair_editable_install' is not defined"
+  },
+  {
+    "instance_id": "fastapi_14482",
+    "repo": "fastapi/fastapi",
+    "probe_exception": "NameError: name 'repair_editable_install' is not defined"
+  },
+  {
+    "instance_id": "fastapi_14794",
+    "repo": "fastapi/fastapi",
+    "probe_exception": "NameError: name 'repair_editable_install' is not defined"
+  },
+  {
+    "instance_id": "fastapi_15588",
+    "repo": "fastapi/fastapi",
+    "probe_exception": "NameError: name 'repair_editable_install' is not defined"
+  },
+  {
+    "instance_id": "rich_2725",
+    "repo": "Textualize/rich",
+    "probe_exception": "NameError: name 'repair_editable_install' is not defined"
+  },
+  {
+    "instance_id": "rich_3105",
+    "repo": "Textualize/rich",
+    "probe_exception": "NameError: name 'repair_editable_install' is not defined"
+  },
+  {
+    "instance_id": "rich_3471",
+    "repo": "Textualize/rich",
+    "probe_exception": "NameError: name 'repair_editable_install' is not defined"
+  },
+  {
+    "instance_id": "rich_3676",
+    "repo": "Textualize/rich",
+    "probe_exception": "NameError: name 'repair_editable_install' is not defined"
+  },
+  {
+    "instance_id": "rich_3934",
+    "repo": "Textualize/rich",
+    "probe_exception": "NameError: name 'repair_editable_install' is not defined"
+  },
+  {
+    "instance_id": "requests_6589",
+    "repo": "psf/requests",
+    "probe_exception": "NameError: name 'repair_editable_install' is not defined"
+  },
+  {
+    "instance_id": "requests_7309",
+    "repo": "psf/requests",
+    "probe_exception": "NameError: name 'repair_editable_install' is not defined"
+  },
+  {
+    "instance_id": "httpx_3672",
+    "repo": "encode/httpx",
+    "probe_exception": "NameError: name 'repair_editable_install' is not defined"
+  }
+]

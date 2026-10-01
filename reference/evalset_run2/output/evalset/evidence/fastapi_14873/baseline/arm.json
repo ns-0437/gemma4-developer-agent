@@ -1,0 +1,84 @@
+{
+  "task": "fastapi_14873",
+  "arm": "baseline",
+  "reached_pytest": true,
+  "pytest_exit": 1,
+  "pytest_cmd": "PYTHONSAFEPATH=1 PYTHONNOUSERSITE=1 python3 -s -m pytest tests/test_router_events.py",
+  "nodes": {
+    "tests.test_router_events::test_router_events": "passed",
+    "tests.test_router_events::test_app_lifespan_state": "passed",
+    "tests.test_router_events::test_router_nested_lifespan_state": "passed",
+    "tests.test_router_events::test_router_nested_lifespan_state_overriding_by_parent": "passed",
+    "tests.test_router_events::test_merged_no_return_lifespans_return_none": "passed",
+    "tests.test_router_events::test_merged_mixed_state_lifespans": "passed",
+    "tests.test_router_events::test_router_async_shutdown_handler": "passed",
+    "tests.test_router_events::test_router_sync_generator_lifespan": "passed",
+    "tests.test_router_events::test_router_async_generator_lifespan": "passed",
+    "tests.test_router_events::test_startup_shutdown_handlers_as_parameters": "failed"
+  },
+  "failure_details": {
+    "tests.test_router_events::test_startup_shutdown_handlers_as_parameters": {
+      "kind": "failure",
+      "message": "assert False is True\n +  where False = State(app_startup=False, app_shutdown=False, router_startup=False, router_shutdown=False, sub_router_startup=False, sub_router_shutdown=False).app_startup",
+      "detail": "state = State(app_startup=False, app_shutdown=False, router_startup=False, router_shutdown=False, sub_router_startup=False, sub_router_shutdown=False)\n\n    def test_startup_shutdown_handlers_as_parameters(state: State) -> None:\n        \"\"\"Test that startup/shutdown handlers passed as parameters to FastAPI are called correctly.\"\"\"\n    \n        def app_startup() -> None:\n            state.app_startup = True\n    \n        def app_shutdown() -> None:\n            state.app_shutdown = True\n    \n        app = FastAPI(on_startup=[app_startup], on_shutdown=[app_shutdown])\n    \n        @app.get(\"/\")\n        def main() -> dict[str, str]:\n            return {\"message\": \"Hello World\"}\n    \n        def router_startup() -> None:\n            state.router_startup = True\n    \n        def router_shutdown() -> None:\n            state.router_shutdown = True\n    \n        router = APIRouter(on_startup=[router_startup], on_shutdown=[router_shutdown])\n    \n        def sub_router_startup() -> None:\n            state.sub_router_startup = True\n    \n        def sub_router_shutdown() -> None:\n            state.sub_router_shutdown = True\n    \n        sub_router = APIRouter(\n            on_startup=[sub_router_startup], on_shutdown=[sub_router_shutdown]\n        )\n    \n        router.include_router(sub_router)\n        app.include_router(router)\n    \n        assert state.app_startup is False\n        assert state.router_startup is False\n        assert state.sub_router_startup is False\n        assert state.app_sh"
+    }
+  },
+  "import_in_checkout": true,
+  "grading_import": "/tmp/swegemma_sandbox_258724a2-b5d_6gauqe4j/workspace/fastapi/__init__.py",
+  "patch_rc": 0,
+  "patch_err": null,
+  "test_patch_rc": 0,
+  "test_patch_err": "",
+  "editable_rc": 0,
+  "collection_error": false,
+  "exception": null,
+  "traceback": null,
+  "task_sha256": "ba43eb0a581d12e7413a10723ea9d4c49282a783975f448246e70afe5a823263",
+  "snapshot_sha256": "58cf6e48c2e243643ac5c6424902d34781a83f2dff918363f8d152bb60e3c0fb",
+  "environment_versions": {
+    "swegemma": "0.2.7",
+    "adk-submission": "0.2.11",
+    "adk-eval-core": "0.1.0",
+    "google-adk": "1.36.1"
+  },
+  "policy_sha256": "f59934c6b6369e97d529f821c0284cc666d708e340b3654aafd16dfe5f5e37ee",
+  "setup_commands": [
+    {
+      "cmd": "pip setuptools",
+      "rc": 0
+    },
+    {
+      "cmd": "pip wheel",
+      "rc": 0
+    },
+    {
+      "cmd": "pip editables",
+      "rc": 0
+    },
+    {
+      "cmd": "pip flit_core",
+      "rc": 0
+    },
+    {
+      "cmd": "pip poetry_core",
+      "rc": 0
+    },
+    {
+      "cmd": "pip pdm_backend",
+      "rc": 0
+    },
+    {
+      "cmd": "pip -e .",
+      "rc": 0,
+      "tail": "p/swegemma_sandbox_258724a2-b5d_6gauqe4j/venv\n    Can't uninstall 'fastapi'. No files were found to uninstall.\nSuccessfully installed fastapi-0.128.5\n"
+    },
+    {
+      "cmd": "checkout tests/test_router_events.py",
+      "rc": 0
+    },
+    {
+      "cmd": "clean tests/test_router_events.py",
+      "rc": 0
+    }
+  ]
+}

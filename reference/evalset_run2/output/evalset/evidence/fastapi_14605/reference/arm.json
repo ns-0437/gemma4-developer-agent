@@ -1,0 +1,336 @@
+{
+  "task": "fastapi_14605",
+  "arm": "reference",
+  "reached_pytest": true,
+  "pytest_exit": 2,
+  "pytest_cmd": "PYTHONSAFEPATH=1 PYTHONNOUSERSITE=1 python3 -s -m pytest tests/benchmarks/test_general_performance.py tests/test_compat_params_v1.py tests/test_pydantic_v1_deprecation_warnings.py tests/test_regex_deprecated_body.py tests/test_regex_deprecated_params.py tests/test_schema_extra_examples.py tests/test_tutorial/test_pydantic_v1_in_v2/test_tutorial002.py tests/test_tutorial/test_pydantic_v1_in_v2/test_tutorial003.py tests/test_tutorial/test_pydantic_v1_in_v2/test_tutorial004.py tests/test_tutorial/test_query_params_str_validations/test_tutorial004.py tests/test_tutorial/test_request_form_models/test_tutorial002_pv1.py tests/test_tutorial/test_schema_extra_example/test_tutorial001_pv1.py",
+  "nodes": {
+    "tests.benchmarks.test_general_performance": "skipped",
+    "tests.test_compat_params_v1": "errored",
+    "tests.test_regex_deprecated_body": "errored",
+    "tests.test_regex_deprecated_params": "errored",
+    "tests.test_schema_extra_examples": "errored",
+    "tests.test_tutorial.test_pydantic_v1_in_v2.test_tutorial002": "errored",
+    "tests.test_tutorial.test_pydantic_v1_in_v2.test_tutorial003": "errored",
+    "tests.test_tutorial.test_pydantic_v1_in_v2.test_tutorial004": "errored",
+    "tests.test_tutorial.test_schema_extra_example.test_tutorial001_pv1": "errored"
+  },
+  "failure_details": {
+    "tests.benchmarks.test_general_performance": {
+      "kind": "skipped",
+      "message": "collection skipped",
+      "detail": "('/tmp/swegemma_sandbox_0efff448-29e_pe9cpj2f/workspace/tests/benchmarks/test_general_performance.py', 13, 'Skipped: Benchmark tests are skipped by default; run with --codspeed.')"
+    },
+    "tests.test_compat_params_v1": {
+      "kind": "error",
+      "message": "collection failure",
+      "detail": "ImportError while importing test module '/tmp/swegemma_sandbox_0efff448-29e_pe9cpj2f/workspace/tests/test_compat_params_v1.py'.\nHint: make sure your test modules/packages have valid Python names.\nTraceback:\n/usr/lib/python3.12/importlib/__init__.py:90: in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ntests/test_compat_params_v1.py:27: in <module>\n    from inline_snapshot import snapshot\nE   ModuleNotFoundError: No module named 'inline_snapshot'"
+    },
+    "tests.test_regex_deprecated_body": {
+      "kind": "error",
+      "message": "collection failure",
+      "detail": "ImportError while importing test module '/tmp/swegemma_sandbox_0efff448-29e_pe9cpj2f/workspace/tests/test_regex_deprecated_body.py'.\nHint: make sure your test modules/packages have valid Python names.\nTraceback:\n/usr/lib/python3.12/importlib/__init__.py:90: in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ntests/test_regex_deprecated_body.py:4: in <module>\n    from dirty_equals import IsDict\nE   ModuleNotFoundError: No module named 'dirty_equals'"
+    },
+    "tests.test_regex_deprecated_params": {
+      "kind": "error",
+      "message": "collection failure",
+      "detail": "ImportError while importing test module '/tmp/swegemma_sandbox_0efff448-29e_pe9cpj2f/workspace/tests/test_regex_deprecated_params.py'.\nHint: make sure your test modules/packages have valid Python names.\nTraceback:\n/usr/lib/python3.12/importlib/__init__.py:90: in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ntests/test_regex_deprecated_params.py:4: in <module>\n    from dirty_equals import IsDict\nE   ModuleNotFoundError: No module named 'dirty_equals'"
+    },
+    "tests.test_schema_extra_examples": {
+      "kind": "error",
+      "message": "collection failure",
+      "detail": "ImportError while importing test module '/tmp/swegemma_sandbox_0efff448-29e_pe9cpj2f/workspace/tests/test_schema_extra_examples.py'.\nHint: make sure your test modules/packages have valid Python names.\nTraceback:\n/usr/lib/python3.12/importlib/__init__.py:90: in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ntests/test_schema_extra_examples.py:4: in <module>\n    from dirty_equals import IsDict\nE   ModuleNotFoundError: No module named 'dirty_equals'"
+    },
+    "tests.test_tutorial.test_pydantic_v1_in_v2.test_tutorial002": {
+      "kind": "error",
+      "message": "collection failure",
+      "detail": "ImportError while importing test module '/tmp/swegemma_sandbox_0efff448-29e_pe9cpj2f/workspace/tests/test_tutorial/test_pydantic_v1_in_v2/test_tutorial002.py'.\nHint: make sure your test modules/packages have valid Python names.\nTraceback:\n/usr/lib/python3.12/importlib/__init__.py:90: in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ntests/test_tutorial/test_pydantic_v1_in_v2/test_tutorial002.py:6: in <module>\n    from inline_snapshot import snapshot\nE   ModuleNotFoundError: No module named 'inline_snapshot'"
+    },
+    "tests.test_tutorial.test_pydantic_v1_in_v2.test_tutorial003": {
+      "kind": "error",
+      "message": "collection failure",
+      "detail": "ImportError while importing test module '/tmp/swegemma_sandbox_0efff448-29e_pe9cpj2f/workspace/tests/test_tutorial/test_pydantic_v1_in_v2/test_tutorial003.py'.\nHint: make sure your test modules/packages have valid Python names.\nTraceback:\n/usr/lib/python3.12/importlib/__init__.py:90: in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ntests/test_tutorial/test_pydantic_v1_in_v2/test_tutorial003.py:6: in <module>\n    from inline_snapshot import snapshot\nE   ModuleNotFoundError: No module named 'inline_snapshot'"
+    },
+    "tests.test_tutorial.test_pydantic_v1_in_v2.test_tutorial004": {
+      "kind": "error",
+      "message": "collection failure",
+      "detail": "ImportError while importing test module '/tmp/swegemma_sandbox_0efff448-29e_pe9cpj2f/workspace/tests/test_tutorial/test_pydantic_v1_in_v2/test_tutorial004.py'.\nHint: make sure your test modules/packages have valid Python names.\nTraceback:\n/usr/lib/python3.12/importlib/__init__.py:90: in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ntests/test_tutorial/test_pydantic_v1_in_v2/test_tutorial004.py:6: in <module>\n    from inline_snapshot import snapshot\nE   ModuleNotFoundError: No module named 'inline_snapshot'"
+    },
+    "tests.test_tutorial.test_schema_extra_example.test_tutorial001_pv1": {
+      "kind": "error",
+      "message": "collection failure",
+      "detail": "ImportError while importing test module '/tmp/swegemma_sandbox_0efff448-29e_pe9cpj2f/workspace/tests/test_tutorial/test_schema_extra_example/test_tutorial001_pv1.py'.\nHint: make sure your test modules/packages have valid Python names.\nTraceback:\n/usr/lib/python3.12/importlib/__init__.py:90: in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ntests/test_tutorial/test_schema_extra_example/test_tutorial001_pv1.py:7: in <module>\n    from inline_snapshot import snapshot\nE   ModuleNotFoundError: No module named 'inline_snapshot'"
+    }
+  },
+  "import_in_checkout": true,
+  "grading_import": "/tmp/swegemma_sandbox_0efff448-29e_pe9cpj2f/workspace/fastapi/__init__.py",
+  "patch_rc": 0,
+  "patch_err": "",
+  "test_patch_rc": 0,
+  "test_patch_err": "",
+  "editable_rc": 0,
+  "collection_error": true,
+  "exception": null,
+  "traceback": null,
+  "task_sha256": "82bcb10cdc95bd85cafa0ceb4c0f7d408fb29201e98f4c42ae43d93dcfa34251",
+  "snapshot_sha256": "8dce7856071d5d78e6a1c6e6fa31495d4c22b7a6cb8b82d094d84b79a0ffe85d",
+  "environment_versions": {
+    "swegemma": "0.2.7",
+    "adk-submission": "0.2.11",
+    "adk-eval-core": "0.1.0",
+    "google-adk": "1.36.1"
+  },
+  "policy_sha256": "f59934c6b6369e97d529f821c0284cc666d708e340b3654aafd16dfe5f5e37ee",
+  "setup_commands": [
+    {
+      "cmd": "pip setuptools",
+      "rc": 0
+    },
+    {
+      "cmd": "pip wheel",
+      "rc": 0
+    },
+    {
+      "cmd": "pip editables",
+      "rc": 0
+    },
+    {
+      "cmd": "pip flit_core",
+      "rc": 0
+    },
+    {
+      "cmd": "pip poetry_core",
+      "rc": 0
+    },
+    {
+      "cmd": "pip pdm_backend",
+      "rc": 0
+    },
+    {
+      "cmd": "pip -e .",
+      "rc": 0,
+      "tail": "p/swegemma_sandbox_6c68ff5a-4e8_knq6pti6/venv\n    Can't uninstall 'fastapi'. No files were found to uninstall.\nSuccessfully installed fastapi-0.127.0\n"
+    },
+    {
+      "cmd": "checkout tests/benchmarks/test_general_performance.py",
+      "rc": 0
+    },
+    {
+      "cmd": "clean tests/benchmarks/test_general_performance.py",
+      "rc": 0
+    },
+    {
+      "cmd": "checkout tests/test_compat_params_v1.py",
+      "rc": 0
+    },
+    {
+      "cmd": "clean tests/test_compat_params_v1.py",
+      "rc": 0
+    },
+    {
+      "cmd": "checkout tests/test_pydantic_v1_deprecation_warnings.py",
+      "rc": 0
+    },
+    {
+      "cmd": "clean tests/test_pydantic_v1_deprecation_warnings.py",
+      "rc": 0
+    },
+    {
+      "cmd": "checkout tests/test_regex_deprecated_body.py",
+      "rc": 0
+    },
+    {
+      "cmd": "clean tests/test_regex_deprecated_body.py",
+      "rc": 0
+    },
+    {
+      "cmd": "checkout tests/test_regex_deprecated_params.py",
+      "rc": 0
+    },
+    {
+      "cmd": "clean tests/test_regex_deprecated_params.py",
+      "rc": 0
+    },
+    {
+      "cmd": "checkout tests/test_schema_extra_examples.py",
+      "rc": 0
+    },
+    {
+      "cmd": "clean tests/test_schema_extra_examples.py",
+      "rc": 0
+    },
+    {
+      "cmd": "checkout tests/test_tutorial/test_pydantic_v1_in_v2/test_tutorial002.py",
+      "rc": 0
+    },
+    {
+      "cmd": "clean tests/test_tutorial/test_pydantic_v1_in_v2/test_tutorial002.py",
+      "rc": 0
+    },
+    {
+      "cmd": "checkout tests/test_tutorial/test_pydantic_v1_in_v2/test_tutorial003.py",
+      "rc": 0
+    },
+    {
+      "cmd": "clean tests/test_tutorial/test_pydantic_v1_in_v2/test_tutorial003.py",
+      "rc": 0
+    },
+    {
+      "cmd": "checkout tests/test_tutorial/test_pydantic_v1_in_v2/test_tutorial004.py",
+      "rc": 0
+    },
+    {
+      "cmd": "clean tests/test_tutorial/test_pydantic_v1_in_v2/test_tutorial004.py",
+      "rc": 0
+    },
+    {
+      "cmd": "checkout tests/test_tutorial/test_query_params_str_validations/test_tutorial004.py",
+      "rc": 0
+    },
+    {
+      "cmd": "clean tests/test_tutorial/test_query_params_str_validations/test_tutorial004.py",
+      "rc": 0
+    },
+    {
+      "cmd": "checkout tests/test_tutorial/test_request_form_models/test_tutorial002_pv1.py",
+      "rc": 0
+    },
+    {
+      "cmd": "clean tests/test_tutorial/test_request_form_models/test_tutorial002_pv1.py",
+      "rc": 0
+    },
+    {
+      "cmd": "checkout tests/test_tutorial/test_schema_extra_example/test_tutorial001_pv1.py",
+      "rc": 0
+    },
+    {
+      "cmd": "clean tests/test_tutorial/test_schema_extra_example/test_tutorial001_pv1.py",
+      "rc": 0
+    },
+    {
+      "cmd": "pip setuptools",
+      "rc": 0
+    },
+    {
+      "cmd": "pip wheel",
+      "rc": 0
+    },
+    {
+      "cmd": "pip editables",
+      "rc": 0
+    },
+    {
+      "cmd": "pip flit_core",
+      "rc": 0
+    },
+    {
+      "cmd": "pip poetry_core",
+      "rc": 0
+    },
+    {
+      "cmd": "pip pdm_backend",
+      "rc": 0
+    },
+    {
+      "cmd": "pip -e .",
+      "rc": 0,
+      "tail": "p/swegemma_sandbox_0efff448-29e_pe9cpj2f/venv\n    Can't uninstall 'fastapi'. No files were found to uninstall.\nSuccessfully installed fastapi-0.127.0\n"
+    },
+    {
+      "cmd": "checkout tests/benchmarks/test_general_performance.py",
+      "rc": 0
+    },
+    {
+      "cmd": "clean tests/benchmarks/test_general_performance.py",
+      "rc": 0
+    },
+    {
+      "cmd": "checkout tests/test_compat_params_v1.py",
+      "rc": 0
+    },
+    {
+      "cmd": "clean tests/test_compat_params_v1.py",
+      "rc": 0
+    },
+    {
+      "cmd": "checkout tests/test_pydantic_v1_deprecation_warnings.py",
+      "rc": 0
+    },
+    {
+      "cmd": "clean tests/test_pydantic_v1_deprecation_warnings.py",
+      "rc": 0
+    },
+    {
+      "cmd": "checkout tests/test_regex_deprecated_body.py",
+      "rc": 0
+    },
+    {
+      "cmd": "clean tests/test_regex_deprecated_body.py",
+      "rc": 0
+    },
+    {
+      "cmd": "checkout tests/test_regex_deprecated_params.py",
+      "rc": 0
+    },
+    {
+      "cmd": "clean tests/test_regex_deprecated_params.py",
+      "rc": 0
+    },
+    {
+      "cmd": "checkout tests/test_schema_extra_examples.py",
+      "rc": 0
+    },
+    {
+      "cmd": "clean tests/test_schema_extra_examples.py",
+      "rc": 0
+    },
+    {
+      "cmd": "checkout tests/test_tutorial/test_pydantic_v1_in_v2/test_tutorial002.py",
+      "rc": 0
+    },
+    {
+      "cmd": "clean tests/test_tutorial/test_pydantic_v1_in_v2/test_tutorial002.py",
+      "rc": 0
+    },
+    {
+      "cmd": "checkout tests/test_tutorial/test_pydantic_v1_in_v2/test_tutorial003.py",
+      "rc": 0
+    },
+    {
+      "cmd": "clean tests/test_tutorial/test_pydantic_v1_in_v2/test_tutorial003.py",
+      "rc": 0
+    },
+    {
+      "cmd": "checkout tests/test_tutorial/test_pydantic_v1_in_v2/test_tutorial004.py",
+      "rc": 0
+    },
+    {
+      "cmd": "clean tests/test_tutorial/test_pydantic_v1_in_v2/test_tutorial004.py",
+      "rc": 0
+    },
+    {
+      "cmd": "checkout tests/test_tutorial/test_query_params_str_validations/test_tutorial004.py",
+      "rc": 0
+    },
+    {
+      "cmd": "clean tests/test_tutorial/test_query_params_str_validations/test_tutorial004.py",
+      "rc": 0
+    },
+    {
+      "cmd": "checkout tests/test_tutorial/test_request_form_models/test_tutorial002_pv1.py",
+      "rc": 0
+    },
+    {
+      "cmd": "clean tests/test_tutorial/test_request_form_models/test_tutorial002_pv1.py",
+      "rc": 0
+    },
+    {
+      "cmd": "checkout tests/test_tutorial/test_schema_extra_example/test_tutorial001_pv1.py",
+      "rc": 0
+    },
+    {
+      "cmd": "clean tests/test_tutorial/test_schema_extra_example/test_tutorial001_pv1.py",
+      "rc": 0
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+[
+  {
+    "candidate": "A",
+    "calls": {
+      "run_command": 57,
+      "read_file": 3
+    },
+    "missing_parameter_rejections": 0
+  },
+  {
+    "candidate": "B",
+    "calls": {
+      "run_command": 4,
+      "read_file": 2,
+      "edit_file": 42
+    },
+    "missing_parameter_rejections": 42
+  }
+]

@@ -1,0 +1,40 @@
+id,repo,size,valid,n_target_nodes,exclusion_reasons,task_sha256
+rich_3894,Textualize/rich,small,True,1,,d8573bbb304794c15d74d3948a1fd423beec616ebc17254ec0922c36dca978e8
+rich_3535,Textualize/rich,small,True,1,,3c70ac67cc8e78d329459615dd6db711e2715b92f6da4632cc4905f1faf0ad18
+rich_3772,Textualize/rich,medium,False,0,no JUnit report (tests never ran); no node fails at baseline and passes with reference,f35bc82c01e1c4f892218c1dff1bdde62182d0d0347e4b4f0c12f9772cd1eb47
+rich_3278,Textualize/rich,small,True,16,,8fb8127fdb3e069ae02db8a0e3d2e5306b96e7d42a1ab7c3185da2e269cd61bf
+rich_4076,Textualize/rich,small,True,4,,cd096e8aab5e7891d02a7d08ed43dd33ef5bbe38a10a4431a19cfb692f06fc23
+rich_3905,Textualize/rich,small,True,1,,1fcd96e259cc014927d992a5fb8426e03f388757501010dbb4bd45d7e520427c
+rich_3472,Textualize/rich,small,True,1,,751ec31b30df40d353b7bb8d3d48ce1d57a00a39756990fd266ff02b9322afb1
+rich_4079,Textualize/rich,small,True,1,,c3cacbe9f2f4dce6220eadf0df8b3998bfa0268fca6e457595d207b7d217d3cd
+rich_3470,Textualize/rich,small,True,1,,728c43f6383dcb2dbd8fd8fc00af8256ccb3adf34a0a0320e24f058dcac66c88
+rich_3180,Textualize/rich,large,True,4,,776163701370985632d4b3f874480f5d11fa597bd5f16690875006e8ff7e64a0
+rich_3130,Textualize/rich,small,False,3,reference run has failing/erroring nodes,fec1095fbd2a317b7faf2545bd6697ec793c7edef084da75e89e2ca955d022f9
+rich_3486,Textualize/rich,large,True,1,,0cd437edcb332716de3d70dd85cc248a2b82b3f4c28cfecbad08e160880969a0
+rich_3938,Textualize/rich,medium,True,3,,43cf363ebb2736211e7cb70930220850d59ca4232ed1f5bde9c292962cddb54a
+rich_3061,Textualize/rich,large,True,12,,f43be9a8ad4bff5fa4108c0bcf0e65f82db7da1bb673a2653a8118a8afdda43b
+rich_3521,Textualize/rich,medium,True,4,,9d467bdfe7e98567c99087260c7c2d8a0eceaf0bcbd199b78a8e881d92f73c25
+rich_3782,Textualize/rich,medium,False,1,reference run has failing/erroring nodes,9ef29510d66f53619c0808842979b18671012d6efdfc212fdc8db2d1b46d9065
+rich_3296,Textualize/rich,small,False,1,reference run has failing/erroring nodes,22de4dba4d4c800b5db8baffa302722741249fac1d95e0de2d4d2c143b9f1156
+rich_3675,Textualize/rich,medium,True,1,,d651989d2710c16333584401276a29f5c36026b5fff3407204f53d550f3176fb
+rich_3953,Textualize/rich,medium,True,2,,e7cc72b8c46d88e17e38c3447bce739a8efd6a6b046b01baf1419ed012efd328
+rich_3942,Textualize/rich,large,True,6,,b626009683a3a55af3ad72e8a4cc9cd629cb24444a2c404c073a87778b8148b8
+rich_3930,Textualize/rich,large,False,0,collection error; no node fails at baseline and passes with reference,9fcc93957abf7cf1635a2a3a72da729514743d55dd03531010fde75416718cc8
+fastapi_11355,fastapi/fastapi,small,False,0,collection error; reference run has failing/erroring nodes; no node fails at baseline and passes with reference,3b5a21a1626d793209c1968a6512586ff61580b9dd89849cc334369c8704d92a
+fastapi_14512,fastapi/fastapi,medium,False,0,collection error; reference run has failing/erroring nodes; no node fails at baseline and passes with reference,866d8fa0f278916cd7cf6a27144ca4d95781e00c2ea8d034ef85d699862c9cd2
+fastapi_14953,fastapi/fastapi,large,False,0,collection error; reference run has failing/erroring nodes; no node fails at baseline and passes with reference,9211bf5d42113de1a63faeb8b78a25e534039b9567f56e4e2177ff6424129a7f
+fastapi_15661,fastapi/fastapi,large,False,0,collection error; no node fails at baseline and passes with reference,59247475c57b2c31df191e441038d4e207e2869919e7c87411d339631ed79381
+fastapi_15280,fastapi/fastapi,large,True,1,,2e6b43f033725cb2a5398b1cbe4b8a91b6027962ece919764d4faced4e840be9
+fastapi_13537,fastapi/fastapi,small,True,2,,fedfffd2fa3b1f1e251e65891b8f3b2a3163b17bc3ac9ea46aeb07993481eed4
+fastapi_14479,fastapi/fastapi,small,True,4,,368f6b6eac0022fdbf2eda6a26e902f2a59f89ec1ede206af5f9eb8c6c93b25b
+fastapi_14349,fastapi/fastapi,small,False,0,collection error; reference run has failing/erroring nodes; no node fails at baseline and passes with reference,2bb80ad92de914f24be7d3006523077befa0234b97a09f5b3fe44339644c6fdd
+fastapi_14266,fastapi/fastapi,small,False,0,collection error; reference run has failing/erroring nodes; no node fails at baseline and passes with reference,34b2ea6a469a23e13dd050d013ea6ad192b70c1742e99ebe96ee85432ed1fbaf
+fastapi_14077,fastapi/fastapi,small,False,0,no node fails at baseline and passes with reference,a973ef3cc60bdc94582b499bf0f3e216a9cd919f06171ee0893e5b43229f5bfd
+fastapi_14487,fastapi/fastapi,small,True,1,,12cb36cfab5717353ca691a72dab837b244afb598b5072b6af0166d077231fc7
+fastapi_15030,fastapi/fastapi,large,False,0,collection error; reference run has failing/erroring nodes; no node fails at baseline and passes with reference,6a767db6e3fc1672fa1e5e22a4b2f5c47fcda8f2b3898f222f9576c461f97211
+fastapi_15800,fastapi/fastapi,large,True,60,,349aab36d64f6f9ae806c9da6649f387adc72ce448f10a1fb7177b408f6ea2b2
+fastapi_14099,fastapi/fastapi,large,False,0,collection error; reference run has failing/erroring nodes; no node fails at baseline and passes with reference,63da50c26cd46eb985c2bd58e9319125591081f93c143e599281f5d92828c1b9
+fastapi_14246,fastapi/fastapi,medium,False,0,collection error; reference run has failing/erroring nodes; no node fails at baseline and passes with reference,31bb479f63943da8dcb448c9a0a957066cb8f15b56875d790ec6582c05d4c639
+fastapi_12942,fastapi/fastapi,small,False,0,collection error; reference run has failing/erroring nodes; no node fails at baseline and passes with reference,6de4b618c95789ad24e7088709880d447b5c7a6020db9d7540fe14203766bc67
+fastapi_14301,fastapi/fastapi,small,True,2,,8fb5db647e1a290704a17d4ff32b460da29a9731647e7b6376796c90186018ed
+fastapi_14851,fastapi/fastapi,large,False,0,no node fails at baseline and passes with reference,bb189738dc706df369aa2a18be374a68e2f406561e776371a3c5dc9b4dc2650b

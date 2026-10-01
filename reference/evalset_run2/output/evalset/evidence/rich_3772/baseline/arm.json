@@ -1,0 +1,67 @@
+{
+  "task": "rich_3772",
+  "arm": "baseline",
+  "reached_pytest": true,
+  "pytest_exit": 124,
+  "pytest_cmd": "PYTHONSAFEPATH=1 PYTHONNOUSERSITE=1 python3 -s -m pytest tests/test_traceback.py",
+  "nodes": null,
+  "failure_details": {},
+  "import_in_checkout": true,
+  "grading_import": "/tmp/swegemma_sandbox_057412a7-52b_h7uahvdt/workspace/rich/__init__.py",
+  "patch_rc": 0,
+  "patch_err": null,
+  "test_patch_rc": 0,
+  "test_patch_err": "",
+  "editable_rc": 0,
+  "collection_error": false,
+  "exception": null,
+  "traceback": null,
+  "task_sha256": "f35bc82c01e1c4f892218c1dff1bdde62182d0d0347e4b4f0c12f9772cd1eb47",
+  "snapshot_sha256": "a7e6040edc80b172491974ef5c8cb4f0f184faf288e6eb6284ad644a3f5516a6",
+  "environment_versions": {
+    "swegemma": "0.2.7",
+    "adk-submission": "0.2.11",
+    "adk-eval-core": "0.1.0",
+    "google-adk": "1.36.1"
+  },
+  "policy_sha256": "f59934c6b6369e97d529f821c0284cc666d708e340b3654aafd16dfe5f5e37ee",
+  "setup_commands": [
+    {
+      "cmd": "pip setuptools",
+      "rc": 0
+    },
+    {
+      "cmd": "pip wheel",
+      "rc": 0
+    },
+    {
+      "cmd": "pip editables",
+      "rc": 0
+    },
+    {
+      "cmd": "pip flit_core",
+      "rc": 0
+    },
+    {
+      "cmd": "pip poetry_core",
+      "rc": 0
+    },
+    {
+      "cmd": "pip pdm_backend",
+      "rc": 0
+    },
+    {
+      "cmd": "pip -e .",
+      "rc": 0,
+      "tail": "ent /tmp/swegemma_sandbox_057412a7-52b_h7uahvdt/venv\n    Can't uninstall 'rich'. No files were found to uninstall.\nSuccessfully installed rich-14.0.0\n"
+    },
+    {
+      "cmd": "checkout tests/test_traceback.py",
+      "rc": 0
+    },
+    {
+      "cmd": "clean tests/test_traceback.py",
+      "rc": 0
+    }
+  ]
+}

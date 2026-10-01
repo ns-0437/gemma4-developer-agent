@@ -1,0 +1,843 @@
+{
+  "integrity": {
+    "sdist_sha256": "9fb88ce6b50991eba41d183584f65f51d7f6015d86a42cdabf79c1c8bd5d66fa",
+    "digest_verified": true,
+    "parser_file": "vllm/tool_parsers/gemma4_tool_parser.py",
+    "parser_sha256": "682b2152b76c031df9c58c3ffbb5b243945be5d8957ebdce00faef1b9de6b889",
+    "parser_bytes": 27743,
+    "release_url": "https://files.pythonhosted.org/packages/a8/49/60a2a962ecbf780c8fbfd0d5548b208d654d5c4267df94d8d93883641431/vllm-0.19.1.tar.gz"
+  },
+  "parsing_path": "non-streaming extract_tool_calls",
+  "results": [
+    {
+      "id": "p01_real_failure",
+      "style": "delim",
+      "shape": "regex: backslashes, triple quotes, commas, colons",
+      "wire_len": 351,
+      "tools_called": true,
+      "name": "edit_file",
+      "keys": [
+        "filepath",
+        "old_string",
+        "new_string"
+      ],
+      "args": {
+        "filepath": "rich/ansi.py",
+        "old_string": "re_ansi = re.compile(\n    r\"\"\"\n(?:\\x1b\\](.*?)\\x1b\\\\)|\n(?:\\x1b([(@-Z\\\\-_]|\\[[0-?]*[ -/]*[@-~]))\n\"\"\",\n    re.VERBOSE,\n)",
+        "new_string": "re_ansi = re.compile(\n    r\"\"\"\n(?:\\x1b\\](.*?)\\x1b\\\\)|\n(?:\\x1b([0-?@-Z\\\\-_]|\\[[0-?]*[ -/]*[@-~]))\n\"\"\",\n    re.VERBOSE,\n)"
+      },
+      "roundtrip_ok": true,
+      "missing_required": [],
+      "spurious_keys": []
+    },
+    {
+      "id": "p01_real_failure",
+      "style": "backtick",
+      "shape": "regex: backslashes, triple quotes, commas, colons",
+      "wire_len": 327,
+      "tools_called": true,
+      "name": "edit_file",
+      "keys": [
+        "filepath",
+        "old_string",
+        "](.*?)\\x1b\\\\)|\n(?",
+        "]|\\[[0-?]*[ -/]*[@-~]))\n\"\"\",\n    re.VERBOSE,\n)`,new_string"
+      ],
+      "args": {
+        "filepath": "`rich/ansi.py`",
+        "old_string": "`re_ansi = re.compile(\n    r\"\"\"\n(?:\\x1b\\",
+        "](.*?)\\x1b\\\\)|\n(?": "\\x1b([0-?@-Z\\\\-_",
+        "]|\\[[0-?]*[ -/]*[@-~]))\n\"\"\",\n    re.VERBOSE,\n)`,new_string": "`re_ansi = re.compile(\n    r\"\"\"\n(?:\\x1b\\"
+      },
+      "roundtrip_ok": false,
+      "missing_required": [
+        "new_string"
+      ],
+      "spurious_keys": [
+        "](.*?)\\x1b\\\\)|\n(?",
+        "]|\\[[0-?]*[ -/]*[@-~]))\n\"\"\",\n    re.VERBOSE,\n)`,new_string"
+      ]
+    },
+    {
+      "id": "p01_real_failure",
+      "style": "bare",
+      "shape": "regex: backslashes, triple quotes, commas, colons",
+      "wire_len": 321,
+      "tools_called": true,
+      "name": "edit_file",
+      "keys": [
+        "filepath",
+        "old_string",
+        "](.*?)\\x1b\\\\)|\n(?",
+        "]|\\[[0-?]*[ -/]*[@-~]))\n\"\"\",\n    re.VERBOSE,\n),new_string"
+      ],
+      "args": {
+        "filepath": "rich/ansi.py",
+        "old_string": "re_ansi = re.compile(\n    r\"\"\"\n(?:\\x1b\\",
+        "](.*?)\\x1b\\\\)|\n(?": "\\x1b([0-?@-Z\\\\-_",
+        "]|\\[[0-?]*[ -/]*[@-~]))\n\"\"\",\n    re.VERBOSE,\n),new_string": "re_ansi = re.compile(\n    r\"\"\"\n(?:\\x1b\\"
+      },
+      "roundtrip_ok": false,
+      "missing_required": [
+        "new_string"
+      ],
+      "spurious_keys": [
+        "](.*?)\\x1b\\\\)|\n(?",
+        "]|\\[[0-?]*[ -/]*[@-~]))\n\"\"\",\n    re.VERBOSE,\n),new_string"
+      ]
+    },
+    {
+      "id": "p02_plain",
+      "style": "delim",
+      "shape": "plain ASCII, no special characters",
+      "wire_len": 123,
+      "tools_called": true,
+      "name": "edit_file",
+      "keys": [
+        "filepath",
+        "old_string",
+        "new_string"
+      ],
+      "args": {
+        "filepath": "pkg/mod.py",
+        "old_string": "x = 1",
+        "new_string": "x = 2"
+      },
+      "roundtrip_ok": true,
+      "missing_required": [],
+      "spurious_keys": []
+    },
+    {
+      "id": "p02_plain",
+      "style": "backtick",
+      "shape": "plain ASCII, no special characters",
+      "wire_len": 99,
+      "tools_called": true,
+      "name": "edit_file",
+      "keys": [
+        "filepath",
+        "old_string",
+        "new_string"
+      ],
+      "args": {
+        "filepath": "`pkg/mod.py`",
+        "old_string": "`x = 1`",
+        "new_string": "`x = 2`"
+      },
+      "roundtrip_ok": false,
+      "missing_required": [],
+      "spurious_keys": []
+    },
+    {
+      "id": "p02_plain",
+      "style": "bare",
+      "shape": "plain ASCII, no special characters",
+      "wire_len": 93,
+      "tools_called": true,
+      "name": "edit_file",
+      "keys": [
+        "filepath",
+        "old_string",
+        "new_string"
+      ],
+      "args": {
+        "filepath": "pkg/mod.py",
+        "old_string": "x = 1",
+        "new_string": "x = 2"
+      },
+      "roundtrip_ok": true,
+      "missing_required": [],
+      "spurious_keys": []
+    },
+    {
+      "id": "p03_comma",
+      "style": "delim",
+      "shape": "commas in both string values",
+      "wire_len": 130,
+      "tools_called": true,
+      "name": "edit_file",
+      "keys": [
+        "filepath",
+        "old_string",
+        "new_string"
+      ],
+      "args": {
+        "filepath": "pkg/mod.py",
+        "old_string": "f(a, b)",
+        "new_string": "f(a, b, c)"
+      },
+      "roundtrip_ok": true,
+      "missing_required": [],
+      "spurious_keys": []
+    },
+    {
+      "id": "p03_comma",
+      "style": "backtick",
+      "shape": "commas in both string values",
+      "wire_len": 106,
+      "tools_called": true,
+      "name": "edit_file",
+      "keys": [
+        "filepath",
+        "old_string",
+        "b)`,new_string"
+      ],
+      "args": {
+        "filepath": "`pkg/mod.py`",
+        "old_string": "`f(a",
+        "b)`,new_string": "`f(a"
+      },
+      "roundtrip_ok": false,
+      "missing_required": [
+        "new_string"
+      ],
+      "spurious_keys": [
+        "b)`,new_string"
+      ]
+    },
+    {
+      "id": "p03_comma",
+      "style": "bare",
+      "shape": "commas in both string values",
+      "wire_len": 100,
+      "tools_called": true,
+      "name": "edit_file",
+      "keys": [
+        "filepath",
+        "old_string",
+        "b),new_string"
+      ],
+      "args": {
+        "filepath": "pkg/mod.py",
+        "old_string": "f(a",
+        "b),new_string": "f(a"
+      },
+      "roundtrip_ok": false,
+      "missing_required": [
+        "new_string"
+      ],
+      "spurious_keys": [
+        "b),new_string"
+      ]
+    },
+    {
+      "id": "p04_colon",
+      "style": "delim",
+      "shape": "colons in both string values",
+      "wire_len": 137,
+      "tools_called": true,
+      "name": "edit_file",
+      "keys": [
+        "filepath",
+        "old_string",
+        "new_string"
+      ],
+      "args": {
+        "filepath": "pkg/mod.py",
+        "old_string": "d = {'k': 1}",
+        "new_string": "d = {'k': 2}"
+      },
+      "roundtrip_ok": true,
+      "missing_required": [],
+      "spurious_keys": []
+    },
+    {
+      "id": "p04_colon",
+      "style": "backtick",
+      "shape": "colons in both string values",
+      "wire_len": 113,
+      "tools_called": true,
+      "name": "edit_file",
+      "keys": [
+        "filepath",
+        "old_string",
+        "}`,new_string"
+      ],
+      "args": {
+        "filepath": "`pkg/mod.py`",
+        "old_string": "`d = {'k': 1",
+        "}`,new_string": "`d = {'k': 2"
+      },
+      "roundtrip_ok": false,
+      "missing_required": [
+        "new_string"
+      ],
+      "spurious_keys": [
+        "}`,new_string"
+      ]
+    },
+    {
+      "id": "p04_colon",
+      "style": "bare",
+      "shape": "colons in both string values",
+      "wire_len": 107,
+      "tools_called": true,
+      "name": "edit_file",
+      "keys": [
+        "filepath",
+        "old_string",
+        "},new_string"
+      ],
+      "args": {
+        "filepath": "pkg/mod.py",
+        "old_string": "d = {'k': 1",
+        "},new_string": "d = {'k': 2"
+      },
+      "roundtrip_ok": false,
+      "missing_required": [
+        "new_string"
+      ],
+      "spurious_keys": [
+        "},new_string"
+      ]
+    },
+    {
+      "id": "p05_double_quote",
+      "style": "delim",
+      "shape": "double quotes",
+      "wire_len": 127,
+      "tools_called": true,
+      "name": "edit_file",
+      "keys": [
+        "filepath",
+        "old_string",
+        "new_string"
+      ],
+      "args": {
+        "filepath": "pkg/mod.py",
+        "old_string": "s = \"a\"",
+        "new_string": "s = \"b\""
+      },
+      "roundtrip_ok": true,
+      "missing_required": [],
+      "spurious_keys": []
+    },
+    {
+      "id": "p05_double_quote",
+      "style": "backtick",
+      "shape": "double quotes",
+      "wire_len": 103,
+      "tools_called": true,
+      "name": "edit_file",
+      "keys": [
+        "filepath",
+        "old_string",
+        "new_string"
+      ],
+      "args": {
+        "filepath": "`pkg/mod.py`",
+        "old_string": "`s = \"a\"`",
+        "new_string": "`s = \"b\"`"
+      },
+      "roundtrip_ok": false,
+      "missing_required": [],
+      "spurious_keys": []
+    },
+    {
+      "id": "p05_double_quote",
+      "style": "bare",
+      "shape": "double quotes",
+      "wire_len": 97,
+      "tools_called": true,
+      "name": "edit_file",
+      "keys": [
+        "filepath",
+        "old_string",
+        "new_string"
+      ],
+      "args": {
+        "filepath": "pkg/mod.py",
+        "old_string": "s = \"a\"",
+        "new_string": "s = \"b\""
+      },
+      "roundtrip_ok": true,
+      "missing_required": [],
+      "spurious_keys": []
+    },
+    {
+      "id": "p06_backtick",
+      "style": "delim",
+      "shape": "backticks in the content",
+      "wire_len": 135,
+      "tools_called": true,
+      "name": "edit_file",
+      "keys": [
+        "filepath",
+        "old_string",
+        "new_string"
+      ],
+      "args": {
+        "filepath": "pkg/mod.py",
+        "old_string": "# see `foo`",
+        "new_string": "# see `bar`"
+      },
+      "roundtrip_ok": true,
+      "missing_required": [],
+      "spurious_keys": []
+    },
+    {
+      "id": "p06_backtick",
+      "style": "backtick",
+      "shape": "backticks in the content",
+      "wire_len": 111,
+      "tools_called": true,
+      "name": "edit_file",
+      "keys": [
+        "filepath",
+        "old_string",
+        "new_string"
+      ],
+      "args": {
+        "filepath": "`pkg/mod.py`",
+        "old_string": "`# see `foo``",
+        "new_string": "`# see `bar``"
+      },
+      "roundtrip_ok": false,
+      "missing_required": [],
+      "spurious_keys": []
+    },
+    {
+      "id": "p06_backtick",
+      "style": "bare",
+      "shape": "backticks in the content",
+      "wire_len": 105,
+      "tools_called": true,
+      "name": "edit_file",
+      "keys": [
+        "filepath",
+        "old_string",
+        "new_string"
+      ],
+      "args": {
+        "filepath": "pkg/mod.py",
+        "old_string": "# see `foo`",
+        "new_string": "# see `bar`"
+      },
+      "roundtrip_ok": true,
+      "missing_required": [],
+      "spurious_keys": []
+    },
+    {
+      "id": "p07_single_backslash",
+      "style": "delim",
+      "shape": "single backslash escapes",
+      "wire_len": 133,
+      "tools_called": true,
+      "name": "edit_file",
+      "keys": [
+        "filepath",
+        "old_string",
+        "new_string"
+      ],
+      "args": {
+        "filepath": "pkg/mod.py",
+        "old_string": "p = 'a\\nb'",
+        "new_string": "p = 'a\\tb'"
+      },
+      "roundtrip_ok": true,
+      "missing_required": [],
+      "spurious_keys": []
+    },
+    {
+      "id": "p07_single_backslash",
+      "style": "backtick",
+      "shape": "single backslash escapes",
+      "wire_len": 109,
+      "tools_called": true,
+      "name": "edit_file",
+      "keys": [
+        "filepath",
+        "old_string",
+        "new_string"
+      ],
+      "args": {
+        "filepath": "`pkg/mod.py`",
+        "old_string": "`p = 'a\\nb'`",
+        "new_string": "`p = 'a\\tb'`"
+      },
+      "roundtrip_ok": false,
+      "missing_required": [],
+      "spurious_keys": []
+    },
+    {
+      "id": "p07_single_backslash",
+      "style": "bare",
+      "shape": "single backslash escapes",
+      "wire_len": 103,
+      "tools_called": true,
+      "name": "edit_file",
+      "keys": [
+        "filepath",
+        "old_string",
+        "new_string"
+      ],
+      "args": {
+        "filepath": "pkg/mod.py",
+        "old_string": "p = 'a\\nb'",
+        "new_string": "p = 'a\\tb'"
+      },
+      "roundtrip_ok": true,
+      "missing_required": [],
+      "spurious_keys": []
+    },
+    {
+      "id": "p08_double_backslash",
+      "style": "delim",
+      "shape": "doubled backslashes",
+      "wire_len": 129,
+      "tools_called": true,
+      "name": "edit_file",
+      "keys": [
+        "filepath",
+        "old_string",
+        "new_string"
+      ],
+      "args": {
+        "filepath": "pkg/mod.py",
+        "old_string": "r'\\\\x1b'",
+        "new_string": "r'\\\\x1c'"
+      },
+      "roundtrip_ok": true,
+      "missing_required": [],
+      "spurious_keys": []
+    },
+    {
+      "id": "p08_double_backslash",
+      "style": "backtick",
+      "shape": "doubled backslashes",
+      "wire_len": 105,
+      "tools_called": true,
+      "name": "edit_file",
+      "keys": [
+        "filepath",
+        "old_string",
+        "new_string"
+      ],
+      "args": {
+        "filepath": "`pkg/mod.py`",
+        "old_string": "`r'\\\\x1b'`",
+        "new_string": "`r'\\\\x1c'`"
+      },
+      "roundtrip_ok": false,
+      "missing_required": [],
+      "spurious_keys": []
+    },
+    {
+      "id": "p08_double_backslash",
+      "style": "bare",
+      "shape": "doubled backslashes",
+      "wire_len": 99,
+      "tools_called": true,
+      "name": "edit_file",
+      "keys": [
+        "filepath",
+        "old_string",
+        "new_string"
+      ],
+      "args": {
+        "filepath": "pkg/mod.py",
+        "old_string": "r'\\\\x1b'",
+        "new_string": "r'\\\\x1c'"
+      },
+      "roundtrip_ok": true,
+      "missing_required": [],
+      "spurious_keys": []
+    },
+    {
+      "id": "p09_newlines",
+      "style": "delim",
+      "shape": "multi-line values",
+      "wire_len": 153,
+      "tools_called": true,
+      "name": "edit_file",
+      "keys": [
+        "filepath",
+        "old_string",
+        "new_string"
+      ],
+      "args": {
+        "filepath": "pkg/mod.py",
+        "old_string": "def f():\n    pass\n",
+        "new_string": "def f():\n    return 1\n"
+      },
+      "roundtrip_ok": true,
+      "missing_required": [],
+      "spurious_keys": []
+    },
+    {
+      "id": "p09_newlines",
+      "style": "backtick",
+      "shape": "multi-line values",
+      "wire_len": 129,
+      "tools_called": true,
+      "name": "edit_file",
+      "keys": [
+        "filepath",
+        "old_string",
+        "new_string"
+      ],
+      "args": {
+        "filepath": "`pkg/mod.py`",
+        "old_string": "`def f():\n    pass\n`",
+        "new_string": "`def f():\n    return 1\n`"
+      },
+      "roundtrip_ok": false,
+      "missing_required": [],
+      "spurious_keys": []
+    },
+    {
+      "id": "p09_newlines",
+      "style": "bare",
+      "shape": "multi-line values",
+      "wire_len": 123,
+      "tools_called": true,
+      "name": "edit_file",
+      "keys": [
+        "filepath",
+        "old_string",
+        "new_string"
+      ],
+      "args": {
+        "filepath": "pkg/mod.py",
+        "old_string": "def f():\n    pass",
+        "new_string": "def f():\n    return 1"
+      },
+      "roundtrip_ok": false,
+      "missing_required": [],
+      "spurious_keys": []
+    },
+    {
+      "id": "p10_unicode",
+      "style": "delim",
+      "shape": "non-ASCII, including the CJK brackets seen in the run-2 variant",
+      "wire_len": 152,
+      "tools_called": true,
+      "name": "edit_file",
+      "keys": [
+        "filepath",
+        "old_string",
+        "new_string"
+      ],
+      "args": {
+        "filepath": "pkg/mod.py",
+        "old_string": "label = \"café\"",
+        "new_string": "label = \"「rich」 — café 🚀\""
+      },
+      "roundtrip_ok": true,
+      "missing_required": [],
+      "spurious_keys": []
+    },
+    {
+      "id": "p10_unicode",
+      "style": "backtick",
+      "shape": "non-ASCII, including the CJK brackets seen in the run-2 variant",
+      "wire_len": 128,
+      "tools_called": true,
+      "name": "edit_file",
+      "keys": [
+        "filepath",
+        "old_string",
+        "new_string"
+      ],
+      "args": {
+        "filepath": "`pkg/mod.py`",
+        "old_string": "`label = \"café\"`",
+        "new_string": "`label = \"「rich」 — café 🚀\"`"
+      },
+      "roundtrip_ok": false,
+      "missing_required": [],
+      "spurious_keys": []
+    },
+    {
+      "id": "p10_unicode",
+      "style": "bare",
+      "shape": "non-ASCII, including the CJK brackets seen in the run-2 variant",
+      "wire_len": 122,
+      "tools_called": true,
+      "name": "edit_file",
+      "keys": [
+        "filepath",
+        "old_string",
+        "new_string"
+      ],
+      "args": {
+        "filepath": "pkg/mod.py",
+        "old_string": "label = \"café\"",
+        "new_string": "label = \"「rich」 — café 🚀\""
+      },
+      "roundtrip_ok": true,
+      "missing_required": [],
+      "spurious_keys": []
+    },
+    {
+      "id": "p11_missing_required",
+      "style": "delim",
+      "shape": "old_string omitted by construction",
+      "wire_len": 96,
+      "tools_called": true,
+      "name": "edit_file",
+      "keys": [
+        "filepath",
+        "new_string"
+      ],
+      "args": {
+        "filepath": "pkg/mod.py",
+        "new_string": "x = 2"
+      },
+      "roundtrip_ok": true,
+      "missing_required": [],
+      "spurious_keys": []
+    },
+    {
+      "id": "p11_missing_required",
+      "style": "backtick",
+      "shape": "old_string omitted by construction",
+      "wire_len": 80,
+      "tools_called": true,
+      "name": "edit_file",
+      "keys": [
+        "filepath",
+        "new_string"
+      ],
+      "args": {
+        "filepath": "`pkg/mod.py`",
+        "new_string": "`x = 2`"
+      },
+      "roundtrip_ok": false,
+      "missing_required": [],
+      "spurious_keys": []
+    },
+    {
+      "id": "p11_missing_required",
+      "style": "bare",
+      "shape": "old_string omitted by construction",
+      "wire_len": 76,
+      "tools_called": true,
+      "name": "edit_file",
+      "keys": [
+        "filepath",
+        "new_string"
+      ],
+      "args": {
+        "filepath": "pkg/mod.py",
+        "new_string": "x = 2"
+      },
+      "roundtrip_ok": true,
+      "missing_required": [],
+      "spurious_keys": []
+    },
+    {
+      "id": "p12_key_lookalike",
+      "style": "delim",
+      "shape": "content that literally contains the text 'old_string:'",
+      "wire_len": 162,
+      "tools_called": true,
+      "name": "edit_file",
+      "keys": [
+        "filepath",
+        "old_string",
+        "new_string"
+      ],
+      "args": {
+        "filepath": "pkg/mod.py",
+        "old_string": "doc = 'old_string: here'",
+        "new_string": "doc = 'new_string: there'"
+      },
+      "roundtrip_ok": true,
+      "missing_required": [],
+      "spurious_keys": []
+    },
+    {
+      "id": "p12_key_lookalike",
+      "style": "backtick",
+      "shape": "content that literally contains the text 'old_string:'",
+      "wire_len": 138,
+      "tools_called": true,
+      "name": "edit_file",
+      "keys": [
+        "filepath",
+        "old_string",
+        "new_string"
+      ],
+      "args": {
+        "filepath": "`pkg/mod.py`",
+        "old_string": "`doc = 'old_string: here'`",
+        "new_string": "`doc = 'new_string: there'`"
+      },
+      "roundtrip_ok": false,
+      "missing_required": [],
+      "spurious_keys": []
+    },
+    {
+      "id": "p12_key_lookalike",
+      "style": "bare",
+      "shape": "content that literally contains the text 'old_string:'",
+      "wire_len": 132,
+      "tools_called": true,
+      "name": "edit_file",
+      "keys": [
+        "filepath",
+        "old_string",
+        "new_string"
+      ],
+      "args": {
+        "filepath": "pkg/mod.py",
+        "old_string": "doc = 'old_string: here'",
+        "new_string": "doc = 'new_string: there'"
+      },
+      "roundtrip_ok": true,
+      "missing_required": [],
+      "spurious_keys": []
+    },
+    {
+      "id": "d01_start_tag_malformed",
+      "style": "delimiter-damage",
+      "shape": "malformed delimiters",
+      "wire_len": 62,
+      "tools_called": false,
+      "args": null,
+      "content_returned": "<|tool_callcall:edit_file{filepath:<|\"|>a.py<|\"|>}<tool_call|>"
+    },
+    {
+      "id": "d02_end_tag_malformed",
+      "style": "delimiter-damage",
+      "shape": "malformed delimiters",
+      "wire_len": 62,
+      "tools_called": false,
+      "args": null,
+      "content_returned": "<|tool_call>call:edit_file{filepath:<|\"|>a.py<|\"|>}<tool_call>"
+    },
+    {
+      "id": "d03_run2_end_of_run_text",
+      "style": "delimiter-damage",
+      "shape": "malformed delimiters",
+      "wire_len": 77,
+      "tools_called": false,
+      "args": null,
+      "content_returned": "<|tool_call>call:git grep -n -F -- \"re_ansi\" -- '*.py' | head -30<tool_call|>"
+    },
+    {
+      "id": "d04_no_braces",
+      "style": "delimiter-damage",
+      "shape": "malformed delimiters",
+      "wire_len": 62,
+      "tools_called": false,
+      "args": null,
+      "content_returned": "<|tool_call>call:edit_file filepath:<|\"|>a.py<|\"|><tool_call|>"
+    },
+    {
+      "id": "d05_unterminated_string",
+      "style": "delimiter-damage",
+      "shape": "malformed delimiters",
+      "wire_len": 58,
+      "tools_called": true,
+      "name": "edit_file",
+      "args": {
+        "filepath": "a.py"
+      },
+      "keys": [
+        "filepath"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "evidence": [
+    {
+      "stage": "env:where-am-i",
+      "command": "pwd -P && echo --- && ls -a",
+      "exit_code": -1,
+      "status": "error",
+      "stdout": "",
+      "stderr": "[WinError 2] The system cannot find the file specified"
+    },
+    {
+      "stage": "env:workspace",
+      "command": "cd /workspace && pwd -P",
+      "exit_code": -1,
+      "status": "error",
+      "stdout": "",
+      "stderr": "[WinError 2] The system cannot find the file specified",
+      "note": "does the literal absolute path /workspace exist for a raw shell command?"
+    },
+    {
+      "stage": "env:tmp",
+      "command": "ls -d /tmp && echo TMPDIR=$TMPDIR && echo HOME=$HOME",
+      "exit_code": -1,
+      "status": "error",
+      "stdout": "",
+      "stderr": "[WinError 2] The system cannot find the file specified"
+    },
+    {
+      "stage": "env:python3",
+      "command": "command -v python3 || echo NO_PYTHON3",
+      "exit_code": -1,
+      "status": "error",
+      "stdout": "",
+      "stderr": "[WinError 2] The system cannot find the file specified"
+    },
+    {
+      "stage": "env:git",
+      "command": "command -v git && git --version",
+      "exit_code": -1,
+      "status": "error",
+      "stdout": "",
+      "stderr": "[WinError 2] The system cannot find the file specified"
+    },
+    {
+      "stage": "setup:copy-repo",
+      "command": "copy_to(repo -> /)",
+      "note": "ok"
+    },
+    {
+      "stage": "setup:git-status",
+      "command": "cd /workspace && git status --short || echo NOT_A_REPO",
+      "exit_code": -1,
+      "status": "error",
+      "stdout": "",
+      "stderr": "[WinError 2] The system cannot find the file specified"
+    },
+    {
+      "stage": "broken:write",
+      "command": "python3 -c \"import base64,sys,pathlib;pathlib.Path('/tmp/testpatch.patch').write_bytes(base64.b64decode(sys.argv[1]))\" ZGlmZiAtLWdpdCBhL3Rlc3RzL3Rlc3RfbW9kLnB5I <b64 truncated>",
+      "exit_code": -1,
+      "status": "error",
+      "stdout": "",
+      "stderr": "[WinError 2] The system cannot find the file specified",
+      "note": "the launched notebook never checked this exit code"
+    },
+    {
+      "stage": "probe:broken-after-write",
+      "command": "python3 -c \"import hashlib,os,sys;p=sys.argv[1];print('exists=%s' % os.path.exists(p));print('size=%d' % (os.path.getsize(p) if os.path.exists(p) else -1));print('sha256=%s' % (hashlib.sha256(open(p,'rb').read()).hexdigest() if os.path.exists(p) else ''))\" /tmp/testpatch.patch",
+      "exit_code": -1,
+      "status": "error",
+      "stdout": "",
+      "stderr": "[WinError 2] The system cannot find the file specified",
+      "probed_path": "/tmp/testpatch.patch"
+    },
+    {
+      "stage": "broken:apply",
+      "command": "cd /workspace && git apply --verbose /tmp/testpatch.patch || git apply -3 /tmp/testpatch.patch",
+      "exit_code": -1,
+      "status": "error",
+      "stdout": "",
+      "stderr": "[WinError 2] The system cannot find the file specified"
+    },
+    {
+      "stage": "harness:host-file",
+      "command": "C:\\Users\\NAVINK~1\\AppData\\Local\\Temp\\repro_apply_qjy8p9rg\\ref_test.patch",
+      "size": 268,
+      "sha256": "52b06fa093dd9f2e65109311d02406987de38bdbc2ff11d5f7f0ea8cf888c68d"
+    },
+    {
+      "stage": "harness:copy_to",
+      "command": "copy_to(ref_test.patch -> /tmp/)",
+      "note": "ok",
+      "sandbox_path": "/tmp/ref_test.patch"
+    },
+    {
+      "stage": "probe:harness-after-copy",
+      "command": "python3 -c \"import hashlib,os,sys;p=sys.argv[1];print('exists=%s' % os.path.exists(p));print('size=%d' % (os.path.getsize(p) if os.path.exists(p) else -1));print('sha256=%s' % (hashlib.sha256(open(p,'rb').read()).hexdigest() if os.path.exists(p) else ''))\" /tmp/ref_test.patch",
+      "exit_code": -1,
+      "status": "error",
+      "stdout": "",
+      "stderr": "[WinError 2] The system cannot find the file specified",
+      "probed_path": "/tmp/ref_test.patch"
+    },
+    {
+      "stage": "harness:apply",
+      "command": "apply_patch_in_container(..., /tmp/ref_test.patch)",
+      "exit_code": -1,
+      "stdout": "",
+      "stderr": "[WinError 2] The system cannot find the file specified"
+    }
+  ],
+  "sandbox_id": "e7c9cf42-f35",
+  "repo": "C:\\Users\\NAVINK~1\\AppData\\Local\\Temp\\repro_apply_qjy8p9rg\\repo"
+}

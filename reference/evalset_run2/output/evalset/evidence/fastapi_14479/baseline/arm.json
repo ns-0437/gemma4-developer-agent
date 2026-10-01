@@ -1,0 +1,93 @@
+{
+  "task": "fastapi_14479",
+  "arm": "baseline",
+  "reached_pytest": true,
+  "pytest_exit": 1,
+  "pytest_cmd": "PYTHONSAFEPATH=1 PYTHONNOUSERSITE=1 python3 -s -m pytest tests/test_invalid_sequence_param.py",
+  "nodes": {
+    "tests.test_invalid_sequence_param::test_invalid_sequence": "failed",
+    "tests.test_invalid_sequence_param::test_invalid_tuple": "failed",
+    "tests.test_invalid_sequence_param::test_invalid_dict": "failed",
+    "tests.test_invalid_sequence_param::test_invalid_simple_dict": "failed"
+  },
+  "failure_details": {
+    "tests.test_invalid_sequence_param::test_invalid_sequence": {
+      "kind": "failure",
+      "message": "AssertionError: Regex pattern did not match.\n Regex: \"Query parameter 'q' must be one of the supported types\"\n Input: ''",
+      "detail": "def test_invalid_sequence():\n        with pytest.raises(\n            AssertionError,\n            match=\"Query parameter 'q' must be one of the supported types\",\n        ):\n            app = FastAPI()\n    \n            class Item(BaseModel):\n                title: str\n    \n>           @app.get(\"/items/\")\n             ^^^^^^^^^^^^^^^^^^\n\ntests/test_invalid_sequence_param.py:18: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \nfastapi/routing.py:1138: in decorator\n    self.add_api_route(\nfastapi/routing.py:1077: in add_api_route\n    route = route_class(\nfastapi/routing.py:696: in __init__\n    self.dependant = get_dependant(\nfastapi/dependencies/utils.py:283: in get_dependant\n    param_details = analyze_param(\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\n    def analyze_param(\n        *,\n        param_name: str,\n        annotation: Any,\n        value: Any,\n        is_path_param: bool,\n    ) -> ParamDetails:\n        field_info = None\n        depends = None\n        type_annotation: Any = Any\n        use_annotation: Any = Any\n        if annotation is not inspect.Signature.empty:\n            use_annotation = annotation\n            type_annotation = annotation\n        # Extract Annotated info\n        if get_origin(use_annotation) is Annotated:\n            annotated_args = get_args(annotation)\n            type_annotation = annotated_args[0]\n            fastapi_annotations = [\n                arg\n                for ar"
+    },
+    "tests.test_invalid_sequence_param::test_invalid_tuple": {
+      "kind": "failure",
+      "message": "AssertionError: Regex pattern did not match.\n Regex: \"Query parameter 'q' must be one of the supported types\"\n Input: ''",
+      "detail": "def test_invalid_tuple():\n        with pytest.raises(\n            AssertionError,\n            match=\"Query parameter 'q' must be one of the supported types\",\n        ):\n            app = FastAPI()\n    \n            class Item(BaseModel):\n                title: str\n    \n>           @app.get(\"/items/\")\n             ^^^^^^^^^^^^^^^^^^\n\ntests/test_invalid_sequence_param.py:33: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \nfastapi/routing.py:1138: in decorator\n    self.add_api_route(\nfastapi/routing.py:1077: in add_api_route\n    route = route_class(\nfastapi/routing.py:696: in __init__\n    self.dependant = get_dependant(\nfastapi/dependencies/utils.py:283: in get_dependant\n    param_details = analyze_param(\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\n    def analyze_param(\n        *,\n        param_name: str,\n        annotation: Any,\n        value: Any,\n        is_path_param: bool,\n    ) -> ParamDetails:\n        field_info = None\n        depends = None\n        type_annotation: Any = Any\n        use_annotation: Any = Any\n        if annotation is not inspect.Signature.empty:\n            use_annotation = annotation\n            type_annotation = annotation\n        # Extract Annotated info\n        if get_origin(use_annotation) is Annotated:\n            annotated_args = get_args(annotation)\n            type_annotation = annotated_args[0]\n            fastapi_annotations = [\n                arg\n                for arg i"
+    },
+    "tests.test_invalid_sequence_param::test_invalid_dict": {
+      "kind": "failure",
+      "message": "AssertionError: Regex pattern did not match.\n Regex: \"Query parameter 'q' must be one of the supported types\"\n Input: ''",
+      "detail": "def test_invalid_dict():\n        with pytest.raises(\n            AssertionError,\n            match=\"Query parameter 'q' must be one of the supported types\",\n        ):\n            app = FastAPI()\n    \n            class Item(BaseModel):\n                title: str\n    \n>           @app.get(\"/items/\")\n             ^^^^^^^^^^^^^^^^^^\n\ntests/test_invalid_sequence_param.py:48: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \nfastapi/routing.py:1138: in decorator\n    self.add_api_route(\nfastapi/routing.py:1077: in add_api_route\n    route = route_class(\nfastapi/routing.py:696: in __init__\n    self.dependant = get_dependant(\nfastapi/dependencies/utils.py:283: in get_dependant\n    param_details = analyze_param(\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\n    def analyze_param(\n        *,\n        param_name: str,\n        annotation: Any,\n        value: Any,\n        is_path_param: bool,\n    ) -> ParamDetails:\n        field_info = None\n        depends = None\n        type_annotation: Any = Any\n        use_annotation: Any = Any\n        if annotation is not inspect.Signature.empty:\n            use_annotation = annotation\n            type_annotation = annotation\n        # Extract Annotated info\n        if get_origin(use_annotation) is Annotated:\n            annotated_args = get_args(annotation)\n            type_annotation = annotated_args[0]\n            fastapi_annotations = [\n                arg\n                for arg in"
+    },
+    "tests.test_invalid_sequence_param::test_invalid_simple_dict": {
+      "kind": "failure",
+      "message": "AssertionError: Regex pattern did not match.\n Regex: \"Query parameter 'q' must be one of the supported types\"\n Input: ''",
+      "detail": "def test_invalid_simple_dict():\n        with pytest.raises(\n            AssertionError,\n            match=\"Query parameter 'q' must be one of the supported types\",\n        ):\n            app = FastAPI()\n    \n            class Item(BaseModel):\n                title: str\n    \n>           @app.get(\"/items/\")\n             ^^^^^^^^^^^^^^^^^^\n\ntests/test_invalid_sequence_param.py:63: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \nfastapi/routing.py:1138: in decorator\n    self.add_api_route(\nfastapi/routing.py:1077: in add_api_route\n    route = route_class(\nfastapi/routing.py:696: in __init__\n    self.dependant = get_dependant(\nfastapi/dependencies/utils.py:283: in get_dependant\n    param_details = analyze_param(\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\n    def analyze_param(\n        *,\n        param_name: str,\n        annotation: Any,\n        value: Any,\n        is_path_param: bool,\n    ) -> ParamDetails:\n        field_info = None\n        depends = None\n        type_annotation: Any = Any\n        use_annotation: Any = Any\n        if annotation is not inspect.Signature.empty:\n            use_annotation = annotation\n            type_annotation = annotation\n        # Extract Annotated info\n        if get_origin(use_annotation) is Annotated:\n            annotated_args = get_args(annotation)\n            type_annotation = annotated_args[0]\n            fastapi_annotations = [\n                arg\n                for"
+    }
+  },
+  "import_in_checkout": true,
+  "grading_import": "/tmp/swegemma_sandbox_dfe76b49-a38_wbqo0z_r/workspace/fastapi/__init__.py",
+  "patch_rc": 0,
+  "patch_err": null,
+  "test_patch_rc": 0,
+  "test_patch_err": "",
+  "editable_rc": 0,
+  "collection_error": false,
+  "exception": null,
+  "traceback": null,
+  "task_sha256": "368f6b6eac0022fdbf2eda6a26e902f2a59f89ec1ede206af5f9eb8c6c93b25b",
+  "snapshot_sha256": "24f21d72321d3dc6e7a6258e4bee0ffd169d0b449f518a0c72fd141b6989c0b8",
+  "environment_versions": {
+    "swegemma": "0.2.7",
+    "adk-submission": "0.2.11",
+    "adk-eval-core": "0.1.0",
+    "google-adk": "1.36.1"
+  },
+  "policy_sha256": "f59934c6b6369e97d529f821c0284cc666d708e340b3654aafd16dfe5f5e37ee",
+  "setup_commands": [
+    {
+      "cmd": "pip setuptools",
+      "rc": 0
+    },
+    {
+      "cmd": "pip wheel",
+      "rc": 0
+    },
+    {
+      "cmd": "pip editables",
+      "rc": 0
+    },
+    {
+      "cmd": "pip flit_core",
+      "rc": 0
+    },
+    {
+      "cmd": "pip poetry_core",
+      "rc": 0
+    },
+    {
+      "cmd": "pip pdm_backend",
+      "rc": 0
+    },
+    {
+      "cmd": "pip -e .",
+      "rc": 0,
+      "tail": "p/swegemma_sandbox_dfe76b49-a38_wbqo0z_r/venv\n    Can't uninstall 'fastapi'. No files were found to uninstall.\nSuccessfully installed fastapi-0.127.0\n"
+    },
+    {
+      "cmd": "checkout tests/test_invalid_sequence_param.py",
+      "rc": 0
+    },
+    {
+      "cmd": "clean tests/test_invalid_sequence_param.py",
+      "rc": 0
+    }
+  ]
+}

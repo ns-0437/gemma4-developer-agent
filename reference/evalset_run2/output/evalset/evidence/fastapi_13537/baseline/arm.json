@@ -1,0 +1,81 @@
+{
+  "task": "fastapi_13537",
+  "arm": "baseline",
+  "reached_pytest": true,
+  "pytest_exit": 1,
+  "pytest_cmd": "PYTHONSAFEPATH=1 PYTHONNOUSERSITE=1 python3 -s -m pytest tests/test_form_default.py",
+  "nodes": {
+    "tests.test_form_default::test_form_default_url_encoded": "failed",
+    "tests.test_form_default::test_form_default_multi_part": "failed"
+  },
+  "failure_details": {
+    "tests.test_form_default::test_form_default_url_encoded": {
+      "kind": "failure",
+      "message": "assert 422 == 200\n +  where 422 = <Response [422 Unprocessable Entity]>.status_code",
+      "detail": "def test_form_default_url_encoded():\n        response = client.post(\"/urlencoded\", data={\"age\": \"\"})\n>       assert response.status_code == 200\nE       assert 422 == 200\nE        +  where 422 = <Response [422 Unprocessable Entity]>.status_code\n\ntests/test_form_default.py:28: AssertionError"
+    },
+    "tests.test_form_default::test_form_default_multi_part": {
+      "kind": "failure",
+      "message": "assert 422 == 200\n +  where 422 = <Response [422 Unprocessable Entity]>.status_code",
+      "detail": "def test_form_default_multi_part():\n        response = client.post(\"/multipart\", data={\"age\": \"\"})\n>       assert response.status_code == 200\nE       assert 422 == 200\nE        +  where 422 = <Response [422 Unprocessable Entity]>.status_code\n\ntests/test_form_default.py:34: AssertionError"
+    }
+  },
+  "import_in_checkout": true,
+  "grading_import": "/tmp/swegemma_sandbox_3102e2c6-682_a7ery_e2/workspace/fastapi/__init__.py",
+  "patch_rc": 0,
+  "patch_err": null,
+  "test_patch_rc": 0,
+  "test_patch_err": "",
+  "editable_rc": 0,
+  "collection_error": false,
+  "exception": null,
+  "traceback": null,
+  "task_sha256": "fedfffd2fa3b1f1e251e65891b8f3b2a3163b17bc3ac9ea46aeb07993481eed4",
+  "snapshot_sha256": "8b343478bbf8c89247effd611e24c139d256deb20693db15a160d7af60ffa3c9",
+  "environment_versions": {
+    "swegemma": "0.2.7",
+    "adk-submission": "0.2.11",
+    "adk-eval-core": "0.1.0",
+    "google-adk": "1.36.1"
+  },
+  "policy_sha256": "f59934c6b6369e97d529f821c0284cc666d708e340b3654aafd16dfe5f5e37ee",
+  "setup_commands": [
+    {
+      "cmd": "pip setuptools",
+      "rc": 0
+    },
+    {
+      "cmd": "pip wheel",
+      "rc": 0
+    },
+    {
+      "cmd": "pip editables",
+      "rc": 0
+    },
+    {
+      "cmd": "pip flit_core",
+      "rc": 0
+    },
+    {
+      "cmd": "pip poetry_core",
+      "rc": 0
+    },
+    {
+      "cmd": "pip pdm_backend",
+      "rc": 0
+    },
+    {
+      "cmd": "pip -e .",
+      "rc": 0,
+      "tail": "p/swegemma_sandbox_3102e2c6-682_a7ery_e2/venv\n    Can't uninstall 'fastapi'. No files were found to uninstall.\nSuccessfully installed fastapi-0.123.0\n"
+    },
+    {
+      "cmd": "checkout tests/test_form_default.py",
+      "rc": 1
+    },
+    {
+      "cmd": "clean tests/test_form_default.py",
+      "rc": 0
+    }
+  ]
+}

@@ -1,0 +1,4794 @@
+[
+  {
+    "arm": "baseline",
+    "commands": [
+      {
+        "cmd": "pip install setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip install wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip install editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip install flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip install poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip install pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip install -e .",
+        "rc": 0,
+        "tail": "python3.12/dist-packages, outside environment /tmp/swegemma_sandbox_d62555c8-127_kyi6txse/venv\n    Can't uninstall 'requests'. No files were found to uninstall.\nSuccessfully installed requests-2.33.0\n"
+      },
+      {
+        "label": "checkout tests/test_utils.py",
+        "cmd": "cd /workspace && git checkout HEAD -- tests/test_utils.py",
+        "rc": 0,
+        "out": "",
+        "err": ""
+      },
+      {
+        "label": "clean tests/test_utils.py",
+        "cmd": "cd /workspace && git clean -f -- tests/test_utils.py",
+        "rc": 0,
+        "out": "",
+        "err": ""
+      },
+      {
+        "label": "pristine hash",
+        "cmd": "cd /workspace && git show HEAD:tests/test_utils.py | sha256sum",
+        "rc": 0,
+        "out": "749c36bc574e3e796ddb78bbdc91b0d92fccf703a39c6d21f5afbfa7b28f50f8  -\n",
+        "err": ""
+      },
+      {
+        "label": "pytest",
+        "cmd": "cd /workspace && PYTHONSAFEPATH=1 PYTHONNOUSERSITE=1 python3 -s -m pytest tests/test_utils.py --junitxml=/tmp/_j_4ceb6e66.xml -p no:anyio -o timeout=0",
+        "rc": 1,
+        "out": "st__parse_content_type_header[multipart/form-data; boundary = something ; 'boundary2=something_else' ; no_equals -expected6]\nFAILED tests/test_utils.py::test__parse_content_type_header[multipart/form-data; boundary = something ; \"boundary2=something_else\" ; no_equals -expected7]\nFAILED tests/test_utils.py::test_get_encoding_from_headers[value3-ISO-8859-1]\n5 failed, 202 passed, 13 skipped in 0.48s\n",
+        "err": ""
+      }
+    ],
+    "infrastructure_error": null,
+    "grading_import": "/tmp/swegemma_sandbox_d62555c8-127_kyi6txse/workspace/src/requests/__init__.py",
+    "import_in_checkout": true,
+    "candidate_apply_rc": 0,
+    "test_file_hashes": {
+      "tests/test_utils.py": {
+        "before_reset": "749c36bc574e3e79",
+        "after_reset": "749c36bc574e3e79"
+      }
+    },
+    "pristine_hash": "749c36bc574e3e79",
+    "test_patch_apply_rc": 0,
+    "test_patch_apply_err": "",
+    "pytest_exit": 1,
+    "pytest_tail": "ed xml file: /tmp/swegemma_sandbox_d62555c8-127_kyi6txse/tmp/_j_4ceb6e66.xml -\n=========================== short test summary info ============================\nFAILED tests/test_utils.py::test__parse_content_type_header[multipart/form-data; boundary = something ; boundary2='something_else' ; no_equals -expected4]\nFAILED tests/test_utils.py::test__parse_content_type_header[multipart/form-data; boundary = something ; boundary2=\"something_else\" ; no_equals -expected5]\nFAILED tests/test_utils.py::test__parse_content_type_header[multipart/form-data; boundary = something ; 'boundary2=something_else' ; no_equals -expected6]\nFAILED tests/test_utils.py::test__parse_content_type_header[multipart/form-data; boundary = something ; \"boundary2=something_else\" ; no_equals -expected7]\nFAILED tests/test_utils.py::test_get_encoding_from_headers[value3-ISO-8859-1]\n5 failed, 202 passed, 13 skipped in 0.48s\n",
+    "junit": {
+      "parsed": true,
+      "cases": [
+        {
+          "name": "test_io_streams[StringIO-Test]",
+          "classname": "tests.test_utils.TestSuperLen",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_io_streams[BytesIO-Test]",
+          "classname": "tests.test_utils.TestSuperLen",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_io_streams[None-Test]",
+          "classname": "tests.test_utils.TestSuperLen",
+          "outcome": "skipped",
+          "message": "condition: cStringIO is None"
+        },
+        {
+          "name": "test_super_len_correctly_calculates_len_of_partially_read_file",
+          "classname": "tests.test_utils.TestSuperLen",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_super_len_handles_files_raising_weird_errors_in_tell[OSError0]",
+          "classname": "tests.test_utils.TestSuperLen",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_super_len_handles_files_raising_weird_errors_in_tell[OSError1]",
+          "classname": "tests.test_utils.TestSuperLen",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_super_len_tell_ioerror[OSError0]",
+          "classname": "tests.test_utils.TestSuperLen",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_super_len_tell_ioerror[OSError1]",
+          "classname": "tests.test_utils.TestSuperLen",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_string",
+          "classname": "tests.test_utils.TestSuperLen",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_file[r-1]",
+          "classname": "tests.test_utils.TestSuperLen",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_file[rb-0]",
+          "classname": "tests.test_utils.TestSuperLen",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_tarfile_member",
+          "classname": "tests.test_utils.TestSuperLen",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_super_len_with__len__",
+          "classname": "tests.test_utils.TestSuperLen",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_super_len_with_no__len__",
+          "classname": "tests.test_utils.TestSuperLen",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_super_len_with_tell",
+          "classname": "tests.test_utils.TestSuperLen",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_super_len_with_fileno",
+          "classname": "tests.test_utils.TestSuperLen",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_super_len_with_no_matches",
+          "classname": "tests.test_utils.TestSuperLen",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_works",
+          "classname": "tests.test_utils.TestGetNetrcAuth",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_not_vulnerable_to_bad_url_parsing",
+          "classname": "tests.test_utils.TestGetNetrcAuth",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_empty_default_credentials_ignored",
+          "classname": "tests.test_utils.TestGetNetrcAuth",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_valid[value0-expected0]",
+          "classname": "tests.test_utils.TestToKeyValList",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_valid[value1-expected1]",
+          "classname": "tests.test_utils.TestToKeyValList",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_valid[value2-expected2]",
+          "classname": "tests.test_utils.TestToKeyValList",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_valid[None-None]",
+          "classname": "tests.test_utils.TestToKeyValList",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_invalid",
+          "classname": "tests.test_utils.TestToKeyValList",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_valid[None-None]",
+          "classname": "tests.test_utils.TestUnquoteHeaderValue",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_valid[Test-Test]",
+          "classname": "tests.test_utils.TestUnquoteHeaderValue",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_valid[\"Test\"-Test]",
+          "classname": "tests.test_utils.TestUnquoteHeaderValue",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_valid[\"Test\\\\\\\\\"-Test\\\\]",
+          "classname": "tests.test_utils.TestUnquoteHeaderValue",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_valid[\"\\\\\\\\Comp\\\\Res\"-\\\\Comp\\\\Res]",
+          "classname": "tests.test_utils.TestUnquoteHeaderValue",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_is_filename",
+          "classname": "tests.test_utils.TestUnquoteHeaderValue",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_bypass[no_proxy-http://192.168.0.1:5000/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_bypass[no_proxy-http://192.168.0.1/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_bypass[no_proxy-http://172.16.1.1/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_bypass[no_proxy-http://172.16.1.1:5000/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_bypass[no_proxy-http://localhost.localdomain:5000/v1.0/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_bypass[NO_PROXY-http://192.168.0.1:5000/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_bypass[NO_PROXY-http://192.168.0.1/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_bypass[NO_PROXY-http://172.16.1.1/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_bypass[NO_PROXY-http://172.16.1.1:5000/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_bypass[NO_PROXY-http://localhost.localdomain:5000/v1.0/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_not_bypass[no_proxy-http://192.168.1.1:5000/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_not_bypass[no_proxy-http://192.168.1.1/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_not_bypass[no_proxy-http://www.requests.com/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_not_bypass[NO_PROXY-http://192.168.1.1:5000/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_not_bypass[NO_PROXY-http://192.168.1.1/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_not_bypass[NO_PROXY-http://www.requests.com/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_bypass_no_proxy_keyword[no_proxy-http://192.168.1.1:5000/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_bypass_no_proxy_keyword[no_proxy-http://192.168.1.1/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_bypass_no_proxy_keyword[no_proxy-http://www.requests.com/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_bypass_no_proxy_keyword[NO_PROXY-http://192.168.1.1:5000/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_bypass_no_proxy_keyword[NO_PROXY-http://192.168.1.1/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_bypass_no_proxy_keyword[NO_PROXY-http://www.requests.com/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_not_bypass_no_proxy_keyword[no_proxy-http://192.168.0.1:5000/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_not_bypass_no_proxy_keyword[no_proxy-http://192.168.0.1/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_not_bypass_no_proxy_keyword[no_proxy-http://172.16.1.1/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_not_bypass_no_proxy_keyword[no_proxy-http://172.16.1.1:5000/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_not_bypass_no_proxy_keyword[no_proxy-http://localhost.localdomain:5000/v1.0/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_not_bypass_no_proxy_keyword[NO_PROXY-http://192.168.0.1:5000/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_not_bypass_no_proxy_keyword[NO_PROXY-http://192.168.0.1/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_not_bypass_no_proxy_keyword[NO_PROXY-http://172.16.1.1/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_not_bypass_no_proxy_keyword[NO_PROXY-http://172.16.1.1:5000/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_not_bypass_no_proxy_keyword[NO_PROXY-http://localhost.localdomain:5000/v1.0/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_valid",
+          "classname": "tests.test_utils.TestIsIPv4Address",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_invalid[8.8.8.8.8]",
+          "classname": "tests.test_utils.TestIsIPv4Address",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_invalid[localhost.localdomain]",
+          "classname": "tests.test_utils.TestIsIPv4Address",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_valid",
+          "classname": "tests.test_utils.TestIsValidCIDR",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_invalid[8.8.8.8]",
+          "classname": "tests.test_utils.TestIsValidCIDR",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_invalid[192.168.1.0/a]",
+          "classname": "tests.test_utils.TestIsValidCIDR",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_invalid[192.168.1.0/128]",
+          "classname": "tests.test_utils.TestIsValidCIDR",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_invalid[192.168.1.0/-1]",
+          "classname": "tests.test_utils.TestIsValidCIDR",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_invalid[192.168.1.999/24]",
+          "classname": "tests.test_utils.TestIsValidCIDR",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_valid",
+          "classname": "tests.test_utils.TestAddressInNetwork",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_invalid",
+          "classname": "tests.test_utils.TestAddressInNetwork",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_guess_filename_invalid[1]",
+          "classname": "tests.test_utils.TestGuessFilename",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_guess_filename_invalid[value1]",
+          "classname": "tests.test_utils.TestGuessFilename",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_guess_filename_valid[value-bytes]",
+          "classname": "tests.test_utils.TestGuessFilename",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_guess_filename_valid[value-str]",
+          "classname": "tests.test_utils.TestGuessFilename",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_unzipped_paths_unchanged[/]",
+          "classname": "tests.test_utils.TestExtractZippedPaths",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_unzipped_paths_unchanged[/tmp/swegemma_sandbox_d62555c8-127_kyi6txse/workspace/tests/test_utils.py]",
+          "classname": "tests.test_utils.TestExtractZippedPaths",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_unzipped_paths_unchanged[/usr/local/lib/python3.12/dist-packages/pytest/__init__.py]",
+          "classname": "tests.test_utils.TestExtractZippedPaths",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_unzipped_paths_unchanged[/etc/invalid/location]",
+          "classname": "tests.test_utils.TestExtractZippedPaths",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_zipped_paths_extracted",
+          "classname": "tests.test_utils.TestExtractZippedPaths",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_invalid_unc_path",
+          "classname": "tests.test_utils.TestExtractZippedPaths",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_none",
+          "classname": "tests.test_utils.TestContentEncodingDetection",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_pragmas[<meta charset=\"UTF-8\">]",
+          "classname": "tests.test_utils.TestContentEncodingDetection",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_pragmas[<meta http-equiv=\"Content-type\" content=\"text/html;charset=UTF-8\">]",
+          "classname": "tests.test_utils.TestContentEncodingDetection",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_pragmas[<meta http-equiv=\"Content-type\" content=\"text/html;charset=UTF-8\" />]",
+          "classname": "tests.test_utils.TestContentEncodingDetection",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_pragmas[<?xml version=\"1.0\" encoding=\"UTF-8\"?>]",
+          "classname": "tests.test_utils.TestContentEncodingDetection",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_precedence",
+          "classname": "tests.test_utils.TestContentEncodingDetection",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_encoded[utf-32]",
+          "classname": "tests.test_utils.TestGuessJSONUTF",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_encoded[utf-8-sig]",
+          "classname": "tests.test_utils.TestGuessJSONUTF",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_encoded[utf-16]",
+          "classname": "tests.test_utils.TestGuessJSONUTF",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_encoded[utf-8]",
+          "classname": "tests.test_utils.TestGuessJSONUTF",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_encoded[utf-16-be]",
+          "classname": "tests.test_utils.TestGuessJSONUTF",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_encoded[utf-16-le]",
+          "classname": "tests.test_utils.TestGuessJSONUTF",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_encoded[utf-32-be]",
+          "classname": "tests.test_utils.TestGuessJSONUTF",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_encoded[utf-32-le]",
+          "classname": "tests.test_utils.TestGuessJSONUTF",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_bad_utf_like_encoding",
+          "classname": "tests.test_utils.TestGuessJSONUTF",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_guess_by_bom[utf-16-be-utf-16]",
+          "classname": "tests.test_utils.TestGuessJSONUTF",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_guess_by_bom[utf-16-le-utf-16]",
+          "classname": "tests.test_utils.TestGuessJSONUTF",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_guess_by_bom[utf-32-be-utf-32]",
+          "classname": "tests.test_utils.TestGuessJSONUTF",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_guess_by_bom[utf-32-le-utf-32]",
+          "classname": "tests.test_utils.TestGuessJSONUTF",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_get_auth_from_url[http://%25%21%2A%27%28%29%3B%3A%40%26%3D%2B%24%2C%2F%3F%23%5B%5D%20:%25%21%2A%27%28%29%3B%3A%40%26%3D%2B%24%2C%2F%3F%23%5B%5D%20@request.com/url.html#test-auth0]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_get_auth_from_url[http://user:pass@complex.url.com/path?query=yes-auth1]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_get_auth_from_url[http://user:pass%20pass@complex.url.com/path?query=yes-auth2]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_get_auth_from_url[http://user:pass pass@complex.url.com/path?query=yes-auth3]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_get_auth_from_url[http://user%25user:pass@complex.url.com/path?query=yes-auth4]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_get_auth_from_url[http://user:pass%23pass@complex.url.com/path?query=yes-auth5]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_get_auth_from_url[http://complex.url.com/path?query=yes-auth6]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_requote_uri_with_unquoted_percents[http://example.com/fiz?buz=%25ppicture-http://example.com/fiz?buz=%25ppicture]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_requote_uri_with_unquoted_percents[http://example.com/fiz?buz=%ppicture-http://example.com/fiz?buz=%25ppicture]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_unquote_unreserved[http://example.com/?a=%---http://example.com/?a=%--]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_unquote_unreserved[http://example.com/?a=%300-http://example.com/?a=00]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_dotted_netmask[8-255.0.0.0]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_dotted_netmask[24-255.255.255.0]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_dotted_netmask[25-255.255.255.128]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_select_proxies[hTTp://u:p@Some.Host/path-http://some.host.proxy-proxies0]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_select_proxies[hTTp://u:p@Other.Host/path-http://http.proxy-proxies1]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_select_proxies[hTTp:///path-http://http.proxy-proxies2]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_select_proxies[hTTps://Other.Host-None-proxies3]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_select_proxies[file:///etc/motd-None-proxies4]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_select_proxies[hTTp://u:p@Some.Host/path-socks5://some.host.proxy-proxies5]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_select_proxies[hTTp://u:p@Other.Host/path-socks5://http.proxy-proxies6]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_select_proxies[hTTp:///path-socks5://http.proxy-proxies7]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_select_proxies[hTTps://Other.Host-socks5://http.proxy-proxies8]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_select_proxies[http://u:p@other.host/path-http://http.proxy-proxies9]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_select_proxies[http://u:p@some.host/path-http://some.host.proxy-proxies10]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_select_proxies[https://u:p@other.host/path-socks5://http.proxy-proxies11]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_select_proxies[https://u:p@some.host/path-socks5://http.proxy-proxies12]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_select_proxies[https://-socks5://http.proxy-proxies13]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_select_proxies[file:///etc/motd-socks5://http.proxy-proxies14]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_parse_dict_header[foo=\"is a fish\", bar=\"as well\"-expected0]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_parse_dict_header[key_without_value-expected1]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test__parse_content_type_header[application/xml-expected0]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test__parse_content_type_header[application/json ; charset=utf-8-expected1]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test__parse_content_type_header[application/json ; Charset=utf-8-expected2]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test__parse_content_type_header[text/plain-expected3]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test__parse_content_type_header[multipart/form-data; boundary = something ; boundary2='something_else' ; no_equals -expected4]",
+          "classname": "tests.test_utils",
+          "outcome": "failed",
+          "message": "AssertionError: assert ('multipart/f...quals': True}) == ('multipart/f...ething_else'})\n  \n  At index 1 diff: {'boundary': 'something', 'boundary2': 'something_else', 'no_equals': True} != {'boundary': 'something', 'boundary2': 'something_else'}\n  Use -v to get more diff"
+        },
+        {
+          "name": "test__parse_content_type_header[multipart/form-data; boundary = something ; boundary2=\"something_else\" ; no_equals -expected5]",
+          "classname": "tests.test_utils",
+          "outcome": "failed",
+          "message": "AssertionError: assert ('multipart/f...quals': True}) == ('multipart/f...ething_else'})\n  \n  At index 1 diff: {'boundary': 'something', 'boundary2': 'something_else', 'no_equals': True} != {'boundary': 'something', 'boundary2': 'something_else'}\n  Use -v to get more diff"
+        },
+        {
+          "name": "test__parse_content_type_header[multipart/form-data; boundary = something ; 'boundary2=something_else' ; no_equals -expected6]",
+          "classname": "tests.test_utils",
+          "outcome": "failed",
+          "message": "AssertionError: assert ('multipart/f...quals': True}) == ('multipart/f...ething_else'})\n  \n  At index 1 diff: {'boundary': 'something', 'boundary2': 'something_else', 'no_equals': True} != {'boundary': 'something', 'boundary2': 'something_else'}\n  Use -v to get more diff"
+        },
+        {
+          "name": "test__parse_content_type_header[multipart/form-data; boundary = something ; \"boundary2=something_else\" ; no_equals -expected7]",
+          "classname": "tests.test_utils",
+          "outcome": "failed",
+          "message": "AssertionError: assert ('multipart/f...quals': True}) == ('multipart/f...ething_else'})\n  \n  At index 1 diff: {'boundary': 'something', 'boundary2': 'something_else', 'no_equals': True} != {'boundary': 'something', 'boundary2': 'something_else'}\n  Use -v to get more diff"
+        },
+        {
+          "name": "test__parse_content_type_header[application/json ; ; -expected8]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_get_encoding_from_headers[value0-None]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_get_encoding_from_headers[value1-utf-8]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_get_encoding_from_headers[value2-ISO-8859-1]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_get_encoding_from_headers[value3-ISO-8859-1]",
+          "classname": "tests.test_utils",
+          "outcome": "failed",
+          "message": "AttributeError: 'bool' object has no attribute 'strip'"
+        },
+        {
+          "name": "test_iter_slices[-0]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_iter_slices[T-1]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_iter_slices[Test-4]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_iter_slices[Cont-0]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_iter_slices[Other--5]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_iter_slices[Content-None]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_parse_header_links[<http:/.../front.jpeg>; rel=front; type=\"image/jpeg\"-expected0]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_parse_header_links[<http:/.../front.jpeg>-expected1]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_parse_header_links[<http:/.../front.jpeg>;-expected2]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_parse_header_links[<http:/.../front.jpeg>; type=\"image/jpeg\",<http://.../back.jpeg>;-expected3]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_parse_header_links[-expected4]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_prepend_scheme_if_needed[example.com/path-http://example.com/path]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_prepend_scheme_if_needed[//example.com/path-http://example.com/path]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_prepend_scheme_if_needed[example.com:80-http://example.com:80]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_prepend_scheme_if_needed[http://user:pass@example.com/path?query-http://user:pass@example.com/path?query]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_prepend_scheme_if_needed[http://user@example.com/path?query-http://user@example.com/path?query]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_to_native_string[T-T0]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_to_native_string[T-T1]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_to_native_string[T-T2]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_urldefragauth[http://u:p@example.com/path?a=1#test-http://example.com/path?a=1]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_urldefragauth[http://example.com/path-http://example.com/path]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_urldefragauth[//u:p@example.com/path-//example.com/path]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_urldefragauth[//example.com/path-//example.com/path]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_urldefragauth[example.com/path-//example.com/path]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_urldefragauth[scheme:u:p@example.com/path-scheme://example.com/path]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies[http://192.168.0.1:5000/-True]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies[http://192.168.0.1/-True]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies[http://172.16.1.1/-True]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies[http://172.16.1.1:5000/-True]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies[http://localhost.localdomain:5000/v1.0/-True]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies[http://google.com:6000/-True]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies[http://172.16.1.12/-False]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies[http://172.16.1.12:5000/-False]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies[http://google.com:5000/v1.0/-False]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies[file:///some/path/on/disk-True]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies_pass_only_hostname[http://172.16.1.1/-172.16.1.1]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies_pass_only_hostname[http://172.16.1.1:5000/-172.16.1.1]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies_pass_only_hostname[http://user:pass@172.16.1.1-172.16.1.1]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies_pass_only_hostname[http://user:pass@172.16.1.1:5000-172.16.1.1]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies_pass_only_hostname[http://hostname/-hostname]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies_pass_only_hostname[http://hostname:5000/-hostname]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies_pass_only_hostname[http://user:pass@hostname-hostname]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies_pass_only_hostname[http://user:pass@hostname:5000-hostname]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_add_dict_to_cookiejar[cookiejar0]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_add_dict_to_cookiejar[cookiejar1]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_unicode_is_ascii[test-True]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_unicode_is_ascii[\\xe6\\xed\\xf6\\xfb-False]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_unicode_is_ascii[\\u30b8\\u30a7\\u30fc\\u30d4\\u30fc\\u30cb\\u30c3\\u30af-False]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies_no_proxy[http://192.168.0.1:5000/-True]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies_no_proxy[http://192.168.0.1/-True]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies_no_proxy[http://172.16.1.1/-True]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies_no_proxy[http://172.16.1.1:5000/-True]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies_no_proxy[http://localhost.localdomain:5000/v1.0/-True]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies_no_proxy[http://172.16.1.12/-False]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies_no_proxy[http://172.16.1.12:5000/-False]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies_no_proxy[http://google.com:5000/v1.0/-False]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies_win_registry[http://192.168.0.1:5000/-True-None]",
+          "classname": "tests.test_utils",
+          "outcome": "skipped",
+          "message": "Test only on Windows"
+        },
+        {
+          "name": "test_should_bypass_proxies_win_registry[http://192.168.0.1/-True-None]",
+          "classname": "tests.test_utils",
+          "outcome": "skipped",
+          "message": "Test only on Windows"
+        },
+        {
+          "name": "test_should_bypass_proxies_win_registry[http://172.16.1.1/-True-None]",
+          "classname": "tests.test_utils",
+          "outcome": "skipped",
+          "message": "Test only on Windows"
+        },
+        {
+          "name": "test_should_bypass_proxies_win_registry[http://172.16.1.1:5000/-True-None]",
+          "classname": "tests.test_utils",
+          "outcome": "skipped",
+          "message": "Test only on Windows"
+        },
+        {
+          "name": "test_should_bypass_proxies_win_registry[http://localhost.localdomain:5000/v1.0/-True-None]",
+          "classname": "tests.test_utils",
+          "outcome": "skipped",
+          "message": "Test only on Windows"
+        },
+        {
+          "name": "test_should_bypass_proxies_win_registry[http://172.16.1.22/-False-None]",
+          "classname": "tests.test_utils",
+          "outcome": "skipped",
+          "message": "Test only on Windows"
+        },
+        {
+          "name": "test_should_bypass_proxies_win_registry[http://172.16.1.22:5000/-False-None]",
+          "classname": "tests.test_utils",
+          "outcome": "skipped",
+          "message": "Test only on Windows"
+        },
+        {
+          "name": "test_should_bypass_proxies_win_registry[http://google.com:5000/v1.0/-False-None]",
+          "classname": "tests.test_utils",
+          "outcome": "skipped",
+          "message": "Test only on Windows"
+        },
+        {
+          "name": "test_should_bypass_proxies_win_registry[http://mylocalhostname:5000/v1.0/-True-<local>]",
+          "classname": "tests.test_utils",
+          "outcome": "skipped",
+          "message": "Test only on Windows"
+        },
+        {
+          "name": "test_should_bypass_proxies_win_registry[http://192.168.0.1/-False-]",
+          "classname": "tests.test_utils",
+          "outcome": "skipped",
+          "message": "Test only on Windows"
+        },
+        {
+          "name": "test_should_bypass_proxies_win_registry_bad_values",
+          "classname": "tests.test_utils",
+          "outcome": "skipped",
+          "message": "Test only on Windows"
+        },
+        {
+          "name": "test_set_environ[no_proxy-192.168.0.0/24,127.0.0.1,localhost.localdomain]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_set_environ[no_proxy-None]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_set_environ[a_new_key-192.168.0.0/24,127.0.0.1,localhost.localdomain]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_set_environ[a_new_key-None]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_set_environ_raises_exception",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies_win_registry_ProxyOverride_value",
+          "classname": "tests.test_utils",
+          "outcome": "skipped",
+          "message": "Test only on Windows"
+        }
+      ]
+    },
+    "resolved": false
+  },
+  {
+    "arm": "reference",
+    "commands": [
+      {
+        "cmd": "pip install setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip install wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip install editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip install flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip install poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip install pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip install -e .",
+        "rc": 0,
+        "tail": "python3.12/dist-packages, outside environment /tmp/swegemma_sandbox_a430786d-c6e_c0ak5b2a/venv\n    Can't uninstall 'requests'. No files were found to uninstall.\nSuccessfully installed requests-2.33.0\n"
+      },
+      {
+        "label": "checkout tests/test_utils.py",
+        "cmd": "cd /workspace && git checkout HEAD -- tests/test_utils.py",
+        "rc": 0,
+        "out": "",
+        "err": ""
+      },
+      {
+        "label": "clean tests/test_utils.py",
+        "cmd": "cd /workspace && git clean -f -- tests/test_utils.py",
+        "rc": 0,
+        "out": "",
+        "err": ""
+      },
+      {
+        "label": "pristine hash",
+        "cmd": "cd /workspace && git show HEAD:tests/test_utils.py | sha256sum",
+        "rc": 0,
+        "out": "749c36bc574e3e796ddb78bbdc91b0d92fccf703a39c6d21f5afbfa7b28f50f8  -\n",
+        "err": ""
+      },
+      {
+        "label": "pytest",
+        "cmd": "cd /workspace && PYTHONSAFEPATH=1 PYTHONNOUSERSITE=1 python3 -s -m pytest tests/test_utils.py --junitxml=/tmp/_j_dca978c2.xml -p no:anyio -o timeout=0",
+        "rc": 0,
+        "out": "................................ [ 32%]\n........................................................................ [ 65%]\n...........................................................sssssssssss.. [ 98%]\n...s                                                                     [100%]\n- generated xml file: /tmp/swegemma_sandbox_a430786d-c6e_c0ak5b2a/tmp/_j_dca978c2.xml -\n207 passed, 13 skipped in 0.34s\n",
+        "err": ""
+      }
+    ],
+    "infrastructure_error": null,
+    "grading_import": "/tmp/swegemma_sandbox_a430786d-c6e_c0ak5b2a/workspace/src/requests/__init__.py",
+    "import_in_checkout": true,
+    "candidate_apply_rc": 0,
+    "candidate_apply_err": "",
+    "test_file_hashes": {
+      "tests/test_utils.py": {
+        "before_reset": "749c36bc574e3e79",
+        "after_reset": "749c36bc574e3e79"
+      }
+    },
+    "pristine_hash": "749c36bc574e3e79",
+    "test_patch_apply_rc": 0,
+    "test_patch_apply_err": "",
+    "pytest_exit": 0,
+    "pytest_tail": "..s..................................................................... [ 32%]\n........................................................................ [ 65%]\n...........................................................sssssssssss.. [ 98%]\n...s                                                                     [100%]\n- generated xml file: /tmp/swegemma_sandbox_a430786d-c6e_c0ak5b2a/tmp/_j_dca978c2.xml -\n207 passed, 13 skipped in 0.34s\n",
+    "junit": {
+      "parsed": true,
+      "cases": [
+        {
+          "name": "test_io_streams[StringIO-Test]",
+          "classname": "tests.test_utils.TestSuperLen",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_io_streams[BytesIO-Test]",
+          "classname": "tests.test_utils.TestSuperLen",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_io_streams[None-Test]",
+          "classname": "tests.test_utils.TestSuperLen",
+          "outcome": "skipped",
+          "message": "condition: cStringIO is None"
+        },
+        {
+          "name": "test_super_len_correctly_calculates_len_of_partially_read_file",
+          "classname": "tests.test_utils.TestSuperLen",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_super_len_handles_files_raising_weird_errors_in_tell[OSError0]",
+          "classname": "tests.test_utils.TestSuperLen",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_super_len_handles_files_raising_weird_errors_in_tell[OSError1]",
+          "classname": "tests.test_utils.TestSuperLen",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_super_len_tell_ioerror[OSError0]",
+          "classname": "tests.test_utils.TestSuperLen",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_super_len_tell_ioerror[OSError1]",
+          "classname": "tests.test_utils.TestSuperLen",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_string",
+          "classname": "tests.test_utils.TestSuperLen",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_file[r-1]",
+          "classname": "tests.test_utils.TestSuperLen",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_file[rb-0]",
+          "classname": "tests.test_utils.TestSuperLen",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_tarfile_member",
+          "classname": "tests.test_utils.TestSuperLen",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_super_len_with__len__",
+          "classname": "tests.test_utils.TestSuperLen",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_super_len_with_no__len__",
+          "classname": "tests.test_utils.TestSuperLen",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_super_len_with_tell",
+          "classname": "tests.test_utils.TestSuperLen",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_super_len_with_fileno",
+          "classname": "tests.test_utils.TestSuperLen",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_super_len_with_no_matches",
+          "classname": "tests.test_utils.TestSuperLen",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_works",
+          "classname": "tests.test_utils.TestGetNetrcAuth",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_not_vulnerable_to_bad_url_parsing",
+          "classname": "tests.test_utils.TestGetNetrcAuth",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_empty_default_credentials_ignored",
+          "classname": "tests.test_utils.TestGetNetrcAuth",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_valid[value0-expected0]",
+          "classname": "tests.test_utils.TestToKeyValList",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_valid[value1-expected1]",
+          "classname": "tests.test_utils.TestToKeyValList",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_valid[value2-expected2]",
+          "classname": "tests.test_utils.TestToKeyValList",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_valid[None-None]",
+          "classname": "tests.test_utils.TestToKeyValList",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_invalid",
+          "classname": "tests.test_utils.TestToKeyValList",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_valid[None-None]",
+          "classname": "tests.test_utils.TestUnquoteHeaderValue",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_valid[Test-Test]",
+          "classname": "tests.test_utils.TestUnquoteHeaderValue",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_valid[\"Test\"-Test]",
+          "classname": "tests.test_utils.TestUnquoteHeaderValue",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_valid[\"Test\\\\\\\\\"-Test\\\\]",
+          "classname": "tests.test_utils.TestUnquoteHeaderValue",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_valid[\"\\\\\\\\Comp\\\\Res\"-\\\\Comp\\\\Res]",
+          "classname": "tests.test_utils.TestUnquoteHeaderValue",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_is_filename",
+          "classname": "tests.test_utils.TestUnquoteHeaderValue",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_bypass[no_proxy-http://192.168.0.1:5000/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_bypass[no_proxy-http://192.168.0.1/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_bypass[no_proxy-http://172.16.1.1/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_bypass[no_proxy-http://172.16.1.1:5000/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_bypass[no_proxy-http://localhost.localdomain:5000/v1.0/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_bypass[NO_PROXY-http://192.168.0.1:5000/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_bypass[NO_PROXY-http://192.168.0.1/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_bypass[NO_PROXY-http://172.16.1.1/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_bypass[NO_PROXY-http://172.16.1.1:5000/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_bypass[NO_PROXY-http://localhost.localdomain:5000/v1.0/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_not_bypass[no_proxy-http://192.168.1.1:5000/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_not_bypass[no_proxy-http://192.168.1.1/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_not_bypass[no_proxy-http://www.requests.com/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_not_bypass[NO_PROXY-http://192.168.1.1:5000/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_not_bypass[NO_PROXY-http://192.168.1.1/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_not_bypass[NO_PROXY-http://www.requests.com/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_bypass_no_proxy_keyword[no_proxy-http://192.168.1.1:5000/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_bypass_no_proxy_keyword[no_proxy-http://192.168.1.1/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_bypass_no_proxy_keyword[no_proxy-http://www.requests.com/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_bypass_no_proxy_keyword[NO_PROXY-http://192.168.1.1:5000/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_bypass_no_proxy_keyword[NO_PROXY-http://192.168.1.1/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_bypass_no_proxy_keyword[NO_PROXY-http://www.requests.com/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_not_bypass_no_proxy_keyword[no_proxy-http://192.168.0.1:5000/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_not_bypass_no_proxy_keyword[no_proxy-http://192.168.0.1/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_not_bypass_no_proxy_keyword[no_proxy-http://172.16.1.1/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_not_bypass_no_proxy_keyword[no_proxy-http://172.16.1.1:5000/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_not_bypass_no_proxy_keyword[no_proxy-http://localhost.localdomain:5000/v1.0/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_not_bypass_no_proxy_keyword[NO_PROXY-http://192.168.0.1:5000/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_not_bypass_no_proxy_keyword[NO_PROXY-http://192.168.0.1/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_not_bypass_no_proxy_keyword[NO_PROXY-http://172.16.1.1/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_not_bypass_no_proxy_keyword[NO_PROXY-http://172.16.1.1:5000/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_not_bypass_no_proxy_keyword[NO_PROXY-http://localhost.localdomain:5000/v1.0/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_valid",
+          "classname": "tests.test_utils.TestIsIPv4Address",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_invalid[8.8.8.8.8]",
+          "classname": "tests.test_utils.TestIsIPv4Address",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_invalid[localhost.localdomain]",
+          "classname": "tests.test_utils.TestIsIPv4Address",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_valid",
+          "classname": "tests.test_utils.TestIsValidCIDR",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_invalid[8.8.8.8]",
+          "classname": "tests.test_utils.TestIsValidCIDR",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_invalid[192.168.1.0/a]",
+          "classname": "tests.test_utils.TestIsValidCIDR",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_invalid[192.168.1.0/128]",
+          "classname": "tests.test_utils.TestIsValidCIDR",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_invalid[192.168.1.0/-1]",
+          "classname": "tests.test_utils.TestIsValidCIDR",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_invalid[192.168.1.999/24]",
+          "classname": "tests.test_utils.TestIsValidCIDR",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_valid",
+          "classname": "tests.test_utils.TestAddressInNetwork",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_invalid",
+          "classname": "tests.test_utils.TestAddressInNetwork",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_guess_filename_invalid[1]",
+          "classname": "tests.test_utils.TestGuessFilename",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_guess_filename_invalid[value1]",
+          "classname": "tests.test_utils.TestGuessFilename",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_guess_filename_valid[value-bytes]",
+          "classname": "tests.test_utils.TestGuessFilename",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_guess_filename_valid[value-str]",
+          "classname": "tests.test_utils.TestGuessFilename",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_unzipped_paths_unchanged[/]",
+          "classname": "tests.test_utils.TestExtractZippedPaths",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_unzipped_paths_unchanged[/tmp/swegemma_sandbox_a430786d-c6e_c0ak5b2a/workspace/tests/test_utils.py]",
+          "classname": "tests.test_utils.TestExtractZippedPaths",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_unzipped_paths_unchanged[/usr/local/lib/python3.12/dist-packages/pytest/__init__.py]",
+          "classname": "tests.test_utils.TestExtractZippedPaths",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_unzipped_paths_unchanged[/etc/invalid/location]",
+          "classname": "tests.test_utils.TestExtractZippedPaths",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_zipped_paths_extracted",
+          "classname": "tests.test_utils.TestExtractZippedPaths",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_invalid_unc_path",
+          "classname": "tests.test_utils.TestExtractZippedPaths",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_none",
+          "classname": "tests.test_utils.TestContentEncodingDetection",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_pragmas[<meta charset=\"UTF-8\">]",
+          "classname": "tests.test_utils.TestContentEncodingDetection",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_pragmas[<meta http-equiv=\"Content-type\" content=\"text/html;charset=UTF-8\">]",
+          "classname": "tests.test_utils.TestContentEncodingDetection",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_pragmas[<meta http-equiv=\"Content-type\" content=\"text/html;charset=UTF-8\" />]",
+          "classname": "tests.test_utils.TestContentEncodingDetection",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_pragmas[<?xml version=\"1.0\" encoding=\"UTF-8\"?>]",
+          "classname": "tests.test_utils.TestContentEncodingDetection",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_precedence",
+          "classname": "tests.test_utils.TestContentEncodingDetection",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_encoded[utf-32]",
+          "classname": "tests.test_utils.TestGuessJSONUTF",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_encoded[utf-8-sig]",
+          "classname": "tests.test_utils.TestGuessJSONUTF",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_encoded[utf-16]",
+          "classname": "tests.test_utils.TestGuessJSONUTF",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_encoded[utf-8]",
+          "classname": "tests.test_utils.TestGuessJSONUTF",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_encoded[utf-16-be]",
+          "classname": "tests.test_utils.TestGuessJSONUTF",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_encoded[utf-16-le]",
+          "classname": "tests.test_utils.TestGuessJSONUTF",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_encoded[utf-32-be]",
+          "classname": "tests.test_utils.TestGuessJSONUTF",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_encoded[utf-32-le]",
+          "classname": "tests.test_utils.TestGuessJSONUTF",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_bad_utf_like_encoding",
+          "classname": "tests.test_utils.TestGuessJSONUTF",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_guess_by_bom[utf-16-be-utf-16]",
+          "classname": "tests.test_utils.TestGuessJSONUTF",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_guess_by_bom[utf-16-le-utf-16]",
+          "classname": "tests.test_utils.TestGuessJSONUTF",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_guess_by_bom[utf-32-be-utf-32]",
+          "classname": "tests.test_utils.TestGuessJSONUTF",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_guess_by_bom[utf-32-le-utf-32]",
+          "classname": "tests.test_utils.TestGuessJSONUTF",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_get_auth_from_url[http://%25%21%2A%27%28%29%3B%3A%40%26%3D%2B%24%2C%2F%3F%23%5B%5D%20:%25%21%2A%27%28%29%3B%3A%40%26%3D%2B%24%2C%2F%3F%23%5B%5D%20@request.com/url.html#test-auth0]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_get_auth_from_url[http://user:pass@complex.url.com/path?query=yes-auth1]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_get_auth_from_url[http://user:pass%20pass@complex.url.com/path?query=yes-auth2]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_get_auth_from_url[http://user:pass pass@complex.url.com/path?query=yes-auth3]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_get_auth_from_url[http://user%25user:pass@complex.url.com/path?query=yes-auth4]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_get_auth_from_url[http://user:pass%23pass@complex.url.com/path?query=yes-auth5]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_get_auth_from_url[http://complex.url.com/path?query=yes-auth6]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_requote_uri_with_unquoted_percents[http://example.com/fiz?buz=%25ppicture-http://example.com/fiz?buz=%25ppicture]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_requote_uri_with_unquoted_percents[http://example.com/fiz?buz=%ppicture-http://example.com/fiz?buz=%25ppicture]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_unquote_unreserved[http://example.com/?a=%---http://example.com/?a=%--]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_unquote_unreserved[http://example.com/?a=%300-http://example.com/?a=00]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_dotted_netmask[8-255.0.0.0]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_dotted_netmask[24-255.255.255.0]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_dotted_netmask[25-255.255.255.128]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_select_proxies[hTTp://u:p@Some.Host/path-http://some.host.proxy-proxies0]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_select_proxies[hTTp://u:p@Other.Host/path-http://http.proxy-proxies1]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_select_proxies[hTTp:///path-http://http.proxy-proxies2]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_select_proxies[hTTps://Other.Host-None-proxies3]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_select_proxies[file:///etc/motd-None-proxies4]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_select_proxies[hTTp://u:p@Some.Host/path-socks5://some.host.proxy-proxies5]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_select_proxies[hTTp://u:p@Other.Host/path-socks5://http.proxy-proxies6]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_select_proxies[hTTp:///path-socks5://http.proxy-proxies7]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_select_proxies[hTTps://Other.Host-socks5://http.proxy-proxies8]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_select_proxies[http://u:p@other.host/path-http://http.proxy-proxies9]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_select_proxies[http://u:p@some.host/path-http://some.host.proxy-proxies10]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_select_proxies[https://u:p@other.host/path-socks5://http.proxy-proxies11]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_select_proxies[https://u:p@some.host/path-socks5://http.proxy-proxies12]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_select_proxies[https://-socks5://http.proxy-proxies13]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_select_proxies[file:///etc/motd-socks5://http.proxy-proxies14]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_parse_dict_header[foo=\"is a fish\", bar=\"as well\"-expected0]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_parse_dict_header[key_without_value-expected1]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test__parse_content_type_header[application/xml-expected0]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test__parse_content_type_header[application/json ; charset=utf-8-expected1]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test__parse_content_type_header[application/json ; Charset=utf-8-expected2]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test__parse_content_type_header[text/plain-expected3]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test__parse_content_type_header[multipart/form-data; boundary = something ; boundary2='something_else' ; no_equals -expected4]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test__parse_content_type_header[multipart/form-data; boundary = something ; boundary2=\"something_else\" ; no_equals -expected5]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test__parse_content_type_header[multipart/form-data; boundary = something ; 'boundary2=something_else' ; no_equals -expected6]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test__parse_content_type_header[multipart/form-data; boundary = something ; \"boundary2=something_else\" ; no_equals -expected7]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test__parse_content_type_header[application/json ; ; -expected8]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_get_encoding_from_headers[value0-None]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_get_encoding_from_headers[value1-utf-8]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_get_encoding_from_headers[value2-ISO-8859-1]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_get_encoding_from_headers[value3-ISO-8859-1]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_iter_slices[-0]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_iter_slices[T-1]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_iter_slices[Test-4]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_iter_slices[Cont-0]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_iter_slices[Other--5]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_iter_slices[Content-None]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_parse_header_links[<http:/.../front.jpeg>; rel=front; type=\"image/jpeg\"-expected0]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_parse_header_links[<http:/.../front.jpeg>-expected1]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_parse_header_links[<http:/.../front.jpeg>;-expected2]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_parse_header_links[<http:/.../front.jpeg>; type=\"image/jpeg\",<http://.../back.jpeg>;-expected3]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_parse_header_links[-expected4]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_prepend_scheme_if_needed[example.com/path-http://example.com/path]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_prepend_scheme_if_needed[//example.com/path-http://example.com/path]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_prepend_scheme_if_needed[example.com:80-http://example.com:80]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_prepend_scheme_if_needed[http://user:pass@example.com/path?query-http://user:pass@example.com/path?query]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_prepend_scheme_if_needed[http://user@example.com/path?query-http://user@example.com/path?query]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_to_native_string[T-T0]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_to_native_string[T-T1]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_to_native_string[T-T2]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_urldefragauth[http://u:p@example.com/path?a=1#test-http://example.com/path?a=1]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_urldefragauth[http://example.com/path-http://example.com/path]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_urldefragauth[//u:p@example.com/path-//example.com/path]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_urldefragauth[//example.com/path-//example.com/path]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_urldefragauth[example.com/path-//example.com/path]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_urldefragauth[scheme:u:p@example.com/path-scheme://example.com/path]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies[http://192.168.0.1:5000/-True]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies[http://192.168.0.1/-True]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies[http://172.16.1.1/-True]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies[http://172.16.1.1:5000/-True]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies[http://localhost.localdomain:5000/v1.0/-True]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies[http://google.com:6000/-True]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies[http://172.16.1.12/-False]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies[http://172.16.1.12:5000/-False]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies[http://google.com:5000/v1.0/-False]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies[file:///some/path/on/disk-True]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies_pass_only_hostname[http://172.16.1.1/-172.16.1.1]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies_pass_only_hostname[http://172.16.1.1:5000/-172.16.1.1]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies_pass_only_hostname[http://user:pass@172.16.1.1-172.16.1.1]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies_pass_only_hostname[http://user:pass@172.16.1.1:5000-172.16.1.1]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies_pass_only_hostname[http://hostname/-hostname]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies_pass_only_hostname[http://hostname:5000/-hostname]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies_pass_only_hostname[http://user:pass@hostname-hostname]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies_pass_only_hostname[http://user:pass@hostname:5000-hostname]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_add_dict_to_cookiejar[cookiejar0]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_add_dict_to_cookiejar[cookiejar1]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_unicode_is_ascii[test-True]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_unicode_is_ascii[\\xe6\\xed\\xf6\\xfb-False]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_unicode_is_ascii[\\u30b8\\u30a7\\u30fc\\u30d4\\u30fc\\u30cb\\u30c3\\u30af-False]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies_no_proxy[http://192.168.0.1:5000/-True]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies_no_proxy[http://192.168.0.1/-True]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies_no_proxy[http://172.16.1.1/-True]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies_no_proxy[http://172.16.1.1:5000/-True]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies_no_proxy[http://localhost.localdomain:5000/v1.0/-True]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies_no_proxy[http://172.16.1.12/-False]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies_no_proxy[http://172.16.1.12:5000/-False]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies_no_proxy[http://google.com:5000/v1.0/-False]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies_win_registry[http://192.168.0.1:5000/-True-None]",
+          "classname": "tests.test_utils",
+          "outcome": "skipped",
+          "message": "Test only on Windows"
+        },
+        {
+          "name": "test_should_bypass_proxies_win_registry[http://192.168.0.1/-True-None]",
+          "classname": "tests.test_utils",
+          "outcome": "skipped",
+          "message": "Test only on Windows"
+        },
+        {
+          "name": "test_should_bypass_proxies_win_registry[http://172.16.1.1/-True-None]",
+          "classname": "tests.test_utils",
+          "outcome": "skipped",
+          "message": "Test only on Windows"
+        },
+        {
+          "name": "test_should_bypass_proxies_win_registry[http://172.16.1.1:5000/-True-None]",
+          "classname": "tests.test_utils",
+          "outcome": "skipped",
+          "message": "Test only on Windows"
+        },
+        {
+          "name": "test_should_bypass_proxies_win_registry[http://localhost.localdomain:5000/v1.0/-True-None]",
+          "classname": "tests.test_utils",
+          "outcome": "skipped",
+          "message": "Test only on Windows"
+        },
+        {
+          "name": "test_should_bypass_proxies_win_registry[http://172.16.1.22/-False-None]",
+          "classname": "tests.test_utils",
+          "outcome": "skipped",
+          "message": "Test only on Windows"
+        },
+        {
+          "name": "test_should_bypass_proxies_win_registry[http://172.16.1.22:5000/-False-None]",
+          "classname": "tests.test_utils",
+          "outcome": "skipped",
+          "message": "Test only on Windows"
+        },
+        {
+          "name": "test_should_bypass_proxies_win_registry[http://google.com:5000/v1.0/-False-None]",
+          "classname": "tests.test_utils",
+          "outcome": "skipped",
+          "message": "Test only on Windows"
+        },
+        {
+          "name": "test_should_bypass_proxies_win_registry[http://mylocalhostname:5000/v1.0/-True-<local>]",
+          "classname": "tests.test_utils",
+          "outcome": "skipped",
+          "message": "Test only on Windows"
+        },
+        {
+          "name": "test_should_bypass_proxies_win_registry[http://192.168.0.1/-False-]",
+          "classname": "tests.test_utils",
+          "outcome": "skipped",
+          "message": "Test only on Windows"
+        },
+        {
+          "name": "test_should_bypass_proxies_win_registry_bad_values",
+          "classname": "tests.test_utils",
+          "outcome": "skipped",
+          "message": "Test only on Windows"
+        },
+        {
+          "name": "test_set_environ[no_proxy-192.168.0.0/24,127.0.0.1,localhost.localdomain]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_set_environ[no_proxy-None]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_set_environ[a_new_key-192.168.0.0/24,127.0.0.1,localhost.localdomain]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_set_environ[a_new_key-None]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_set_environ_raises_exception",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies_win_registry_ProxyOverride_value",
+          "classname": "tests.test_utils",
+          "outcome": "skipped",
+          "message": "Test only on Windows"
+        }
+      ]
+    },
+    "resolved": true
+  },
+  {
+    "arm": "A_original",
+    "commands": [
+      {
+        "cmd": "pip install setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip install wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip install editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip install flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip install poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip install pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip install -e .",
+        "rc": 0,
+        "tail": "python3.12/dist-packages, outside environment /tmp/swegemma_sandbox_02d82070-1f9_985bxdfz/venv\n    Can't uninstall 'requests'. No files were found to uninstall.\nSuccessfully installed requests-2.33.0\n"
+      },
+      {
+        "label": "checkout tests/test_utils.py",
+        "cmd": "cd /workspace && git checkout HEAD -- tests/test_utils.py",
+        "rc": 0,
+        "out": "",
+        "err": ""
+      },
+      {
+        "label": "clean tests/test_utils.py",
+        "cmd": "cd /workspace && git clean -f -- tests/test_utils.py",
+        "rc": 0,
+        "out": "",
+        "err": ""
+      },
+      {
+        "label": "pristine hash",
+        "cmd": "cd /workspace && git show HEAD:tests/test_utils.py | sha256sum",
+        "rc": 0,
+        "out": "749c36bc574e3e796ddb78bbdc91b0d92fccf703a39c6d21f5afbfa7b28f50f8  -\n",
+        "err": ""
+      },
+      {
+        "label": "pytest",
+        "cmd": "cd /workspace && PYTHONSAFEPATH=1 PYTHONNOUSERSITE=1 python3 -s -m pytest tests/test_utils.py --junitxml=/tmp/_j_ab1d3e0a.xml -p no:anyio -o timeout=0",
+        "rc": 0,
+        "out": "................................ [ 32%]\n........................................................................ [ 65%]\n...........................................................sssssssssss.. [ 98%]\n...s                                                                     [100%]\n- generated xml file: /tmp/swegemma_sandbox_02d82070-1f9_985bxdfz/tmp/_j_ab1d3e0a.xml -\n207 passed, 13 skipped in 0.35s\n",
+        "err": ""
+      }
+    ],
+    "infrastructure_error": null,
+    "grading_import": "/tmp/swegemma_sandbox_02d82070-1f9_985bxdfz/workspace/src/requests/__init__.py",
+    "import_in_checkout": true,
+    "candidate_apply_rc": 0,
+    "candidate_apply_err": "",
+    "test_file_hashes": {
+      "tests/test_utils.py": {
+        "before_reset": "0dfa40c1086b1c5d",
+        "after_reset": "749c36bc574e3e79"
+      }
+    },
+    "pristine_hash": "749c36bc574e3e79",
+    "test_patch_apply_rc": 0,
+    "test_patch_apply_err": "",
+    "pytest_exit": 0,
+    "pytest_tail": "..s..................................................................... [ 32%]\n........................................................................ [ 65%]\n...........................................................sssssssssss.. [ 98%]\n...s                                                                     [100%]\n- generated xml file: /tmp/swegemma_sandbox_02d82070-1f9_985bxdfz/tmp/_j_ab1d3e0a.xml -\n207 passed, 13 skipped in 0.35s\n",
+    "junit": {
+      "parsed": true,
+      "cases": [
+        {
+          "name": "test_io_streams[StringIO-Test]",
+          "classname": "tests.test_utils.TestSuperLen",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_io_streams[BytesIO-Test]",
+          "classname": "tests.test_utils.TestSuperLen",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_io_streams[None-Test]",
+          "classname": "tests.test_utils.TestSuperLen",
+          "outcome": "skipped",
+          "message": "condition: cStringIO is None"
+        },
+        {
+          "name": "test_super_len_correctly_calculates_len_of_partially_read_file",
+          "classname": "tests.test_utils.TestSuperLen",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_super_len_handles_files_raising_weird_errors_in_tell[OSError0]",
+          "classname": "tests.test_utils.TestSuperLen",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_super_len_handles_files_raising_weird_errors_in_tell[OSError1]",
+          "classname": "tests.test_utils.TestSuperLen",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_super_len_tell_ioerror[OSError0]",
+          "classname": "tests.test_utils.TestSuperLen",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_super_len_tell_ioerror[OSError1]",
+          "classname": "tests.test_utils.TestSuperLen",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_string",
+          "classname": "tests.test_utils.TestSuperLen",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_file[r-1]",
+          "classname": "tests.test_utils.TestSuperLen",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_file[rb-0]",
+          "classname": "tests.test_utils.TestSuperLen",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_tarfile_member",
+          "classname": "tests.test_utils.TestSuperLen",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_super_len_with__len__",
+          "classname": "tests.test_utils.TestSuperLen",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_super_len_with_no__len__",
+          "classname": "tests.test_utils.TestSuperLen",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_super_len_with_tell",
+          "classname": "tests.test_utils.TestSuperLen",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_super_len_with_fileno",
+          "classname": "tests.test_utils.TestSuperLen",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_super_len_with_no_matches",
+          "classname": "tests.test_utils.TestSuperLen",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_works",
+          "classname": "tests.test_utils.TestGetNetrcAuth",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_not_vulnerable_to_bad_url_parsing",
+          "classname": "tests.test_utils.TestGetNetrcAuth",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_empty_default_credentials_ignored",
+          "classname": "tests.test_utils.TestGetNetrcAuth",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_valid[value0-expected0]",
+          "classname": "tests.test_utils.TestToKeyValList",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_valid[value1-expected1]",
+          "classname": "tests.test_utils.TestToKeyValList",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_valid[value2-expected2]",
+          "classname": "tests.test_utils.TestToKeyValList",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_valid[None-None]",
+          "classname": "tests.test_utils.TestToKeyValList",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_invalid",
+          "classname": "tests.test_utils.TestToKeyValList",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_valid[None-None]",
+          "classname": "tests.test_utils.TestUnquoteHeaderValue",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_valid[Test-Test]",
+          "classname": "tests.test_utils.TestUnquoteHeaderValue",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_valid[\"Test\"-Test]",
+          "classname": "tests.test_utils.TestUnquoteHeaderValue",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_valid[\"Test\\\\\\\\\"-Test\\\\]",
+          "classname": "tests.test_utils.TestUnquoteHeaderValue",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_valid[\"\\\\\\\\Comp\\\\Res\"-\\\\Comp\\\\Res]",
+          "classname": "tests.test_utils.TestUnquoteHeaderValue",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_is_filename",
+          "classname": "tests.test_utils.TestUnquoteHeaderValue",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_bypass[no_proxy-http://192.168.0.1:5000/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_bypass[no_proxy-http://192.168.0.1/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_bypass[no_proxy-http://172.16.1.1/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_bypass[no_proxy-http://172.16.1.1:5000/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_bypass[no_proxy-http://localhost.localdomain:5000/v1.0/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_bypass[NO_PROXY-http://192.168.0.1:5000/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_bypass[NO_PROXY-http://192.168.0.1/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_bypass[NO_PROXY-http://172.16.1.1/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_bypass[NO_PROXY-http://172.16.1.1:5000/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_bypass[NO_PROXY-http://localhost.localdomain:5000/v1.0/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_not_bypass[no_proxy-http://192.168.1.1:5000/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_not_bypass[no_proxy-http://192.168.1.1/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_not_bypass[no_proxy-http://www.requests.com/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_not_bypass[NO_PROXY-http://192.168.1.1:5000/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_not_bypass[NO_PROXY-http://192.168.1.1/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_not_bypass[NO_PROXY-http://www.requests.com/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_bypass_no_proxy_keyword[no_proxy-http://192.168.1.1:5000/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_bypass_no_proxy_keyword[no_proxy-http://192.168.1.1/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_bypass_no_proxy_keyword[no_proxy-http://www.requests.com/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_bypass_no_proxy_keyword[NO_PROXY-http://192.168.1.1:5000/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_bypass_no_proxy_keyword[NO_PROXY-http://192.168.1.1/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_bypass_no_proxy_keyword[NO_PROXY-http://www.requests.com/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_not_bypass_no_proxy_keyword[no_proxy-http://192.168.0.1:5000/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_not_bypass_no_proxy_keyword[no_proxy-http://192.168.0.1/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_not_bypass_no_proxy_keyword[no_proxy-http://172.16.1.1/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_not_bypass_no_proxy_keyword[no_proxy-http://172.16.1.1:5000/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_not_bypass_no_proxy_keyword[no_proxy-http://localhost.localdomain:5000/v1.0/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_not_bypass_no_proxy_keyword[NO_PROXY-http://192.168.0.1:5000/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_not_bypass_no_proxy_keyword[NO_PROXY-http://192.168.0.1/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_not_bypass_no_proxy_keyword[NO_PROXY-http://172.16.1.1/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_not_bypass_no_proxy_keyword[NO_PROXY-http://172.16.1.1:5000/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_not_bypass_no_proxy_keyword[NO_PROXY-http://localhost.localdomain:5000/v1.0/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_valid",
+          "classname": "tests.test_utils.TestIsIPv4Address",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_invalid[8.8.8.8.8]",
+          "classname": "tests.test_utils.TestIsIPv4Address",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_invalid[localhost.localdomain]",
+          "classname": "tests.test_utils.TestIsIPv4Address",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_valid",
+          "classname": "tests.test_utils.TestIsValidCIDR",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_invalid[8.8.8.8]",
+          "classname": "tests.test_utils.TestIsValidCIDR",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_invalid[192.168.1.0/a]",
+          "classname": "tests.test_utils.TestIsValidCIDR",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_invalid[192.168.1.0/128]",
+          "classname": "tests.test_utils.TestIsValidCIDR",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_invalid[192.168.1.0/-1]",
+          "classname": "tests.test_utils.TestIsValidCIDR",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_invalid[192.168.1.999/24]",
+          "classname": "tests.test_utils.TestIsValidCIDR",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_valid",
+          "classname": "tests.test_utils.TestAddressInNetwork",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_invalid",
+          "classname": "tests.test_utils.TestAddressInNetwork",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_guess_filename_invalid[1]",
+          "classname": "tests.test_utils.TestGuessFilename",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_guess_filename_invalid[value1]",
+          "classname": "tests.test_utils.TestGuessFilename",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_guess_filename_valid[value-bytes]",
+          "classname": "tests.test_utils.TestGuessFilename",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_guess_filename_valid[value-str]",
+          "classname": "tests.test_utils.TestGuessFilename",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_unzipped_paths_unchanged[/]",
+          "classname": "tests.test_utils.TestExtractZippedPaths",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_unzipped_paths_unchanged[/tmp/swegemma_sandbox_02d82070-1f9_985bxdfz/workspace/tests/test_utils.py]",
+          "classname": "tests.test_utils.TestExtractZippedPaths",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_unzipped_paths_unchanged[/usr/local/lib/python3.12/dist-packages/pytest/__init__.py]",
+          "classname": "tests.test_utils.TestExtractZippedPaths",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_unzipped_paths_unchanged[/etc/invalid/location]",
+          "classname": "tests.test_utils.TestExtractZippedPaths",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_zipped_paths_extracted",
+          "classname": "tests.test_utils.TestExtractZippedPaths",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_invalid_unc_path",
+          "classname": "tests.test_utils.TestExtractZippedPaths",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_none",
+          "classname": "tests.test_utils.TestContentEncodingDetection",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_pragmas[<meta charset=\"UTF-8\">]",
+          "classname": "tests.test_utils.TestContentEncodingDetection",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_pragmas[<meta http-equiv=\"Content-type\" content=\"text/html;charset=UTF-8\">]",
+          "classname": "tests.test_utils.TestContentEncodingDetection",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_pragmas[<meta http-equiv=\"Content-type\" content=\"text/html;charset=UTF-8\" />]",
+          "classname": "tests.test_utils.TestContentEncodingDetection",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_pragmas[<?xml version=\"1.0\" encoding=\"UTF-8\"?>]",
+          "classname": "tests.test_utils.TestContentEncodingDetection",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_precedence",
+          "classname": "tests.test_utils.TestContentEncodingDetection",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_encoded[utf-32]",
+          "classname": "tests.test_utils.TestGuessJSONUTF",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_encoded[utf-8-sig]",
+          "classname": "tests.test_utils.TestGuessJSONUTF",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_encoded[utf-16]",
+          "classname": "tests.test_utils.TestGuessJSONUTF",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_encoded[utf-8]",
+          "classname": "tests.test_utils.TestGuessJSONUTF",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_encoded[utf-16-be]",
+          "classname": "tests.test_utils.TestGuessJSONUTF",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_encoded[utf-16-le]",
+          "classname": "tests.test_utils.TestGuessJSONUTF",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_encoded[utf-32-be]",
+          "classname": "tests.test_utils.TestGuessJSONUTF",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_encoded[utf-32-le]",
+          "classname": "tests.test_utils.TestGuessJSONUTF",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_bad_utf_like_encoding",
+          "classname": "tests.test_utils.TestGuessJSONUTF",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_guess_by_bom[utf-16-be-utf-16]",
+          "classname": "tests.test_utils.TestGuessJSONUTF",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_guess_by_bom[utf-16-le-utf-16]",
+          "classname": "tests.test_utils.TestGuessJSONUTF",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_guess_by_bom[utf-32-be-utf-32]",
+          "classname": "tests.test_utils.TestGuessJSONUTF",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_guess_by_bom[utf-32-le-utf-32]",
+          "classname": "tests.test_utils.TestGuessJSONUTF",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_get_auth_from_url[http://%25%21%2A%27%28%29%3B%3A%40%26%3D%2B%24%2C%2F%3F%23%5B%5D%20:%25%21%2A%27%28%29%3B%3A%40%26%3D%2B%24%2C%2F%3F%23%5B%5D%20@request.com/url.html#test-auth0]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_get_auth_from_url[http://user:pass@complex.url.com/path?query=yes-auth1]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_get_auth_from_url[http://user:pass%20pass@complex.url.com/path?query=yes-auth2]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_get_auth_from_url[http://user:pass pass@complex.url.com/path?query=yes-auth3]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_get_auth_from_url[http://user%25user:pass@complex.url.com/path?query=yes-auth4]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_get_auth_from_url[http://user:pass%23pass@complex.url.com/path?query=yes-auth5]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_get_auth_from_url[http://complex.url.com/path?query=yes-auth6]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_requote_uri_with_unquoted_percents[http://example.com/fiz?buz=%25ppicture-http://example.com/fiz?buz=%25ppicture]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_requote_uri_with_unquoted_percents[http://example.com/fiz?buz=%ppicture-http://example.com/fiz?buz=%25ppicture]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_unquote_unreserved[http://example.com/?a=%---http://example.com/?a=%--]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_unquote_unreserved[http://example.com/?a=%300-http://example.com/?a=00]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_dotted_netmask[8-255.0.0.0]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_dotted_netmask[24-255.255.255.0]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_dotted_netmask[25-255.255.255.128]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_select_proxies[hTTp://u:p@Some.Host/path-http://some.host.proxy-proxies0]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_select_proxies[hTTp://u:p@Other.Host/path-http://http.proxy-proxies1]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_select_proxies[hTTp:///path-http://http.proxy-proxies2]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_select_proxies[hTTps://Other.Host-None-proxies3]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_select_proxies[file:///etc/motd-None-proxies4]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_select_proxies[hTTp://u:p@Some.Host/path-socks5://some.host.proxy-proxies5]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_select_proxies[hTTp://u:p@Other.Host/path-socks5://http.proxy-proxies6]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_select_proxies[hTTp:///path-socks5://http.proxy-proxies7]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_select_proxies[hTTps://Other.Host-socks5://http.proxy-proxies8]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_select_proxies[http://u:p@other.host/path-http://http.proxy-proxies9]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_select_proxies[http://u:p@some.host/path-http://some.host.proxy-proxies10]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_select_proxies[https://u:p@other.host/path-socks5://http.proxy-proxies11]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_select_proxies[https://u:p@some.host/path-socks5://http.proxy-proxies12]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_select_proxies[https://-socks5://http.proxy-proxies13]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_select_proxies[file:///etc/motd-socks5://http.proxy-proxies14]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_parse_dict_header[foo=\"is a fish\", bar=\"as well\"-expected0]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_parse_dict_header[key_without_value-expected1]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test__parse_content_type_header[application/xml-expected0]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test__parse_content_type_header[application/json ; charset=utf-8-expected1]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test__parse_content_type_header[application/json ; Charset=utf-8-expected2]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test__parse_content_type_header[text/plain-expected3]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test__parse_content_type_header[multipart/form-data; boundary = something ; boundary2='something_else' ; no_equals -expected4]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test__parse_content_type_header[multipart/form-data; boundary = something ; boundary2=\"something_else\" ; no_equals -expected5]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test__parse_content_type_header[multipart/form-data; boundary = something ; 'boundary2=something_else' ; no_equals -expected6]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test__parse_content_type_header[multipart/form-data; boundary = something ; \"boundary2=something_else\" ; no_equals -expected7]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test__parse_content_type_header[application/json ; ; -expected8]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_get_encoding_from_headers[value0-None]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_get_encoding_from_headers[value1-utf-8]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_get_encoding_from_headers[value2-ISO-8859-1]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_get_encoding_from_headers[value3-ISO-8859-1]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_iter_slices[-0]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_iter_slices[T-1]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_iter_slices[Test-4]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_iter_slices[Cont-0]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_iter_slices[Other--5]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_iter_slices[Content-None]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_parse_header_links[<http:/.../front.jpeg>; rel=front; type=\"image/jpeg\"-expected0]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_parse_header_links[<http:/.../front.jpeg>-expected1]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_parse_header_links[<http:/.../front.jpeg>;-expected2]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_parse_header_links[<http:/.../front.jpeg>; type=\"image/jpeg\",<http://.../back.jpeg>;-expected3]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_parse_header_links[-expected4]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_prepend_scheme_if_needed[example.com/path-http://example.com/path]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_prepend_scheme_if_needed[//example.com/path-http://example.com/path]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_prepend_scheme_if_needed[example.com:80-http://example.com:80]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_prepend_scheme_if_needed[http://user:pass@example.com/path?query-http://user:pass@example.com/path?query]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_prepend_scheme_if_needed[http://user@example.com/path?query-http://user@example.com/path?query]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_to_native_string[T-T0]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_to_native_string[T-T1]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_to_native_string[T-T2]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_urldefragauth[http://u:p@example.com/path?a=1#test-http://example.com/path?a=1]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_urldefragauth[http://example.com/path-http://example.com/path]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_urldefragauth[//u:p@example.com/path-//example.com/path]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_urldefragauth[//example.com/path-//example.com/path]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_urldefragauth[example.com/path-//example.com/path]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_urldefragauth[scheme:u:p@example.com/path-scheme://example.com/path]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies[http://192.168.0.1:5000/-True]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies[http://192.168.0.1/-True]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies[http://172.16.1.1/-True]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies[http://172.16.1.1:5000/-True]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies[http://localhost.localdomain:5000/v1.0/-True]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies[http://google.com:6000/-True]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies[http://172.16.1.12/-False]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies[http://172.16.1.12:5000/-False]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies[http://google.com:5000/v1.0/-False]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies[file:///some/path/on/disk-True]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies_pass_only_hostname[http://172.16.1.1/-172.16.1.1]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies_pass_only_hostname[http://172.16.1.1:5000/-172.16.1.1]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies_pass_only_hostname[http://user:pass@172.16.1.1-172.16.1.1]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies_pass_only_hostname[http://user:pass@172.16.1.1:5000-172.16.1.1]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies_pass_only_hostname[http://hostname/-hostname]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies_pass_only_hostname[http://hostname:5000/-hostname]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies_pass_only_hostname[http://user:pass@hostname-hostname]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies_pass_only_hostname[http://user:pass@hostname:5000-hostname]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_add_dict_to_cookiejar[cookiejar0]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_add_dict_to_cookiejar[cookiejar1]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_unicode_is_ascii[test-True]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_unicode_is_ascii[\\xe6\\xed\\xf6\\xfb-False]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_unicode_is_ascii[\\u30b8\\u30a7\\u30fc\\u30d4\\u30fc\\u30cb\\u30c3\\u30af-False]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies_no_proxy[http://192.168.0.1:5000/-True]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies_no_proxy[http://192.168.0.1/-True]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies_no_proxy[http://172.16.1.1/-True]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies_no_proxy[http://172.16.1.1:5000/-True]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies_no_proxy[http://localhost.localdomain:5000/v1.0/-True]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies_no_proxy[http://172.16.1.12/-False]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies_no_proxy[http://172.16.1.12:5000/-False]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies_no_proxy[http://google.com:5000/v1.0/-False]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies_win_registry[http://192.168.0.1:5000/-True-None]",
+          "classname": "tests.test_utils",
+          "outcome": "skipped",
+          "message": "Test only on Windows"
+        },
+        {
+          "name": "test_should_bypass_proxies_win_registry[http://192.168.0.1/-True-None]",
+          "classname": "tests.test_utils",
+          "outcome": "skipped",
+          "message": "Test only on Windows"
+        },
+        {
+          "name": "test_should_bypass_proxies_win_registry[http://172.16.1.1/-True-None]",
+          "classname": "tests.test_utils",
+          "outcome": "skipped",
+          "message": "Test only on Windows"
+        },
+        {
+          "name": "test_should_bypass_proxies_win_registry[http://172.16.1.1:5000/-True-None]",
+          "classname": "tests.test_utils",
+          "outcome": "skipped",
+          "message": "Test only on Windows"
+        },
+        {
+          "name": "test_should_bypass_proxies_win_registry[http://localhost.localdomain:5000/v1.0/-True-None]",
+          "classname": "tests.test_utils",
+          "outcome": "skipped",
+          "message": "Test only on Windows"
+        },
+        {
+          "name": "test_should_bypass_proxies_win_registry[http://172.16.1.22/-False-None]",
+          "classname": "tests.test_utils",
+          "outcome": "skipped",
+          "message": "Test only on Windows"
+        },
+        {
+          "name": "test_should_bypass_proxies_win_registry[http://172.16.1.22:5000/-False-None]",
+          "classname": "tests.test_utils",
+          "outcome": "skipped",
+          "message": "Test only on Windows"
+        },
+        {
+          "name": "test_should_bypass_proxies_win_registry[http://google.com:5000/v1.0/-False-None]",
+          "classname": "tests.test_utils",
+          "outcome": "skipped",
+          "message": "Test only on Windows"
+        },
+        {
+          "name": "test_should_bypass_proxies_win_registry[http://mylocalhostname:5000/v1.0/-True-<local>]",
+          "classname": "tests.test_utils",
+          "outcome": "skipped",
+          "message": "Test only on Windows"
+        },
+        {
+          "name": "test_should_bypass_proxies_win_registry[http://192.168.0.1/-False-]",
+          "classname": "tests.test_utils",
+          "outcome": "skipped",
+          "message": "Test only on Windows"
+        },
+        {
+          "name": "test_should_bypass_proxies_win_registry_bad_values",
+          "classname": "tests.test_utils",
+          "outcome": "skipped",
+          "message": "Test only on Windows"
+        },
+        {
+          "name": "test_set_environ[no_proxy-192.168.0.0/24,127.0.0.1,localhost.localdomain]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_set_environ[no_proxy-None]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_set_environ[a_new_key-192.168.0.0/24,127.0.0.1,localhost.localdomain]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_set_environ[a_new_key-None]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_set_environ_raises_exception",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies_win_registry_ProxyOverride_value",
+          "classname": "tests.test_utils",
+          "outcome": "skipped",
+          "message": "Test only on Windows"
+        }
+      ]
+    },
+    "resolved": true
+  },
+  {
+    "arm": "A_source_only",
+    "commands": [
+      {
+        "cmd": "pip install setuptools",
+        "rc": 0
+      },
+      {
+        "cmd": "pip install wheel",
+        "rc": 0
+      },
+      {
+        "cmd": "pip install editables",
+        "rc": 0
+      },
+      {
+        "cmd": "pip install flit_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip install poetry_core",
+        "rc": 0
+      },
+      {
+        "cmd": "pip install pdm_backend",
+        "rc": 0
+      },
+      {
+        "cmd": "pip install -e .",
+        "rc": 0,
+        "tail": "python3.12/dist-packages, outside environment /tmp/swegemma_sandbox_0ac1c5ca-03d_k6tnvhol/venv\n    Can't uninstall 'requests'. No files were found to uninstall.\nSuccessfully installed requests-2.33.0\n"
+      },
+      {
+        "label": "checkout tests/test_utils.py",
+        "cmd": "cd /workspace && git checkout HEAD -- tests/test_utils.py",
+        "rc": 0,
+        "out": "",
+        "err": ""
+      },
+      {
+        "label": "clean tests/test_utils.py",
+        "cmd": "cd /workspace && git clean -f -- tests/test_utils.py",
+        "rc": 0,
+        "out": "",
+        "err": ""
+      },
+      {
+        "label": "pristine hash",
+        "cmd": "cd /workspace && git show HEAD:tests/test_utils.py | sha256sum",
+        "rc": 0,
+        "out": "749c36bc574e3e796ddb78bbdc91b0d92fccf703a39c6d21f5afbfa7b28f50f8  -\n",
+        "err": ""
+      },
+      {
+        "label": "pytest",
+        "cmd": "cd /workspace && PYTHONSAFEPATH=1 PYTHONNOUSERSITE=1 python3 -s -m pytest tests/test_utils.py --junitxml=/tmp/_j_7525a6db.xml -p no:anyio -o timeout=0",
+        "rc": 0,
+        "out": "................................ [ 32%]\n........................................................................ [ 65%]\n...........................................................sssssssssss.. [ 98%]\n...s                                                                     [100%]\n- generated xml file: /tmp/swegemma_sandbox_0ac1c5ca-03d_k6tnvhol/tmp/_j_7525a6db.xml -\n207 passed, 13 skipped in 0.33s\n",
+        "err": ""
+      }
+    ],
+    "infrastructure_error": null,
+    "grading_import": "/tmp/swegemma_sandbox_0ac1c5ca-03d_k6tnvhol/workspace/src/requests/__init__.py",
+    "import_in_checkout": true,
+    "candidate_apply_rc": 0,
+    "candidate_apply_err": "",
+    "test_file_hashes": {
+      "tests/test_utils.py": {
+        "before_reset": "749c36bc574e3e79",
+        "after_reset": "749c36bc574e3e79"
+      }
+    },
+    "pristine_hash": "749c36bc574e3e79",
+    "test_patch_apply_rc": 0,
+    "test_patch_apply_err": "",
+    "pytest_exit": 0,
+    "pytest_tail": "..s..................................................................... [ 32%]\n........................................................................ [ 65%]\n...........................................................sssssssssss.. [ 98%]\n...s                                                                     [100%]\n- generated xml file: /tmp/swegemma_sandbox_0ac1c5ca-03d_k6tnvhol/tmp/_j_7525a6db.xml -\n207 passed, 13 skipped in 0.33s\n",
+    "junit": {
+      "parsed": true,
+      "cases": [
+        {
+          "name": "test_io_streams[StringIO-Test]",
+          "classname": "tests.test_utils.TestSuperLen",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_io_streams[BytesIO-Test]",
+          "classname": "tests.test_utils.TestSuperLen",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_io_streams[None-Test]",
+          "classname": "tests.test_utils.TestSuperLen",
+          "outcome": "skipped",
+          "message": "condition: cStringIO is None"
+        },
+        {
+          "name": "test_super_len_correctly_calculates_len_of_partially_read_file",
+          "classname": "tests.test_utils.TestSuperLen",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_super_len_handles_files_raising_weird_errors_in_tell[OSError0]",
+          "classname": "tests.test_utils.TestSuperLen",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_super_len_handles_files_raising_weird_errors_in_tell[OSError1]",
+          "classname": "tests.test_utils.TestSuperLen",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_super_len_tell_ioerror[OSError0]",
+          "classname": "tests.test_utils.TestSuperLen",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_super_len_tell_ioerror[OSError1]",
+          "classname": "tests.test_utils.TestSuperLen",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_string",
+          "classname": "tests.test_utils.TestSuperLen",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_file[r-1]",
+          "classname": "tests.test_utils.TestSuperLen",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_file[rb-0]",
+          "classname": "tests.test_utils.TestSuperLen",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_tarfile_member",
+          "classname": "tests.test_utils.TestSuperLen",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_super_len_with__len__",
+          "classname": "tests.test_utils.TestSuperLen",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_super_len_with_no__len__",
+          "classname": "tests.test_utils.TestSuperLen",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_super_len_with_tell",
+          "classname": "tests.test_utils.TestSuperLen",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_super_len_with_fileno",
+          "classname": "tests.test_utils.TestSuperLen",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_super_len_with_no_matches",
+          "classname": "tests.test_utils.TestSuperLen",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_works",
+          "classname": "tests.test_utils.TestGetNetrcAuth",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_not_vulnerable_to_bad_url_parsing",
+          "classname": "tests.test_utils.TestGetNetrcAuth",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_empty_default_credentials_ignored",
+          "classname": "tests.test_utils.TestGetNetrcAuth",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_valid[value0-expected0]",
+          "classname": "tests.test_utils.TestToKeyValList",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_valid[value1-expected1]",
+          "classname": "tests.test_utils.TestToKeyValList",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_valid[value2-expected2]",
+          "classname": "tests.test_utils.TestToKeyValList",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_valid[None-None]",
+          "classname": "tests.test_utils.TestToKeyValList",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_invalid",
+          "classname": "tests.test_utils.TestToKeyValList",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_valid[None-None]",
+          "classname": "tests.test_utils.TestUnquoteHeaderValue",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_valid[Test-Test]",
+          "classname": "tests.test_utils.TestUnquoteHeaderValue",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_valid[\"Test\"-Test]",
+          "classname": "tests.test_utils.TestUnquoteHeaderValue",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_valid[\"Test\\\\\\\\\"-Test\\\\]",
+          "classname": "tests.test_utils.TestUnquoteHeaderValue",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_valid[\"\\\\\\\\Comp\\\\Res\"-\\\\Comp\\\\Res]",
+          "classname": "tests.test_utils.TestUnquoteHeaderValue",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_is_filename",
+          "classname": "tests.test_utils.TestUnquoteHeaderValue",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_bypass[no_proxy-http://192.168.0.1:5000/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_bypass[no_proxy-http://192.168.0.1/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_bypass[no_proxy-http://172.16.1.1/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_bypass[no_proxy-http://172.16.1.1:5000/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_bypass[no_proxy-http://localhost.localdomain:5000/v1.0/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_bypass[NO_PROXY-http://192.168.0.1:5000/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_bypass[NO_PROXY-http://192.168.0.1/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_bypass[NO_PROXY-http://172.16.1.1/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_bypass[NO_PROXY-http://172.16.1.1:5000/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_bypass[NO_PROXY-http://localhost.localdomain:5000/v1.0/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_not_bypass[no_proxy-http://192.168.1.1:5000/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_not_bypass[no_proxy-http://192.168.1.1/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_not_bypass[no_proxy-http://www.requests.com/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_not_bypass[NO_PROXY-http://192.168.1.1:5000/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_not_bypass[NO_PROXY-http://192.168.1.1/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_not_bypass[NO_PROXY-http://www.requests.com/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_bypass_no_proxy_keyword[no_proxy-http://192.168.1.1:5000/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_bypass_no_proxy_keyword[no_proxy-http://192.168.1.1/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_bypass_no_proxy_keyword[no_proxy-http://www.requests.com/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_bypass_no_proxy_keyword[NO_PROXY-http://192.168.1.1:5000/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_bypass_no_proxy_keyword[NO_PROXY-http://192.168.1.1/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_bypass_no_proxy_keyword[NO_PROXY-http://www.requests.com/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_not_bypass_no_proxy_keyword[no_proxy-http://192.168.0.1:5000/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_not_bypass_no_proxy_keyword[no_proxy-http://192.168.0.1/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_not_bypass_no_proxy_keyword[no_proxy-http://172.16.1.1/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_not_bypass_no_proxy_keyword[no_proxy-http://172.16.1.1:5000/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_not_bypass_no_proxy_keyword[no_proxy-http://localhost.localdomain:5000/v1.0/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_not_bypass_no_proxy_keyword[NO_PROXY-http://192.168.0.1:5000/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_not_bypass_no_proxy_keyword[NO_PROXY-http://192.168.0.1/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_not_bypass_no_proxy_keyword[NO_PROXY-http://172.16.1.1/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_not_bypass_no_proxy_keyword[NO_PROXY-http://172.16.1.1:5000/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_not_bypass_no_proxy_keyword[NO_PROXY-http://localhost.localdomain:5000/v1.0/]",
+          "classname": "tests.test_utils.TestGetEnvironProxies",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_valid",
+          "classname": "tests.test_utils.TestIsIPv4Address",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_invalid[8.8.8.8.8]",
+          "classname": "tests.test_utils.TestIsIPv4Address",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_invalid[localhost.localdomain]",
+          "classname": "tests.test_utils.TestIsIPv4Address",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_valid",
+          "classname": "tests.test_utils.TestIsValidCIDR",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_invalid[8.8.8.8]",
+          "classname": "tests.test_utils.TestIsValidCIDR",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_invalid[192.168.1.0/a]",
+          "classname": "tests.test_utils.TestIsValidCIDR",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_invalid[192.168.1.0/128]",
+          "classname": "tests.test_utils.TestIsValidCIDR",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_invalid[192.168.1.0/-1]",
+          "classname": "tests.test_utils.TestIsValidCIDR",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_invalid[192.168.1.999/24]",
+          "classname": "tests.test_utils.TestIsValidCIDR",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_valid",
+          "classname": "tests.test_utils.TestAddressInNetwork",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_invalid",
+          "classname": "tests.test_utils.TestAddressInNetwork",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_guess_filename_invalid[1]",
+          "classname": "tests.test_utils.TestGuessFilename",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_guess_filename_invalid[value1]",
+          "classname": "tests.test_utils.TestGuessFilename",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_guess_filename_valid[value-bytes]",
+          "classname": "tests.test_utils.TestGuessFilename",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_guess_filename_valid[value-str]",
+          "classname": "tests.test_utils.TestGuessFilename",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_unzipped_paths_unchanged[/]",
+          "classname": "tests.test_utils.TestExtractZippedPaths",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_unzipped_paths_unchanged[/tmp/swegemma_sandbox_0ac1c5ca-03d_k6tnvhol/workspace/tests/test_utils.py]",
+          "classname": "tests.test_utils.TestExtractZippedPaths",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_unzipped_paths_unchanged[/usr/local/lib/python3.12/dist-packages/pytest/__init__.py]",
+          "classname": "tests.test_utils.TestExtractZippedPaths",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_unzipped_paths_unchanged[/etc/invalid/location]",
+          "classname": "tests.test_utils.TestExtractZippedPaths",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_zipped_paths_extracted",
+          "classname": "tests.test_utils.TestExtractZippedPaths",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_invalid_unc_path",
+          "classname": "tests.test_utils.TestExtractZippedPaths",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_none",
+          "classname": "tests.test_utils.TestContentEncodingDetection",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_pragmas[<meta charset=\"UTF-8\">]",
+          "classname": "tests.test_utils.TestContentEncodingDetection",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_pragmas[<meta http-equiv=\"Content-type\" content=\"text/html;charset=UTF-8\">]",
+          "classname": "tests.test_utils.TestContentEncodingDetection",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_pragmas[<meta http-equiv=\"Content-type\" content=\"text/html;charset=UTF-8\" />]",
+          "classname": "tests.test_utils.TestContentEncodingDetection",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_pragmas[<?xml version=\"1.0\" encoding=\"UTF-8\"?>]",
+          "classname": "tests.test_utils.TestContentEncodingDetection",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_precedence",
+          "classname": "tests.test_utils.TestContentEncodingDetection",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_encoded[utf-32]",
+          "classname": "tests.test_utils.TestGuessJSONUTF",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_encoded[utf-8-sig]",
+          "classname": "tests.test_utils.TestGuessJSONUTF",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_encoded[utf-16]",
+          "classname": "tests.test_utils.TestGuessJSONUTF",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_encoded[utf-8]",
+          "classname": "tests.test_utils.TestGuessJSONUTF",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_encoded[utf-16-be]",
+          "classname": "tests.test_utils.TestGuessJSONUTF",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_encoded[utf-16-le]",
+          "classname": "tests.test_utils.TestGuessJSONUTF",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_encoded[utf-32-be]",
+          "classname": "tests.test_utils.TestGuessJSONUTF",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_encoded[utf-32-le]",
+          "classname": "tests.test_utils.TestGuessJSONUTF",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_bad_utf_like_encoding",
+          "classname": "tests.test_utils.TestGuessJSONUTF",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_guess_by_bom[utf-16-be-utf-16]",
+          "classname": "tests.test_utils.TestGuessJSONUTF",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_guess_by_bom[utf-16-le-utf-16]",
+          "classname": "tests.test_utils.TestGuessJSONUTF",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_guess_by_bom[utf-32-be-utf-32]",
+          "classname": "tests.test_utils.TestGuessJSONUTF",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_guess_by_bom[utf-32-le-utf-32]",
+          "classname": "tests.test_utils.TestGuessJSONUTF",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_get_auth_from_url[http://%25%21%2A%27%28%29%3B%3A%40%26%3D%2B%24%2C%2F%3F%23%5B%5D%20:%25%21%2A%27%28%29%3B%3A%40%26%3D%2B%24%2C%2F%3F%23%5B%5D%20@request.com/url.html#test-auth0]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_get_auth_from_url[http://user:pass@complex.url.com/path?query=yes-auth1]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_get_auth_from_url[http://user:pass%20pass@complex.url.com/path?query=yes-auth2]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_get_auth_from_url[http://user:pass pass@complex.url.com/path?query=yes-auth3]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_get_auth_from_url[http://user%25user:pass@complex.url.com/path?query=yes-auth4]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_get_auth_from_url[http://user:pass%23pass@complex.url.com/path?query=yes-auth5]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_get_auth_from_url[http://complex.url.com/path?query=yes-auth6]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_requote_uri_with_unquoted_percents[http://example.com/fiz?buz=%25ppicture-http://example.com/fiz?buz=%25ppicture]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_requote_uri_with_unquoted_percents[http://example.com/fiz?buz=%ppicture-http://example.com/fiz?buz=%25ppicture]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_unquote_unreserved[http://example.com/?a=%---http://example.com/?a=%--]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_unquote_unreserved[http://example.com/?a=%300-http://example.com/?a=00]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_dotted_netmask[8-255.0.0.0]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_dotted_netmask[24-255.255.255.0]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_dotted_netmask[25-255.255.255.128]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_select_proxies[hTTp://u:p@Some.Host/path-http://some.host.proxy-proxies0]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_select_proxies[hTTp://u:p@Other.Host/path-http://http.proxy-proxies1]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_select_proxies[hTTp:///path-http://http.proxy-proxies2]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_select_proxies[hTTps://Other.Host-None-proxies3]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_select_proxies[file:///etc/motd-None-proxies4]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_select_proxies[hTTp://u:p@Some.Host/path-socks5://some.host.proxy-proxies5]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_select_proxies[hTTp://u:p@Other.Host/path-socks5://http.proxy-proxies6]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_select_proxies[hTTp:///path-socks5://http.proxy-proxies7]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_select_proxies[hTTps://Other.Host-socks5://http.proxy-proxies8]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_select_proxies[http://u:p@other.host/path-http://http.proxy-proxies9]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_select_proxies[http://u:p@some.host/path-http://some.host.proxy-proxies10]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_select_proxies[https://u:p@other.host/path-socks5://http.proxy-proxies11]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_select_proxies[https://u:p@some.host/path-socks5://http.proxy-proxies12]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_select_proxies[https://-socks5://http.proxy-proxies13]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_select_proxies[file:///etc/motd-socks5://http.proxy-proxies14]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_parse_dict_header[foo=\"is a fish\", bar=\"as well\"-expected0]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_parse_dict_header[key_without_value-expected1]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test__parse_content_type_header[application/xml-expected0]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test__parse_content_type_header[application/json ; charset=utf-8-expected1]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test__parse_content_type_header[application/json ; Charset=utf-8-expected2]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test__parse_content_type_header[text/plain-expected3]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test__parse_content_type_header[multipart/form-data; boundary = something ; boundary2='something_else' ; no_equals -expected4]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test__parse_content_type_header[multipart/form-data; boundary = something ; boundary2=\"something_else\" ; no_equals -expected5]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test__parse_content_type_header[multipart/form-data; boundary = something ; 'boundary2=something_else' ; no_equals -expected6]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test__parse_content_type_header[multipart/form-data; boundary = something ; \"boundary2=something_else\" ; no_equals -expected7]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test__parse_content_type_header[application/json ; ; -expected8]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_get_encoding_from_headers[value0-None]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_get_encoding_from_headers[value1-utf-8]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_get_encoding_from_headers[value2-ISO-8859-1]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_get_encoding_from_headers[value3-ISO-8859-1]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_iter_slices[-0]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_iter_slices[T-1]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_iter_slices[Test-4]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_iter_slices[Cont-0]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_iter_slices[Other--5]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_iter_slices[Content-None]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_parse_header_links[<http:/.../front.jpeg>; rel=front; type=\"image/jpeg\"-expected0]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_parse_header_links[<http:/.../front.jpeg>-expected1]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_parse_header_links[<http:/.../front.jpeg>;-expected2]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_parse_header_links[<http:/.../front.jpeg>; type=\"image/jpeg\",<http://.../back.jpeg>;-expected3]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_parse_header_links[-expected4]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_prepend_scheme_if_needed[example.com/path-http://example.com/path]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_prepend_scheme_if_needed[//example.com/path-http://example.com/path]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_prepend_scheme_if_needed[example.com:80-http://example.com:80]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_prepend_scheme_if_needed[http://user:pass@example.com/path?query-http://user:pass@example.com/path?query]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_prepend_scheme_if_needed[http://user@example.com/path?query-http://user@example.com/path?query]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_to_native_string[T-T0]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_to_native_string[T-T1]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_to_native_string[T-T2]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_urldefragauth[http://u:p@example.com/path?a=1#test-http://example.com/path?a=1]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_urldefragauth[http://example.com/path-http://example.com/path]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_urldefragauth[//u:p@example.com/path-//example.com/path]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_urldefragauth[//example.com/path-//example.com/path]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_urldefragauth[example.com/path-//example.com/path]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_urldefragauth[scheme:u:p@example.com/path-scheme://example.com/path]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies[http://192.168.0.1:5000/-True]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies[http://192.168.0.1/-True]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies[http://172.16.1.1/-True]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies[http://172.16.1.1:5000/-True]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies[http://localhost.localdomain:5000/v1.0/-True]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies[http://google.com:6000/-True]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies[http://172.16.1.12/-False]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies[http://172.16.1.12:5000/-False]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies[http://google.com:5000/v1.0/-False]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies[file:///some/path/on/disk-True]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies_pass_only_hostname[http://172.16.1.1/-172.16.1.1]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies_pass_only_hostname[http://172.16.1.1:5000/-172.16.1.1]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies_pass_only_hostname[http://user:pass@172.16.1.1-172.16.1.1]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies_pass_only_hostname[http://user:pass@172.16.1.1:5000-172.16.1.1]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies_pass_only_hostname[http://hostname/-hostname]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies_pass_only_hostname[http://hostname:5000/-hostname]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies_pass_only_hostname[http://user:pass@hostname-hostname]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies_pass_only_hostname[http://user:pass@hostname:5000-hostname]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_add_dict_to_cookiejar[cookiejar0]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_add_dict_to_cookiejar[cookiejar1]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_unicode_is_ascii[test-True]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_unicode_is_ascii[\\xe6\\xed\\xf6\\xfb-False]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_unicode_is_ascii[\\u30b8\\u30a7\\u30fc\\u30d4\\u30fc\\u30cb\\u30c3\\u30af-False]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies_no_proxy[http://192.168.0.1:5000/-True]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies_no_proxy[http://192.168.0.1/-True]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies_no_proxy[http://172.16.1.1/-True]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies_no_proxy[http://172.16.1.1:5000/-True]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies_no_proxy[http://localhost.localdomain:5000/v1.0/-True]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies_no_proxy[http://172.16.1.12/-False]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies_no_proxy[http://172.16.1.12:5000/-False]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies_no_proxy[http://google.com:5000/v1.0/-False]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies_win_registry[http://192.168.0.1:5000/-True-None]",
+          "classname": "tests.test_utils",
+          "outcome": "skipped",
+          "message": "Test only on Windows"
+        },
+        {
+          "name": "test_should_bypass_proxies_win_registry[http://192.168.0.1/-True-None]",
+          "classname": "tests.test_utils",
+          "outcome": "skipped",
+          "message": "Test only on Windows"
+        },
+        {
+          "name": "test_should_bypass_proxies_win_registry[http://172.16.1.1/-True-None]",
+          "classname": "tests.test_utils",
+          "outcome": "skipped",
+          "message": "Test only on Windows"
+        },
+        {
+          "name": "test_should_bypass_proxies_win_registry[http://172.16.1.1:5000/-True-None]",
+          "classname": "tests.test_utils",
+          "outcome": "skipped",
+          "message": "Test only on Windows"
+        },
+        {
+          "name": "test_should_bypass_proxies_win_registry[http://localhost.localdomain:5000/v1.0/-True-None]",
+          "classname": "tests.test_utils",
+          "outcome": "skipped",
+          "message": "Test only on Windows"
+        },
+        {
+          "name": "test_should_bypass_proxies_win_registry[http://172.16.1.22/-False-None]",
+          "classname": "tests.test_utils",
+          "outcome": "skipped",
+          "message": "Test only on Windows"
+        },
+        {
+          "name": "test_should_bypass_proxies_win_registry[http://172.16.1.22:5000/-False-None]",
+          "classname": "tests.test_utils",
+          "outcome": "skipped",
+          "message": "Test only on Windows"
+        },
+        {
+          "name": "test_should_bypass_proxies_win_registry[http://google.com:5000/v1.0/-False-None]",
+          "classname": "tests.test_utils",
+          "outcome": "skipped",
+          "message": "Test only on Windows"
+        },
+        {
+          "name": "test_should_bypass_proxies_win_registry[http://mylocalhostname:5000/v1.0/-True-<local>]",
+          "classname": "tests.test_utils",
+          "outcome": "skipped",
+          "message": "Test only on Windows"
+        },
+        {
+          "name": "test_should_bypass_proxies_win_registry[http://192.168.0.1/-False-]",
+          "classname": "tests.test_utils",
+          "outcome": "skipped",
+          "message": "Test only on Windows"
+        },
+        {
+          "name": "test_should_bypass_proxies_win_registry_bad_values",
+          "classname": "tests.test_utils",
+          "outcome": "skipped",
+          "message": "Test only on Windows"
+        },
+        {
+          "name": "test_set_environ[no_proxy-192.168.0.0/24,127.0.0.1,localhost.localdomain]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_set_environ[no_proxy-None]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_set_environ[a_new_key-192.168.0.0/24,127.0.0.1,localhost.localdomain]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_set_environ[a_new_key-None]",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_set_environ_raises_exception",
+          "classname": "tests.test_utils",
+          "outcome": "passed"
+        },
+        {
+          "name": "test_should_bypass_proxies_win_registry_ProxyOverride_value",
+          "classname": "tests.test_utils",
+          "outcome": "skipped",
+          "message": "Test only on Windows"
+        }
+      ]
+    },
+    "resolved": true
+  }
+]

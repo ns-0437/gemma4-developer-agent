@@ -1,0 +1,420 @@
+{
+  "plan": {
+    "strata": "repository x patch-size band (small<20, medium<60, large)",
+    "order_within_stratum": "ascending sha256(instance_id)",
+    "quota": {
+      "fastapi/fastapi": 12,
+      "psf/requests": 2,
+      "Textualize/rich": 9,
+      "encode/httpx": 1
+    },
+    "targets": {
+      "dev": 12,
+      "holdout": 12
+    },
+    "screen_cap": 40,
+    "defined_before_any_control_ran": true
+  },
+  "candidates": [
+    {
+      "id": "rich_3894",
+      "repo": "Textualize/rich",
+      "size": "small",
+      "n_lines": 4,
+      "n_files": 1,
+      "scope": "single",
+      "order_key": "00b96dff750b710b73b589c90015a4b3c638b15559951aed812ec46424653172",
+      "task_sha256": "d8573bbb304794c15d74d3948a1fd423beec616ebc17254ec0922c36dca978e8"
+    },
+    {
+      "id": "rich_3535",
+      "repo": "Textualize/rich",
+      "size": "small",
+      "n_lines": 8,
+      "n_files": 2,
+      "scope": "multi",
+      "order_key": "00d6aa3bb72fea0c53e9e23e082e7dbbcf2dd91f5eda1b47d6f833d477573f79",
+      "task_sha256": "3c70ac67cc8e78d329459615dd6db711e2715b92f6da4632cc4905f1faf0ad18"
+    },
+    {
+      "id": "rich_3772",
+      "repo": "Textualize/rich",
+      "size": "medium",
+      "n_lines": 45,
+      "n_files": 1,
+      "scope": "single",
+      "order_key": "0651f2832de476f3d2c4b53cb04569d5e8b981715287e2231b55f51c5ea60197",
+      "task_sha256": "f35bc82c01e1c4f892218c1dff1bdde62182d0d0347e4b4f0c12f9772cd1eb47"
+    },
+    {
+      "id": "rich_3278",
+      "repo": "Textualize/rich",
+      "size": "small",
+      "n_lines": 1,
+      "n_files": 1,
+      "scope": "single",
+      "order_key": "0e94f541cc48e191d82488e12f02dd40e40234b253bc395f58713d0760713534",
+      "task_sha256": "8fb8127fdb3e069ae02db8a0e3d2e5306b96e7d42a1ab7c3185da2e269cd61bf"
+    },
+    {
+      "id": "rich_4076",
+      "repo": "Textualize/rich",
+      "size": "small",
+      "n_lines": 6,
+      "n_files": 1,
+      "scope": "single",
+      "order_key": "1200847e8717059719008e5432163bd7a5b88d54ea1d45ae34eba9c44fb4140f",
+      "task_sha256": "cd096e8aab5e7891d02a7d08ed43dd33ef5bbe38a10a4431a19cfb692f06fc23"
+    },
+    {
+      "id": "rich_3905",
+      "repo": "Textualize/rich",
+      "size": "small",
+      "n_lines": 7,
+      "n_files": 1,
+      "scope": "single",
+      "order_key": "33bfc4b73a1b5a89c34f5190817d5eaf490a33b3d7fd409fc296575e34169353",
+      "task_sha256": "1fcd96e259cc014927d992a5fb8426e03f388757501010dbb4bd45d7e520427c"
+    },
+    {
+      "id": "rich_3472",
+      "repo": "Textualize/rich",
+      "size": "small",
+      "n_lines": 4,
+      "n_files": 1,
+      "scope": "single",
+      "order_key": "355c2ef03f63d527fae0a696539809831b1ca2d20db624e61d7e14d0fe6385cc",
+      "task_sha256": "751ec31b30df40d353b7bb8d3d48ce1d57a00a39756990fd266ff02b9322afb1"
+    },
+    {
+      "id": "rich_4079",
+      "repo": "Textualize/rich",
+      "size": "small",
+      "n_lines": 7,
+      "n_files": 1,
+      "scope": "single",
+      "order_key": "3e3e2a50fc5e5ef5ef555607d8773cbf7af5c5257c07b41900224fd013720a73",
+      "task_sha256": "c3cacbe9f2f4dce6220eadf0df8b3998bfa0268fca6e457595d207b7d217d3cd"
+    },
+    {
+      "id": "rich_3470",
+      "repo": "Textualize/rich",
+      "size": "small",
+      "n_lines": 2,
+      "n_files": 1,
+      "scope": "single",
+      "order_key": "3e96b1785b00d7afe0aae168de5889a1ff5428b91d1c30cf7bd9748c822934f6",
+      "task_sha256": "728c43f6383dcb2dbd8fd8fc00af8256ccb3adf34a0a0320e24f058dcac66c88"
+    },
+    {
+      "id": "rich_3180",
+      "repo": "Textualize/rich",
+      "size": "large",
+      "n_lines": 127,
+      "n_files": 2,
+      "scope": "multi",
+      "order_key": "436d8aad3e9f474f5a5f1e7bbcce49d97065bdfbe5091eb9a328ed5c0f72d767",
+      "task_sha256": "776163701370985632d4b3f874480f5d11fa597bd5f16690875006e8ff7e64a0"
+    },
+    {
+      "id": "rich_3130",
+      "repo": "Textualize/rich",
+      "size": "small",
+      "n_lines": 12,
+      "n_files": 1,
+      "scope": "single",
+      "order_key": "474cf6a6e8a33978d1468089279f4bdb25fa502184b042559bab786356e4adbf",
+      "task_sha256": "fec1095fbd2a317b7faf2545bd6697ec793c7edef084da75e89e2ca955d022f9"
+    },
+    {
+      "id": "rich_3486",
+      "repo": "Textualize/rich",
+      "size": "large",
+      "n_lines": 98,
+      "n_files": 3,
+      "scope": "multi",
+      "order_key": "48621b8576f879a83a2e83b8c57fa884552fd99ede07c20c2fa2e5bb76709370",
+      "task_sha256": "0cd437edcb332716de3d70dd85cc248a2b82b3f4c28cfecbad08e160880969a0"
+    },
+    {
+      "id": "rich_3938",
+      "repo": "Textualize/rich",
+      "size": "medium",
+      "n_lines": 45,
+      "n_files": 2,
+      "scope": "multi",
+      "order_key": "541fa87d9fed1f9f5a2dd56bb56906035a9f70c6ab095917bba15da3a75a9fa9",
+      "task_sha256": "43cf363ebb2736211e7cb70930220850d59ca4232ed1f5bde9c292962cddb54a"
+    },
+    {
+      "id": "rich_3061",
+      "repo": "Textualize/rich",
+      "size": "large",
+      "n_lines": 91,
+      "n_files": 1,
+      "scope": "single",
+      "order_key": "62d338b0282711691f767c8894f290fcc947494eb6710fd2fb1fba83d2ab8a6a",
+      "task_sha256": "f43be9a8ad4bff5fa4108c0bcf0e65f82db7da1bb673a2653a8118a8afdda43b"
+    },
+    {
+      "id": "rich_3521",
+      "repo": "Textualize/rich",
+      "size": "medium",
+      "n_lines": 35,
+      "n_files": 1,
+      "scope": "single",
+      "order_key": "68e7f5dbbbc6f852d9a1df99c0fd94ac9518056c73cf8db009afdb599b8a3ca2",
+      "task_sha256": "9d467bdfe7e98567c99087260c7c2d8a0eceaf0bcbd199b78a8e881d92f73c25"
+    },
+    {
+      "id": "rich_3782",
+      "repo": "Textualize/rich",
+      "size": "medium",
+      "n_lines": 29,
+      "n_files": 1,
+      "scope": "single",
+      "order_key": "706c7cbb8a88542bfa6e8053bc0cf88174b5788240fe9cf0deab794607073b6d",
+      "task_sha256": "9ef29510d66f53619c0808842979b18671012d6efdfc212fdc8db2d1b46d9065"
+    },
+    {
+      "id": "rich_3296",
+      "repo": "Textualize/rich",
+      "size": "small",
+      "n_lines": 4,
+      "n_files": 1,
+      "scope": "single",
+      "order_key": "7b2065e416f534b7bd3e800bd73ef23b0bd9954e2d6c66b1b7ad15ecd9dee23f",
+      "task_sha256": "22de4dba4d4c800b5db8baffa302722741249fac1d95e0de2d4d2c143b9f1156"
+    },
+    {
+      "id": "rich_3675",
+      "repo": "Textualize/rich",
+      "size": "medium",
+      "n_lines": 41,
+      "n_files": 2,
+      "scope": "multi",
+      "order_key": "87f392b0d5c4ce6d7175f4d4ebbb3c208811135c7b6990c31478e9470ce04256",
+      "task_sha256": "d651989d2710c16333584401276a29f5c36026b5fff3407204f53d550f3176fb"
+    },
+    {
+      "id": "rich_3953",
+      "repo": "Textualize/rich",
+      "size": "medium",
+      "n_lines": 26,
+      "n_files": 1,
+      "scope": "single",
+      "order_key": "8d23322582ff2831ae8bde3fc98bb60e7b9eff6128552c84b85a233191667353",
+      "task_sha256": "e7cc72b8c46d88e17e38c3447bce739a8efd6a6b046b01baf1419ed012efd328"
+    },
+    {
+      "id": "rich_3942",
+      "repo": "Textualize/rich",
+      "size": "large",
+      "n_lines": 70,
+      "n_files": 2,
+      "scope": "multi",
+      "order_key": "a264b47088fec6ee2981ffe11c3ff654403ae42cf0332c52e425e85faffc8a29",
+      "task_sha256": "b626009683a3a55af3ad72e8a4cc9cd629cb24444a2c404c073a87778b8148b8"
+    },
+    {
+      "id": "rich_3930",
+      "repo": "Textualize/rich",
+      "size": "large",
+      "n_lines": 12714,
+      "n_files": 26,
+      "scope": "multi",
+      "order_key": "b16efdf3552c64ae2715ec04e557c636d82fe97efc505bfbfbfce4551caa4e96",
+      "task_sha256": "9fcc93957abf7cf1635a2a3a72da729514743d55dd03531010fde75416718cc8"
+    },
+    {
+      "id": "httpx_3672",
+      "repo": "encode/httpx",
+      "size": "large",
+      "n_lines": 79,
+      "n_files": 7,
+      "scope": "multi",
+      "order_key": "0c8e72a47d9541a3ffa2fea16ebe46f20372b394925eb22d449ed08dcf46018c",
+      "task_sha256": "b8df58184f4d7c7e5f01d79b8a976837a47274c7b32b10d56ea49ae0ee49aaea"
+    },
+    {
+      "id": "fastapi_11355",
+      "repo": "fastapi/fastapi",
+      "size": "small",
+      "n_lines": 11,
+      "n_files": 1,
+      "scope": "single",
+      "order_key": "066a4af9e099d0baa81bbe2942bb2bb6bccc7705b6263624804341a23ce84f43",
+      "task_sha256": "3b5a21a1626d793209c1968a6512586ff61580b9dd89849cc334369c8704d92a"
+    },
+    {
+      "id": "fastapi_14512",
+      "repo": "fastapi/fastapi",
+      "size": "medium",
+      "n_lines": 52,
+      "n_files": 1,
+      "scope": "single",
+      "order_key": "07db2f1aac0f47b8fdbc95e03a3ae627c248384903da097ff6652b26c8c54161",
+      "task_sha256": "866d8fa0f278916cd7cf6a27144ca4d95781e00c2ea8d034ef85d699862c9cd2"
+    },
+    {
+      "id": "fastapi_14953",
+      "repo": "fastapi/fastapi",
+      "size": "large",
+      "n_lines": 104,
+      "n_files": 4,
+      "scope": "multi",
+      "order_key": "0979b8c3cc5c1c665b28f746801a5114dbe7ddcd3bf8bc7f9e8ecbc5319e7cd4",
+      "task_sha256": "9211bf5d42113de1a63faeb8b78a25e534039b9567f56e4e2177ff6424129a7f"
+    },
+    {
+      "id": "fastapi_15661",
+      "repo": "fastapi/fastapi",
+      "size": "large",
+      "n_lines": 216,
+      "n_files": 1,
+      "scope": "single",
+      "order_key": "0bcaf2b509b01a38e88205be3fe0550e36b50362e8996109f4f0a243aac5528c",
+      "task_sha256": "59247475c57b2c31df191e441038d4e207e2869919e7c87411d339631ed79381"
+    },
+    {
+      "id": "fastapi_15280",
+      "repo": "fastapi/fastapi",
+      "size": "large",
+      "n_lines": 72,
+      "n_files": 2,
+      "scope": "multi",
+      "order_key": "121e36079e7c22b9025c345e1ef1f3301b802e02762b1c23c1a8e36b241c0bf3",
+      "task_sha256": "2e6b43f033725cb2a5398b1cbe4b8a91b6027962ece919764d4faced4e840be9"
+    },
+    {
+      "id": "fastapi_13537",
+      "repo": "fastapi/fastapi",
+      "size": "small",
+      "n_lines": 3,
+      "n_files": 1,
+      "scope": "single",
+      "order_key": "14a78feb2d17ce6bcbd331299079c2703a7a9e0db9d3f8aa68f71cadabeb924b",
+      "task_sha256": "fedfffd2fa3b1f1e251e65891b8f3b2a3163b17bc3ac9ea46aeb07993481eed4"
+    },
+    {
+      "id": "fastapi_14479",
+      "repo": "fastapi/fastapi",
+      "size": "small",
+      "n_lines": 2,
+      "n_files": 1,
+      "scope": "single",
+      "order_key": "18cf741152f2e528bc2e28820a82ed515656e86d444ed84d4413edf4697a2435",
+      "task_sha256": "368f6b6eac0022fdbf2eda6a26e902f2a59f89ec1ede206af5f9eb8c6c93b25b"
+    },
+    {
+      "id": "fastapi_14349",
+      "repo": "fastapi/fastapi",
+      "size": "small",
+      "n_lines": 12,
+      "n_files": 1,
+      "scope": "single",
+      "order_key": "1ea6a6f177aea8bb147a2a163196bee0423e9b05c300068dcc16980ea3ef1ec7",
+      "task_sha256": "2bb80ad92de914f24be7d3006523077befa0234b97a09f5b3fe44339644c6fdd"
+    },
+    {
+      "id": "fastapi_14266",
+      "repo": "fastapi/fastapi",
+      "size": "small",
+      "n_lines": 18,
+      "n_files": 1,
+      "scope": "single",
+      "order_key": "1fc9370280d93817fa6375d11b5782023f72754d9dbc73ce826a73049b198559",
+      "task_sha256": "34b2ea6a469a23e13dd050d013ea6ad192b70c1742e99ebe96ee85432ed1fbaf"
+    },
+    {
+      "id": "fastapi_14077",
+      "repo": "fastapi/fastapi",
+      "size": "small",
+      "n_lines": 11,
+      "n_files": 3,
+      "scope": "multi",
+      "order_key": "25debd9a6c64addeb5cfa5be74c634f1b25374c4d8a67c2a1a0c8f0773e900bb",
+      "task_sha256": "a973ef3cc60bdc94582b499bf0f3e216a9cd919f06171ee0893e5b43229f5bfd"
+    },
+    {
+      "id": "fastapi_14487",
+      "repo": "fastapi/fastapi",
+      "size": "small",
+      "n_lines": 7,
+      "n_files": 1,
+      "scope": "single",
+      "order_key": "279a85a5db9053994d19364f5778f24e35d39da1aaea00d30c835e9fa8e11b5b",
+      "task_sha256": "12cb36cfab5717353ca691a72dab837b244afb598b5072b6af0166d077231fc7"
+    },
+    {
+      "id": "fastapi_15030",
+      "repo": "fastapi/fastapi",
+      "size": "large",
+      "n_lines": 560,
+      "n_files": 9,
+      "scope": "multi",
+      "order_key": "2cca7345e3eb00e9939d6821cec38eaf5f8c2f2e427824d5af73e25167c1a3ed",
+      "task_sha256": "6a767db6e3fc1672fa1e5e22a4b2f5c47fcda8f2b3898f222f9576c461f97211"
+    },
+    {
+      "id": "fastapi_15800",
+      "repo": "fastapi/fastapi",
+      "size": "large",
+      "n_lines": 654,
+      "n_files": 8,
+      "scope": "multi",
+      "order_key": "2e8fa53d1283a7173edc19b09082870284d21700d1c126b983c176845a9ec033",
+      "task_sha256": "349aab36d64f6f9ae806c9da6649f387adc72ce448f10a1fb7177b408f6ea2b2"
+    },
+    {
+      "id": "fastapi_14099",
+      "repo": "fastapi/fastapi",
+      "size": "large",
+      "n_lines": 477,
+      "n_files": 5,
+      "scope": "multi",
+      "order_key": "3073581b426d1819b5a69089ccaf9fcd142b0025b41dc608431303edeeae953c",
+      "task_sha256": "63da50c26cd46eb985c2bd58e9319125591081f93c143e599281f5d92828c1b9"
+    },
+    {
+      "id": "fastapi_14246",
+      "repo": "fastapi/fastapi",
+      "size": "medium",
+      "n_lines": 28,
+      "n_files": 1,
+      "scope": "single",
+      "order_key": "31d5a6ef76cd25f6d5c078745b8fe5cae9d72975d131870b01832ee03110ab1d",
+      "task_sha256": "31bb479f63943da8dcb448c9a0a957066cb8f15b56875d790ec6582c05d4c639"
+    },
+    {
+      "id": "fastapi_12942",
+      "repo": "fastapi/fastapi",
+      "size": "small",
+      "n_lines": 3,
+      "n_files": 1,
+      "scope": "single",
+      "order_key": "3259adf3fd986d0b5b2586d1b62eacf00de7a32de8ef38961282d0584a613bdb",
+      "task_sha256": "6de4b618c95789ad24e7088709880d447b5c7a6020db9d7540fe14203766bc67"
+    },
+    {
+      "id": "fastapi_14301",
+      "repo": "fastapi/fastapi",
+      "size": "small",
+      "n_lines": 5,
+      "n_files": 1,
+      "scope": "single",
+      "order_key": "34b94784ee1ec56e21eac49a4f228b5224de3205389c9cab9cb4c38c46c18052",
+      "task_sha256": "8fb5db647e1a290704a17d4ff32b460da29a9731647e7b6376796c90186018ed"
+    },
+    {
+      "id": "fastapi_14851",
+      "repo": "fastapi/fastapi",
+      "size": "large",
+      "n_lines": 157,
+      "n_files": 1,
+      "scope": "single",
+      "order_key": "35febb63ff16aeca9ef12de453793a1a5877620905fb99e07f83c7f83c84d4f1",
+      "task_sha256": "bb189738dc706df369aa2a18be374a68e2f406561e776371a3c5dc9b4dc2650b"
+    }
+  ]
+}

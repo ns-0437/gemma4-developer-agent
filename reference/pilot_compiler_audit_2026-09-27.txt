@@ -1,0 +1,33 @@
+==============================================================================
+releases\pilot_A   content_sha256=4212efcd14ebf3f389c5de5665cf17d2920f7f63679e568d5ab71f660c37c500
+  sampling.yaml parses as real YAML: True
+  parsed thinking_config: {'thinking_budget': 4096, 'include_thoughts': False}
+  [swe_coder] model=openai/gemma-4-31b-it-qat-w4a16-ct
+      generate_content_config={"temperature": 0.2, "top_p": 0.95, "top_k": 40.0, "max_output_tokens": 8192, "seed": 42, "thinking_config": {"include_thoughts": false, "thinking_budget": 4096}}
+      EFFECTIVE model args   ={"api_base": "http://localhost:8000/v1", "api_key": "EMPTY", "extra_body": {"chat_template_kwargs": {"enable_thinking": false}}}
+  [  code_analyzer] model=openai/gemma-4-31b-it-qat-w4a16-ct
+      generate_content_config={"temperature": 0.2, "top_p": 0.95, "top_k": 40.0, "max_output_tokens": 8192, "seed": 42, "thinking_config": {"include_thoughts": false, "thinking_budget": 4096}}
+      EFFECTIVE model args   ={"api_base": "http://localhost:8000/v1", "api_key": "EMPTY", "extra_body": {"chat_template_kwargs": {"enable_thinking": false}}}
+==============================================================================
+releases\pilot_B   content_sha256=f9b3c2700859c3a93fc2022d64ef5cf6bceb90a747340ad475773ee3e7560f19
+  sampling.yaml parses as real YAML: True
+  parsed thinking_config: {'thinking_budget': 4096, 'include_thoughts': True}
+  [swe_coder] model=openai/gemma-4-31b-it-qat-w4a16-ct
+      generate_content_config={"temperature": 0.2, "top_p": 0.95, "top_k": 40.0, "max_output_tokens": 8192, "seed": 42, "thinking_config": {"include_thoughts": true, "thinking_budget": 4096}}
+      EFFECTIVE model args   ={"api_base": "http://localhost:8000/v1", "api_key": "EMPTY", "extra_body": {"chat_template_kwargs": {"enable_thinking": true}}}
+  [  code_analyzer] model=openai/gemma-4-31b-it-qat-w4a16-ct
+      generate_content_config={"temperature": 0.2, "top_p": 0.95, "top_k": 40.0, "max_output_tokens": 8192, "seed": 42, "thinking_config": {"include_thoughts": true, "thinking_budget": 4096}}
+      EFFECTIVE model args   ={"api_base": "http://localhost:8000/v1", "api_key": "EMPTY", "extra_body": {"chat_template_kwargs": {"enable_thinking": true}}}
+==============================================================================
+A vs B effective differences:
+  swe_coder: {"api_base": "http://localhost:8000/v1", "api_key": "EMPTY", "extra_body": {"chat_template_kwargs": {"enable_thinking": false}}}  ->  {"api_base": "http://localhost:8000/v1", "api_key": "EMPTY", "extra_body": {"chat_template_kwargs": {"enable_thinking": true}}}
+  swe_coder OTHER DIFFS: {'generate_content_config': ({'temperature': 0.2, 'top_p': 0.95, 'top_k': 40.0, 'max_output_tokens': 8192, 'seed': 42, 'thinking_config': {'include_thoughts': False, 'thinking_budget': 4096}}, {'temperature': 0.2, 'top_p': 0.95, 'top_k': 40.0, 'max_output_tokens': 8192, 'seed': 42, 'thinking_config': {'include_thoughts': True, 'thinking_budget': 4096}})}
+  code_analyzer: {"api_base": "http://localhost:8000/v1", "api_key": "EMPTY", "extra_body": {"chat_template_kwargs": {"enable_thinking": false}}}  ->  {"api_base": "http://localhost:8000/v1", "api_key": "EMPTY", "extra_body": {"chat_template_kwargs": {"enable_thinking": true}}}
+  code_analyzer OTHER DIFFS: {'generate_content_config': ({'temperature': 0.2, 'top_p': 0.95, 'top_k': 40.0, 'max_output_tokens': 8192, 'seed': 42, 'thinking_config': {'include_thoughts': False, 'thinking_budget': 4096}}, {'temperature': 0.2, 'top_p': 0.95, 'top_k': 40.0, 'max_output_tokens': 8192, 'seed': 42, 'thinking_config': {'include_thoughts': True, 'thinking_budget': 4096}})}
+
+NOTE: `thinking_budget` appears in generate_content_config but is NOT present in the
+effective model args, i.e. it is not forwarded to the inference server. Only
+extra_body.chat_template_kwargs.enable_thinking (and reasoning_effort, unset here) is.
+Treat the numeric budget as UNVERIFIED until observed in an outgoing request.
+
+saved reference/effective_settings.json

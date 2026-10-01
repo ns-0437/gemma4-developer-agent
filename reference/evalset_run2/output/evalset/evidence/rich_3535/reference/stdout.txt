@@ -1,0 +1,3 @@
+........                                                                 [100%]
+- generated xml file: /tmp/swegemma_sandbox_613d24b0-112_yqshur97/tmp/_j_7dc08209.xml -
+8 passed in 0.06s

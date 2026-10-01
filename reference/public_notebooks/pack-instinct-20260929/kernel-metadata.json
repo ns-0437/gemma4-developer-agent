@@ -1,0 +1,23 @@
+{
+  "id": "lucifer19/black-cat-swe-agent-pack-instinct",
+  "id_no": 135551209,
+  "title": "\ud83d\udc08\u200d\u2b1b Black Cat SWE Agent | Pack Instinct",
+  "code_file": "black-cat-swe-agent-pack-instinct.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": false,
+  "enable_gpu": false,
+  "enable_tpu": false,
+  "enable_internet": false,
+  "keywords": [],
+  "dataset_sources": [
+    "metric/gemma-4-developer-agent-wheelhouse"
+  ],
+  "kernel_sources": [],
+  "competition_sources": [
+    "gemma-4-developer-agent"
+  ],
+  "model_sources": [],
+  "docker_image": "gcr.io/kaggle-images/python@sha256:dafd4ce5668bbf1ad422e4c109e0f18c9623c3a7c7f48b0235f13142755c40b9",
+  "machine_shape": "None"
+}
