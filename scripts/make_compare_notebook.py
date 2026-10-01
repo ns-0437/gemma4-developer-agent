@@ -45,6 +45,7 @@ NB_FILENAME = "compare.ipynb"
 KERNEL_TITLE = "gemma4-swe-agent-compare"
 CFG_LABEL = "compare config:"
 RUN_COUNT_PHRASE = "the eight runs will NOT"
+CUSTOMIZE_CELLS = None               # optional final specialization; defaults preserve old notebooks
 
 # 8 runs at a 10-minute agent budget, plus grading, plus ~20 min server startup.
 ARM_FOR_LAUNCH = False  # the single authorised launch (2026-09-29) has been used; disarmed 2026-09-30
@@ -291,6 +292,8 @@ def main() -> None:
                       "SESSION_CAP_MIN  =")
              .replace("pilot config:", CFG_LABEL)
              .replace("the four runs will NOT", RUN_COUNT_PHRASE))
+    if CUSTOMIZE_CELLS is not None:
+        CUSTOMIZE_CELLS(P)
     P.main()
 
     out = P.OUT
