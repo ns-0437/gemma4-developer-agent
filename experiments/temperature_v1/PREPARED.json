@@ -1,0 +1,42 @@
+{
+  "notebook_sha256": "d17f234a34b1c44d8f85461c7563504cf5a5977a3836acf12122081f6a7e5ef7",
+  "order": [
+    [
+      "rich_3278",
+      "S"
+    ],
+    [
+      "rich_3278",
+      "S_temp"
+    ],
+    [
+      "rich_3535",
+      "S_temp"
+    ],
+    [
+      "rich_3535",
+      "S"
+    ],
+    [
+      "rich_3675",
+      "S"
+    ],
+    [
+      "rich_3675",
+      "S_temp"
+    ],
+    [
+      "rich_3942",
+      "S_temp"
+    ],
+    [
+      "rich_3942",
+      "S"
+    ]
+  ],
+  "dispatch": false,
+  "candidates": {
+    "S": "8bf9f72c5d7ac4747e10c53637393bd7b18a6b66aae1879ddf4a62f4e4a6dc07",
+    "S_temp": "4f1ff61c1d8acf0287bc786c697e3ff4949a8624f3c49ec01b815cd6742f366c"
+  }
+}

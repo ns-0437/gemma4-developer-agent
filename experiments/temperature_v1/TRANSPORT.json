@@ -1,0 +1,127 @@
+{
+  "versions": {
+    "google-adk": "1.36.1",
+    "litellm": "1.102.1",
+    "adk-submission": "0.2.11"
+  },
+  "candidates": {
+    "S": {
+      "swe_coder": {
+        "compiled": {
+          "temperature": 0.2,
+          "top_p": 0.95,
+          "top_k": 40.0,
+          "max_output_tokens": 8192,
+          "seed": 42,
+          "thinking_config": {
+            "include_thoughts": false,
+            "thinking_budget": 4096
+          }
+        },
+        "client_parameters": {
+          "model": "openai/gemma-4-31b-it-qat-w4a16-ct",
+          "response_format": null,
+          "api_base": "http://127.0.0.1:9/v1",
+          "extra_body": {
+            "chat_template_kwargs": {
+              "enable_thinking": false
+            }
+          },
+          "temperature": 0.2,
+          "max_completion_tokens": 8192,
+          "top_p": 0.95,
+          "top_k": 40.0
+        },
+        "instruction_sha256": "39b2541c2220cc7655c576bb4ae7ac7e03200a72f2f1e518313068fc93be3b91"
+      },
+      "code_analyzer": {
+        "compiled": {
+          "temperature": 0.2,
+          "top_p": 0.95,
+          "top_k": 40.0,
+          "max_output_tokens": 8192,
+          "seed": 42,
+          "thinking_config": {
+            "include_thoughts": false,
+            "thinking_budget": 4096
+          }
+        },
+        "client_parameters": {
+          "model": "openai/gemma-4-31b-it-qat-w4a16-ct",
+          "response_format": null,
+          "api_base": "http://127.0.0.1:9/v1",
+          "extra_body": {
+            "chat_template_kwargs": {
+              "enable_thinking": false
+            }
+          },
+          "temperature": 0.2,
+          "max_completion_tokens": 8192,
+          "top_p": 0.95,
+          "top_k": 40.0
+        },
+        "instruction_sha256": "5011d37145d981e616d58fb56c5191ccbf336574fa01b3f65c2feab7d697b3a3"
+      }
+    },
+    "S_temp": {
+      "swe_coder": {
+        "compiled": {
+          "temperature": 0.7,
+          "top_p": 0.95,
+          "top_k": 40.0,
+          "max_output_tokens": 8192,
+          "seed": 42,
+          "thinking_config": {
+            "include_thoughts": false,
+            "thinking_budget": 4096
+          }
+        },
+        "client_parameters": {
+          "model": "openai/gemma-4-31b-it-qat-w4a16-ct",
+          "response_format": null,
+          "api_base": "http://127.0.0.1:9/v1",
+          "extra_body": {
+            "chat_template_kwargs": {
+              "enable_thinking": false
+            }
+          },
+          "temperature": 0.7,
+          "max_completion_tokens": 8192,
+          "top_p": 0.95,
+          "top_k": 40.0
+        },
+        "instruction_sha256": "39b2541c2220cc7655c576bb4ae7ac7e03200a72f2f1e518313068fc93be3b91"
+      },
+      "code_analyzer": {
+        "compiled": {
+          "temperature": 0.7,
+          "top_p": 0.95,
+          "top_k": 40.0,
+          "max_output_tokens": 8192,
+          "seed": 42,
+          "thinking_config": {
+            "include_thoughts": false,
+            "thinking_budget": 4096
+          }
+        },
+        "client_parameters": {
+          "model": "openai/gemma-4-31b-it-qat-w4a16-ct",
+          "response_format": null,
+          "api_base": "http://127.0.0.1:9/v1",
+          "extra_body": {
+            "chat_template_kwargs": {
+              "enable_thinking": false
+            }
+          },
+          "temperature": 0.7,
+          "max_completion_tokens": 8192,
+          "top_p": 0.95,
+          "top_k": 40.0
+        },
+        "instruction_sha256": "5011d37145d981e616d58fb56c5191ccbf336574fa01b3f65c2feab7d697b3a3"
+      }
+    }
+  },
+  "boundary": "ADK kwargs at LiteLLM client; no HTTP or server execution",
+  "finding": "Only temperature differs for both coder and analyzer; configured seed is not forwarded at this boundary."
+}
