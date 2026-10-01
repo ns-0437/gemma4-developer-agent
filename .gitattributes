@@ -1,0 +1,7 @@
+# This project's provenance rests on sha256 equality: the built submission.zip
+# must hash the same as the frozen copy in releases/, and every downloaded run
+# artifact under reference/ is pinned by a recorded digest.
+#
+# Git's line-ending conversion would break both on a Windows checkout, so no
+# file in this repository is treated as text for conversion purposes.
+* -text
