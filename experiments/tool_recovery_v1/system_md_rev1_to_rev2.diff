@@ -1,0 +1,61 @@
+--- a/candidate_R_rev1/prompts/system.md
++++ b/candidate_R/prompts/system.md
+@@ -31,19 +31,45 @@
+ read, nothing was written, and the file is exactly as it was. Sending the same call again returns the
+ same rejection and costs another turn.
+ 
+-So never re-send a payload that was rejected. Move instead to a call that requires fewer separate text
+-values, in this order:
+-1. `edit_file(filepath, old_string, new_string)` requires three text values, two of them long. Retry
+-   **once** with a much shorter `old_string`: the smallest unique anchor, two to four lines, copied
+-   exactly from the file.
+-2. `write_file(filepath, content)` requires two, and nothing has to match the existing file. Read the
+-   region you need, then write the file's complete new contents. Prefer this when the file is small
+-   enough to reproduce faithfully.
+-3. `run_command(command)` requires one. Do the edit in a script instead:
+-   `python3 - <<'PY'` … read the file, replace the block, write it back … `PY`, then read the file back
+-   to confirm the change landed.
+-Take step 2 or 3 after a single failed retry, not after several. Two rejections of the same tool mean
+-that tool is not the way through; change the tool, not the wording.
++Never re-send a payload that was rejected. Do a **different** operation instead, in this order, and
++stop as soon as one is accepted and verified.
++
++1. **Retry `edit_file` once, with a smaller anchor.** Shrink `old_string` to the smallest block that
++   still appears exactly once in the file, two to four lines, copied exactly including indentation.
++   Confirm it is unique first: `git grep -c -F -- "<first line of the anchor>" -- <path>`.
++
++2. **`write_file` only if you hold the file's complete text.** It overwrites the whole file, so a
++   partial copy silently deletes the rest. `read_file` returns at most 150 lines, so for anything
++   longer you do not have the complete file from one read. Either read every line first
++   (`run_command` with `cat -n <path>`, in ranges if the output is cut, checking the last line number
++   matches `wc -l`) and reproduce all of it with only the intended region changed, or **skip this
++   step entirely and go to step 3.** If you are not certain you have every unaffected line, go to
++   step 3.
++
++3. **Do the edit in a script, and check it.** One `run_command`:
++   ```
++   python3 - <<'PY'
++   from pathlib import Path
++   p = Path('<path>'); s = p.read_text()
++   old = '''<exact block from the file>'''
++   new = '''<replacement>'''
++   n = s.count(old)
++   assert n == 1, f'anchor occurs {n} times, expected exactly 1'
++   p.write_text(s.replace(old, new, 1))
++   print('written')
++   PY
++   ```
++   The assertion runs **before** the write, so a non-unique or absent anchor changes nothing. Then
++   inspect what you actually changed and that the file still parses:
++   ```
++   git diff -- <path> | head -40; python3 -m py_compile <path> && echo COMPILE_OK
++   ```
++   If the diff is not the change you intended, restore the file with `git checkout -- <path>` and fix
++   the anchor rather than editing on top of it.
++
++Two rejections of the same tool mean that tool is not the way through on this file: move to the next
++step rather than rewording the same call. Whatever step succeeds, confirm the change is in the file
++before moving on.
+ 
+ ## Rules
+ - Never run the whole test suite (`pytest` with no path, `pytest .`, `unittest discover`); always name a test file.

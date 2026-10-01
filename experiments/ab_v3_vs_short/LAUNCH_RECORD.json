@@ -1,0 +1,99 @@
+{
+  "authorization": "user authorized one private GPU launch of the reviewed eight-run A/B comparison",
+  "authorized_scope": [
+    "one push only",
+    "no competition submission",
+    "no automatic retry",
+    "no candidate changes",
+    "no continuous polling"
+  ],
+  "quota_read_utc": "2026-09-29T05:00:18+00:00",
+  "quota_local": "2026-09-29T10:30:18+05:30",
+  "quota_source": "https://www.kaggle.com/settings (signed in as navin03)",
+  "kaggle_gpu_quota_used_of_total": "01:11 / 30 hrs",
+  "kaggle_gpu_remaining_estimate": "28 hrs 49 min",
+  "kaggle_tpu": "00:00 / 20 hrs",
+  "account": {
+    "username": "navin03",
+    "account_number": "21424098"
+  },
+  "notebook_sha256_disabled": "216f7d8c8a40323af1da60b752b6d5c6c6586a73c2347364aee8a783b66884f5",
+  "candidate_A_sha256": "b8da59c1c3a0671bb9b11b2fe4238a252ff792a63abf7ea4b5d555ceab57b24b",
+  "candidate_B_sha256": "33a5ec57db0dd482fd4f807206f2cbda45cdc5f14a28c836c88417305c6e3909",
+  "tasks": [
+    "rich_3278",
+    "rich_3535",
+    "rich_3675",
+    "rich_3942"
+  ],
+  "run_order": [
+    [
+      "rich_3278",
+      "A"
+    ],
+    [
+      "rich_3278",
+      "B"
+    ],
+    [
+      "rich_3535",
+      "B"
+    ],
+    [
+      "rich_3535",
+      "A"
+    ],
+    [
+      "rich_3675",
+      "A"
+    ],
+    [
+      "rich_3675",
+      "B"
+    ],
+    [
+      "rich_3942",
+      "B"
+    ],
+    [
+      "rich_3942",
+      "A"
+    ]
+  ],
+  "budgets": {
+    "max_time_minutes": 10.0,
+    "max_tool_calls": 100,
+    "max_turns": 60,
+    "timeout_seconds": 300,
+    "SESSION_CAP_MIN": 300,
+    "RUN_RESERVE_MIN": 25,
+    "CLEANUP_GRACE_S": 45,
+    "token_threshold": 20480
+  },
+  "armed": true,
+  "arming_change": "DISPATCH_CONFIRM False -> True, cell 1, 2 changed lines, 1 cell; nothing else",
+  "arming_verified_by": [
+    "pre-arm preview hash computed by flipping the single literal == post-arm generated hash",
+    "cell-by-cell diff against the disabled baseline: 1 cell, 2 lines",
+    "embedded candidate bundle hashes unchanged in the armed notebook"
+  ],
+  "notebook_sha256_armed": "532d3f7e6be6bd4fcf7035b0d4af741820f40fa553c00025ca3c3156f781f15b",
+  "focused_tests_on_armed_artifact": {
+    "test_compare_dispatch": "94/0",
+    "test_pilot_notebook(compare)": "82/0",
+    "test_stop_logic(compare)": "22/0"
+  },
+  "pushed_utc": "2026-09-29T05:04:11+00:00",
+  "pushed_local": "2026-09-29T10:34:11+05:30",
+  "kernel": "navin03/gemma4-swe-agent-compare",
+  "kernel_version": 1,
+  "kernel_url": "https://www.kaggle.com/code/navin03/gemma4-swe-agent-compare",
+  "pushes": 1,
+  "not_done": [
+    "competition submission",
+    "automatic retry",
+    "hardware change",
+    "candidate modification",
+    "continuous polling"
+  ]
+}

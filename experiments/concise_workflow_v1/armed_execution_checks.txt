@@ -1,0 +1,444 @@
+[A] shipped artifact invariants
+  PASS exactly one dispatch flag
+  PASS recognised boolean
+  PASS hash is one of the two recorded artifacts
+  PASS hash matches its dispatch state
+  PASS task set is the frozen dev four
+  PASS order is A/S then S/A
+  PASS no held-out task named anywhere in the notebook
+  PASS no follow-on push or submit
+
+[B] simulated disabled: nothing runs
+A/S config: {'max_time_minutes': 10.0, 'max_tool_calls': 100, 'max_turns': 60, 'timeout_seconds': 300} | session cap 300 min
+DISPATCH_CONFIRM is False: setup and preconditions will run, the eight runs will NOT.
+installing 1 wheels...
+{
+  "swegemma": "MISSING: PackageNotFoundError('swegemma')",
+  "adk-submission": "MISSING: PackageNotFoundError('adk-submission')",
+  "adk-eval-core": "MISSING: PackageNotFoundError('adk-eval-core')",
+  "google-adk": "MISSING: PackageNotFoundError('google-adk')",
+  "vllm": "MISSING: PackageNotFoundError('vllm')",
+  "transformers": "MISSING: PackageNotFoundError('transformers')",
+  "litellm": "1.96.2"
+}
+GPUs: 4 ['NVIDIA L4', 'NVIDIA L4', 'NVIDIA L4', 'NVIDIA L4']
+model revision dir: 2 | config sha256: b72dd2eaa6e277d6
+architectures: ['Gemma4ForConditionalGeneration']
+quantization: {"format": "pack-quantized", "num_bits": 4}
+loaded 4 tasks
+PILOT TASKS and the evidence they were chosen on:
+
+  rich_3278 Textualize/rich
+    negative  exit=1 cases=23 failed=16 errored=0
+              agent  import: unavailable (no agent ran in the control)
+              pytest import: /tmp/swegemma_sandbox_fbc86660-ea1_mbw02i_a/workspace/rich/__init__.py
+    positive  exit=0 cases=23 failed=0 errored=0
+              agent  import: unavailable (no agent ran in the control)
+              pytest import: /tmp/swegemma_sandbox_2c91183e-840_38s9ivy0/workspace/rich/__init__.py
+    baseline-fails / gold-passes / grading-import-in-checkout: True
+    agent-side import provenance: UNAVAILABLE (no agent ran in the control)
+    control patch_rc=0 test_patch_rc=0
+    baseline failures: ['test_ansi::test_strip_private_escape_sequences[0]', 'test_ansi::test_strip_private_escape_sequences[1]', 'test_ansi::test_strip_private_escape_sequences[2]', 'test_ansi::test_strip_private_escape_sequences[3]']
+
+  rich_3535 Textualize/rich
+    negative  exit=1 cases=8 failed=1 errored=0
+              agent  import: unavailable (no agent ran in the control)
+              pytest import: /tmp/swegemma_sandbox_b9bb1fae-ea7_j4kmphm5/workspace/rich/__init__.py
+    positive  exit=0 cases=8 failed=0 errored=0
+              agent  import: unavailable (no agent ran in the control)
+              pytest import: /tmp/swegemma_sandbox_613d24b0-112_yqshur97/workspace/rich/__init__.py
+    baseline-fails / gold-passes / grading-import-in-checkout: True
+    agent-side import provenance: UNAVAILABLE (no agent ran in the control)
+    control patch_rc=0 test_patch_rc=0
+    baseline failures: ['test_cells::test_is_single_cell_widths']
+
+  rich_3675 Textualize/rich
+    negative  exit=1 cases=99 failed=1 errored=0
+              agent  import: unavailable (no agent ran in the control)
+              pytest import: /tmp/swegemma_sandbox_eee552f1-f25_sg8paafw/workspace/rich/__init__.py
+    positive  exit=0 cases=99 failed=0 errored=0
+              agent  import: unavailable (no agent ran in the control)
+              pytest import: /tmp/swegemma_sandbox_29800dba-55b_9nqi_yv4/workspace/rich/__init__.py
+    baseline-fails / gold-passes / grading-import-in-checkout: True
+    agent-side import provenance: UNAVAILABLE (no agent ran in the control)
+    control patch_rc=0 test_patch_rc=0
+    baseline failures: ['test_console::test_tty_compatible']
+
+  rich_3942 Textualize/rich
+    negative  exit=1 cases=8 failed=6 errored=0
+              agent  import: unavailable (no agent ran in the control)
+              pytest import: /tmp/swegemma_sandbox_cb7391fe-ddf_sauv1peb/workspace/rich/__init__.py
+    positive  exit=0 cases=8 failed=0 errored=0
+              agent  import: unavailable (no agent ran in the control)
+              pytest import: /tmp/swegemma_sandbox_58f2d1f1-b18_zzqdtsd6/workspace/rich/__init__.py
+    baseline-fails / gold-passes / grading-import-in-checkout: True
+    agent-side import provenance: UNAVAILABLE (no agent ran in the control)
+    control patch_rc=0 test_patch_rc=0
+    baseline failures: ['test_markdown::test_inline_styles_in_table', 'test_markdown::test_inline_styles_with_justification', 'test_markdown::test_markdown_render', 'test_markdown::test_markdown_table']
+prompt leakage: CLEAN (0 lines came from the issue text)
+LIMITATION: this is a data-flow check. The subprocess backend runs run_command on the host, so
+answer-key files remain reachable; traces must be audited for contamination before trusting a run.
+A: sha256=b8da59c1c3a0671b model=gemma-4-31b-it-qat-w4a16-ct
+S: sha256=8bf9f72c5d7ac474 model=gemma-4-31b-it-qat-w4a16-ct
+A vs B sampling delta: []
+prompts/system.md is the ONLY difference: A=7745B S=2598B
+every other file is byte-identical between A and S
+repair bound on agent_runner, verification, container_setup (idempotent)
+NOTE: a pip success message alone is not proof; the preconditions below check what actually loads.
+rich_3278        ok=True
+    workspace: /tmp/sbx_test/workspace
+    agent    : /tmp/sbx_test/workspace/requests/__init__.py
+    grading  : /tmp/sbx_test/workspace/requests/__init__.py
+rich_3535        ok=True
+    workspace: /tmp/sbx_test/workspace
+    agent    : /tmp/sbx_test/workspace/requests/__init__.py
+    grading  : /tmp/sbx_test/workspace/requests/__init__.py
+rich_3675        ok=True
+    workspace: /tmp/sbx_test/workspace
+    agent    : /tmp/sbx_test/workspace/requests/__init__.py
+    grading  : /tmp/sbx_test/workspace/requests/__init__.py
+rich_3942        ok=True
+    workspace: /tmp/sbx_test/workspace
+    agent    : /tmp/sbx_test/workspace/requests/__init__.py
+    grading  : /tmp/sbx_test/workspace/requests/__init__.py
+ALL PRECONDITIONS PASSED
+Caveat: passing here does not guarantee the same resolution inside every later sandbox; the
+per-run setup observations verify imports again in the actual sandboxes. These are grading-flags probes, not direct in-pytest observations.
+  rich_3278      baseline  exit=1 (saved 1) nodes=23/23 targets=16 agrees=True
+  rich_3278      reference exit=0 (saved 0) nodes=23/23 targets=16 agrees=True
+  rich_3535      baseline  exit=1 (saved 1) nodes=8/8 targets=1 agrees=True
+  rich_3535      reference exit=0 (saved 0) nodes=8/8 targets=1 agrees=True
+  rich_3675      baseline  exit=1 (saved 1) nodes=99/99 targets=1 agrees=True
+  rich_3675      reference exit=0 (saved 0) nodes=99/99 targets=1 agrees=True
+  rich_3942      baseline  exit=1 (saved 1) nodes=8/8 targets=6 agrees=True
+  rich_3942      reference exit=0 (saved 0) nodes=8/8 targets=6 agrees=True
+ALL FOUR CONTROLS REPRODUCE UNDER THIS SETUP (both arms, full node map, targets verified)
+adapters discovered: none (expected)
+Dispatch disabled: vLLM is not instantiated or started.
+planned run order: [('rich_3278', 'A'), ('rich_3278', 'S'), ('rich_3535', 'S'), ('rich_3535', 'A'), ('rich_3675', 'A'), ('rich_3675', 'S'), ('rich_3942', 'S'), ('rich_3942', 'A')]
+backend for BOTH preconditions and evaluation: subprocess
+DISPATCH_CONFIRM=False: no server was started and no model run is dispatched.
+{"candidate": "A", "task": "rich_3278", "attempted": false, "stop_reason": "not reached before the run loop ended", "resolved": "unavailable", "attribution": "not_attempted", "harness_error": "unavailable", "test_exit_code": "unavailable", "grading_ran": "unavailable", "grading_observed": "unavailable", "outcome": "not_attempted", "outcome_reason": "unavailable", "cleanup_ok": "unavailable", "owned_sandboxes": "unavailable", "patch_bytes": "unavailable", "patch_touches_source": "unavailable", "patch_files": "unavailable", "wall_s": "unavailable", "agent_phase_s": "unavailable", "grading_phase_s": "unavailable", "both_setup_imports_verified": "unavailable", "phase_status": "unavailable", "failure_class": "not_attempted", "agent_loop_s": "unavailable", "termination_error": "unavailable", "duration_seconds_harness": "unavailable", "tool_calls": "unavailable", "edit_calls": "unavailable", "shell_edit_hints": "unavailable", "repeated_identical_cmds": "unavailable", "tool_errors": "unavailable", "first_source_edit_attempt_step": "unavailable", "finish_reasons": "unavailable", "prompt_tokens": "unavailable", "completion_tokens": "unavailable", "successful_tool_calls": "unavailable", "rejected_tool_calls": "unavailable", "acknowledged_source_edit_calls": "unavailable", "tmp_scratch_writes": "unavailable", "repeated_identical_tool_calls": "unavailable", "unparsed_tool_call_texts": "unavailable", "tool_use_flags": "unavailable", "run_error": ""}
+{"candidate": "S", "task": "rich_3278", "attempted": false, "stop_reason": "not reached before the run loop ended", "resolved": "unavailable", "attribution": "not_attempted", "harness_error": "unavailable", "test_exit_code": "unavailable", "grading_ran": "unavailable", "grading_observed": "unavailable", "outcome": "not_attempted", "outcome_reason": "unavailable", "cleanup_ok": "unavailable", "owned_sandboxes": "unavailable", "patch_bytes": "unavailable", "patch_touches_source": "unavailable", "patch_files": "unavailable", "wall_s": "unavailable", "agent_phase_s": "unavailable", "grading_phase_s": "unavailable", "both_setup_imports_verified": "unavailable", "phase_status": "unavailable", "failure_class": "not_attempted", "agent_loop_s": "unavailable", "termination_error": "unavailable", "duration_seconds_harness": "unavailable", "tool_calls": "unavailable", "edit_calls": "unavailable", "shell_edit_hints": "unavailable", "repeated_identical_cmds": "unavailable", "tool_errors": "unavailable", "first_source_edit_attempt_step": "unavailable", "finish_reasons": "unavailable", "prompt_tokens": "unavailable", "completion_tokens": "unavailable", "successful_tool_calls": "unavailable", "rejected_tool_calls": "unavailable", "acknowledged_source_edit_calls": "unavailable", "tmp_scratch_writes": "unavailable", "repeated_identical_tool_calls": "unavailable", "unparsed_tool_call_texts": "unavailable", "tool_use_flags": "unavailable", "run_error": ""}
+{"candidate": "S", "task": "rich_3535", "attempted": false, "stop_reason": "not reached before the run loop ended", "resolved": "unavailable", "attribution": "not_attempted", "harness_error": "unavailable", "test_exit_code": "unavailable", "grading_ran": "unavailable", "grading_observed": "unavailable", "outcome": "not_attempted", "outcome_reason": "unavailable", "cleanup_ok": "unavailable", "owned_sandboxes": "unavailable", "patch_bytes": "unavailable", "patch_touches_source": "unavailable", "patch_files": "unavailable", "wall_s": "unavailable", "agent_phase_s": "unavailable", "grading_phase_s": "unavailable", "both_setup_imports_verified": "unavailable", "phase_status": "unavailable", "failure_class": "not_attempted", "agent_loop_s": "unavailable", "termination_error": "unavailable", "duration_seconds_harness": "unavailable", "tool_calls": "unavailable", "edit_calls": "unavailable", "shell_edit_hints": "unavailable", "repeated_identical_cmds": "unavailable", "tool_errors": "unavailable", "first_source_edit_attempt_step": "unavailable", "finish_reasons": "unavailable", "prompt_tokens": "unavailable", "completion_tokens": "unavailable", "successful_tool_calls": "unavailable", "rejected_tool_calls": "unavailable", "acknowledged_source_edit_calls": "unavailable", "tmp_scratch_writes": "unavailable", "repeated_identical_tool_calls": "unavailable", "unparsed_tool_call_texts": "unavailable", "tool_use_flags": "unavailable", "run_error": ""}
+{"candidate": "A", "task": "rich_3535", "attempted": false, "stop_reason": "not reached before the run loop ended", "resolved": "unavailable", "attribution": "not_attempted", "harness_error": "unavailable", "test_exit_code": "unavailable", "grading_ran": "unavailable", "grading_observed": "unavailable", "outcome": "not_attempted", "outcome_reason": "unavailable", "cleanup_ok": "unavailable", "owned_sandboxes": "unavailable", "patch_bytes": "unavailable", "patch_touches_source": "unavailable", "patch_files": "unavailable", "wall_s": "unavailable", "agent_phase_s": "unavailable", "grading_phase_s": "unavailable", "both_setup_imports_verified": "unavailable", "phase_status": "unavailable", "failure_class": "not_attempted", "agent_loop_s": "unavailable", "termination_error": "unavailable", "duration_seconds_harness": "unavailable", "tool_calls": "unavailable", "edit_calls": "unavailable", "shell_edit_hints": "unavailable", "repeated_identical_cmds": "unavailable", "tool_errors": "unavailable", "first_source_edit_attempt_step": "unavailable", "finish_reasons": "unavailable", "prompt_tokens": "unavailable", "completion_tokens": "unavailable", "successful_tool_calls": "unavailable", "rejected_tool_calls": "unavailable", "acknowledged_source_edit_calls": "unavailable", "tmp_scratch_writes": "unavailable", "repeated_identical_tool_calls": "unavailable", "unparsed_tool_call_texts": "unavailable", "tool_use_flags": "unavailable", "run_error": ""}
+{"candidate": "A", "task": "rich_3675", "attempted": false, "stop_reason": "not reached before the run loop ended", "resolved": "unavailable", "attribution": "not_attempted", "harness_error": "unavailable", "test_exit_code": "unavailable", "grading_ran": "unavailable", "grading_observed": "unavailable", "outcome": "not_attempted", "outcome_reason": "unavailable", "cleanup_ok": "unavailable", "owned_sandboxes": "unavailable", "patch_bytes": "unavailable", "patch_touches_source": "unavailable", "patch_files": "unavailable", "wall_s": "unavailable", "agent_phase_s": "unavailable", "grading_phase_s": "unavailable", "both_setup_imports_verified": "unavailable", "phase_status": "unavailable", "failure_class": "not_attempted", "agent_loop_s": "unavailable", "termination_error": "unavailable", "duration_seconds_harness": "unavailable", "tool_calls": "unavailable", "edit_calls": "unavailable", "shell_edit_hints": "unavailable", "repeated_identical_cmds": "unavailable", "tool_errors": "unavailable", "first_source_edit_attempt_step": "unavailable", "finish_reasons": "unavailable", "prompt_tokens": "unavailable", "completion_tokens": "unavailable", "successful_tool_calls": "unavailable", "rejected_tool_calls": "unavailable", "acknowledged_source_edit_calls": "unavailable", "tmp_scratch_writes": "unavailable", "repeated_identical_tool_calls": "unavailable", "unparsed_tool_call_texts": "unavailable", "tool_use_flags": "unavailable", "run_error": ""}
+{"candidate": "S", "task": "rich_3675", "attempted": false, "stop_reason": "not reached before the run loop ended", "resolved": "unavailable", "attribution": "not_attempted", "harness_error": "unavailable", "test_exit_code": "unavailable", "grading_ran": "unavailable", "grading_observed": "unavailable", "outcome": "not_attempted", "outcome_reason": "unavailable", "cleanup_ok": "unavailable", "owned_sandboxes": "unavailable", "patch_bytes": "unavailable", "patch_touches_source": "unavailable", "patch_files": "unavailable", "wall_s": "unavailable", "agent_phase_s": "unavailable", "grading_phase_s": "unavailable", "both_setup_imports_verified": "unavailable", "phase_status": "unavailable", "failure_class": "not_attempted", "agent_loop_s": "unavailable", "termination_error": "unavailable", "duration_seconds_harness": "unavailable", "tool_calls": "unavailable", "edit_calls": "unavailable", "shell_edit_hints": "unavailable", "repeated_identical_cmds": "unavailable", "tool_errors": "unavailable", "first_source_edit_attempt_step": "unavailable", "finish_reasons": "unavailable", "prompt_tokens": "unavailable", "completion_tokens": "unavailable", "successful_tool_calls": "unavailable", "rejected_tool_calls": "unavailable", "acknowledged_source_edit_calls": "unavailable", "tmp_scratch_writes": "unavailable", "repeated_identical_tool_calls": "unavailable", "unparsed_tool_call_texts": "unavailable", "tool_use_flags": "unavailable", "run_error": ""}
+{"candidate": "S", "task": "rich_3942", "attempted": false, "stop_reason": "not reached before the run loop ended", "resolved": "unavailable", "attribution": "not_attempted", "harness_error": "unavailable", "test_exit_code": "unavailable", "grading_ran": "unavailable", "grading_observed": "unavailable", "outcome": "not_attempted", "outcome_reason": "unavailable", "cleanup_ok": "unavailable", "owned_sandboxes": "unavailable", "patch_bytes": "unavailable", "patch_touches_source": "unavailable", "patch_files": "unavailable", "wall_s": "unavailable", "agent_phase_s": "unavailable", "grading_phase_s": "unavailable", "both_setup_imports_verified": "unavailable", "phase_status": "unavailable", "failure_class": "not_attempted", "agent_loop_s": "unavailable", "termination_error": "unavailable", "duration_seconds_harness": "unavailable", "tool_calls": "unavailable", "edit_calls": "unavailable", "shell_edit_hints": "unavailable", "repeated_identical_cmds": "unavailable", "tool_errors": "unavailable", "first_source_edit_attempt_step": "unavailable", "finish_reasons": "unavailable", "prompt_tokens": "unavailable", "completion_tokens": "unavailable", "successful_tool_calls": "unavailable", "rejected_tool_calls": "unavailable", "acknowledged_source_edit_calls": "unavailable", "tmp_scratch_writes": "unavailable", "repeated_identical_tool_calls": "unavailable", "unparsed_tool_call_texts": "unavailable", "tool_use_flags": "unavailable", "run_error": ""}
+{"candidate": "A", "task": "rich_3942", "attempted": false, "stop_reason": "not reached before the run loop ended", "resolved": "unavailable", "attribution": "not_attempted", "harness_error": "unavailable", "test_exit_code": "unavailable", "grading_ran": "unavailable", "grading_observed": "unavailable", "outcome": "not_attempted", "outcome_reason": "unavailable", "cleanup_ok": "unavailable", "owned_sandboxes": "unavailable", "patch_bytes": "unavailable", "patch_touches_source": "unavailable", "patch_files": "unavailable", "wall_s": "unavailable", "agent_phase_s": "unavailable", "grading_phase_s": "unavailable", "both_setup_imports_verified": "unavailable", "phase_status": "unavailable", "failure_class": "not_attempted", "agent_loop_s": "unavailable", "termination_error": "unavailable", "duration_seconds_harness": "unavailable", "tool_calls": "unavailable", "edit_calls": "unavailable", "shell_edit_hints": "unavailable", "repeated_identical_cmds": "unavailable", "tool_errors": "unavailable", "first_source_edit_attempt_step": "unavailable", "finish_reasons": "unavailable", "prompt_tokens": "unavailable", "completion_tokens": "unavailable", "successful_tool_calls": "unavailable", "rejected_tool_calls": "unavailable", "acknowledged_source_edit_calls": "unavailable", "tmp_scratch_writes": "unavailable", "repeated_identical_tool_calls": "unavailable", "unparsed_tool_call_texts": "unavailable", "tool_use_flags": "unavailable", "run_error": ""}
+
+cand       task             resolved  attribution            agent_s
+A          rich_3278        unavailable not_attempted          unavailable
+S          rich_3278        unavailable not_attempted          unavailable
+S          rich_3535        unavailable not_attempted          unavailable
+A          rich_3535        unavailable not_attempted          unavailable
+A          rich_3675        unavailable not_attempted          unavailable
+S          rich_3675        unavailable not_attempted          unavailable
+S          rich_3942        unavailable not_attempted          unavailable
+A          rich_3942        unavailable not_attempted          unavailable
+
+Four tasks from ONE repository (Textualize/rich) are a narrow diagnostic, not a general
+ranking: any result here generalises to rich at best, and cannot say which candidate is
+better overall. Both preconditions and evaluation run on the SUBPROCESS backend, which is
+not a filesystem isolation boundary. agent_phase_s covers container-A setup plus the agent loop;
+grading_phase_s is container B. The harness duration_seconds bundles both and must not be
+multiplied to project the 12-hour scoring runtime.
+saved pilot_manifest.json and pilot_results.csv
+  PASS no server
+  PASS no evaluation
+  PASS eight rows, none attempted
+
+[C] simulated enabled: eight runs, correct order, both candidates
+A/S config: {'max_time_minutes': 10.0, 'max_tool_calls': 100, 'max_turns': 60, 'timeout_seconds': 300} | session cap 300 min
+installing 1 wheels...
+{
+  "swegemma": "MISSING: PackageNotFoundError('swegemma')",
+  "adk-submission": "MISSING: PackageNotFoundError('adk-submission')",
+  "adk-eval-core": "MISSING: PackageNotFoundError('adk-eval-core')",
+  "google-adk": "MISSING: PackageNotFoundError('google-adk')",
+  "vllm": "MISSING: PackageNotFoundError('vllm')",
+  "transformers": "MISSING: PackageNotFoundError('transformers')",
+  "litellm": "1.96.2"
+}
+GPUs: 4 ['NVIDIA L4', 'NVIDIA L4', 'NVIDIA L4', 'NVIDIA L4']
+model revision dir: 2 | config sha256: b72dd2eaa6e277d6
+architectures: ['Gemma4ForConditionalGeneration']
+quantization: {"format": "pack-quantized", "num_bits": 4}
+loaded 4 tasks
+PILOT TASKS and the evidence they were chosen on:
+
+  rich_3278 Textualize/rich
+    negative  exit=1 cases=23 failed=16 errored=0
+              agent  import: unavailable (no agent ran in the control)
+              pytest import: /tmp/swegemma_sandbox_fbc86660-ea1_mbw02i_a/workspace/rich/__init__.py
+    positive  exit=0 cases=23 failed=0 errored=0
+              agent  import: unavailable (no agent ran in the control)
+              pytest import: /tmp/swegemma_sandbox_2c91183e-840_38s9ivy0/workspace/rich/__init__.py
+    baseline-fails / gold-passes / grading-import-in-checkout: True
+    agent-side import provenance: UNAVAILABLE (no agent ran in the control)
+    control patch_rc=0 test_patch_rc=0
+    baseline failures: ['test_ansi::test_strip_private_escape_sequences[0]', 'test_ansi::test_strip_private_escape_sequences[1]', 'test_ansi::test_strip_private_escape_sequences[2]', 'test_ansi::test_strip_private_escape_sequences[3]']
+
+  rich_3535 Textualize/rich
+    negative  exit=1 cases=8 failed=1 errored=0
+              agent  import: unavailable (no agent ran in the control)
+              pytest import: /tmp/swegemma_sandbox_b9bb1fae-ea7_j4kmphm5/workspace/rich/__init__.py
+    positive  exit=0 cases=8 failed=0 errored=0
+              agent  import: unavailable (no agent ran in the control)
+              pytest import: /tmp/swegemma_sandbox_613d24b0-112_yqshur97/workspace/rich/__init__.py
+    baseline-fails / gold-passes / grading-import-in-checkout: True
+    agent-side import provenance: UNAVAILABLE (no agent ran in the control)
+    control patch_rc=0 test_patch_rc=0
+    baseline failures: ['test_cells::test_is_single_cell_widths']
+
+  rich_3675 Textualize/rich
+    negative  exit=1 cases=99 failed=1 errored=0
+              agent  import: unavailable (no agent ran in the control)
+              pytest import: /tmp/swegemma_sandbox_eee552f1-f25_sg8paafw/workspace/rich/__init__.py
+    positive  exit=0 cases=99 failed=0 errored=0
+              agent  import: unavailable (no agent ran in the control)
+              pytest import: /tmp/swegemma_sandbox_29800dba-55b_9nqi_yv4/workspace/rich/__init__.py
+    baseline-fails / gold-passes / grading-import-in-checkout: True
+    agent-side import provenance: UNAVAILABLE (no agent ran in the control)
+    control patch_rc=0 test_patch_rc=0
+    baseline failures: ['test_console::test_tty_compatible']
+
+  rich_3942 Textualize/rich
+    negative  exit=1 cases=8 failed=6 errored=0
+              agent  import: unavailable (no agent ran in the control)
+              pytest import: /tmp/swegemma_sandbox_cb7391fe-ddf_sauv1peb/workspace/rich/__init__.py
+    positive  exit=0 cases=8 failed=0 errored=0
+              agent  import: unavailable (no agent ran in the control)
+              pytest import: /tmp/swegemma_sandbox_58f2d1f1-b18_zzqdtsd6/workspace/rich/__init__.py
+    baseline-fails / gold-passes / grading-import-in-checkout: True
+    agent-side import provenance: UNAVAILABLE (no agent ran in the control)
+    control patch_rc=0 test_patch_rc=0
+    baseline failures: ['test_markdown::test_inline_styles_in_table', 'test_markdown::test_inline_styles_with_justification', 'test_markdown::test_markdown_render', 'test_markdown::test_markdown_table']
+prompt leakage: CLEAN (0 lines came from the issue text)
+LIMITATION: this is a data-flow check. The subprocess backend runs run_command on the host, so
+answer-key files remain reachable; traces must be audited for contamination before trusting a run.
+A: sha256=b8da59c1c3a0671b model=gemma-4-31b-it-qat-w4a16-ct
+S: sha256=8bf9f72c5d7ac474 model=gemma-4-31b-it-qat-w4a16-ct
+A vs B sampling delta: []
+prompts/system.md is the ONLY difference: A=7745B S=2598B
+every other file is byte-identical between A and S
+repair bound on agent_runner, verification, container_setup (idempotent)
+NOTE: a pip success message alone is not proof; the preconditions below check what actually loads.
+rich_3278        ok=True
+    workspace: /tmp/sbx_test/workspace
+    agent    : /tmp/sbx_test/workspace/requests/__init__.py
+    grading  : /tmp/sbx_test/workspace/requests/__init__.py
+rich_3535        ok=True
+    workspace: /tmp/sbx_test/workspace
+    agent    : /tmp/sbx_test/workspace/requests/__init__.py
+    grading  : /tmp/sbx_test/workspace/requests/__init__.py
+rich_3675        ok=True
+    workspace: /tmp/sbx_test/workspace
+    agent    : /tmp/sbx_test/workspace/requests/__init__.py
+    grading  : /tmp/sbx_test/workspace/requests/__init__.py
+rich_3942        ok=True
+    workspace: /tmp/sbx_test/workspace
+    agent    : /tmp/sbx_test/workspace/requests/__init__.py
+    grading  : /tmp/sbx_test/workspace/requests/__init__.py
+ALL PRECONDITIONS PASSED
+Caveat: passing here does not guarantee the same resolution inside every later sandbox; the
+per-run setup observations verify imports again in the actual sandboxes. These are grading-flags probes, not direct in-pytest observations.
+  rich_3278      baseline  exit=1 (saved 1) nodes=23/23 targets=16 agrees=True
+  rich_3278      reference exit=0 (saved 0) nodes=23/23 targets=16 agrees=True
+  rich_3535      baseline  exit=1 (saved 1) nodes=8/8 targets=1 agrees=True
+  rich_3535      reference exit=0 (saved 0) nodes=8/8 targets=1 agrees=True
+  rich_3675      baseline  exit=1 (saved 1) nodes=99/99 targets=1 agrees=True
+  rich_3675      reference exit=0 (saved 0) nodes=99/99 targets=1 agrees=True
+  rich_3942      baseline  exit=1 (saved 1) nodes=8/8 targets=6 agrees=True
+  rich_3942      reference exit=0 (saved 0) nodes=8/8 targets=6 agrees=True
+ALL FOUR CONTROLS REPRODUCE UNDER THIS SETUP (both arms, full node map, targets verified)
+adapters discovered: none (expected)
+vLLM up at http://127.0.0.1:5063/v1 (tp=4) in 0.0 min
+NOTE: the server default enable_thinking=True is overridden per-request by each candidate's
+extra_body.chat_template_kwargs, which is what makes A and B differ.
+planned run order: [('rich_3278', 'A'), ('rich_3278', 'S'), ('rich_3535', 'S'), ('rich_3535', 'A'), ('rich_3675', 'A'), ('rich_3675', 'S'), ('rich_3942', 'S'), ('rich_3942', 'A')]
+backend for BOTH preconditions and evaluation: subprocess
+A rich_3278 wall_s= 0.015 phase_s= {'agent_phase_s': [0.004300100030377507], 'agent_loop_s': [3.25], 'grading_phase_s': [0.0050740999868139625]}
+  phase status: {'agent': 'passed', 'grading': 'passed'}
+  outcome: ok | clean
+  grading observed: True | results written: 1
+  cleanup of THIS run's sandboxes: True 
+S rich_3278 wall_s= 0.02 phase_s= {'agent_phase_s': [0.005870199995115399], 'agent_loop_s': [3.25], 'grading_phase_s': [0.004266700008884072]}
+  phase status: {'agent': 'passed', 'grading': 'passed'}
+  outcome: ok | clean
+  grading observed: True | results written: 1
+  cleanup of THIS run's sandboxes: True 
+S rich_3535 wall_s= 0.017 phase_s= {'agent_phase_s': [0.0062541000079363585], 'agent_loop_s': [3.25], 'grading_phase_s': [0.004437499970663339]}
+  phase status: {'agent': 'passed', 'grading': 'passed'}
+  outcome: ok | clean
+  grading observed: True | results written: 1
+  cleanup of THIS run's sandboxes: True 
+A rich_3535 wall_s= 0.015 phase_s= {'agent_phase_s': [0.005119899986311793], 'agent_loop_s': [3.25], 'grading_phase_s': [0.004732400004286319]}
+  phase status: {'agent': 'passed', 'grading': 'passed'}
+  outcome: ok | clean
+  grading observed: True | results written: 1
+  cleanup of THIS run's sandboxes: True 
+A rich_3675 wall_s= 0.019 phase_s= {'agent_phase_s': [0.00713839998934418], 'agent_loop_s': [3.25], 'grading_phase_s': [0.00636360002681613]}
+  phase status: {'agent': 'passed', 'grading': 'passed'}
+  outcome: ok | clean
+  grading observed: True | results written: 1
+  cleanup of THIS run's sandboxes: True 
+S rich_3675 wall_s= 0.018 phase_s= {'agent_phase_s': [0.006920000014360994], 'agent_loop_s': [3.25], 'grading_phase_s': [0.005609799991361797]}
+  phase status: {'agent': 'passed', 'grading': 'passed'}
+  outcome: ok | clean
+  grading observed: True | results written: 1
+  cleanup of THIS run's sandboxes: True 
+S rich_3942 wall_s= 0.018 phase_s= {'agent_phase_s': [0.005600599979516119], 'agent_loop_s': [3.25], 'grading_phase_s': [0.0072533999918960035]}
+  phase status: {'agent': 'passed', 'grading': 'passed'}
+  outcome: ok | clean
+  grading observed: True | results written: 1
+  cleanup of THIS run's sandboxes: True 
+A rich_3942 wall_s= 0.023 phase_s= {'agent_phase_s': [0.010278699977789074], 'agent_loop_s': [3.25], 'grading_phase_s': [0.006785199977457523]}
+  phase status: {'agent': 'passed', 'grading': 'passed'}
+  outcome: ok | clean
+  grading observed: True | results written: 1
+  cleanup of THIS run's sandboxes: True 
+{"candidate": "A", "task": "rich_3278", "attempted": true, "stop_reason": "", "grading_observed": true, "outcome": "ok", "outcome_reason": "", "cleanup_ok": true, "owned_sandboxes": "", "resolved": true, "attribution": "passed", "harness_error": "unavailable", "test_exit_code": 0, "grading_ran": true, "patch_bytes": 97, "patch_touches_source": true, "patch_files": "pkg/module.py", "wall_s": 0.015, "agent_phase_s": 0.004300100030377507, "grading_phase_s": 0.0050740999868139625, "both_setup_imports_verified": true, "phase_status": "{\"agent\": \"passed\", \"grading\": \"passed\"}", "failure_class": "none", "agent_loop_s": 3.25, "termination_error": "unavailable", "duration_seconds_harness": 4.0, "tool_calls": "unavailable", "edit_calls": "unavailable", "shell_edit_hints": "unavailable", "repeated_identical_cmds": "unavailable", "tool_errors": "unavailable", "first_source_edit_attempt_step": "unavailable", "finish_reasons": "unavailable", "prompt_tokens": "unavailable", "completion_tokens": "unavailable", "successful_tool_calls": "unavailable", "rejected_tool_calls": "unavailable", "acknowledged_source_edit_calls": "unavailable", "tmp_scratch_writes": "unavailable", "repeated_identical_tool_calls": "unavailable", "unparsed_tool_call_texts": "unavailable", "tool_use_flags": "unavailable", "run_error": ""}
+{"candidate": "S", "task": "rich_3278", "attempted": true, "stop_reason": "", "grading_observed": true, "outcome": "ok", "outcome_reason": "", "cleanup_ok": true, "owned_sandboxes": "", "resolved": true, "attribution": "passed", "harness_error": "unavailable", "test_exit_code": 0, "grading_ran": true, "patch_bytes": 97, "patch_touches_source": true, "patch_files": "pkg/module.py", "wall_s": 0.02, "agent_phase_s": 0.005870199995115399, "grading_phase_s": 0.004266700008884072, "both_setup_imports_verified": true, "phase_status": "{\"agent\": \"passed\", \"grading\": \"passed\"}", "failure_class": "none", "agent_loop_s": 3.25, "termination_error": "unavailable", "duration_seconds_harness": 4.0, "tool_calls": "unavailable", "edit_calls": "unavailable", "shell_edit_hints": "unavailable", "repeated_identical_cmds": "unavailable", "tool_errors": "unavailable", "first_source_edit_attempt_step": "unavailable", "finish_reasons": "unavailable", "prompt_tokens": "unavailable", "completion_tokens": "unavailable", "successful_tool_calls": "unavailable", "rejected_tool_calls": "unavailable", "acknowledged_source_edit_calls": "unavailable", "tmp_scratch_writes": "unavailable", "repeated_identical_tool_calls": "unavailable", "unparsed_tool_call_texts": "unavailable", "tool_use_flags": "unavailable", "run_error": ""}
+{"candidate": "S", "task": "rich_3535", "attempted": true, "stop_reason": "", "grading_observed": true, "outcome": "ok", "outcome_reason": "", "cleanup_ok": true, "owned_sandboxes": "", "resolved": true, "attribution": "passed", "harness_error": "unavailable", "test_exit_code": 0, "grading_ran": true, "patch_bytes": 97, "patch_touches_source": true, "patch_files": "pkg/module.py", "wall_s": 0.017, "agent_phase_s": 0.0062541000079363585, "grading_phase_s": 0.004437499970663339, "both_setup_imports_verified": true, "phase_status": "{\"agent\": \"passed\", \"grading\": \"passed\"}", "failure_class": "none", "agent_loop_s": 3.25, "termination_error": "unavailable", "duration_seconds_harness": 4.0, "tool_calls": "unavailable", "edit_calls": "unavailable", "shell_edit_hints": "unavailable", "repeated_identical_cmds": "unavailable", "tool_errors": "unavailable", "first_source_edit_attempt_step": "unavailable", "finish_reasons": "unavailable", "prompt_tokens": "unavailable", "completion_tokens": "unavailable", "successful_tool_calls": "unavailable", "rejected_tool_calls": "unavailable", "acknowledged_source_edit_calls": "unavailable", "tmp_scratch_writes": "unavailable", "repeated_identical_tool_calls": "unavailable", "unparsed_tool_call_texts": "unavailable", "tool_use_flags": "unavailable", "run_error": ""}
+{"candidate": "A", "task": "rich_3535", "attempted": true, "stop_reason": "", "grading_observed": true, "outcome": "ok", "outcome_reason": "", "cleanup_ok": true, "owned_sandboxes": "", "resolved": true, "attribution": "passed", "harness_error": "unavailable", "test_exit_code": 0, "grading_ran": true, "patch_bytes": 97, "patch_touches_source": true, "patch_files": "pkg/module.py", "wall_s": 0.015, "agent_phase_s": 0.005119899986311793, "grading_phase_s": 0.004732400004286319, "both_setup_imports_verified": true, "phase_status": "{\"agent\": \"passed\", \"grading\": \"passed\"}", "failure_class": "none", "agent_loop_s": 3.25, "termination_error": "unavailable", "duration_seconds_harness": 4.0, "tool_calls": "unavailable", "edit_calls": "unavailable", "shell_edit_hints": "unavailable", "repeated_identical_cmds": "unavailable", "tool_errors": "unavailable", "first_source_edit_attempt_step": "unavailable", "finish_reasons": "unavailable", "prompt_tokens": "unavailable", "completion_tokens": "unavailable", "successful_tool_calls": "unavailable", "rejected_tool_calls": "unavailable", "acknowledged_source_edit_calls": "unavailable", "tmp_scratch_writes": "unavailable", "repeated_identical_tool_calls": "unavailable", "unparsed_tool_call_texts": "unavailable", "tool_use_flags": "unavailable", "run_error": ""}
+{"candidate": "A", "task": "rich_3675", "attempted": true, "stop_reason": "", "grading_observed": true, "outcome": "ok", "outcome_reason": "", "cleanup_ok": true, "owned_sandboxes": "", "resolved": true, "attribution": "passed", "harness_error": "unavailable", "test_exit_code": 0, "grading_ran": true, "patch_bytes": 97, "patch_touches_source": true, "patch_files": "pkg/module.py", "wall_s": 0.019, "agent_phase_s": 0.00713839998934418, "grading_phase_s": 0.00636360002681613, "both_setup_imports_verified": true, "phase_status": "{\"agent\": \"passed\", \"grading\": \"passed\"}", "failure_class": "none", "agent_loop_s": 3.25, "termination_error": "unavailable", "duration_seconds_harness": 4.0, "tool_calls": "unavailable", "edit_calls": "unavailable", "shell_edit_hints": "unavailable", "repeated_identical_cmds": "unavailable", "tool_errors": "unavailable", "first_source_edit_attempt_step": "unavailable", "finish_reasons": "unavailable", "prompt_tokens": "unavailable", "completion_tokens": "unavailable", "successful_tool_calls": "unavailable", "rejected_tool_calls": "unavailable", "acknowledged_source_edit_calls": "unavailable", "tmp_scratch_writes": "unavailable", "repeated_identical_tool_calls": "unavailable", "unparsed_tool_call_texts": "unavailable", "tool_use_flags": "unavailable", "run_error": ""}
+{"candidate": "S", "task": "rich_3675", "attempted": true, "stop_reason": "", "grading_observed": true, "outcome": "ok", "outcome_reason": "", "cleanup_ok": true, "owned_sandboxes": "", "resolved": true, "attribution": "passed", "harness_error": "unavailable", "test_exit_code": 0, "grading_ran": true, "patch_bytes": 97, "patch_touches_source": true, "patch_files": "pkg/module.py", "wall_s": 0.018, "agent_phase_s": 0.006920000014360994, "grading_phase_s": 0.005609799991361797, "both_setup_imports_verified": true, "phase_status": "{\"agent\": \"passed\", \"grading\": \"passed\"}", "failure_class": "none", "agent_loop_s": 3.25, "termination_error": "unavailable", "duration_seconds_harness": 4.0, "tool_calls": "unavailable", "edit_calls": "unavailable", "shell_edit_hints": "unavailable", "repeated_identical_cmds": "unavailable", "tool_errors": "unavailable", "first_source_edit_attempt_step": "unavailable", "finish_reasons": "unavailable", "prompt_tokens": "unavailable", "completion_tokens": "unavailable", "successful_tool_calls": "unavailable", "rejected_tool_calls": "unavailable", "acknowledged_source_edit_calls": "unavailable", "tmp_scratch_writes": "unavailable", "repeated_identical_tool_calls": "unavailable", "unparsed_tool_call_texts": "unavailable", "tool_use_flags": "unavailable", "run_error": ""}
+{"candidate": "S", "task": "rich_3942", "attempted": true, "stop_reason": "", "grading_observed": true, "outcome": "ok", "outcome_reason": "", "cleanup_ok": true, "owned_sandboxes": "", "resolved": true, "attribution": "passed", "harness_error": "unavailable", "test_exit_code": 0, "grading_ran": true, "patch_bytes": 97, "patch_touches_source": true, "patch_files": "pkg/module.py", "wall_s": 0.018, "agent_phase_s": 0.005600599979516119, "grading_phase_s": 0.0072533999918960035, "both_setup_imports_verified": true, "phase_status": "{\"agent\": \"passed\", \"grading\": \"passed\"}", "failure_class": "none", "agent_loop_s": 3.25, "termination_error": "unavailable", "duration_seconds_harness": 4.0, "tool_calls": "unavailable", "edit_calls": "unavailable", "shell_edit_hints": "unavailable", "repeated_identical_cmds": "unavailable", "tool_errors": "unavailable", "first_source_edit_attempt_step": "unavailable", "finish_reasons": "unavailable", "prompt_tokens": "unavailable", "completion_tokens": "unavailable", "successful_tool_calls": "unavailable", "rejected_tool_calls": "unavailable", "acknowledged_source_edit_calls": "unavailable", "tmp_scratch_writes": "unavailable", "repeated_identical_tool_calls": "unavailable", "unparsed_tool_call_texts": "unavailable", "tool_use_flags": "unavailable", "run_error": ""}
+{"candidate": "A", "task": "rich_3942", "attempted": true, "stop_reason": "", "grading_observed": true, "outcome": "ok", "outcome_reason": "", "cleanup_ok": true, "owned_sandboxes": "", "resolved": true, "attribution": "passed", "harness_error": "unavailable", "test_exit_code": 0, "grading_ran": true, "patch_bytes": 97, "patch_touches_source": true, "patch_files": "pkg/module.py", "wall_s": 0.023, "agent_phase_s": 0.010278699977789074, "grading_phase_s": 0.006785199977457523, "both_setup_imports_verified": true, "phase_status": "{\"agent\": \"passed\", \"grading\": \"passed\"}", "failure_class": "none", "agent_loop_s": 3.25, "termination_error": "unavailable", "duration_seconds_harness": 4.0, "tool_calls": "unavailable", "edit_calls": "unavailable", "shell_edit_hints": "unavailable", "repeated_identical_cmds": "unavailable", "tool_errors": "unavailable", "first_source_edit_attempt_step": "unavailable", "finish_reasons": "unavailable", "prompt_tokens": "unavailable", "completion_tokens": "unavailable", "successful_tool_calls": "unavailable", "rejected_tool_calls": "unavailable", "acknowledged_source_edit_calls": "unavailable", "tmp_scratch_writes": "unavailable", "repeated_identical_tool_calls": "unavailable", "unparsed_tool_call_texts": "unavailable", "tool_use_flags": "unavailable", "run_error": ""}
+
+cand       task             resolved  attribution            agent_s
+A          rich_3278        True      passed                 0.004300100030377507
+S          rich_3278        True      passed                 0.005870199995115399
+S          rich_3535        True      passed                 0.0062541000079363585
+A          rich_3535        True      passed                 0.005119899986311793
+A          rich_3675        True      passed                 0.00713839998934418
+S          rich_3675        True      passed                 0.006920000014360994
+S          rich_3942        True      passed                 0.005600599979516119
+A          rich_3942        True      passed                 0.010278699977789074
+
+Four tasks from ONE repository (Textualize/rich) are a narrow diagnostic, not a general
+ranking: any result here generalises to rich at best, and cannot say which candidate is
+better overall. Both preconditions and evaluation run on the SUBPROCESS backend, which is
+not a filesystem isolation boundary. agent_phase_s covers container-A setup plus the agent loop;
+grading_phase_s is container B. The harness duration_seconds bundles both and must not be
+multiplied to project the 12-hour scoring runtime.
+saved pilot_manifest.json and pilot_results.csv
+  PASS exactly eight evaluations
+  PASS run order
+  PASS dispatched in that order
+  PASS eight rows all attempted
+  PASS server started and stopped once
+
+[D] controls still gate the model server
+A/S config: {'max_time_minutes': 10.0, 'max_tool_calls': 100, 'max_turns': 60, 'timeout_seconds': 300} | session cap 300 min
+installing 1 wheels...
+{
+  "swegemma": "MISSING: PackageNotFoundError('swegemma')",
+  "adk-submission": "MISSING: PackageNotFoundError('adk-submission')",
+  "adk-eval-core": "MISSING: PackageNotFoundError('adk-eval-core')",
+  "google-adk": "MISSING: PackageNotFoundError('google-adk')",
+  "vllm": "MISSING: PackageNotFoundError('vllm')",
+  "transformers": "MISSING: PackageNotFoundError('transformers')",
+  "litellm": "1.96.2"
+}
+GPUs: 4 ['NVIDIA L4', 'NVIDIA L4', 'NVIDIA L4', 'NVIDIA L4']
+model revision dir: 2 | config sha256: b72dd2eaa6e277d6
+architectures: ['Gemma4ForConditionalGeneration']
+quantization: {"format": "pack-quantized", "num_bits": 4}
+loaded 4 tasks
+PILOT TASKS and the evidence they were chosen on:
+
+  rich_3278 Textualize/rich
+    negative  exit=0 cases=23 failed=16 errored=0
+              agent  import: unavailable (no agent ran in the control)
+              pytest import: /tmp/swegemma_sandbox_fbc86660-ea1_mbw02i_a/workspace/rich/__init__.py
+    positive  exit=0 cases=23 failed=0 errored=0
+              agent  import: unavailable (no agent ran in the control)
+              pytest import: /tmp/swegemma_sandbox_2c91183e-840_38s9ivy0/workspace/rich/__init__.py
+    baseline-fails / gold-passes / grading-import-in-checkout: False
+    agent-side import provenance: UNAVAILABLE (no agent ran in the control)
+    control patch_rc=0 test_patch_rc=0
+  PASS aborted
+  PASS no server created
+
+[E] a failed precondition still blocks startup
+A/S config: {'max_time_minutes': 10.0, 'max_tool_calls': 100, 'max_turns': 60, 'timeout_seconds': 300} | session cap 300 min
+installing 1 wheels...
+{
+  "swegemma": "MISSING: PackageNotFoundError('swegemma')",
+  "adk-submission": "MISSING: PackageNotFoundError('adk-submission')",
+  "adk-eval-core": "MISSING: PackageNotFoundError('adk-eval-core')",
+  "google-adk": "MISSING: PackageNotFoundError('google-adk')",
+  "vllm": "MISSING: PackageNotFoundError('vllm')",
+  "transformers": "MISSING: PackageNotFoundError('transformers')",
+  "litellm": "1.96.2"
+}
+GPUs: 4 ['NVIDIA L4', 'NVIDIA L4', 'NVIDIA L4', 'NVIDIA L4']
+model revision dir: 2 | config sha256: b72dd2eaa6e277d6
+architectures: ['Gemma4ForConditionalGeneration']
+quantization: {"format": "pack-quantized", "num_bits": 4}
+loaded 4 tasks
+PILOT TASKS and the evidence they were chosen on:
+
+  rich_3278 Textualize/rich
+    negative  exit=1 cases=23 failed=16 errored=0
+              agent  import: unavailable (no agent ran in the control)
+              pytest import: /tmp/swegemma_sandbox_fbc86660-ea1_mbw02i_a/workspace/rich/__init__.py
+    positive  exit=0 cases=23 failed=0 errored=0
+              agent  import: unavailable (no agent ran in the control)
+              pytest import: /tmp/swegemma_sandbox_2c91183e-840_38s9ivy0/workspace/rich/__init__.py
+    baseline-fails / gold-passes / grading-import-in-checkout: True
+    agent-side import provenance: UNAVAILABLE (no agent ran in the control)
+    control patch_rc=0 test_patch_rc=0
+    baseline failures: ['test_ansi::test_strip_private_escape_sequences[0]', 'test_ansi::test_strip_private_escape_sequences[1]', 'test_ansi::test_strip_private_escape_sequences[2]', 'test_ansi::test_strip_private_escape_sequences[3]']
+
+  rich_3535 Textualize/rich
+    negative  exit=1 cases=8 failed=1 errored=0
+              agent  import: unavailable (no agent ran in the control)
+              pytest import: /tmp/swegemma_sandbox_b9bb1fae-ea7_j4kmphm5/workspace/rich/__init__.py
+    positive  exit=0 cases=8 failed=0 errored=0
+              agent  import: unavailable (no agent ran in the control)
+              pytest import: /tmp/swegemma_sandbox_613d24b0-112_yqshur97/workspace/rich/__init__.py
+    baseline-fails / gold-passes / grading-import-in-checkout: True
+    agent-side import provenance: UNAVAILABLE (no agent ran in the control)
+    control patch_rc=0 test_patch_rc=0
+    baseline failures: ['test_cells::test_is_single_cell_widths']
+
+  rich_3675 Textualize/rich
+    negative  exit=1 cases=99 failed=1 errored=0
+              agent  import: unavailable (no agent ran in the control)
+              pytest import: /tmp/swegemma_sandbox_eee552f1-f25_sg8paafw/workspace/rich/__init__.py
+    positive  exit=0 cases=99 failed=0 errored=0
+              agent  import: unavailable (no agent ran in the control)
+              pytest import: /tmp/swegemma_sandbox_29800dba-55b_9nqi_yv4/workspace/rich/__init__.py
+    baseline-fails / gold-passes / grading-import-in-checkout: True
+    agent-side import provenance: UNAVAILABLE (no agent ran in the control)
+    control patch_rc=0 test_patch_rc=0
+    baseline failures: ['test_console::test_tty_compatible']
+
+  rich_3942 Textualize/rich
+    negative  exit=1 cases=8 failed=6 errored=0
+              agent  import: unavailable (no agent ran in the control)
+              pytest import: /tmp/swegemma_sandbox_cb7391fe-ddf_sauv1peb/workspace/rich/__init__.py
+    positive  exit=0 cases=8 failed=0 errored=0
+              agent  import: unavailable (no agent ran in the control)
+              pytest import: /tmp/swegemma_sandbox_58f2d1f1-b18_zzqdtsd6/workspace/rich/__init__.py
+    baseline-fails / gold-passes / grading-import-in-checkout: True
+    agent-side import provenance: UNAVAILABLE (no agent ran in the control)
+    control patch_rc=0 test_patch_rc=0
+    baseline failures: ['test_markdown::test_inline_styles_in_table', 'test_markdown::test_inline_styles_with_justification', 'test_markdown::test_markdown_render', 'test_markdown::test_markdown_table']
+prompt leakage: CLEAN (0 lines came from the issue text)
+LIMITATION: this is a data-flow check. The subprocess backend runs run_command on the host, so
+answer-key files remain reachable; traces must be audited for contamination before trusting a run.
+A: sha256=b8da59c1c3a0671b model=gemma-4-31b-it-qat-w4a16-ct
+S: sha256=8bf9f72c5d7ac474 model=gemma-4-31b-it-qat-w4a16-ct
+A vs B sampling delta: []
+prompts/system.md is the ONLY difference: A=7745B S=2598B
+every other file is byte-identical between A and S
+repair bound on agent_runner, verification, container_setup (idempotent)
+NOTE: a pip success message alone is not proof; the preconditions below check what actually loads.
+  PASS aborted
+  PASS no server created
+
+20 passed, 0 failed

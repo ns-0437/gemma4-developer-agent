@@ -1,0 +1,89 @@
+{
+  "frozen_utc": "2026-09-29",
+  "selected_before_any_model_outcome": true,
+  "protected_holdout": [
+    "rich_3180",
+    "rich_3938",
+    "rich_3894",
+    "fastapi_15280",
+    "fastapi_14873",
+    "fastapi_13537",
+    "requests_7427",
+    "rich_3486",
+    "rich_3521",
+    "fastapi_15800",
+    "fastapi_14479",
+    "requests_6644"
+  ],
+  "dev_eligible_pool_size": 8,
+  "dev_pool_repos": {
+    "Textualize/rich": 8
+  },
+  "coverage_shortfall": "dev-eligible pool is 100% Textualize/rich; all 7 valid fastapi/requests tasks are in the protected hold-out and were NOT moved",
+  "tasks": {
+    "rich_3278": {
+      "repo": "Textualize/rich",
+      "size": "small",
+      "n_target_nodes": 16,
+      "target_nodes": [
+        "test_ansi::test_strip_private_escape_sequences[0]",
+        "test_ansi::test_strip_private_escape_sequences[1]",
+        "test_ansi::test_strip_private_escape_sequences[2]",
+        "test_ansi::test_strip_private_escape_sequences[3]",
+        "test_ansi::test_strip_private_escape_sequences[4]",
+        "test_ansi::test_strip_private_escape_sequences[5]",
+        "test_ansi::test_strip_private_escape_sequences[6]",
+        "test_ansi::test_strip_private_escape_sequences[7]",
+        "test_ansi::test_strip_private_escape_sequences[8]",
+        "test_ansi::test_strip_private_escape_sequences[9]",
+        "test_ansi::test_strip_private_escape_sequences[:]",
+        "test_ansi::test_strip_private_escape_sequences[;]",
+        "test_ansi::test_strip_private_escape_sequences[<]",
+        "test_ansi::test_strip_private_escape_sequences[=]",
+        "test_ansi::test_strip_private_escape_sequences[>]",
+        "test_ansi::test_strip_private_escape_sequences[?]"
+      ],
+      "task_sha256": "8fb8127fdb3e069ae02db8a0e3d2e5306b96e7d42a1ab7c3185da2e269cd61bf",
+      "baseline_exit": 1,
+      "reference_exit": 0
+    },
+    "rich_3535": {
+      "repo": "Textualize/rich",
+      "size": "small",
+      "n_target_nodes": 1,
+      "target_nodes": [
+        "test_cells::test_is_single_cell_widths"
+      ],
+      "task_sha256": "3c70ac67cc8e78d329459615dd6db711e2715b92f6da4632cc4905f1faf0ad18",
+      "baseline_exit": 1,
+      "reference_exit": 0
+    },
+    "rich_3675": {
+      "repo": "Textualize/rich",
+      "size": "medium",
+      "n_target_nodes": 1,
+      "target_nodes": [
+        "test_console::test_tty_compatible"
+      ],
+      "task_sha256": "d651989d2710c16333584401276a29f5c36026b5fff3407204f53d550f3176fb",
+      "baseline_exit": 1,
+      "reference_exit": 0
+    },
+    "rich_3942": {
+      "repo": "Textualize/rich",
+      "size": "large",
+      "n_target_nodes": 6,
+      "target_nodes": [
+        "test_markdown::test_inline_styles_in_table",
+        "test_markdown::test_inline_styles_with_justification",
+        "test_markdown::test_markdown_render",
+        "test_markdown::test_markdown_table",
+        "test_markdown::test_partial_table",
+        "test_markdown_no_hyperlinks::test_markdown_render"
+      ],
+      "task_sha256": "b626009683a3a55af3ad72e8a4cc9cd629cb24444a2c404c073a87778b8148b8",
+      "baseline_exit": 1,
+      "reference_exit": 0
+    }
+  }
+}

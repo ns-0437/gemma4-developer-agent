@@ -1,0 +1,198 @@
+{
+  "authorization": "user, 2026-09-30: exactly one eight-run A/S GPU comparison using prepared notebook 92cb1f0b7fe6fdc9a5c14f1ccb0a7e33edf9a1ca6a6d8dbb3f664ff719599279",
+  "recorded_utc": "2026-09-30T15:05:38.629285+00:00",
+  "kaggle_account": "navin03",
+  "gpu_quota_before_launch": {
+    "used": "02:49",
+    "limit": "30 hrs",
+    "source": "kaggle.com/settings",
+    "read_utc": "2026-09-30T15:03Z",
+    "note": "remaining ~27h11m; prior readings 02:25 then 02:49"
+  },
+  "authorized_notebook_hash_verified": true,
+  "notebook": {
+    "path": "notebooks/ab_s/ab_s.ipynb",
+    "disabled_sha256": "92cb1f0b7fe6fdc9a5c14f1ccb0a7e33edf9a1ca6a6d8dbb3f664ff719599279",
+    "armed_sha256": "86d1c83bb203a1000c205d8913df59abcf83f86c584e66eb2ceba1e3e5a5a649",
+    "diff_between_them": "exactly one line, DISPATCH_CONFIRM False -> True; 13 cells each, notebook metadata identical, verified cell by cell",
+    "kernel": "navin03/gemma4-swe-agent-ab-s",
+    "private": true,
+    "internet": false,
+    "gpu": "NvidiaL4",
+    "session_cap_min": 300,
+    "run_reserve_min": 25,
+    "budgets": {
+      "max_time_minutes": 10.0,
+      "max_tool_calls": 100,
+      "max_turns": 60,
+      "timeout_seconds": 300
+    },
+    "run_order": [
+      [
+        "rich_3278",
+        "A"
+      ],
+      [
+        "rich_3278",
+        "S"
+      ],
+      [
+        "rich_3535",
+        "S"
+      ],
+      [
+        "rich_3535",
+        "A"
+      ],
+      [
+        "rich_3675",
+        "A"
+      ],
+      [
+        "rich_3675",
+        "S"
+      ],
+      [
+        "rich_3942",
+        "S"
+      ],
+      [
+        "rich_3942",
+        "A"
+      ]
+    ]
+  },
+  "candidates": {
+    "A": {
+      "dir": "experiments/ab_v3_vs_short/candidate_A",
+      "note": "byte-identical to releases/v3, submitted ref 56636116, public LB 0.06",
+      "system_md_sha256": "4d42f2b7d48143cd06c31fe4c33b17a3f78da21ec2c53d9569cf6a336f6e5e79",
+      "zip_sha256": "b8da59c1c3a0671bb9b11b2fe4238a252ff792a63abf7ea4b5d555ceab57b24b"
+    },
+    "S": {
+      "dir": "experiments/concise_workflow_v1/candidate_S",
+      "system_md_sha256": "39b2541c2220cc7655c576bb4ae7ac7e03200a72f2f1e518313068fc93be3b91",
+      "zip_sha256": "8bf9f72c5d7ac4747e10c53637393bd7b18a6b66aae1879ddf4a62f4e4a6dc07",
+      "differs_from_A_in": [
+        "prompts/system.md"
+      ]
+    }
+  },
+  "holdout_guard": {
+    "function": "make_compare_notebook.assert_tasks_not_held_out",
+    "task_freeze_sha256": "220869409441c04d7c8f32ef5ab141df02f754cce352495deeb48995a7483b4b",
+    "freeze_modified": false,
+    "result": "4 selected tasks disjoint from 12 protected tasks"
+  },
+  "focused_checks": {
+    "armed_execution_checks": "20 passed, 0 failed",
+    "log": "experiments/concise_workflow_v1/armed_execution_checks.txt"
+  },
+  "estimated_runtime": "~130 minutes; an estimate, not a bound",
+  "constraints": [
+    "no automatic retry",
+    "no additional experiment",
+    "no competition submission",
+    "no continuous polling",
+    "push exactly once"
+  ],
+  "scope_caveat": "Four selected Textualize/rich development tasks. Not the repository generally and not the competition leaderboard.",
+  "push": {
+    "attempted": true,
+    "pushed_utc": "2026-09-30T15:06:08.521749+00:00",
+    "kernel_version": 1,
+    "result": "Kernel version 1 successfully pushed",
+    "pushes_made": 1,
+    "url": "https://www.kaggle.com/code/navin03/gemma4-swe-agent-ab-s"
+  },
+  "result": {
+    "checked_utc": "2026-10-01T00:31:24Z",
+    "kaggle_status": "COMPLETE",
+    "session_wall_s": 2898,
+    "artifacts_dir": "reference/ab_s_run_2026-10-01",
+    "raw_manifest": "reference/ab_s_review/raw_sha256.json",
+    "n_raw_files": 69,
+    "report": "reference/ab_s_review/AB_S_REPORT.md",
+    "identity_verified": {
+      "notebook": true,
+      "candidate_A": true,
+      "candidate_S": true,
+      "run_order": true
+    },
+    "rows": {
+      "planned": 8,
+      "executed": 8,
+      "missing": 0,
+      "aborted": 0
+    },
+    "instrument": {
+      "control_arms_agreeing": "8/8",
+      "preconditions": "4/4 ok",
+      "agent_provenance": "8/8",
+      "grading_provenance": "2/8 observed; the other 6 never reached grading",
+      "cleanup": "8/8",
+      "environment_failures": 0,
+      "provenance_failures": 0,
+      "candidate_failures": 6
+    },
+    "per_candidate": {
+      "A": {
+        "solved": 0,
+        "graded_unsolved": 1,
+        "ungraded": 3,
+        "not_attempted": 0
+      },
+      "S": {
+        "solved": 1,
+        "graded_unsolved": 0,
+        "ungraded": 3,
+        "not_attempted": 0
+      }
+    },
+    "paired": {
+      "S_win": 1,
+      "A_win": 0,
+      "tie": 0,
+      "undecided": 3,
+      "note": "an ungraded side makes the pair undecided, not an opponent win"
+    },
+    "decided_pair": {
+      "task": "rich_3675",
+      "A": "633-byte patch, grading exit 1, not resolved",
+      "S": "772-byte patch, grading exit 0, RESOLVED",
+      "difference": "S distinguished TTY_COMPATIBLE 1 from 0 and placed the check before FORCE_COLOR; A treated any value as a terminal"
+    },
+    "runtime_agent_loop_s": {
+      "A": {
+        "total": 947,
+        "mean": 237
+      },
+      "S": {
+        "total": 652,
+        "mean": 163
+      },
+      "note": "within the 10-minute per-run budget; the four-task mean is not used to project competition runtime"
+    },
+    "repetition": {
+      "consecutive_identical_calls": {
+        "A/rich_3278": 51,
+        "S/rich_3278": 42,
+        "S/rich_3535": 42,
+        "A/rich_3535": 35,
+        "A/rich_3675": 0,
+        "S/rich_3675": 0,
+        "S/rich_3942": 0,
+        "A/rich_3942": 10
+      },
+      "note": "the concise prompt did not eliminate repetition; 6 of 8 runs exhausted 60 turns"
+    },
+    "answer_key_audit": {
+      "traces_present": "8/8",
+      "gold_or_taskfile_hits": 0,
+      "harness_internal_hits": "5 runs, all inspected and benign sandbox paths in output",
+      "caveat": "absence of a hit is not proof of isolation; subprocess runs run_command on the host"
+    },
+    "recommendation": "Do not submit S on this evidence. One verified solve on one of four selected Rich tasks, three pairs undecided, no regression observed. The binding problem is that 6 of 8 runs exhausted the turns budget without a patch. Next step proposed: offline analysis of those turns-budget traces before any further GPU session.",
+    "no_score_prediction": true
+  }
+}

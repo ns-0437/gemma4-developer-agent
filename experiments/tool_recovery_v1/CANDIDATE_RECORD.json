@@ -1,0 +1,129 @@
+{
+  "recorded": "2026-09-30",
+  "revision": 3,
+  "previous_revision_preserved": "experiments/tool_recovery_v1/candidate_R_rev1",
+  "baseline": {
+    "dir": "experiments/ab_v3_vs_short/candidate_A",
+    "note": "byte-identical to releases/v3, submitted ref 56636116, public LB 0.06",
+    "system_md_sha256": "4d42f2b7d48143cd06c31fe4c33b17a3f78da21ec2c53d9569cf6a336f6e5e79"
+  },
+  "candidate": {
+    "dir": "experiments/tool_recovery_v1/candidate_R",
+    "system_md_sha256": "74a12c7d241371f7e8a26aad9b061780bac2a5c8c5b8fd4fd9ed80f5eedea8c3",
+    "files_differing_from_baseline": [
+      "prompts/system.md"
+    ],
+    "system_md_words": {
+      "A": 1247,
+      "R_rev3": 1777
+    }
+  },
+  "rev1": {
+    "system_md_sha256": "a495b4ece2ee384c0bfe058e15088c84ac6f42a757289850c282a169ba59195b"
+  },
+  "rev2_changes": [
+    "write_file allowed only after the complete untruncated file is read and all unaffected content can be preserved; otherwise route to the scripted edit",
+    "scripted edit must assert the anchor occurs exactly once BEFORE writing, then read git diff and run py_compile, with git checkout -- named as the undo",
+    "step 1 must confirm anchor uniqueness with git grep -c -F first",
+    "removed any implication that fewer required arguments serialise better"
+  ],
+  "unchanged": [
+    "agent.yaml",
+    "configs/sampling.yaml",
+    "sub_agents/code_analyzer.yaml",
+    "prompts/analyzer.md",
+    "model",
+    "sampling",
+    "budgets",
+    "task selection",
+    "held-out set"
+  ],
+  "official_compiler": "OFFICIAL COMPILE OK: candidate_R (rev3)",
+  "local_validator": "OK: 5 files, 0.01 MB",
+  "coder_instruction_chars": {
+    "A": 7729,
+    "R_rev2": 10159,
+    "R_rev3": 10917
+  },
+  "effective_generation_config_identical_to_A": true,
+  "stage1_notebook": {
+    "path": "notebooks/stage1/stage1.ipynb",
+    "sha256": "695cad7b6efb6edaa899b95cebc063bf8c934b0922ea247d4088212753c196a0",
+    "kernel": "navin03/gemma4-swe-agent-stage1",
+    "dispatch_confirm": false,
+    "runs_planned": 1,
+    "order": "[(rich_3278, R)]",
+    "candidate_A_dispatched": false,
+    "session_cap_min": 90,
+    "automatic_stage_2": false
+  },
+  "offline_tests": {
+    "test_review_stage1.py": "98 passed, 0 failed",
+    "test_stage1_notebook.py": "38 passed, 0 failed",
+    "test_recovery_candidate.py": "75 passed, 0 failed",
+    "test_compare_dispatch.py": "137 passed, 0 failed",
+    "test_trace_metrics.py": "77 passed, 0 failed",
+    "test_stop_logic.py": "22 passed, 0 failed",
+    "test_pilot_notebook.py": "82 passed, 0 failed",
+    "test_gemma4_parser_findings.py": "29 passed, 0 failed",
+    "test_review_compare_results.py": "97 passed, 0 failed",
+    "test_evalset_policy.py": "45 passed, 0 failed",
+    "mutate_stage1_guards.py": "22 mutations, 22 caught"
+  },
+  "compare_notebook_regenerated_identical": "029bb41f7405aabee2d96a928651c87a11f698f4fddc65cf1e00186d76cc3796",
+  "host_wheel_vs_upstream": {
+    "host_bytes": 433132506,
+    "pypi_bytes": 433132101,
+    "identical": false,
+    "note": "differs by 405 bytes; whether the parser file differs is NOT established"
+  },
+  "gpu": {
+    "launched": false,
+    "authorized": false
+  },
+  "submission": {
+    "pushed": false,
+    "submitted": false
+  },
+  "exploratory_decisions": [],
+  "previous_revisions_preserved": [
+    "experiments/tool_recovery_v1/candidate_R_rev1",
+    "experiments/tool_recovery_v1/candidate_R_rev2"
+  ],
+  "rev_hashes": {
+    "A": "4d42f2b7d48143cd06c31fe4c33b17a3f78da21ec2c53d9569cf6a336f6e5e79",
+    "R_rev1": "a495b4ece2ee384c0bfe058e15088c84ac6f42a757289850c282a169ba59195b",
+    "R_rev2": "c953913bc5d8e7ba3add982b3385f048646b2b981b0edc942c6bf3a62cff80e5",
+    "R_rev3": "74a12c7d241371f7e8a26aad9b061780bac2a5c8c5b8fd4fd9ed80f5eedea8c3"
+  },
+  "rev3_changes": [
+    "item 1: removed the git grep -c -F first-line uniqueness count; the scripted check is now assert old and s.count(old) == 1 over the whole block, and the contradictory line-count instruction is gone",
+    "item 2: a unique /tmp backup is taken before a recovery write and restored on a wrong attempt, instead of git checkout -- which would discard earlier valid edits to the same file",
+    "item 2: read_bytes/write_bytes preserve encoding and line endings",
+    "item 2: the diff is reviewed in bounded sections until empty instead of head -40",
+    "item 2: py_compile is applied only to .py files"
+  ],
+  "reviewer": {
+    "script": "scripts/review_stage1.py",
+    "sha256": "9a1560362d787be4c6b5185062b3cee3278eb1f52e699d1f90c13de4555214f5",
+    "pinned_notebook_sha256": "695cad7b6efb6edaa899b95cebc063bf8c934b0922ea247d4088212753c196a0",
+    "pin_update_rule": "arming flips DISPATCH_CONFIRM and changes the notebook bytes; update the pin deliberately and record both values",
+    "false_positives_fixed_2026_09_30": [
+      "recovery: a successful read_file after a rejection counted as recovery if the path appeared in the patch. Read-only tools now never qualify; an explicitly successful MODIFYING operation is required, its target must match a changed source path EXACTLY after normalisation, and the tool's own change evidence (edit_file diff, or write_file filepath+size) must tie it to the patch. Without that: 'consistent with recovery; attribution unproven'.",
+      "patch validity: absent agent_patch_size was tolerated and a diff header alone passed as a source patch. The recorded size must exist, be an int, and equal the preserved text; header-only, malformed-hunk and count-mismatched patches are rejected; syntactic validity, application evidence and actual source change are now three separate properties."
+    ],
+    "other_corrections": [
+      "provenance: BOTH agent and grading phases must carry a successful observation before the graded path is called verified",
+      "identity: duplicate control arms, off-plan runs and a mismatched manifest run order now ABORT rather than warn",
+      "a missing submission is reported as grading UNOBSERVED, kept separate from a demonstrated instrument fault",
+      "a refusal from the notebook's own REPORT cell is recorded as an artifact finding instead of crashing the reviewer",
+      "the synthetic SOURCE_PATCH fixture had inconsistent hunk counts and is now a valid patch"
+    ]
+  },
+  "frozen_unchanged": {
+    "releases/compare_v1_launched/compare.ipynb": "532d3f7e6be6bd4fcf7035b0d4af741820f40fa553c00025ca3c3156f781f15b",
+    "releases/compare_v2_prepared/compare.ipynb": "97873af2210b0f26276efce30c14d1b4c0491320f008e983c20c174328bfdbbc",
+    "notebooks/compare/compare.ipynb": "029bb41f7405aabee2d96a928651c87a11f698f4fddc65cf1e00186d76cc3796"
+  },
+  "candidate_unchanged_this_round": true
+}

@@ -1,0 +1,126 @@
+{
+  "authorization": "user, 2026-09-30: exactly one Stage-1 GPU run, candidate R on rich_3278, push exactly once",
+  "recorded_utc": "2026-09-30T05:31:16.398879+00:00",
+  "kaggle_account": "navin03",
+  "gpu_quota_before_launch": {
+    "used": "02:25",
+    "limit": "30 hrs",
+    "source": "kaggle.com/settings",
+    "read_utc": "2026-09-30T05:26:32Z"
+  },
+  "reviewer_correction_before_launch": "a write_file acknowledgment (filepath plus size) no longer counts as change evidence: it cannot distinguish a real change from a no-op write of identical bytes. Only edit_file's own reported diff is before/after evidence. Consequence, stated up front: candidate R's ladder runs edit_file -> write_file -> run_command, and neither later step can supply before/after evidence, so on this run the best reachable recovery verdict is 'consistent with recovery; attribution unproven'.",
+  "candidate": {
+    "dir": "experiments/tool_recovery_v1/candidate_R",
+    "revision": 3,
+    "system_md_sha256": "74a12c7d241371f7e8a26aad9b061780bac2a5c8c5b8fd4fd9ed80f5eedea8c3",
+    "differs_from_A_in": [
+      "prompts/system.md"
+    ],
+    "official_compiler": "OFFICIAL COMPILE OK"
+  },
+  "notebook": {
+    "path": "notebooks/stage1/stage1.ipynb",
+    "disabled_sha256": "695cad7b6efb6edaa899b95cebc063bf8c934b0922ea247d4088212753c196a0",
+    "armed_sha256": "775d88dfe3b91ee8b4d5b30cffdd9f2957556b1f045f2b87a1a6b4e3aacd3158",
+    "diff_between_them": "exactly one line, DISPATCH_CONFIRM False -> True; 13 cells each, notebook metadata identical, verified cell by cell",
+    "kernel": "navin03/gemma4-swe-agent-stage1",
+    "private": true,
+    "internet": false,
+    "gpu": "NvidiaL4",
+    "task_ids": [
+      "rich_3278"
+    ],
+    "order": "[(rich_3278, R)]",
+    "candidate_A_embedded_for_isolation_only": true,
+    "session_cap_min": 90,
+    "run_reserve_min": 25,
+    "budgets": {
+      "max_time_minutes": 10.0,
+      "max_tool_calls": 100,
+      "max_turns": 60,
+      "timeout_seconds": 300
+    }
+  },
+  "reviewer_pin": {
+    "script": "scripts/review_stage1.py",
+    "pinned_to": "775d88dfe3b91ee8b4d5b30cffdd9f2957556b1f045f2b87a1a6b4e3aacd3158",
+    "previous_pin": "695cad7b6efb6edaa899b95cebc063bf8c934b0922ea247d4088212753c196a0",
+    "both_values_recorded_in_source": true
+  },
+  "pre_launch_tests": {
+    "test_review_stage1.py": "104 passed, 0 failed",
+    "test_stage1_notebook.py": "41 passed, 0 failed",
+    "test_recovery_candidate.py": "75 passed, 0 failed",
+    "test_compare_dispatch.py": "137 passed, 0 failed",
+    "test_trace_metrics.py": "77 passed, 0 failed",
+    "test_stop_logic.py": "22 passed, 0 failed",
+    "test_pilot_notebook.py": "82 passed, 0 failed",
+    "test_gemma4_parser_findings.py": "29 passed, 0 failed",
+    "test_review_compare_results.py": "97 passed, 0 failed",
+    "test_evalset_policy.py": "45 passed, 0 failed",
+    "mutate_stage1_guards.py": "23 mutations, 23 caught"
+  },
+  "frozen_unchanged": {
+    "releases/compare_v1_launched/compare.ipynb": "532d3f7e6be6bd4fcf7035b0d4af741820f40fa553c00025ca3c3156f781f15b",
+    "releases/compare_v2_prepared/compare.ipynb": "97873af2210b0f26276efce30c14d1b4c0491320f008e983c20c174328bfdbbc",
+    "notebooks/compare/compare.ipynb": "029bb41f7405aabee2d96a928651c87a11f698f4fddc65cf1e00186d76cc3796",
+    "experiments/ab_v3_vs_short/candidate_A/prompts/system.md": "4d42f2b7d48143cd06c31fe4c33b17a3f78da21ec2c53d9569cf6a336f6e5e79"
+  },
+  "constraints": [
+    "no automatic retry",
+    "no Stage 2",
+    "no competition submission",
+    "no continuous polling",
+    "push exactly once"
+  ],
+  "push": {
+    "attempted": true,
+    "pushed_utc": "2026-09-30T05:31:41.316399+00:00",
+    "kernel_version": 1,
+    "result": "Kernel version 1 successfully pushed",
+    "url": "https://www.kaggle.com/code/navin03/gemma4-swe-agent-stage1",
+    "pushes_made": 1
+  },
+  "result": {
+    "recorded_utc": "2026-09-30T13:46:58.884141+00:00",
+    "kernel_version": 1,
+    "kaggle_status": "successful (page: 12m 7s, GPU L4 x4, 727.3 s, 24 output files)",
+    "artifacts_dir": "reference/stage1_run_2026-09-30",
+    "raw_hashes": "reference/stage1_review/raw_sha256.json (25 files, recorded before analysis)",
+    "reviewer_report": "reference/stage1_review/stage1_review.json",
+    "stage1_passed": false,
+    "instrument": {
+      "controls": "both arms re-validated, agree with saved, 23 nodes each, 16 targets, cleanup ok",
+      "agent_provenance": "verified inside the workspace",
+      "grading_provenance": "NEVER OBSERVED because grading never ran",
+      "cleanup": true,
+      "identity": "single frozen run, manifest matches"
+    },
+    "candidate_reliability": {
+      "tool_calls": 60,
+      "rejected_tool_calls": 0,
+      "repeated_identical_tool_calls": 54,
+      "acknowledged_source_edit_calls": 0,
+      "distinct_payloads": 5,
+      "dominant_repeat": "one python3 -c regex probe issued 56 times",
+      "termination": "Agent exceeded turns budget (60 turns)",
+      "missing_submission": false,
+      "recovery_verdict": "recovery unproven: no rejected call in the trace"
+    },
+    "task_performance": {
+      "patch_bytes": 0,
+      "agent_patch_size": 0,
+      "test_exit_code": -1,
+      "resolved": false,
+      "graded": false,
+      "agent_loop_s": 158.3,
+      "wall_s": 183.6,
+      "session_runtime_s": 727.3
+    },
+    "reading": [
+      "An ungraded run is not a scored failure.",
+      "Zero rejections occurred, so the recovery rule was never triggered and this run says nothing about whether it helps.",
+      "No comparison with A is made or implied."
+    ]
+  }
+}

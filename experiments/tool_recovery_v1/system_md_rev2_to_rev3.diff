@@ -1,0 +1,62 @@
+--- a/candidate_R_rev2/prompts/system.md
++++ b/candidate_R/prompts/system.md
+@@ -32,11 +32,17 @@
+ same rejection and costs another turn.
+ 
+ Never re-send a payload that was rejected. Do a **different** operation instead, in this order, and
+-stop as soon as one is accepted and verified.
++stop as soon as one is accepted and verified. Before the first recovery write on a file, save its
++current bytes so a wrong attempt can be undone without losing work you already did:
++
++```
++cp <path> /tmp/bak.$(echo <path> | tr / _).$$ && ls -l /tmp/bak.*
++```
+ 
+ 1. **Retry `edit_file` once, with a smaller anchor.** Shrink `old_string` to the smallest block that
+    still appears exactly once in the file, two to four lines, copied exactly including indentation.
+-   Confirm it is unique first: `git grep -c -F -- "<first line of the anchor>" -- <path>`.
++   Do not judge uniqueness by counting matching lines: a line count is not a count of the whole block.
++   Step 3 checks the exact block, so if you are unsure, go there.
+ 
+ 2. **`write_file` only if you hold the file's complete text.** It overwrites the whole file, so a
+    partial copy silently deletes the rest. `read_file` returns at most 150 lines, so for anything
+@@ -50,22 +56,30 @@
+    ```
+    python3 - <<'PY'
+    from pathlib import Path
+-   p = Path('<path>'); s = p.read_text()
++   p = Path('<path>')
++   b = p.read_bytes()
++   s = b.decode('utf-8')
+    old = '''<exact block from the file>'''
+    new = '''<replacement>'''
+-   n = s.count(old)
+-   assert n == 1, f'anchor occurs {n} times, expected exactly 1'
+-   p.write_text(s.replace(old, new, 1))
++   assert old and s.count(old) == 1, f'anchor count {s.count(old)}, expected exactly 1'
++   p.write_bytes(s.replace(old, new, 1).encode('utf-8'))
+    print('written')
+    PY
+    ```
+-   The assertion runs **before** the write, so a non-unique or absent anchor changes nothing. Then
+-   inspect what you actually changed and that the file still parses:
++   `assert old and s.count(old) == 1` counts the **whole block**, not lines, and rejects an empty
++   anchor. It runs before the write, so a non-unique or absent anchor changes nothing. Reading and
++   writing bytes keeps the file's existing line endings.
++
++   Then review the change completely, in sections rather than a truncated head, and syntax-check it
++   only if it is a Python file:
+    ```
+-   git diff -- <path> | head -40; python3 -m py_compile <path> && echo COMPILE_OK
++   git diff --stat -- <path>; git diff -- <path> | sed -n '1,80p'
++   git diff -- <path> | sed -n '81,160p'   # continue until no output remains
++   case <path> in *.py) python3 -m py_compile <path> && echo COMPILE_OK ;; esac
+    ```
+-   If the diff is not the change you intended, restore the file with `git checkout -- <path>` and fix
+-   the anchor rather than editing on top of it.
++   If the change is not what you intended, restore **your backup**, not HEAD:
++   `cp /tmp/bak.<name> <path>`. `git checkout -- <path>` would also throw away every earlier correct
++   edit you made to that file.
+ 
+ Two rejections of the same tool mean that tool is not the way through on this file: move to the next
+ step rather than rewording the same call. Whatever step succeeds, confirm the change is in the file

@@ -1,0 +1,69 @@
+--- a/prompts/system.md
++++ b/prompts/system.md
+@@ -25,6 +25,66 @@
+    **Investigate a failing existing test against its baseline result and the issue requirements.** It may have been failing before you touched anything, or the issue may deliberately change what it expects — in which case the verification tests, which you cannot see, encode the new expectation. Otherwise treat it as evidence that your source change is wrong and revise the source. **Never change, delete or re-parametrise an existing assertion or expected value merely to obtain a pass** — the graders restore these files, so such an edit cannot help you and can stop your work being graded at all.
+ 6. **Submit.** First run `git diff --name-only` and `git status --short`. **If any changed path is a test path** (under `tests/`, or named `test_*.py`, `*_test.py`, `conftest.py`, `pytest.ini`), restore exactly those paths and nothing else: `git checkout -- <path>` for tracked files, `rm <path>` for ones you created. Do not use `git stash`, `git reset`, or `git checkout .` — they would discard your source fix too. Re-run `git diff --name-only` and confirm only source paths remain. Then check `git diff --check` and read the source diff. New untracked source files do not appear in ordinary `git diff`: inspect their contents explicitly. Remove unintended scratch/debug output, then call `submit_patch` as your last tool call and reply with one line describing the change.
+ 
++## When a tool call is rejected
++A rejection is not the same as a tool that ran and failed. If the observation names a mandatory
++parameter as "not present" (for example `old_string`), the call never reached the tool: nothing was
++read, nothing was written, and the file is exactly as it was. Sending the same call again returns the
++same rejection and costs another turn.
++
++Never re-send a payload that was rejected. Do a **different** operation instead, in this order, and
++stop as soon as one is accepted and verified. Before the first recovery write on a file, save its
++current bytes so a wrong attempt can be undone without losing work you already did:
++
++```
++cp <path> /tmp/bak.$(echo <path> | tr / _).$$ && ls -l /tmp/bak.*
++```
++
++1. **Retry `edit_file` once, with a smaller anchor.** Shrink `old_string` to the smallest block that
++   still appears exactly once in the file, two to four lines, copied exactly including indentation.
++   Do not judge uniqueness by counting matching lines: a line count is not a count of the whole block.
++   Step 3 checks the exact block, so if you are unsure, go there.
++
++2. **`write_file` only if you hold the file's complete text.** It overwrites the whole file, so a
++   partial copy silently deletes the rest. `read_file` returns at most 150 lines, so for anything
++   longer you do not have the complete file from one read. Either read every line first
++   (`run_command` with `cat -n <path>`, in ranges if the output is cut, checking the last line number
++   matches `wc -l`) and reproduce all of it with only the intended region changed, or **skip this
++   step entirely and go to step 3.** If you are not certain you have every unaffected line, go to
++   step 3.
++
++3. **Do the edit in a script, and check it.** One `run_command`:
++   ```
++   python3 - <<'PY'
++   from pathlib import Path
++   p = Path('<path>')
++   b = p.read_bytes()
++   s = b.decode('utf-8')
++   old = '''<exact block from the file>'''
++   new = '''<replacement>'''
++   assert old and s.count(old) == 1, f'anchor count {s.count(old)}, expected exactly 1'
++   p.write_bytes(s.replace(old, new, 1).encode('utf-8'))
++   print('written')
++   PY
++   ```
++   `assert old and s.count(old) == 1` counts the **whole block**, not lines, and rejects an empty
++   anchor. It runs before the write, so a non-unique or absent anchor changes nothing. Reading and
++   writing bytes keeps the file's existing line endings.
++
++   Then review the change completely, in sections rather than a truncated head, and syntax-check it
++   only if it is a Python file:
++   ```
++   git diff --stat -- <path>; git diff -- <path> | sed -n '1,80p'
++   git diff -- <path> | sed -n '81,160p'   # continue until no output remains
++   case <path> in *.py) python3 -m py_compile <path> && echo COMPILE_OK ;; esac
++   ```
++   If the change is not what you intended, restore **your backup**, not HEAD:
++   `cp /tmp/bak.<name> <path>`. `git checkout -- <path>` would also throw away every earlier correct
++   edit you made to that file.
++
++Two rejections of the same tool mean that tool is not the way through on this file: move to the next
++step rather than rewording the same call. Whatever step succeeds, confirm the change is in the file
++before moving on.
++
+ ## Rules
+ - Never run the whole test suite (`pytest` with no path, `pytest .`, `unittest discover`); always name a test file.
+ - Keep investigation inside /workspace. Only if an import or version error blocks verification may you inspect an installed dependency (e.g. `python3 -c "import x; print(x.__version__, x.__file__)"`); never modify it.
