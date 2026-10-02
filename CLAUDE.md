@@ -872,3 +872,60 @@ min, an estimate not a bound.
 
 **Also noted:** `pilot_manifest.json` does not record `STOP_REASON`; the re-derivation had to read it
 from the session CSV. Worth adding to the MANIFEST block before the next run.
+
+## A/S + TEMPERATURE RESULTS 2026-10-01 — still zero verified solves standing
+
+Two GPU sessions ran on the same four Rich development tasks (`rich_3278`, `rich_3535`, `rich_3675`,
+`rich_3942`), eight runs each. Raw artifacts and manifests:
+`reference/ab_s_run_2026-10-01/` + `reference/ab_s_review/`, and
+`reference/temperature_run_2026-10-01/` + `reference/temperature_review/`.
+
+**Session 1, A vs S (adk-submission 0.2.11).** S solved `rich_3675`, A produced a graded-but-wrong patch
+on it, and the other six runs exhausted the 60-turn budget with no patch. One decided pair, three
+undecided. A's patch failed because `if tty_compatible is not None` short-circuits on
+`TTY_COMPATIBLE=""`, so `isatty()` was never called; S special-cased `"1"` and `"0"` before the
+`FORCE_COLOR` branch and passed 99 tests.
+
+**Session 2, S vs S_temp, temperature 0.2 vs 0.7, nothing else changed (adk-submission 0.2.12).**
+**All eight runs hit the turn budget. Zero patches, zero grading, zero solves on both sides, all four
+pairs undecided.** S_temp repeated itself *more*, 148 adjacent identical calls against S's 56, so the
+predeclared criteria failed in both clauses and S_temp is not advanced. See
+`reference/temperature_review/TEMPERATURE_REPORT.md`.
+
+**`rich_3675` did not re-solve.** Candidate S is byte-identical across both sessions. Two things differ
+at once, ordinary sampling variation and adk-submission 0.2.11 vs 0.2.12, and the evidence cannot
+separate them. **Treat the one solve as a single observation that has already failed to reproduce once.**
+
+### The read_file argument defect (this changes how earlier "repetition" counts should be read)
+
+`scripts/audit_temperature_arguments.py` compares recorded argument keys against the tool signatures in
+`official_check.py`. Across six temperature traces, **162 `read_file` calls carry undeclared argument
+names, 160 of them returning `status: ok`** — keys such as `start_line"` and `end_line"`, carrying the
+trailing quote. **Unknown keys are dropped and the call still succeeds**, so the tool returns the default
+first window instead of the requested range.
+
+Verified in `S_temp/rich_3675`: the agent requested lines 910-950, then 910-960, of `rich/console.py` and
+received the same 4,023 bytes from line 1 on every call. `scripts/test_shellread_candidate.py` replays
+step 6 of `S_temp/rich_3278` through the real local ADK 1.36.1 `FunctionTool` and the malformed keys
+arrive as `start_line=None, end_line=None` while correct keys keep the 1100-1357 range.
+
+**Consequence: a malformed call can look like benign repetition rather than a rejected call.** The
+`repeated_identical_*` counters and the "repeated read/reproduction calls" category in
+`reference/ab_s_review/ungraded_diagnosis/UNGRADED_DIAGNOSIS.md` partly measure this defect, not idle
+looping. This is the same mis-paired-delimiter mechanism as PARSER SETTLED above, surfacing on a tool
+whose optional parameters fail silently instead of rejecting.
+
+### Seed: do not overstate
+
+A local interception showed the inspected ADK path omitting `seed` from the LiteLLM client kwargs, and
+`lite_llm.py`'s generation mapping lists temperature, top_p, top_k and penalties without seed.
+**That does not establish the historical runs' complete wire requests or the server's defaults.** Do not
+write that those runs were unseeded. `pilot_manifest.json` records `seed_in_sampling: 42`, which is the
+configured value, not an observation of inference.
+
+### Where the binding failure actually sits
+
+Across the temperature session: **0 of 8 runs produced any accepted modifying operation, and 7 of 8 never
+attempted an edit.** That, not repetition, is the thing to move. `experiments/shellread_v1/` is prepared
+(dispatch false, never launched) and targets the read defect, not the no-edit problem; its own PLAN.md
+says so. **No submission on this evidence. The user wants verified solves first.**
