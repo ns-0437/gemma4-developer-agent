@@ -1,0 +1,37 @@
+{
+  "notebook_sha256": "5722594505e407387a00567e39d78ddd00570384a32893f5c6223664de72f6a3",
+  "candidates": {
+    "S": "8bf9f72c5d7ac4747e10c53637393bd7b18a6b66aae1879ddf4a62f4e4a6dc07",
+    "S_shellread": "8e3f9286ce0f2399c32dfa452e129a12fd48cdd657b88ea6c76d3c48c36956ae"
+  },
+  "order": [
+    [
+      "rich_3675",
+      "S"
+    ],
+    [
+      "rich_3675",
+      "S_shellread"
+    ],
+    [
+      "rich_3942",
+      "S_shellread"
+    ],
+    [
+      "rich_3942",
+      "S"
+    ]
+  ],
+  "dispatch": true,
+  "compiler_version": "0.2.12",
+  "compiler_wheel_sha256": "077c438c426e625b9f722081694e1d32856e6f7e932ef625002fc4a11aabdc10",
+  "quota_before": "05:56 / 30 hrs",
+  "quota_recorded_utc": "2026-10-02T01:51:33Z",
+  "kernel": "navin03/gemma4-swe-agent-shellread",
+  "authorization": "User explicitly requested completion of check, authorization and one four-run launch on 2026-10-02",
+  "push_attempts": 1,
+  "state": "COMPLETE; checked 2026-10-02T15:16:23Z; artifacts downloaded and reviewed",
+  "launch_method": "User ran verified push command in PowerShell after assistant approval-service failure",
+  "kernel_version": 1,
+  "push_timestamp": "unavailable; user-provided success confirms version 1"
+}
