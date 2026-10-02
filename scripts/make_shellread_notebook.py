@@ -1,6 +1,7 @@
 """Prepare a disabled four-run diagnostic. Never pushes or arms."""
 import hashlib
 import json
+import sys
 from pathlib import Path
 import make_compare_notebook as M
 
@@ -48,7 +49,13 @@ verify_runtime_compiler()
     P.SERVER = P.SERVER.replace("for cand in ('A','B'):", 'for cand in CAND_DIRS:')
     P.SERVER = P.SERVER.replace('which is what makes A and B differ.', 'both candidates request thinking disabled.')
 
-def main():
+def main(arm=False):
+    nb = ROOT/'notebooks/shellread/shellread.ipynb'
+    baseline = EXP/'shellread_disabled.ipynb'
+    if arm:
+        raw = nb.read_bytes()
+        assert hashlib.sha256(raw).hexdigest() == '71ddec6ae5a66fadf037a27a1701ee2dd7870563dc93f11e4c10edff89afa768'
+        baseline.write_bytes(raw)
     expected = {'S': '8bf9f72c5d7ac4747e10c53637393bd7b18a6b66aae1879ddf4a62f4e4a6dc07',
                 'S_shellread': '8e3f9286ce0f2399c32dfa452e129a12fd48cdd657b88ea6c76d3c48c36956ae'}
     for key, folder in [('S',SOURCE), ('S_shellread',EXP/'candidate_S_shellread')]:
@@ -59,7 +66,7 @@ def main():
     M.KERNEL_ID, M.KERNEL_TITLE = 'navin03/gemma4-swe-agent-shellread', 'gemma4-swe-agent-shellread'
     M.CFG_LABEL, M.ORDER_EXPR = 'shellread diagnostic:', 'ORDER = ' + repr(ORDER)
     M.RUN_COUNT_PHRASE = 'the four runs will NOT'
-    M.ARM_FOR_LAUNCH = False
+    M.ARM_FOR_LAUNCH = arm
     M.SESSION_CAP_MIN, M.RUN_RESERVE_MIN = 150, 25
     M.CUSTOMIZE_CELLS = specialize
     M.MD = '''# Coder read-interface diagnostic — disabled
@@ -74,10 +81,12 @@ No follow-on experiment or submission. Session cap admits work, not a hard kill.
 '''
     M.main()
     raw = (ROOT/'notebooks/shellread/shellread.ipynb').read_bytes()
+    if arm:
+        assert raw == baseline.read_bytes().replace(b'DISPATCH_CONFIRM = False', b'DISPATCH_CONFIRM = True', 1)
     record = {'notebook_sha256':hashlib.sha256(raw).hexdigest(), 'candidates':expected,
-              'order':ORDER, 'dispatch':False, 'compiler_version':'0.2.12',
+              'order':ORDER, 'dispatch':arm, 'compiler_version':'0.2.12',
               'compiler_wheel_sha256':'077c438c426e625b9f722081694e1d32856e6f7e932ef625002fc4a11aabdc10'}
-    (EXP/'NOTEBOOK_PREPARED.json').write_text(json.dumps(record,indent=2))
+    (EXP/('ARMED.json' if arm else 'NOTEBOOK_PREPARED.json')).write_text(json.dumps(record,indent=2))
 
 if __name__ == '__main__':
-    main()
+    main(arm='--arm' in sys.argv)
