@@ -4,6 +4,7 @@ import hashlib
 import io
 import json
 import os
+import sys
 import tempfile
 from pathlib import Path
 os.environ['NB_TARGET'] = 'shellread'
@@ -30,8 +31,13 @@ def hook(fault=None):
 def main():
     nb=ROOT/'notebooks/shellread/shellread.ipynb'; raw=nb.read_bytes()
     prepared=json.loads((ROOT/'experiments/shellread_v1/NOTEBOOK_PREPARED.json').read_text())
-    assert hashlib.sha256(raw).hexdigest()==prepared['notebook_sha256']
-    assert b'DISPATCH_CONFIRM = False' in raw and b'DISPATCH_CONFIRM = True' not in raw
+    if '--armed' in sys.argv:
+        baseline=(ROOT/'experiments/shellread_v1/shellread_disabled.ipynb').read_bytes()
+        assert hashlib.sha256(baseline).hexdigest()==prepared['notebook_sha256']
+        assert raw==baseline.replace(b'DISPATCH_CONFIRM = False',b'DISPATCH_CONFIRM = True',1)
+    else:
+        assert hashlib.sha256(raw).hexdigest()==prepared['notebook_sha256']
+        assert b'DISPATCH_CONFIRM = False' in raw and b'DISPATCH_CONFIRM = True' not in raw
     log=io.StringIO()
     with tempfile.TemporaryDirectory() as temp, contextlib.redirect_stdout(log):
         tmp=Path(temp)
