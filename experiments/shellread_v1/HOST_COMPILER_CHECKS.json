@@ -19,5 +19,20 @@
   "official_compile": "passed",
   "generation_config_unchanged": true,
   "model_run": false,
+  "transport": {
+    "model": "openai/gemma-4-31b-it-qat-w4a16-ct",
+    "response_format": null,
+    "api_base": "http://127.0.0.1:9/v1",
+    "seed": 42,
+    "extra_body": {
+      "chat_template_kwargs": {
+        "enable_thinking": false
+      }
+    },
+    "temperature": 0.2,
+    "max_completion_tokens": 8192,
+    "top_p": 0.95,
+    "top_k": 40.0
+  },
   "limitation": "Local compilation only; no server inference or remote sandbox execution."
 }
