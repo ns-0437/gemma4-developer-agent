@@ -1,0 +1,23 @@
+{
+  "versions": {
+    "google-adk": "1.36.1",
+    "adk-submission": "0.2.12"
+  },
+  "reproduction": {
+    "recorded_step": 6,
+    "malformed_result": {
+      "filepath": "rich/text.py",
+      "start_line": null,
+      "end_line": null
+    },
+    "correct_result": {
+      "filepath": "rich/text.py",
+      "start_line": 1100,
+      "end_line": 1357
+    }
+  },
+  "official_compile": "passed",
+  "generation_config_unchanged": true,
+  "model_run": false,
+  "limitation": "Local compilation only; no server inference or remote sandbox execution."
+}
