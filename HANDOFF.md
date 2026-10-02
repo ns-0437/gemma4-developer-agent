@@ -1,6 +1,11 @@
 # Handoff: Kaggle Gemma 4 Developer Agent competition
 
-Paste this into a new chat to continue. Everything below is current as of 2026-09-29.
+Paste this into a new chat to continue. Sections 1 onward are the standing project description,
+current as of 2026-09-29.
+
+**For the latest experiment state read `reference/temperature_review/HANDOFF.md` first.** Two
+eight-run comparisons have run since this file was written: A/S on 2026-10-01 (one solve) and the
+temperature comparison (no solves, no patches). No submission has been made on either.
 
 ---
 
