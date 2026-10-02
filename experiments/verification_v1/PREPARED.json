@@ -1,0 +1,9 @@
+{
+  "sha256": "315ba92750d38550a7e1880da2dfa80db8944a166d8be04a3e748db68450d804",
+  "baseline": "S_shellread",
+  "changed_files": [
+    "prompts/system.md"
+  ],
+  "measured": false,
+  "dispatch": false
+}
