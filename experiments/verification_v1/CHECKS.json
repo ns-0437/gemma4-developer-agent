@@ -1,0 +1,7 @@
+{
+  "official_compile": "passed",
+  "transport_equal": true,
+  "assertion_exit_checks": "passed",
+  "performance": "unmeasured",
+  "model_invoked": false
+}
