@@ -1,5 +1,24 @@
 # Gemma 4 Developer Agent — Kaggle competition
 
+## Current handoff — 2026-10-07
+
+Start with [final_validation_v2/CHECKPOINT.md](experiments/final_validation_v2/CHECKPOINT.md).
+The repaired six-run V3-versus-ON packet is prepared with dispatch disabled;
+all six controls passed in the separate CPU replay. Check for a newer launch
+record and actual kernel status before any push. Commit-maintenance work did
+not launch GPU or submit a competition entry.
+
+The sections below contain dated historical findings. Do not treat old claims
+that all candidates have thinking disabled, that compiler 0.2.11 is the current
+validation gate, or that local evaluation has proven private-grader parity as
+current facts. The validation packet preserves submitted V3 and frozen ON with
+their different sampling; it pins compiler 0.2.12 Python-file hashes. The CPU
+success establishes control reproducibility only, not candidate performance.
+
+Preserve frozen packages, launched notebooks, raw evidence and task_freeze.json.
+Use the new packet test and read-only artifact verifier listed in README.md;
+simulation success does not substitute for real GPU results.
+
 Competition: https://www.kaggle.com/competitions/gemma-4-developer-agent (slug `gemma-4-developer-agent`)
 Paper track (optional): `gemma-4-developer-agent-paper`, deadline 2026-11-12 23:59 UTC.
 Final submission deadline: **2026-12-02 23:59 UTC**. Entry / team merge deadline: 2026-11-25.
