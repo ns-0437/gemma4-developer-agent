@@ -1,0 +1,605 @@
+[
+  {
+    "container": "85c08d33-2e3",
+    "required": {
+      "setuptools": {
+        "rc": 0,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nRequirement already satisfied: setuptools in /usr/local/lib/python3.12/dist-packages (81.0.0)\n",
+        "err": ""
+      },
+      "wheel": {
+        "rc": 0,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nRequirement already satisfied: wheel in /usr/local/lib/python3.12/dist-packages (0.47.0)\nRequirement already satisfied: packaging>=24.0 in /usr/local/lib/python3.12/dist-packages (from wheel) (26.1)\n",
+        "err": ""
+      },
+      "editables": {
+        "rc": 0,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/editables-0.6-py3-none-any.whl\nInstalling collected packages: editables\nSuccessfully installed editables-0.6\n",
+        "err": ""
+      }
+    },
+    "optional": {
+      "flit_core": {
+        "rc": 0,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/flit_core-3.12.0-py3-none-any.whl\nInstalling collected packages: flit_core\nSuccessfully installed flit_core-3.12.0\n",
+        "err": ""
+      },
+      "hatchling": {
+        "rc": 1,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/hatchling-1.30.1-py3-none-any.whl\nRequirement already satisfied: packaging>=24.2 in /usr/local/lib/python3.12/dist-packages (from hatchling) (26.1)\nRequirement already satisfied: pathspec>=0.10.1 in /usr/local/lib/python3.12/dist-packages (from hatchling) (1.1.1)\nRequirement already satisfied: pluggy>=1.0.0 in /usr/local/lib/python3.12/dist-packages (from hatchling) (1.6.0)\nINFO: pip is looking at multiple versions of hatchling to determine which version is compatible with other requirements. This could take a while.\n",
+        "err": "ERROR: Could not find a version that satisfies the requirement trove-classifiers (from hatchling) (from versions: none)\nERROR: No matching distribution found for trove-classifiers\n"
+      },
+      "poetry_core": {
+        "rc": 0,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/poetry_core-2.4.1-py3-none-any.whl\nInstalling collected packages: poetry_core\nSuccessfully installed poetry_core-2.4.1\n",
+        "err": ""
+      },
+      "pdm_backend": {
+        "rc": 0,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/pdm_backend-2.4.9-py3-none-any.whl\nInstalling collected packages: pdm_backend\nSuccessfully installed pdm_backend-2.4.9\n",
+        "err": ""
+      }
+    },
+    "phase": "precondition",
+    "run": {
+      "task": "fastapi_15280",
+      "candidate": null,
+      "package": "fastapi"
+    },
+    "editable": {
+      "rc": 0,
+      "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nObtaining file:///tmp/swegemma_sandbox_85c08d33-2e3_nzk14mbs/workspace\n  Checking if build backend supports build_editable: started\n  Checking if build backend supports build_editable: finished with status 'done'\n  Preparing editable metadata (pyproject.toml): started\n  Preparing editable metadata (pyproject.toml): finished with status 'done'\nBuilding wheels for collected packages: fastapi\n  Building editable for fastapi (pyproject.toml): started\n  Building editable for fastapi (pyproject.toml): finished with status 'done'\n  Created wheel for fastapi: filename=fastapi-0.135.2-py3-none-any.whl size=11317 sha256=6230382fb544456b493e46e9bd0e7199a418bce47028362f287baa932f8d0a3b\n  Stored in directory: /tmp/swegemma_sandbox_85c08d33-2e3_nzk14mbs/tmp/pip-ephem-wheel-cache-buyvm3s4/wheels/e6/3c/e0/0955a01c1cc5aac255ba67f5bd717d139f712e25cf7f61395d\nSuccessfully built fastapi\nInstalling collected packages: fastapi\n  Attempting uninstall: fastapi\n    Found existing installation: fastapi 0.136.1\n    Not uninstalling fastapi at /usr/local/lib/python3.12/dist-packages, outside environment /tmp/swegemma_sandbox_85c08d33-2e3_nzk14mbs/venv\n    Can't uninstall 'fastapi'. No files were found to uninstall.\nSuccessfully installed fastapi-0.135.2\n",
+      "err": ""
+    },
+    "workspace_real": "/tmp/swegemma_sandbox_85c08d33-2e3_nzk14mbs/workspace",
+    "agent": {
+      "rc": 0,
+      "path": "/tmp/swegemma_sandbox_85c08d33-2e3_nzk14mbs/workspace/fastapi/__init__.py",
+      "executable": "/tmp/swegemma_sandbox_85c08d33-2e3_nzk14mbs/venv/bin/python3",
+      "stderr": ""
+    },
+    "grading_flags": {
+      "rc": 0,
+      "path": "/tmp/swegemma_sandbox_85c08d33-2e3_nzk14mbs/workspace/fastapi/__init__.py",
+      "executable": "/tmp/swegemma_sandbox_85c08d33-2e3_nzk14mbs/venv/bin/python3",
+      "stderr": ""
+    },
+    "provenance_ok": true
+  },
+  {
+    "container": "960f3a03-796",
+    "required": {
+      "setuptools": {
+        "rc": 0,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nRequirement already satisfied: setuptools in /usr/local/lib/python3.12/dist-packages (81.0.0)\n",
+        "err": ""
+      },
+      "wheel": {
+        "rc": 0,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nRequirement already satisfied: wheel in /usr/local/lib/python3.12/dist-packages (0.47.0)\nRequirement already satisfied: packaging>=24.0 in /usr/local/lib/python3.12/dist-packages (from wheel) (26.1)\n",
+        "err": ""
+      },
+      "editables": {
+        "rc": 0,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/editables-0.6-py3-none-any.whl\nInstalling collected packages: editables\nSuccessfully installed editables-0.6\n",
+        "err": ""
+      }
+    },
+    "optional": {
+      "flit_core": {
+        "rc": 0,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/flit_core-3.12.0-py3-none-any.whl\nInstalling collected packages: flit_core\nSuccessfully installed flit_core-3.12.0\n",
+        "err": ""
+      },
+      "hatchling": {
+        "rc": 1,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/hatchling-1.30.1-py3-none-any.whl\nRequirement already satisfied: packaging>=24.2 in /usr/local/lib/python3.12/dist-packages (from hatchling) (26.1)\nRequirement already satisfied: pathspec>=0.10.1 in /usr/local/lib/python3.12/dist-packages (from hatchling) (1.1.1)\nRequirement already satisfied: pluggy>=1.0.0 in /usr/local/lib/python3.12/dist-packages (from hatchling) (1.6.0)\nINFO: pip is looking at multiple versions of hatchling to determine which version is compatible with other requirements. This could take a while.\n",
+        "err": "ERROR: Could not find a version that satisfies the requirement trove-classifiers (from hatchling) (from versions: none)\nERROR: No matching distribution found for trove-classifiers\n"
+      },
+      "poetry_core": {
+        "rc": 0,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/poetry_core-2.4.1-py3-none-any.whl\nInstalling collected packages: poetry_core\nSuccessfully installed poetry_core-2.4.1\n",
+        "err": ""
+      },
+      "pdm_backend": {
+        "rc": 0,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/pdm_backend-2.4.9-py3-none-any.whl\nInstalling collected packages: pdm_backend\nSuccessfully installed pdm_backend-2.4.9\n",
+        "err": ""
+      }
+    },
+    "phase": "precondition",
+    "run": {
+      "task": "requests_7427",
+      "candidate": null,
+      "package": "requests"
+    },
+    "editable": {
+      "rc": 0,
+      "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nObtaining file:///tmp/swegemma_sandbox_960f3a03-796_3wlmrgh3/workspace\n  Checking if build backend supports build_editable: started\n  Checking if build backend supports build_editable: finished with status 'done'\n  Preparing editable metadata (pyproject.toml): started\n  Preparing editable metadata (pyproject.toml): finished with status 'done'\nBuilding wheels for collected packages: requests\n  Building editable for requests (pyproject.toml): started\n  Building editable for requests (pyproject.toml): finished with status 'done'\n  Created wheel for requests: filename=requests-2.34.0.dev1-0.editable-py3-none-any.whl size=7291 sha256=99fad38e445d95d83eb67cb5fdeb44322bf4932f9c019af676e78ba45cdd46c8\n  Stored in directory: /tmp/swegemma_sandbox_960f3a03-796_3wlmrgh3/tmp/pip-ephem-wheel-cache-pzg057rm/wheels/38/3e/82/c5ba52a68dabc85963756c96cc8690c9efc750df691cb97b23\nSuccessfully built requests\nInstalling collected packages: requests\n  Attempting uninstall: requests\n    Found existing installation: requests 2.32.4\n    Not uninstalling requests at /usr/local/lib/python3.12/dist-packages, outside environment /tmp/swegemma_sandbox_960f3a03-796_3wlmrgh3/venv\n    Can't uninstall 'requests'. No files were found to uninstall.\nSuccessfully installed requests-2.34.0.dev1\n",
+      "err": ""
+    },
+    "workspace_real": "/tmp/swegemma_sandbox_960f3a03-796_3wlmrgh3/workspace",
+    "agent": {
+      "rc": 0,
+      "path": "/tmp/swegemma_sandbox_960f3a03-796_3wlmrgh3/workspace/src/requests/__init__.py",
+      "executable": "/tmp/swegemma_sandbox_960f3a03-796_3wlmrgh3/venv/bin/python3",
+      "stderr": ""
+    },
+    "grading_flags": {
+      "rc": 0,
+      "path": "/tmp/swegemma_sandbox_960f3a03-796_3wlmrgh3/workspace/src/requests/__init__.py",
+      "executable": "/tmp/swegemma_sandbox_960f3a03-796_3wlmrgh3/venv/bin/python3",
+      "stderr": ""
+    },
+    "provenance_ok": true
+  },
+  {
+    "container": "50cf00d4-76a",
+    "required": {
+      "setuptools": {
+        "rc": 0,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nRequirement already satisfied: setuptools in /usr/local/lib/python3.12/dist-packages (81.0.0)\n",
+        "err": ""
+      },
+      "wheel": {
+        "rc": 0,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nRequirement already satisfied: wheel in /usr/local/lib/python3.12/dist-packages (0.47.0)\nRequirement already satisfied: packaging>=24.0 in /usr/local/lib/python3.12/dist-packages (from wheel) (26.1)\n",
+        "err": ""
+      },
+      "editables": {
+        "rc": 0,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/editables-0.6-py3-none-any.whl\nInstalling collected packages: editables\nSuccessfully installed editables-0.6\n",
+        "err": ""
+      }
+    },
+    "optional": {
+      "flit_core": {
+        "rc": 0,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/flit_core-3.12.0-py3-none-any.whl\nInstalling collected packages: flit_core\nSuccessfully installed flit_core-3.12.0\n",
+        "err": ""
+      },
+      "hatchling": {
+        "rc": 1,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/hatchling-1.30.1-py3-none-any.whl\nRequirement already satisfied: packaging>=24.2 in /usr/local/lib/python3.12/dist-packages (from hatchling) (26.1)\nRequirement already satisfied: pathspec>=0.10.1 in /usr/local/lib/python3.12/dist-packages (from hatchling) (1.1.1)\nRequirement already satisfied: pluggy>=1.0.0 in /usr/local/lib/python3.12/dist-packages (from hatchling) (1.6.0)\nINFO: pip is looking at multiple versions of hatchling to determine which version is compatible with other requirements. This could take a while.\n",
+        "err": "ERROR: Could not find a version that satisfies the requirement trove-classifiers (from hatchling) (from versions: none)\nERROR: No matching distribution found for trove-classifiers\n"
+      },
+      "poetry_core": {
+        "rc": 0,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/poetry_core-2.4.1-py3-none-any.whl\nInstalling collected packages: poetry_core\nSuccessfully installed poetry_core-2.4.1\n",
+        "err": ""
+      },
+      "pdm_backend": {
+        "rc": 0,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/pdm_backend-2.4.9-py3-none-any.whl\nInstalling collected packages: pdm_backend\nSuccessfully installed pdm_backend-2.4.9\n",
+        "err": ""
+      }
+    },
+    "phase": "precondition",
+    "run": {
+      "task": "rich_3894",
+      "candidate": null,
+      "package": "rich"
+    },
+    "editable": {
+      "rc": 0,
+      "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nObtaining file:///tmp/swegemma_sandbox_50cf00d4-76a_at9ncrme/workspace\n  Checking if build backend supports build_editable: started\n  Checking if build backend supports build_editable: finished with status 'done'\n  Preparing editable metadata (pyproject.toml): started\n  Preparing editable metadata (pyproject.toml): finished with status 'done'\nBuilding wheels for collected packages: rich\n  Building editable for rich (pyproject.toml): started\n  Building editable for rich (pyproject.toml): finished with status 'done'\n  Created wheel for rich: filename=rich-14.2.0-py3-none-any.whl size=7755 sha256=afb5089314ddbe7d2dd2e759ce9f6137cc06550d0f80ab1b7775c54a504a9946\n  Stored in directory: /tmp/swegemma_sandbox_50cf00d4-76a_at9ncrme/tmp/pip-ephem-wheel-cache-z235qwq8/wheels/73/74/f4/c705ecc9d83ff331634e2b9a284ce21b6cf9bf1fc2ffd2a9a3\nSuccessfully built rich\nInstalling collected packages: rich\n  Attempting uninstall: rich\n    Found existing installation: rich 13.9.4\n    Not uninstalling rich at /usr/local/lib/python3.12/dist-packages, outside environment /tmp/swegemma_sandbox_50cf00d4-76a_at9ncrme/venv\n    Can't uninstall 'rich'. No files were found to uninstall.\nSuccessfully installed rich-14.2.0\n",
+      "err": ""
+    },
+    "workspace_real": "/tmp/swegemma_sandbox_50cf00d4-76a_at9ncrme/workspace",
+    "agent": {
+      "rc": 0,
+      "path": "/tmp/swegemma_sandbox_50cf00d4-76a_at9ncrme/workspace/rich/__init__.py",
+      "executable": "/tmp/swegemma_sandbox_50cf00d4-76a_at9ncrme/venv/bin/python3",
+      "stderr": ""
+    },
+    "grading_flags": {
+      "rc": 0,
+      "path": "/tmp/swegemma_sandbox_50cf00d4-76a_at9ncrme/workspace/rich/__init__.py",
+      "executable": "/tmp/swegemma_sandbox_50cf00d4-76a_at9ncrme/venv/bin/python3",
+      "stderr": ""
+    },
+    "provenance_ok": true
+  },
+  {
+    "container": "0cd4ef53-aa8",
+    "required": {
+      "setuptools": {
+        "rc": 0,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nRequirement already satisfied: setuptools in /usr/local/lib/python3.12/dist-packages (81.0.0)\n",
+        "err": ""
+      },
+      "wheel": {
+        "rc": 0,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nRequirement already satisfied: wheel in /usr/local/lib/python3.12/dist-packages (0.47.0)\nRequirement already satisfied: packaging>=24.0 in /usr/local/lib/python3.12/dist-packages (from wheel) (26.1)\n",
+        "err": ""
+      },
+      "editables": {
+        "rc": 0,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/editables-0.6-py3-none-any.whl\nInstalling collected packages: editables\nSuccessfully installed editables-0.6\n",
+        "err": ""
+      }
+    },
+    "optional": {
+      "flit_core": {
+        "rc": 0,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/flit_core-3.12.0-py3-none-any.whl\nInstalling collected packages: flit_core\nSuccessfully installed flit_core-3.12.0\n",
+        "err": ""
+      },
+      "hatchling": {
+        "rc": 1,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/hatchling-1.30.1-py3-none-any.whl\nRequirement already satisfied: packaging>=24.2 in /usr/local/lib/python3.12/dist-packages (from hatchling) (26.1)\nRequirement already satisfied: pathspec>=0.10.1 in /usr/local/lib/python3.12/dist-packages (from hatchling) (1.1.1)\nRequirement already satisfied: pluggy>=1.0.0 in /usr/local/lib/python3.12/dist-packages (from hatchling) (1.6.0)\nINFO: pip is looking at multiple versions of hatchling to determine which version is compatible with other requirements. This could take a while.\n",
+        "err": "ERROR: Could not find a version that satisfies the requirement trove-classifiers (from hatchling) (from versions: none)\nERROR: No matching distribution found for trove-classifiers\n"
+      },
+      "poetry_core": {
+        "rc": 0,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/poetry_core-2.4.1-py3-none-any.whl\nInstalling collected packages: poetry_core\nSuccessfully installed poetry_core-2.4.1\n",
+        "err": ""
+      },
+      "pdm_backend": {
+        "rc": 0,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/pdm_backend-2.4.9-py3-none-any.whl\nInstalling collected packages: pdm_backend\nSuccessfully installed pdm_backend-2.4.9\n",
+        "err": ""
+      }
+    },
+    "phase": "control_baseline",
+    "run": {
+      "task": "fastapi_15280",
+      "candidate": null,
+      "package": "fastapi"
+    },
+    "editable": {
+      "rc": 0,
+      "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nObtaining file:///tmp/swegemma_sandbox_0cd4ef53-aa8_gss83y8b/workspace\n  Checking if build backend supports build_editable: started\n  Checking if build backend supports build_editable: finished with status 'done'\n  Preparing editable metadata (pyproject.toml): started\n  Preparing editable metadata (pyproject.toml): finished with status 'done'\nBuilding wheels for collected packages: fastapi\n  Building editable for fastapi (pyproject.toml): started\n  Building editable for fastapi (pyproject.toml): finished with status 'done'\n  Created wheel for fastapi: filename=fastapi-0.135.2-py3-none-any.whl size=11316 sha256=8784fdeedeabd9bad582373ce873782958d41c48795a01338736be57e5916867\n  Stored in directory: /tmp/swegemma_sandbox_0cd4ef53-aa8_gss83y8b/tmp/pip-ephem-wheel-cache-_wl7ugyd/wheels/82/b3/1e/418bbab661afaabe5c54adc4f550599c8c0e50643bd758c026\nSuccessfully built fastapi\nInstalling collected packages: fastapi\n  Attempting uninstall: fastapi\n    Found existing installation: fastapi 0.136.1\n    Not uninstalling fastapi at /usr/local/lib/python3.12/dist-packages, outside environment /tmp/swegemma_sandbox_0cd4ef53-aa8_gss83y8b/venv\n    Can't uninstall 'fastapi'. No files were found to uninstall.\nSuccessfully installed fastapi-0.135.2\n",
+      "err": ""
+    },
+    "workspace_real": "/tmp/swegemma_sandbox_0cd4ef53-aa8_gss83y8b/workspace",
+    "agent": {
+      "rc": 0,
+      "path": "/tmp/swegemma_sandbox_0cd4ef53-aa8_gss83y8b/workspace/fastapi/__init__.py",
+      "executable": "/tmp/swegemma_sandbox_0cd4ef53-aa8_gss83y8b/venv/bin/python3",
+      "stderr": ""
+    },
+    "grading_flags": {
+      "rc": 0,
+      "path": "/tmp/swegemma_sandbox_0cd4ef53-aa8_gss83y8b/workspace/fastapi/__init__.py",
+      "executable": "/tmp/swegemma_sandbox_0cd4ef53-aa8_gss83y8b/venv/bin/python3",
+      "stderr": ""
+    },
+    "provenance_ok": true
+  },
+  {
+    "container": "2a64f14b-4b0",
+    "required": {
+      "setuptools": {
+        "rc": 0,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nRequirement already satisfied: setuptools in /usr/local/lib/python3.12/dist-packages (81.0.0)\n",
+        "err": ""
+      },
+      "wheel": {
+        "rc": 0,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nRequirement already satisfied: wheel in /usr/local/lib/python3.12/dist-packages (0.47.0)\nRequirement already satisfied: packaging>=24.0 in /usr/local/lib/python3.12/dist-packages (from wheel) (26.1)\n",
+        "err": ""
+      },
+      "editables": {
+        "rc": 0,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/editables-0.6-py3-none-any.whl\nInstalling collected packages: editables\nSuccessfully installed editables-0.6\n",
+        "err": ""
+      }
+    },
+    "optional": {
+      "flit_core": {
+        "rc": 0,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/flit_core-3.12.0-py3-none-any.whl\nInstalling collected packages: flit_core\nSuccessfully installed flit_core-3.12.0\n",
+        "err": ""
+      },
+      "hatchling": {
+        "rc": 1,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/hatchling-1.30.1-py3-none-any.whl\nRequirement already satisfied: packaging>=24.2 in /usr/local/lib/python3.12/dist-packages (from hatchling) (26.1)\nRequirement already satisfied: pathspec>=0.10.1 in /usr/local/lib/python3.12/dist-packages (from hatchling) (1.1.1)\nRequirement already satisfied: pluggy>=1.0.0 in /usr/local/lib/python3.12/dist-packages (from hatchling) (1.6.0)\nINFO: pip is looking at multiple versions of hatchling to determine which version is compatible with other requirements. This could take a while.\n",
+        "err": "ERROR: Could not find a version that satisfies the requirement trove-classifiers (from hatchling) (from versions: none)\nERROR: No matching distribution found for trove-classifiers\n"
+      },
+      "poetry_core": {
+        "rc": 0,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/poetry_core-2.4.1-py3-none-any.whl\nInstalling collected packages: poetry_core\nSuccessfully installed poetry_core-2.4.1\n",
+        "err": ""
+      },
+      "pdm_backend": {
+        "rc": 0,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/pdm_backend-2.4.9-py3-none-any.whl\nInstalling collected packages: pdm_backend\nSuccessfully installed pdm_backend-2.4.9\n",
+        "err": ""
+      }
+    },
+    "phase": "control_reference",
+    "run": {
+      "task": "fastapi_15280",
+      "candidate": null,
+      "package": "fastapi"
+    },
+    "editable": {
+      "rc": 0,
+      "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nObtaining file:///tmp/swegemma_sandbox_2a64f14b-4b0_s7cziccz/workspace\n  Checking if build backend supports build_editable: started\n  Checking if build backend supports build_editable: finished with status 'done'\n  Preparing editable metadata (pyproject.toml): started\n  Preparing editable metadata (pyproject.toml): finished with status 'done'\nBuilding wheels for collected packages: fastapi\n  Building editable for fastapi (pyproject.toml): started\n  Building editable for fastapi (pyproject.toml): finished with status 'done'\n  Created wheel for fastapi: filename=fastapi-0.135.2-py3-none-any.whl size=11316 sha256=089a60c3b7cf2e5b9ce52ca6c67f70b71acbc0ee951f5281ce552b864b4baac1\n  Stored in directory: /tmp/swegemma_sandbox_2a64f14b-4b0_s7cziccz/tmp/pip-ephem-wheel-cache-iog02z8w/wheels/e5/fd/85/3d0fe362bf6ac58320cb62bce50720c9f0d995cc7485c300ea\nSuccessfully built fastapi\nInstalling collected packages: fastapi\n  Attempting uninstall: fastapi\n    Found existing installation: fastapi 0.136.1\n    Not uninstalling fastapi at /usr/local/lib/python3.12/dist-packages, outside environment /tmp/swegemma_sandbox_2a64f14b-4b0_s7cziccz/venv\n    Can't uninstall 'fastapi'. No files were found to uninstall.\nSuccessfully installed fastapi-0.135.2\n",
+      "err": ""
+    },
+    "workspace_real": "/tmp/swegemma_sandbox_2a64f14b-4b0_s7cziccz/workspace",
+    "agent": {
+      "rc": 0,
+      "path": "/tmp/swegemma_sandbox_2a64f14b-4b0_s7cziccz/workspace/fastapi/__init__.py",
+      "executable": "/tmp/swegemma_sandbox_2a64f14b-4b0_s7cziccz/venv/bin/python3",
+      "stderr": ""
+    },
+    "grading_flags": {
+      "rc": 0,
+      "path": "/tmp/swegemma_sandbox_2a64f14b-4b0_s7cziccz/workspace/fastapi/__init__.py",
+      "executable": "/tmp/swegemma_sandbox_2a64f14b-4b0_s7cziccz/venv/bin/python3",
+      "stderr": ""
+    },
+    "provenance_ok": true
+  },
+  {
+    "container": "e6538583-22c",
+    "required": {
+      "setuptools": {
+        "rc": 0,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nRequirement already satisfied: setuptools in /usr/local/lib/python3.12/dist-packages (81.0.0)\n",
+        "err": ""
+      },
+      "wheel": {
+        "rc": 0,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nRequirement already satisfied: wheel in /usr/local/lib/python3.12/dist-packages (0.47.0)\nRequirement already satisfied: packaging>=24.0 in /usr/local/lib/python3.12/dist-packages (from wheel) (26.1)\n",
+        "err": ""
+      },
+      "editables": {
+        "rc": 0,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/editables-0.6-py3-none-any.whl\nInstalling collected packages: editables\nSuccessfully installed editables-0.6\n",
+        "err": ""
+      }
+    },
+    "optional": {
+      "flit_core": {
+        "rc": 0,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/flit_core-3.12.0-py3-none-any.whl\nInstalling collected packages: flit_core\nSuccessfully installed flit_core-3.12.0\n",
+        "err": ""
+      },
+      "hatchling": {
+        "rc": 1,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/hatchling-1.30.1-py3-none-any.whl\nRequirement already satisfied: packaging>=24.2 in /usr/local/lib/python3.12/dist-packages (from hatchling) (26.1)\nRequirement already satisfied: pathspec>=0.10.1 in /usr/local/lib/python3.12/dist-packages (from hatchling) (1.1.1)\nRequirement already satisfied: pluggy>=1.0.0 in /usr/local/lib/python3.12/dist-packages (from hatchling) (1.6.0)\nINFO: pip is looking at multiple versions of hatchling to determine which version is compatible with other requirements. This could take a while.\n",
+        "err": "ERROR: Could not find a version that satisfies the requirement trove-classifiers (from hatchling) (from versions: none)\nERROR: No matching distribution found for trove-classifiers\n"
+      },
+      "poetry_core": {
+        "rc": 0,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/poetry_core-2.4.1-py3-none-any.whl\nInstalling collected packages: poetry_core\nSuccessfully installed poetry_core-2.4.1\n",
+        "err": ""
+      },
+      "pdm_backend": {
+        "rc": 0,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/pdm_backend-2.4.9-py3-none-any.whl\nInstalling collected packages: pdm_backend\nSuccessfully installed pdm_backend-2.4.9\n",
+        "err": ""
+      }
+    },
+    "phase": "control_baseline",
+    "run": {
+      "task": "requests_7427",
+      "candidate": null,
+      "package": "requests"
+    },
+    "editable": {
+      "rc": 0,
+      "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nObtaining file:///tmp/swegemma_sandbox_e6538583-22c_iqqro4ml/workspace\n  Checking if build backend supports build_editable: started\n  Checking if build backend supports build_editable: finished with status 'done'\n  Preparing editable metadata (pyproject.toml): started\n  Preparing editable metadata (pyproject.toml): finished with status 'done'\nBuilding wheels for collected packages: requests\n  Building editable for requests (pyproject.toml): started\n  Building editable for requests (pyproject.toml): finished with status 'done'\n  Created wheel for requests: filename=requests-2.34.0.dev1-0.editable-py3-none-any.whl size=7294 sha256=d62f0c862486369a5793afea3a4cf64a61836088164ca262a0ea69504fc60b68\n  Stored in directory: /tmp/swegemma_sandbox_e6538583-22c_iqqro4ml/tmp/pip-ephem-wheel-cache-9p962bqe/wheels/bc/41/5a/97e351c7749800a6171ff8aba868046716847704f543ca04fe\nSuccessfully built requests\nInstalling collected packages: requests\n  Attempting uninstall: requests\n    Found existing installation: requests 2.32.4\n    Not uninstalling requests at /usr/local/lib/python3.12/dist-packages, outside environment /tmp/swegemma_sandbox_e6538583-22c_iqqro4ml/venv\n    Can't uninstall 'requests'. No files were found to uninstall.\nSuccessfully installed requests-2.34.0.dev1\n",
+      "err": ""
+    },
+    "workspace_real": "/tmp/swegemma_sandbox_e6538583-22c_iqqro4ml/workspace",
+    "agent": {
+      "rc": 0,
+      "path": "/tmp/swegemma_sandbox_e6538583-22c_iqqro4ml/workspace/src/requests/__init__.py",
+      "executable": "/tmp/swegemma_sandbox_e6538583-22c_iqqro4ml/venv/bin/python3",
+      "stderr": ""
+    },
+    "grading_flags": {
+      "rc": 0,
+      "path": "/tmp/swegemma_sandbox_e6538583-22c_iqqro4ml/workspace/src/requests/__init__.py",
+      "executable": "/tmp/swegemma_sandbox_e6538583-22c_iqqro4ml/venv/bin/python3",
+      "stderr": ""
+    },
+    "provenance_ok": true
+  },
+  {
+    "container": "b74c1911-3d5",
+    "required": {
+      "setuptools": {
+        "rc": 0,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nRequirement already satisfied: setuptools in /usr/local/lib/python3.12/dist-packages (81.0.0)\n",
+        "err": ""
+      },
+      "wheel": {
+        "rc": 0,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nRequirement already satisfied: wheel in /usr/local/lib/python3.12/dist-packages (0.47.0)\nRequirement already satisfied: packaging>=24.0 in /usr/local/lib/python3.12/dist-packages (from wheel) (26.1)\n",
+        "err": ""
+      },
+      "editables": {
+        "rc": 0,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/editables-0.6-py3-none-any.whl\nInstalling collected packages: editables\nSuccessfully installed editables-0.6\n",
+        "err": ""
+      }
+    },
+    "optional": {
+      "flit_core": {
+        "rc": 0,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/flit_core-3.12.0-py3-none-any.whl\nInstalling collected packages: flit_core\nSuccessfully installed flit_core-3.12.0\n",
+        "err": ""
+      },
+      "hatchling": {
+        "rc": 1,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/hatchling-1.30.1-py3-none-any.whl\nRequirement already satisfied: packaging>=24.2 in /usr/local/lib/python3.12/dist-packages (from hatchling) (26.1)\nRequirement already satisfied: pathspec>=0.10.1 in /usr/local/lib/python3.12/dist-packages (from hatchling) (1.1.1)\nRequirement already satisfied: pluggy>=1.0.0 in /usr/local/lib/python3.12/dist-packages (from hatchling) (1.6.0)\nINFO: pip is looking at multiple versions of hatchling to determine which version is compatible with other requirements. This could take a while.\n",
+        "err": "ERROR: Could not find a version that satisfies the requirement trove-classifiers (from hatchling) (from versions: none)\nERROR: No matching distribution found for trove-classifiers\n"
+      },
+      "poetry_core": {
+        "rc": 0,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/poetry_core-2.4.1-py3-none-any.whl\nInstalling collected packages: poetry_core\nSuccessfully installed poetry_core-2.4.1\n",
+        "err": ""
+      },
+      "pdm_backend": {
+        "rc": 0,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/pdm_backend-2.4.9-py3-none-any.whl\nInstalling collected packages: pdm_backend\nSuccessfully installed pdm_backend-2.4.9\n",
+        "err": ""
+      }
+    },
+    "phase": "control_reference",
+    "run": {
+      "task": "requests_7427",
+      "candidate": null,
+      "package": "requests"
+    },
+    "editable": {
+      "rc": 0,
+      "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nObtaining file:///tmp/swegemma_sandbox_b74c1911-3d5_sda02ngo/workspace\n  Checking if build backend supports build_editable: started\n  Checking if build backend supports build_editable: finished with status 'done'\n  Preparing editable metadata (pyproject.toml): started\n  Preparing editable metadata (pyproject.toml): finished with status 'done'\nBuilding wheels for collected packages: requests\n  Building editable for requests (pyproject.toml): started\n  Building editable for requests (pyproject.toml): finished with status 'done'\n  Created wheel for requests: filename=requests-2.34.0.dev1-0.editable-py3-none-any.whl size=7292 sha256=b5b43fbf5298f78b8512d2e9092a305505ff60b53b25e02b5267632c1573c6c9\n  Stored in directory: /tmp/swegemma_sandbox_b74c1911-3d5_sda02ngo/tmp/pip-ephem-wheel-cache-yy9w5fgc/wheels/9a/65/af/b5f28a6df1ff20576aa5c4239d0a31740c1c56b0c96e7f6222\nSuccessfully built requests\nInstalling collected packages: requests\n  Attempting uninstall: requests\n    Found existing installation: requests 2.32.4\n    Not uninstalling requests at /usr/local/lib/python3.12/dist-packages, outside environment /tmp/swegemma_sandbox_b74c1911-3d5_sda02ngo/venv\n    Can't uninstall 'requests'. No files were found to uninstall.\nSuccessfully installed requests-2.34.0.dev1\n",
+      "err": ""
+    },
+    "workspace_real": "/tmp/swegemma_sandbox_b74c1911-3d5_sda02ngo/workspace",
+    "agent": {
+      "rc": 0,
+      "path": "/tmp/swegemma_sandbox_b74c1911-3d5_sda02ngo/workspace/src/requests/__init__.py",
+      "executable": "/tmp/swegemma_sandbox_b74c1911-3d5_sda02ngo/venv/bin/python3",
+      "stderr": ""
+    },
+    "grading_flags": {
+      "rc": 0,
+      "path": "/tmp/swegemma_sandbox_b74c1911-3d5_sda02ngo/workspace/src/requests/__init__.py",
+      "executable": "/tmp/swegemma_sandbox_b74c1911-3d5_sda02ngo/venv/bin/python3",
+      "stderr": ""
+    },
+    "provenance_ok": true
+  },
+  {
+    "container": "43c69e18-d56",
+    "required": {
+      "setuptools": {
+        "rc": 0,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nRequirement already satisfied: setuptools in /usr/local/lib/python3.12/dist-packages (81.0.0)\n",
+        "err": ""
+      },
+      "wheel": {
+        "rc": 0,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nRequirement already satisfied: wheel in /usr/local/lib/python3.12/dist-packages (0.47.0)\nRequirement already satisfied: packaging>=24.0 in /usr/local/lib/python3.12/dist-packages (from wheel) (26.1)\n",
+        "err": ""
+      },
+      "editables": {
+        "rc": 0,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/editables-0.6-py3-none-any.whl\nInstalling collected packages: editables\nSuccessfully installed editables-0.6\n",
+        "err": ""
+      }
+    },
+    "optional": {
+      "flit_core": {
+        "rc": 0,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/flit_core-3.12.0-py3-none-any.whl\nInstalling collected packages: flit_core\nSuccessfully installed flit_core-3.12.0\n",
+        "err": ""
+      },
+      "hatchling": {
+        "rc": 1,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/hatchling-1.30.1-py3-none-any.whl\nRequirement already satisfied: packaging>=24.2 in /usr/local/lib/python3.12/dist-packages (from hatchling) (26.1)\nRequirement already satisfied: pathspec>=0.10.1 in /usr/local/lib/python3.12/dist-packages (from hatchling) (1.1.1)\nRequirement already satisfied: pluggy>=1.0.0 in /usr/local/lib/python3.12/dist-packages (from hatchling) (1.6.0)\nINFO: pip is looking at multiple versions of hatchling to determine which version is compatible with other requirements. This could take a while.\n",
+        "err": "ERROR: Could not find a version that satisfies the requirement trove-classifiers (from hatchling) (from versions: none)\nERROR: No matching distribution found for trove-classifiers\n"
+      },
+      "poetry_core": {
+        "rc": 0,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/poetry_core-2.4.1-py3-none-any.whl\nInstalling collected packages: poetry_core\nSuccessfully installed poetry_core-2.4.1\n",
+        "err": ""
+      },
+      "pdm_backend": {
+        "rc": 0,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/pdm_backend-2.4.9-py3-none-any.whl\nInstalling collected packages: pdm_backend\nSuccessfully installed pdm_backend-2.4.9\n",
+        "err": ""
+      }
+    },
+    "phase": "control_baseline",
+    "run": {
+      "task": "rich_3894",
+      "candidate": null,
+      "package": "rich"
+    },
+    "editable": {
+      "rc": 0,
+      "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nObtaining file:///tmp/swegemma_sandbox_43c69e18-d56_kq2h7ufk/workspace\n  Checking if build backend supports build_editable: started\n  Checking if build backend supports build_editable: finished with status 'done'\n  Preparing editable metadata (pyproject.toml): started\n  Preparing editable metadata (pyproject.toml): finished with status 'done'\nBuilding wheels for collected packages: rich\n  Building editable for rich (pyproject.toml): started\n  Building editable for rich (pyproject.toml): finished with status 'done'\n  Created wheel for rich: filename=rich-14.2.0-py3-none-any.whl size=7755 sha256=2f1c40d7c2305a28f5171385b1cf1c06262c23e36c8f497ba23467dfd209aeb8\n  Stored in directory: /tmp/swegemma_sandbox_43c69e18-d56_kq2h7ufk/tmp/pip-ephem-wheel-cache-2kzbx6ct/wheels/d8/c9/ce/d4c309ecfc4dbf26eb0d0058a1eb69bfb8febd6077593f7bcc\nSuccessfully built rich\nInstalling collected packages: rich\n  Attempting uninstall: rich\n    Found existing installation: rich 13.9.4\n    Not uninstalling rich at /usr/local/lib/python3.12/dist-packages, outside environment /tmp/swegemma_sandbox_43c69e18-d56_kq2h7ufk/venv\n    Can't uninstall 'rich'. No files were found to uninstall.\nSuccessfully installed rich-14.2.0\n",
+      "err": ""
+    },
+    "workspace_real": "/tmp/swegemma_sandbox_43c69e18-d56_kq2h7ufk/workspace",
+    "agent": {
+      "rc": 0,
+      "path": "/tmp/swegemma_sandbox_43c69e18-d56_kq2h7ufk/workspace/rich/__init__.py",
+      "executable": "/tmp/swegemma_sandbox_43c69e18-d56_kq2h7ufk/venv/bin/python3",
+      "stderr": ""
+    },
+    "grading_flags": {
+      "rc": 0,
+      "path": "/tmp/swegemma_sandbox_43c69e18-d56_kq2h7ufk/workspace/rich/__init__.py",
+      "executable": "/tmp/swegemma_sandbox_43c69e18-d56_kq2h7ufk/venv/bin/python3",
+      "stderr": ""
+    },
+    "provenance_ok": true
+  },
+  {
+    "container": "881cb7c5-583",
+    "required": {
+      "setuptools": {
+        "rc": 0,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nRequirement already satisfied: setuptools in /usr/local/lib/python3.12/dist-packages (81.0.0)\n",
+        "err": ""
+      },
+      "wheel": {
+        "rc": 0,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nRequirement already satisfied: wheel in /usr/local/lib/python3.12/dist-packages (0.47.0)\nRequirement already satisfied: packaging>=24.0 in /usr/local/lib/python3.12/dist-packages (from wheel) (26.1)\n",
+        "err": ""
+      },
+      "editables": {
+        "rc": 0,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/editables-0.6-py3-none-any.whl\nInstalling collected packages: editables\nSuccessfully installed editables-0.6\n",
+        "err": ""
+      }
+    },
+    "optional": {
+      "flit_core": {
+        "rc": 0,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/flit_core-3.12.0-py3-none-any.whl\nInstalling collected packages: flit_core\nSuccessfully installed flit_core-3.12.0\n",
+        "err": ""
+      },
+      "hatchling": {
+        "rc": 1,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/hatchling-1.30.1-py3-none-any.whl\nRequirement already satisfied: packaging>=24.2 in /usr/local/lib/python3.12/dist-packages (from hatchling) (26.1)\nRequirement already satisfied: pathspec>=0.10.1 in /usr/local/lib/python3.12/dist-packages (from hatchling) (1.1.1)\nRequirement already satisfied: pluggy>=1.0.0 in /usr/local/lib/python3.12/dist-packages (from hatchling) (1.6.0)\nINFO: pip is looking at multiple versions of hatchling to determine which version is compatible with other requirements. This could take a while.\n",
+        "err": "ERROR: Could not find a version that satisfies the requirement trove-classifiers (from hatchling) (from versions: none)\nERROR: No matching distribution found for trove-classifiers\n"
+      },
+      "poetry_core": {
+        "rc": 0,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/poetry_core-2.4.1-py3-none-any.whl\nInstalling collected packages: poetry_core\nSuccessfully installed poetry_core-2.4.1\n",
+        "err": ""
+      },
+      "pdm_backend": {
+        "rc": 0,
+        "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nProcessing /kaggle/input/competitions/gemma-4-developer-agent/wheels/pdm_backend-2.4.9-py3-none-any.whl\nInstalling collected packages: pdm_backend\nSuccessfully installed pdm_backend-2.4.9\n",
+        "err": ""
+      }
+    },
+    "phase": "control_reference",
+    "run": {
+      "task": "rich_3894",
+      "candidate": null,
+      "package": "rich"
+    },
+    "editable": {
+      "rc": 0,
+      "out": "Looking in links: /tmp/wheelhouse, /kaggle/input/competitions/gemma-4-developer-agent/wheels\nObtaining file:///tmp/swegemma_sandbox_881cb7c5-583_cfy1modk/workspace\n  Checking if build backend supports build_editable: started\n  Checking if build backend supports build_editable: finished with status 'done'\n  Preparing editable metadata (pyproject.toml): started\n  Preparing editable metadata (pyproject.toml): finished with status 'done'\nBuilding wheels for collected packages: rich\n  Building editable for rich (pyproject.toml): started\n  Building editable for rich (pyproject.toml): finished with status 'done'\n  Created wheel for rich: filename=rich-14.2.0-py3-none-any.whl size=7754 sha256=6251c8cbeec562301a4e6ae7f017a12059655657096150ad45f51b8f73d9cebf\n  Stored in directory: /tmp/swegemma_sandbox_881cb7c5-583_cfy1modk/tmp/pip-ephem-wheel-cache-2ys4yhks/wheels/5b/27/3a/f715404f7885bdbf0eff0a6284f2ba13f57b9d9af3cf06eb90\nSuccessfully built rich\nInstalling collected packages: rich\n  Attempting uninstall: rich\n    Found existing installation: rich 13.9.4\n    Not uninstalling rich at /usr/local/lib/python3.12/dist-packages, outside environment /tmp/swegemma_sandbox_881cb7c5-583_cfy1modk/venv\n    Can't uninstall 'rich'. No files were found to uninstall.\nSuccessfully installed rich-14.2.0\n",
+      "err": ""
+    },
+    "workspace_real": "/tmp/swegemma_sandbox_881cb7c5-583_cfy1modk/workspace",
+    "agent": {
+      "rc": 0,
+      "path": "/tmp/swegemma_sandbox_881cb7c5-583_cfy1modk/workspace/rich/__init__.py",
+      "executable": "/tmp/swegemma_sandbox_881cb7c5-583_cfy1modk/venv/bin/python3",
+      "stderr": ""
+    },
+    "grading_flags": {
+      "rc": 0,
+      "path": "/tmp/swegemma_sandbox_881cb7c5-583_cfy1modk/workspace/rich/__init__.py",
+      "executable": "/tmp/swegemma_sandbox_881cb7c5-583_cfy1modk/venv/bin/python3",
+      "stderr": ""
+    },
+    "provenance_ok": true
+  }
+]

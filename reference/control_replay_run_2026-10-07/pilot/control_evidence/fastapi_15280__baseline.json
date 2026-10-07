@@ -1,0 +1,59 @@
+{
+  "task": "fastapi_15280",
+  "arm": "baseline",
+  "test_patch_rc": 0,
+  "test_patch_evidence": {
+    "label": "testpatch",
+    "requested": true,
+    "sandbox_path": "/tmp/tmp40e7x3pa_testpatch.patch",
+    "bytes": 515,
+    "sha256": "a45b740c9c23f27c90cbe591dcfbf9c43736ea52d9ccdd4b77bddef4695a7e97",
+    "created_bytes": "516",
+    "create_probe_rc": 0,
+    "apply_rc": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "patch_rc": null,
+  "patch_evidence": {
+    "label": "gold",
+    "requested": false,
+    "note": "baseline arm applies no source patch by design"
+  },
+  "pytest_exit": 1,
+  "pytest_cmd": "PYTHONSAFEPATH=1 PYTHONNOUSERSITE=1 python3 -s -m pytest tests/test_vibe.py",
+  "pytest_stdout": "F                                                                        [100%]\n=================================== FAILURES ===================================\n_______________________________ test_vibe_raises _______________________________\n\n    def test_vibe_raises():\n        with pytest.raises(FastAPIError, match=\"Are you kidding me\"):\n            app = FastAPI()\n    \n>           @app.vibe(\n             ^^^^^^^^\n                \"/vibe/\",\n                prompt=\"pls return json of users from database. make no mistakes\",\n            )\nE           AttributeError: 'FastAPI' object has no attribute 'vibe'\n\ntests/test_vibe.py:12: AttributeError\n- generated xml file: /tmp/swegemma_sandbox_0cd4ef53-aa8_gss83y8b/tmp/ctl_baseline.xml -\n=========================== short test summary info ============================\nFAILED tests/test_vibe.py::test_vibe_raises - AttributeError: 'FastAPI' objec...\n1 failed in 0.49s\n",
+  "pytest_stderr": "",
+  "junit_read_rc": 0,
+  "nodes": {
+    "tests.test_vibe::test_vibe_raises": "failed"
+  },
+  "duplicate_nodes": [],
+  "junit_parse_error": null,
+  "workspace_real": "/tmp/swegemma_sandbox_0cd4ef53-aa8_gss83y8b/workspace",
+  "workspace_probe_rc": 0,
+  "environment_versions": "{'swegemma': '0.2.7', 'adk-submission': '0.2.12', 'adk-eval-core': '0.1.0', 'google-adk': '1.36.1'}",
+  "cleanup_ok": true,
+  "owned_sandboxes": [],
+  "canonicalization": {
+    "saved_root": "/tmp/swegemma_sandbox_09c6b719-8de_b8ji12cq/workspace",
+    "saved_root_error": null,
+    "observed_root": "/tmp/swegemma_sandbox_0cd4ef53-aa8_gss83y8b/workspace",
+    "observed_root_error": null,
+    "token": "<WS>",
+    "applied": false
+  },
+  "agrees_with_saved": true,
+  "saved_exit": 1,
+  "node_comparison": {
+    "missing": [],
+    "extra": [],
+    "changed": [],
+    "skipped": [],
+    "targets_wrong": [],
+    "n_observed": 1,
+    "n_expected": 1,
+    "reason": ""
+  },
+  "n_targets": 1
+}
