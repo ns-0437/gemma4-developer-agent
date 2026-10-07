@@ -1,0 +1,1313 @@
+{
+  "result": {
+    "scenario": "planner_loops",
+    "stage_order": [
+      "planner"
+    ],
+    "request_counts": {
+      "planner": 8
+    },
+    "reviewer_saw_actual_diff": false,
+    "tool_calls": [
+      [
+        "read_file",
+        "toy.py"
+      ],
+      [
+        "read_file",
+        "toy.py"
+      ],
+      [
+        "read_file",
+        "toy.py"
+      ],
+      [
+        "read_file",
+        "toy.py"
+      ],
+      [
+        "read_file",
+        "toy.py"
+      ],
+      [
+        "read_file",
+        "toy.py"
+      ],
+      [
+        "read_file",
+        "toy.py"
+      ],
+      [
+        "read_file",
+        "toy.py"
+      ]
+    ],
+    "submitted": false,
+    "patch": "",
+    "error": {
+      "type": "LlmCallsLimitExceededError",
+      "message": "Max number of llm calls limit of `8` exceeded"
+    },
+    "global_llm_budget": 8
+  },
+  "requests": [
+    {
+      "stage": "planner",
+      "tools": [
+        "read_file"
+      ],
+      "messages": [
+        {
+          "role": "system",
+          "content": "ROLE: planner\nInspect the issue and relevant source with read_file. Return a concise plan identifying\nthe requested behavior, assumptions, relevant paths and checks. Do not edit or submit.\nYour final text hands the task to the coder. No claim of a per-stage turn limit is made.\n\n\nYou are an agent. Your internal name is \"planner\"."
+        },
+        {
+          "role": "user",
+          "content": "Synthetic task: twice(n) must equal n * 2."
+        }
+      ]
+    },
+    {
+      "stage": "planner",
+      "tools": [
+        "read_file"
+      ],
+      "messages": [
+        {
+          "role": "system",
+          "content": "ROLE: planner\nInspect the issue and relevant source with read_file. Return a concise plan identifying\nthe requested behavior, assumptions, relevant paths and checks. Do not edit or submit.\nYour final text hands the task to the coder. No claim of a per-stage turn limit is made.\n\n\nYou are an agent. Your internal name is \"planner\"."
+        },
+        {
+          "role": "user",
+          "content": "Synthetic task: twice(n) must equal n * 2."
+        },
+        {
+          "role": "assistant",
+          "content": null,
+          "tool_calls": [
+            {
+              "type": "function",
+              "id": "planner_0",
+              "function": {
+                "name": "read_file",
+                "arguments": "{\"filepath\": \"toy.py\"}"
+              }
+            }
+          ],
+          "reasoning_content": null
+        },
+        {
+          "role": "tool",
+          "tool_call_id": "planner_0",
+          "content": "{\"result\": \"{\\\"status\\\": \\\"ok\\\", \\\"content\\\": \\\"def twice(n):\\\\n    return n + 1\\\\n\\\"}\"}"
+        }
+      ]
+    },
+    {
+      "stage": "planner",
+      "tools": [
+        "read_file"
+      ],
+      "messages": [
+        {
+          "role": "system",
+          "content": "ROLE: planner\nInspect the issue and relevant source with read_file. Return a concise plan identifying\nthe requested behavior, assumptions, relevant paths and checks. Do not edit or submit.\nYour final text hands the task to the coder. No claim of a per-stage turn limit is made.\n\n\nYou are an agent. Your internal name is \"planner\"."
+        },
+        {
+          "role": "user",
+          "content": "Synthetic task: twice(n) must equal n * 2."
+        },
+        {
+          "role": "assistant",
+          "content": null,
+          "tool_calls": [
+            {
+              "type": "function",
+              "id": "planner_0",
+              "function": {
+                "name": "read_file",
+                "arguments": "{\"filepath\": \"toy.py\"}"
+              }
+            }
+          ],
+          "reasoning_content": null
+        },
+        {
+          "role": "tool",
+          "tool_call_id": "planner_0",
+          "content": "{\"result\": \"{\\\"status\\\": \\\"ok\\\", \\\"content\\\": \\\"def twice(n):\\\\n    return n + 1\\\\n\\\"}\"}"
+        },
+        {
+          "role": "assistant",
+          "content": null,
+          "tool_calls": [
+            {
+              "type": "function",
+              "id": "planner_1",
+              "function": {
+                "name": "read_file",
+                "arguments": "{\"filepath\": \"toy.py\"}"
+              }
+            }
+          ],
+          "reasoning_content": null
+        },
+        {
+          "role": "tool",
+          "tool_call_id": "planner_1",
+          "content": "{\"result\": \"{\\\"status\\\": \\\"ok\\\", \\\"content\\\": \\\"def twice(n):\\\\n    return n + 1\\\\n\\\"}\"}"
+        }
+      ]
+    },
+    {
+      "stage": "planner",
+      "tools": [
+        "read_file"
+      ],
+      "messages": [
+        {
+          "role": "system",
+          "content": "ROLE: planner\nInspect the issue and relevant source with read_file. Return a concise plan identifying\nthe requested behavior, assumptions, relevant paths and checks. Do not edit or submit.\nYour final text hands the task to the coder. No claim of a per-stage turn limit is made.\n\n\nYou are an agent. Your internal name is \"planner\"."
+        },
+        {
+          "role": "user",
+          "content": "Synthetic task: twice(n) must equal n * 2."
+        },
+        {
+          "role": "assistant",
+          "content": null,
+          "tool_calls": [
+            {
+              "type": "function",
+              "id": "planner_0",
+              "function": {
+                "name": "read_file",
+                "arguments": "{\"filepath\": \"toy.py\"}"
+              }
+            }
+          ],
+          "reasoning_content": null
+        },
+        {
+          "role": "tool",
+          "tool_call_id": "planner_0",
+          "content": "{\"result\": \"{\\\"status\\\": \\\"ok\\\", \\\"content\\\": \\\"def twice(n):\\\\n    return n + 1\\\\n\\\"}\"}"
+        },
+        {
+          "role": "assistant",
+          "content": null,
+          "tool_calls": [
+            {
+              "type": "function",
+              "id": "planner_1",
+              "function": {
+                "name": "read_file",
+                "arguments": "{\"filepath\": \"toy.py\"}"
+              }
+            }
+          ],
+          "reasoning_content": null
+        },
+        {
+          "role": "tool",
+          "tool_call_id": "planner_1",
+          "content": "{\"result\": \"{\\\"status\\\": \\\"ok\\\", \\\"content\\\": \\\"def twice(n):\\\\n    return n + 1\\\\n\\\"}\"}"
+        },
+        {
+          "role": "assistant",
+          "content": null,
+          "tool_calls": [
+            {
+              "type": "function",
+              "id": "planner_2",
+              "function": {
+                "name": "read_file",
+                "arguments": "{\"filepath\": \"toy.py\"}"
+              }
+            }
+          ],
+          "reasoning_content": null
+        },
+        {
+          "role": "tool",
+          "tool_call_id": "planner_2",
+          "content": "{\"result\": \"{\\\"status\\\": \\\"ok\\\", \\\"content\\\": \\\"def twice(n):\\\\n    return n + 1\\\\n\\\"}\"}"
+        }
+      ]
+    },
+    {
+      "stage": "planner",
+      "tools": [
+        "read_file"
+      ],
+      "messages": [
+        {
+          "role": "system",
+          "content": "ROLE: planner\nInspect the issue and relevant source with read_file. Return a concise plan identifying\nthe requested behavior, assumptions, relevant paths and checks. Do not edit or submit.\nYour final text hands the task to the coder. No claim of a per-stage turn limit is made.\n\n\nYou are an agent. Your internal name is \"planner\"."
+        },
+        {
+          "role": "user",
+          "content": "Synthetic task: twice(n) must equal n * 2."
+        },
+        {
+          "role": "assistant",
+          "content": null,
+          "tool_calls": [
+            {
+              "type": "function",
+              "id": "planner_0",
+              "function": {
+                "name": "read_file",
+                "arguments": "{\"filepath\": \"toy.py\"}"
+              }
+            }
+          ],
+          "reasoning_content": null
+        },
+        {
+          "role": "tool",
+          "tool_call_id": "planner_0",
+          "content": "{\"result\": \"{\\\"status\\\": \\\"ok\\\", \\\"content\\\": \\\"def twice(n):\\\\n    return n + 1\\\\n\\\"}\"}"
+        },
+        {
+          "role": "assistant",
+          "content": null,
+          "tool_calls": [
+            {
+              "type": "function",
+              "id": "planner_1",
+              "function": {
+                "name": "read_file",
+                "arguments": "{\"filepath\": \"toy.py\"}"
+              }
+            }
+          ],
+          "reasoning_content": null
+        },
+        {
+          "role": "tool",
+          "tool_call_id": "planner_1",
+          "content": "{\"result\": \"{\\\"status\\\": \\\"ok\\\", \\\"content\\\": \\\"def twice(n):\\\\n    return n + 1\\\\n\\\"}\"}"
+        },
+        {
+          "role": "assistant",
+          "content": null,
+          "tool_calls": [
+            {
+              "type": "function",
+              "id": "planner_2",
+              "function": {
+                "name": "read_file",
+                "arguments": "{\"filepath\": \"toy.py\"}"
+              }
+            }
+          ],
+          "reasoning_content": null
+        },
+        {
+          "role": "tool",
+          "tool_call_id": "planner_2",
+          "content": "{\"result\": \"{\\\"status\\\": \\\"ok\\\", \\\"content\\\": \\\"def twice(n):\\\\n    return n + 1\\\\n\\\"}\"}"
+        },
+        {
+          "role": "assistant",
+          "content": null,
+          "tool_calls": [
+            {
+              "type": "function",
+              "id": "planner_3",
+              "function": {
+                "name": "read_file",
+                "arguments": "{\"filepath\": \"toy.py\"}"
+              }
+            }
+          ],
+          "reasoning_content": null
+        },
+        {
+          "role": "tool",
+          "tool_call_id": "planner_3",
+          "content": "{\"result\": \"{\\\"status\\\": \\\"ok\\\", \\\"content\\\": \\\"def twice(n):\\\\n    return n + 1\\\\n\\\"}\"}"
+        }
+      ]
+    },
+    {
+      "stage": "planner",
+      "tools": [
+        "read_file"
+      ],
+      "messages": [
+        {
+          "role": "system",
+          "content": "ROLE: planner\nInspect the issue and relevant source with read_file. Return a concise plan identifying\nthe requested behavior, assumptions, relevant paths and checks. Do not edit or submit.\nYour final text hands the task to the coder. No claim of a per-stage turn limit is made.\n\n\nYou are an agent. Your internal name is \"planner\"."
+        },
+        {
+          "role": "user",
+          "content": "Synthetic task: twice(n) must equal n * 2."
+        },
+        {
+          "role": "assistant",
+          "content": null,
+          "tool_calls": [
+            {
+              "type": "function",
+              "id": "planner_0",
+              "function": {
+                "name": "read_file",
+                "arguments": "{\"filepath\": \"toy.py\"}"
+              }
+            }
+          ],
+          "reasoning_content": null
+        },
+        {
+          "role": "tool",
+          "tool_call_id": "planner_0",
+          "content": "{\"result\": \"{\\\"status\\\": \\\"ok\\\", \\\"content\\\": \\\"def twice(n):\\\\n    return n + 1\\\\n\\\"}\"}"
+        },
+        {
+          "role": "assistant",
+          "content": null,
+          "tool_calls": [
+            {
+              "type": "function",
+              "id": "planner_1",
+              "function": {
+                "name": "read_file",
+                "arguments": "{\"filepath\": \"toy.py\"}"
+              }
+            }
+          ],
+          "reasoning_content": null
+        },
+        {
+          "role": "tool",
+          "tool_call_id": "planner_1",
+          "content": "{\"result\": \"{\\\"status\\\": \\\"ok\\\", \\\"content\\\": \\\"def twice(n):\\\\n    return n + 1\\\\n\\\"}\"}"
+        },
+        {
+          "role": "assistant",
+          "content": null,
+          "tool_calls": [
+            {
+              "type": "function",
+              "id": "planner_2",
+              "function": {
+                "name": "read_file",
+                "arguments": "{\"filepath\": \"toy.py\"}"
+              }
+            }
+          ],
+          "reasoning_content": null
+        },
+        {
+          "role": "tool",
+          "tool_call_id": "planner_2",
+          "content": "{\"result\": \"{\\\"status\\\": \\\"ok\\\", \\\"content\\\": \\\"def twice(n):\\\\n    return n + 1\\\\n\\\"}\"}"
+        },
+        {
+          "role": "assistant",
+          "content": null,
+          "tool_calls": [
+            {
+              "type": "function",
+              "id": "planner_3",
+              "function": {
+                "name": "read_file",
+                "arguments": "{\"filepath\": \"toy.py\"}"
+              }
+            }
+          ],
+          "reasoning_content": null
+        },
+        {
+          "role": "tool",
+          "tool_call_id": "planner_3",
+          "content": "{\"result\": \"{\\\"status\\\": \\\"ok\\\", \\\"content\\\": \\\"def twice(n):\\\\n    return n + 1\\\\n\\\"}\"}"
+        },
+        {
+          "role": "assistant",
+          "content": null,
+          "tool_calls": [
+            {
+              "type": "function",
+              "id": "planner_4",
+              "function": {
+                "name": "read_file",
+                "arguments": "{\"filepath\": \"toy.py\"}"
+              }
+            }
+          ],
+          "reasoning_content": null
+        },
+        {
+          "role": "tool",
+          "tool_call_id": "planner_4",
+          "content": "{\"result\": \"{\\\"status\\\": \\\"ok\\\", \\\"content\\\": \\\"def twice(n):\\\\n    return n + 1\\\\n\\\"}\"}"
+        }
+      ]
+    },
+    {
+      "stage": "planner",
+      "tools": [
+        "read_file"
+      ],
+      "messages": [
+        {
+          "role": "system",
+          "content": "ROLE: planner\nInspect the issue and relevant source with read_file. Return a concise plan identifying\nthe requested behavior, assumptions, relevant paths and checks. Do not edit or submit.\nYour final text hands the task to the coder. No claim of a per-stage turn limit is made.\n\n\nYou are an agent. Your internal name is \"planner\"."
+        },
+        {
+          "role": "user",
+          "content": "Synthetic task: twice(n) must equal n * 2."
+        },
+        {
+          "role": "assistant",
+          "content": null,
+          "tool_calls": [
+            {
+              "type": "function",
+              "id": "planner_0",
+              "function": {
+                "name": "read_file",
+                "arguments": "{\"filepath\": \"toy.py\"}"
+              }
+            }
+          ],
+          "reasoning_content": null
+        },
+        {
+          "role": "tool",
+          "tool_call_id": "planner_0",
+          "content": "{\"result\": \"{\\\"status\\\": \\\"ok\\\", \\\"content\\\": \\\"def twice(n):\\\\n    return n + 1\\\\n\\\"}\"}"
+        },
+        {
+          "role": "assistant",
+          "content": null,
+          "tool_calls": [
+            {
+              "type": "function",
+              "id": "planner_1",
+              "function": {
+                "name": "read_file",
+                "arguments": "{\"filepath\": \"toy.py\"}"
+              }
+            }
+          ],
+          "reasoning_content": null
+        },
+        {
+          "role": "tool",
+          "tool_call_id": "planner_1",
+          "content": "{\"result\": \"{\\\"status\\\": \\\"ok\\\", \\\"content\\\": \\\"def twice(n):\\\\n    return n + 1\\\\n\\\"}\"}"
+        },
+        {
+          "role": "assistant",
+          "content": null,
+          "tool_calls": [
+            {
+              "type": "function",
+              "id": "planner_2",
+              "function": {
+                "name": "read_file",
+                "arguments": "{\"filepath\": \"toy.py\"}"
+              }
+            }
+          ],
+          "reasoning_content": null
+        },
+        {
+          "role": "tool",
+          "tool_call_id": "planner_2",
+          "content": "{\"result\": \"{\\\"status\\\": \\\"ok\\\", \\\"content\\\": \\\"def twice(n):\\\\n    return n + 1\\\\n\\\"}\"}"
+        },
+        {
+          "role": "assistant",
+          "content": null,
+          "tool_calls": [
+            {
+              "type": "function",
+              "id": "planner_3",
+              "function": {
+                "name": "read_file",
+                "arguments": "{\"filepath\": \"toy.py\"}"
+              }
+            }
+          ],
+          "reasoning_content": null
+        },
+        {
+          "role": "tool",
+          "tool_call_id": "planner_3",
+          "content": "{\"result\": \"{\\\"status\\\": \\\"ok\\\", \\\"content\\\": \\\"def twice(n):\\\\n    return n + 1\\\\n\\\"}\"}"
+        },
+        {
+          "role": "assistant",
+          "content": null,
+          "tool_calls": [
+            {
+              "type": "function",
+              "id": "planner_4",
+              "function": {
+                "name": "read_file",
+                "arguments": "{\"filepath\": \"toy.py\"}"
+              }
+            }
+          ],
+          "reasoning_content": null
+        },
+        {
+          "role": "tool",
+          "tool_call_id": "planner_4",
+          "content": "{\"result\": \"{\\\"status\\\": \\\"ok\\\", \\\"content\\\": \\\"def twice(n):\\\\n    return n + 1\\\\n\\\"}\"}"
+        },
+        {
+          "role": "assistant",
+          "content": null,
+          "tool_calls": [
+            {
+              "type": "function",
+              "id": "planner_5",
+              "function": {
+                "name": "read_file",
+                "arguments": "{\"filepath\": \"toy.py\"}"
+              }
+            }
+          ],
+          "reasoning_content": null
+        },
+        {
+          "role": "tool",
+          "tool_call_id": "planner_5",
+          "content": "{\"result\": \"{\\\"status\\\": \\\"ok\\\", \\\"content\\\": \\\"def twice(n):\\\\n    return n + 1\\\\n\\\"}\"}"
+        }
+      ]
+    },
+    {
+      "stage": "planner",
+      "tools": [
+        "read_file"
+      ],
+      "messages": [
+        {
+          "role": "system",
+          "content": "ROLE: planner\nInspect the issue and relevant source with read_file. Return a concise plan identifying\nthe requested behavior, assumptions, relevant paths and checks. Do not edit or submit.\nYour final text hands the task to the coder. No claim of a per-stage turn limit is made.\n\n\nYou are an agent. Your internal name is \"planner\"."
+        },
+        {
+          "role": "user",
+          "content": "Synthetic task: twice(n) must equal n * 2."
+        },
+        {
+          "role": "assistant",
+          "content": null,
+          "tool_calls": [
+            {
+              "type": "function",
+              "id": "planner_0",
+              "function": {
+                "name": "read_file",
+                "arguments": "{\"filepath\": \"toy.py\"}"
+              }
+            }
+          ],
+          "reasoning_content": null
+        },
+        {
+          "role": "tool",
+          "tool_call_id": "planner_0",
+          "content": "{\"result\": \"{\\\"status\\\": \\\"ok\\\", \\\"content\\\": \\\"def twice(n):\\\\n    return n + 1\\\\n\\\"}\"}"
+        },
+        {
+          "role": "assistant",
+          "content": null,
+          "tool_calls": [
+            {
+              "type": "function",
+              "id": "planner_1",
+              "function": {
+                "name": "read_file",
+                "arguments": "{\"filepath\": \"toy.py\"}"
+              }
+            }
+          ],
+          "reasoning_content": null
+        },
+        {
+          "role": "tool",
+          "tool_call_id": "planner_1",
+          "content": "{\"result\": \"{\\\"status\\\": \\\"ok\\\", \\\"content\\\": \\\"def twice(n):\\\\n    return n + 1\\\\n\\\"}\"}"
+        },
+        {
+          "role": "assistant",
+          "content": null,
+          "tool_calls": [
+            {
+              "type": "function",
+              "id": "planner_2",
+              "function": {
+                "name": "read_file",
+                "arguments": "{\"filepath\": \"toy.py\"}"
+              }
+            }
+          ],
+          "reasoning_content": null
+        },
+        {
+          "role": "tool",
+          "tool_call_id": "planner_2",
+          "content": "{\"result\": \"{\\\"status\\\": \\\"ok\\\", \\\"content\\\": \\\"def twice(n):\\\\n    return n + 1\\\\n\\\"}\"}"
+        },
+        {
+          "role": "assistant",
+          "content": null,
+          "tool_calls": [
+            {
+              "type": "function",
+              "id": "planner_3",
+              "function": {
+                "name": "read_file",
+                "arguments": "{\"filepath\": \"toy.py\"}"
+              }
+            }
+          ],
+          "reasoning_content": null
+        },
+        {
+          "role": "tool",
+          "tool_call_id": "planner_3",
+          "content": "{\"result\": \"{\\\"status\\\": \\\"ok\\\", \\\"content\\\": \\\"def twice(n):\\\\n    return n + 1\\\\n\\\"}\"}"
+        },
+        {
+          "role": "assistant",
+          "content": null,
+          "tool_calls": [
+            {
+              "type": "function",
+              "id": "planner_4",
+              "function": {
+                "name": "read_file",
+                "arguments": "{\"filepath\": \"toy.py\"}"
+              }
+            }
+          ],
+          "reasoning_content": null
+        },
+        {
+          "role": "tool",
+          "tool_call_id": "planner_4",
+          "content": "{\"result\": \"{\\\"status\\\": \\\"ok\\\", \\\"content\\\": \\\"def twice(n):\\\\n    return n + 1\\\\n\\\"}\"}"
+        },
+        {
+          "role": "assistant",
+          "content": null,
+          "tool_calls": [
+            {
+              "type": "function",
+              "id": "planner_5",
+              "function": {
+                "name": "read_file",
+                "arguments": "{\"filepath\": \"toy.py\"}"
+              }
+            }
+          ],
+          "reasoning_content": null
+        },
+        {
+          "role": "tool",
+          "tool_call_id": "planner_5",
+          "content": "{\"result\": \"{\\\"status\\\": \\\"ok\\\", \\\"content\\\": \\\"def twice(n):\\\\n    return n + 1\\\\n\\\"}\"}"
+        },
+        {
+          "role": "assistant",
+          "content": null,
+          "tool_calls": [
+            {
+              "type": "function",
+              "id": "planner_6",
+              "function": {
+                "name": "read_file",
+                "arguments": "{\"filepath\": \"toy.py\"}"
+              }
+            }
+          ],
+          "reasoning_content": null
+        },
+        {
+          "role": "tool",
+          "tool_call_id": "planner_6",
+          "content": "{\"result\": \"{\\\"status\\\": \\\"ok\\\", \\\"content\\\": \\\"def twice(n):\\\\n    return n + 1\\\\n\\\"}\"}"
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "author": "planner",
+      "content": {
+        "parts": [
+          {
+            "media_resolution": null,
+            "code_execution_result": null,
+            "executable_code": null,
+            "file_data": null,
+            "function_call": {
+              "id": "planner_0",
+              "args": {
+                "filepath": "toy.py"
+              },
+              "name": "read_file",
+              "partial_args": null,
+              "will_continue": null
+            },
+            "function_response": null,
+            "inline_data": null,
+            "text": null,
+            "thought": null,
+            "thought_signature": null,
+            "video_metadata": null,
+            "tool_call": null,
+            "tool_response": null,
+            "part_metadata": null,
+            "audio_transcription": null,
+            "media_processing": null,
+            "speech_metadata": null
+          }
+        ],
+        "role": "model"
+      }
+    },
+    {
+      "author": "planner",
+      "content": {
+        "parts": [
+          {
+            "media_resolution": null,
+            "code_execution_result": null,
+            "executable_code": null,
+            "file_data": null,
+            "function_call": null,
+            "function_response": {
+              "will_continue": null,
+              "scheduling": null,
+              "parts": null,
+              "id": "planner_0",
+              "name": "read_file",
+              "response": {
+                "result": "{\"status\": \"ok\", \"content\": \"def twice(n):\\n    return n + 1\\n\"}"
+              }
+            },
+            "inline_data": null,
+            "text": null,
+            "thought": null,
+            "thought_signature": null,
+            "video_metadata": null,
+            "tool_call": null,
+            "tool_response": null,
+            "part_metadata": null,
+            "audio_transcription": null,
+            "media_processing": null,
+            "speech_metadata": null
+          }
+        ],
+        "role": "user"
+      }
+    },
+    {
+      "author": "planner",
+      "content": {
+        "parts": [
+          {
+            "media_resolution": null,
+            "code_execution_result": null,
+            "executable_code": null,
+            "file_data": null,
+            "function_call": {
+              "id": "planner_1",
+              "args": {
+                "filepath": "toy.py"
+              },
+              "name": "read_file",
+              "partial_args": null,
+              "will_continue": null
+            },
+            "function_response": null,
+            "inline_data": null,
+            "text": null,
+            "thought": null,
+            "thought_signature": null,
+            "video_metadata": null,
+            "tool_call": null,
+            "tool_response": null,
+            "part_metadata": null,
+            "audio_transcription": null,
+            "media_processing": null,
+            "speech_metadata": null
+          }
+        ],
+        "role": "model"
+      }
+    },
+    {
+      "author": "planner",
+      "content": {
+        "parts": [
+          {
+            "media_resolution": null,
+            "code_execution_result": null,
+            "executable_code": null,
+            "file_data": null,
+            "function_call": null,
+            "function_response": {
+              "will_continue": null,
+              "scheduling": null,
+              "parts": null,
+              "id": "planner_1",
+              "name": "read_file",
+              "response": {
+                "result": "{\"status\": \"ok\", \"content\": \"def twice(n):\\n    return n + 1\\n\"}"
+              }
+            },
+            "inline_data": null,
+            "text": null,
+            "thought": null,
+            "thought_signature": null,
+            "video_metadata": null,
+            "tool_call": null,
+            "tool_response": null,
+            "part_metadata": null,
+            "audio_transcription": null,
+            "media_processing": null,
+            "speech_metadata": null
+          }
+        ],
+        "role": "user"
+      }
+    },
+    {
+      "author": "planner",
+      "content": {
+        "parts": [
+          {
+            "media_resolution": null,
+            "code_execution_result": null,
+            "executable_code": null,
+            "file_data": null,
+            "function_call": {
+              "id": "planner_2",
+              "args": {
+                "filepath": "toy.py"
+              },
+              "name": "read_file",
+              "partial_args": null,
+              "will_continue": null
+            },
+            "function_response": null,
+            "inline_data": null,
+            "text": null,
+            "thought": null,
+            "thought_signature": null,
+            "video_metadata": null,
+            "tool_call": null,
+            "tool_response": null,
+            "part_metadata": null,
+            "audio_transcription": null,
+            "media_processing": null,
+            "speech_metadata": null
+          }
+        ],
+        "role": "model"
+      }
+    },
+    {
+      "author": "planner",
+      "content": {
+        "parts": [
+          {
+            "media_resolution": null,
+            "code_execution_result": null,
+            "executable_code": null,
+            "file_data": null,
+            "function_call": null,
+            "function_response": {
+              "will_continue": null,
+              "scheduling": null,
+              "parts": null,
+              "id": "planner_2",
+              "name": "read_file",
+              "response": {
+                "result": "{\"status\": \"ok\", \"content\": \"def twice(n):\\n    return n + 1\\n\"}"
+              }
+            },
+            "inline_data": null,
+            "text": null,
+            "thought": null,
+            "thought_signature": null,
+            "video_metadata": null,
+            "tool_call": null,
+            "tool_response": null,
+            "part_metadata": null,
+            "audio_transcription": null,
+            "media_processing": null,
+            "speech_metadata": null
+          }
+        ],
+        "role": "user"
+      }
+    },
+    {
+      "author": "planner",
+      "content": {
+        "parts": [
+          {
+            "media_resolution": null,
+            "code_execution_result": null,
+            "executable_code": null,
+            "file_data": null,
+            "function_call": {
+              "id": "planner_3",
+              "args": {
+                "filepath": "toy.py"
+              },
+              "name": "read_file",
+              "partial_args": null,
+              "will_continue": null
+            },
+            "function_response": null,
+            "inline_data": null,
+            "text": null,
+            "thought": null,
+            "thought_signature": null,
+            "video_metadata": null,
+            "tool_call": null,
+            "tool_response": null,
+            "part_metadata": null,
+            "audio_transcription": null,
+            "media_processing": null,
+            "speech_metadata": null
+          }
+        ],
+        "role": "model"
+      }
+    },
+    {
+      "author": "planner",
+      "content": {
+        "parts": [
+          {
+            "media_resolution": null,
+            "code_execution_result": null,
+            "executable_code": null,
+            "file_data": null,
+            "function_call": null,
+            "function_response": {
+              "will_continue": null,
+              "scheduling": null,
+              "parts": null,
+              "id": "planner_3",
+              "name": "read_file",
+              "response": {
+                "result": "{\"status\": \"ok\", \"content\": \"def twice(n):\\n    return n + 1\\n\"}"
+              }
+            },
+            "inline_data": null,
+            "text": null,
+            "thought": null,
+            "thought_signature": null,
+            "video_metadata": null,
+            "tool_call": null,
+            "tool_response": null,
+            "part_metadata": null,
+            "audio_transcription": null,
+            "media_processing": null,
+            "speech_metadata": null
+          }
+        ],
+        "role": "user"
+      }
+    },
+    {
+      "author": "planner",
+      "content": {
+        "parts": [
+          {
+            "media_resolution": null,
+            "code_execution_result": null,
+            "executable_code": null,
+            "file_data": null,
+            "function_call": {
+              "id": "planner_4",
+              "args": {
+                "filepath": "toy.py"
+              },
+              "name": "read_file",
+              "partial_args": null,
+              "will_continue": null
+            },
+            "function_response": null,
+            "inline_data": null,
+            "text": null,
+            "thought": null,
+            "thought_signature": null,
+            "video_metadata": null,
+            "tool_call": null,
+            "tool_response": null,
+            "part_metadata": null,
+            "audio_transcription": null,
+            "media_processing": null,
+            "speech_metadata": null
+          }
+        ],
+        "role": "model"
+      }
+    },
+    {
+      "author": "planner",
+      "content": {
+        "parts": [
+          {
+            "media_resolution": null,
+            "code_execution_result": null,
+            "executable_code": null,
+            "file_data": null,
+            "function_call": null,
+            "function_response": {
+              "will_continue": null,
+              "scheduling": null,
+              "parts": null,
+              "id": "planner_4",
+              "name": "read_file",
+              "response": {
+                "result": "{\"status\": \"ok\", \"content\": \"def twice(n):\\n    return n + 1\\n\"}"
+              }
+            },
+            "inline_data": null,
+            "text": null,
+            "thought": null,
+            "thought_signature": null,
+            "video_metadata": null,
+            "tool_call": null,
+            "tool_response": null,
+            "part_metadata": null,
+            "audio_transcription": null,
+            "media_processing": null,
+            "speech_metadata": null
+          }
+        ],
+        "role": "user"
+      }
+    },
+    {
+      "author": "planner",
+      "content": {
+        "parts": [
+          {
+            "media_resolution": null,
+            "code_execution_result": null,
+            "executable_code": null,
+            "file_data": null,
+            "function_call": {
+              "id": "planner_5",
+              "args": {
+                "filepath": "toy.py"
+              },
+              "name": "read_file",
+              "partial_args": null,
+              "will_continue": null
+            },
+            "function_response": null,
+            "inline_data": null,
+            "text": null,
+            "thought": null,
+            "thought_signature": null,
+            "video_metadata": null,
+            "tool_call": null,
+            "tool_response": null,
+            "part_metadata": null,
+            "audio_transcription": null,
+            "media_processing": null,
+            "speech_metadata": null
+          }
+        ],
+        "role": "model"
+      }
+    },
+    {
+      "author": "planner",
+      "content": {
+        "parts": [
+          {
+            "media_resolution": null,
+            "code_execution_result": null,
+            "executable_code": null,
+            "file_data": null,
+            "function_call": null,
+            "function_response": {
+              "will_continue": null,
+              "scheduling": null,
+              "parts": null,
+              "id": "planner_5",
+              "name": "read_file",
+              "response": {
+                "result": "{\"status\": \"ok\", \"content\": \"def twice(n):\\n    return n + 1\\n\"}"
+              }
+            },
+            "inline_data": null,
+            "text": null,
+            "thought": null,
+            "thought_signature": null,
+            "video_metadata": null,
+            "tool_call": null,
+            "tool_response": null,
+            "part_metadata": null,
+            "audio_transcription": null,
+            "media_processing": null,
+            "speech_metadata": null
+          }
+        ],
+        "role": "user"
+      }
+    },
+    {
+      "author": "planner",
+      "content": {
+        "parts": [
+          {
+            "media_resolution": null,
+            "code_execution_result": null,
+            "executable_code": null,
+            "file_data": null,
+            "function_call": {
+              "id": "planner_6",
+              "args": {
+                "filepath": "toy.py"
+              },
+              "name": "read_file",
+              "partial_args": null,
+              "will_continue": null
+            },
+            "function_response": null,
+            "inline_data": null,
+            "text": null,
+            "thought": null,
+            "thought_signature": null,
+            "video_metadata": null,
+            "tool_call": null,
+            "tool_response": null,
+            "part_metadata": null,
+            "audio_transcription": null,
+            "media_processing": null,
+            "speech_metadata": null
+          }
+        ],
+        "role": "model"
+      }
+    },
+    {
+      "author": "planner",
+      "content": {
+        "parts": [
+          {
+            "media_resolution": null,
+            "code_execution_result": null,
+            "executable_code": null,
+            "file_data": null,
+            "function_call": null,
+            "function_response": {
+              "will_continue": null,
+              "scheduling": null,
+              "parts": null,
+              "id": "planner_6",
+              "name": "read_file",
+              "response": {
+                "result": "{\"status\": \"ok\", \"content\": \"def twice(n):\\n    return n + 1\\n\"}"
+              }
+            },
+            "inline_data": null,
+            "text": null,
+            "thought": null,
+            "thought_signature": null,
+            "video_metadata": null,
+            "tool_call": null,
+            "tool_response": null,
+            "part_metadata": null,
+            "audio_transcription": null,
+            "media_processing": null,
+            "speech_metadata": null
+          }
+        ],
+        "role": "user"
+      }
+    },
+    {
+      "author": "planner",
+      "content": {
+        "parts": [
+          {
+            "media_resolution": null,
+            "code_execution_result": null,
+            "executable_code": null,
+            "file_data": null,
+            "function_call": {
+              "id": "planner_7",
+              "args": {
+                "filepath": "toy.py"
+              },
+              "name": "read_file",
+              "partial_args": null,
+              "will_continue": null
+            },
+            "function_response": null,
+            "inline_data": null,
+            "text": null,
+            "thought": null,
+            "thought_signature": null,
+            "video_metadata": null,
+            "tool_call": null,
+            "tool_response": null,
+            "part_metadata": null,
+            "audio_transcription": null,
+            "media_processing": null,
+            "speech_metadata": null
+          }
+        ],
+        "role": "model"
+      }
+    },
+    {
+      "author": "planner",
+      "content": {
+        "parts": [
+          {
+            "media_resolution": null,
+            "code_execution_result": null,
+            "executable_code": null,
+            "file_data": null,
+            "function_call": null,
+            "function_response": {
+              "will_continue": null,
+              "scheduling": null,
+              "parts": null,
+              "id": "planner_7",
+              "name": "read_file",
+              "response": {
+                "result": "{\"status\": \"ok\", \"content\": \"def twice(n):\\n    return n + 1\\n\"}"
+              }
+            },
+            "inline_data": null,
+            "text": null,
+            "thought": null,
+            "thought_signature": null,
+            "video_metadata": null,
+            "tool_call": null,
+            "tool_response": null,
+            "part_metadata": null,
+            "audio_transcription": null,
+            "media_processing": null,
+            "speech_metadata": null
+          }
+        ],
+        "role": "user"
+      }
+    }
+  ]
+}

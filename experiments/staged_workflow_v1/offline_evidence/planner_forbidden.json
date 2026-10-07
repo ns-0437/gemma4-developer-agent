@@ -1,0 +1,75 @@
+{
+  "result": {
+    "scenario": "planner_forbidden",
+    "stage_order": [
+      "planner"
+    ],
+    "request_counts": {
+      "planner": 1
+    },
+    "reviewer_saw_actual_diff": false,
+    "tool_calls": [],
+    "submitted": false,
+    "patch": "",
+    "error": {
+      "type": "ValueError",
+      "message": "Tool 'run_command' not found.\nAvailable tools: read_file\n\nPossible causes:\n  1. LLM hallucinated the function name - review agent instruction clarity\n  2. Tool not registered - verify agent.tools list\n  3. Name mismatch - check for typos\n\nSuggested fixes:\n  - Review agent instruction to ensure tool usage is clear\n  - Verify tool is included in agent.tools list\n  - Check for typos in function name"
+    },
+    "global_llm_budget": 8
+  },
+  "requests": [
+    {
+      "stage": "planner",
+      "tools": [
+        "read_file"
+      ],
+      "messages": [
+        {
+          "role": "system",
+          "content": "ROLE: planner\nInspect the issue and relevant source with read_file. Return a concise plan identifying\nthe requested behavior, assumptions, relevant paths and checks. Do not edit or submit.\nYour final text hands the task to the coder. No claim of a per-stage turn limit is made.\n\n\nYou are an agent. Your internal name is \"planner\"."
+        },
+        {
+          "role": "user",
+          "content": "Synthetic task: twice(n) must equal n * 2."
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "author": "planner",
+      "content": {
+        "parts": [
+          {
+            "media_resolution": null,
+            "code_execution_result": null,
+            "executable_code": null,
+            "file_data": null,
+            "function_call": {
+              "id": "planner_0",
+              "args": {
+                "command": "git diff -- toy.py"
+              },
+              "name": "run_command",
+              "partial_args": null,
+              "will_continue": null
+            },
+            "function_response": null,
+            "inline_data": null,
+            "text": null,
+            "thought": null,
+            "thought_signature": null,
+            "video_metadata": null,
+            "tool_call": null,
+            "tool_response": null,
+            "part_metadata": null,
+            "audio_transcription": null,
+            "media_processing": null,
+            "speech_metadata": null
+          }
+        ],
+        "role": "model"
+      }
+    }
+  ]
+}

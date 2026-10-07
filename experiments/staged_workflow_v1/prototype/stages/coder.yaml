@@ -1,0 +1,12 @@
+name: coder
+model: gemma-4-31b-it-qat-w4a16-ct
+instruction: !include ../prompts/coder.md
+include_contents: default
+output_key: coder_report
+disallow_transfer_to_parent: true
+disallow_transfer_to_peers: true
+tools:
+  - read_file
+  - edit_file
+  - run_command
+generate_content_config: !include ../configs/sampling.yaml

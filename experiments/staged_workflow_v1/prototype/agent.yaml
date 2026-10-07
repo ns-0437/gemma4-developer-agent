@@ -1,0 +1,7 @@
+agent_class: SequentialAgent
+name: staged_workflow
+description: Offline feasibility prototype, not a promoted submission.
+sub_agents:
+  - config_path: stages/planner.yaml
+  - config_path: stages/coder.yaml
+  - config_path: stages/reviewer.yaml

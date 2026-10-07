@@ -1,0 +1,654 @@
+{
+  "versions": {
+    "adk-submission": "0.2.12",
+    "google-adk": "1.36.1",
+    "litellm": "1.102.1"
+  },
+  "real_model_used": false,
+  "network_used": false,
+  "scenarios_passed": 11,
+  "results": [
+    {
+      "scenario": "happy",
+      "stage_order": [
+        "planner",
+        "coder",
+        "reviewer"
+      ],
+      "request_counts": {
+        "planner": 2,
+        "coder": 3,
+        "reviewer": 3
+      },
+      "reviewer_saw_actual_diff": true,
+      "tool_calls": [
+        [
+          "read_file",
+          "toy.py"
+        ],
+        [
+          "edit_file",
+          "toy.py"
+        ],
+        [
+          "run_command",
+          "git diff -- toy.py"
+        ],
+        [
+          "read_file",
+          "toy.py"
+        ],
+        [
+          "submit_patch",
+          ""
+        ]
+      ],
+      "submitted": true,
+      "patch": "diff --git a/toy.py b/toy.py\nindex b485fa7..1005e84 100644\n--- a/toy.py\n+++ b/toy.py\n@@ -1,2 +1,2 @@\n def twice(n):\n-    return n + 1\n+    return n * 2\n",
+      "error": null,
+      "global_llm_budget": 8
+    },
+    {
+      "scenario": "planner_forbidden",
+      "stage_order": [
+        "planner"
+      ],
+      "request_counts": {
+        "planner": 1
+      },
+      "reviewer_saw_actual_diff": false,
+      "tool_calls": [],
+      "submitted": false,
+      "patch": "",
+      "error": {
+        "type": "ValueError",
+        "message": "Tool 'run_command' not found.\nAvailable tools: read_file\n\nPossible causes:\n  1. LLM hallucinated the function name - review agent instruction clarity\n  2. Tool not registered - verify agent.tools list\n  3. Name mismatch - check for typos\n\nSuggested fixes:\n  - Review agent instruction to ensure tool usage is clear\n  - Verify tool is included in agent.tools list\n  - Check for typos in function name"
+      },
+      "global_llm_budget": 8
+    },
+    {
+      "scenario": "coder_forbidden",
+      "stage_order": [
+        "planner",
+        "coder"
+      ],
+      "request_counts": {
+        "planner": 2,
+        "coder": 1
+      },
+      "reviewer_saw_actual_diff": false,
+      "tool_calls": [
+        [
+          "read_file",
+          "toy.py"
+        ]
+      ],
+      "submitted": false,
+      "patch": "",
+      "error": {
+        "type": "ValueError",
+        "message": "Tool 'submit_patch' not found.\nAvailable tools: read_file, edit_file, run_command\n\nPossible causes:\n  1. LLM hallucinated the function name - review agent instruction clarity\n  2. Tool not registered - verify agent.tools list\n  3. Name mismatch - check for typos\n\nSuggested fixes:\n  - Review agent instruction to ensure tool usage is clear\n  - Verify tool is included in agent.tools list\n  - Check for typos in function name"
+      },
+      "global_llm_budget": 8
+    },
+    {
+      "scenario": "reviewer_forbidden",
+      "stage_order": [
+        "planner",
+        "coder",
+        "reviewer"
+      ],
+      "request_counts": {
+        "planner": 2,
+        "coder": 3,
+        "reviewer": 1
+      },
+      "reviewer_saw_actual_diff": true,
+      "tool_calls": [
+        [
+          "read_file",
+          "toy.py"
+        ],
+        [
+          "edit_file",
+          "toy.py"
+        ],
+        [
+          "run_command",
+          "git diff -- toy.py"
+        ]
+      ],
+      "submitted": false,
+      "patch": "diff --git a/toy.py b/toy.py\nindex b485fa7..1005e84 100644\n--- a/toy.py\n+++ b/toy.py\n@@ -1,2 +1,2 @@\n def twice(n):\n-    return n + 1\n+    return n * 2\n",
+      "error": {
+        "type": "ValueError",
+        "message": "Tool 'edit_file' not found.\nAvailable tools: read_file, get_status, submit_patch\n\nPossible causes:\n  1. LLM hallucinated the function name - review agent instruction clarity\n  2. Tool not registered - verify agent.tools list\n  3. Name mismatch - check for typos\n\nSuggested fixes:\n  - Review agent instruction to ensure tool usage is clear\n  - Verify tool is included in agent.tools list\n  - Check for typos in function name"
+      },
+      "global_llm_budget": 8
+    },
+    {
+      "scenario": "planner_loops",
+      "stage_order": [
+        "planner"
+      ],
+      "request_counts": {
+        "planner": 8
+      },
+      "reviewer_saw_actual_diff": false,
+      "tool_calls": [
+        [
+          "read_file",
+          "toy.py"
+        ],
+        [
+          "read_file",
+          "toy.py"
+        ],
+        [
+          "read_file",
+          "toy.py"
+        ],
+        [
+          "read_file",
+          "toy.py"
+        ],
+        [
+          "read_file",
+          "toy.py"
+        ],
+        [
+          "read_file",
+          "toy.py"
+        ],
+        [
+          "read_file",
+          "toy.py"
+        ],
+        [
+          "read_file",
+          "toy.py"
+        ]
+      ],
+      "submitted": false,
+      "patch": "",
+      "error": {
+        "type": "LlmCallsLimitExceededError",
+        "message": "Max number of llm calls limit of `8` exceeded"
+      },
+      "global_llm_budget": 8
+    },
+    {
+      "scenario": "coder_loops",
+      "stage_order": [
+        "planner",
+        "coder"
+      ],
+      "request_counts": {
+        "planner": 2,
+        "coder": 6
+      },
+      "reviewer_saw_actual_diff": false,
+      "tool_calls": [
+        [
+          "read_file",
+          "toy.py"
+        ],
+        [
+          "run_command",
+          "git log --grep=missing --oneline"
+        ],
+        [
+          "run_command",
+          "git log --grep=missing --oneline"
+        ],
+        [
+          "run_command",
+          "git log --grep=missing --oneline"
+        ],
+        [
+          "run_command",
+          "git log --grep=missing --oneline"
+        ],
+        [
+          "run_command",
+          "git log --grep=missing --oneline"
+        ],
+        [
+          "run_command",
+          "git log --grep=missing --oneline"
+        ]
+      ],
+      "submitted": false,
+      "patch": "",
+      "error": {
+        "type": "LlmCallsLimitExceededError",
+        "message": "Max number of llm calls limit of `8` exceeded"
+      },
+      "global_llm_budget": 8
+    },
+    {
+      "scenario": "coder_loops_60",
+      "stage_order": [
+        "planner",
+        "coder"
+      ],
+      "request_counts": {
+        "planner": 2,
+        "coder": 58
+      },
+      "reviewer_saw_actual_diff": false,
+      "tool_calls": [
+        [
+          "read_file",
+          "toy.py"
+        ],
+        [
+          "run_command",
+          "git log --grep=missing --oneline"
+        ],
+        [
+          "run_command",
+          "git log --grep=missing --oneline"
+        ],
+        [
+          "run_command",
+          "git log --grep=missing --oneline"
+        ],
+        [
+          "run_command",
+          "git log --grep=missing --oneline"
+        ],
+        [
+          "run_command",
+          "git log --grep=missing --oneline"
+        ],
+        [
+          "run_command",
+          "git log --grep=missing --oneline"
+        ],
+        [
+          "run_command",
+          "git log --grep=missing --oneline"
+        ],
+        [
+          "run_command",
+          "git log --grep=missing --oneline"
+        ],
+        [
+          "run_command",
+          "git log --grep=missing --oneline"
+        ],
+        [
+          "run_command",
+          "git log --grep=missing --oneline"
+        ],
+        [
+          "run_command",
+          "git log --grep=missing --oneline"
+        ],
+        [
+          "run_command",
+          "git log --grep=missing --oneline"
+        ],
+        [
+          "run_command",
+          "git log --grep=missing --oneline"
+        ],
+        [
+          "run_command",
+          "git log --grep=missing --oneline"
+        ],
+        [
+          "run_command",
+          "git log --grep=missing --oneline"
+        ],
+        [
+          "run_command",
+          "git log --grep=missing --oneline"
+        ],
+        [
+          "run_command",
+          "git log --grep=missing --oneline"
+        ],
+        [
+          "run_command",
+          "git log --grep=missing --oneline"
+        ],
+        [
+          "run_command",
+          "git log --grep=missing --oneline"
+        ],
+        [
+          "run_command",
+          "git log --grep=missing --oneline"
+        ],
+        [
+          "run_command",
+          "git log --grep=missing --oneline"
+        ],
+        [
+          "run_command",
+          "git log --grep=missing --oneline"
+        ],
+        [
+          "run_command",
+          "git log --grep=missing --oneline"
+        ],
+        [
+          "run_command",
+          "git log --grep=missing --oneline"
+        ],
+        [
+          "run_command",
+          "git log --grep=missing --oneline"
+        ],
+        [
+          "run_command",
+          "git log --grep=missing --oneline"
+        ],
+        [
+          "run_command",
+          "git log --grep=missing --oneline"
+        ],
+        [
+          "run_command",
+          "git log --grep=missing --oneline"
+        ],
+        [
+          "run_command",
+          "git log --grep=missing --oneline"
+        ],
+        [
+          "run_command",
+          "git log --grep=missing --oneline"
+        ],
+        [
+          "run_command",
+          "git log --grep=missing --oneline"
+        ],
+        [
+          "run_command",
+          "git log --grep=missing --oneline"
+        ],
+        [
+          "run_command",
+          "git log --grep=missing --oneline"
+        ],
+        [
+          "run_command",
+          "git log --grep=missing --oneline"
+        ],
+        [
+          "run_command",
+          "git log --grep=missing --oneline"
+        ],
+        [
+          "run_command",
+          "git log --grep=missing --oneline"
+        ],
+        [
+          "run_command",
+          "git log --grep=missing --oneline"
+        ],
+        [
+          "run_command",
+          "git log --grep=missing --oneline"
+        ],
+        [
+          "run_command",
+          "git log --grep=missing --oneline"
+        ],
+        [
+          "run_command",
+          "git log --grep=missing --oneline"
+        ],
+        [
+          "run_command",
+          "git log --grep=missing --oneline"
+        ],
+        [
+          "run_command",
+          "git log --grep=missing --oneline"
+        ],
+        [
+          "run_command",
+          "git log --grep=missing --oneline"
+        ],
+        [
+          "run_command",
+          "git log --grep=missing --oneline"
+        ],
+        [
+          "run_command",
+          "git log --grep=missing --oneline"
+        ],
+        [
+          "run_command",
+          "git log --grep=missing --oneline"
+        ],
+        [
+          "run_command",
+          "git log --grep=missing --oneline"
+        ],
+        [
+          "run_command",
+          "git log --grep=missing --oneline"
+        ],
+        [
+          "run_command",
+          "git log --grep=missing --oneline"
+        ],
+        [
+          "run_command",
+          "git log --grep=missing --oneline"
+        ],
+        [
+          "run_command",
+          "git log --grep=missing --oneline"
+        ],
+        [
+          "run_command",
+          "git log --grep=missing --oneline"
+        ],
+        [
+          "run_command",
+          "git log --grep=missing --oneline"
+        ],
+        [
+          "run_command",
+          "git log --grep=missing --oneline"
+        ],
+        [
+          "run_command",
+          "git log --grep=missing --oneline"
+        ],
+        [
+          "run_command",
+          "git log --grep=missing --oneline"
+        ],
+        [
+          "run_command",
+          "git log --grep=missing --oneline"
+        ],
+        [
+          "run_command",
+          "git log --grep=missing --oneline"
+        ]
+      ],
+      "submitted": false,
+      "patch": "",
+      "error": {
+        "type": "LlmCallsLimitExceededError",
+        "message": "Max number of llm calls limit of `60` exceeded"
+      },
+      "global_llm_budget": 60
+    },
+    {
+      "scenario": "loop_wrapper",
+      "stage_order": [
+        "planner",
+        "coder"
+      ],
+      "request_counts": {
+        "planner": 2,
+        "coder": 6
+      },
+      "reviewer_saw_actual_diff": false,
+      "tool_calls": [
+        [
+          "read_file",
+          "toy.py"
+        ],
+        [
+          "run_command",
+          "git log --grep=missing --oneline"
+        ],
+        [
+          "run_command",
+          "git log --grep=missing --oneline"
+        ],
+        [
+          "run_command",
+          "git log --grep=missing --oneline"
+        ],
+        [
+          "run_command",
+          "git log --grep=missing --oneline"
+        ],
+        [
+          "run_command",
+          "git log --grep=missing --oneline"
+        ],
+        [
+          "run_command",
+          "git log --grep=missing --oneline"
+        ]
+      ],
+      "submitted": false,
+      "patch": "",
+      "error": {
+        "type": "LlmCallsLimitExceededError",
+        "message": "Max number of llm calls limit of `8` exceeded"
+      },
+      "global_llm_budget": 8
+    },
+    {
+      "scenario": "review_rejects",
+      "stage_order": [
+        "planner",
+        "coder",
+        "reviewer"
+      ],
+      "request_counts": {
+        "planner": 2,
+        "coder": 3,
+        "reviewer": 2
+      },
+      "reviewer_saw_actual_diff": true,
+      "tool_calls": [
+        [
+          "read_file",
+          "toy.py"
+        ],
+        [
+          "edit_file",
+          "toy.py"
+        ],
+        [
+          "run_command",
+          "git diff -- toy.py"
+        ],
+        [
+          "read_file",
+          "toy.py"
+        ]
+      ],
+      "submitted": false,
+      "patch": "diff --git a/toy.py b/toy.py\nindex b485fa7..1005e84 100644\n--- a/toy.py\n+++ b/toy.py\n@@ -1,2 +1,2 @@\n def twice(n):\n-    return n + 1\n+    return n * 2\n",
+      "error": null,
+      "global_llm_budget": 8
+    },
+    {
+      "scenario": "no_patch",
+      "stage_order": [
+        "planner",
+        "coder",
+        "reviewer"
+      ],
+      "request_counts": {
+        "planner": 2,
+        "coder": 1,
+        "reviewer": 2
+      },
+      "reviewer_saw_actual_diff": false,
+      "tool_calls": [
+        [
+          "read_file",
+          "toy.py"
+        ],
+        [
+          "read_file",
+          "toy.py"
+        ]
+      ],
+      "submitted": false,
+      "patch": "",
+      "error": null,
+      "global_llm_budget": 8
+    },
+    {
+      "scenario": "reviewer_no_history",
+      "stage_order": [
+        "planner",
+        "coder",
+        "reviewer"
+      ],
+      "request_counts": {
+        "planner": 2,
+        "coder": 3,
+        "reviewer": 2
+      },
+      "reviewer_saw_actual_diff": false,
+      "tool_calls": [
+        [
+          "read_file",
+          "toy.py"
+        ],
+        [
+          "edit_file",
+          "toy.py"
+        ],
+        [
+          "run_command",
+          "git diff -- toy.py"
+        ],
+        [
+          "read_file",
+          "toy.py"
+        ]
+      ],
+      "submitted": false,
+      "patch": "diff --git a/toy.py b/toy.py\nindex b485fa7..1005e84 100644\n--- a/toy.py\n+++ b/toy.py\n@@ -1,2 +1,2 @@\n def twice(n):\n-    return n + 1\n+    return n * 2\n",
+      "error": null,
+      "global_llm_budget": 8
+    }
+  ],
+  "unsupported_per_stage_caps_rejected": [
+    {
+      "field": "max_llm_calls: 3",
+      "error": "SubmissionSchemaError",
+      "message": "Sub-agent schema validation failed (stages/coder.yaml): 1 validation error for SandboxedAgentConfig\nLlmAgent.max_llm_calls\n  Extra inputs are not permitted [type=extra_forbidden, input_value=3, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.13/v/extra_forbidden"
+    },
+    {
+      "field": "max_turns: 3",
+      "error": "SubmissionSchemaError",
+      "message": "Sub-agent schema validation failed (stages/coder.yaml): 1 validation error for SandboxedAgentConfig\nLlmAgent.max_turns\n  Extra inputs are not permitted [type=extra_forbidden, input_value=3, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.13/v/extra_forbidden"
+    },
+    {
+      "field": "run_config: {max_llm_calls: 3}",
+      "error": "SubmissionSchemaError",
+      "message": "Sub-agent schema validation failed (stages/coder.yaml): 1 validation error for SandboxedAgentConfig\nLlmAgent.run_config\n  Extra inputs are not permitted [type=extra_forbidden, input_value={'max_llm_calls': 3}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/extra_forbidden"
+    }
+  ],
+  "verdict": "Normal handoff supported; forced progress under repeated tool calls NOT established. Global-budget starvation reproduced."
+}
