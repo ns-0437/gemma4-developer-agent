@@ -10,6 +10,7 @@ import json
 import os
 import sys
 import tempfile
+import xml.etree.ElementTree as ET
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -21,45 +22,58 @@ COMPILER = ROOT / 'experiments/shellread_v1/compiler_0_2_12/src/adk_submission'
 TASKS = ['fastapi_15280', 'requests_7427', 'rich_3894']
 
 
-def hook(fault=None):
+def hook(conflicting_roots=False):
     def edit(i, cell, ns):
         if 'verify_runtime_compiler()' in cell:
             ns['COMPILER_FIXTURE'] = COMPILER
             cell = cell.replace('verify_runtime_compiler()',
                                 "verify_runtime_compiler(COMPILER_FIXTURE, '0.2.12')")
-        if fault == 'relpath':
-            # Same sandbox root, DIFFERENT relative path inside it: must stay different.
-            cell = cell.replace('xml_text = xml_text.replace(saved_root, obs_root)',
-                                'xml_text = xml_text.replace(saved_root, obs_root)')
+        if conflicting_roots and 'CONTROL_STOP_REASON = None' in cell:
+            for arm in ns['CONTROL_EVIDENCE']['requests_7427'].values():
+                arm['grading_import'] = '/tmp/conflicting/workspace/requests/__init__.py'
         return cell
     return edit
 
 
 def run(tmp, **fixture):
+    conflicting_roots = fixture.pop('ambiguous_root', False)
     H.CONTROL_FIXTURE.update(fixture) if hasattr(H, 'CONTROL_FIXTURE') else None
     log = io.StringIO()
     with contextlib.redirect_stdout(log):
-        ns = H.run_cells(Path(tmp), dispatch=False, server_healthy=True, hook=hook())
+        ns = H.run_cells(Path(tmp), dispatch=False, server_healthy=True,
+                         hook=hook(conflicting_roots=conflicting_roots))
     return ns, log.getvalue()
 
 
-def expect_control_failure(label, mutate_xml=None, **fixture):
-    """The control gate must still refuse. Returns the assertion text."""
+def expect_control_failure(label, mutate_xml=None, detail_key=None, diagnostic=None, **fixture):
+    """Require the intended gate refusal and inspect its persisted evidence."""
     with tempfile.TemporaryDirectory() as tmp:
         saved = dict(H.CONTROL_RAW_XML)
+        saved_fixture = dict(H.CONTROL_FIXTURE)
         if mutate_xml:
             for k in list(H.CONTROL_RAW_XML):
                 H.CONTROL_RAW_XML[k] = mutate_xml(k, H.CONTROL_RAW_XML[k])
+            assert H.CONTROL_RAW_XML != saved, 'fault did not change any fixture XML'
+        work = Path(tmp) / 'w'
         try:
-            run(Path(tmp) / 'w', **fixture)
+            run(work, **fixture)
         except AssertionError as exc:
+            assert 'controls do not reproduce' in str(exc), 'unrelated assertion: ' + str(exc)
+            records = json.loads((work / 'working/pilot/control_recheck.json').read_text())
+            failed = [record for record in records if not record['agrees_with_saved']]
+            assert failed, 'no persisted rejected arm'
+            if detail_key:
+                assert any(record['node_comparison'].get(detail_key) for record in failed), detail_key
+            if diagnostic:
+                assert any(diagnostic(record['canonicalization']) for record in failed), label
+            assert H.counts()['server_created'] == H.counts()['evaluations'] == 0
             print('  PASS  %s\n          -> %s' % (label, str(exc).splitlines()[0][:130]))
             return
         finally:
             H.CONTROL_RAW_XML.clear()
             H.CONTROL_RAW_XML.update(saved)
-            for k in list(fixture):
-                H.CONTROL_FIXTURE.pop(k, None)
+            H.CONTROL_FIXTURE.clear()
+            H.CONTROL_FIXTURE.update(saved_fixture)
     raise AssertionError('control gate did NOT refuse: ' + label)
 
 
@@ -126,17 +140,18 @@ def _add_ws_collision(key, xml):
     """Add a node whose identity is already the canonical token, colliding with a real path."""
     if key[0] != 'requests_7427':
         return xml
-    i = xml.find('<testcase ')
-    end = xml.find('/>', i)
-    original = xml[i:end + 2]
-    import re as _re
-    m = _re.search(r'name="([^"]*/workspace/[^"]*)"', xml)
-    if not m:
-        root = H.CONTROL_OBSERVED_ROOT.get(key) or H.CONTROL_SAVED_ROOT.get(key)
-        extra = ('<testcase classname="tests.collide" name="t[%s/f.py]"/>'
-                 '<testcase classname="tests.collide" name="t[&lt;WS&gt;/f.py]"/>' % root)
-        return xml[:i] + extra + xml[i:]
-    return xml[:i] + original + xml[i:]
+    document = ET.fromstring(xml)
+    root = H.CONTROL_SAVED_ROOT[key]
+    for suite in document.iter('testsuite'):
+        for case in list(suite):
+            if case.tag == 'testcase' and root in case.get('name', ''):
+                alias = ET.Element('testcase', {
+                    'classname': case.get('classname', ''),
+                    'name': case.get('name').replace(root, '<WS>'),
+                })
+                suite.append(alias)
+                return ET.tostring(document, encoding='unicode')
+    raise AssertionError('no workspace parameter available for collision fixture')
 
 
 def main():
