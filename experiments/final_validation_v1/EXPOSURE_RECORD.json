@@ -1,0 +1,26 @@
+{
+  "note": "Authoritative record of hold-out exposure, kept separately from task_freeze.json, which is never edited. A task counts as exposed only when its evaluation actually starts.",
+  "freeze_sha256_unchanged": "220869409441c04d7c8f32ef5ab141df02f754cce352495deeb48995a7483b4b",
+  "authorized_for_exposure": [
+    "fastapi_15280",
+    "requests_7427",
+    "rich_3894"
+  ],
+  "actually_exposed": [],
+  "evidence": "kernel version 1 ERRORED at the control gate before any evaluation; no pilot/EXPOSURE.json was produced and no run directory was created",
+  "remaining_protected": [
+    "fastapi_13537",
+    "fastapi_14479",
+    "fastapi_14873",
+    "fastapi_15800",
+    "requests_6644",
+    "rich_3180",
+    "rich_3486",
+    "rich_3521",
+    "rich_3938",
+    "fastapi_15280",
+    "requests_7427",
+    "rich_3894"
+  ],
+  "remaining_protected_note": "all 12 remain protected because none was exposed"
+}

@@ -68,6 +68,79 @@ def protected_holdout() -> list:
     return list(json.loads(FREEZE.read_text(encoding="utf-8"))["protected_holdout"])
 
 
+# Final-validation entry point. Development generators never set this, so for them the
+# hold-out guard below behaves exactly as before: every protected task is rejected.
+# This is deliberately NOT a boolean bypass. It must be a path to a validation manifest
+# that pins the freeze hash, the exact task set, both package hashes and the run order,
+# and every one of those is re-checked against disk before any overlap is permitted.
+VALIDATION_MANIFEST = None
+
+
+def _load_validation_manifest(tasks, overlap):
+    """Validate a final-validation manifest, or refuse. Returns the parsed manifest."""
+    path = Path(VALIDATION_MANIFEST)
+    if not path.is_file():
+        raise SystemExit(f"REFUSING TO GENERATE: validation manifest not found: {path}")
+    man = json.loads(path.read_text(encoding="utf-8"))
+
+    required = ("purpose", "freeze_sha256", "tasks", "packages", "order")
+    missing = [k for k in required if k not in man]
+    if missing:
+        raise SystemExit("REFUSING TO GENERATE: validation manifest is missing required "
+                         f"metadata: {missing}")
+    if man["purpose"] != "final_validation":
+        raise SystemExit("REFUSING TO GENERATE: validation manifest purpose is "
+                         f"{man['purpose']!r}, expected 'final_validation'")
+
+    got_freeze = hashlib.sha256(FREEZE.read_bytes()).hexdigest()
+    if got_freeze != man["freeze_sha256"]:
+        raise SystemExit("REFUSING TO GENERATE: freeze drift. task_freeze.json is "
+                         f"{got_freeze}, manifest pins {man['freeze_sha256']}")
+
+    if sorted(man["tasks"]) != sorted(tasks):
+        raise SystemExit("REFUSING TO GENERATE: task set does not match the manifest.\n"
+                         f"  selected : {sorted(tasks)}\n"
+                         f"  manifest : {sorted(man['tasks'])}")
+    if sorted(overlap) != sorted(man["tasks"]):
+        raise SystemExit("REFUSING TO GENERATE: only the manifest's exact hold-out tasks may be "
+                         f"exposed.\n  overlap  : {sorted(overlap)}\n"
+                         f"  manifest : {sorted(man['tasks'])}")
+
+    want_keys = {"V3", "ON"}
+    want_pins = {"V3": "b8da59c1c3a0671bb9b11b2fe4238a252ff792a63abf7ea4b5d555ceab57b24b",
+                 "ON": "527acc5403d21a149ecea9d39d573d3d0f45dc65935d115952b772045339ea33"}
+    if not isinstance(man["packages"], dict) or set(man["packages"]) != want_keys:
+        raise SystemExit("REFUSING TO GENERATE: final validation requires exactly the packages "
+                         f"{sorted(want_keys)}; manifest has {sorted(man['packages'])}")
+    for key in sorted(want_keys):
+        if man["packages"][key].get("sha256") != want_pins[key]:
+            raise SystemExit(f"REFUSING TO GENERATE: {key} is not the intended frozen package. "
+                             f"manifest pins {man['packages'][key].get('sha256')}, "
+                             f"required {want_pins[key]}")
+
+    want_order = [["fastapi_15280", "V3"], ["fastapi_15280", "ON"],
+                  ["requests_7427", "ON"], ["requests_7427", "V3"],
+                  ["rich_3894", "V3"], ["rich_3894", "ON"]]
+    got_order = [list(x) for x in man["order"]]
+    if len(got_order) != 6 or len({tuple(x) for x in got_order}) != 6:
+        raise SystemExit("REFUSING TO GENERATE: final validation requires exactly six unique "
+                         f"ordered task/candidate pairs; manifest has {len(got_order)} "
+                         f"({len({tuple(x) for x in got_order})} unique)")
+    if got_order != want_order:
+        raise SystemExit("REFUSING TO GENERATE: run order does not match the required order. "
+                         + "manifest=" + repr(got_order) + " required=" + repr(want_order))
+
+    for key, pin in sorted(man["packages"].items()):
+        src = Path(pin["source"])
+        if not src.is_file():
+            raise SystemExit(f"REFUSING TO GENERATE: package source missing for {key}: {src}")
+        got = hashlib.sha256(src.read_bytes()).hexdigest()
+        if got != pin["sha256"]:
+            raise SystemExit(f"REFUSING TO GENERATE: package drift for {key}. {src} is {got}, "
+                             f"manifest pins {pin['sha256']}")
+    return man
+
+
 def assert_tasks_not_held_out(tasks) -> None:
     """Refuse to generate any notebook whose task set touches the protected hold-out.
 
@@ -75,16 +148,26 @@ def assert_tasks_not_held_out(tasks) -> None:
     when both are protected. All seven valid fastapi/requests tasks are in the hold-out, and the
     freeze records that the dev-eligible pool is therefore 100% Textualize/rich. The freeze is not
     modified to make a task available: the guard fails instead.
+
+    The only exception is a final-validation run, which must present a manifest through
+    VALIDATION_MANIFEST. Development generators leave that None and are unaffected.
     """
     held = set(protected_holdout())
     overlap = sorted(set(tasks) & held)
     if overlap:
-        raise SystemExit(
-            "REFUSING TO GENERATE: selected tasks intersect the protected hold-out.\n"
-            f"  selected  : {sorted(tasks)}\n"
-            f"  protected : {sorted(held)}\n"
-            f"  overlap   : {overlap}\n"
-            "Remove them from the selection. Do not edit task_freeze.json to free a task.")
+        if VALIDATION_MANIFEST is None:
+            raise SystemExit(
+                "REFUSING TO GENERATE: selected tasks intersect the protected hold-out.\n"
+                f"  selected  : {sorted(tasks)}\n"
+                f"  protected : {sorted(held)}\n"
+                f"  overlap   : {overlap}\n"
+                "Remove them from the selection. Do not edit task_freeze.json to free a task.")
+        man = _load_validation_manifest(tasks, overlap)
+        print(f"FINAL VALIDATION: manifest accepted. {len(overlap)} hold-out task(s) will be "
+              f"EXPOSED if this notebook is ever run: {overlap}")
+        print(f"  freeze {man['freeze_sha256'][:16]} unchanged; "
+              f"{len(held) - len(overlap)} protected task(s) remain")
+        return
     print(f"hold-out check: {len(tasks)} selected task(s) disjoint from "
           f"{len(held)} protected task(s)")
 

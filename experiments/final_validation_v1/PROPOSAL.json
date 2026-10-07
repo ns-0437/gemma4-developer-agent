@@ -1,0 +1,109 @@
+{
+  "status": "BLOCKED before notebook generation; no notebook exists",
+  "purpose": "final candidate selection: submitted v3 versus frozen ON on three protected held-out tasks",
+  "packages": {
+    "V3": {
+      "sha256": "b8da59c1c3a0671bb9b11b2fe4238a252ff792a63abf7ea4b5d555ceab57b24b",
+      "source": "releases/v3_submission.zip",
+      "sampling_yaml": "temperature: 0.2\ntop_p: 0.95\ntop_k: 40\nmax_output_tokens: 8192\nseed: 42\nthinking_config:\n  thinking_budget: 4096\n  include_thoughts: false\n"
+    },
+    "ON": {
+      "sha256": "527acc5403d21a149ecea9d39d573d3d0f45dc65935d115952b772045339ea33",
+      "source": "experiments/thinking_v2/ON.zip",
+      "sampling_yaml": "temperature: 0.2\ntop_p: 0.95\ntop_k: 40\nmax_output_tokens: 4096\nseed: 42\nthinking_config:\n  thinking_budget: 1024\n  include_thoughts: true\n"
+    }
+  },
+  "package_hash_verification": "both re-bundle from their unpacked copies to the exact recorded hashes",
+  "selection_rule": "smallest sha256(instance_id) within each repository, among the freeze's protected_holdout list. No task content, reference patch or grading expectation was inspected.",
+  "selection_evidence": {
+    "fastapi_15280": "121e36079e7c22b9025c345e1ef1f3301b802e02762b1c23c1a8e36b241c0bf3",
+    "requests_7427": "2094fd70f6656553af5466794543b88fa9301d04d16ee771725b6316e9313635",
+    "rich_3894": "00b96dff750b710b73b589c90015a4b3c638b15559951aed812ec46424653172"
+  },
+  "selected": [
+    "fastapi_15280",
+    "requests_7427",
+    "rich_3894"
+  ],
+  "order": [
+    [
+      "fastapi_15280",
+      "V3"
+    ],
+    [
+      "fastapi_15280",
+      "ON"
+    ],
+    [
+      "requests_7427",
+      "ON"
+    ],
+    [
+      "requests_7427",
+      "V3"
+    ],
+    [
+      "rich_3894",
+      "V3"
+    ],
+    [
+      "rich_3894",
+      "ON"
+    ]
+  ],
+  "order_note": "v3 first on two tasks, ON on one. Deliberately favours the incumbent; perfect counterbalance is impossible with three tasks. Imbalance recorded.",
+  "budgets": {
+    "max_turns": 60,
+    "max_tool_calls": 100,
+    "max_time_minutes": 10.0,
+    "timeout_seconds": 300
+  },
+  "session_cap_min": 240,
+  "run_reserve_min": 25,
+  "docker_image": "gcr.io/kaggle-private-byod/python@sha256:37c64f7dd9c54116ecd1bcc88817c5469b88387388fade02bfa8bf3fc647d461",
+  "control_evidence_available": {
+    "fastapi_15280": true,
+    "requests_7427": true,
+    "rich_3894": true
+  },
+  "control_evidence_source": "reference/evalset_run2 CPU screening run, produced before this selection",
+  "freeze": {
+    "path": "experiments/ab_v3_vs_short/task_freeze.json",
+    "sha256": "220869409441c04d7c8f32ef5ab141df02f754cce352495deeb48995a7483b4b",
+    "modified": false,
+    "consumption_if_authorized": [
+      "fastapi_15280",
+      "requests_7427",
+      "rich_3894"
+    ],
+    "remaining_protected_after": [
+      "fastapi_13537",
+      "fastapi_14479",
+      "fastapi_14873",
+      "fastapi_15800",
+      "requests_6644",
+      "rich_3180",
+      "rich_3486",
+      "rich_3521",
+      "rich_3938"
+    ]
+  },
+  "blocker": {
+    "what": "scripts/make_compare_notebook.py raises SystemExit when the selected tasks intersect protected_holdout (line 83): 'Remove them from the selection. Do not edit task_freeze.json to free a task.'",
+    "why_not_bypassed": "the guard exists to prevent exactly this, and weakening it or editing the freeze was forbidden. No notebook was generated and no guard was changed.",
+    "what_approval_must_cover": "an explicit, narrow consumption path naming these three tasks, leaving task_freeze.json byte-identical, in addition to the GPU launch"
+  },
+  "predeclared_reporting": [
+    "verified solves over all attempted tasks, per candidate",
+    "graded failures, candidate budget failures, environment failures and runtime, each distinct",
+    "legacy pairing labels reported SEPARATELY; an ungraded side still makes a pair undecided, and pairing must not erase candidate failures from end-to-end completion counts",
+    "all six planned rows preserved including missing or aborted runs"
+  ],
+  "predeclared_decision": [
+    "an additional-task solve AND higher observed completion than v3, with no observed v3 solve lost, supports CONSIDERING an exploratory submission",
+    "ties, regressions and environment failures stay explicit",
+    "three selected tasks cannot establish statistical superiority or predict a leaderboard score"
+  ],
+  "post_rule": "no candidate revision based on these held-out results without retiring these three tasks from future holdout claims",
+  "dispatch": false
+}

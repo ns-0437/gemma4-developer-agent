@@ -1,0 +1,52 @@
+{
+  "notebook_sha256": "aa5b35d6af09d8273c083dbd21eb3868cfc5e014939e11b3130121be49411f9b",
+  "metadata_sha256": "be5c45ea703db01f7ca40c3cc3302c57376d25df397185eeafbbea8301ac33b6",
+  "candidates": {
+    "V3": "b8da59c1c3a0671bb9b11b2fe4238a252ff792a63abf7ea4b5d555ceab57b24b",
+    "ON": "527acc5403d21a149ecea9d39d573d3d0f45dc65935d115952b772045339ea33"
+  },
+  "order": [
+    [
+      "fastapi_15280",
+      "V3"
+    ],
+    [
+      "fastapi_15280",
+      "ON"
+    ],
+    [
+      "requests_7427",
+      "ON"
+    ],
+    [
+      "requests_7427",
+      "V3"
+    ],
+    [
+      "rich_3894",
+      "V3"
+    ],
+    [
+      "rich_3894",
+      "ON"
+    ]
+  ],
+  "tasks": [
+    "fastapi_15280",
+    "requests_7427",
+    "rich_3894"
+  ],
+  "dispatch": false,
+  "compiler_version": "0.2.12",
+  "compiler_wheel_sha256": "077c438c426e625b9f722081694e1d32856e6f7e932ef625002fc4a11aabdc10",
+  "docker_image": "gcr.io/kaggle-private-byod/python@sha256:37c64f7dd9c54116ecd1bcc88817c5469b88387388fade02bfa8bf3fc647d461",
+  "freeze_sha256": "220869409441c04d7c8f32ef5ab141df02f754cce352495deeb48995a7483b4b",
+  "validation_manifest": "experiments\\final_validation_v1\\VALIDATION_MANIFEST.json",
+  "holdout_tasks_exposed_if_executed": [
+    "fastapi_15280",
+    "requests_7427",
+    "rich_3894"
+  ],
+  "exposure_recorded_at": "dispatch-start intent immediately before the evaluator call, per task, appended atomically to pilot/EXPOSURE.json; not proof the agent received the task",
+  "exposed_so_far": []
+}

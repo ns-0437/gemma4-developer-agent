@@ -1,0 +1,98 @@
+{
+  "experiment": "final validation, submitted v3 versus frozen ON, six runs",
+  "kernel": "navin03/gemma4-final-validation",
+  "kernel_version": 1,
+  "authorization": "user authorized consuming exactly fastapi_15280, requests_7427, rich_3894 and one six-run GPU launch; no retry, no competition submission",
+  "prior_launch_check": "kernel did not exist before this push; first and only push",
+  "utc_before_launch": "2026-10-07T03:24:15Z",
+  "pushed_utc": "2026-10-07T03:24:49Z",
+  "push_attempts": 1,
+  "push_result": "Kernel version 1 successfully pushed.",
+  "gpu_quota_before": {
+    "used": "3.13h",
+    "remaining": "26.87h",
+    "total": "30.00h",
+    "refreshAt": "2026-10-10T00:00:00",
+    "source": "python -m kaggle quota"
+  },
+  "disabled_notebook_sha256": "aa5b35d6af09d8273c083dbd21eb3868cfc5e014939e11b3130121be49411f9b",
+  "disabled_preserved_at": "experiments/final_validation_v1/final_validation_disabled.ipynb",
+  "armed_notebook_sha256": "f7495570acd6fd77f64056686bf8d10d6d6aab488956fc226638940c00bd8012",
+  "metadata_sha256": "be5c45ea703db01f7ca40c3cc3302c57376d25df397185eeafbbea8301ac33b6",
+  "validation_manifest_sha256": "8ddca206000e0ee41aab5a9ccc28242b9007f2a88b2612829591adeb8b1249f0",
+  "arming": {
+    "substitutions": 1,
+    "cell_index": 1,
+    "byte_delta": -1,
+    "verified_unchanged": [
+      "all other cell sources",
+      "notebook metadata and structure",
+      "ORDER",
+      "both embedded package payloads",
+      "task mentions"
+    ],
+    "armed_check": "armed == preserved disabled with exactly one dispatch substitution"
+  },
+  "packages_preserved": {
+    "V3": "b8da59c1c3a0671bb9b11b2fe4238a252ff792a63abf7ea4b5d555ceab57b24b",
+    "ON": "527acc5403d21a149ecea9d39d573d3d0f45dc65935d115952b772045339ea33"
+  },
+  "freeze_sha256_unchanged": "220869409441c04d7c8f32ef5ab141df02f754cce352495deeb48995a7483b4b",
+  "holdout_authorized_for_exposure": [
+    "fastapi_15280",
+    "requests_7427",
+    "rich_3894"
+  ],
+  "holdout_remaining_protected": [
+    "fastapi_13537",
+    "fastapi_14479",
+    "fastapi_14873",
+    "fastapi_15800",
+    "requests_6644",
+    "rich_3180",
+    "rich_3486",
+    "rich_3521",
+    "rich_3938"
+  ],
+  "order": [
+    [
+      "fastapi_15280",
+      "V3"
+    ],
+    [
+      "fastapi_15280",
+      "ON"
+    ],
+    [
+      "requests_7427",
+      "ON"
+    ],
+    [
+      "requests_7427",
+      "V3"
+    ],
+    [
+      "rich_3894",
+      "V3"
+    ],
+    [
+      "rich_3894",
+      "ON"
+    ]
+  ],
+  "budgets": {
+    "max_turns": 60,
+    "max_tool_calls": 100,
+    "max_time_minutes": 10.0,
+    "timeout_seconds": 300
+  },
+  "session_cap_min": 240,
+  "docker_image_pinned": true,
+  "checks": "scripts/test_final_validation_path.py 24 PASS (dev guard, strict disabled report, simulated enabled six-in-order with append-only ledger, 17 expected rejections)",
+  "not_done": [
+    "retry",
+    "competition submission",
+    "recurring polling"
+  ],
+  "on_completion": "report all six outcomes including ungraded and missing runs; verified solves, graded failures, candidate budget failures, environment failures and runtime kept distinct; legacy pairing labels reported separately"
+}

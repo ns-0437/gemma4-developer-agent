@@ -1,0 +1,32 @@
+{
+  "files": {
+    "candidates/ON/agent.yaml": "8e890bec4c5e146402c6ef9ee22eb40388207ad8416cfd3405e040aa038ffb83",
+    "candidates/ON/configs/sampling.yaml": "0b754a9811c6a40198102c45f7cee813f43e3fd97edfef2b6da5deeffb6fa3a8",
+    "candidates/ON/prompts/analyzer.md": "5011d37145d981e616d58fb56c5191ccbf336574fa01b3f65c2feab7d697b3a3",
+    "candidates/ON/prompts/system.md": "39b2541c2220cc7655c576bb4ae7ac7e03200a72f2f1e518313068fc93be3b91",
+    "candidates/ON/sub_agents/code_analyzer.yaml": "396b75ffd1315ef93f3d1806b814a49758b9f8dd8b8caef6a092bd6cb2c2d9bb",
+    "candidates/V3/agent.yaml": "8e890bec4c5e146402c6ef9ee22eb40388207ad8416cfd3405e040aa038ffb83",
+    "candidates/V3/configs/sampling.yaml": "78eb4bf20538c713e6208d89743728dc70701c8e4ac2f2de91ad2bdb5d432c95",
+    "candidates/V3/prompts/analyzer.md": "5011d37145d981e616d58fb56c5191ccbf336574fa01b3f65c2feab7d697b3a3",
+    "candidates/V3/prompts/system.md": "4d42f2b7d48143cd06c31fe4c33b17a3f78da21ec2c53d9569cf6a336f6e5e79",
+    "candidates/V3/sub_agents/code_analyzer.yaml": "396b75ffd1315ef93f3d1806b814a49758b9f8dd8b8caef6a092bd6cb2c2d9bb",
+    "gemma4-final-validation.log": "78255b336a6e4241ef482c50db2780f603fcf28d6c9e7559b28690fa1da23e1e",
+    "pilot/compiler_identity.json": "dc6d6d06d8a9e515ffc61a5b57a5639c02efeb908900158c116dbe1dc13fca28",
+    "pilot/control_evidence/fastapi_15280__baseline.json": "7c65f4aa7bf7a54ad6037218213e90083d8fc561f44a9aff1a35c75530be2ba2",
+    "pilot/control_evidence/fastapi_15280__baseline.junit.xml": "5b6424fc6d3af3cb8b1b0731c7d454174f786984d8bec91468f4ba15739f197b",
+    "pilot/control_evidence/fastapi_15280__reference.json": "2e2a44a4cc9fef52f54f99c1995fc9ea59b8f8c0cb5ebbb34ca8ce435ccb1423",
+    "pilot/control_evidence/fastapi_15280__reference.junit.xml": "33bbd7b86633d681c5d9212c505d6e2b43bf8f464cf6c8a74353dafe8c60a8f8",
+    "pilot/control_evidence/requests_7427__baseline.json": "4efb352bfb6b135c23ebff376c28020d9e31ea3ebe21b227d4052d08efe487be",
+    "pilot/control_evidence/requests_7427__baseline.junit.xml": "94dc7154bb55ae700509cf1f543f0c5baa3c0fe32b419e4030cb380ea646a045",
+    "pilot/control_evidence/requests_7427__reference.json": "b3f5408b0c6efaecbb908cd43f939d7ced2b7401896891647dab82fda7ef2946",
+    "pilot/control_evidence/requests_7427__reference.junit.xml": "108541315655c0b6efa9a09ff961b7b730c8838953e409d72a4248b2cdf8a6f3",
+    "pilot/control_evidence/rich_3894__baseline.json": "5c8e7c5d2286bd504bc7d9548c99470ab8c4197b6b945354a6dbcdac198ff583",
+    "pilot/control_evidence/rich_3894__baseline.junit.xml": "824bf25345698fa720c7735c0e8ff0c49ad9819719de87c00a6feb55006a8167",
+    "pilot/control_evidence/rich_3894__reference.json": "6773a330e78b3a039ec1e1b093d99c18f6ebb26e8d08090123ed3c76a9f38ec4",
+    "pilot/control_evidence/rich_3894__reference.junit.xml": "f0be5c5d43c18b75d2b175c530e9188bcfc35faaef82aa8fa2838940938b2a3b",
+    "pilot/control_recheck.json": "9cc4c945ef6ecb824d09d40d47f3733c9f938bb1930fe8673dcdbe5f5c4c5815",
+    "pilot/preconditions.json": "041220a3efeeee04bb58ecccc84ffe70c812dcfeb6f284de8b197b3a75e223c4",
+    "pilot/setup_observations.json": "4f85bd313207273f016ea6733f67b50a4da8c093346c8c2bd8aadd665ca11622"
+  },
+  "note": "hashed before analysis; remote file listing returned 0 entries for this errored kernel, so completeness is judged by the download exiting cleanly and by which stages produced artifacts"
+}
