@@ -1,0 +1,47 @@
+[{"stream_name":"stderr","time":9.315009648,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":9.315185037,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":9.315199731,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":9.315202679,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":10.095816246,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":10.095884471,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":10.095895982,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":10.095899128,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":11.500902306,"data":"probe: CPU only, no GPU or model startup\n"}
+,{"stream_name":"stdout","time":11.577933972,"data":"python     : [3, 12, 13] /usr/bin/python3\n"}
+,{"stream_name":"stdout","time":11.577969776,"data":"platform   : Linux-6.18.48+-x86_64-with-glibc2.35 | linux-x86_64\n"}
+,{"stream_name":"stdout","time":11.577974857,"data":"python matches the recorded successful run: True\n"}
+,{"stream_name":"stdout","time":11.577978917,"data":"supported tags: 960 e.g. ['cp312-cp312-manylinux_2_35_x86_64', 'cp312-cp312-manylinux_2_34_x86_64', 'cp312-cp312-manylinux_2_33_x86_64', 'cp312-cp312-manylinux_2_32_x86_64', 'cp312-cp312-manylinux_2_31_x86_64']\n"}
+,{"stream_name":"stdout","time":11.577985178,"data":"wheels: 41 total, 41 compatible, 0 incompatible\n"}
+,{"stream_name":"stdout","time":11.5779893,"data":"saved /kaggle/working/pilot/env_probe.json\n"}
+,{"stream_name":"stdout","time":11.59120305,"data":"all wheelhouse wheels are tag-compatible; running the existing install\n"}
+,{"stream_name":"stdout","time":11.701241047,"data":"installing 41 wheels...\n"}
+,{"stream_name":"stdout","time":82.165468348,"data":"{\n"}
+,{"stream_name":"stdout","time":82.165511453,"data":"  \"swegemma\": \"0.2.7\",\n"}
+,{"stream_name":"stdout","time":82.165517555,"data":"  \"adk-submission\": \"0.2.12\",\n"}
+,{"stream_name":"stdout","time":82.165522404,"data":"  \"adk-eval-core\": \"0.1.0\",\n"}
+,{"stream_name":"stdout","time":82.165527277,"data":"  \"google-adk\": \"1.36.1\",\n"}
+,{"stream_name":"stdout","time":82.165532244,"data":"  \"vllm\": \"0.19.1\",\n"}
+,{"stream_name":"stdout","time":82.165537377,"data":"  \"transformers\": \"5.13.1\",\n"}
+,{"stream_name":"stdout","time":82.165542215,"data":"  \"litellm\": \"1.82.4\"\n"}
+,{"stream_name":"stdout","time":82.165546883,"data":"}\n"}
+,{"stream_name":"stdout","time":147.122152074,"data":"{\n"}
+,{"stream_name":"stdout","time":147.122190852,"data":"  \"swegemma\": \"ok\",\n"}
+,{"stream_name":"stdout","time":147.122198477,"data":"  \"adk_submission\": \"ok\",\n"}
+,{"stream_name":"stdout","time":147.122203574,"data":"  \"adk_eval_core\": \"ok\",\n"}
+,{"stream_name":"stdout","time":147.122208682,"data":"  \"google.adk\": \"ok\",\n"}
+,{"stream_name":"stdout","time":147.122214139,"data":"  \"vllm\": \"ok\",\n"}
+,{"stream_name":"stdout","time":147.122218973,"data":"  \"transformers\": \"ok\",\n"}
+,{"stream_name":"stdout","time":147.122223882,"data":"  \"litellm\": \"ok\",\n"}
+,{"stream_name":"stdout","time":147.122228651,"data":"  \"packaging\": \"ok\"\n"}
+,{"stream_name":"stdout","time":147.12223336,"data":"}\n"}
+,{"stream_name":"stdout","time":147.122247138,"data":"compiler identity: PASS (version 0.2.12 and per-file hashes)\n"}
+,{"stream_name":"stdout","time":147.122250019,"data":"PROBE PASS: environment compatibility only. GPU/vLLM operation and candidate performance are NOT established by this probe.\n"}
+,{"stream_name":"stderr","time":154.051283187,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":154.051375419,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":154.295801326,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":154.295852187,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":155.270949652,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":155.679558435,"data":"[NbConvertApp] Writing 19029 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":160.743169628,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":161.949131507,"data":"[NbConvertApp] Writing 322454 bytes to __results__.html\n"}
+]

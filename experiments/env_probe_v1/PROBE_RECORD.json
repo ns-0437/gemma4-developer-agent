@@ -1,0 +1,54 @@
+{
+  "probe": "navin03/gemma4-env-probe",
+  "kernel_version": 1,
+  "authorization": "one private CPU-only environment probe using the recorded Python 3.12 image digest",
+  "scope_excluded": [
+    "GPU",
+    "model startup",
+    "agent evaluation",
+    "competition submission"
+  ],
+  "utc_before_push": "2026-10-06T02:14:02Z",
+  "pushed_utc": "2026-10-06T02:14:22Z",
+  "push_attempts": 1,
+  "gpu_quota_at_push": {
+    "used": "0.01h",
+    "remaining": "29.99h",
+    "refreshAt": "2026-10-10T00:00:00"
+  },
+  "notebook": "experiments/env_probe_v1/env_probe.ipynb",
+  "notebook_sha256": "09da069fcd81114cbd8abb814dac16bf74bbc431d289e7a6008120fa9498b6fd",
+  "docker_image": "gcr.io/kaggle-private-byod/python@sha256:37c64f7dd9c54116ecd1bcc88817c5469b88387388fade02bfa8bf3fc647d461",
+  "metadata": {
+    "enable_gpu": false,
+    "enable_tpu": false,
+    "enable_internet": false,
+    "machine_shape": "omitted (CPU)",
+    "is_private": true
+  },
+  "reused_verbatim": {
+    "install_cell": "cell 2 of thinking_v2_disabled.ipynb",
+    "compiler_gate": "EXPECTED_COMPILER_FILES + verify_runtime_compiler(), 2466 chars from cell 7"
+  },
+  "steps": [
+    "interpreter/platform/supported tags printed and saved before install",
+    "every wheelhouse file tag-checked; results saved to pilot/env_probe.json",
+    "install attempted only if all wheels compatible; nothing skipped or substituted",
+    "required imports verified, then compiler version 0.2.12 and per-file hashes"
+  ],
+  "diagnostics_on_failure": "pilot/env_probe.json written before the install; pilot/probe_imports.json written before the compiler assert",
+  "comparison_untouched": {
+    "notebooks/thinking_v2/thinking_v2.ipynb": "38644eb6... (still armed)",
+    "experiments/thinking_v2/thinking_v2_disabled.ipynb": "93dc5836...",
+    "OFF.zip": "640fadab...",
+    "ON.zip": "527acc54...",
+    "task_freeze.json": "2208694094..."
+  },
+  "interpretation_limit": "a passing CPU probe establishes environment compatibility only, not GPU/vLLM operation and not candidate performance",
+  "not_done": [
+    "retry",
+    "recurring polling",
+    "GPU launch",
+    "submission"
+  ]
+}

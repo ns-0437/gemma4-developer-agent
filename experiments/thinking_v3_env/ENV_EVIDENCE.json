@@ -1,0 +1,21 @@
+{
+  "source": "read-only `kaggle kernels pull -m` on each kernel",
+  "verification_2026_10_03": {
+    "kernel": "navin03/gemma4-swe-agent-verification",
+    "docker_image": "gcr.io/kaggle-private-byod/python@sha256:37c64f7dd9c54116ecd1bcc88817c5469b88387388fade02bfa8bf3fc647d461",
+    "observed_interpreter": "python3.12 (from log dist-packages paths)",
+    "wheel_install": "succeeded"
+  },
+  "thinking_v2_2026_10_06": {
+    "kernel": "navin03/gemma4-swe-agent-thinking-v2",
+    "docker_image": "gcr.io/kaggle-private-byod/python@sha256:2757e0c7d1e0a9cb43da657b97e223c321a98f5014bdf64f44f2f6b083ad2b2f",
+    "observed_interpreter": "python3.13 (from log dist-packages paths)",
+    "wheel_install": "failed: apache_tvm_ffi cp312 wheel unsupported"
+  },
+  "digests_differ": true,
+  "docker_image_pinning_type": "absent from both kernels' metadata",
+  "cli_mechanism": "kernel-metadata.json 'docker_image' is forwarded on push by the installed Kaggle CLI; 'docker_image_pinning_type' accepts only 'original'/'latest' and is a separate, coarser mechanism",
+  "unverifiable": "whether the pinned digest is still pullable; no read-only call establishes it",
+  "prepared_notebook_sha256": "08e286e00ff8b00f21060f40c359527a49af10259faff132fa2e84c43425d4a1",
+  "dispatch": false
+}

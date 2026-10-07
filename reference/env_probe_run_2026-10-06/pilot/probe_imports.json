@@ -1,0 +1,22 @@
+{
+  "versions": {
+    "swegemma": "0.2.7",
+    "adk-submission": "0.2.12",
+    "adk-eval-core": "0.1.0",
+    "google-adk": "1.36.1",
+    "vllm": "0.19.1",
+    "transformers": "5.13.1",
+    "litellm": "1.82.4"
+  },
+  "imports": {
+    "swegemma": "ok",
+    "adk_submission": "ok",
+    "adk_eval_core": "ok",
+    "google.adk": "ok",
+    "vllm": "ok",
+    "transformers": "ok",
+    "litellm": "ok",
+    "packaging": "ok"
+  },
+  "compiler": "version and per-file hashes match 0.2.12"
+}
