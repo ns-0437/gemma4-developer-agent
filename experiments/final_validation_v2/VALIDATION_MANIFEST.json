@@ -1,0 +1,55 @@
+{
+  "purpose": "final_validation",
+  "created_utc": "2026-10-07",
+  "authorization": "offline preparation only; GPU use, hold-out execution and submission NOT authorized",
+  "freeze_sha256": "220869409441c04d7c8f32ef5ab141df02f754cce352495deeb48995a7483b4b",
+  "tasks": [
+    "fastapi_15280",
+    "requests_7427",
+    "rich_3894"
+  ],
+  "selection_rule": "smallest sha256(instance_id) within each repository among protected_holdout; no task content, reference patch or grading expectation inspected",
+  "packages": {
+    "V3": {
+      "source": "releases/v3_submission.zip",
+      "sha256": "b8da59c1c3a0671bb9b11b2fe4238a252ff792a63abf7ea4b5d555ceab57b24b",
+      "note": "the archive actually submitted, ref 56636116, scored 0.06"
+    },
+    "ON": {
+      "source": "experiments/thinking_v2/ON.zip",
+      "sha256": "527acc5403d21a149ecea9d39d573d3d0f45dc65935d115952b772045339ea33",
+      "note": "frozen thinking package; keeps its own sampling.yaml"
+    }
+  },
+  "order": [
+    [
+      "fastapi_15280",
+      "V3"
+    ],
+    [
+      "fastapi_15280",
+      "ON"
+    ],
+    [
+      "requests_7427",
+      "ON"
+    ],
+    [
+      "requests_7427",
+      "V3"
+    ],
+    [
+      "rich_3894",
+      "V3"
+    ],
+    [
+      "rich_3894",
+      "ON"
+    ]
+  ],
+  "order_note": "V3 runs first on two of three tasks and ON on one. This is an IMBALANCE, not a handicap in either direction: with three tasks perfect counterbalance is impossible, and no claim is made about which candidate it favours.",
+  "exposure_rule": "a task is EXPOSED when its evaluation actually starts, not when a notebook is generated. Partial-run exposure is recorded and preserved.",
+  "freeze_rule": "experiments/ab_v3_vs_short/task_freeze.json stays byte-identical; consumption is recorded separately in EXPOSURE.json, never by editing the freeze",
+  "controls_rule": "saved control evidence is reused for instrument validation only; its answer content is never used to revise a candidate",
+  "dispatch": false
+}
