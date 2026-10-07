@@ -410,9 +410,13 @@ def _nodes_from_junit(xml_text):
     seen_any = False
     for tc in root.iter('testcase'):
         seen_any = True
-        cls = (tc.get('classname') or '').split('.')[-1]
+        # Full classname, matching the screening side (make_evalset_notebook.py) exactly.
+        # Collapsing to the last dotted component silently aliased `tests.test_vibe` to
+        # `test_vibe`, so fastapi/requests evidence never matched; rich classnames carry no
+        # dot, which is why development tasks hid the defect.
+        cls = (tc.get('classname') or '').strip()
         name = tc.get('name') or ''
-        key = f'{cls}::{name}' if cls else name
+        key = (cls + '::' + name).strip(':') if cls else name
         outcome = 'passed'
         if tc.find('failure') is not None:
             outcome = 'failed'
@@ -426,6 +430,83 @@ def _nodes_from_junit(xml_text):
     if not seen_any:
         return None, [], 'report contains no testcase elements'
     return out, sorted(set(dupes)), None
+
+
+
+WORKSPACE_TOKEN = "<WS>"
+
+# Same shape compare_control_nodes returns, so a refusal reports like any other failure.
+_EMPTY_DETAIL = {"missing": [], "extra": [], "changed": [], "skipped": [],
+                 "targets_wrong": [], "n_observed": 0, "n_expected": 0}
+
+
+def _workspace_root_from_evidence(*candidates):
+    """Derive the arm's workspace root from RECORDED evidence, or refuse.
+
+    Each candidate is a recorded absolute path that is known to live inside the arm's workspace
+    (an import probe path, a recorded workspace path). The root is the prefix ending at the
+    "/workspace" component. Nothing is guessed, and nothing is chosen because it makes the
+    comparison pass: if the candidates disagree, the root is AMBIGUOUS and the caller must fail.
+    """
+    roots = set()
+    for value in candidates:
+        if not isinstance(value, str) or not value:
+            continue
+        marker = "/workspace"
+        i = value.find(marker + "/")
+        if i < 0:
+            i = len(value) - len(marker) if value.endswith(marker) else -1
+        if i < 0:
+            continue
+        roots.add(value[: i + len(marker)])
+    if len(roots) > 1:
+        return None, "ambiguous workspace root in recorded evidence: " + repr(sorted(roots))
+    if not roots:
+        return None, "no workspace root could be derived from recorded evidence"
+    return roots.pop(), None
+
+
+def _canon_path(value, root):
+    """Substitute `root` only at a real path boundary.
+
+    The replacement fires when the match is followed by `/` or by any character that cannot
+    continue a path component. That keeps sibling directories such as `<root>_backup` intact, and
+    leaves classnames, test names and non-path parameters untouched because they do not contain
+    the recorded absolute root. Used for BOTH node identities and target identities.
+    """
+    if not root or not isinstance(value, str):
+        return value
+    return _re_canon.sub(WORKSPACE_TOKEN, value) if (_re_canon := _canon_re(root)) else value
+
+
+def _canon_re(root):
+    import re as _re
+    return _re.compile(_re.escape(root) + r"(?![A-Za-z0-9_.\-])")
+
+
+def canonicalize_nodes(nodes, root):
+    """Canonicalize node identities and reject EVERY many-to-one mapping.
+
+    Returns (canonical_nodes, mapping, collisions). A collision is any canonical identity reached
+    from more than one distinct original identity, whatever the insertion order and whatever the
+    outcomes. That includes an identity that already contains the literal token colliding with a
+    substituted path. Collisions must fail: collapsing two identities would hide a real difference.
+    """
+    if nodes is None:
+        return None, {}, []
+    mapping = {key: _canon_path(key, root) for key in nodes}
+    sources = {}
+    for key, new in mapping.items():
+        sources.setdefault(new, []).append(key)
+    collisions = sorted(new for new, keys in sources.items() if len(set(keys)) > 1)
+    out = {}
+    for key, new in mapping.items():
+        out[new] = nodes[key]
+    return out, mapping, collisions
+
+
+def canonicalize_targets(targets, root):
+    return [_canon_path(t, root) for t in (targets or [])]
 
 
 def compare_control_nodes(observed, expected, targets, arm):
@@ -564,6 +645,12 @@ async def _revalidate_control(task, arm):
         rec["nodes"] = nodes
         rec["duplicate_nodes"] = dupes
         rec["junit_parse_error"] = parse_error if rx.exit_code == 0 else "JUnit report not readable"
+        # Record THIS arm's real workspace path as provenance, so the identity mapping below is
+        # derived from recorded evidence rather than from a path pattern assumed by convention.
+        wsp = await sandbox_exec(
+            mgr, sid, "cd /workspace && python3 -c \\"import os;print(os.path.realpath('.'))\\"")
+        rec["workspace_real"] = (wsp.stdout or "").strip() or None
+        rec["workspace_probe_rc"] = wsp.exit_code
         rv = await sandbox_exec(mgr, sid,
             "python3 -c \\"import importlib.metadata as m;"
             "print({p: m.version(p) for p in ['swegemma','adk-submission','adk-eval-core','google-adk']})\\"")
@@ -622,7 +709,59 @@ for _t in SELECTED:
                    "owned_sandboxes": ["unknown: the arm did not reach its cleanup check"]}
         want = saved[_phase]
         expected = dict(want.get("nodes") or {})
-        ok_nodes, detail = compare_control_nodes(got.get("nodes"), expected, targets, _arm)
+
+        # ---- sandbox-root canonicalization -------------------------------------------------
+        # requests_7427's suite parametrises a test with the ABSOLUTE workspace path, so its node
+        # ID necessarily differs between the screening run and any later run. Both roots are
+        # derived from recorded evidence: the saved arm's own recorded import/workspace paths, and
+        # this arm's recorded workspace probe. An ambiguous root, an underivable root, or a
+        # collision after substitution all FAIL; nothing is chosen to make the comparison pass.
+        _saved_root, _saved_err = _workspace_root_from_evidence(
+            want.get("workspace_real"), want.get("grading_import"), want.get("agent_import"))
+        # The probe's stdout is only evidence if the probe SUCCEEDED. A nonzero exit with
+        # plausible-looking output must not be trusted.
+        if got.get("workspace_probe_rc") not in (0, None):
+            _obs_root, _obs_err = None, (
+                "workspace probe exited %r; its output is not usable as evidence"
+                % (got.get("workspace_probe_rc"),))
+        elif got.get("workspace_probe_rc") is None and got.get("workspace_real"):
+            _obs_root, _obs_err = None, "workspace probe exit code was not recorded"
+        else:
+            _obs_root, _obs_err = _workspace_root_from_evidence(got.get("workspace_real"))
+        _canon = {"saved_root": _saved_root, "saved_root_error": _saved_err,
+                  "observed_root": _obs_root, "observed_root_error": _obs_err,
+                  "token": WORKSPACE_TOKEN, "applied": False}
+
+        _needs = any(isinstance(k, str) and "/workspace" in k
+                     for k in list(expected) + list(got.get("nodes") or {})) \
+            or any("/workspace" in t for t in targets)
+        if _needs:
+            if _saved_err or _obs_err:
+                _canon["refused"] = _saved_err or _obs_err
+                ok_nodes, detail = False, dict(
+                    _EMPTY_DETAIL, canonicalization_refused=_canon["refused"],
+                    n_observed=len(got.get("nodes") or {}), n_expected=len(expected))
+            else:
+                _exp_c, _exp_map, _exp_coll = canonicalize_nodes(expected, _saved_root)
+                _obs_c, _obs_map, _obs_coll = canonicalize_nodes(got.get("nodes"), _obs_root)
+                _tgt_c = canonicalize_targets(targets, _saved_root)
+                _canon.update({"applied": True,
+                               "expected_mapping": _exp_map, "observed_mapping": _obs_map,
+                               "targets_canonical": _tgt_c,
+                               "expected_collisions": _exp_coll,
+                               "observed_collisions": _obs_coll})
+                if _exp_coll or _obs_coll:
+                    ok_nodes, detail = False, dict(
+                        _EMPTY_DETAIL,
+                        canonicalization_collision={"expected": _exp_coll,
+                                                    "observed": _obs_coll},
+                        n_observed=len(_obs_c or {}), n_expected=len(_exp_c))
+                else:
+                    ok_nodes, detail = compare_control_nodes(_obs_c, _exp_c, _tgt_c, _arm)
+        else:
+            ok_nodes, detail = compare_control_nodes(got.get("nodes"), expected, targets, _arm)
+        got["canonicalization"] = _canon
+        # ------------------------------------------------------------------------------------
         # A sandbox this arm leaked would be snapshotted as "pre-existing" by the dispatch loop's
         # own cleanup check, so it would never be caught there. It has to be caught here.
         agree = (ok_nodes

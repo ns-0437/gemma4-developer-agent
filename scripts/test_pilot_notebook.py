@@ -14,6 +14,7 @@ Run:  python scripts/test_pilot_notebook.py
 from __future__ import annotations
 
 import dataclasses
+import hashlib
 import json
 import os
 import shutil
@@ -117,13 +118,18 @@ CONTROL_FIXTURE = {}
 SANDBOX_ROOT_FOR_TEST = ["/tmp"]
 
 
+CONTROL_RAW_XML = {}
+CONTROL_SAVED_ROOT = {}
+CONTROL_OBSERVED_ROOT = {}
+
+
 def _control_maps():
     """(pytest_cmd -> task_id, task_id -> saved evidence) for the notebook under test.
 
     Read from the generator's own evidence loader, so the fixture compares the cell against the
     same saved controls the notebook embeds rather than a hand-written copy.
     """
-    if _which not in ("compare", "stage1", "ab_s", "temperature", "shellread"):
+    if _which not in ("compare", "stage1", "ab_s", "temperature", "shellread", "verification", "thinking_v2", "thinking_v3", "final_validation", "control_replay"):
         return {}, {}
     import make_compare_notebook as _M
     # The notebook under test decides its own task set. stage1 ships one task; compare ships four,
@@ -131,9 +137,28 @@ def _control_maps():
     _M.TASKS = list(SEL_IDS)
     cmds = {}
     import json as _j
+    raw = {}
     for t in _M.TASKS:
         a = _j.loads((_M.EVID / t / "baseline" / "arm.json").read_text(encoding="utf-8"))
         cmds[a["pytest_cmd"]] = t
+        for _arm in ("baseline", "reference"):
+            _d = _M.EVID / t / _arm
+            _x = sorted(_d.glob("*.xml"))
+            if _x:
+                raw[(t, _arm)] = _x[0].read_text(encoding="utf-8")
+            _a = _j.loads((_d / "arm.json").read_text(encoding="utf-8"))
+            for _cand in (_a.get("workspace_real"), _a.get("grading_import"),
+                          _a.get("agent_import")):
+                if isinstance(_cand, str) and "/workspace" in _cand:
+                    _r = _cand[: _cand.find("/workspace") + len("/workspace")]
+                    CONTROL_SAVED_ROOT[(t, _arm)] = _r
+                    # An independently minted observed root: same shape, different sandbox id.
+                    CONTROL_OBSERVED_ROOT[(t, _arm)] = (
+                        "/tmp/swegemma_sandbox_" + hashlib.sha1(
+                            (t + _arm + "observed").encode()).hexdigest()[:11].replace(
+                                hashlib.sha1(b"x").hexdigest()[:1], "a") + "_fixture/workspace")
+                    break
+    CONTROL_RAW_XML.update(raw)
     return cmds, _M.compare_evidence()
 
 
@@ -203,8 +228,24 @@ def make_env(tmp: Path, *, pip_rc=0, required_backend_rc=0, editable_rc=0,
     async def sandbox_exec(mgr, sid, cmd):
         # Control re-validation fixture: serve a JUnit report matching the notebook's own saved
         # evidence, so the re-validation cell exercises its real comparison logic.
+        if "os.path.realpath" in cmd and "/workspace" in cmd:
+            # The arm's own recorded workspace probe. Answers with the independently minted
+            # observed root, so canonicalization sees real, differing evidence on both sides.
+            tid = CONTROL_FIXTURE.get("task")
+            arm = CONTROL_FIXTURE.get("current_arm") or "baseline"
+            if CONTROL_FIXTURE.get("workspace_probe_rc"):
+                # Nonzero exit but PLAUSIBLE stdout: the comparison must refuse to trust it.
+                root = (CONTROL_OBSERVED_ROOT.get((tid, arm))
+                        or CONTROL_SAVED_ROOT.get((tid, arm)) or "")
+                return FakeExec(root, CONTROL_FIXTURE["workspace_probe_rc"], "probe failed")
+            if CONTROL_FIXTURE.get("ambiguous_root"):
+                return FakeExec("/tmp/swegemma_sandbox_ambiguous_x/workspace")
+            root = (CONTROL_OBSERVED_ROOT.get((tid, arm))
+                    or CONTROL_SAVED_ROOT.get((tid, arm)) or "")
+            return FakeExec(root)
         if cmd.startswith("cat /tmp/ctl_"):
             arm = "baseline" if "ctl_baseline" in cmd else "reference"
+            CONTROL_FIXTURE["current_arm"] = arm
             tid = CONTROL_FIXTURE.get("task")
             ev = CONTROL_SAVED.get(tid, {})
             phase = ev.get("negative" if arm == "baseline" else "positive", {})
@@ -233,8 +274,24 @@ def make_env(tmp: Path, *, pip_rc=0, required_backend_rc=0, editable_rc=0,
                 if mode == "duplicate":
                     dup = sorted(phase.get("passed_nodes", []))[:1]
                     phase = dict(phase, passed_nodes=sorted(phase.get("passed_nodes", [])) + dup)
-            # Built with ElementTree, not string formatting: rich_3278's parametrised node names
-            # contain '<' and '>', which a raw f-string would emit as malformed XML.
+            # DEFAULT PATH: replay the saved raw XML byte-for-byte. Reconstructing it lost
+            # skipped nodes and mangled identity (it prefixed every classname with "tests.",
+            # which only matched while the comparison collapsed classnames to their last dotted
+            # component). Replaying keeps every saved outcome and the exact node identities, so a
+            # real environment-dependent difference still fails the gate.
+            if (not mode or CONTROL_FIXTURE.get("xml_arm", "reference") != arm)                     and not CONTROL_FIXTURE.get("break_arm") == arm                     and (tid, arm) in CONTROL_RAW_XML:
+                xml_text = CONTROL_RAW_XML[(tid, arm)]
+                # The OBSERVED sandbox root must differ from the saved one by default, otherwise a
+                # fixture that reuses the saved root would hide sandbox-path-dependent node IDs
+                # exactly as it did before. Substituting only the recorded root keeps every other
+                # byte of the report intact.
+                saved_root = CONTROL_SAVED_ROOT.get((tid, arm))
+                obs_root = CONTROL_OBSERVED_ROOT.get((tid, arm))
+                if saved_root and obs_root and not CONTROL_FIXTURE.get("same_sandbox_root"):
+                    xml_text = xml_text.replace(saved_root, obs_root)
+                return FakeExec(xml_text)
+            # Degraded and broken arms are still synthesised: they are reports the acceptance
+            # logic must REJECT, so they deliberately do not exist on disk.
             import xml.etree.ElementTree as _ETF
             suite = _ETF.Element("testsuite")
             for outcome, key in (("failed", "failed_nodes"), ("passed", "passed_nodes"),
