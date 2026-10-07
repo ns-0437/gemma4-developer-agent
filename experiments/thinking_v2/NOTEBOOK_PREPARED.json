@@ -1,0 +1,28 @@
+{
+  "notebook_sha256": "93dc58362ac07d7cf9554f2c164b752cf52f9de89e003a78896f3407ebca8061",
+  "candidates": {
+    "OFF": "640fadab5b5b638a7e8a31abb26fcecb6b2e139929d77cdb6691f2d832ca2ec1",
+    "ON": "527acc5403d21a149ecea9d39d573d3d0f45dc65935d115952b772045339ea33"
+  },
+  "order": [
+    [
+      "rich_3675",
+      "OFF"
+    ],
+    [
+      "rich_3675",
+      "ON"
+    ],
+    [
+      "rich_3278",
+      "ON"
+    ],
+    [
+      "rich_3278",
+      "OFF"
+    ]
+  ],
+  "dispatch": false,
+  "compiler_version": "0.2.12",
+  "compiler_wheel_sha256": "077c438c426e625b9f722081694e1d32856e6f7e932ef625002fc4a11aabdc10"
+}

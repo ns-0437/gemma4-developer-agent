@@ -1,0 +1,17 @@
+{
+  "verification_raw_files": 46,
+  "raw_hashes_match": true,
+  "unlisted_raw_files": 0,
+  "frozen_sha256": {
+    "notebooks/ab_s/ab_s.ipynb": "86d1c83bb203a1000c205d8913df59abcf83f86c584e66eb2ceba1e3e5a5a649",
+    "notebooks/stage1/stage1.ipynb": "775d88dfe3b91ee8b4d5b30cffdd9f2957556b1f045f2b87a1a6b4e3aacd3158",
+    "notebooks/temperature/temperature.ipynb": "ff22c79682ec29e90c795bc61cde205e2f2ddf3cce1aa52c1ee4d9c08bcb5f26",
+    "notebooks/shellread/shellread.ipynb": "5722594505e407387a00567e39d78ddd00570384a32893f5c6223664de72f6a3",
+    "notebooks/verification/verification.ipynb": "7ea8397683c47beaeb9302036a18546deb8ed642dcc4c900f61eba4b0c754919",
+    "experiments/ab_v3_vs_short/task_freeze.json": "220869409441c04d7c8f32ef5ab141df02f754cce352495deeb48995a7483b4b"
+  },
+  "deterministic_regeneration": true,
+  "prepared_notebook_sha256": "93dc58362ac07d7cf9554f2c164b752cf52f9de89e003a78896f3407ebca8061",
+  "python_and_generated_cells_compile": true,
+  "dispatch": false
+}

@@ -1,0 +1,193 @@
+{
+  "boundary": "ADK kwargs at the LiteLLM client boundary. No HTTP, no server, no model. Forwarding does not establish that the host server recognises or enforces any field.",
+  "compiler_file": "C:\\Documents2\\KaggleMLChallenge\\The Gemma 4\\.venv\\Lib\\site-packages\\adk_submission\\__init__.py",
+  "compiler_requested": "0.2.11",
+  "compiler_version_metadata": "0.2.11",
+  "difference_off_to_on": {
+    "code_analyzer": {
+      "client_parameters": {
+        "extra_body": {
+          "thinking_off": {
+            "chat_template_kwargs": {
+              "enable_thinking": false
+            }
+          },
+          "thinking_on": {
+            "chat_template_kwargs": {
+              "enable_thinking": true
+            }
+          }
+        }
+      },
+      "compiled": {
+        "thinking_config": {
+          "thinking_off": {
+            "include_thoughts": false,
+            "thinking_budget": 4096
+          },
+          "thinking_on": {
+            "include_thoughts": true,
+            "thinking_budget": 4096
+          }
+        }
+      }
+    },
+    "swe_coder": {
+      "client_parameters": {
+        "extra_body": {
+          "thinking_off": {
+            "chat_template_kwargs": {
+              "enable_thinking": false
+            }
+          },
+          "thinking_on": {
+            "chat_template_kwargs": {
+              "enable_thinking": true
+            }
+          }
+        }
+      },
+      "compiled": {
+        "thinking_config": {
+          "thinking_off": {
+            "include_thoughts": false,
+            "thinking_budget": 4096
+          },
+          "thinking_on": {
+            "include_thoughts": true,
+            "thinking_budget": 4096
+          }
+        }
+      }
+    }
+  },
+  "frozen_source": "experiments\\concise_workflow_v1\\candidate_S",
+  "variants": {
+    "thinking_off": {
+      "agents": {
+        "code_analyzer": {
+          "client_parameters": {
+            "api_base": "http://127.0.0.1:9/v1",
+            "extra_body": {
+              "chat_template_kwargs": {
+                "enable_thinking": false
+              }
+            },
+            "max_completion_tokens": 8192,
+            "model": "openai/gemma-4-31b-it-qat-w4a16-ct",
+            "response_format": null,
+            "temperature": 0.2,
+            "top_k": 40.0,
+            "top_p": 0.95
+          },
+          "compiled": {
+            "max_output_tokens": 8192,
+            "seed": 42,
+            "temperature": 0.2,
+            "thinking_config": {
+              "include_thoughts": false,
+              "thinking_budget": 4096
+            },
+            "top_k": 40.0,
+            "top_p": 0.95
+          },
+          "instruction_sha256": "5011d37145d981e616d58fb56c5191ccbf336574fa01b3f65c2feab7d697b3a3"
+        },
+        "swe_coder": {
+          "client_parameters": {
+            "api_base": "http://127.0.0.1:9/v1",
+            "extra_body": {
+              "chat_template_kwargs": {
+                "enable_thinking": false
+              }
+            },
+            "max_completion_tokens": 8192,
+            "model": "openai/gemma-4-31b-it-qat-w4a16-ct",
+            "response_format": null,
+            "temperature": 0.2,
+            "top_k": 40.0,
+            "top_p": 0.95
+          },
+          "compiled": {
+            "max_output_tokens": 8192,
+            "seed": 42,
+            "temperature": 0.2,
+            "thinking_config": {
+              "include_thoughts": false,
+              "thinking_budget": 4096
+            },
+            "top_k": 40.0,
+            "top_p": 0.95
+          },
+          "instruction_sha256": "39b2541c2220cc7655c576bb4ae7ac7e03200a72f2f1e518313068fc93be3b91"
+        }
+      },
+      "sampling_yaml": "temperature: 0.2\ntop_p: 0.95\ntop_k: 40\nmax_output_tokens: 8192\nseed: 42\nthinking_config:\n  thinking_budget: 4096\n  include_thoughts: false\n"
+    },
+    "thinking_on": {
+      "agents": {
+        "code_analyzer": {
+          "client_parameters": {
+            "api_base": "http://127.0.0.1:9/v1",
+            "extra_body": {
+              "chat_template_kwargs": {
+                "enable_thinking": true
+              }
+            },
+            "max_completion_tokens": 8192,
+            "model": "openai/gemma-4-31b-it-qat-w4a16-ct",
+            "response_format": null,
+            "temperature": 0.2,
+            "top_k": 40.0,
+            "top_p": 0.95
+          },
+          "compiled": {
+            "max_output_tokens": 8192,
+            "seed": 42,
+            "temperature": 0.2,
+            "thinking_config": {
+              "include_thoughts": true,
+              "thinking_budget": 4096
+            },
+            "top_k": 40.0,
+            "top_p": 0.95
+          },
+          "instruction_sha256": "5011d37145d981e616d58fb56c5191ccbf336574fa01b3f65c2feab7d697b3a3"
+        },
+        "swe_coder": {
+          "client_parameters": {
+            "api_base": "http://127.0.0.1:9/v1",
+            "extra_body": {
+              "chat_template_kwargs": {
+                "enable_thinking": true
+              }
+            },
+            "max_completion_tokens": 8192,
+            "model": "openai/gemma-4-31b-it-qat-w4a16-ct",
+            "response_format": null,
+            "temperature": 0.2,
+            "top_k": 40.0,
+            "top_p": 0.95
+          },
+          "compiled": {
+            "max_output_tokens": 8192,
+            "seed": 42,
+            "temperature": 0.2,
+            "thinking_config": {
+              "include_thoughts": true,
+              "thinking_budget": 4096
+            },
+            "top_k": 40.0,
+            "top_p": 0.95
+          },
+          "instruction_sha256": "39b2541c2220cc7655c576bb4ae7ac7e03200a72f2f1e518313068fc93be3b91"
+        }
+      },
+      "sampling_yaml": "temperature: 0.2\ntop_p: 0.95\ntop_k: 40\nmax_output_tokens: 8192\nseed: 42\nthinking_config:\n  thinking_budget: 4096\n  include_thoughts: true\n"
+    }
+  },
+  "versions": {
+    "google-adk": "1.36.1",
+    "litellm": "1.102.1"
+  }
+}

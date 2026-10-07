@@ -1,0 +1,345 @@
+{
+  "scope": "Explicit seven-session inventory; not every trace on disk.",
+  "excluded": [
+    "smoke_run_2026-09-26: earlier smoke experiment",
+    "CPU controls/replays: no model usage",
+    "duplicate copies and synthetic fixtures"
+  ],
+  "limitations": [
+    "Successful recorded usage omits rejected request input sizes.",
+    "Threshold is a configured trigger, not a hard context bound.",
+    "Pilot/compare current notebooks are not pinned to these launches here; thresholds remain unknown.",
+    "Completion usage does not isolate reasoning or establish thinking-budget enforcement."
+  ],
+  "trace_count": 29,
+  "above_20480_descriptive_only": 15,
+  "rows": [
+    {
+      "trace": "reference/pilot_v1_results/pilot/A__requests_7309/traces/trace_requests_7309.json",
+      "sha256": "9b75c0aa131cb9d021dd9d4b29581403dc77d7d3b08935d204995bcbcbf29850",
+      "peak_recorded_prompt_tokens": 11086,
+      "peak_recorded_completion_tokens": 565,
+      "notebook": "notebooks/pilot/pilot.ipynb",
+      "notebook_sha256": "3264b9d2c91c838e98fdbc95cc7339dd548314dbe4ca48dc9d57046593ea36a6",
+      "matches_launch_pin": false,
+      "configured_threshold": null,
+      "current_file_thresholds_not_launch_evidence": [
+        32768
+      ]
+    },
+    {
+      "trace": "reference/pilot_v1_results/pilot/B__requests_7309/traces/trace_requests_7309.json",
+      "sha256": "816e0e45e6b3706579b8c9c47de0e8012e87fabad675bcc267dc5bc9fa617ee1",
+      "peak_recorded_prompt_tokens": 24425,
+      "peak_recorded_completion_tokens": 1382,
+      "notebook": "notebooks/pilot/pilot.ipynb",
+      "notebook_sha256": "3264b9d2c91c838e98fdbc95cc7339dd548314dbe4ca48dc9d57046593ea36a6",
+      "matches_launch_pin": false,
+      "configured_threshold": null,
+      "current_file_thresholds_not_launch_evidence": [
+        32768
+      ]
+    },
+    {
+      "trace": "reference/compare_run2/pilot/A__rich_3278/traces/trace_rich_3278.json",
+      "sha256": "6e0ecc77cbc96ef2b2764ee57545d3e448aa1143b190b6b6e726ebf65935af7f",
+      "peak_recorded_prompt_tokens": 20770,
+      "peak_recorded_completion_tokens": 267,
+      "notebook": "notebooks/compare/compare.ipynb",
+      "notebook_sha256": "029bb41f7405aabee2d96a928651c87a11f698f4fddc65cf1e00186d76cc3796",
+      "matches_launch_pin": false,
+      "configured_threshold": null,
+      "current_file_thresholds_not_launch_evidence": [
+        20480
+      ]
+    },
+    {
+      "trace": "reference/compare_run2/pilot/B__rich_3278/traces/trace_rich_3278.json",
+      "sha256": "e53eb9874eda7e9364e9336e2572fa97639aa4b8a394f6d6d40edd046f22fb11",
+      "peak_recorded_prompt_tokens": 20631,
+      "peak_recorded_completion_tokens": 443,
+      "notebook": "notebooks/compare/compare.ipynb",
+      "notebook_sha256": "029bb41f7405aabee2d96a928651c87a11f698f4fddc65cf1e00186d76cc3796",
+      "matches_launch_pin": false,
+      "configured_threshold": null,
+      "current_file_thresholds_not_launch_evidence": [
+        20480
+      ]
+    },
+    {
+      "trace": "reference/ab_s_run_2026-10-01/pilot/A__rich_3278/traces/trace_rich_3278.json",
+      "sha256": "5fc1caad7ee09754d1ca58fe96505e7eb4feefc59af06b022aa4196956a8807c",
+      "peak_recorded_prompt_tokens": 16391,
+      "peak_recorded_completion_tokens": 425,
+      "notebook": "notebooks/ab_s/ab_s.ipynb",
+      "notebook_sha256": "86d1c83bb203a1000c205d8913df59abcf83f86c584e66eb2ceba1e3e5a5a649",
+      "matches_launch_pin": true,
+      "configured_threshold": 20480,
+      "current_file_thresholds_not_launch_evidence": []
+    },
+    {
+      "trace": "reference/ab_s_run_2026-10-01/pilot/A__rich_3535/traces/trace_rich_3535.json",
+      "sha256": "0fdd4bacc972671a039136fd70ba417edc74c927dd9c49d998d12fcc9d3e5b2f",
+      "peak_recorded_prompt_tokens": 20803,
+      "peak_recorded_completion_tokens": 454,
+      "notebook": "notebooks/ab_s/ab_s.ipynb",
+      "notebook_sha256": "86d1c83bb203a1000c205d8913df59abcf83f86c584e66eb2ceba1e3e5a5a649",
+      "matches_launch_pin": true,
+      "configured_threshold": 20480,
+      "current_file_thresholds_not_launch_evidence": []
+    },
+    {
+      "trace": "reference/ab_s_run_2026-10-01/pilot/A__rich_3675/traces/trace_rich_3675.json",
+      "sha256": "cb741a83b5136883f1fc3142105caafa7e600825bc0e0a1a8f627ea76e135e27",
+      "peak_recorded_prompt_tokens": 7102,
+      "peak_recorded_completion_tokens": 454,
+      "notebook": "notebooks/ab_s/ab_s.ipynb",
+      "notebook_sha256": "86d1c83bb203a1000c205d8913df59abcf83f86c584e66eb2ceba1e3e5a5a649",
+      "matches_launch_pin": true,
+      "configured_threshold": 20480,
+      "current_file_thresholds_not_launch_evidence": []
+    },
+    {
+      "trace": "reference/ab_s_run_2026-10-01/pilot/A__rich_3942/traces/trace_rich_3942.json",
+      "sha256": "5fd1e9c53a5ad5079a6f2129099802fd412f25df4741faa47a7e5243df5f1dde",
+      "peak_recorded_prompt_tokens": 20976,
+      "peak_recorded_completion_tokens": 385,
+      "notebook": "notebooks/ab_s/ab_s.ipynb",
+      "notebook_sha256": "86d1c83bb203a1000c205d8913df59abcf83f86c584e66eb2ceba1e3e5a5a649",
+      "matches_launch_pin": true,
+      "configured_threshold": 20480,
+      "current_file_thresholds_not_launch_evidence": []
+    },
+    {
+      "trace": "reference/ab_s_run_2026-10-01/pilot/S__rich_3278/traces/trace_rich_3278.json",
+      "sha256": "fb7eac63f3ae77ca328da71e7f8505c9b9211335fd682b71ff84e3ddfba4a1c0",
+      "peak_recorded_prompt_tokens": 20526,
+      "peak_recorded_completion_tokens": 768,
+      "notebook": "notebooks/ab_s/ab_s.ipynb",
+      "notebook_sha256": "86d1c83bb203a1000c205d8913df59abcf83f86c584e66eb2ceba1e3e5a5a649",
+      "matches_launch_pin": true,
+      "configured_threshold": 20480,
+      "current_file_thresholds_not_launch_evidence": []
+    },
+    {
+      "trace": "reference/ab_s_run_2026-10-01/pilot/S__rich_3535/traces/trace_rich_3535.json",
+      "sha256": "abb3273c09e65e85f7e0930fcc9cebaf3481e9c223bad5dbcb315b15e104fa41",
+      "peak_recorded_prompt_tokens": 12885,
+      "peak_recorded_completion_tokens": 382,
+      "notebook": "notebooks/ab_s/ab_s.ipynb",
+      "notebook_sha256": "86d1c83bb203a1000c205d8913df59abcf83f86c584e66eb2ceba1e3e5a5a649",
+      "matches_launch_pin": true,
+      "configured_threshold": 20480,
+      "current_file_thresholds_not_launch_evidence": []
+    },
+    {
+      "trace": "reference/ab_s_run_2026-10-01/pilot/S__rich_3675/traces/trace_rich_3675.json",
+      "sha256": "d35d47d71a908a62530c68f1caee2507d99ba306f1abb94a8f38242f7d69e0c7",
+      "peak_recorded_prompt_tokens": 11515,
+      "peak_recorded_completion_tokens": 396,
+      "notebook": "notebooks/ab_s/ab_s.ipynb",
+      "notebook_sha256": "86d1c83bb203a1000c205d8913df59abcf83f86c584e66eb2ceba1e3e5a5a649",
+      "matches_launch_pin": true,
+      "configured_threshold": 20480,
+      "current_file_thresholds_not_launch_evidence": []
+    },
+    {
+      "trace": "reference/ab_s_run_2026-10-01/pilot/S__rich_3942/traces/trace_rich_3942.json",
+      "sha256": "2803d1c892513277083c124d7f7a19a4b4c3d7b160497f266b289ca04128e8f2",
+      "peak_recorded_prompt_tokens": 21606,
+      "peak_recorded_completion_tokens": 1085,
+      "notebook": "notebooks/ab_s/ab_s.ipynb",
+      "notebook_sha256": "86d1c83bb203a1000c205d8913df59abcf83f86c584e66eb2ceba1e3e5a5a649",
+      "matches_launch_pin": true,
+      "configured_threshold": 20480,
+      "current_file_thresholds_not_launch_evidence": []
+    },
+    {
+      "trace": "reference/stage1_run_2026-09-30/pilot/R__rich_3278/traces/trace_rich_3278.json",
+      "sha256": "e6fddbc6819556af7bf23c4a5ecb908c7ecf1cee63001fe4f0c2cc85b62932e2",
+      "peak_recorded_prompt_tokens": 19538,
+      "peak_recorded_completion_tokens": 625,
+      "notebook": "notebooks/stage1/stage1.ipynb",
+      "notebook_sha256": "775d88dfe3b91ee8b4d5b30cffdd9f2957556b1f045f2b87a1a6b4e3aacd3158",
+      "matches_launch_pin": true,
+      "configured_threshold": 20480,
+      "current_file_thresholds_not_launch_evidence": []
+    },
+    {
+      "trace": "reference/temperature_run_2026-10-01/pilot/S__rich_3278/traces/trace_rich_3278.json",
+      "sha256": "6b4b5e86b5b6b8f9e35cd5ca9e040580c359938e30f5bbc5cb213e0b27fdb7f2",
+      "peak_recorded_prompt_tokens": 20692,
+      "peak_recorded_completion_tokens": 534,
+      "notebook": "notebooks/temperature/temperature.ipynb",
+      "notebook_sha256": "ff22c79682ec29e90c795bc61cde205e2f2ddf3cce1aa52c1ee4d9c08bcb5f26",
+      "matches_launch_pin": true,
+      "configured_threshold": 20480,
+      "current_file_thresholds_not_launch_evidence": []
+    },
+    {
+      "trace": "reference/temperature_run_2026-10-01/pilot/S__rich_3535/traces/trace_rich_3535.json",
+      "sha256": "cd27c12b37e09f47e52685065b888c8f3083a065bd18c5e204fa2174d677e212",
+      "peak_recorded_prompt_tokens": 12008,
+      "peak_recorded_completion_tokens": 461,
+      "notebook": "notebooks/temperature/temperature.ipynb",
+      "notebook_sha256": "ff22c79682ec29e90c795bc61cde205e2f2ddf3cce1aa52c1ee4d9c08bcb5f26",
+      "matches_launch_pin": true,
+      "configured_threshold": 20480,
+      "current_file_thresholds_not_launch_evidence": []
+    },
+    {
+      "trace": "reference/temperature_run_2026-10-01/pilot/S__rich_3675/traces/trace_rich_3675.json",
+      "sha256": "40f4d18af1e2cb5ba3d73e41e898f011f0c90745aaeb8fa605fdc7eb3c740edf",
+      "peak_recorded_prompt_tokens": 21363,
+      "peak_recorded_completion_tokens": 46,
+      "notebook": "notebooks/temperature/temperature.ipynb",
+      "notebook_sha256": "ff22c79682ec29e90c795bc61cde205e2f2ddf3cce1aa52c1ee4d9c08bcb5f26",
+      "matches_launch_pin": true,
+      "configured_threshold": 20480,
+      "current_file_thresholds_not_launch_evidence": []
+    },
+    {
+      "trace": "reference/temperature_run_2026-10-01/pilot/S__rich_3942/traces/trace_rich_3942.json",
+      "sha256": "c86e78719fb27231498207d96c71bc62457e1b855e07b3ef9b25f44e856eca03",
+      "peak_recorded_prompt_tokens": 21269,
+      "peak_recorded_completion_tokens": 390,
+      "notebook": "notebooks/temperature/temperature.ipynb",
+      "notebook_sha256": "ff22c79682ec29e90c795bc61cde205e2f2ddf3cce1aa52c1ee4d9c08bcb5f26",
+      "matches_launch_pin": true,
+      "configured_threshold": 20480,
+      "current_file_thresholds_not_launch_evidence": []
+    },
+    {
+      "trace": "reference/temperature_run_2026-10-01/pilot/S_temp__rich_3278/traces/trace_rich_3278.json",
+      "sha256": "64a61df50802b4f976117d04fc65554a1f958c6e00fd9dc5f0e62372d094afe5",
+      "peak_recorded_prompt_tokens": 21847,
+      "peak_recorded_completion_tokens": 194,
+      "notebook": "notebooks/temperature/temperature.ipynb",
+      "notebook_sha256": "ff22c79682ec29e90c795bc61cde205e2f2ddf3cce1aa52c1ee4d9c08bcb5f26",
+      "matches_launch_pin": true,
+      "configured_threshold": 20480,
+      "current_file_thresholds_not_launch_evidence": []
+    },
+    {
+      "trace": "reference/temperature_run_2026-10-01/pilot/S_temp__rich_3535/traces/trace_rich_3535.json",
+      "sha256": "a8312af32563abb2e68b9872daa567f68309fc95734a48a11a8d4df1abcfae7e",
+      "peak_recorded_prompt_tokens": 12815,
+      "peak_recorded_completion_tokens": 198,
+      "notebook": "notebooks/temperature/temperature.ipynb",
+      "notebook_sha256": "ff22c79682ec29e90c795bc61cde205e2f2ddf3cce1aa52c1ee4d9c08bcb5f26",
+      "matches_launch_pin": true,
+      "configured_threshold": 20480,
+      "current_file_thresholds_not_launch_evidence": []
+    },
+    {
+      "trace": "reference/temperature_run_2026-10-01/pilot/S_temp__rich_3675/traces/trace_rich_3675.json",
+      "sha256": "0117e4312960bb732027fa6b40d6fdf0c5eacc1fbffaaa35a497ff283217fa6a",
+      "peak_recorded_prompt_tokens": 21747,
+      "peak_recorded_completion_tokens": 39,
+      "notebook": "notebooks/temperature/temperature.ipynb",
+      "notebook_sha256": "ff22c79682ec29e90c795bc61cde205e2f2ddf3cce1aa52c1ee4d9c08bcb5f26",
+      "matches_launch_pin": true,
+      "configured_threshold": 20480,
+      "current_file_thresholds_not_launch_evidence": []
+    },
+    {
+      "trace": "reference/temperature_run_2026-10-01/pilot/S_temp__rich_3942/traces/trace_rich_3942.json",
+      "sha256": "8ae48358a1eaa6114e68025ed5f5d396210806d187f8d3bb880cbe0c097ff069",
+      "peak_recorded_prompt_tokens": 22160,
+      "peak_recorded_completion_tokens": 379,
+      "notebook": "notebooks/temperature/temperature.ipynb",
+      "notebook_sha256": "ff22c79682ec29e90c795bc61cde205e2f2ddf3cce1aa52c1ee4d9c08bcb5f26",
+      "matches_launch_pin": true,
+      "configured_threshold": 20480,
+      "current_file_thresholds_not_launch_evidence": []
+    },
+    {
+      "trace": "reference/shellread_run_2026-10-02/pilot/S__rich_3675/traces/trace_rich_3675.json",
+      "sha256": "108f10b36700d0a591b732cc9ef5947159427c272d4965bccbf0dd3e851cf67e",
+      "peak_recorded_prompt_tokens": 14948,
+      "peak_recorded_completion_tokens": 46,
+      "notebook": "notebooks/shellread/shellread.ipynb",
+      "notebook_sha256": "5722594505e407387a00567e39d78ddd00570384a32893f5c6223664de72f6a3",
+      "matches_launch_pin": true,
+      "configured_threshold": 20480,
+      "current_file_thresholds_not_launch_evidence": []
+    },
+    {
+      "trace": "reference/shellread_run_2026-10-02/pilot/S__rich_3942/traces/trace_rich_3942.json",
+      "sha256": "80cb36b692b668612220f5f19fd5f8a4a30b1677501afdaf4b316005f2b5453f",
+      "peak_recorded_prompt_tokens": 22742,
+      "peak_recorded_completion_tokens": 220,
+      "notebook": "notebooks/shellread/shellread.ipynb",
+      "notebook_sha256": "5722594505e407387a00567e39d78ddd00570384a32893f5c6223664de72f6a3",
+      "matches_launch_pin": true,
+      "configured_threshold": 20480,
+      "current_file_thresholds_not_launch_evidence": []
+    },
+    {
+      "trace": "reference/shellread_run_2026-10-02/pilot/S_shellread__rich_3675/traces/trace_rich_3675.json",
+      "sha256": "6415e23b2b581867ac4d4574fb9bb8887e6bc03b75397dbe8137f33756ec07dc",
+      "peak_recorded_prompt_tokens": 6225,
+      "peak_recorded_completion_tokens": 354,
+      "notebook": "notebooks/shellread/shellread.ipynb",
+      "notebook_sha256": "5722594505e407387a00567e39d78ddd00570384a32893f5c6223664de72f6a3",
+      "matches_launch_pin": true,
+      "configured_threshold": 20480,
+      "current_file_thresholds_not_launch_evidence": []
+    },
+    {
+      "trace": "reference/shellread_run_2026-10-02/pilot/S_shellread__rich_3942/traces/trace_rich_3942.json",
+      "sha256": "1f742d29fd4826a0c3dd8c8eb44c75e7af4bc9d96d227f84ff4ed1b7b6c23eac",
+      "peak_recorded_prompt_tokens": 20508,
+      "peak_recorded_completion_tokens": 63,
+      "notebook": "notebooks/shellread/shellread.ipynb",
+      "notebook_sha256": "5722594505e407387a00567e39d78ddd00570384a32893f5c6223664de72f6a3",
+      "matches_launch_pin": true,
+      "configured_threshold": 20480,
+      "current_file_thresholds_not_launch_evidence": []
+    },
+    {
+      "trace": "reference/verification_run_2026-10-03/pilot/S_shellread__rich_3675/traces/trace_rich_3675.json",
+      "sha256": "3eaa04ac226bc6ffcec4ea75a122ff7939f01726b83f717232b0c1b69810a14d",
+      "peak_recorded_prompt_tokens": 6851,
+      "peak_recorded_completion_tokens": 558,
+      "notebook": "notebooks/verification/verification.ipynb",
+      "notebook_sha256": "7ea8397683c47beaeb9302036a18546deb8ed642dcc4c900f61eba4b0c754919",
+      "matches_launch_pin": true,
+      "configured_threshold": 20480,
+      "current_file_thresholds_not_launch_evidence": []
+    },
+    {
+      "trace": "reference/verification_run_2026-10-03/pilot/S_shellread__rich_3942/traces/trace_rich_3942.json",
+      "sha256": "ea14d8010cffd9f56cf828fab48dc1bf440e5489f8a57d9237ea87fe35e827df",
+      "peak_recorded_prompt_tokens": 11719,
+      "peak_recorded_completion_tokens": 36,
+      "notebook": "notebooks/verification/verification.ipynb",
+      "notebook_sha256": "7ea8397683c47beaeb9302036a18546deb8ed642dcc4c900f61eba4b0c754919",
+      "matches_launch_pin": true,
+      "configured_threshold": 20480,
+      "current_file_thresholds_not_launch_evidence": []
+    },
+    {
+      "trace": "reference/verification_run_2026-10-03/pilot/V__rich_3675/traces/trace_rich_3675.json",
+      "sha256": "e088a99b454897673c7436df762dfddf19f6a239bc42982ecc462ab17d9b4713",
+      "peak_recorded_prompt_tokens": 7414,
+      "peak_recorded_completion_tokens": 498,
+      "notebook": "notebooks/verification/verification.ipynb",
+      "notebook_sha256": "7ea8397683c47beaeb9302036a18546deb8ed642dcc4c900f61eba4b0c754919",
+      "matches_launch_pin": true,
+      "configured_threshold": 20480,
+      "current_file_thresholds_not_launch_evidence": []
+    },
+    {
+      "trace": "reference/verification_run_2026-10-03/pilot/V__rich_3942/traces/trace_rich_3942.json",
+      "sha256": "49321920db56d10c460e2e6bb529b6cf76339e16b0343fb722082b6920772c61",
+      "peak_recorded_prompt_tokens": 11808,
+      "peak_recorded_completion_tokens": 36,
+      "notebook": "notebooks/verification/verification.ipynb",
+      "notebook_sha256": "7ea8397683c47beaeb9302036a18546deb8ed642dcc4c900f61eba4b0c754919",
+      "matches_launch_pin": true,
+      "configured_threshold": 20480,
+      "current_file_thresholds_not_launch_evidence": []
+    }
+  ]
+}

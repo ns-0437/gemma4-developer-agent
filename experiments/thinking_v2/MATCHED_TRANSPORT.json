@@ -1,0 +1,130 @@
+{
+  "compiler_source": "C:\\Documents2\\KaggleMLChallenge\\The Gemma 4\\experiments\\shellread_v1\\compiler_0_2_12\\src\\adk_submission\\__init__.py",
+  "variants": {
+    "OFF": {
+      "swe_coder": {
+        "compiled": {
+          "temperature": 0.2,
+          "top_p": 0.95,
+          "top_k": 40.0,
+          "max_output_tokens": 4096,
+          "seed": 42,
+          "thinking_config": {
+            "include_thoughts": false,
+            "thinking_budget": 4096
+          }
+        },
+        "client_parameters": {
+          "model": "openai/gemma-4-31b-it-qat-w4a16-ct",
+          "response_format": null,
+          "api_base": "http://127.0.0.1:9/v1",
+          "seed": 42,
+          "extra_body": {
+            "chat_template_kwargs": {
+              "enable_thinking": false
+            }
+          },
+          "temperature": 0.2,
+          "max_completion_tokens": 4096,
+          "top_p": 0.95,
+          "top_k": 40.0
+        },
+        "instruction_sha256": "39b2541c2220cc7655c576bb4ae7ac7e03200a72f2f1e518313068fc93be3b91"
+      },
+      "code_analyzer": {
+        "compiled": {
+          "temperature": 0.2,
+          "top_p": 0.95,
+          "top_k": 40.0,
+          "max_output_tokens": 4096,
+          "seed": 42,
+          "thinking_config": {
+            "include_thoughts": false,
+            "thinking_budget": 4096
+          }
+        },
+        "client_parameters": {
+          "model": "openai/gemma-4-31b-it-qat-w4a16-ct",
+          "response_format": null,
+          "api_base": "http://127.0.0.1:9/v1",
+          "seed": 42,
+          "extra_body": {
+            "chat_template_kwargs": {
+              "enable_thinking": false
+            }
+          },
+          "temperature": 0.2,
+          "max_completion_tokens": 4096,
+          "top_p": 0.95,
+          "top_k": 40.0
+        },
+        "instruction_sha256": "5011d37145d981e616d58fb56c5191ccbf336574fa01b3f65c2feab7d697b3a3"
+      }
+    },
+    "ON": {
+      "swe_coder": {
+        "compiled": {
+          "temperature": 0.2,
+          "top_p": 0.95,
+          "top_k": 40.0,
+          "max_output_tokens": 4096,
+          "seed": 42,
+          "thinking_config": {
+            "include_thoughts": true,
+            "thinking_budget": 1024
+          }
+        },
+        "client_parameters": {
+          "model": "openai/gemma-4-31b-it-qat-w4a16-ct",
+          "response_format": null,
+          "api_base": "http://127.0.0.1:9/v1",
+          "seed": 42,
+          "extra_body": {
+            "chat_template_kwargs": {
+              "enable_thinking": true
+            },
+            "thinking_token_budget": 1024
+          },
+          "temperature": 0.2,
+          "max_completion_tokens": 4096,
+          "top_p": 0.95,
+          "top_k": 40.0
+        },
+        "instruction_sha256": "39b2541c2220cc7655c576bb4ae7ac7e03200a72f2f1e518313068fc93be3b91"
+      },
+      "code_analyzer": {
+        "compiled": {
+          "temperature": 0.2,
+          "top_p": 0.95,
+          "top_k": 40.0,
+          "max_output_tokens": 4096,
+          "seed": 42,
+          "thinking_config": {
+            "include_thoughts": true,
+            "thinking_budget": 1024
+          }
+        },
+        "client_parameters": {
+          "model": "openai/gemma-4-31b-it-qat-w4a16-ct",
+          "response_format": null,
+          "api_base": "http://127.0.0.1:9/v1",
+          "seed": 42,
+          "extra_body": {
+            "chat_template_kwargs": {
+              "enable_thinking": true
+            },
+            "thinking_token_budget": 1024
+          },
+          "temperature": 0.2,
+          "max_completion_tokens": 4096,
+          "top_p": 0.95,
+          "top_k": 40.0
+        },
+        "instruction_sha256": "5011d37145d981e616d58fb56c5191ccbf336574fa01b3f65c2feab7d697b3a3"
+      }
+    }
+  },
+  "provider_HTTP": false,
+  "server_enforcement": "unverified",
+  "prompt_ceiling_if_32768_context": 28672
+}

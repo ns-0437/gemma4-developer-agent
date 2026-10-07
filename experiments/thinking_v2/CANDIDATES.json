@@ -1,0 +1,27 @@
+{
+  "source_S_sha256": "8bf9f72c5d7ac4747e10c53637393bd7b18a6b66aae1879ddf4a62f4e4a6dc07",
+  "candidates": {
+    "OFF": {
+      "sha256": "640fadab5b5b638a7e8a31abb26fcecb6b2e139929d77cdb6691f2d832ca2ec1",
+      "files": {
+        "agent.yaml": "8e890bec4c5e146402c6ef9ee22eb40388207ad8416cfd3405e040aa038ffb83",
+        "configs/sampling.yaml": "a31b582a21cb5dbf93c9878dc8b42afde3d05140c715e78068353ab2ea5dba51",
+        "prompts/analyzer.md": "5011d37145d981e616d58fb56c5191ccbf336574fa01b3f65c2feab7d697b3a3",
+        "prompts/system.md": "39b2541c2220cc7655c576bb4ae7ac7e03200a72f2f1e518313068fc93be3b91",
+        "sub_agents/code_analyzer.yaml": "396b75ffd1315ef93f3d1806b814a49758b9f8dd8b8caef6a092bd6cb2c2d9bb"
+      }
+    },
+    "ON": {
+      "sha256": "527acc5403d21a149ecea9d39d573d3d0f45dc65935d115952b772045339ea33",
+      "files": {
+        "agent.yaml": "8e890bec4c5e146402c6ef9ee22eb40388207ad8416cfd3405e040aa038ffb83",
+        "configs/sampling.yaml": "0b754a9811c6a40198102c45f7cee813f43e3fd97edfef2b6da5deeffb6fa3a8",
+        "prompts/analyzer.md": "5011d37145d981e616d58fb56c5191ccbf336574fa01b3f65c2feab7d697b3a3",
+        "prompts/system.md": "39b2541c2220cc7655c576bb4ae7ac7e03200a72f2f1e518313068fc93be3b91",
+        "sub_agents/code_analyzer.yaml": "396b75ffd1315ef93f3d1806b814a49758b9f8dd8b8caef6a092bd6cb2c2d9bb"
+      }
+    }
+  },
+  "dispatch": false,
+  "measured": false
+}
