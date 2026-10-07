@@ -1,0 +1,86 @@
+{
+  "experiment": "thinking_v3 six-run follow-up",
+  "kernel": "navin03/gemma4-swe-agent-thinking-v3",
+  "kernel_version": 1,
+  "authorization": "one six-run GPU launch, user's own words 2026-10-06",
+  "prior_launch_check": "kernel did not exist before this push (kernels.get denied, no local LAUNCH_RECORD, notebook still disabled); this is the first and only push",
+  "utc_before_launch": "2026-10-06T15:07:17Z",
+  "pushed_utc": "2026-10-06T15:08:22Z",
+  "push_attempts": 1,
+  "push_result": "Kernel version 1 successfully pushed.",
+  "gpu_quota_before": {
+    "used": "1.46h",
+    "remaining": "28.54h",
+    "total": "30.00h",
+    "refreshAt": "2026-10-10T00:00:00",
+    "source": "python -m kaggle quota"
+  },
+  "disabled_notebook_sha256": "94ccce2797f77ddbc1b035e9df90f548516e91dccc8e1a4f9af3a33cb199ad06",
+  "disabled_preserved_at": "experiments/thinking_v3/thinking_v3_disabled.ipynb",
+  "armed_notebook_sha256": "d330ac267f1136bf34def303d1226f66a1c0b70cc485615477a928f9367ede98",
+  "metadata_sha256": "414b7fdf56c7610faac6c398b37f8b222d94dedaba9b1304c4dcf19f4272fa12",
+  "arming": {
+    "substitutions": 1,
+    "cell_index": 1,
+    "byte_delta": -1,
+    "verified_unchanged": [
+      "all other cell sources",
+      "notebook metadata and structure",
+      "ORDER",
+      "both embedded candidate payloads"
+    ]
+  },
+  "candidates": {
+    "OFF": "640fadab5b5b638a7e8a31abb26fcecb6b2e139929d77cdb6691f2d832ca2ec1",
+    "ON": "527acc5403d21a149ecea9d39d573d3d0f45dc65935d115952b772045339ea33"
+  },
+  "order": [
+    [
+      "rich_3278",
+      "OFF"
+    ],
+    [
+      "rich_3278",
+      "ON"
+    ],
+    [
+      "rich_3535",
+      "ON"
+    ],
+    [
+      "rich_3535",
+      "OFF"
+    ],
+    [
+      "rich_3942",
+      "OFF"
+    ],
+    [
+      "rich_3942",
+      "ON"
+    ]
+  ],
+  "budgets": {
+    "max_turns": 60,
+    "max_tool_calls": 100,
+    "max_time_minutes": 10.0,
+    "timeout_seconds": 300
+  },
+  "session_admission_cap_min": 210,
+  "run_reserve_min": 25,
+  "compaction_token_threshold": 20480,
+  "docker_image": "gcr.io/kaggle-private-byod/python@sha256:37c64f7dd9c54116ecd1bcc88817c5469b88387388fade02bfa8bf3fc647d461",
+  "freeze_sha256": "220869409441c04d7c8f32ef5ab141df02f754cce352495deeb48995a7483b4b",
+  "armed_check": "scripts/test_thinking_v3_notebook.py --armed PASS; no guard weakened",
+  "repeated_task": "rich_3278 (reproducibility check, not an independent new task)",
+  "new_tasks": [
+    "rich_3535",
+    "rich_3942"
+  ],
+  "not_done": [
+    "retry",
+    "extra experiment",
+    "competition submission",
+    "recurring polling"
+  ]
+}

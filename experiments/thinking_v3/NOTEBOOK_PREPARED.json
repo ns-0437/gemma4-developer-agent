@@ -1,0 +1,48 @@
+{
+  "notebook_sha256": "94ccce2797f77ddbc1b035e9df90f548516e91dccc8e1a4f9af3a33cb199ad06",
+  "candidates": {
+    "OFF": "640fadab5b5b638a7e8a31abb26fcecb6b2e139929d77cdb6691f2d832ca2ec1",
+    "ON": "527acc5403d21a149ecea9d39d573d3d0f45dc65935d115952b772045339ea33"
+  },
+  "order": [
+    [
+      "rich_3278",
+      "OFF"
+    ],
+    [
+      "rich_3278",
+      "ON"
+    ],
+    [
+      "rich_3535",
+      "ON"
+    ],
+    [
+      "rich_3535",
+      "OFF"
+    ],
+    [
+      "rich_3942",
+      "OFF"
+    ],
+    [
+      "rich_3942",
+      "ON"
+    ]
+  ],
+  "dispatch": false,
+  "compiler_version": "0.2.12",
+  "compiler_wheel_sha256": "077c438c426e625b9f722081694e1d32856e6f7e932ef625002fc4a11aabdc10",
+  "tasks": [
+    "rich_3278",
+    "rich_3535",
+    "rich_3942"
+  ],
+  "repeated_task": "rich_3278",
+  "new_tasks": [
+    "rich_3535",
+    "rich_3942"
+  ],
+  "docker_image": "gcr.io/kaggle-private-byod/python@sha256:37c64f7dd9c54116ecd1bcc88817c5469b88387388fade02bfa8bf3fc647d461",
+  "metadata_sha256": "414b7fdf56c7610faac6c398b37f8b222d94dedaba9b1304c4dcf19f4272fa12"
+}

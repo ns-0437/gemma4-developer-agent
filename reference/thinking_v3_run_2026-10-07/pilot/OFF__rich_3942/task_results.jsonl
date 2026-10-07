@@ -1,0 +1,1 @@
+{"instance_id": "rich_3942", "repo": "Textualize/rich", "resolved": false, "agent_patch_size": 0, "test_exit_code": -1, "duration_seconds": 185.38, "error": "Agent exceeded turns budget (60 turns)", "tool_calls": 53, "total_llm_calls": 60, "task_index": 1}

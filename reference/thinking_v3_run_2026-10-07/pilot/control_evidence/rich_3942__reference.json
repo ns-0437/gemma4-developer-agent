@@ -1,0 +1,63 @@
+{
+  "task": "rich_3942",
+  "arm": "reference",
+  "test_patch_rc": 0,
+  "test_patch_evidence": {
+    "label": "testpatch",
+    "requested": true,
+    "sandbox_path": "/tmp/tmpeuzbvgtf_testpatch.patch",
+    "bytes": 87892,
+    "sha256": "f40301cc51d0fe3422ee42098fb8c3c936b0cc2a99a411b118ceae6951c0135d",
+    "created_bytes": "87893",
+    "create_probe_rc": 0,
+    "apply_rc": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "patch_rc": 0,
+  "patch_evidence": {
+    "label": "gold",
+    "requested": true,
+    "sandbox_path": "/tmp/tmpbfhm31zw_gold.patch",
+    "bytes": 4593,
+    "sha256": "749bb5fd8abf4d2515469c6333c3f42ed3a3621b8994cd8b63e717d447b1c347",
+    "created_bytes": "4594",
+    "create_probe_rc": 0,
+    "apply_rc": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "pytest_exit": 0,
+  "pytest_cmd": "PYTHONSAFEPATH=1 PYTHONNOUSERSITE=1 python3 -s -m pytest tests/_card_render.py tests/test_markdown.py tests/test_markdown_no_hyperlinks.py",
+  "pytest_stdout": "........                                                                 [100%]\n- generated xml file: /tmp/swegemma_sandbox_54381905-0eb_1usj7r7k/tmp/ctl_reference.xml -\n8 passed in 0.49s\n",
+  "pytest_stderr": "",
+  "junit_read_rc": 0,
+  "nodes": {
+    "test_markdown::test_markdown_render": "passed",
+    "test_markdown::test_inline_code": "passed",
+    "test_markdown::test_markdown_table": "passed",
+    "test_markdown::test_inline_styles_in_table": "passed",
+    "test_markdown::test_inline_styles_with_justification": "passed",
+    "test_markdown::test_partial_table": "passed",
+    "test_markdown::test_table_with_empty_cells": "passed",
+    "test_markdown_no_hyperlinks::test_markdown_render": "passed"
+  },
+  "duplicate_nodes": [],
+  "junit_parse_error": null,
+  "environment_versions": "{'swegemma': '0.2.7', 'adk-submission': '0.2.12', 'adk-eval-core': '0.1.0', 'google-adk': '1.36.1'}",
+  "cleanup_ok": true,
+  "owned_sandboxes": [],
+  "agrees_with_saved": true,
+  "saved_exit": 0,
+  "node_comparison": {
+    "missing": [],
+    "extra": [],
+    "changed": [],
+    "skipped": [],
+    "targets_wrong": [],
+    "n_observed": 8,
+    "n_expected": 8,
+    "reason": ""
+  },
+  "n_targets": 6
+}
