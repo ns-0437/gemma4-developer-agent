@@ -1,0 +1,73 @@
+{
+  "experiment": "thinking_v2 (finalized, image-pinned)",
+  "kernel": "navin03/gemma4-swe-agent-thinking-v2",
+  "kernel_version": 2,
+  "authorization": "one GPU launch of the finalized four-run comparison in experiments/thinking_v2_final/",
+  "utc_before_launch": "2026-10-06T02:36:25Z",
+  "pushed_utc": "2026-10-06T02:37:20Z",
+  "push_attempts": 1,
+  "push_result": "Kernel version 2 successfully pushed.",
+  "gpu_quota_before": {
+    "used": "0.01h",
+    "remaining": "29.99h",
+    "total": "30.00h",
+    "refreshAt": "2026-10-10T00:00:00",
+    "source": "python -m kaggle quota"
+  },
+  "docker_image": "gcr.io/kaggle-private-byod/python@sha256:37c64f7dd9c54116ecd1bcc88817c5469b88387388fade02bfa8bf3fc647d461",
+  "image_evidence": "CPU probe navin03/gemma4-env-probe v1 on this digest: Python 3.12.13, 41/41 wheels compatible, install ok, 8/8 imports ok, compiler 0.2.12 per-file hashes matched. Environment compatibility only; GPU/vLLM unproven.",
+  "disabled_notebook_sha256": "93dc58362ac07d7cf9554f2c164b752cf52f9de89e003a78896f3407ebca8061",
+  "disabled_preserved_at": "experiments/thinking_v2_final/thinking_v2_disabled.ipynb",
+  "armed_notebook_sha256": "38644eb6a75520cb61102bc4c3ed5e5c97e6eae871a04b758be0bf5de137b03d",
+  "armed_equals_previously_verified_armed_bytes": true,
+  "metadata_sha256": "b2e01f047781bf2e49757b29e0b40eb36bc5997cee0c3ea5898fdf9febe0c3c2",
+  "metadata_delta_vs_v1": "one added key: docker_image. id, enable_gpu, machine_shape NvidiaL4, sources and privacy unchanged.",
+  "arming": {
+    "step": "scripts/arm_thinking_v2.py <path>",
+    "substitutions": 1,
+    "cell_index": 1,
+    "byte_delta": -1,
+    "verified_unchanged": [
+      "all other cell sources",
+      "notebook metadata and structure",
+      "ORDER",
+      "both embedded candidate payloads"
+    ]
+  },
+  "candidates": {
+    "OFF": "640fadab5b5b638a7e8a31abb26fcecb6b2e139929d77cdb6691f2d832ca2ec1",
+    "ON": "527acc5403d21a149ecea9d39d573d3d0f45dc65935d115952b772045339ea33"
+  },
+  "order": [
+    [
+      "rich_3675",
+      "OFF"
+    ],
+    [
+      "rich_3675",
+      "ON"
+    ],
+    [
+      "rich_3278",
+      "ON"
+    ],
+    [
+      "rich_3278",
+      "OFF"
+    ]
+  ],
+  "budgets": {
+    "max_turns": 60,
+    "max_tool_calls": 100,
+    "max_time_minutes": 10.0,
+    "timeout_seconds": 300
+  },
+  "armed_check": "scripts/test_thinking_v2_notebook.py --armed PASS; no guard weakened",
+  "not_done": [
+    "retry",
+    "additional experiment",
+    "recurring polling",
+    "competition submission"
+  ],
+  "on_completion": "preserve and hash raw outputs before review; report all four rows separating verified solves, regressions, ungraded outcomes, environment failures and runtime; do not infer thinking-budget enforcement from total completion tokens"
+}

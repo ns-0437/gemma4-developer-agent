@@ -1,0 +1,16 @@
+diff --git a/rich/console.py b/rich/console.py
+index 3ec9a8aa..750c625d 100644
+--- a/rich/console.py
++++ b/rich/console.py
+@@ -954,6 +954,11 @@ class Console:
+             self._force_terminal = True
+             return True
+ 
++        tty_compatible = self._environ.get("TTY_COMPATIBLE")
++        if tty_compatible is not None:
++            self._force_terminal = tty_compatible.lower() == "1"
++            return self._force_terminal
++
+         isatty: Optional[Callable[[], bool]] = getattr(self.file, "isatty", None)
+         try:
+             return False if isatty is None else isatty()
