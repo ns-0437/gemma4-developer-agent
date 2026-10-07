@@ -1,0 +1,22 @@
+{
+  "purpose": "CPU-only replay of the six final-validation controls",
+  "notebook_sha256": "7947556f81de5e019c4789efc3a5b7cdb31cc855db71f83fda38fbb58f1711ed",
+  "metadata_sha256": "698901f137d29b10def0813f1d4e515d64e3f7072b4495cc470358de6b80d281",
+  "cells_before": 13,
+  "cells_after": 10,
+  "dropped_for": [
+    "# Result packet:",
+    "# vLLM with the public harness serving configuration",
+    "Evaluator("
+  ],
+  "tasks": [
+    "fastapi_15280",
+    "requests_7427",
+    "rich_3894"
+  ],
+  "docker_image": "gcr.io/kaggle-private-byod/python@sha256:37c64f7dd9c54116ecd1bcc88817c5469b88387388fade02bfa8bf3fc647d461",
+  "model_startup": false,
+  "candidate_evaluation": false,
+  "dispatch_flag": "DISPATCH_CONFIRM = False retained in the config cell; no run loop exists",
+  "freeze_sha256": "220869409441c04d7c8f32ef5ab141df02f754cce352495deeb48995a7483b4b"
+}

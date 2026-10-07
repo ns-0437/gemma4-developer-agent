@@ -929,3 +929,13 @@ Across the temperature session: **0 of 8 runs produced any accepted modifying op
 attempted an edit.** That, not repetition, is the thing to move. `experiments/shellread_v1/` is prepared
 (dispatch false, never launched) and targets the read defect, not the no-edit problem; its own PLAN.md
 says so. **No submission on this evidence. The user wants verified solves first.**
+
+
+## 2026-10-05 transport correction (supersedes historical generalisations)
+Compiler 0.2.11 omitted seed and thinking_token_budget from client parameters;
+0.2.12 forwards seed and a positive thinking budget when thinking is enabled.
+Statements above saying these fields are never forwarded are version-specific,
+not current universal claims. Frozen submitted v3/S disable thinking; the old
+pilot B enabled it, and the new thinking_v2 ON package requests it. The new OFF
+and ON packages have not been run. Forwarding is not server enforcement.
+Private-grader compaction remains unknown. See experiments/thinking_v2/PREP.md.

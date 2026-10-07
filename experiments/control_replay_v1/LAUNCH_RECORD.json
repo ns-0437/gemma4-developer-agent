@@ -1,0 +1,39 @@
+{
+  "purpose": "CPU-only replay of the six final-validation controls, canonicalization repair",
+  "kernel": "navin03/gemma4-control-replay",
+  "kernel_version": 1,
+  "authorization": "one CPU-only launch, user's own words 2026-10-07; GPU launch, candidate change and competition submission NOT authorized",
+  "prior_launch_check": "kernel did not exist and no LAUNCH_RECORD existed before this push; first and only use of this authorization",
+  "utc_before_push": "2026-10-07T04:18:06Z",
+  "pushed_utc": "2026-10-07T04:18:37Z",
+  "push_attempts": 1,
+  "push_result": "Kernel version 1 successfully pushed.",
+  "notebook_sha256": "7947556f81de5e019c4789efc3a5b7cdb31cc855db71f83fda38fbb58f1711ed",
+  "metadata_sha256": "698901f137d29b10def0813f1d4e515d64e3f7072b4495cc470358de6b80d281",
+  "verified_before_push": {
+    "enable_gpu": false,
+    "enable_tpu": false,
+    "enable_internet": false,
+    "machine_shape": "absent",
+    "DISPATCH_CONFIRM": "= False, exactly one occurrence, no True",
+    "no_model_startup_or_candidate_eval": true,
+    "controls_and_compiler_gate_present": true,
+    "cells": 10
+  },
+  "gpu_quota_at_push": {
+    "used": "3.37h",
+    "remaining": "26.63h",
+    "note": "CPU kernel; GPU quota should not move"
+  },
+  "docker_image": "gcr.io/kaggle-private-byod/python@sha256:37c64f7dd9c54116ecd1bcc88817c5469b88387388fade02bfa8bf3fc647d461",
+  "freeze_sha256_unchanged": "220869409441c04d7c8f32ef5ab141df02f754cce352495deeb48995a7483b4b",
+  "holdout_exposure": "none possible: no agent runs in this notebook",
+  "not_done": [
+    "retry",
+    "GPU launch",
+    "candidate change",
+    "competition submission",
+    "scheduled polling"
+  ],
+  "on_status_request": "check once; if terminal, download all outputs, verify completeness, hash before analysis, then report the six control arms and acceptance, raw versus normalized identity differences, exit codes, target outcomes, provenance, cleanup, and confirmation that no model or candidate evaluation ran"
+}
