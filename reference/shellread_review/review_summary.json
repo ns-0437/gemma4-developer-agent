@@ -1,0 +1,483 @@
+{
+  "identity_verified": true,
+  "raw_files": 44,
+  "controls": [
+    {
+      "task": "rich_3675",
+      "arm": "baseline",
+      "nodes": 99,
+      "failures": [
+        "test_tty_compatible"
+      ],
+      "exit": 1
+    },
+    {
+      "task": "rich_3675",
+      "arm": "reference",
+      "nodes": 99,
+      "failures": [],
+      "exit": 0
+    },
+    {
+      "task": "rich_3942",
+      "arm": "baseline",
+      "nodes": 8,
+      "failures": [
+        "test_markdown_render",
+        "test_markdown_table",
+        "test_inline_styles_in_table",
+        "test_inline_styles_with_justification",
+        "test_partial_table",
+        "test_markdown_render"
+      ],
+      "exit": 1
+    },
+    {
+      "task": "rich_3942",
+      "arm": "reference",
+      "nodes": 8,
+      "failures": [],
+      "exit": 0
+    }
+  ],
+  "rows": [
+    {
+      "candidate": "S",
+      "task": "rich_3675",
+      "attempted": "True",
+      "stop_reason": "",
+      "grading_observed": "False",
+      "outcome": "candidate",
+      "outcome_reason": "persisted: turns budget",
+      "cleanup_ok": "True",
+      "owned_sandboxes": "",
+      "resolved": "False",
+      "attribution": "empty_patch",
+      "harness_error": "Agent exceeded turns budget (60 turns)",
+      "test_exit_code": "-1",
+      "grading_ran": "False",
+      "patch_bytes": "0",
+      "patch_touches_source": "False",
+      "patch_files": "unavailable",
+      "wall_s": "119.359",
+      "agent_phase_s": "119.32963321099999",
+      "grading_phase_s": "unavailable",
+      "both_setup_imports_verified": "False",
+      "phase_status": "{\"agent\": \"passed\", \"grading\": \"not_attempted\"}",
+      "failure_class": "candidate",
+      "agent_loop_s": "93.70719481599997",
+      "termination_error": "Agent exceeded turns budget (60 turns)",
+      "duration_seconds_harness": "119.34",
+      "tool_calls": "60",
+      "edit_calls": "0",
+      "shell_edit_hints": "0",
+      "repeated_identical_cmds": "48",
+      "tool_errors": "1",
+      "successful_tool_calls": "59",
+      "rejected_tool_calls": "0",
+      "acknowledged_source_edit_calls": "0",
+      "tmp_scratch_writes": "0",
+      "repeated_identical_tool_calls": "50",
+      "unparsed_tool_call_texts": "0",
+      "tool_use_flags": "identical_repeats;no_acknowledged_source_edit",
+      "first_source_edit_attempt_step": "unavailable",
+      "finish_reasons": "unavailable",
+      "prompt_tokens": "721508",
+      "completion_tokens": "2613",
+      "run_error": ""
+    },
+    {
+      "candidate": "S_shellread",
+      "task": "rich_3675",
+      "attempted": "True",
+      "stop_reason": "",
+      "grading_observed": "True",
+      "outcome": "ok",
+      "outcome_reason": "",
+      "cleanup_ok": "True",
+      "owned_sandboxes": "",
+      "resolved": "False",
+      "attribution": "tests_failed",
+      "harness_error": "unavailable",
+      "test_exit_code": "1",
+      "grading_ran": "True",
+      "patch_bytes": "723",
+      "patch_touches_source": "True",
+      "patch_files": "rich/console.py",
+      "wall_s": "102.254",
+      "agent_phase_s": "74.45394499700001",
+      "grading_phase_s": "27.77817019400004",
+      "both_setup_imports_verified": "True",
+      "phase_status": "{\"agent\": \"passed\", \"grading\": \"passed\"}",
+      "failure_class": "none",
+      "agent_loop_s": "48.953795033000006",
+      "termination_error": "unavailable",
+      "duration_seconds_harness": "102.2",
+      "tool_calls": "11",
+      "edit_calls": "1",
+      "shell_edit_hints": "0",
+      "repeated_identical_cmds": "0",
+      "tool_errors": "1",
+      "successful_tool_calls": "10",
+      "rejected_tool_calls": "0",
+      "acknowledged_source_edit_calls": "1",
+      "tmp_scratch_writes": "2",
+      "repeated_identical_tool_calls": "0",
+      "unparsed_tool_call_texts": "0",
+      "tool_use_flags": "none",
+      "first_source_edit_attempt_step": "10",
+      "finish_reasons": "unavailable",
+      "prompt_tokens": "58738",
+      "completion_tokens": "1554",
+      "run_error": ""
+    },
+    {
+      "candidate": "S_shellread",
+      "task": "rich_3942",
+      "attempted": "True",
+      "stop_reason": "",
+      "grading_observed": "False",
+      "outcome": "candidate",
+      "outcome_reason": "persisted: turns budget",
+      "cleanup_ok": "True",
+      "owned_sandboxes": "",
+      "resolved": "False",
+      "attribution": "empty_patch",
+      "harness_error": "Agent exceeded turns budget (60 turns)",
+      "test_exit_code": "-1",
+      "grading_ran": "False",
+      "patch_bytes": "0",
+      "patch_touches_source": "False",
+      "patch_files": "unavailable",
+      "wall_s": "114.885",
+      "agent_phase_s": "114.86096747800002",
+      "grading_phase_s": "unavailable",
+      "both_setup_imports_verified": "False",
+      "phase_status": "{\"agent\": \"passed\", \"grading\": \"not_attempted\"}",
+      "failure_class": "candidate",
+      "agent_loop_s": "89.90755871500005",
+      "termination_error": "Agent exceeded turns budget (60 turns)",
+      "duration_seconds_harness": "114.87",
+      "tool_calls": "60",
+      "edit_calls": "0",
+      "shell_edit_hints": "0",
+      "repeated_identical_cmds": "16",
+      "tool_errors": "4",
+      "successful_tool_calls": "56",
+      "rejected_tool_calls": "0",
+      "acknowledged_source_edit_calls": "0",
+      "tmp_scratch_writes": "0",
+      "repeated_identical_tool_calls": "16",
+      "unparsed_tool_call_texts": "0",
+      "tool_use_flags": "identical_repeats;no_acknowledged_source_edit",
+      "first_source_edit_attempt_step": "unavailable",
+      "finish_reasons": "unavailable",
+      "prompt_tokens": "665294",
+      "completion_tokens": "2082",
+      "run_error": ""
+    },
+    {
+      "candidate": "S",
+      "task": "rich_3942",
+      "attempted": "True",
+      "stop_reason": "",
+      "grading_observed": "False",
+      "outcome": "candidate",
+      "outcome_reason": "persisted: turns budget",
+      "cleanup_ok": "True",
+      "owned_sandboxes": "",
+      "resolved": "False",
+      "attribution": "empty_patch",
+      "harness_error": "Agent exceeded turns budget (60 turns)",
+      "test_exit_code": "-1",
+      "grading_ran": "False",
+      "patch_bytes": "0",
+      "patch_touches_source": "False",
+      "patch_files": "unavailable",
+      "wall_s": "150.837",
+      "agent_phase_s": "150.80871385199998",
+      "grading_phase_s": "unavailable",
+      "both_setup_imports_verified": "False",
+      "phase_status": "{\"agent\": \"passed\", \"grading\": \"not_attempted\"}",
+      "failure_class": "candidate",
+      "agent_loop_s": "125.72955870199985",
+      "termination_error": "Agent exceeded turns budget (60 turns)",
+      "duration_seconds_harness": "150.82",
+      "tool_calls": "58",
+      "edit_calls": "0",
+      "shell_edit_hints": "0",
+      "repeated_identical_cmds": "1",
+      "tool_errors": "6",
+      "successful_tool_calls": "52",
+      "rejected_tool_calls": "0",
+      "acknowledged_source_edit_calls": "0",
+      "tmp_scratch_writes": "0",
+      "repeated_identical_tool_calls": "12",
+      "unparsed_tool_call_texts": "0",
+      "tool_use_flags": "identical_repeats;no_acknowledged_source_edit",
+      "first_source_edit_attempt_step": "unavailable",
+      "finish_reasons": "unavailable",
+      "prompt_tokens": "607886",
+      "completion_tokens": "2477",
+      "run_error": ""
+    }
+  ],
+  "trace_audit": [
+    {
+      "run": "S__rich_3675",
+      "explicit_answer_key_argument_hits": [],
+      "history_requests": []
+    },
+    {
+      "run": "S__rich_3942",
+      "explicit_answer_key_argument_hits": [],
+      "history_requests": [
+        {
+          "step": 22,
+          "args": "{'command': 'git log -p -n 1 -- rich/default_styles.py'}"
+        },
+        {
+          "step": 23,
+          "args": "{'command': 'git log --grep=\"markdown styles\" -- rich/default_styles.py'}"
+        },
+        {
+          "step": 24,
+          "args": "{'command': 'git log -p b4c048800170f3ea1466f3d24adbe4b46b78c743 -- rich/default_styles.py'}"
+        },
+        {
+          "step": 25,
+          "args": "{'command': 'git log --grep=\"Update to markdown styles\" --all'}"
+        },
+        {
+          "step": 26,
+          "args": "{'command': 'git log --grep=\"markdown\" -- rich/default_styles.py'}"
+        },
+        {
+          "step": 27,
+          "args": "{'command': 'git log -p 39ca233a835bdeebddec8149e11318b521f956df -- rich/default_styles.py'}"
+        },
+        {
+          "step": 28,
+          "args": "{'command': 'git log --grep=\"Update to markdown styles\" --all'}"
+        },
+        {
+          "step": 29,
+          "args": "{'command': 'git log --grep=\"markdown\" -- all'}"
+        },
+        {
+          "step": 30,
+          "args": "{'command': 'git log --grep=\"markdown\" -- all'}"
+        },
+        {
+          "step": 31,
+          "args": "{'command': 'git log --grep=\"markdown\" -- rich/markdown.py'}"
+        },
+        {
+          "step": 32,
+          "args": "{'command': 'git log -p -n 1 -- rich/markdown.py'}"
+        }
+      ]
+    },
+    {
+      "run": "S_shellread__rich_3675",
+      "explicit_answer_key_argument_hits": [],
+      "history_requests": []
+    },
+    {
+      "run": "S_shellread__rich_3942",
+      "explicit_answer_key_argument_hits": [],
+      "history_requests": [
+        {
+          "step": 5,
+          "args": "{'command': 'git log -p -n 1 -- rich/markdown.py'}"
+        },
+        {
+          "step": 6,
+          "args": "{'command': 'git log --grep=\"markdown styles\" --all'}"
+        },
+        {
+          "step": 7,
+          "args": "{'command': 'git log -p -n 1 b4c048800170f3ea1466f3d24adbe4b46b78c743'}"
+        },
+        {
+          "step": 17,
+          "args": "{'command': 'git log --grep=\"Update to markdown styles\" --all'}"
+        },
+        {
+          "step": 18,
+          "args": "{'command': 'git log --grep=\"markdown\" --all | head -20'}"
+        },
+        {
+          "step": 19,
+          "args": "{'command': 'git log -p -n 1 072150a78313d48e9b795203c55d6c94ca04602e'}"
+        },
+        {
+          "step": 20,
+          "args": "{'command': 'git log --grep=\"Update to markdown styles\" --all || git log --grep=\"markdown styles\" --all'}"
+        },
+        {
+          "step": 21,
+          "args": "{'command': 'git log --all --grep=\"markdown\" | head -20'}"
+        },
+        {
+          "step": 22,
+          "args": "{'command': 'git log --all --grep=\"markdown\" --grep=\"style\" | head -20'}"
+        },
+        {
+          "step": 23,
+          "args": "{'command': 'git log --all --grep=\"markdown\" | grep \"style\" | head -20'}"
+        },
+        {
+          "step": 24,
+          "args": "{'command': 'git log --all --grep=\"Update styling to be minimal in markdown tables, add inline style support\" -p'}"
+        },
+        {
+          "step": 25,
+          "args": "{'command': 'git log --all --grep=\"Update to markdown styles\"'}"
+        },
+        {
+          "step": 26,
+          "args": "{'command': 'git log --all --grep=\"markdown styles\"'}"
+        },
+        {
+          "step": 27,
+          "args": "{'command': 'git log --all --grep=\"markdown\" --grep=\"style\" | head -20'}"
+        },
+        {
+          "step": 28,
+          "args": "{'command': 'git log --all --grep=\"markdown\" | grep \"style\" | head -20'}"
+        },
+        {
+          "step": 29,
+          "args": "{'command': 'git log --all --grep=\"markdown\" | grep \"style\" | head -20'}"
+        },
+        {
+          "step": 30,
+          "args": "{'command': 'git log --all --grep=\"markdown\" | grep \"style\" | head -20'}"
+        },
+        {
+          "step": 31,
+          "args": "{'command': 'git log --all --grep=\"markdown\" | grep \"style\" | head -20'}"
+        },
+        {
+          "step": 32,
+          "args": "{'command': 'git log --all --grep=\"markdown\" | grep \"style\" | head -20'}"
+        },
+        {
+          "step": 33,
+          "args": "{'command': 'git log --all --grep=\"markdown\" | grep \"style\" | head -20'}"
+        },
+        {
+          "step": 34,
+          "args": "{'command': 'git log --all --grep=\"markdown\" | grep \"style\" | head -20'}"
+        },
+        {
+          "step": 35,
+          "args": "{'command': 'git log --all --grep=\"markdown\" | grep \"style\" | head -20'}"
+        },
+        {
+          "step": 36,
+          "args": "{'command': 'git log --all --grep=\"markdown\" | grep \"style\" | head -20'}"
+        },
+        {
+          "step": 37,
+          "args": "{'command': 'git log --all --grep=\"markdown\" | grep \"style\" | head -20'}"
+        },
+        {
+          "step": 38,
+          "args": "{'command': 'git log --all --grep=\"markdown\" | grep \"style\" | head -20'}"
+        },
+        {
+          "step": 39,
+          "args": "{'command': 'git log --all --grep=\"markdown\" | grep \"style\" | head -20'}"
+        },
+        {
+          "step": 40,
+          "args": "{'command': 'git log --all --grep=\"markdown\" | grep \"style\" | head -20'}"
+        },
+        {
+          "step": 41,
+          "args": "{'command': 'git log --all --grep=\"markdown\" | grep \"style\" | head -20'}"
+        },
+        {
+          "step": 42,
+          "args": "{'command': 'git log --all --grep=\"markdown\" | grep \"style\" | head -20'}"
+        },
+        {
+          "step": 43,
+          "args": "{'command': 'git log --all --grep=\"markdown\" | grep \"style\" | head -20'}"
+        },
+        {
+          "step": 44,
+          "args": "{'command': 'git log --all --grep=\"markdown\" | grep \"style\" | head -20'}"
+        },
+        {
+          "step": 47,
+          "args": "{'command': 'git log -n 5 --oneline'}"
+        },
+        {
+          "step": 48,
+          "args": "{'command': 'git log --all --grep=\"markdown\" --grep=\"style\" | head -20'}"
+        },
+        {
+          "step": 49,
+          "args": "{'command': 'git log --all --grep=\"markdown\" | grep \"style\" | head -20'}"
+        },
+        {
+          "step": 50,
+          "args": "{'command': 'git log --all --grep=\"markdown\" --grep=\"style\" | head -20'}"
+        },
+        {
+          "step": 51,
+          "args": "{'command': 'git log --all --grep=\"markdown\" | grep \"style\" | head -20'}"
+        },
+        {
+          "step": 52,
+          "args": "{'command': 'git log --all --grep=\"markdown\" --grep=\"style\" | head -20'}"
+        },
+        {
+          "step": 53,
+          "args": "{'command': 'git log --all --grep=\"markdown\" | grep \"style\" | head -20'}"
+        },
+        {
+          "step": 54,
+          "args": "{'command': 'git log --all --grep=\"markdown\" --grep=\"style\" | head -20'}"
+        },
+        {
+          "step": 55,
+          "args": "{'command': 'git log --all --grep=\"markdown\" | grep \"style\" | head -20'}"
+        },
+        {
+          "step": 56,
+          "args": "{'command': 'git log --all --grep=\"markdown\" --grep=\"style\" | head -20'}"
+        },
+        {
+          "step": 57,
+          "args": "{'command': 'git log --all --grep=\"markdown\" | grep \"style\" | head -20'}"
+        },
+        {
+          "step": 58,
+          "args": "{'command': 'git log --all --grep=\"markdown\" --grep=\"style\" | head -20'}"
+        },
+        {
+          "step": 59,
+          "args": "{'command': 'git log --all --grep=\"markdown\" | grep \"style\" | head -20'}"
+        },
+        {
+          "step": 60,
+          "args": "{'command': 'git log --all --grep=\"markdown\" --grep=\"style\" | head -20'}"
+        },
+        {
+          "step": 61,
+          "args": "{'command': 'git log --all --grep=\"markdown\" | grep \"style\" | head -20'}"
+        },
+        {
+          "step": 62,
+          "args": "{'command': 'git log --all --grep=\"markdown\" --grep=\"style\" | head -20'}"
+        }
+      ]
+    }
+  ],
+  "compiler_verified": true,
+  "decision": "Do not submit: zero verified solves; one graded incorrect source patch; three ungraded outcomes."
+}
