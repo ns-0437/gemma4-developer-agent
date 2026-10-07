@@ -1,0 +1,130 @@
+"""Verify the pinned final-validation packet and execute its cells with fake services.
+
+No Kaggle requests or real model execution. Use --armed --baseline PATH only
+after an authorized launch step; the baseline must match NOTEBOOK_PREPARED.
+"""
+import argparse
+import ast
+import base64
+import contextlib
+import hashlib
+import io
+import json
+import os
+import tempfile
+from pathlib import Path
+
+os.environ['NB_TARGET'] = 'final_validation_v2'
+import test_pilot_notebook as H
+
+ROOT = Path(__file__).resolve().parent.parent
+EXP = ROOT / 'experiments/final_validation_v2'
+NB = ROOT / 'notebooks/final_validation_v2/final_validation_v2.ipynb'
+COMPILER = ROOT / 'experiments/shellread_v1/compiler_0_2_12/src/adk_submission'
+ORDER = [('fastapi_15280', 'V3'), ('fastapi_15280', 'ON'),
+         ('requests_7427', 'ON'), ('requests_7427', 'V3'),
+         ('rich_3894', 'V3'), ('rich_3894', 'ON')]
+
+
+def verify_packet(raw, prepared, *, armed=False, baseline=None):
+    disabled = baseline if armed else raw
+    assert disabled is not None, '--armed requires a preserved disabled baseline'
+    assert hashlib.sha256(disabled).hexdigest() == prepared['notebook_sha256']
+    assert disabled.count(b'DISPATCH_CONFIRM = False') == 1
+    assert b'DISPATCH_CONFIRM = True' not in disabled
+    expected = disabled.replace(b'DISPATCH_CONFIRM = False',
+                                b'DISPATCH_CONFIRM = True', 1) if armed else disabled
+    assert raw == expected, 'unexpected change beyond the dispatch flag'
+    found, assignments = set(), {}
+    for index, cell in enumerate(json.loads(raw)['cells']):
+        if cell['cell_type'] != 'code':
+            continue
+        tree = ast.parse(''.join(cell['source']))
+        compile(tree, f'<packet cell {index}>', 'exec')
+        for node in ast.walk(tree):
+            if isinstance(node, ast.Constant) and isinstance(node.value, str):
+                if len(node.value) > 1000:
+                    try:
+                        digest = hashlib.sha256(base64.b64decode(node.value, validate=True)).hexdigest()
+                    except ValueError:
+                        continue
+                    if digest in prepared['candidates'].values():
+                        found.add(digest)
+            if isinstance(node, ast.Assign):
+                for target in node.targets:
+                    if isinstance(target, ast.Name) and target.id in {'ORDER', 'TASK_IDS'}:
+                        assignments[target.id] = ast.literal_eval(node.value)
+    assert found == set(prepared['candidates'].values()), 'embedded package identity mismatch'
+    assert assignments['ORDER'] == ORDER
+    assert assignments['TASK_IDS'] == prepared['tasks']
+    assert [list(pair) for pair in ORDER] == prepared['order']
+
+
+def hook(fault=None):
+    def edit(index, cell, namespace):
+        if 'verify_runtime_compiler()' in cell:
+            namespace['COMPILER_FIXTURE'] = COMPILER
+            version = '0.2.11' if fault == 'compiler' else '0.2.12'
+            cell = cell.replace('verify_runtime_compiler()',
+                                f'verify_runtime_compiler(COMPILER_FIXTURE, {version!r})')
+            if fault == 'candidate':
+                anchor = 'for key, folder in CAND_DIRS.items():'
+                assert anchor in cell
+                cell = cell.replace(anchor,
+                                    "(CAND_DIRS['ON']/'agent.yaml').write_text('drift')\n" + anchor, 1)
+        if fault == 'control' and 'CONTROL_STOP_REASON = None' in cell:
+            namespace['CONTROL_EVIDENCE']['fastapi_15280']['negative']['pytest_exit'] = 0
+        return cell
+    return edit
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--armed', action='store_true')
+    parser.add_argument('--baseline', type=Path)
+    args = parser.parse_args()
+    raw = NB.read_bytes()
+    prepared = json.loads((EXP / 'NOTEBOOK_PREPARED.json').read_text())
+    verify_packet(raw, prepared, armed=args.armed,
+                  baseline=args.baseline.read_bytes() if args.baseline else None)
+    metadata = NB.with_name('kernel-metadata.json').read_bytes()
+    assert hashlib.sha256(metadata).hexdigest() == prepared['metadata_sha256']
+    meta = json.loads(metadata)
+    assert meta['enable_gpu'] is True and meta['enable_internet'] is False
+    assert meta['docker_image'] == prepared['docker_image']
+    assert hashlib.sha256((ROOT / 'experiments/ab_v3_vs_short/task_freeze.json').read_bytes()).hexdigest() == prepared['freeze_sha256']
+
+    with tempfile.TemporaryDirectory() as tmp, contextlib.redirect_stdout(io.StringIO()):
+        for dispatch in (False, True):
+            work = Path(tmp) / str(dispatch)
+            ns = H.run_cells(work, dispatch=dispatch, server_healthy=True, hook=hook())
+            counts = H.counts()
+            assert len(ns['rows']) == 6
+            assert counts['evaluations'] == (6 if dispatch else 0)
+            assert counts['server_started'] == counts['server_stopped'] == int(dispatch)
+            ledger = work / 'working/pilot/EXPOSURE.json'
+            if dispatch:
+                assert [(row['task'], row['candidate']) for row in ns['RUNS']] == ORDER
+                events = json.loads(ledger.read_text())['events']
+                assert [(event['task'], event['candidate']) for event in events] == ORDER
+                assert all(event['event'] == 'dispatch_start_intent' for event in events)
+            else:
+                assert all(not row['attempted'] for row in ns['rows'])
+                assert not ledger.exists()
+        for fault, message in [('compiler', 'Runtime compiler drift'),
+                               ('candidate', 'Candidate file drift'),
+                               ('control', 'controls do not reproduce')]:
+            try:
+                H.run_cells(Path(tmp) / fault, dispatch=True, server_healthy=True, hook=hook(fault))
+            except AssertionError as exc:
+                assert message in str(exc), (fault, str(exc))
+                assert H.counts()['server_created'] == H.counts()['evaluations'] == 0
+            else:
+                raise AssertionError('Failed to refuse ' + fault)
+    assert NB.read_bytes() == raw, 'test modified the packet'
+    assert NB.with_name('kernel-metadata.json').read_bytes() == metadata
+    print('PASS: packet identity, six-run order, disabled/enabled lifecycle, ledger, compiler/candidate/control refusal; simulated services only.')
+
+
+if __name__ == '__main__':
+    main()

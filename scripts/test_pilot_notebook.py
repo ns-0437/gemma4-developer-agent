@@ -129,7 +129,7 @@ def _control_maps():
     Read from the generator's own evidence loader, so the fixture compares the cell against the
     same saved controls the notebook embeds rather than a hand-written copy.
     """
-    if _which not in ("compare", "stage1", "ab_s", "temperature", "shellread", "verification", "thinking_v2", "thinking_v3", "final_validation", "control_replay"):
+    if _which not in ("compare", "stage1", "ab_s", "temperature", "shellread", "verification", "thinking_v2", "thinking_v3", "final_validation", "control_replay", "final_validation_v2"):
         return {}, {}
     import make_compare_notebook as _M
     # The notebook under test decides its own task set. stage1 ships one task; compare ships four,
