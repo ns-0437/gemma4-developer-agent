@@ -1,0 +1,38 @@
+{
+  "notebook_sha256": "7ea8397683c47beaeb9302036a18546deb8ed642dcc4c900f61eba4b0c754919",
+  "candidates": {
+    "S_shellread": "8e3f9286ce0f2399c32dfa452e129a12fd48cdd657b88ea6c76d3c48c36956ae",
+    "V": "315ba92750d38550a7e1880da2dfa80db8944a166d8be04a3e748db68450d804"
+  },
+  "order": [
+    [
+      "rich_3675",
+      "S_shellread"
+    ],
+    [
+      "rich_3675",
+      "V"
+    ],
+    [
+      "rich_3942",
+      "V"
+    ],
+    [
+      "rich_3942",
+      "S_shellread"
+    ]
+  ],
+  "dispatch": true,
+  "compiler_version": "0.2.12",
+  "compiler_wheel_sha256": "077c438c426e625b9f722081694e1d32856e6f7e932ef625002fc4a11aabdc10",
+  "kernel": "navin03/gemma4-swe-agent-verification",
+  "quota_before": "06:36 / 30 hrs",
+  "quota_observed_utc": "2026-10-02T16:46:47Z",
+  "disabled_sha256": "15652d45862ef89f9651241836387120c4cbec2fccdb02ba35b76e7f72faf88a",
+  "authorization": "User explicitly authorized one four-run GPU comparison in this turn.",
+  "status": "QUEUED",
+  "version": 1,
+  "push_confirmed_utc": "2026-10-02T16:47:41.759751Z",
+  "push_count": 1,
+  "status_checked_utc": "2026-10-02T16:47:59.3032411Z"
+}

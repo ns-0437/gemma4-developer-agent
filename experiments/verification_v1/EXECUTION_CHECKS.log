@@ -1,0 +1,410 @@
+verification diagnostic: {'max_time_minutes': 10.0, 'max_tool_calls': 100, 'max_turns': 60, 'timeout_seconds': 300} | session cap 150 min
+DISPATCH_CONFIRM is False: setup and preconditions will run, the four runs will NOT.
+installing 1 wheels...
+{
+  "swegemma": "MISSING: PackageNotFoundError('swegemma')",
+  "adk-submission": "MISSING: PackageNotFoundError('adk-submission')",
+  "adk-eval-core": "MISSING: PackageNotFoundError('adk-eval-core')",
+  "google-adk": "MISSING: PackageNotFoundError('google-adk')",
+  "vllm": "MISSING: PackageNotFoundError('vllm')",
+  "transformers": "MISSING: PackageNotFoundError('transformers')",
+  "litellm": "MISSING: PackageNotFoundError('litellm')"
+}
+GPUs: 4 ['NVIDIA L4', 'NVIDIA L4', 'NVIDIA L4', 'NVIDIA L4']
+model revision dir: 2 | config sha256: b72dd2eaa6e277d6
+architectures: ['Gemma4ForConditionalGeneration']
+quantization: {"format": "pack-quantized", "num_bits": 4}
+loaded 2 tasks
+PILOT TASKS and the evidence they were chosen on:
+
+  rich_3675 Textualize/rich
+    negative  exit=1 cases=99 failed=1 errored=0
+              agent  import: unavailable (no agent ran in the control)
+              pytest import: /tmp/swegemma_sandbox_eee552f1-f25_sg8paafw/workspace/rich/__init__.py
+    positive  exit=0 cases=99 failed=0 errored=0
+              agent  import: unavailable (no agent ran in the control)
+              pytest import: /tmp/swegemma_sandbox_29800dba-55b_9nqi_yv4/workspace/rich/__init__.py
+    baseline-fails / gold-passes / grading-import-in-checkout: True
+    agent-side import provenance: UNAVAILABLE (no agent ran in the control)
+    control patch_rc=0 test_patch_rc=0
+    baseline failures: ['test_console::test_tty_compatible']
+
+  rich_3942 Textualize/rich
+    negative  exit=1 cases=8 failed=6 errored=0
+              agent  import: unavailable (no agent ran in the control)
+              pytest import: /tmp/swegemma_sandbox_cb7391fe-ddf_sauv1peb/workspace/rich/__init__.py
+    positive  exit=0 cases=8 failed=0 errored=0
+              agent  import: unavailable (no agent ran in the control)
+              pytest import: /tmp/swegemma_sandbox_58f2d1f1-b18_zzqdtsd6/workspace/rich/__init__.py
+    baseline-fails / gold-passes / grading-import-in-checkout: True
+    agent-side import provenance: UNAVAILABLE (no agent ran in the control)
+    control patch_rc=0 test_patch_rc=0
+    baseline failures: ['test_markdown::test_inline_styles_in_table', 'test_markdown::test_inline_styles_with_justification', 'test_markdown::test_markdown_render', 'test_markdown::test_markdown_table']
+prompt leakage: CLEAN (0 lines came from the issue text)
+LIMITATION: this is a data-flow check. The subprocess backend runs run_command on the host, so
+answer-key files remain reachable; traces must be audited for contamination before trusting a run.
+S_shellread: sha256=8e3f9286ce0f2399 model=gemma-4-31b-it-qat-w4a16-ct
+V: sha256=315ba92750d38550 model=gemma-4-31b-it-qat-w4a16-ct
+repair bound on agent_runner, verification, container_setup (idempotent)
+NOTE: a pip success message alone is not proof; the preconditions below check what actually loads.
+rich_3675        ok=True
+    workspace: /tmp/sbx_test/workspace
+    agent    : /tmp/sbx_test/workspace/requests/__init__.py
+    grading  : /tmp/sbx_test/workspace/requests/__init__.py
+rich_3942        ok=True
+    workspace: /tmp/sbx_test/workspace
+    agent    : /tmp/sbx_test/workspace/requests/__init__.py
+    grading  : /tmp/sbx_test/workspace/requests/__init__.py
+ALL PRECONDITIONS PASSED
+Caveat: passing here does not guarantee the same resolution inside every later sandbox; the
+per-run setup observations verify imports again in the actual sandboxes. These are grading-flags probes, not direct in-pytest observations.
+  rich_3675      baseline  exit=1 (saved 1) nodes=99/99 targets=1 agrees=True
+  rich_3675      reference exit=0 (saved 0) nodes=99/99 targets=1 agrees=True
+  rich_3942      baseline  exit=1 (saved 1) nodes=8/8 targets=6 agrees=True
+  rich_3942      reference exit=0 (saved 0) nodes=8/8 targets=6 agrees=True
+ALL FOUR CONTROLS REPRODUCE UNDER THIS SETUP (both arms, full node map, targets verified)
+adapters discovered: none (expected)
+Dispatch disabled: vLLM is not instantiated or started.
+planned run order: [('rich_3675', 'S_shellread'), ('rich_3675', 'V'), ('rich_3942', 'V'), ('rich_3942', 'S_shellread')]
+backend for BOTH preconditions and evaluation: subprocess
+DISPATCH_CONFIRM=False: no server was started and no model run is dispatched.
+{"candidate": "S_shellread", "task": "rich_3675", "attempted": false, "stop_reason": "not reached before the run loop ended", "resolved": "unavailable", "attribution": "not_attempted", "harness_error": "unavailable", "test_exit_code": "unavailable", "grading_ran": "unavailable", "grading_observed": "unavailable", "outcome": "not_attempted", "outcome_reason": "unavailable", "cleanup_ok": "unavailable", "owned_sandboxes": "unavailable", "patch_bytes": "unavailable", "patch_touches_source": "unavailable", "patch_files": "unavailable", "wall_s": "unavailable", "agent_phase_s": "unavailable", "grading_phase_s": "unavailable", "both_setup_imports_verified": "unavailable", "phase_status": "unavailable", "failure_class": "not_attempted", "agent_loop_s": "unavailable", "termination_error": "unavailable", "duration_seconds_harness": "unavailable", "tool_calls": "unavailable", "edit_calls": "unavailable", "shell_edit_hints": "unavailable", "repeated_identical_cmds": "unavailable", "tool_errors": "unavailable", "first_source_edit_attempt_step": "unavailable", "finish_reasons": "unavailable", "prompt_tokens": "unavailable", "completion_tokens": "unavailable", "successful_tool_calls": "unavailable", "rejected_tool_calls": "unavailable", "acknowledged_source_edit_calls": "unavailable", "tmp_scratch_writes": "unavailable", "repeated_identical_tool_calls": "unavailable", "unparsed_tool_call_texts": "unavailable", "tool_use_flags": "unavailable", "run_error": ""}
+{"candidate": "V", "task": "rich_3675", "attempted": false, "stop_reason": "not reached before the run loop ended", "resolved": "unavailable", "attribution": "not_attempted", "harness_error": "unavailable", "test_exit_code": "unavailable", "grading_ran": "unavailable", "grading_observed": "unavailable", "outcome": "not_attempted", "outcome_reason": "unavailable", "cleanup_ok": "unavailable", "owned_sandboxes": "unavailable", "patch_bytes": "unavailable", "patch_touches_source": "unavailable", "patch_files": "unavailable", "wall_s": "unavailable", "agent_phase_s": "unavailable", "grading_phase_s": "unavailable", "both_setup_imports_verified": "unavailable", "phase_status": "unavailable", "failure_class": "not_attempted", "agent_loop_s": "unavailable", "termination_error": "unavailable", "duration_seconds_harness": "unavailable", "tool_calls": "unavailable", "edit_calls": "unavailable", "shell_edit_hints": "unavailable", "repeated_identical_cmds": "unavailable", "tool_errors": "unavailable", "first_source_edit_attempt_step": "unavailable", "finish_reasons": "unavailable", "prompt_tokens": "unavailable", "completion_tokens": "unavailable", "successful_tool_calls": "unavailable", "rejected_tool_calls": "unavailable", "acknowledged_source_edit_calls": "unavailable", "tmp_scratch_writes": "unavailable", "repeated_identical_tool_calls": "unavailable", "unparsed_tool_call_texts": "unavailable", "tool_use_flags": "unavailable", "run_error": ""}
+{"candidate": "V", "task": "rich_3942", "attempted": false, "stop_reason": "not reached before the run loop ended", "resolved": "unavailable", "attribution": "not_attempted", "harness_error": "unavailable", "test_exit_code": "unavailable", "grading_ran": "unavailable", "grading_observed": "unavailable", "outcome": "not_attempted", "outcome_reason": "unavailable", "cleanup_ok": "unavailable", "owned_sandboxes": "unavailable", "patch_bytes": "unavailable", "patch_touches_source": "unavailable", "patch_files": "unavailable", "wall_s": "unavailable", "agent_phase_s": "unavailable", "grading_phase_s": "unavailable", "both_setup_imports_verified": "unavailable", "phase_status": "unavailable", "failure_class": "not_attempted", "agent_loop_s": "unavailable", "termination_error": "unavailable", "duration_seconds_harness": "unavailable", "tool_calls": "unavailable", "edit_calls": "unavailable", "shell_edit_hints": "unavailable", "repeated_identical_cmds": "unavailable", "tool_errors": "unavailable", "first_source_edit_attempt_step": "unavailable", "finish_reasons": "unavailable", "prompt_tokens": "unavailable", "completion_tokens": "unavailable", "successful_tool_calls": "unavailable", "rejected_tool_calls": "unavailable", "acknowledged_source_edit_calls": "unavailable", "tmp_scratch_writes": "unavailable", "repeated_identical_tool_calls": "unavailable", "unparsed_tool_call_texts": "unavailable", "tool_use_flags": "unavailable", "run_error": ""}
+{"candidate": "S_shellread", "task": "rich_3942", "attempted": false, "stop_reason": "not reached before the run loop ended", "resolved": "unavailable", "attribution": "not_attempted", "harness_error": "unavailable", "test_exit_code": "unavailable", "grading_ran": "unavailable", "grading_observed": "unavailable", "outcome": "not_attempted", "outcome_reason": "unavailable", "cleanup_ok": "unavailable", "owned_sandboxes": "unavailable", "patch_bytes": "unavailable", "patch_touches_source": "unavailable", "patch_files": "unavailable", "wall_s": "unavailable", "agent_phase_s": "unavailable", "grading_phase_s": "unavailable", "both_setup_imports_verified": "unavailable", "phase_status": "unavailable", "failure_class": "not_attempted", "agent_loop_s": "unavailable", "termination_error": "unavailable", "duration_seconds_harness": "unavailable", "tool_calls": "unavailable", "edit_calls": "unavailable", "shell_edit_hints": "unavailable", "repeated_identical_cmds": "unavailable", "tool_errors": "unavailable", "first_source_edit_attempt_step": "unavailable", "finish_reasons": "unavailable", "prompt_tokens": "unavailable", "completion_tokens": "unavailable", "successful_tool_calls": "unavailable", "rejected_tool_calls": "unavailable", "acknowledged_source_edit_calls": "unavailable", "tmp_scratch_writes": "unavailable", "repeated_identical_tool_calls": "unavailable", "unparsed_tool_call_texts": "unavailable", "tool_use_flags": "unavailable", "run_error": ""}
+
+cand       task             resolved  attribution            agent_s
+S_shellread rich_3675        unavailable not_attempted          unavailable
+V          rich_3675        unavailable not_attempted          unavailable
+V          rich_3942        unavailable not_attempted          unavailable
+S_shellread rich_3942        unavailable not_attempted          unavailable
+
+Four tasks from ONE repository (Textualize/rich) are a narrow diagnostic, not a general
+ranking: any result here generalises to rich at best, and cannot say which candidate is
+better overall. Both preconditions and evaluation run on the SUBPROCESS backend, which is
+not a filesystem isolation boundary. agent_phase_s covers container-A setup plus the agent loop;
+grading_phase_s is container B. The harness duration_seconds bundles both and must not be
+multiplied to project the 12-hour scoring runtime.
+saved pilot_manifest.json and pilot_results.csv
+verification diagnostic: {'max_time_minutes': 10.0, 'max_tool_calls': 100, 'max_turns': 60, 'timeout_seconds': 300} | session cap 150 min
+installing 1 wheels...
+{
+  "swegemma": "MISSING: PackageNotFoundError('swegemma')",
+  "adk-submission": "MISSING: PackageNotFoundError('adk-submission')",
+  "adk-eval-core": "MISSING: PackageNotFoundError('adk-eval-core')",
+  "google-adk": "MISSING: PackageNotFoundError('google-adk')",
+  "vllm": "MISSING: PackageNotFoundError('vllm')",
+  "transformers": "MISSING: PackageNotFoundError('transformers')",
+  "litellm": "MISSING: PackageNotFoundError('litellm')"
+}
+GPUs: 4 ['NVIDIA L4', 'NVIDIA L4', 'NVIDIA L4', 'NVIDIA L4']
+model revision dir: 2 | config sha256: b72dd2eaa6e277d6
+architectures: ['Gemma4ForConditionalGeneration']
+quantization: {"format": "pack-quantized", "num_bits": 4}
+loaded 2 tasks
+PILOT TASKS and the evidence they were chosen on:
+
+  rich_3675 Textualize/rich
+    negative  exit=1 cases=99 failed=1 errored=0
+              agent  import: unavailable (no agent ran in the control)
+              pytest import: /tmp/swegemma_sandbox_eee552f1-f25_sg8paafw/workspace/rich/__init__.py
+    positive  exit=0 cases=99 failed=0 errored=0
+              agent  import: unavailable (no agent ran in the control)
+              pytest import: /tmp/swegemma_sandbox_29800dba-55b_9nqi_yv4/workspace/rich/__init__.py
+    baseline-fails / gold-passes / grading-import-in-checkout: True
+    agent-side import provenance: UNAVAILABLE (no agent ran in the control)
+    control patch_rc=0 test_patch_rc=0
+    baseline failures: ['test_console::test_tty_compatible']
+
+  rich_3942 Textualize/rich
+    negative  exit=1 cases=8 failed=6 errored=0
+              agent  import: unavailable (no agent ran in the control)
+              pytest import: /tmp/swegemma_sandbox_cb7391fe-ddf_sauv1peb/workspace/rich/__init__.py
+    positive  exit=0 cases=8 failed=0 errored=0
+              agent  import: unavailable (no agent ran in the control)
+              pytest import: /tmp/swegemma_sandbox_58f2d1f1-b18_zzqdtsd6/workspace/rich/__init__.py
+    baseline-fails / gold-passes / grading-import-in-checkout: True
+    agent-side import provenance: UNAVAILABLE (no agent ran in the control)
+    control patch_rc=0 test_patch_rc=0
+    baseline failures: ['test_markdown::test_inline_styles_in_table', 'test_markdown::test_inline_styles_with_justification', 'test_markdown::test_markdown_render', 'test_markdown::test_markdown_table']
+prompt leakage: CLEAN (0 lines came from the issue text)
+LIMITATION: this is a data-flow check. The subprocess backend runs run_command on the host, so
+answer-key files remain reachable; traces must be audited for contamination before trusting a run.
+S_shellread: sha256=8e3f9286ce0f2399 model=gemma-4-31b-it-qat-w4a16-ct
+V: sha256=315ba92750d38550 model=gemma-4-31b-it-qat-w4a16-ct
+repair bound on agent_runner, verification, container_setup (idempotent)
+NOTE: a pip success message alone is not proof; the preconditions below check what actually loads.
+rich_3675        ok=True
+    workspace: /tmp/sbx_test/workspace
+    agent    : /tmp/sbx_test/workspace/requests/__init__.py
+    grading  : /tmp/sbx_test/workspace/requests/__init__.py
+rich_3942        ok=True
+    workspace: /tmp/sbx_test/workspace
+    agent    : /tmp/sbx_test/workspace/requests/__init__.py
+    grading  : /tmp/sbx_test/workspace/requests/__init__.py
+ALL PRECONDITIONS PASSED
+Caveat: passing here does not guarantee the same resolution inside every later sandbox; the
+per-run setup observations verify imports again in the actual sandboxes. These are grading-flags probes, not direct in-pytest observations.
+  rich_3675      baseline  exit=1 (saved 1) nodes=99/99 targets=1 agrees=True
+  rich_3675      reference exit=0 (saved 0) nodes=99/99 targets=1 agrees=True
+  rich_3942      baseline  exit=1 (saved 1) nodes=8/8 targets=6 agrees=True
+  rich_3942      reference exit=0 (saved 0) nodes=8/8 targets=6 agrees=True
+ALL FOUR CONTROLS REPRODUCE UNDER THIS SETUP (both arms, full node map, targets verified)
+adapters discovered: none (expected)
+vLLM up at http://127.0.0.1:4353/v1 (tp=4) in 0.0 min
+NOTE: the server default enable_thinking=True is overridden per-request by each candidate's
+extra_body.chat_template_kwargs, both candidates request thinking disabled.
+planned run order: [('rich_3675', 'S_shellread'), ('rich_3675', 'V'), ('rich_3942', 'V'), ('rich_3942', 'S_shellread')]
+backend for BOTH preconditions and evaluation: subprocess
+S_shellread rich_3675 wall_s= 0.012 phase_s= {'agent_phase_s': [0.0032601999992039055], 'agent_loop_s': [3.25], 'grading_phase_s': [0.003629699996963609]}
+  phase status: {'agent': 'passed', 'grading': 'passed'}
+  outcome: ok | clean
+  grading observed: True | results written: 1
+  cleanup of THIS run's sandboxes: True 
+V rich_3675 wall_s= 0.013 phase_s= {'agent_phase_s': [0.0036036000019521452], 'agent_loop_s': [3.25], 'grading_phase_s': [0.004059400002006441]}
+  phase status: {'agent': 'passed', 'grading': 'passed'}
+  outcome: ok | clean
+  grading observed: True | results written: 1
+  cleanup of THIS run's sandboxes: True 
+V rich_3942 wall_s= 0.014 phase_s= {'agent_phase_s': [0.004278800006431993], 'agent_loop_s': [3.25], 'grading_phase_s': [0.003973899998527486]}
+  phase status: {'agent': 'passed', 'grading': 'passed'}
+  outcome: ok | clean
+  grading observed: True | results written: 1
+  cleanup of THIS run's sandboxes: True 
+S_shellread rich_3942 wall_s= 0.015 phase_s= {'agent_phase_s': [0.0043197000049985945], 'agent_loop_s': [3.25], 'grading_phase_s': [0.004035399993881583]}
+  phase status: {'agent': 'passed', 'grading': 'passed'}
+  outcome: ok | clean
+  grading observed: True | results written: 1
+  cleanup of THIS run's sandboxes: True 
+{"candidate": "S_shellread", "task": "rich_3675", "attempted": true, "stop_reason": "", "grading_observed": true, "outcome": "ok", "outcome_reason": "", "cleanup_ok": true, "owned_sandboxes": "", "resolved": true, "attribution": "passed", "harness_error": "unavailable", "test_exit_code": 0, "grading_ran": true, "patch_bytes": 97, "patch_touches_source": true, "patch_files": "pkg/module.py", "wall_s": 0.012, "agent_phase_s": 0.0032601999992039055, "grading_phase_s": 0.003629699996963609, "both_setup_imports_verified": true, "phase_status": "{\"agent\": \"passed\", \"grading\": \"passed\"}", "failure_class": "none", "agent_loop_s": 3.25, "termination_error": "unavailable", "duration_seconds_harness": 4.0, "tool_calls": "unavailable", "edit_calls": "unavailable", "shell_edit_hints": "unavailable", "repeated_identical_cmds": "unavailable", "tool_errors": "unavailable", "first_source_edit_attempt_step": "unavailable", "finish_reasons": "unavailable", "prompt_tokens": "unavailable", "completion_tokens": "unavailable", "successful_tool_calls": "unavailable", "rejected_tool_calls": "unavailable", "acknowledged_source_edit_calls": "unavailable", "tmp_scratch_writes": "unavailable", "repeated_identical_tool_calls": "unavailable", "unparsed_tool_call_texts": "unavailable", "tool_use_flags": "unavailable", "run_error": ""}
+{"candidate": "V", "task": "rich_3675", "attempted": true, "stop_reason": "", "grading_observed": true, "outcome": "ok", "outcome_reason": "", "cleanup_ok": true, "owned_sandboxes": "", "resolved": true, "attribution": "passed", "harness_error": "unavailable", "test_exit_code": 0, "grading_ran": true, "patch_bytes": 97, "patch_touches_source": true, "patch_files": "pkg/module.py", "wall_s": 0.013, "agent_phase_s": 0.0036036000019521452, "grading_phase_s": 0.004059400002006441, "both_setup_imports_verified": true, "phase_status": "{\"agent\": \"passed\", \"grading\": \"passed\"}", "failure_class": "none", "agent_loop_s": 3.25, "termination_error": "unavailable", "duration_seconds_harness": 4.0, "tool_calls": "unavailable", "edit_calls": "unavailable", "shell_edit_hints": "unavailable", "repeated_identical_cmds": "unavailable", "tool_errors": "unavailable", "first_source_edit_attempt_step": "unavailable", "finish_reasons": "unavailable", "prompt_tokens": "unavailable", "completion_tokens": "unavailable", "successful_tool_calls": "unavailable", "rejected_tool_calls": "unavailable", "acknowledged_source_edit_calls": "unavailable", "tmp_scratch_writes": "unavailable", "repeated_identical_tool_calls": "unavailable", "unparsed_tool_call_texts": "unavailable", "tool_use_flags": "unavailable", "run_error": ""}
+{"candidate": "V", "task": "rich_3942", "attempted": true, "stop_reason": "", "grading_observed": true, "outcome": "ok", "outcome_reason": "", "cleanup_ok": true, "owned_sandboxes": "", "resolved": true, "attribution": "passed", "harness_error": "unavailable", "test_exit_code": 0, "grading_ran": true, "patch_bytes": 97, "patch_touches_source": true, "patch_files": "pkg/module.py", "wall_s": 0.014, "agent_phase_s": 0.004278800006431993, "grading_phase_s": 0.003973899998527486, "both_setup_imports_verified": true, "phase_status": "{\"agent\": \"passed\", \"grading\": \"passed\"}", "failure_class": "none", "agent_loop_s": 3.25, "termination_error": "unavailable", "duration_seconds_harness": 4.0, "tool_calls": "unavailable", "edit_calls": "unavailable", "shell_edit_hints": "unavailable", "repeated_identical_cmds": "unavailable", "tool_errors": "unavailable", "first_source_edit_attempt_step": "unavailable", "finish_reasons": "unavailable", "prompt_tokens": "unavailable", "completion_tokens": "unavailable", "successful_tool_calls": "unavailable", "rejected_tool_calls": "unavailable", "acknowledged_source_edit_calls": "unavailable", "tmp_scratch_writes": "unavailable", "repeated_identical_tool_calls": "unavailable", "unparsed_tool_call_texts": "unavailable", "tool_use_flags": "unavailable", "run_error": ""}
+{"candidate": "S_shellread", "task": "rich_3942", "attempted": true, "stop_reason": "", "grading_observed": true, "outcome": "ok", "outcome_reason": "", "cleanup_ok": true, "owned_sandboxes": "", "resolved": true, "attribution": "passed", "harness_error": "unavailable", "test_exit_code": 0, "grading_ran": true, "patch_bytes": 97, "patch_touches_source": true, "patch_files": "pkg/module.py", "wall_s": 0.015, "agent_phase_s": 0.0043197000049985945, "grading_phase_s": 0.004035399993881583, "both_setup_imports_verified": true, "phase_status": "{\"agent\": \"passed\", \"grading\": \"passed\"}", "failure_class": "none", "agent_loop_s": 3.25, "termination_error": "unavailable", "duration_seconds_harness": 4.0, "tool_calls": "unavailable", "edit_calls": "unavailable", "shell_edit_hints": "unavailable", "repeated_identical_cmds": "unavailable", "tool_errors": "unavailable", "first_source_edit_attempt_step": "unavailable", "finish_reasons": "unavailable", "prompt_tokens": "unavailable", "completion_tokens": "unavailable", "successful_tool_calls": "unavailable", "rejected_tool_calls": "unavailable", "acknowledged_source_edit_calls": "unavailable", "tmp_scratch_writes": "unavailable", "repeated_identical_tool_calls": "unavailable", "unparsed_tool_call_texts": "unavailable", "tool_use_flags": "unavailable", "run_error": ""}
+
+cand       task             resolved  attribution            agent_s
+S_shellread rich_3675        True      passed                 0.0032601999992039055
+V          rich_3675        True      passed                 0.0036036000019521452
+V          rich_3942        True      passed                 0.004278800006431993
+S_shellread rich_3942        True      passed                 0.0043197000049985945
+
+Four tasks from ONE repository (Textualize/rich) are a narrow diagnostic, not a general
+ranking: any result here generalises to rich at best, and cannot say which candidate is
+better overall. Both preconditions and evaluation run on the SUBPROCESS backend, which is
+not a filesystem isolation boundary. agent_phase_s covers container-A setup plus the agent loop;
+grading_phase_s is container B. The harness duration_seconds bundles both and must not be
+multiplied to project the 12-hour scoring runtime.
+saved pilot_manifest.json and pilot_results.csv
+verification diagnostic: {'max_time_minutes': 10.0, 'max_tool_calls': 100, 'max_turns': 60, 'timeout_seconds': 300} | session cap 150 min
+installing 1 wheels...
+{
+  "swegemma": "MISSING: PackageNotFoundError('swegemma')",
+  "adk-submission": "MISSING: PackageNotFoundError('adk-submission')",
+  "adk-eval-core": "MISSING: PackageNotFoundError('adk-eval-core')",
+  "google-adk": "MISSING: PackageNotFoundError('google-adk')",
+  "vllm": "MISSING: PackageNotFoundError('vllm')",
+  "transformers": "MISSING: PackageNotFoundError('transformers')",
+  "litellm": "MISSING: PackageNotFoundError('litellm')"
+}
+GPUs: 4 ['NVIDIA L4', 'NVIDIA L4', 'NVIDIA L4', 'NVIDIA L4']
+model revision dir: 2 | config sha256: b72dd2eaa6e277d6
+architectures: ['Gemma4ForConditionalGeneration']
+quantization: {"format": "pack-quantized", "num_bits": 4}
+loaded 2 tasks
+PILOT TASKS and the evidence they were chosen on:
+
+  rich_3675 Textualize/rich
+    negative  exit=1 cases=99 failed=1 errored=0
+              agent  import: unavailable (no agent ran in the control)
+              pytest import: /tmp/swegemma_sandbox_eee552f1-f25_sg8paafw/workspace/rich/__init__.py
+    positive  exit=0 cases=99 failed=0 errored=0
+              agent  import: unavailable (no agent ran in the control)
+              pytest import: /tmp/swegemma_sandbox_29800dba-55b_9nqi_yv4/workspace/rich/__init__.py
+    baseline-fails / gold-passes / grading-import-in-checkout: True
+    agent-side import provenance: UNAVAILABLE (no agent ran in the control)
+    control patch_rc=0 test_patch_rc=0
+    baseline failures: ['test_console::test_tty_compatible']
+
+  rich_3942 Textualize/rich
+    negative  exit=1 cases=8 failed=6 errored=0
+              agent  import: unavailable (no agent ran in the control)
+              pytest import: /tmp/swegemma_sandbox_cb7391fe-ddf_sauv1peb/workspace/rich/__init__.py
+    positive  exit=0 cases=8 failed=0 errored=0
+              agent  import: unavailable (no agent ran in the control)
+              pytest import: /tmp/swegemma_sandbox_58f2d1f1-b18_zzqdtsd6/workspace/rich/__init__.py
+    baseline-fails / gold-passes / grading-import-in-checkout: True
+    agent-side import provenance: UNAVAILABLE (no agent ran in the control)
+    control patch_rc=0 test_patch_rc=0
+    baseline failures: ['test_markdown::test_inline_styles_in_table', 'test_markdown::test_inline_styles_with_justification', 'test_markdown::test_markdown_render', 'test_markdown::test_markdown_table']
+prompt leakage: CLEAN (0 lines came from the issue text)
+LIMITATION: this is a data-flow check. The subprocess backend runs run_command on the host, so
+answer-key files remain reachable; traces must be audited for contamination before trusting a run.
+S_shellread: sha256=8e3f9286ce0f2399 model=gemma-4-31b-it-qat-w4a16-ct
+V: sha256=315ba92750d38550 model=gemma-4-31b-it-qat-w4a16-ct
+verification diagnostic: {'max_time_minutes': 10.0, 'max_tool_calls': 100, 'max_turns': 60, 'timeout_seconds': 300} | session cap 150 min
+installing 1 wheels...
+{
+  "swegemma": "MISSING: PackageNotFoundError('swegemma')",
+  "adk-submission": "MISSING: PackageNotFoundError('adk-submission')",
+  "adk-eval-core": "MISSING: PackageNotFoundError('adk-eval-core')",
+  "google-adk": "MISSING: PackageNotFoundError('google-adk')",
+  "vllm": "MISSING: PackageNotFoundError('vllm')",
+  "transformers": "MISSING: PackageNotFoundError('transformers')",
+  "litellm": "MISSING: PackageNotFoundError('litellm')"
+}
+GPUs: 4 ['NVIDIA L4', 'NVIDIA L4', 'NVIDIA L4', 'NVIDIA L4']
+model revision dir: 2 | config sha256: b72dd2eaa6e277d6
+architectures: ['Gemma4ForConditionalGeneration']
+quantization: {"format": "pack-quantized", "num_bits": 4}
+loaded 2 tasks
+PILOT TASKS and the evidence they were chosen on:
+
+  rich_3675 Textualize/rich
+    negative  exit=1 cases=99 failed=1 errored=0
+              agent  import: unavailable (no agent ran in the control)
+              pytest import: /tmp/swegemma_sandbox_eee552f1-f25_sg8paafw/workspace/rich/__init__.py
+    positive  exit=0 cases=99 failed=0 errored=0
+              agent  import: unavailable (no agent ran in the control)
+              pytest import: /tmp/swegemma_sandbox_29800dba-55b_9nqi_yv4/workspace/rich/__init__.py
+    baseline-fails / gold-passes / grading-import-in-checkout: True
+    agent-side import provenance: UNAVAILABLE (no agent ran in the control)
+    control patch_rc=0 test_patch_rc=0
+    baseline failures: ['test_console::test_tty_compatible']
+
+  rich_3942 Textualize/rich
+    negative  exit=1 cases=8 failed=6 errored=0
+              agent  import: unavailable (no agent ran in the control)
+              pytest import: /tmp/swegemma_sandbox_cb7391fe-ddf_sauv1peb/workspace/rich/__init__.py
+    positive  exit=0 cases=8 failed=0 errored=0
+              agent  import: unavailable (no agent ran in the control)
+              pytest import: /tmp/swegemma_sandbox_58f2d1f1-b18_zzqdtsd6/workspace/rich/__init__.py
+    baseline-fails / gold-passes / grading-import-in-checkout: True
+    agent-side import provenance: UNAVAILABLE (no agent ran in the control)
+    control patch_rc=0 test_patch_rc=0
+    baseline failures: ['test_markdown::test_inline_styles_in_table', 'test_markdown::test_inline_styles_with_justification', 'test_markdown::test_markdown_render', 'test_markdown::test_markdown_table']
+prompt leakage: CLEAN (0 lines came from the issue text)
+LIMITATION: this is a data-flow check. The subprocess backend runs run_command on the host, so
+answer-key files remain reachable; traces must be audited for contamination before trusting a run.
+S_shellread: sha256=8e3f9286ce0f2399 model=gemma-4-31b-it-qat-w4a16-ct
+V: sha256=315ba92750d38550 model=gemma-4-31b-it-qat-w4a16-ct
+verification diagnostic: {'max_time_minutes': 10.0, 'max_tool_calls': 100, 'max_turns': 60, 'timeout_seconds': 300} | session cap 150 min
+installing 1 wheels...
+{
+  "swegemma": "MISSING: PackageNotFoundError('swegemma')",
+  "adk-submission": "MISSING: PackageNotFoundError('adk-submission')",
+  "adk-eval-core": "MISSING: PackageNotFoundError('adk-eval-core')",
+  "google-adk": "MISSING: PackageNotFoundError('google-adk')",
+  "vllm": "MISSING: PackageNotFoundError('vllm')",
+  "transformers": "MISSING: PackageNotFoundError('transformers')",
+  "litellm": "MISSING: PackageNotFoundError('litellm')"
+}
+GPUs: 4 ['NVIDIA L4', 'NVIDIA L4', 'NVIDIA L4', 'NVIDIA L4']
+model revision dir: 2 | config sha256: b72dd2eaa6e277d6
+architectures: ['Gemma4ForConditionalGeneration']
+quantization: {"format": "pack-quantized", "num_bits": 4}
+loaded 2 tasks
+PILOT TASKS and the evidence they were chosen on:
+
+  rich_3675 Textualize/rich
+    negative  exit=1 cases=99 failed=1 errored=0
+              agent  import: unavailable (no agent ran in the control)
+              pytest import: /tmp/swegemma_sandbox_eee552f1-f25_sg8paafw/workspace/rich/__init__.py
+    positive  exit=0 cases=99 failed=0 errored=0
+              agent  import: unavailable (no agent ran in the control)
+              pytest import: /tmp/swegemma_sandbox_29800dba-55b_9nqi_yv4/workspace/rich/__init__.py
+    baseline-fails / gold-passes / grading-import-in-checkout: True
+    agent-side import provenance: UNAVAILABLE (no agent ran in the control)
+    control patch_rc=0 test_patch_rc=0
+    baseline failures: ['test_console::test_tty_compatible']
+
+  rich_3942 Textualize/rich
+    negative  exit=1 cases=8 failed=6 errored=0
+              agent  import: unavailable (no agent ran in the control)
+              pytest import: /tmp/swegemma_sandbox_cb7391fe-ddf_sauv1peb/workspace/rich/__init__.py
+    positive  exit=0 cases=8 failed=0 errored=0
+              agent  import: unavailable (no agent ran in the control)
+              pytest import: /tmp/swegemma_sandbox_58f2d1f1-b18_zzqdtsd6/workspace/rich/__init__.py
+    baseline-fails / gold-passes / grading-import-in-checkout: True
+    agent-side import provenance: UNAVAILABLE (no agent ran in the control)
+    control patch_rc=0 test_patch_rc=0
+    baseline failures: ['test_markdown::test_inline_styles_in_table', 'test_markdown::test_inline_styles_with_justification', 'test_markdown::test_markdown_render', 'test_markdown::test_markdown_table']
+prompt leakage: CLEAN (0 lines came from the issue text)
+LIMITATION: this is a data-flow check. The subprocess backend runs run_command on the host, so
+answer-key files remain reachable; traces must be audited for contamination before trusting a run.
+S_shellread: sha256=8e3f9286ce0f2399 model=gemma-4-31b-it-qat-w4a16-ct
+V: sha256=315ba92750d38550 model=gemma-4-31b-it-qat-w4a16-ct
+verification diagnostic: {'max_time_minutes': 10.0, 'max_tool_calls': 100, 'max_turns': 60, 'timeout_seconds': 300} | session cap 150 min
+installing 1 wheels...
+{
+  "swegemma": "MISSING: PackageNotFoundError('swegemma')",
+  "adk-submission": "MISSING: PackageNotFoundError('adk-submission')",
+  "adk-eval-core": "MISSING: PackageNotFoundError('adk-eval-core')",
+  "google-adk": "MISSING: PackageNotFoundError('google-adk')",
+  "vllm": "MISSING: PackageNotFoundError('vllm')",
+  "transformers": "MISSING: PackageNotFoundError('transformers')",
+  "litellm": "MISSING: PackageNotFoundError('litellm')"
+}
+GPUs: 4 ['NVIDIA L4', 'NVIDIA L4', 'NVIDIA L4', 'NVIDIA L4']
+model revision dir: 2 | config sha256: b72dd2eaa6e277d6
+architectures: ['Gemma4ForConditionalGeneration']
+quantization: {"format": "pack-quantized", "num_bits": 4}
+loaded 2 tasks
+PILOT TASKS and the evidence they were chosen on:
+
+  rich_3675 Textualize/rich
+    negative  exit=0 cases=99 failed=1 errored=0
+              agent  import: unavailable (no agent ran in the control)
+              pytest import: /tmp/swegemma_sandbox_eee552f1-f25_sg8paafw/workspace/rich/__init__.py
+    positive  exit=0 cases=99 failed=0 errored=0
+              agent  import: unavailable (no agent ran in the control)
+              pytest import: /tmp/swegemma_sandbox_29800dba-55b_9nqi_yv4/workspace/rich/__init__.py
+    baseline-fails / gold-passes / grading-import-in-checkout: False
+    agent-side import provenance: UNAVAILABLE (no agent ran in the control)
+    control patch_rc=0 test_patch_rc=0
+verification diagnostic: {'max_time_minutes': 10.0, 'max_tool_calls': 100, 'max_turns': 60, 'timeout_seconds': 300} | session cap 150 min
+installing 1 wheels...
+{
+  "swegemma": "MISSING: PackageNotFoundError('swegemma')",
+  "adk-submission": "MISSING: PackageNotFoundError('adk-submission')",
+  "adk-eval-core": "MISSING: PackageNotFoundError('adk-eval-core')",
+  "google-adk": "MISSING: PackageNotFoundError('google-adk')",
+  "vllm": "MISSING: PackageNotFoundError('vllm')",
+  "transformers": "MISSING: PackageNotFoundError('transformers')",
+  "litellm": "MISSING: PackageNotFoundError('litellm')"
+}
+GPUs: 4 ['NVIDIA L4', 'NVIDIA L4', 'NVIDIA L4', 'NVIDIA L4']
+model revision dir: 2 | config sha256: b72dd2eaa6e277d6
+architectures: ['Gemma4ForConditionalGeneration']
+quantization: {"format": "pack-quantized", "num_bits": 4}
+loaded 2 tasks
+PILOT TASKS and the evidence they were chosen on:
+
+  rich_3675 Textualize/rich
+    negative  exit=1 cases=99 failed=1 errored=0
+              agent  import: unavailable (no agent ran in the control)
+              pytest import: /tmp/swegemma_sandbox_eee552f1-f25_sg8paafw/workspace/rich/__init__.py
+    positive  exit=0 cases=99 failed=0 errored=0
+              agent  import: unavailable (no agent ran in the control)
+              pytest import: /tmp/swegemma_sandbox_29800dba-55b_9nqi_yv4/workspace/rich/__init__.py
+    baseline-fails / gold-passes / grading-import-in-checkout: True
+    agent-side import provenance: UNAVAILABLE (no agent ran in the control)
+    control patch_rc=0 test_patch_rc=0
+    baseline failures: ['test_console::test_tty_compatible']
+
+  rich_3942 Textualize/rich
+    negative  exit=1 cases=8 failed=6 errored=0
+              agent  import: unavailable (no agent ran in the control)
+              pytest import: /tmp/swegemma_sandbox_cb7391fe-ddf_sauv1peb/workspace/rich/__init__.py
+    positive  exit=0 cases=8 failed=0 errored=0
+              agent  import: unavailable (no agent ran in the control)
+              pytest import: /tmp/swegemma_sandbox_58f2d1f1-b18_zzqdtsd6/workspace/rich/__init__.py
+    baseline-fails / gold-passes / grading-import-in-checkout: True
+    agent-side import provenance: UNAVAILABLE (no agent ran in the control)
+    control patch_rc=0 test_patch_rc=0
+    baseline failures: ['test_markdown::test_inline_styles_in_table', 'test_markdown::test_inline_styles_with_justification', 'test_markdown::test_markdown_render', 'test_markdown::test_markdown_table']
+prompt leakage: CLEAN (0 lines came from the issue text)
+LIMITATION: this is a data-flow check. The subprocess backend runs run_command on the host, so
+answer-key files remain reachable; traces must be audited for contamination before trusting a run.
+S_shellread: sha256=8e3f9286ce0f2399 model=gemma-4-31b-it-qat-w4a16-ct
+V: sha256=315ba92750d38550 model=gemma-4-31b-it-qat-w4a16-ct
+repair bound on agent_runner, verification, container_setup (idempotent)
+NOTE: a pip success message alone is not proof; the preconditions below check what actually loads.

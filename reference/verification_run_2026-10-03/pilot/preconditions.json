@@ -1,0 +1,24 @@
+[
+  {
+    "task": "rich_3675",
+    "ws": "/tmp/swegemma_sandbox_63f823f7-951_3ma6rnon/workspace",
+    "agent_file": "/tmp/swegemma_sandbox_63f823f7-951_3ma6rnon/workspace/rich/__init__.py",
+    "agent_exe": "/tmp/swegemma_sandbox_63f823f7-951_3ma6rnon/venv/bin/python3",
+    "grading_file": "/tmp/swegemma_sandbox_63f823f7-951_3ma6rnon/workspace/rich/__init__.py",
+    "grading_exe": "/tmp/swegemma_sandbox_63f823f7-951_3ma6rnon/venv/bin/python3",
+    "cleanup_ok": true,
+    "owned_sandboxes": [],
+    "ok": true
+  },
+  {
+    "task": "rich_3942",
+    "ws": "/tmp/swegemma_sandbox_4803f285-f0b_8ztbosb7/workspace",
+    "agent_file": "/tmp/swegemma_sandbox_4803f285-f0b_8ztbosb7/workspace/rich/__init__.py",
+    "agent_exe": "/tmp/swegemma_sandbox_4803f285-f0b_8ztbosb7/venv/bin/python3",
+    "grading_file": "/tmp/swegemma_sandbox_4803f285-f0b_8ztbosb7/workspace/rich/__init__.py",
+    "grading_exe": "/tmp/swegemma_sandbox_4803f285-f0b_8ztbosb7/venv/bin/python3",
+    "cleanup_ok": true,
+    "owned_sandboxes": [],
+    "ok": true
+  }
+]
