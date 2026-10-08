@@ -3,10 +3,13 @@ import ast
 import copy
 import hashlib
 import json
+import subprocess
+import sys
+import tempfile
 import unittest
 from pathlib import Path
 
-from verify_final_validation_packet import verify_packet
+from verify_final_validation_packet import verify_directory, verify_packet
 
 ROOT = Path(__file__).resolve().parent.parent
 RAW = (ROOT / 'notebooks/final_validation_v2/final_validation_v2.ipynb').read_bytes()
@@ -63,6 +66,52 @@ class PacketIdentityTests(unittest.TestCase):
     def test_arming_requires_baseline(self):
         with self.assertRaisesRegex(ValueError, 'requires a preserved'):
             verify_packet(RAW, PREPARED, armed=True)
+
+
+class PacketDirectoryTests(unittest.TestCase):
+    def setUp(self):
+        self.temp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.temp.cleanup)
+        self.root = Path(self.temp.name)
+        paths = [
+            'notebooks/final_validation_v2/final_validation_v2.ipynb',
+            'notebooks/final_validation_v2/kernel-metadata.json',
+            'experiments/final_validation_v2/NOTEBOOK_PREPARED.json',
+            'experiments/final_validation_v2/VALIDATION_MANIFEST.json',
+            'experiments/ab_v3_vs_short/task_freeze.json',
+            'releases/v3_submission.zip', 'experiments/thinking_v2/ON.zip',
+        ]
+        for name in paths:
+            target = self.root / name
+            target.parent.mkdir(parents=True, exist_ok=True)
+            target.write_bytes((ROOT / name).read_bytes())
+
+    def test_complete_packet_is_read_only(self):
+        before = {p.relative_to(self.root): p.read_bytes() for p in self.root.rglob('*') if p.is_file()}
+        self.assertEqual(verify_directory(self.root)['source_packages_verified'], 2)
+        after = {p.relative_to(self.root): p.read_bytes() for p in self.root.rglob('*') if p.is_file()}
+        self.assertEqual(before, after)
+
+    def test_manifest_reordered_refused(self):
+        path = self.root / 'experiments/final_validation_v2/VALIDATION_MANIFEST.json'
+        manifest = json.loads(path.read_text())
+        manifest['order'].reverse()
+        path.write_text(json.dumps(manifest))
+        with self.assertRaisesRegex(ValueError, 'manifest run order mismatch'):
+            verify_directory(self.root)
+
+    def test_changed_source_package_refused(self):
+        (self.root / 'releases/v3_submission.zip').write_bytes(b'changed source')
+        with self.assertRaisesRegex(ValueError, 'source package hash mismatch for V3'):
+            verify_directory(self.root)
+
+    def test_cli_refuses_drift_with_nonzero_exit(self):
+        (self.root / 'experiments/ab_v3_vs_short/task_freeze.json').write_text('{}')
+        result = subprocess.run([sys.executable, '-B', str(ROOT / 'scripts/verify_final_validation_packet.py'),
+                                 '--root', str(self.root)], capture_output=True, text=True, timeout=30)
+        self.assertEqual(result.returncode, 1)
+        self.assertIn('holdout freeze hash mismatch', result.stderr)
+        self.assertEqual(result.stdout, '')
 
 
 if __name__ == '__main__':
