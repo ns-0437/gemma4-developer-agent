@@ -40,6 +40,33 @@ def hook(fault=None):
     return edit
 
 
+def verify_ledger_refusal(tmp, freeze_sha256):
+    """Corrupt evidence must survive refusal, with no evaluation and no server leak."""
+    cases = [
+        ('invalid_json', '{broken', json.JSONDecodeError, 'Expecting property name'),
+        ('wrong_freeze', json.dumps({'freeze_sha256': '0' * 64, 'events': []}),
+         AssertionError, 'different freeze'),
+        ('invalid_events', json.dumps({'freeze_sha256': freeze_sha256, 'events': {}}),
+         AssertionError, 'events are malformed'),
+    ]
+    for label, content, error_type, message in cases:
+        work = tmp / label
+        ledger = work / 'working/pilot/EXPOSURE.json'
+        ledger.parent.mkdir(parents=True)
+        ledger.write_text(content, encoding='utf-8')
+        original = ledger.read_bytes()
+        try:
+            H.run_cells(work, dispatch=True, server_healthy=True, hook=hook())
+        except error_type as exc:
+            assert message in str(exc), (label, str(exc))
+        else:
+            raise AssertionError('Failed to refuse corrupt ledger: ' + label)
+        assert ledger.read_bytes() == original, 'corrupt evidence was overwritten: ' + label
+        assert H.counts()['evaluations'] == 0, label
+        assert H.counts()['server_started'] == H.counts()['server_stopped'] == 1, label
+        assert not ledger.with_name('EXPOSURE.json.tmp').exists(), label
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--armed', action='store_true')
@@ -83,9 +110,10 @@ def main():
                 assert H.counts()['server_created'] == H.counts()['evaluations'] == 0
             else:
                 raise AssertionError('Failed to refuse ' + fault)
+        verify_ledger_refusal(Path(tmp), prepared['freeze_sha256'])
     assert NB.read_bytes() == raw, 'test modified the packet'
     assert NB.with_name('kernel-metadata.json').read_bytes() == metadata
-    print('PASS: packet identity, six-run order, disabled/enabled lifecycle, ledger, compiler/candidate/control refusal; simulated services only.')
+    print('PASS: packet identity, six-run order, disabled/enabled lifecycle, ledger preservation and server cleanup on refusal, compiler/candidate/control refusal; simulated services only.')
 
 
 if __name__ == '__main__':
