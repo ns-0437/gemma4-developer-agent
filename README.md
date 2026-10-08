@@ -38,6 +38,8 @@ tasks cannot establish general superiority or predict the hidden-set score.
 Run from the repository root with Python 3.12 or newer:
 
 ```powershell
+python scripts/verify_final_validation_packet.py
+python scripts/test_verify_final_validation_packet.py
 python scripts/test_control_canonicalization.py
 python scripts/test_final_validation_v2_notebook.py
 python scripts/test_verify_artifact_manifest.py
@@ -47,6 +49,12 @@ python scripts/verify_artifact_manifest.py reference/control_replay_run_2026-10-
 These checks use simulated services or saved files. They do not launch a model,
 contact Kaggle, submit a package or evaluate a held-out task with an agent.
 The artifact verifier writes nothing and rejects changed, missing or extra files.
+The packet preflight also checks candidate-to-archive bindings, metadata, the
+validation manifest, source ZIPs and the holdout freeze without executing cells.
+
+These checks run in [offline CI](.github/workflows/offline-validation.yml).
+Follow the [validation runbook](docs/validation-runbook.md) for authorized
+arming, download integrity and result interpretation.
 
 After an authorized arming step, the packet test can check the exact transition:
 
