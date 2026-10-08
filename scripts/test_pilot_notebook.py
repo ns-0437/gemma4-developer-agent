@@ -178,11 +178,13 @@ def make_env(tmp: Path, *, pip_rc=0, required_backend_rc=0, editable_rc=0,
     (data / "wheels").mkdir(parents=True, exist_ok=True)
     (data / "graphs").mkdir(exist_ok=True)
     (data / "embeddings").mkdir(exist_ok=True)
-    selected_ids = set(SEL_IDS)
-    fields = {f.name for f in dataclasses.fields(FakeTask)}
-    tasks = [FakeTask(**{k:v for k,v in t.items() if k in fields}) for t in
-             [json.loads(l) for l in (ROOT/'reference/tasks.jsonl').read_text(encoding='utf-8').splitlines() if l.strip()]
-             if t['instance_id'] in selected_ids]
+    # Service simulations need task identities, not private competition payloads.
+    # Saved control XML still supplies the real node/outcome comparison evidence.
+    repos = {"rich": "Textualize/rich", "requests": "psf/requests",
+             "fastapi": "fastapi/fastapi", "httpx": "encode/httpx"}
+    tasks = [FakeTask(instance_id=tid, repo=repos[tid.split("_", 1)[0]],
+                      problem_statement="Synthetic fixture; no candidate inference runs.")
+             for tid in SEL_IDS]
     (data / "tasks.jsonl").write_text("\n".join(json.dumps(dataclasses.asdict(t)) for t in tasks),
                                       encoding="utf-8")
     for t in tasks:
@@ -539,6 +541,18 @@ def run_cells(tmp, upto=None, ns=None, dispatch=False, hook=None, **envkw):
             c, replaced = re.subn(r"(?m)^(DISPATCH_CONFIRM\s*=\s*)(?:True|False)\b",
                                  lambda m: m.group(1) + repr(bool(dispatch)), c, count=1)
             assert replaced == 1, "Missing literal dispatch flag in config cell"
+        if "EXPECTED_TASK_HASHES = " in c:
+            # Substitute fixture pins, not the integrity assertion. Production notebook
+            # bytes remain frozen; later fault hooks can still mutate tasks or pins.
+            fixture_tasks = [json.loads(line) for line in
+                             (data / "tasks.jsonl").read_text(encoding="utf-8").splitlines()]
+            keys = ('repo', 'base_commit', 'problem_statement', 'hints_text', 'patch', 'test_patch')
+            pins = {t['instance_id']: hashlib.sha256(json.dumps(
+                {k: t.get(k) for k in keys}, sort_keys=True).encode()).hexdigest()
+                    for t in fixture_tasks}
+            c, count = _re.subn(r"(?m)^EXPECTED_TASK_HASHES = .*?$",
+                               lambda m: 'EXPECTED_TASK_HASHES = ' + repr(pins), c)
+            assert count == 1, "missing fixture task identity pins"
         if hook:
             c = hook(i, c, ns)
         exec(compile(rewrite(c, data, working, model, wh), f"<cell {i+1}>", "exec"), ns)
