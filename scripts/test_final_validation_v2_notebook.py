@@ -24,6 +24,8 @@ COMPILER = ROOT / 'experiments/shellread_v1/compiler_0_2_12/src/adk_submission'
 
 def hook(fault=None):
     def edit(index, cell, namespace):
+        if fault == 'task' and 'EXPECTED_TASK_HASHES = ' in cell:
+            namespace['ALL_BY_ID']['fastapi_15280'].problem_statement += ' drift'
         if 'verify_runtime_compiler()' in cell:
             namespace['COMPILER_FIXTURE'] = COMPILER
             version = '0.2.11' if fault == 'compiler' else '0.2.12'
@@ -100,7 +102,8 @@ def main():
             else:
                 assert all(not row['attempted'] for row in ns['rows'])
                 assert not ledger.exists()
-        for fault, message in [('compiler', 'Runtime compiler drift'),
+        for fault, message in [('task', 'task content changed'),
+                               ('compiler', 'Runtime compiler drift'),
                                ('candidate', 'Candidate file drift'),
                                ('control', 'controls do not reproduce')]:
             try:
