@@ -6,7 +6,16 @@ and any newer launch record first; a completed launch must not be repeated.
 
 ## 1. Verify the disabled packet offline
 
-From the repository root, with Python 3.12:
+From the repository root, with Python 3.12, run the shared CI entry point:
+
+```powershell
+python -B scripts/run_offline_checks.py
+```
+
+It stops on a failed or timed-out check and returns a nonzero exit. The runner's
+own tests deliberately simulate failures; their expected error messages are
+followed by the unittest result. The final suite PASS appears only if every
+subprocess succeeds. For individual diagnosis, the equivalent checks are:
 
 ```powershell
 python -B scripts/verify_final_validation_packet.py

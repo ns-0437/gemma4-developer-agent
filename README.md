@@ -35,7 +35,19 @@ tasks cannot establish general superiority or predict the hidden-set score.
 
 ## Offline checks
 
-Run from the repository root with Python 3.12 or newer:
+Run the complete offline suite with Python 3.12 or newer:
+
+```powershell
+python -B scripts/run_offline_checks.py
+```
+
+The runner uses the current Python interpreter, isolates every check in a
+subprocess, stops on the first failure and applies a 180-second timeout per
+check. It locates the repository from its own path, so it can also be invoked
+by absolute path from another working directory. CI uses this same entry point.
+No competition task payload or installed model dependencies are needed.
+
+Individual checks remain available from the repository root:
 
 ```powershell
 python scripts/verify_final_validation_packet.py
