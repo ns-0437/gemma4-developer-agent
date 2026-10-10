@@ -52,6 +52,15 @@ class InventoryTests(unittest.TestCase):
                 with self.assertRaisesRegex(ValueError, 'unsafe or noncanonical'):
                     verify(self.root, self.manifest)
 
+    def test_windows_alias_and_stream_paths_refused(self):
+        for name in ('result.json:stream', 'nested/NUL.txt', 'con', 'LPT1.log',
+                     'folder./result.json', 'result.json ', 'COM9'):
+            with self.subTest(name=name):
+                self.expected = {name: '0' * 64}
+                self.save_manifest()
+                with self.assertRaisesRegex(ValueError, 'unsafe or noncanonical'):
+                    verify(self.root, self.manifest)
+
     def test_invalid_digest_refused(self):
         self.expected['result.json'] = 'not-a-hash'
         self.save_manifest()

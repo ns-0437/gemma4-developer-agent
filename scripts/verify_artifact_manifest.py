@@ -32,7 +32,11 @@ def verify(artifacts, manifest):
     for name, digest in expected.items():
         path = PurePosixPath(name)
         if (not name or '\\' in name or path.is_absolute() or PureWindowsPath(name).drive
-                or '..' in path.parts or path.as_posix() != name):
+                or '..' in path.parts or path.as_posix() != name
+                or any(':' in part or part.endswith((' ', '.'))
+                       or re.fullmatch(r'(CON|PRN|AUX|NUL|COM[1-9]|LPT[1-9])(?:\..*)?',
+                                       part, flags=re.IGNORECASE)
+                       for part in path.parts)):
             raise ValueError('unsafe or noncanonical manifest path: ' + name)
         if not isinstance(digest, str) or re.fullmatch('[0-9a-f]{64}', digest) is None:
             raise ValueError('invalid SHA-256 for: ' + name)
