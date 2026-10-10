@@ -15,6 +15,18 @@ ORDER = [('fastapi_15280', 'V3'), ('fastapi_15280', 'ON'),
          ('rich_3894', 'V3'), ('rich_3894', 'ON')]
 
 
+def strict_json(raw):
+    """Reject ambiguous duplicate keys at every level of packet metadata."""
+    def unique(pairs):
+        result = {}
+        for key, value in pairs:
+            if key in result:
+                raise ValueError('duplicate packet JSON key: ' + key)
+            result[key] = value
+        return result
+    return json.loads(raw, object_pairs_hook=unique)
+
+
 def require(condition, message):
     if not condition:
         raise ValueError(message)
@@ -33,7 +45,7 @@ def verify_packet(raw, prepared, *, armed=False, baseline=None):
     require(raw == expected, 'unexpected change beyond the dispatch flag')
     require(set(prepared['candidates']) == {'V3', 'ON'}, 'expected V3 and ON candidate pins')
     assignments = {}
-    for index, cell in enumerate(json.loads(raw)['cells']):
+    for index, cell in enumerate(strict_json(raw)['cells']):
         if cell['cell_type'] != 'code':
             continue
         source = cell['source']
@@ -79,13 +91,13 @@ def verify_directory(root, *, armed=False, baseline=None):
     root = Path(root).resolve(strict=True)
     experiment = root / 'experiments/final_validation_v2'
     notebook = root / 'notebooks/final_validation_v2/final_validation_v2.ipynb'
-    prepared = json.loads((experiment / 'NOTEBOOK_PREPARED.json').read_text(encoding='utf-8'))
+    prepared = strict_json((experiment / 'NOTEBOOK_PREPARED.json').read_text(encoding='utf-8'))
     result = verify_packet(notebook.read_bytes(), prepared, armed=armed,
                            baseline=Path(baseline).read_bytes() if baseline else None)
     metadata_raw = notebook.with_name('kernel-metadata.json').read_bytes()
     require(hashlib.sha256(metadata_raw).hexdigest() == prepared['metadata_sha256'],
             'metadata hash mismatch')
-    metadata = json.loads(metadata_raw)
+    metadata = strict_json(metadata_raw)
     require(metadata['id'] == 'navin03/gemma4-final-validation-v2', 'unexpected kernel identity')
     require(metadata['enable_gpu'] is True and metadata['enable_tpu'] is False,
             'unexpected accelerator flags')
@@ -93,7 +105,7 @@ def verify_directory(root, *, armed=False, baseline=None):
             'unexpected privacy or internet settings')
     require(metadata['machine_shape'] == 'NvidiaL4', 'unexpected machine shape')
     require(metadata['docker_image'] == prepared['docker_image'], 'image pin mismatch')
-    manifest = json.loads((experiment / 'VALIDATION_MANIFEST.json').read_text(encoding='utf-8'))
+    manifest = strict_json((experiment / 'VALIDATION_MANIFEST.json').read_text(encoding='utf-8'))
     require(manifest['purpose'] == 'final_validation', 'unexpected manifest purpose')
     require(manifest['tasks'] == prepared['tasks'], 'manifest task selection mismatch')
     require(manifest['order'] == prepared['order'], 'manifest run order mismatch')

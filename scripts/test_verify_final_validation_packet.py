@@ -9,7 +9,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from verify_final_validation_packet import verify_directory, verify_packet
+from verify_final_validation_packet import verify_directory, verify_packet, strict_json
 
 ROOT = Path(__file__).resolve().parent.parent
 RAW = (ROOT / 'notebooks/final_validation_v2/final_validation_v2.ipynb').read_bytes()
@@ -38,6 +38,12 @@ def mutated_bundles(mutate):
 
 
 class PacketIdentityTests(unittest.TestCase):
+    def test_duplicate_json_keys_refused(self):
+        for raw in ('{"dispatch":false,"dispatch":true}',
+                    '{"packages":{"ON":{"sha256":"a","sha256":"b"}}}'):
+            with self.subTest(raw=raw), self.assertRaisesRegex(ValueError, 'duplicate packet JSON key'):
+                strict_json(raw)
+
     def test_original_packet(self):
         self.assertEqual(verify_packet(RAW, PREPARED)['runs'], 6)
 
@@ -98,6 +104,13 @@ class PacketDirectoryTests(unittest.TestCase):
         manifest['order'].reverse()
         path.write_text(json.dumps(manifest))
         with self.assertRaisesRegex(ValueError, 'manifest run order mismatch'):
+            verify_directory(self.root)
+
+    def test_duplicate_manifest_key_refused(self):
+        path = self.root / 'experiments/final_validation_v2/VALIDATION_MANIFEST.json'
+        raw = path.read_text()
+        path.write_text('{"purpose":"ignored",' + raw.lstrip()[1:])
+        with self.assertRaisesRegex(ValueError, 'duplicate packet JSON key: purpose'):
             verify_directory(self.root)
 
     def test_changed_source_package_refused(self):
