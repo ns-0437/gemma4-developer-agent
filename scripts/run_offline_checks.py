@@ -10,6 +10,10 @@ import sys
 ROOT = Path(__file__).resolve().parent.parent
 CHECKS = (
     ('scripts/test_run_offline_checks.py',),
+    ('scripts/test_verify_v4_submission.py',),
+    ('scripts/verify_v4_submission.py',),
+    ('scripts/verify_artifact_manifest.py', 'reference/submission_v4_2026-10-11',
+     'reference/submission_v4_review/raw_sha256.json'),
     ('scripts/test_verify_final_validation_packet.py',),
     ('scripts/verify_final_validation_packet.py',),
     ('scripts/test_control_canonicalization.py',),

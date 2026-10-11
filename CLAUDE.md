@@ -1,5 +1,12 @@
 # Gemma 4 Developer Agent — Kaggle competition
 
+## Submission update — 2026-10-11
+
+V4 thinking-ON was submitted once as reference `57064155`, kernel version 4.
+See [the submission handoff](docs/v4-submission.md). Its saved receipt says
+PENDING; read live status before claiming a score. Do not repeat the submission.
+The earlier six-run validation remains a separate prepared experiment.
+
 ## Current handoff — 2026-10-07
 
 Start with [final_validation_v2/CHECKPOINT.md](experiments/final_validation_v2/CHECKPOINT.md).
