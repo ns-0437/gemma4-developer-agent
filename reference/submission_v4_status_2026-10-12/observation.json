@@ -1,0 +1,20 @@
+{
+  "checked_at_utc": "2026-10-11T18:54:37.092662+00:00",
+  "command": [
+    "-m",
+    "kaggle",
+    "competitions",
+    "submissions",
+    "gemma-4-developer-agent",
+    "--csv"
+  ],
+  "stdout_sha256": "8786b1fe1d5a52362ae4776b0520f67b34520584d5bf42a425bf9dbd9898a2b3",
+  "observation": {
+    "submission_ref": 57064155,
+    "status": "PENDING",
+    "public_score": null,
+    "score_available": false,
+    "live_status_checked": false
+  },
+  "note": "Snapshot only. Original pending receipt is preserved; no submission or retry performed."
+}

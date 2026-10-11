@@ -1,0 +1,5 @@
+ref,fileName,date,description,status,publicScore,privateScore
+57064155,submission.zip,2026-10-11 05:56:45.167000,"v4 frozen thinking ON; concise workflow, 4096 output, 1024 thinking; rich_3278 solved twice in development; exploratory, broader validation unmet; sha 527acc54",SubmissionStatus.PENDING,,
+56636116,submission.zip,2026-09-28 09:13:34.857000,"v3 exploratory: reliability guards only (test-path revert, diagnose-then-restore, no repeats on unchanged state, /tmp heredoc, import verification); thinking off; sha b8da59c1",SubmissionStatus.COMPLETE,0.06,
+56579838,submission.zip,2026-09-26 12:58:50.907000,"v2 frozen: search-first coder, optional analyzer w/ graph tools, pytest exit code kept, no stash; sha 6918f2c4",SubmissionStatus.COMPLETE,0.06,
+56540226,submission.zip,2026-09-25 04:47:46.940000,"v1: coder+analyzer, thinking 4096, no eval_config",SubmissionStatus.COMPLETE,0.06,
