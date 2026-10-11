@@ -53,6 +53,11 @@ def verify(root=ROOT):
     require(meta['enable_gpu'] is False and meta['enable_tpu'] is False
             and meta['enable_internet'] is False and meta['is_private'] is True,
             'packaging execution settings mismatch')
+    require(meta['code_file'] == 'submit.ipynb' and meta['language'] == 'python'
+            and meta['kernel_type'] == 'notebook', 'packaging entry point mismatch')
+    require(meta['competition_sources'] == ['gemma-4-developer-agent']
+            and all(meta[key] == [] for key in ('dataset_sources', 'kernel_sources', 'model_sources')),
+            'packaging input sources mismatch')
     return {'verified': True, 'submission_ref': record['submission_ref'], 'sha256': PIN,
             'files': len(files), 'live_status_checked': False}
 

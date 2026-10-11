@@ -46,6 +46,20 @@ class SubmissionTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'execution settings mismatch'):
             verify(self.root)
 
+    def test_metadata_entry_point_and_sources(self):
+        p = self.root / 'notebooks/submit_v4_thinking_on/kernel-metadata.json'
+        original = json.loads(p.read_text())
+        for key, value, message in (
+            ('code_file', 'other.ipynb', 'entry point'),
+            ('competition_sources', [], 'input sources'),
+            ('dataset_sources', ['unexpected/input'], 'input sources'),
+            ('model_sources', ['unexpected/model'], 'input sources'),
+            ('kernel_sources', ['unexpected/kernel'], 'input sources')):
+            with self.subTest(key=key):
+                data = dict(original); data[key] = value; p.write_text(json.dumps(data))
+                with self.assertRaisesRegex(ValueError, message):
+                    verify(self.root)
+
     def test_receipt_version_change(self):
         p = self.root / 'releases/v4_submission_record.json'
         data = json.loads(p.read_text()); data['kernel_version'] = 3; p.write_text(json.dumps(data))
