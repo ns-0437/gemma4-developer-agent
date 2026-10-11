@@ -25,6 +25,20 @@ class SubmissionTests(unittest.TestCase):
         self.assertEqual(verify(self.root)['submission_ref'], 57064155)
         self.assertEqual(before, {p.relative_to(self.root): p.read_bytes() for p in self.root.rglob('*') if p.is_file()})
 
+    def test_duplicate_receipt_and_metadata_keys(self):
+        for name, key, value in (
+            ('releases/v4_submission_record.json', 'kernel_version', '99'),
+            ('notebooks/submit_v4_thinking_on/kernel-metadata.json', 'enable_gpu', 'true')):
+            with self.subTest(name=name):
+                p = self.root / name
+                original = p.read_bytes()
+                p.write_text('{"' + key + '":' + value + ',' + original.decode().lstrip()[1:])
+                try:
+                    with self.assertRaisesRegex(ValueError, 'duplicate packet JSON key'):
+                        verify(self.root)
+                finally:
+                    p.write_bytes(original)
+
     def test_download_drift(self):
         (self.root / 'reference/submission_v4_2026-10-11/submission.zip').write_bytes(b'wrong')
         with self.assertRaisesRegex(ValueError, 'archive copy mismatch'):

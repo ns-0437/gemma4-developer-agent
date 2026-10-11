@@ -6,6 +6,7 @@ import io
 import json
 from pathlib import Path
 import zipfile
+from verify_final_validation_packet import strict_json
 
 ROOT = Path(__file__).resolve().parent.parent
 PIN = '527acc5403d21a149ecea9d39d573d3d0f45dc65935d115952b772045339ea33'
@@ -18,7 +19,7 @@ def require(ok, message):
 
 def verify(root=ROOT):
     root = Path(root)
-    record = json.loads((root / 'releases/v4_submission_record.json').read_text())
+    record = strict_json((root / 'releases/v4_submission_record.json').read_text())
     require(record['submission_ref'] == 57064155 and record['kernel_version'] == 4,
             'submission identity mismatch')
     require(record['sha256'] == PIN, 'record digest mismatch')
@@ -38,7 +39,7 @@ def verify(root=ROOT):
     raw = (folder / 'submit.ipynb').read_bytes()
     require(hashlib.sha256(raw).hexdigest() == record['notebook_sha256'], 'notebook hash mismatch')
     payloads = []
-    for cell in json.loads(raw)['cells']:
+    for cell in strict_json(raw)['cells']:
         if cell['cell_type'] != 'code':
             continue
         for node in ast.parse(''.join(cell['source'])).body:
@@ -48,7 +49,7 @@ def verify(root=ROOT):
                         'unexpected payload expression')
                 payloads.append(base64.b64decode(ast.literal_eval(call.args[0]), validate=True))
     require(payloads == [archive], 'embedded payload mismatch')
-    meta = json.loads((folder / 'kernel-metadata.json').read_text())
+    meta = strict_json((folder / 'kernel-metadata.json').read_text())
     require(meta['id'] == record['kernel'] == 'navin03/gemma4-swe-agent-submit', 'kernel mismatch')
     require(meta['enable_gpu'] is False and meta['enable_tpu'] is False
             and meta['enable_internet'] is False and meta['is_private'] is True,
