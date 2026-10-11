@@ -10,6 +10,9 @@ import sys
 ROOT = Path(__file__).resolve().parent.parent
 CHECKS = (
     ('scripts/test_run_offline_checks.py',),
+    ('scripts/test_read_submission_snapshot.py',),
+    ('scripts/read_submission_snapshot.py', 'reference/submission_v4_status_2026-10-12/submissions.csv',
+     '--reference', '57064155'),
     ('scripts/test_verify_v4_submission.py',),
     ('scripts/verify_v4_submission.py',),
     ('scripts/verify_artifact_manifest.py', 'reference/submission_v4_2026-10-11',

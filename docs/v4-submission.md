@@ -41,3 +41,25 @@ from this saved release.
 - [Original receipt](../releases/v4_submission_record.json)
 - [Raw output inventory](../reference/submission_v4_review/raw_sha256.json)
 - [Prepared validation checkpoint](../experiments/final_validation_v2/CHECKPOINT.md)
+
+## Status snapshot on October 12 (IST)
+
+At 00:24 IST on 2026-10-12, Kaggle still reported PENDING with a blank public
+score. The timestamped observation and original CSV are preserved separately
+from the launch receipt in `reference/submission_v4_status_2026-10-12/`.
+This saved status may become stale; it is not an instruction to submit again.
+
+Read the saved response offline:
+
+```powershell
+python -B scripts/read_submission_snapshot.py reference/submission_v4_status_2026-10-12/submissions.csv --reference 57064155
+```
+
+The parser requires exactly one matching reference and reports blank scores
+as null. A numeric zero is preserved as an available score. It rejects malformed
+rows, duplicate column names and nonfinite scores; it performs no network calls.
+The shared offline suite tests this parser and reads the preserved snapshot.
+
+To verify a copied release tree, the provenance checker accepts `--root PATH`.
+A missing file or broken identity exits nonzero with a diagnostic. Neither this
+check nor CI evaluates candidate performance or retrieves a new score.
