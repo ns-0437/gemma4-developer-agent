@@ -25,6 +25,9 @@ CHECKS = (
 
 
 def run_checks(checks=CHECKS, *, root=ROOT, runner=subprocess.run):
+    if not checks:
+        print('CHECK FAILED: no offline checks configured', file=sys.stderr)
+        return 1
     for index, args in enumerate(checks, 1):
         print(f'[{index}/{len(checks)}] {args[0]}', flush=True)
         try:

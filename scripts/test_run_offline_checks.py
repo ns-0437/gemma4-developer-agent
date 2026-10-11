@@ -17,6 +17,11 @@ class RunnerTests(unittest.TestCase):
         self.assertEqual(runner.call_args.args[0], [sys.executable, '-B', 'second.py', 'arg'])
         self.assertEqual(runner.call_args.kwargs, dict(cwd=root, timeout=180, check=False))
 
+    def test_empty_suite_is_not_success(self):
+        runner = Mock()
+        self.assertEqual(run_checks((), runner=runner), 1)
+        runner.assert_not_called()
+
     def test_nonzero_stops_before_next_check(self):
         runner = Mock(return_value=SimpleNamespace(returncode=7))
         self.assertEqual(run_checks((('bad.py',), ('not-run.py',)), runner=runner), 1)
