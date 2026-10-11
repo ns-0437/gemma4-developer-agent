@@ -1,5 +1,7 @@
 """Regression checks for the preserved submission provenance chain."""
 import json
+import subprocess
+import sys
 import tempfile
 import unittest
 from pathlib import Path
@@ -38,6 +40,19 @@ class SubmissionTests(unittest.TestCase):
                         verify(self.root)
                 finally:
                     p.write_bytes(original)
+
+    def test_cli_from_another_directory_and_missing_input(self):
+        command = [sys.executable, '-B', str(ROOT / 'scripts/verify_v4_submission.py'),
+                   '--root', str(self.root)]
+        result = subprocess.run(command, cwd=self.root, capture_output=True, text=True, timeout=30)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertTrue(json.loads(result.stdout)['verified'])
+        (self.root / 'releases/v4_submission_record.json').unlink()
+        result = subprocess.run(command, cwd=self.root, capture_output=True, text=True, timeout=30)
+        self.assertEqual(result.returncode, 1)
+        self.assertIn('SUBMISSION VERIFICATION FAILED:', result.stderr)
+        self.assertNotIn('Traceback', result.stderr)
+        self.assertEqual(result.stdout, '')
 
     def test_download_drift(self):
         (self.root / 'reference/submission_v4_2026-10-11/submission.zip').write_bytes(b'wrong')

@@ -1,5 +1,6 @@
 """Verify V4 submission provenance offline, without executing notebook code."""
 import ast
+import argparse
 import base64
 import hashlib
 import io
@@ -63,5 +64,16 @@ def verify(root=ROOT):
             'files': len(files), 'live_status_checked': False}
 
 
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--root', type=Path, default=ROOT)
+    args = parser.parse_args()
+    try:
+        result = verify(args.root)
+    except (OSError, ValueError, KeyError, TypeError, SyntaxError, zipfile.BadZipFile) as exc:
+        parser.exit(1, f'SUBMISSION VERIFICATION FAILED: {exc}\n')
+    print(json.dumps(result, sort_keys=True))
+
+
 if __name__ == '__main__':
-    print(json.dumps(verify(), sort_keys=True))
+    main()
