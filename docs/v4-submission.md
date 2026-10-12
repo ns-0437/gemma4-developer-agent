@@ -63,3 +63,19 @@ The shared offline suite tests this parser and reads the preserved snapshot.
 To verify a copied release tree, the provenance checker accepts `--root PATH`.
 A missing file or broken identity exits nonzero with a diagnostic. Neither this
 check nor CI evaluates candidate performance or retrieves a new score.
+
+### Verify the observation and its source together
+
+```powershell
+python -B scripts/verify_submission_observation.py reference/submission_v4_status_2026-10-12
+```
+
+This checks the saved CSV hash, requires an offset-aware UTC observation time,
+and reconstructs the selected row to compare with the saved report. An altered
+score or status in the report is refused even when the CSV itself is intact.
+The timestamp is recorded evidence, not independently authenticated time.
+Neither file is rewritten, and no live Kaggle query occurs.
+
+CI runs both the parser and observation regressions. Offline checks now launch
+Python children in UTF-8 mode, so Unicode evidence reads consistently across
+Windows locales. The real-child regression tests this with non-ASCII text.
