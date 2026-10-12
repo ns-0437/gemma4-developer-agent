@@ -28,6 +28,17 @@ class SnapshotTests(unittest.TestCase):
             with self.subTest(text=text), self.assertRaises(ValueError):
                 read_submission(text, 7)
 
+    def test_unclosed_quote_and_empty_status(self):
+        for text in ('ref,status,publicScore\n7,"PENDING,\n',
+                     'ref,status,publicScore\n7, ,\n'):
+            with self.subTest(text=text), self.assertRaises(ValueError):
+                read_submission(text, 7)
+
+    def test_reference_requires_positive_integer(self):
+        for ref in (True, 0, -1, '7'):
+            with self.subTest(ref=ref), self.assertRaisesRegex(ValueError, 'positive integer'):
+                read_submission('ref,status,publicScore\n7,PENDING,\n', ref)
+
     def test_invalid_or_nonfinite_score(self):
         for score in ('NaN', 'Infinity', 'unknown'):
             with self.subTest(score=score), self.assertRaises(ValueError):

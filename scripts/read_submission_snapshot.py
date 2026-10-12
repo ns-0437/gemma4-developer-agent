@@ -8,11 +8,16 @@ from pathlib import Path
 
 
 def read_submission(text, reference):
-    reader = csv.DictReader(io.StringIO(text.lstrip('\ufeff')))
+    if type(reference) is not int or reference <= 0:
+        raise ValueError('reference must be a positive integer')
+    reader = csv.DictReader(io.StringIO(text.lstrip('\ufeff')), strict=True)
     fields = reader.fieldnames or []
     if len(fields) != len(set(fields)) or not {'ref', 'status', 'publicScore'} <= set(fields):
         raise ValueError('missing or duplicate submission CSV columns')
-    rows = list(reader)
+    try:
+        rows = list(reader)
+    except csv.Error as exc:
+        raise ValueError('malformed CSV quoting') from exc
     if any(None in row or any(value is None for value in row.values()) for row in rows):
         raise ValueError('malformed submission CSV row')
     matches = [r for r in rows if r['ref'].strip() == str(reference)]
@@ -20,6 +25,8 @@ def read_submission(text, reference):
         raise ValueError('expected exactly one matching submission reference')
     row = matches[0]
     status = row['status'].strip().removeprefix('SubmissionStatus.').upper()
+    if not status:
+        raise ValueError('empty submission status')
     score = row['publicScore'].strip()
     if score:
         try:
