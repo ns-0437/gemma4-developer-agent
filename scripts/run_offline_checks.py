@@ -34,7 +34,7 @@ def run_checks(checks=CHECKS, *, root=ROOT, runner=subprocess.run):
     for index, args in enumerate(checks, 1):
         print(f'[{index}/{len(checks)}] {args[0]}', flush=True)
         try:
-            result = runner([sys.executable, '-B', *args], cwd=root,
+            result = runner([sys.executable, '-X', 'utf8', '-B', *args], cwd=root,
                             timeout=180, check=False)
         except (OSError, subprocess.TimeoutExpired) as exc:
             print(f'CHECK FAILED: {args[0]}: {exc}', file=sys.stderr)
