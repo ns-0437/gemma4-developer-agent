@@ -1,4 +1,5 @@
 import subprocess
+import json
 import tempfile
 import unittest
 from pathlib import Path
@@ -11,16 +12,18 @@ class CaptureTests(unittest.TestCase):
     def setUp(self):
         temp = tempfile.TemporaryDirectory(); self.addCleanup(temp.cleanup)
         self.folder = Path(temp.name) / 'new'
-        self.raw = b'ref,status,publicScore\n7,PENDING,\n'
+        self.raw = json.dumps([dict(ref=7,status='COMPLETE',publicScore=None,
+                                   errorDescription='runtime exceeded')]).encode()
         self.runner = Mock(return_value=SimpleNamespace(stdout=self.raw))
 
     def test_one_request_preserves_bytes_and_verifies(self):
         result = capture(self.folder, 7, runner=self.runner)
         self.assertTrue(result['verified'])
-        self.assertEqual((self.folder / 'submissions.csv').read_bytes(), self.raw)
+        self.assertEqual((self.folder / 'submissions.json').read_bytes(), self.raw)
         self.runner.assert_called_once()
-        self.assertEqual(self.runner.call_args.args[0][1:],
-                         ['-m','kaggle','competitions','submissions','gemma-4-developer-agent','--csv'])
+        self.assertEqual(result['observation']['outcome'], 'error')
+        self.assertEqual(self.runner.call_args.args[0][1:4], ['-X', 'utf8', '-c'])
+        self.assertIn('competition_submissions', self.runner.call_args.args[0][4])
         self.assertEqual(self.runner.call_args.kwargs, dict(capture_output=True, timeout=90, check=True))
 
     def test_existing_directory_refuses_before_network(self):

@@ -6,6 +6,7 @@ import json
 import re
 from pathlib import Path
 from read_submission_snapshot import read_submission
+from read_submission_details import read_details
 from verify_final_validation_packet import strict_json
 
 
@@ -24,14 +25,19 @@ def verify(folder):
         raise ValueError('parsed observation must be an object')
     if type(observed.get('score_available')) is not bool or observed.get('live_status_checked') is not False:
         raise ValueError('observation flags must be booleans with no live-check claim')
-    raw = (folder / 'submissions.csv').read_bytes()
+    format_name = record.get('format', 'csv')
+    if format_name not in ('csv', 'api_json'):
+        raise ValueError('unsupported observation format')
+    filename = 'submissions.json' if format_name == 'api_json' else 'submissions.csv'
+    raw = (folder / filename).read_bytes()
     if hashlib.sha256(raw).hexdigest() != record['stdout_sha256']:
         raise ValueError('status CSV digest mismatch')
     time = datetime.fromisoformat(record['checked_at_utc'])
     if time.tzinfo is None or time.utcoffset().total_seconds() != 0:
         raise ValueError('observation timestamp must be UTC with an offset')
     observed = record['observation']
-    parsed = read_submission(raw.decode('utf-8-sig'), observed['submission_ref'])
+    parser = read_details if format_name == 'api_json' else read_submission
+    parsed = parser(raw.decode('utf-8-sig'), observed['submission_ref'])
     if parsed != observed:
         raise ValueError('observation differs from preserved CSV')
     return {'verified': True, 'checked_at_utc': record['checked_at_utc'],
