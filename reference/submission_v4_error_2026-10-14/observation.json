@@ -1,0 +1,21 @@
+{
+  "checked_at_utc": "2026-10-14T15:52:21.055854+00:00",
+  "command": [
+    "-X",
+    "utf8",
+    "-c",
+    "import json; from kaggle.api.kaggle_api_extended import KaggleApi; api=KaggleApi(); api.authenticate(); rows=api.competition_submissions('gemma-4-developer-agent'); print(json.dumps([json.loads(s.to_json()) for s in rows]))"
+  ],
+  "format": "api_json",
+  "stdout_sha256": "ffa050bc345e40a413ac0737b2551b51f33b941b8e1939320466e9a2d33e1786",
+  "observation": {
+    "submission_ref": 57064155,
+    "status": "COMPLETE",
+    "public_score": null,
+    "score_available": false,
+    "error_description": "Your submission notebook exceeded the allowed runtime. Review the competition's Code Requirements page for the time limits. Note that the hidden dataset can be larger/smaller/different than the public dataset.",
+    "outcome": "error",
+    "live_status_checked": false
+  },
+  "note": "One read-only request; saved snapshot, not a live status guarantee."
+}
