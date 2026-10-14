@@ -11,7 +11,10 @@ def read_submission(text, reference):
     if type(reference) is not int or reference <= 0:
         raise ValueError('reference must be a positive integer')
     reader = csv.DictReader(io.StringIO(text.lstrip('\ufeff')), strict=True)
-    fields = reader.fieldnames or []
+    try:
+        fields = reader.fieldnames or []
+    except csv.Error as exc:
+        raise ValueError('malformed CSV header') from exc
     if len(fields) != len(set(fields)) or not {'ref', 'status', 'publicScore'} <= set(fields):
         raise ValueError('missing or duplicate submission CSV columns')
     try:

@@ -3,6 +3,10 @@ from read_submission_snapshot import read_submission
 
 
 class SnapshotTests(unittest.TestCase):
+    def test_unclosed_header_quote(self):
+        with self.assertRaisesRegex(ValueError, 'malformed CSV header'):
+            read_submission('"ref,status,publicScore', 7)
+
     def test_pending_is_not_zero(self):
         r = read_submission('ref,status,publicScore\n7,SubmissionStatus.PENDING,\n', 7)
         self.assertEqual(r['status'], 'PENDING')
