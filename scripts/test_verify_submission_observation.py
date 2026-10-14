@@ -26,6 +26,19 @@ class ObservationTests(unittest.TestCase):
         self.assertTrue(verify(self.root)['verified'])
         self.assertEqual(before, {p.name:p.read_bytes() for p in self.root.iterdir()})
 
+    def test_invalid_record_shapes_and_boolean_aliases(self):
+        import copy
+        baseline = copy.deepcopy(self.record)
+        cases = [[], dict(baseline, checked_at_utc=None),
+                 dict(baseline, stdout_sha256=123), dict(baseline, observation=[])]
+        for flag, value in (('score_available', 0), ('live_status_checked', 0),
+                            ('live_status_checked', True)):
+            item = copy.deepcopy(baseline); item['observation'][flag] = value; cases.append(item)
+        for item in cases:
+            with self.subTest(item=item):
+                self.record = item; self.save()
+                with self.assertRaises(ValueError): verify(self.root)
+
     def test_csv_drift(self):
         (self.root / 'submissions.csv').write_text('changed')
         with self.assertRaisesRegex(ValueError, 'digest mismatch'): verify(self.root)

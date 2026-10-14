@@ -3,6 +3,7 @@ import argparse
 from datetime import datetime
 import hashlib
 import json
+import re
 from pathlib import Path
 from read_submission_snapshot import read_submission
 from verify_final_validation_packet import strict_json
@@ -11,6 +12,18 @@ from verify_final_validation_packet import strict_json
 def verify(folder):
     folder = Path(folder)
     record = strict_json((folder / 'observation.json').read_text(encoding='utf-8'))
+    if not isinstance(record, dict):
+        raise ValueError('observation record must be an object')
+    if not isinstance(record.get('checked_at_utc'), str):
+        raise ValueError('observation timestamp must be a string')
+    digest = record.get('stdout_sha256')
+    if not isinstance(digest, str) or re.fullmatch('[0-9a-f]{64}', digest) is None:
+        raise ValueError('observation digest must be a lowercase SHA-256')
+    observed = record.get('observation')
+    if not isinstance(observed, dict):
+        raise ValueError('parsed observation must be an object')
+    if type(observed.get('score_available')) is not bool or observed.get('live_status_checked') is not False:
+        raise ValueError('observation flags must be booleans with no live-check claim')
     raw = (folder / 'submissions.csv').read_bytes()
     if hashlib.sha256(raw).hexdigest() != record['stdout_sha256']:
         raise ValueError('status CSV digest mismatch')
