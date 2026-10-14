@@ -1,5 +1,12 @@
 # Gemma 4 Developer Agent — Kaggle competition
 
+## Latest result — 2026-10-14
+
+V4 reference `57064155` exceeded the allowed runtime and received no score.
+The full API error is preserved in `reference/submission_v4_error_2026-10-14/`.
+CLI summary status COMPLETE omitted this error; use the detailed status recorder.
+No new submission is authorized by this documentation update.
+
 ## Submission update — 2026-10-11
 
 V4 thinking-ON was submitted once as reference `57064155`, kernel version 4.

@@ -13,6 +13,8 @@ CHECKS = (
     ('scripts/test_read_submission_snapshot.py',),
     ('scripts/test_verify_submission_observation.py',),
     ('scripts/test_capture_submission_status.py',),
+    ('scripts/test_read_submission_details.py',),
+    ('scripts/verify_submission_observation.py', 'reference/submission_v4_error_2026-10-14'),
     ('scripts/verify_submission_observation.py', 'reference/submission_v4_status_2026-10-14'),
     ('scripts/verify_submission_observation.py', 'reference/submission_v4_status_2026-10-12'),
     ('scripts/read_submission_snapshot.py', 'reference/submission_v4_status_2026-10-12/submissions.csv',

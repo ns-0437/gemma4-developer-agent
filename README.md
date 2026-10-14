@@ -12,7 +12,7 @@ and candidate task-solving performance are reported separately.
 | Artifact | Recorded result | What it establishes |
 | --- | --- | --- |
 | Submitted V3 | Public score 0.06 | Historical submission result |
-| Submitted V4 thinking-ON | Submission `57064155`, recorded PENDING on 2026-10-11 | Exact tested ON package submitted; score not established in this saved record |
+| Submitted V4 thinking-ON | Runtime exceeded; no score (full API record checked 2026-10-14) | COMPLETE status concealed an error omitted by the CLI summary |
 | Frozen thinking ON | `rich_3278` solved in two development runs | A reproduced solve on that task, not a leaderboard forecast |
 | CPU control replay | Six of six baseline/reference arms accepted | Repaired controls reproduce across the selected FastAPI, Requests and Rich tasks |
 | Repaired final validation | Disabled GPU packet prepared | Ready for an authorized V3-versus-ON measurement; no candidate result from this packet yet |

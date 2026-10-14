@@ -104,3 +104,23 @@ inspection and choose a fresh destination; verification must pass before use.
 CI tests capture with fake responses and verifies both saved observations;
 it never runs the network capture command. COMPLETE and a numeric score are
 separate facts: a blank score remains null even after completion.
+
+## Confirmed V4 timeout: supersedes the blank-score interpretation
+
+The full API record read on 2026-10-14 reports `errorDescription`:
+"Your submission notebook exceeded the allowed runtime."
+Kaggle still labels the record COMPLETE, with no numeric score. Therefore
+COMPLETE cannot be interpreted as scoring success. The earlier CSV snapshots
+were accurately preserved but incomplete for diagnosis: both CLI CSV and CLI
+JSON summaries omit the error field.
+
+The capture command now reads full API objects and saves `submissions.json`
+with `format: api_json`. The verifier continues to support old CSV observations.
+The new evidence is in `reference/submission_v4_error_2026-10-14/`; its outcome
+is `error`, and its score remains null. Neither the original submission receipt
+nor the frozen package has been changed.
+
+Next engineering work should examine inference and per-task time budgets before
+considering a new submission. This error does not identify a particular task,
+give actual execution duration, or prove that thinking alone caused the timeout.
+Do not automatically resubmit V4 or infer a score of zero.
