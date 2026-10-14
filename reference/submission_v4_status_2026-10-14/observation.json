@@ -1,0 +1,20 @@
+{
+  "checked_at_utc": "2026-10-14T03:23:54.891277+00:00",
+  "command": [
+    "-m",
+    "kaggle",
+    "competitions",
+    "submissions",
+    "gemma-4-developer-agent",
+    "--csv"
+  ],
+  "stdout_sha256": "b259f5ee153aff6325fa6b8d63a1c35b3787cc466db0462f27a597d3187427c1",
+  "observation": {
+    "submission_ref": 57064155,
+    "status": "COMPLETE",
+    "public_score": null,
+    "score_available": false,
+    "live_status_checked": false
+  },
+  "note": "One read-only request; saved snapshot, not a live status guarantee."
+}
