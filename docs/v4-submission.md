@@ -79,3 +79,28 @@ Neither file is rewritten, and no live Kaggle query occurs.
 CI runs both the parser and observation regressions. Offline checks now launch
 Python children in UTF-8 mode, so Unicode evidence reads consistently across
 Windows locales. The real-child regression tests this with non-ASCII text.
+
+## October 14 observation and repeatable status capture
+
+At 08:53 IST on 2026-10-14, the API returned **COMPLETE** for reference
+57064155 but left the public score blank. This does not establish a numeric
+score or improvement. The saved CSV and verified observation are in
+`reference/submission_v4_status_2026-10-14/`; the earlier PENDING snapshots
+and original receipt remain unchanged.
+
+For an explicitly requested fresh check, use a new directory:
+
+```powershell
+python -B scripts/capture_submission_status.py reference/NEW_UNIQUE_STATUS_DIRECTORY --reference 57064155
+```
+
+This makes one read-only CLI request with a 90-second timeout. It never retries,
+polls, pushes a notebook or submits a package. An existing destination is refused
+before the request, and a directory created concurrently is not overwritten.
+Invalid or failed responses do not create a valid-looking observation directory.
+If writing fails after directory creation, preserve the partial output for
+inspection and choose a fresh destination; verification must pass before use.
+
+CI tests capture with fake responses and verifies both saved observations;
+it never runs the network capture command. COMPLETE and a numeric score are
+separate facts: a blank score remains null even after completion.
