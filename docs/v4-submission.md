@@ -124,3 +124,11 @@ Next engineering work should examine inference and per-task time budgets before
 considering a new submission. This error does not identify a particular task,
 give actual execution duration, or prove that thinking alone caused the timeout.
 Do not automatically resubmit V4 or infer a score of zero.
+
+## October 15 confirmation
+
+At 08:23 IST on 2026-10-15, a fresh full API record still reports runtime
+exceeded for reference 57064155, status COMPLETE, and publicScore null. The
+observation is preserved in `reference/submission_v4_status_2026-10-15/`.
+No numeric result is established by this record; a visible UI score would
+need reconciliation against the same submission reference.
