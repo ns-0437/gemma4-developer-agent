@@ -20,6 +20,17 @@ class DetailsTests(unittest.TestCase):
         self.assertEqual(self.read()['outcome'], 'complete_without_score')
         self.assertEqual(self.read(status='PENDING')['outcome'], 'pending_or_running')
 
+    def test_unknown_status_is_not_reported_as_active(self):
+        self.assertEqual(self.read(status='NEW_STATE')['outcome'], 'unknown_status')
+        for status in ('ERROR', 'FAILED', 'CANCELLED'):
+            with self.subTest(status=status):
+                self.assertEqual(self.read(status=status)['outcome'], 'error')
+
+    def test_status_whitespace_and_empty_enum(self):
+        self.assertEqual(self.read(status=' SubmissionStatus.COMPLETE ', publicScore='0.06')['outcome'], 'scored')
+        with self.assertRaisesRegex(ValueError, 'empty normalized status'):
+            self.read(status='SubmissionStatus.')
+
     def test_error_takes_precedence_over_score(self):
         self.assertEqual(self.read(publicScore='0.06', errorDescription='failed')['outcome'], 'error')
 

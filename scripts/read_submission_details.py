@@ -19,7 +19,9 @@ def read_details(text, reference):
     error = row['errorDescription']
     if not isinstance(status, str) or not status.strip() or (error is not None and not isinstance(error, str)):
         raise ValueError('invalid status or error description')
-    status = status.removeprefix('SubmissionStatus.').upper()
+    status = status.strip().removeprefix('SubmissionStatus.').upper()
+    if not status:
+        raise ValueError('empty normalized status')
     score = row.get('publicScore')
     if score not in (None, ''):
         if isinstance(score, bool): raise ValueError('invalid score')
@@ -30,8 +32,11 @@ def read_details(text, reference):
         score = str(score)
     else:
         score = None
-    outcome = ('error' if error else 'scored' if status == 'COMPLETE' and score is not None
-               else 'complete_without_score' if status == 'COMPLETE' else 'pending_or_running')
+    outcome = ('error' if error or status in {'ERROR', 'FAILED', 'CANCELLED', 'CANCELED'}
+               else 'scored' if status == 'COMPLETE' and score is not None
+               else 'complete_without_score' if status == 'COMPLETE'
+               else 'pending_or_running' if status in {'PENDING', 'RUNNING', 'QUEUED'}
+               else 'unknown_status')
     return {'submission_ref': reference, 'status': status, 'public_score': score,
             'score_available': score is not None, 'error_description': error or None,
             'outcome': outcome, 'live_status_checked': False}
