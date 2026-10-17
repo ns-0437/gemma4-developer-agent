@@ -9,6 +9,9 @@ import sys
 
 ROOT = Path(__file__).resolve().parent.parent
 CHECKS = (
+    ('scripts/test_runtime_budget.py',),
+    ('scripts/test_inspect_eval_config.py',),
+    ('scripts/inspect_eval_config.py', 'releases/v4_thinking_on_submission.zip'),
     ('scripts/test_run_offline_checks.py',),
     ('scripts/test_read_submission_snapshot.py',),
     ('scripts/test_verify_submission_observation.py',),
