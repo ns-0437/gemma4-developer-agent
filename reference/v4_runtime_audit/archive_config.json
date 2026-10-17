@@ -1,0 +1,20 @@
+{
+  "v3": {
+    "archive_sha256": "b8da59c1c3a0671bb9b11b2fe4238a252ff792a63abf7ea4b5d555ceab57b24b",
+    "root_eval_config_present": false,
+    "root_eval_config": null,
+    "config_sha256": null,
+    "config_text": null,
+    "nested_config_paths": [],
+    "effective_limits_verified": false
+  },
+  "v4": {
+    "archive_sha256": "527acc5403d21a149ecea9d39d573d3d0f45dc65935d115952b772045339ea33",
+    "root_eval_config_present": false,
+    "root_eval_config": null,
+    "config_sha256": null,
+    "config_text": null,
+    "nested_config_paths": [],
+    "effective_limits_verified": false
+  }
+}

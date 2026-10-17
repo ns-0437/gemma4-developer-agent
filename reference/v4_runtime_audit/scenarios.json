@@ -1,0 +1,65 @@
+{
+  "hypothetical_inputs_not_hidden_dataset_estimates": true,
+  "scenarios": [
+    {
+      "inputs": {
+        "task_count": 60,
+        "per_task_minutes": 10,
+        "setup_seconds": 30,
+        "startup_minutes": 10,
+        "total_minutes": 720,
+        "reserve_minutes": 40
+      },
+      "result": {
+        "task_count": 60,
+        "scenario_minutes": 680.0,
+        "remaining_minutes": 40.0,
+        "fits_scenario": true,
+        "affordable_task_minutes": 10.666666666666666,
+        "overhead_exceeds_budget": false,
+        "measured_runtime": false,
+        "runtime_guarantee": false
+      }
+    },
+    {
+      "inputs": {
+        "task_count": 100,
+        "per_task_minutes": 10,
+        "setup_seconds": 30,
+        "startup_minutes": 10,
+        "total_minutes": 720,
+        "reserve_minutes": 40
+      },
+      "result": {
+        "task_count": 100,
+        "scenario_minutes": 1100.0,
+        "remaining_minutes": -380.0,
+        "fits_scenario": false,
+        "affordable_task_minutes": 6.2,
+        "overhead_exceeds_budget": false,
+        "measured_runtime": false,
+        "runtime_guarantee": false
+      }
+    },
+    {
+      "inputs": {
+        "task_count": 120,
+        "per_task_minutes": 5,
+        "setup_seconds": 30,
+        "startup_minutes": 10,
+        "total_minutes": 720,
+        "reserve_minutes": 40
+      },
+      "result": {
+        "task_count": 120,
+        "scenario_minutes": 710.0,
+        "remaining_minutes": 10.0,
+        "fits_scenario": true,
+        "affordable_task_minutes": 5.083333333333333,
+        "overhead_exceeds_budget": false,
+        "measured_runtime": false,
+        "runtime_guarantee": false
+      }
+    }
+  ]
+}
