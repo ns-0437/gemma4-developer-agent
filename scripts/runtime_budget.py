@@ -1,0 +1,25 @@
+"""Scenario arithmetic only: not a measured runtime or grader guarantee."""
+import math
+
+
+def finite(name, value, *, positive=False):
+    if isinstance(value, bool) or not isinstance(value, (int, float)) or not math.isfinite(value):
+        raise ValueError(name + ' must be finite numeric input')
+    if value < 0 or (positive and value == 0):
+        raise ValueError(name + ' is outside the allowed range')
+
+
+def budget(task_count, per_task_minutes, *, setup_seconds=0, startup_minutes=0,
+           total_minutes=720, reserve_minutes=0):
+    if type(task_count) is not int or task_count <= 0:
+        raise ValueError('task_count must be a positive integer')
+    for name, value in locals().copy().items():
+        if name != 'task_count': finite(name, value, positive=name == 'total_minutes')
+    overhead = startup_minutes + task_count * setup_seconds / 60 + reserve_minutes
+    required = overhead + task_count * per_task_minutes
+    remaining = total_minutes - required
+    return {'task_count': task_count, 'scenario_minutes': required,
+            'remaining_minutes': remaining, 'fits_scenario': remaining >= 0,
+            'affordable_task_minutes': max(0, (total_minutes - overhead) / task_count),
+            'overhead_exceeds_budget': overhead > total_minutes,
+            'measured_runtime': False, 'runtime_guarantee': False}
