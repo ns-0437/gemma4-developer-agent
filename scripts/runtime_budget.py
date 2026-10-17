@@ -23,3 +23,28 @@ def budget(task_count, per_task_minutes, *, setup_seconds=0, startup_minutes=0,
             'affordable_task_minutes': max(0, (total_minutes - overhead) / task_count),
             'overhead_exceeds_budget': overhead > total_minutes,
             'measured_runtime': False, 'runtime_guarantee': False}
+
+
+def main():
+    import argparse
+    import json
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--tasks', type=int, required=True)
+    parser.add_argument('--per-task-minutes', type=float, required=True)
+    parser.add_argument('--setup-seconds', type=float, default=0)
+    parser.add_argument('--startup-minutes', type=float, default=0)
+    parser.add_argument('--total-minutes', type=float, required=True)
+    parser.add_argument('--reserve-minutes', type=float, default=0)
+    args = parser.parse_args()
+    try:
+        result = budget(args.tasks, args.per_task_minutes, setup_seconds=args.setup_seconds,
+                        startup_minutes=args.startup_minutes, total_minutes=args.total_minutes,
+                        reserve_minutes=args.reserve_minutes)
+    except ValueError as exc:
+        parser.error(str(exc))
+    print(json.dumps(result, sort_keys=True))
+    return 0 if result['fits_scenario'] else 1
+
+
+if __name__ == '__main__':
+    raise SystemExit(main())

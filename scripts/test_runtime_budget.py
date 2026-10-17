@@ -19,6 +19,20 @@ class BudgetTests(unittest.TestCase):
         self.assertFalse(r['fits_scenario'])
         self.assertEqual(r['affordable_task_minutes'], 0)
 
+    def test_cli_budget_exit_codes(self):
+        import subprocess, sys, json
+        from pathlib import Path
+        command = [sys.executable, str(Path(__file__).with_name('runtime_budget.py')),
+                   '--tasks', '120', '--total-minutes', '720', '--per-task-minutes']
+        for minutes, code in (('5', 0), ('10', 1), ('-1', 2)):
+            with self.subTest(minutes=minutes):
+                result = subprocess.run(command + [minutes], capture_output=True, text=True, timeout=20)
+                self.assertEqual(result.returncode, code, result.stderr)
+                if code != 2:
+                    self.assertEqual(json.loads(result.stdout)['fits_scenario'], code == 0)
+                else:
+                    self.assertNotIn('Traceback', result.stderr)
+
     def test_invalid_inputs(self):
         for args in ((0, 1), (True, 1), (1.5, 1), (1, -1), (1, float('nan')), (1, True)):
             with self.subTest(args=args), self.assertRaises(ValueError): budget(*args)
