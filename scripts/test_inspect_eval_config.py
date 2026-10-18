@@ -35,6 +35,24 @@ class ArchiveTests(unittest.TestCase):
     def test_nested_only_does_not_count_as_root(self):
         self.assertFalse(self.inspect([('nested/eval_config.yaml','x')])['root_eval_config_present'])
 
+    def test_oversized_config_refused_before_decompression(self):
+        from inspect_eval_config import MAX_CONFIG_BYTES
+        from unittest.mock import patch
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp)/'large.zip'
+            with zipfile.ZipFile(path, 'w', compression=zipfile.ZIP_DEFLATED) as z:
+                z.writestr('eval_config.yaml', b'x'*(MAX_CONFIG_BYTES+1))
+            with patch.object(zipfile.ZipFile, 'open', side_effect=AssertionError('must not decompress')):
+                with self.assertRaisesRegex(ValueError, 'inspection limit'):
+                    inspect_archive(path)
+
+    def test_config_at_limit_and_utf8_validation(self):
+        from inspect_eval_config import MAX_CONFIG_BYTES
+        self.assertEqual(len(self.inspect([('eval_config.yaml', 'x'*MAX_CONFIG_BYTES)])['config_text']),
+                         MAX_CONFIG_BYTES)
+        with self.assertRaises(UnicodeDecodeError):
+            self.inspect([('eval_config.yaml', b'\xff')])
+
     def test_ambiguous_or_duplicate_configs_refused(self):
         for names in (('eval_config.yaml','eval_config.yml'),('eval_config.yaml','eval_config.yaml')):
             with self.subTest(names=names), self.assertRaises(ValueError):

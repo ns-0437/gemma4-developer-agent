@@ -10,6 +10,8 @@ from pathlib import Path
 import zipfile
 
 
+MAX_CONFIG_BYTES = 1024 * 1024
+
 def inspect_archive(path):
     raw = Path(path).read_bytes()
     with zipfile.ZipFile(io.BytesIO(raw)) as archive:
@@ -20,7 +22,15 @@ def inspect_archive(path):
         if len(configs) > 1:
             raise ValueError('ambiguous root evaluation configs')
         nested = [n for n in names if n not in configs and n.rsplit('/',1)[-1] in ('eval_config.yaml','eval_config.yml')]
-        content = archive.read(configs[0]) if configs else None
+        content = None
+        if configs:
+            info = archive.getinfo(configs[0])
+            if info.file_size > MAX_CONFIG_BYTES:
+                raise ValueError('evaluation config exceeds 1 MiB inspection limit')
+            with archive.open(info) as stream:
+                content = stream.read(MAX_CONFIG_BYTES + 1)
+            if len(content) > MAX_CONFIG_BYTES:
+                raise ValueError('evaluation config exceeds 1 MiB inspection limit')
     return {'archive_sha256': hashlib.sha256(raw).hexdigest(),
             'root_eval_config_present': bool(configs), 'root_eval_config': configs[0] if configs else None,
             'config_sha256': hashlib.sha256(content).hexdigest() if content is not None else None,
