@@ -27,3 +27,9 @@ The CLI returns 0 when the scenario fits, 1 when it exceeds the budget, and 2 fo
 5. Compare a frozen candidate with the incumbent before deciding on submission; runtime changes can reduce solve quality.
 
 The offline CI runner exercises input validation, CLI exit behavior and archive ambiguity checks. It does not contact Kaggle, launch models or certify score improvement.
+
+## Audit freshness
+
+Run `python -B scripts/verify_runtime_audit.py reference/v4_runtime_audit` to compare saved archive evidence against the frozen ZIPs and recompute every scenario. CI runs this check and refuses stale results, changed hashes, empty scenarios and removed hypothetical-input labels. It does not update evidence or query Kaggle.
+
+The calculator rejects numeric overflow rather than emitting non-finite JSON. The archive inspector refuses evaluation configs larger than 1 MiB before decompression; this is a local inspection limit, not a competition requirement.
