@@ -33,6 +33,22 @@ class BudgetTests(unittest.TestCase):
                 else:
                     self.assertNotIn('Traceback', result.stderr)
 
+    def test_overflow_is_a_validation_error(self):
+        for args, kwargs in [((2, 1e308), {}), ((10**400, 1), {}),
+                             ((1, 10**400), {}), ((2, 0), {'setup_seconds':1e308})]:
+            with self.subTest(args=args, kwargs=kwargs), self.assertRaises(ValueError):
+                budget(*args, **kwargs)
+
+    def test_cli_overflow_has_no_traceback_or_nonfinite_json(self):
+        import subprocess, sys
+        from pathlib import Path
+        r = subprocess.run([sys.executable, str(Path(__file__).with_name('runtime_budget.py')),
+                            '--tasks', '2', '--per-task-minutes', '1e308', '--total-minutes', '720'],
+                           capture_output=True, text=True, timeout=20)
+        self.assertEqual(r.returncode, 2)
+        self.assertEqual(r.stdout, '')
+        self.assertNotIn('Traceback', r.stderr)
+
     def test_invalid_inputs(self):
         for args in ((0, 1), (True, 1), (1.5, 1), (1, -1), (1, float('nan')), (1, True)):
             with self.subTest(args=args), self.assertRaises(ValueError): budget(*args)
