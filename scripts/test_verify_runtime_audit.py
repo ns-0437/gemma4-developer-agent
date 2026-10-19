@@ -55,6 +55,26 @@ class AuditTests(unittest.TestCase):
         self.mutate('scenarios.json', lambda d:d['scenarios'][0]['result'].update(runtime_guarantee=True))
         with self.assertRaisesRegex(ValueError, 'recomputed'): verify(self.audit)
 
+    def test_all_assumptions_required(self):
+        p = self.audit/'scenarios.json'
+        original = p.read_bytes()
+        for key in json.loads(original)['scenarios'][0]['inputs']:
+            p.write_bytes(original)
+            self.mutate('scenarios.json', lambda d:d['scenarios'][0]['inputs'].pop(key))
+            with self.subTest(key=key), self.assertRaisesRegex(ValueError, 'all six'):
+                verify(self.audit)
+
+    def test_malformed_documents_fail_cleanly(self):
+        import subprocess, sys
+        p = self.audit/'scenarios.json'
+        for value in ([], None, {'hypothetical_inputs_not_hidden_dataset_estimates':True, 'scenarios':[None]}):
+            p.write_text(json.dumps(value))
+            r = subprocess.run([sys.executable, str(ROOT/'scripts/verify_runtime_audit.py'), str(self.audit)],
+                               capture_output=True, text=True, timeout=20)
+            self.assertEqual(r.returncode, 1)
+            self.assertNotIn('Traceback', r.stderr)
+            self.assertEqual(r.stdout, '')
+
     def test_empty_scenarios_refused(self):
         self.mutate('scenarios.json', lambda d:d.update(scenarios=[]))
         with self.assertRaisesRegex(ValueError, 'no scenarios'): verify(self.audit)
