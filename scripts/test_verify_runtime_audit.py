@@ -24,6 +24,25 @@ class AuditTests(unittest.TestCase):
         self.assertEqual(verify(self.audit)['scenarios'], 3)
         self.assertEqual(before, {p.name:p.read_bytes() for p in self.audit.iterdir()})
 
+    def test_duplicate_keys_refused_in_both_evidence_files(self):
+        for name in ('archive_config.json', 'scenarios.json'):
+            p = self.audit/name
+            original = p.read_bytes()
+            for text in ('{"a":1,"a":2}', '{"nested":{"a":1,"a":1}}'):
+                with self.subTest(name=name, text=text):
+                    p.write_text(text)
+                    with self.assertRaisesRegex(ValueError, 'duplicate JSON key'):
+                        verify(self.audit)
+            p.write_bytes(original)
+
+    def test_nonfinite_json_constants_refused(self):
+        p = self.audit/'scenarios.json'
+        for token in ('NaN', 'Infinity', '-Infinity'):
+            with self.subTest(token=token):
+                p.write_text('{"value":' + token + '}')
+                with self.assertRaisesRegex(ValueError, 'non-finite JSON'):
+                    verify(self.audit)
+
     def test_archive_hash_drift_refused(self):
         self.mutate('archive_config.json', lambda d:d['v4'].update(archive_sha256='0'*64))
         with self.assertRaisesRegex(ValueError, 'archive evidence'): verify(self.audit)

@@ -9,13 +9,29 @@ ROOT = Path(__file__).resolve().parent.parent
 PACKAGES = {'v3': 'releases/v3_submission.zip', 'v4': 'releases/v4_thinking_on_submission.zip'}
 
 
+def load_evidence(path):
+    def unique_object(pairs):
+        result = {}
+        for key, value in pairs:
+            if key in result:
+                raise ValueError(f'duplicate JSON key: {key}')
+            result[key] = value
+        return result
+
+    def reject_constant(value):
+        raise ValueError(f'non-finite JSON constant: {value}')
+
+    return json.loads(Path(path).read_text(encoding='utf-8'),
+                      object_pairs_hook=unique_object, parse_constant=reject_constant)
+
+
 def verify(audit, root=ROOT):
     audit = Path(audit)
-    saved = json.loads((audit/'archive_config.json').read_text(encoding='utf-8'))
+    saved = load_evidence(audit/'archive_config.json')
     actual = {name: inspect_archive(root/path) for name, path in PACKAGES.items()}
     if json.dumps(saved, sort_keys=True) != json.dumps(actual, sort_keys=True):
         raise ValueError('archive evidence differs from packaged bytes')
-    scenarios = json.loads((audit/'scenarios.json').read_text(encoding='utf-8'))
+    scenarios = load_evidence(audit/'scenarios.json')
     if scenarios.get('hypothetical_inputs_not_hidden_dataset_estimates') is not True:
         raise ValueError('hypothetical scenario declaration missing')
     rows = scenarios.get('scenarios')
