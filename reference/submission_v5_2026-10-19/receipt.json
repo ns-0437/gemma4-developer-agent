@@ -1,0 +1,11 @@
+{
+  "ref": 57378663,
+  "totalBytes": 0,
+  "date": "2026-10-19T02:34:53.097Z",
+  "description": "v5 runtime correction: unchanged V4 thinking ON agent; explicit 5min/task, 60 turns, 100 tools, 60s commands; no score improvement claimed; sha ca7ebe43",
+  "fileName": "submission.zip",
+  "submittedBy": "navin03",
+  "submittedByRef": "navin03",
+  "teamName": "nsharma_03",
+  "url": "/code/navin03/gemma4-swe-agent-submit?scriptVersionId=359895757"
+}

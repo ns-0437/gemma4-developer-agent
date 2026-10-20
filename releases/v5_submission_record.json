@@ -1,0 +1,24 @@
+{
+  "candidate": "V5 bounded thinking ON",
+  "base_sha256": "527acc5403d21a149ecea9d39d573d3d0f45dc65935d115952b772045339ea33",
+  "sha256": "ca7ebe43b7f1c33715d9657a133e38514e89aa49d7faa7808d0a6711cfad4d21",
+  "evaluation": {
+    "timeout_seconds": 60,
+    "max_tool_calls": 100,
+    "max_time_minutes": 5,
+    "max_turns": 60
+  },
+  "compiler_version": "0.2.11",
+  "config_check": "Saved real EvalConfig maps all four values; private scorer not observed",
+  "status": "NOT_REPORTED",
+  "limitation": "5-minute cap may truncate known 10-minute solves; no measured score improvement; hidden task count and setup overhead unknown",
+  "kernel": "navin03/gemma4-swe-agent-submit",
+  "kernel_version": 5,
+  "recorded_at_utc": "2026-10-19T02:33:17.334089+00:00",
+  "notebook_sha256": "98e8423573ae2790c50ceb89810a6daf2232014c1693a96499e93258fc419cc8",
+  "submission_ref": 57378663,
+  "submitted_at_utc": "2026-10-19T02:34:53.097Z",
+  "verified_at_utc": "2026-10-19T02:35:19.706380+00:00",
+  "download": "reference/submission_v5_2026-10-19/submission.zip",
+  "remaining_submissions_today": 0
+}
