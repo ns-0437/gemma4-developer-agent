@@ -1,5 +1,15 @@
 # Gemma 4 Developer Agent — Kaggle competition
 
+## Latest submission — V5, 2026-10-19
+
+V5 reference `57378663`, kernel version 5, was submitted once. It preserves
+V4 agent bytes and adds explicit per-task runtime limits. See
+[the V5 handoff](docs/v5-submission.md) and `releases/v5_submission_record.json`.
+The initial receipt has no reported status or score; read live Kaggle evidence
+before claiming a result. Do not repeat this submission from the receipt.
+Offline CI verifies the package, notebook payload, budget receipt and V4 base.
+
+
 ## Latest result — 2026-10-14
 
 V4 reference `57064155` exceeded the allowed runtime and received no score.
