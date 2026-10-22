@@ -1,0 +1,28 @@
+{
+  "purpose": "CPU-only replay of eight V5 development control arms",
+  "notebook_sha256": "bedb8c0ab57eb5c5707aad8c1ff247987c8a30ecb2350995d675b56bb11cd9a9",
+  "metadata_sha256": "0c196e079b42502bc0e39567f44f3a9f8254908218ab84bc4fe6528521bac958",
+  "cells_before": 13,
+  "cells_after": 10,
+  "dropped_for": [
+    "# Result packet:",
+    "# vLLM with the public harness serving configuration",
+    "Evaluator("
+  ],
+  "tasks": [
+    "rich_3278",
+    "rich_3535",
+    "rich_3675",
+    "rich_3942"
+  ],
+  "docker_image": "gcr.io/kaggle-private-byod/python@sha256:37c64f7dd9c54116ecd1bcc88817c5469b88387388fade02bfa8bf3fc647d461",
+  "model_startup": false,
+  "candidate_evaluation": false,
+  "dispatch_flag": "DISPATCH_CONFIRM = False retained in the config cell; no run loop exists",
+  "freeze_sha256": "220869409441c04d7c8f32ef5ab141df02f754cce352495deeb48995a7483b4b",
+  "dependency_set": {
+    "swegemma": "0.2.11",
+    "adk-submission": "0.2.13"
+  },
+  "private_grader_versions": "UNKNOWN; not observed here"
+}
