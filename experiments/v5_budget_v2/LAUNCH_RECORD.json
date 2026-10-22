@@ -1,0 +1,64 @@
+{
+  "purpose": "fresh CPU-only control replay: rerun all eight baseline/reference arms under the current dependency set, to prove the swegemma 0.2.11 / adk-submission 0.2.13 repair",
+  "kernel": "navin03/gemma4-v5-control-replay",
+  "kernel_url": "https://www.kaggle.com/code/navin03/gemma4-v5-control-replay",
+  "kernel_version": 1,
+  "authorization": "one CPU-only launch of the prepared fresh control replay, user's own words 2026-10-20",
+  "prior_launch_check": "no LAUNCH_RECORD in experiments/v5_budget_v2 and kernel absent before this push; first and only use of this authorization",
+  "utc_before_push": "2026-10-20T06:55:32Z",
+  "pushed_utc": "2026-10-20T06:55:54Z",
+  "push_attempts": 1,
+  "push_result": "Kernel version 1 successfully pushed.",
+  "notebook_sha256": "55a52256c998b72a7378f03f117c4d9827d7874ff1cadb8dcf853d7f34349eb9",
+  "metadata_sha256": "0c196e079b42502bc0e39567f44f3a9f8254908218ab84bc4fe6528521bac958",
+  "verified_before_push": {
+    "enable_gpu": false,
+    "enable_tpu": false,
+    "machine_shape": "absent",
+    "enable_internet": false,
+    "dispatch": "DISPATCH_CONFIRM = False, exactly one occurrence, no True",
+    "compiler_gate_cell": 7,
+    "swegemma_gate_cell": 7,
+    "sandbox_control_cell": 9,
+    "gates_precede_sandbox_creation": true
+  },
+  "identity_gates": {
+    "adk_submission": {
+      "required_version": "0.2.13",
+      "wheel_sha256": "f156f0bd84580ccb9334726d114d7a5481f16d3a6e2887cc4d276ced0ef8d99d"
+    },
+    "swegemma": {
+      "required_version": "0.2.11",
+      "wheel_sha256": "9ad876581f3acde8ec3c369858f0834e2b9f41a3cffce3ca42f09cb090aea9d3",
+      "persists": "pilot/swegemma_identity.json with version, package path, module count, missing/extra/changed lists, version_ok and hashes_ok",
+      "on_mismatch": "refuses control execution before any sandbox is created"
+    }
+  },
+  "quota_at_push": {
+    "gpu_used": "0.08h",
+    "gpu_remaining": "29.92h",
+    "note": "CPU kernel; GPU quota should not move"
+  },
+  "tasks": [
+    "rich_3278",
+    "rich_3535",
+    "rich_3675",
+    "rich_3942"
+  ],
+  "arms": "8 (baseline and reference per task)",
+  "no_dispatch": "no model startup, no server, no evaluator dispatch, no agent evaluation",
+  "private_grader_versions": "UNKNOWN; not observed by this run",
+  "preserved": {
+    "failed_v5_budget_notebook": "8169ade01183908e54b8eb86b07f2fd98159d674642d03836de866668ceebe79",
+    "v5_package": "ca7ebe43b7f1c33715d9657a133e38514e89aa49d7faa7808d0a6711cfad4d21",
+    "task_freeze": "220869409441c04d7c8f32ef5ab141df02f754cce352495deeb48995a7483b4b"
+  },
+  "not_done": [
+    "retry",
+    "GPU launch",
+    "candidate change",
+    "competition submission",
+    "scheduled polling"
+  ],
+  "on_status_request": "check once; if terminal, preserve and hash available outputs, report download-completeness limitations, BOTH runtime identity checks, and all eight control outcomes including patch application, provenance, canonicalization and cleanup. COMPLETE alone is not a pass."
+}

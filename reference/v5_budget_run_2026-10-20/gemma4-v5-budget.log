@@ -1,0 +1,105 @@
+[{"stream_name":"stderr","time":10.377873482,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":10.377923318,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":10.377944528,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":10.377947159,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":11.227928102,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":11.227952625,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":11.227955505,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":11.227957742,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":12.589361789,"data":"v5 budget diagnostic: {'max_time_minutes': 5.0, 'max_tool_calls': 100, 'max_turns': 60, 'timeout_seconds': 60} | session cap 90 min\n"}
+,{"stream_name":"stdout","time":12.790334085,"data":"installing 41 wheels...\n"}
+,{"stream_name":"stdout","time":79.133893603,"data":"{\n"}
+,{"stream_name":"stdout","time":79.133942072,"data":"  \"swegemma\": \"0.2.11\",\n"}
+,{"stream_name":"stdout","time":79.1339458,"data":"  \"adk-submission\": \"0.2.13\",\n"}
+,{"stream_name":"stdout","time":79.133948484,"data":"  \"adk-eval-core\": \"0.1.0\",\n"}
+,{"stream_name":"stdout","time":79.133951047,"data":"  \"google-adk\": \"1.36.1\",\n"}
+,{"stream_name":"stdout","time":79.133953717,"data":"  \"vllm\": \"0.19.1\",\n"}
+,{"stream_name":"stdout","time":79.133956118,"data":"  \"transformers\": \"5.13.1\",\n"}
+,{"stream_name":"stdout","time":79.133958511,"data":"  \"litellm\": \"1.82.4\"\n"}
+,{"stream_name":"stdout","time":79.133960902,"data":"}\n"}
+,{"stream_name":"stdout","time":92.57788889,"data":"GPUs: 4 ['NVIDIA L4', 'NVIDIA L4', 'NVIDIA L4', 'NVIDIA L4']\n"}
+,{"stream_name":"stdout","time":92.577924976,"data":"model revision dir: 2 | config sha256: b100d85e571c25b6\n"}
+,{"stream_name":"stdout","time":92.577929322,"data":"architectures: ['Gemma4ForConditionalGeneration']\n"}
+,{"stream_name":"stdout","time":92.57793217,"data":"quantization: {\"config_groups\": {\"group_0\": {\"format\": \"pack-quantized\", \"input_activations\": null, \"output_activations\": null, \"targets\": [\"Linear\"], \"weights\": {\"actorder\": null, \"block_structure\": null, \"dynamic\n"}
+,{"stream_name":"stdout","time":128.845255648,"data":"loaded 129 tasks\n"}
+,{"stream_name":"stdout","time":128.89450526,"data":"PILOT TASKS and the evidence they were chosen on:\n"}
+,{"stream_name":"stdout","time":128.894523935,"data":"\n"}
+,{"stream_name":"stdout","time":128.894527071,"data":"  rich_3278 Textualize/rich\n"}
+,{"stream_name":"stdout","time":128.894529641,"data":"    negative  exit=1 cases=23 failed=16 errored=0\n"}
+,{"stream_name":"stdout","time":128.894532092,"data":"              agent  import: unavailable (no agent ran in the control)\n"}
+,{"stream_name":"stdout","time":128.894534732,"data":"              pytest import: /tmp/swegemma_sandbox_fbc86660-ea1_mbw02i_a/workspace/rich/__init__.py\n"}
+,{"stream_name":"stdout","time":128.894537127,"data":"    positive  exit=0 cases=23 failed=0 errored=0\n"}
+,{"stream_name":"stdout","time":128.894539451,"data":"              agent  import: unavailable (no agent ran in the control)\n"}
+,{"stream_name":"stdout","time":128.894541843,"data":"              pytest import: /tmp/swegemma_sandbox_2c91183e-840_38s9ivy0/workspace/rich/__init__.py\n"}
+,{"stream_name":"stdout","time":128.894553668,"data":"    baseline-fails / gold-passes / grading-import-in-checkout: True\n"}
+,{"stream_name":"stdout","time":128.894555708,"data":"    agent-side import provenance: UNAVAILABLE (no agent ran in the control)\n"}
+,{"stream_name":"stdout","time":128.894557624,"data":"    control patch_rc=0 test_patch_rc=0\n"}
+,{"stream_name":"stdout","time":128.894559541,"data":"    baseline failures: ['test_ansi::test_strip_private_escape_sequences[0]', 'test_ansi::test_strip_private_escape_sequences[1]', 'test_ansi::test_strip_private_escape_sequences[2]', 'test_ansi::test_strip_private_escape_sequences[3]']\n"}
+,{"stream_name":"stdout","time":128.894562399,"data":"\n"}
+,{"stream_name":"stdout","time":128.894564098,"data":"  rich_3535 Textualize/rich\n"}
+,{"stream_name":"stdout","time":128.894565801,"data":"    negative  exit=1 cases=8 failed=1 errored=0\n"}
+,{"stream_name":"stdout","time":128.89456766,"data":"              agent  import: unavailable (no agent ran in the control)\n"}
+,{"stream_name":"stdout","time":128.894569457,"data":"              pytest import: /tmp/swegemma_sandbox_b9bb1fae-ea7_j4kmphm5/workspace/rich/__init__.py\n"}
+,{"stream_name":"stdout","time":128.894571369,"data":"    positive  exit=0 cases=8 failed=0 errored=0\n"}
+,{"stream_name":"stdout","time":128.894573188,"data":"              agent  import: unavailable (no agent ran in the control)\n"}
+,{"stream_name":"stdout","time":128.894575096,"data":"              pytest import: /tmp/swegemma_sandbox_613d24b0-112_yqshur97/workspace/rich/__init__.py\n"}
+,{"stream_name":"stdout","time":128.89457694,"data":"    baseline-fails / gold-passes / grading-import-in-checkout: True\n"}
+,{"stream_name":"stdout","time":128.894578768,"data":"    agent-side import provenance: UNAVAILABLE (no agent ran in the control)\n"}
+,{"stream_name":"stdout","time":128.894580552,"data":"    control patch_rc=0 test_patch_rc=0\n"}
+,{"stream_name":"stdout","time":128.894582348,"data":"    baseline failures: ['test_cells::test_is_single_cell_widths']\n"}
+,{"stream_name":"stdout","time":128.894584117,"data":"\n"}
+,{"stream_name":"stdout","time":128.894585737,"data":"  rich_3675 Textualize/rich\n"}
+,{"stream_name":"stdout","time":128.894587537,"data":"    negative  exit=1 cases=99 failed=1 errored=0\n"}
+,{"stream_name":"stdout","time":128.894589384,"data":"              agent  import: unavailable (no agent ran in the control)\n"}
+,{"stream_name":"stdout","time":128.894591223,"data":"              pytest import: /tmp/swegemma_sandbox_eee552f1-f25_sg8paafw/workspace/rich/__init__.py\n"}
+,{"stream_name":"stdout","time":128.894593093,"data":"    positive  exit=0 cases=99 failed=0 errored=0\n"}
+,{"stream_name":"stdout","time":128.894594832,"data":"              agent  import: unavailable (no agent ran in the control)\n"}
+,{"stream_name":"stdout","time":128.894597258,"data":"              pytest import: /tmp/swegemma_sandbox_29800dba-55b_9nqi_yv4/workspace/rich/__init__.py\n"}
+,{"stream_name":"stdout","time":128.894599161,"data":"    baseline-fails / gold-passes / grading-import-in-checkout: True\n"}
+,{"stream_name":"stdout","time":128.894600963,"data":"    agent-side import provenance: UNAVAILABLE (no agent ran in the control)\n"}
+,{"stream_name":"stdout","time":128.894602857,"data":"    control patch_rc=0 test_patch_rc=0\n"}
+,{"stream_name":"stdout","time":128.894604592,"data":"    baseline failures: ['test_console::test_tty_compatible']\n"}
+,{"stream_name":"stdout","time":128.894606402,"data":"\n"}
+,{"stream_name":"stdout","time":128.894608085,"data":"  rich_3942 Textualize/rich\n"}
+,{"stream_name":"stdout","time":128.89461215,"data":"    negative  exit=1 cases=8 failed=6 errored=0\n"}
+,{"stream_name":"stdout","time":128.894614008,"data":"              agent  import: unavailable (no agent ran in the control)\n"}
+,{"stream_name":"stdout","time":128.894615803,"data":"              pytest import: /tmp/swegemma_sandbox_cb7391fe-ddf_sauv1peb/workspace/rich/__init__.py\n"}
+,{"stream_name":"stdout","time":128.894617656,"data":"    positive  exit=0 cases=8 failed=0 errored=0\n"}
+,{"stream_name":"stdout","time":128.894619489,"data":"              agent  import: unavailable (no agent ran in the control)\n"}
+,{"stream_name":"stdout","time":128.894621312,"data":"              pytest import: /tmp/swegemma_sandbox_58f2d1f1-b18_zzqdtsd6/workspace/rich/__init__.py\n"}
+,{"stream_name":"stdout","time":128.894623263,"data":"    baseline-fails / gold-passes / grading-import-in-checkout: True\n"}
+,{"stream_name":"stdout","time":128.894625065,"data":"    agent-side import provenance: UNAVAILABLE (no agent ran in the control)\n"}
+,{"stream_name":"stdout","time":128.894626843,"data":"    control patch_rc=0 test_patch_rc=0\n"}
+,{"stream_name":"stdout","time":128.894628606,"data":"    baseline failures: ['test_markdown::test_inline_styles_in_table', 'test_markdown::test_inline_styles_with_justification', 'test_markdown::test_markdown_render', 'test_markdown::test_markdown_table']\n"}
+,{"stream_name":"stdout","time":128.926406067,"data":"prompt leakage: CLEAN (0 lines came from the issue text)\n"}
+,{"stream_name":"stdout","time":128.926423906,"data":"LIMITATION: this is a data-flow check. The subprocess backend runs run_command on the host, so\n"}
+,{"stream_name":"stdout","time":128.926426873,"data":"answer-key files remain reachable; traces must be audited for contamination before trusting a run.\n"}
+,{"stream_name":"stderr","time":131.848024391,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":131.848048053,"data":"  File \"\u003cstring\u003e\", line 1, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":131.848051619,"data":"  File \"/usr/local/lib/python3.12/dist-packages/papermill/execute.py\", line 131, in execute_notebook\n"}
+,{"stream_name":"stderr","time":131.848092532,"data":"    raise_for_execution_errors(nb, output_path)\n"}
+,{"stream_name":"stderr","time":131.84811517,"data":"  File \"/usr/local/lib/python3.12/dist-packages/papermill/execute.py\", line 251, in raise_for_execution_errors\n"}
+,{"stream_name":"stderr","time":131.848216155,"data":"    raise error\n"}
+,{"stream_name":"stderr","time":131.848272902,"data":"papermill.exceptions.PapermillExecutionError: \n"}
+,{"stream_name":"stderr","time":131.848278184,"data":"---------------------------------------------------------------------------\n"}
+,{"stream_name":"stderr","time":131.848281523,"data":"Exception encountered at \"In [7]\":\n"}
+,{"stream_name":"stderr","time":131.848285075,"data":"---------------------------------------------------------------------------\n"}
+,{"stream_name":"stderr","time":131.848288273,"data":"ModuleNotFoundError                       Traceback (most recent call last)\n"}
+,{"stream_name":"stderr","time":131.848291724,"data":"/tmp/ipykernel_65/1974402003.py in \u003ccell line: 0\u003e()\n"}
+,{"stream_name":"stderr","time":131.84829505,"data":"     19 from adk_submission import validate_directory\n"}
+,{"stream_name":"stderr","time":131.848298127,"data":"     20 from swegemma.config import build_submission_limits\n"}
+,{"stream_name":"stderr","time":131.848301155,"data":"---\u003e 21 from swegemma.models.discovery import validate_single_declared_model\n"}
+,{"stream_name":"stderr","time":131.848304456,"data":"     22 LIMITS, GEN_CONSTRAINTS = build_submission_limits()\n"}
+,{"stream_name":"stderr","time":131.848318077,"data":"     23 for n, d in CAND_DIRS.items():\n"}
+,{"stream_name":"stderr","time":131.848321045,"data":"\n"}
+,{"stream_name":"stderr","time":131.848322753,"data":"ModuleNotFoundError: No module named 'swegemma.models.discovery'\n"}
+,{"stream_name":"stderr","time":131.848324584,"data":"\n"}
+,{"stream_name":"stderr","time":134.190290163,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":134.190310399,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":134.363630815,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":134.363646465,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":135.168323623,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":135.493014312,"data":"[NbConvertApp] Writing 157995 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":138.210530801,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":139.411925392,"data":"[NbConvertApp] Writing 757410 bytes to __results__.html\n"}
+]

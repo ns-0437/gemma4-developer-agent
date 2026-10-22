@@ -1,0 +1,107 @@
+[{"stream_name":"stderr","time":9.949620905,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":9.949673899,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":9.94968121,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":9.949684705,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":10.779758514,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":10.779796737,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":10.779802866,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":10.779807928,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":12.237316644,"data":"v5 control replay: {'max_time_minutes': 5.0, 'max_tool_calls': 100, 'max_turns': 60, 'timeout_seconds': 60} | session cap 60 min\n"}
+,{"stream_name":"stdout","time":12.237371095,"data":"DISPATCH_CONFIRM is False: setup and preconditions will run, the four runs will NOT.\n"}
+,{"stream_name":"stdout","time":12.437483013,"data":"installing 41 wheels...\n"}
+,{"stream_name":"stdout","time":84.98926536,"data":"{\n"}
+,{"stream_name":"stdout","time":84.989300096,"data":"  \"swegemma\": \"0.2.11\",\n"}
+,{"stream_name":"stdout","time":84.989306723,"data":"  \"adk-submission\": \"0.2.13\",\n"}
+,{"stream_name":"stdout","time":84.989312373,"data":"  \"adk-eval-core\": \"0.1.0\",\n"}
+,{"stream_name":"stdout","time":84.989318461,"data":"  \"google-adk\": \"1.36.1\",\n"}
+,{"stream_name":"stdout","time":84.989343279,"data":"  \"vllm\": \"0.19.1\",\n"}
+,{"stream_name":"stdout","time":84.989351465,"data":"  \"transformers\": \"5.13.1\",\n"}
+,{"stream_name":"stdout","time":84.98935753,"data":"  \"litellm\": \"1.82.4\"\n"}
+,{"stream_name":"stdout","time":84.989363684,"data":"}\n"}
+,{"stream_name":"stdout","time":97.550048881,"data":"GPUs: 0 []\n"}
+,{"stream_name":"stdout","time":97.55008474,"data":"model revision dir: 2 | config sha256: b100d85e571c25b6\n"}
+,{"stream_name":"stdout","time":97.55008963,"data":"architectures: ['Gemma4ForConditionalGeneration']\n"}
+,{"stream_name":"stdout","time":97.550093636,"data":"quantization: {\"config_groups\": {\"group_0\": {\"format\": \"pack-quantized\", \"input_activations\": null, \"output_activations\": null, \"targets\": [\"Linear\"], \"weights\": {\"actorder\": null, \"block_structure\": null, \"dynamic\n"}
+,{"stream_name":"stdout","time":97.550100494,"data":"WARNING: 0 GPU(s); the grader uses 4x L4. Timings are not comparable.\n"}
+,{"stream_name":"stdout","time":137.929949641,"data":"loaded 129 tasks\n"}
+,{"stream_name":"stdout","time":137.989772819,"data":"PILOT TASKS and the evidence they were chosen on:\n"}
+,{"stream_name":"stdout","time":137.989808824,"data":"\n"}
+,{"stream_name":"stdout","time":137.98981541,"data":"  rich_3278 Textualize/rich\n"}
+,{"stream_name":"stdout","time":137.989820734,"data":"    negative  exit=1 cases=23 failed=16 errored=0\n"}
+,{"stream_name":"stdout","time":137.989826268,"data":"              agent  import: unavailable (no agent ran in the control)\n"}
+,{"stream_name":"stdout","time":137.98983225,"data":"              pytest import: /tmp/swegemma_sandbox_fbc86660-ea1_mbw02i_a/workspace/rich/__init__.py\n"}
+,{"stream_name":"stdout","time":137.989838466,"data":"    positive  exit=0 cases=23 failed=0 errored=0\n"}
+,{"stream_name":"stdout","time":137.989862574,"data":"              agent  import: unavailable (no agent ran in the control)\n"}
+,{"stream_name":"stdout","time":137.989867947,"data":"              pytest import: /tmp/swegemma_sandbox_2c91183e-840_38s9ivy0/workspace/rich/__init__.py\n"}
+,{"stream_name":"stdout","time":137.989872865,"data":"    baseline-fails / gold-passes / grading-import-in-checkout: True\n"}
+,{"stream_name":"stdout","time":137.989875988,"data":"    agent-side import provenance: UNAVAILABLE (no agent ran in the control)\n"}
+,{"stream_name":"stdout","time":137.98987901,"data":"    control patch_rc=0 test_patch_rc=0\n"}
+,{"stream_name":"stdout","time":137.989882085,"data":"    baseline failures: ['test_ansi::test_strip_private_escape_sequences[0]', 'test_ansi::test_strip_private_escape_sequences[1]', 'test_ansi::test_strip_private_escape_sequences[2]', 'test_ansi::test_strip_private_escape_sequences[3]']\n"}
+,{"stream_name":"stdout","time":137.989885895,"data":"\n"}
+,{"stream_name":"stdout","time":137.989888789,"data":"  rich_3535 Textualize/rich\n"}
+,{"stream_name":"stdout","time":137.989891677,"data":"    negative  exit=1 cases=8 failed=1 errored=0\n"}
+,{"stream_name":"stdout","time":137.989894585,"data":"              agent  import: unavailable (no agent ran in the control)\n"}
+,{"stream_name":"stdout","time":137.989897612,"data":"              pytest import: /tmp/swegemma_sandbox_b9bb1fae-ea7_j4kmphm5/workspace/rich/__init__.py\n"}
+,{"stream_name":"stdout","time":137.989900688,"data":"    positive  exit=0 cases=8 failed=0 errored=0\n"}
+,{"stream_name":"stdout","time":137.989903644,"data":"              agent  import: unavailable (no agent ran in the control)\n"}
+,{"stream_name":"stdout","time":137.989908461,"data":"              pytest import: /tmp/swegemma_sandbox_613d24b0-112_yqshur97/workspace/rich/__init__.py\n"}
+,{"stream_name":"stdout","time":137.989911802,"data":"    baseline-fails / gold-passes / grading-import-in-checkout: True\n"}
+,{"stream_name":"stdout","time":137.989914819,"data":"    agent-side import provenance: UNAVAILABLE (no agent ran in the control)\n"}
+,{"stream_name":"stdout","time":137.989917914,"data":"    control patch_rc=0 test_patch_rc=0\n"}
+,{"stream_name":"stdout","time":137.989920804,"data":"    baseline failures: ['test_cells::test_is_single_cell_widths']\n"}
+,{"stream_name":"stdout","time":137.989923762,"data":"\n"}
+,{"stream_name":"stdout","time":137.989927724,"data":"  rich_3675 Textualize/rich\n"}
+,{"stream_name":"stdout","time":137.98993242,"data":"    negative  exit=1 cases=99 failed=1 errored=0\n"}
+,{"stream_name":"stdout","time":137.98993705,"data":"              agent  import: unavailable (no agent ran in the control)\n"}
+,{"stream_name":"stdout","time":137.989941839,"data":"              pytest import: /tmp/swegemma_sandbox_eee552f1-f25_sg8paafw/workspace/rich/__init__.py\n"}
+,{"stream_name":"stdout","time":137.989946299,"data":"    positive  exit=0 cases=99 failed=0 errored=0\n"}
+,{"stream_name":"stdout","time":137.989950847,"data":"              agent  import: unavailable (no agent ran in the control)\n"}
+,{"stream_name":"stdout","time":137.989956965,"data":"              pytest import: /tmp/swegemma_sandbox_29800dba-55b_9nqi_yv4/workspace/rich/__init__.py\n"}
+,{"stream_name":"stdout","time":137.989962068,"data":"    baseline-fails / gold-passes / grading-import-in-checkout: True\n"}
+,{"stream_name":"stdout","time":137.989966772,"data":"    agent-side import provenance: UNAVAILABLE (no agent ran in the control)\n"}
+,{"stream_name":"stdout","time":137.989971268,"data":"    control patch_rc=0 test_patch_rc=0\n"}
+,{"stream_name":"stdout","time":137.989975932,"data":"    baseline failures: ['test_console::test_tty_compatible']\n"}
+,{"stream_name":"stdout","time":137.989985157,"data":"\n"}
+,{"stream_name":"stdout","time":137.989989697,"data":"  rich_3942 Textualize/rich\n"}
+,{"stream_name":"stdout","time":137.989994114,"data":"    negative  exit=1 cases=8 failed=6 errored=0\n"}
+,{"stream_name":"stdout","time":137.989998219,"data":"              agent  import: unavailable (no agent ran in the control)\n"}
+,{"stream_name":"stdout","time":137.990002894,"data":"              pytest import: /tmp/swegemma_sandbox_cb7391fe-ddf_sauv1peb/workspace/rich/__init__.py\n"}
+,{"stream_name":"stdout","time":137.990007257,"data":"    positive  exit=0 cases=8 failed=0 errored=0\n"}
+,{"stream_name":"stdout","time":137.990011581,"data":"              agent  import: unavailable (no agent ran in the control)\n"}
+,{"stream_name":"stdout","time":137.990016337,"data":"              pytest import: /tmp/swegemma_sandbox_58f2d1f1-b18_zzqdtsd6/workspace/rich/__init__.py\n"}
+,{"stream_name":"stdout","time":137.990021224,"data":"    baseline-fails / gold-passes / grading-import-in-checkout: True\n"}
+,{"stream_name":"stdout","time":137.990025584,"data":"    agent-side import provenance: UNAVAILABLE (no agent ran in the control)\n"}
+,{"stream_name":"stdout","time":137.990030395,"data":"    control patch_rc=0 test_patch_rc=0\n"}
+,{"stream_name":"stdout","time":137.990035114,"data":"    baseline failures: ['test_markdown::test_inline_styles_in_table', 'test_markdown::test_inline_styles_with_justification', 'test_markdown::test_markdown_render', 'test_markdown::test_markdown_table']\n"}
+,{"stream_name":"stdout","time":138.024658717,"data":"prompt leakage: CLEAN (0 lines came from the issue text)\n"}
+,{"stream_name":"stdout","time":138.024691688,"data":"LIMITATION: this is a data-flow check. The subprocess backend runs run_command on the host, so\n"}
+,{"stream_name":"stdout","time":138.024697837,"data":"answer-key files remain reachable; traces must be audited for contamination before trusting a run.\n"}
+,{"stream_name":"stderr","time":141.2721068,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":141.272134863,"data":"  File \"\u003cstring\u003e\", line 1, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":141.272141651,"data":"  File \"/usr/local/lib/python3.12/dist-packages/papermill/execute.py\", line 131, in execute_notebook\n"}
+,{"stream_name":"stderr","time":141.272160338,"data":"    raise_for_execution_errors(nb, output_path)\n"}
+,{"stream_name":"stderr","time":141.272286361,"data":"  File \"/usr/local/lib/python3.12/dist-packages/papermill/execute.py\", line 251, in raise_for_execution_errors\n"}
+,{"stream_name":"stderr","time":141.272461756,"data":"    raise error\n"}
+,{"stream_name":"stderr","time":141.272595077,"data":"papermill.exceptions.PapermillExecutionError: \n"}
+,{"stream_name":"stderr","time":141.272602632,"data":"---------------------------------------------------------------------------\n"}
+,{"stream_name":"stderr","time":141.272608417,"data":"Exception encountered at \"In [7]\":\n"}
+,{"stream_name":"stderr","time":141.272613315,"data":"---------------------------------------------------------------------------\n"}
+,{"stream_name":"stderr","time":141.272617895,"data":"ModuleNotFoundError                       Traceback (most recent call last)\n"}
+,{"stream_name":"stderr","time":141.272622366,"data":"/tmp/ipykernel_16/2180007222.py in \u003ccell line: 0\u003e()\n"}
+,{"stream_name":"stderr","time":141.27262676,"data":"     19 from adk_submission import validate_directory\n"}
+,{"stream_name":"stderr","time":141.272631453,"data":"     20 from swegemma.config import build_submission_limits\n"}
+,{"stream_name":"stderr","time":141.27263643,"data":"---\u003e 21 from swegemma.models.discovery import validate_single_declared_model\n"}
+,{"stream_name":"stderr","time":141.272653131,"data":"     22 LIMITS, GEN_CONSTRAINTS = build_submission_limits()\n"}
+,{"stream_name":"stderr","time":141.272657863,"data":"     23 for n, d in CAND_DIRS.items():\n"}
+,{"stream_name":"stderr","time":141.272661935,"data":"\n"}
+,{"stream_name":"stderr","time":141.272666028,"data":"ModuleNotFoundError: No module named 'swegemma.models.discovery'\n"}
+,{"stream_name":"stderr","time":141.272670596,"data":"\n"}
+,{"stream_name":"stderr","time":144.356099107,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":144.356137074,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":144.575175065,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":144.575203467,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":145.480944129,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":145.892850133,"data":"[NbConvertApp] Writing 117223 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":149.379269329,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":150.701875595,"data":"[NbConvertApp] Writing 619236 bytes to __results__.html\n"}
+]
