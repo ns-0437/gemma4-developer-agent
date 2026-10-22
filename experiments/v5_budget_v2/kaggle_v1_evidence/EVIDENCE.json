@@ -1,0 +1,16 @@
+{
+  "purpose": "Preserve the existing Kaggle version 1 (failed) source before pushing the repaired notebook",
+  "pulled_utc": "2026-10-22",
+  "kernel": "navin03/gemma4-v5-control-replay",
+  "pulled_version": 1,
+  "raw_notebook_sha256": "ce7af85531ae951491bea485b197435656974f216e6720d69dcca18526724304",
+  "raw_metadata_sha256": "24cdc4efdb3fa852cfacc78e9fbacede2ada4d3bbe2ee9e7cf114d6bf0864005",
+  "raw_byte_identity_claim": "NOT claimed; Kaggle reserializes notebook JSON on storage",
+  "comparison_method": "normalized per-cell source string comparison against the local pre-push record (notebook_sha256 55a52256...)",
+  "cells_total": 10,
+  "cells_differing": [
+    7
+  ],
+  "cell_7_diff": "pre-repair cell imports and calls the removed swegemma.models.discovery.validate_single_declared_model; repaired cell removes that import/call and uses declared_model(d) instead, with the obsolete symbol absent",
+  "conclusion": "the pulled v1 source is consistent with the known failed push (local notebook_sha256 55a52256... recorded in LAUNCH_RECORD.json); the only normalized difference from the repaired notebook is the intended fix"
+}
