@@ -1,17 +1,19 @@
 """REAL-PACKAGE execution of the generated candidate-validation cell. No simulation.
 
-Executes the generated cell with explicit identity-gate paths and versions against the real
+Executes the unchanged generated cell with automatic package and version discovery against the real
 adk-submission 0.2.13 and swegemma 0.2.11 sources. swegemma.models.discovery is deliberately
 NOT stubbed and its removed helper is NOT injected, so an obsolete import is a hard failure here.
 
 This is distinct from scripts/test_v5_control_replay_notebook.py, which exercises the gates with
-simulated harness dependencies. Automatic runtime package/version discovery is not tested here.
+simulated harness dependencies. Discovery is tested locally against extracted distributions,
+not against a booted Kaggle environment.
 
     python scripts/test_v5_cands_cell_real.py
 """
 from __future__ import annotations
 
 import json
+import os
 import sys
 import tempfile
 from pathlib import Path
@@ -35,6 +37,8 @@ def cands_cell() -> str:
 
 def run_cell(cell: str, results: Path) -> dict:
     """Execute the complete cell with real packages. Only the host-specific bits are bound."""
+    # Prevent LiteLLM import from fetching a remote pricing map; inference is never called.
+    os.environ['LITELLM_LOCAL_MODEL_COST_MAP'] = 'True'
     # Extracted sources must PRECEDE site-packages, which still holds older versions.
     wanted = [str(COMPILER_SRC), str(SWEGEMMA_SRC), str(EVALCORE_SRC),
               str(ROOT / ".venv/Lib/site-packages")]
@@ -60,12 +64,14 @@ def run_cell(cell: str, results: Path) -> dict:
                 "BUNDLES": {"V5": {"sha256": CAND_SHA}},
                 "COMPILER_FIXTURE": COMPILER_SRC / "adk_submission",
                 "SWEGEMMA_FIXTURE": SWEGEMMA_SRC / "swegemma"}
-    # Bind the two gates to the extracted sources; the gate bodies are untouched.
-    cell = cell.replace("verify_runtime_compiler()",
-                        "verify_runtime_compiler(COMPILER_FIXTURE, '0.2.13')")
-    cell = cell.replace("verify_runtime_swegemma()",
-                        "verify_runtime_swegemma(SWEGEMMA_FIXTURE, '0.2.11')")
-    # The cell unpacks embedded zips; point it at the already-unpacked candidate instead.
+    # Do not rewrite either gate invocation. Imported package paths and distribution
+    # metadata must be discovered through the same code used on Kaggle.
+    import importlib.metadata as metadata
+    for name, version, source in [('adk-submission','0.2.13',COMPILER_SRC),
+                                  ('swegemma','0.2.11',SWEGEMMA_SRC)]:
+        dist = metadata.distribution(name)
+        assert dist.version == version, (name, dist.version)
+        assert Path(dist.locate_file('')).resolve() == source.resolve(), name
     exec(compile(cell, "<generated cands cell>", "exec"), ns)
     return ns
 
@@ -82,6 +88,7 @@ def main() -> None:
         sg = json.loads((res / "swegemma_identity.json").read_text(encoding="utf-8"))
         assert comp["matches"] and comp["version"] == "0.2.13", comp
         assert sg["matches"] and sg["version"] == "0.2.11", sg
+        assert Path(sg['package_path']).resolve() == (SWEGEMMA_SRC/'swegemma').resolve()
         assert ns["declared_model"](CAND) == "gemma-4-31b-it-qat-w4a16-ct"
         print(f"  PASS  cell executed; compiler {comp['version']} ok, swegemma {sg['version']} ok "
               f"({sg['n_modules']} modules), declared model resolved")
