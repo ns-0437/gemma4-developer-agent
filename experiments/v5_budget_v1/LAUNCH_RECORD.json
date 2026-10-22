@@ -1,0 +1,75 @@
+{
+  "purpose": "descriptive four-run V5 baseline on development tasks under V5's own budgets",
+  "kernel": "navin03/gemma4-v5-budget",
+  "kernel_url": "https://www.kaggle.com/code/navin03/gemma4-v5-budget",
+  "kernel_version": 1,
+  "authorization": "one GPU launch of the prepared four-run V5 baseline, user's own words 2026-10-20",
+  "prior_launch_check": "no LAUNCH_RECORD and kernel absent before this push; first and only push",
+  "utc_before_launch": "2026-10-20T04:50:34Z",
+  "pushed_utc": "2026-10-20T04:51:16Z",
+  "push_attempts": 1,
+  "push_result": "Kernel version 1 successfully pushed.",
+  "gpu_quota_before": {
+    "used": "0.00h",
+    "remaining": "30.00h",
+    "total": "30.00h",
+    "refreshAt": "2026-10-24T00:00:00",
+    "source": "python -m kaggle quota"
+  },
+  "disabled_notebook_sha256": "7b85d464b0da6b497b203430ad9254723f310013c5477f6129cfcbdb4524ac63",
+  "disabled_preserved_at": "experiments/v5_budget_v1/v5_budget_disabled.ipynb",
+  "armed_notebook_sha256": "8169ade01183908e54b8eb86b07f2fd98159d674642d03836de866668ceebe79",
+  "metadata_sha256": "824690d81c8cf56b00be60e00865636305fd783595a2721e01fb8e98d7e0b67d",
+  "arming": {
+    "substitutions": 1,
+    "cell_index": 1,
+    "byte_delta": -1,
+    "verified_unchanged": [
+      "all other cell sources",
+      "notebook metadata and structure",
+      "ORDER",
+      "BUDGET",
+      "TASK_IDS",
+      "embedded V5 payload"
+    ],
+    "armed_check": "armed == preserved disabled plus one dispatch substitution; fixture: 4 rows, 4 evaluations in order, 1 server up/down, 8 control arms reproducing"
+  },
+  "candidate": {
+    "key": "V5",
+    "sha256": "527acc5403d21a149ecea9d39d573d3d0f45dc65935d115952b772045339ea33",
+    "note": "exact submitted V5 agent, eval_config.yaml excluded as submission-side"
+  },
+  "order": [
+    [
+      "rich_3278",
+      "V5"
+    ],
+    [
+      "rich_3535",
+      "V5"
+    ],
+    [
+      "rich_3675",
+      "V5"
+    ],
+    [
+      "rich_3942",
+      "V5"
+    ]
+  ],
+  "budgets": {
+    "max_time_minutes": 5.0,
+    "max_turns": 60,
+    "max_tool_calls": 100,
+    "timeout_seconds": 60
+  },
+  "harness": "public development harness, not private-grader-equivalent; deviations in PLAN.md including evaluation event compaction token_threshold 20480",
+  "holdout": "untouched; task_freeze.json unchanged",
+  "not_done": [
+    "retry",
+    "extra experiment",
+    "submission",
+    "scheduled polling"
+  ],
+  "on_completion": "verify download completeness, hash raw artifacts before analysis, report all four outcomes with candidate failures and environment failures separate, use recorded budget-clock timing where available and label unavailable measurements honestly, then state the single best-supported next intervention or that evidence remains insufficient; no score prediction"
+}

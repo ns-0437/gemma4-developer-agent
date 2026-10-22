@@ -1,0 +1,43 @@
+{
+  "notebook_sha256": "7b85d464b0da6b497b203430ad9254723f310013c5477f6129cfcbdb4524ac63",
+  "candidates": {
+    "V5": "527acc5403d21a149ecea9d39d573d3d0f45dc65935d115952b772045339ea33"
+  },
+  "order": [
+    [
+      "rich_3278",
+      "V5"
+    ],
+    [
+      "rich_3535",
+      "V5"
+    ],
+    [
+      "rich_3675",
+      "V5"
+    ],
+    [
+      "rich_3942",
+      "V5"
+    ]
+  ],
+  "dispatch": false,
+  "compiler_version": "0.2.12",
+  "compiler_wheel_sha256": "077c438c426e625b9f722081694e1d32856e6f7e932ef625002fc4a11aabdc10",
+  "tasks": [
+    "rich_3278",
+    "rich_3535",
+    "rich_3675",
+    "rich_3942"
+  ],
+  "budget": {
+    "max_time_minutes": 5.0,
+    "max_tool_calls": 100,
+    "max_turns": 60,
+    "timeout_seconds": 60
+  },
+  "purpose": "descriptive V5 baseline; not a matched control for a later A/B",
+  "harness": "public development harness, not private-grader-equivalent",
+  "docker_image": "gcr.io/kaggle-private-byod/python@sha256:37c64f7dd9c54116ecd1bcc88817c5469b88387388fade02bfa8bf3fc647d461",
+  "metadata_sha256": "824690d81c8cf56b00be60e00865636305fd783595a2721e01fb8e98d7e0b67d"
+}

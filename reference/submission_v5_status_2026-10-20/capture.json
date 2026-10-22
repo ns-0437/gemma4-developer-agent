@@ -1,0 +1,5 @@
+{
+  "checked_at_utc": "2026-10-20T03:57:13.181263+00:00",
+  "sha256": "5b874e7df036b84a3aef406cbbaebbcc5dbffc9a93a0b5209d16c81fe0585f55",
+  "note": "Full API serializer omitted errorDescription; strict observation parser refused. Raw evidence retained without inventing that field."
+}
