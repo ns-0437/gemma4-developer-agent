@@ -1,0 +1,137 @@
+{
+  "harness": "public development harness, CPU only",
+  "claim_boundary": "CPU preflight; does NOT verify GPU inference, vLLM startup or agent behaviour",
+  "module_paths": {
+    "adk_submission": "C:\\Documents2\\KaggleMLChallenge\\The Gemma 4\\experiments\\v5_budget_v2\\compiler_0_2_13\\src\\adk_submission\\__init__.py",
+    "swegemma": "C:\\Documents2\\KaggleMLChallenge\\The Gemma 4\\experiments\\v5_budget_v2\\swegemma_0_2_11\\src\\swegemma\\__init__.py",
+    "swegemma.config": "C:\\Documents2\\KaggleMLChallenge\\The Gemma 4\\experiments\\v5_budget_v2\\swegemma_0_2_11\\src\\swegemma\\config.py",
+    "swegemma.models": "C:\\Documents2\\KaggleMLChallenge\\The Gemma 4\\experiments\\v5_budget_v2\\swegemma_0_2_11\\src\\swegemma\\models\\__init__.py",
+    "google.adk": "C:\\Documents2\\KaggleMLChallenge\\The Gemma 4\\.venv\\Lib\\site-packages\\google\\adk\\__init__.py",
+    "litellm": "C:\\Documents2\\KaggleMLChallenge\\The Gemma 4\\.venv\\Lib\\site-packages\\litellm\\__init__.py",
+    "yaml": "C:\\Documents2\\KaggleMLChallenge\\The Gemma 4\\.venv\\Lib\\site-packages\\yaml\\__init__.py"
+  },
+  "versions": {
+    "adk-submission": "0.2.13",
+    "swegemma": "0.2.11",
+    "google-adk": "1.36.1",
+    "litellm": "1.102.1"
+  },
+  "compiler_source_version_declared": "0.2.13",
+  "compiler_identity_matches_pinned": true,
+  "compiler_wheel_sha256": "f156f0bd84580ccb9334726d114d7a5481f16d3a6e2887cc4d276ced0ef8d99d",
+  "removed_symbol_present": false,
+  "declared_model": "gemma-4-31b-it-qat-w4a16-ct",
+  "candidate_sha256": "527acc5403d21a149ecea9d39d573d3d0f45dc65935d115952b772045339ea33",
+  "compiled_agent": "swe_coder",
+  "compiled_sub_agents": [
+    "code_analyzer"
+  ],
+  "budget_requested": {
+    "max_time_minutes": 5.0,
+    "max_turns": 60,
+    "max_tool_calls": 100,
+    "timeout_seconds": 60
+  },
+  "effective_limits": {
+    "time_minutes": 5.0,
+    "turns": 60,
+    "tool_calls": 100,
+    "command_timeout_seconds": 60
+  },
+  "all_four_limits_asserted": true,
+  "saved_evidence_consistency": [
+    {
+      "task": "rich_3278",
+      "arm": "baseline",
+      "parse_error": null,
+      "duplicates": [],
+      "nodes_match_saved": true,
+      "n_nodes": 23,
+      "skipped": 0
+    },
+    {
+      "task": "rich_3278",
+      "arm": "reference",
+      "parse_error": null,
+      "duplicates": [],
+      "nodes_match_saved": true,
+      "n_nodes": 23,
+      "skipped": 0
+    },
+    {
+      "task": "rich_3535",
+      "arm": "baseline",
+      "parse_error": null,
+      "duplicates": [],
+      "nodes_match_saved": true,
+      "n_nodes": 8,
+      "skipped": 0
+    },
+    {
+      "task": "rich_3535",
+      "arm": "reference",
+      "parse_error": null,
+      "duplicates": [],
+      "nodes_match_saved": true,
+      "n_nodes": 8,
+      "skipped": 0
+    },
+    {
+      "task": "rich_3675",
+      "arm": "baseline",
+      "parse_error": null,
+      "duplicates": [],
+      "nodes_match_saved": true,
+      "n_nodes": 99,
+      "skipped": 0
+    },
+    {
+      "task": "rich_3675",
+      "arm": "reference",
+      "parse_error": null,
+      "duplicates": [],
+      "nodes_match_saved": true,
+      "n_nodes": 99,
+      "skipped": 0
+    },
+    {
+      "task": "rich_3942",
+      "arm": "baseline",
+      "parse_error": null,
+      "duplicates": [],
+      "nodes_match_saved": true,
+      "n_nodes": 8,
+      "skipped": 0
+    },
+    {
+      "task": "rich_3942",
+      "arm": "reference",
+      "parse_error": null,
+      "duplicates": [],
+      "nodes_match_saved": true,
+      "n_nodes": 8,
+      "skipped": 0
+    }
+  ],
+  "saved_evidence_label": "SAVED-EVIDENCE CONSISTENCY ONLY: parses the stored JUnit XML and compares it with the stored node maps. This is NOT a fresh control replay; no sandbox is created and no test is executed. Fresh replay is the separate CPU notebook.",
+  "saved_evidence_ok": 8,
+  "negative_test_changed_outcome_detected": true,
+  "declared_model_edge_cases": {
+    "none": {
+      "raised": true,
+      "message": "no model declared in the candidate configuration"
+    },
+    "multi": {
+      "raised": true,
+      "message": "ambiguous model declaration: ['m1', 'm2']"
+    },
+    "blank": {
+      "raised": true,
+      "message": "blank model string declared in a.yaml"
+    }
+  },
+  "declared_model_scope": "Sufficient for THIS frozen candidate's YAML shape. Broader equivalence with the removed swegemma helper is NOT established: that helper's discovery rules over arbitrary submissions were not reproduced or tested.",
+  "swegemma_identity_matches_pinned": true,
+  "swegemma_wheel_sha256": "9ad876581f3acde8ec3c369858f0834e2b9f41a3cffce3ca42f09cb090aea9d3",
+  "private_grader_versions": "UNKNOWN; not observed by any check here"
+}
