@@ -25,6 +25,9 @@ IMAGE = ('gcr.io/kaggle-private-byod/python@sha256:'
 ROOT = Path(__file__).resolve().parent.parent
 EXP = ROOT / 'experiments/v5_budget_v1'
 OUT_EXP = ROOT / 'experiments/v5_budget_v1'      # this follow-up's own records
+OUT_NAME = 'v5_budget'
+NB_FILENAME = 'v5_budget.ipynb'
+KERNEL_ID = 'navin03/gemma4-v5-budget'
 SOURCE = ROOT / 'experiments/v5_budget_v1/candidate_V5'
 TASKS = ['rich_3278', 'rich_3535', 'rich_3675', 'rich_3942']
 ORDER = [('rich_3278','V5'), ('rich_3535','V5'),
@@ -185,8 +188,8 @@ def main():
     # The shared generator builds two candidate paths before CUSTOMIZE_CELLS runs; this
     # placeholder is discarded there, where P.CANDIDATES becomes the single V5 arm.
     M.SECOND_KEY, M.SECOND_EXP, M.SECOND_DIR_NAME = '_unused', EXP, 'candidate_V5'
-    M.OUT_NAME, M.NB_FILENAME = 'v5_budget', 'v5_budget.ipynb'
-    M.KERNEL_ID, M.KERNEL_TITLE = 'navin03/gemma4-v5-budget', 'gemma4-v5-budget'
+    M.OUT_NAME, M.NB_FILENAME = OUT_NAME, NB_FILENAME
+    M.KERNEL_ID, M.KERNEL_TITLE = KERNEL_ID, KERNEL_ID.split('/')[-1]
     M.CFG_LABEL, M.ORDER_EXPR = 'v5 budget diagnostic:', 'ORDER = ' + repr(ORDER)
     M.RUN_COUNT_PHRASE = 'the four runs will NOT'
     M.ARM_FOR_LAUNCH = False
@@ -219,7 +222,7 @@ and time-budget failures, and environment failures separately; every attempted r
 visible. Four tasks from one repository cannot predict the hidden set or a public score.
 """
     M.main()
-    raw = (ROOT/'notebooks/v5_budget/v5_budget.ipynb').read_bytes()
+    raw = (ROOT/'notebooks'/OUT_NAME/NB_FILENAME).read_bytes()
     assert raw.count(b'DISPATCH_CONFIRM = False') == 1
     assert b'DISPATCH_CONFIRM = True' not in raw
     compiler_pin = json.loads((ROOT / 'experiments/v5_budget_v2/compiler_0_2_13_hashes.json')
@@ -233,7 +236,7 @@ visible. Four tasks from one repository cannot predict the hidden set or a publi
     record['purpose'] = 'descriptive V5 baseline; not a matched control for a later A/B'
     record['harness'] = 'public development harness, not private-grader-equivalent'
     record['docker_image'] = IMAGE
-    meta_path = ROOT/'notebooks/v5_budget/kernel-metadata.json'
+    meta_path = ROOT/'notebooks'/OUT_NAME/'kernel-metadata.json'
     meta = json.loads(meta_path.read_text())
     meta['docker_image'] = IMAGE
     meta_path.write_text(json.dumps(meta, indent=2) + chr(10))

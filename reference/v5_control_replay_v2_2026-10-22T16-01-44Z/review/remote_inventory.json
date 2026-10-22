@@ -1,0 +1,136 @@
+[
+  {
+    "files": [
+      {
+        "name": "agent.yaml",
+        "size": 869,
+        "creationDate": "2:07 pm, Thursday 22 October 2026 UTC"
+      },
+      {
+        "name": "sampling.yaml",
+        "size": 894,
+        "creationDate": "2:07 pm, Thursday 22 October 2026 UTC"
+      },
+      {
+        "name": "analyzer.md",
+        "size": 886,
+        "creationDate": "2:07 pm, Thursday 22 October 2026 UTC"
+      },
+      {
+        "name": "system.md",
+        "size": 880,
+        "creationDate": "2:07 pm, Thursday 22 October 2026 UTC"
+      },
+      {
+        "name": "code_analyzer.yaml",
+        "size": 915,
+        "creationDate": "2:07 pm, Thursday 22 October 2026 UTC"
+      },
+      {
+        "name": "compiler_identity.json",
+        "size": 889,
+        "creationDate": "2:07 pm, Thursday 22 October 2026 UTC"
+      },
+      {
+        "name": "rich_3278__baseline.json",
+        "size": 929,
+        "creationDate": "2:07 pm, Thursday 22 October 2026 UTC"
+      },
+      {
+        "name": "rich_3278__baseline.junit.xml",
+        "size": 943,
+        "creationDate": "2:07 pm, Thursday 22 October 2026 UTC"
+      },
+      {
+        "name": "rich_3278__reference.json",
+        "size": 932,
+        "creationDate": "2:07 pm, Thursday 22 October 2026 UTC"
+      },
+      {
+        "name": "rich_3278__reference.junit.xml",
+        "size": 946,
+        "creationDate": "2:07 pm, Thursday 22 October 2026 UTC"
+      },
+      {
+        "name": "rich_3535__baseline.json",
+        "size": 929,
+        "creationDate": "2:07 pm, Thursday 22 October 2026 UTC"
+      },
+      {
+        "name": "rich_3535__baseline.junit.xml",
+        "size": 943,
+        "creationDate": "2:07 pm, Thursday 22 October 2026 UTC"
+      },
+      {
+        "name": "rich_3535__reference.json",
+        "size": 932,
+        "creationDate": "2:07 pm, Thursday 22 October 2026 UTC"
+      },
+      {
+        "name": "rich_3535__reference.junit.xml",
+        "size": 946,
+        "creationDate": "2:07 pm, Thursday 22 October 2026 UTC"
+      },
+      {
+        "name": "rich_3675__baseline.json",
+        "size": 929,
+        "creationDate": "2:07 pm, Thursday 22 October 2026 UTC"
+      },
+      {
+        "name": "rich_3675__baseline.junit.xml",
+        "size": 943,
+        "creationDate": "2:07 pm, Thursday 22 October 2026 UTC"
+      },
+      {
+        "name": "rich_3675__reference.json",
+        "size": 932,
+        "creationDate": "2:07 pm, Thursday 22 October 2026 UTC"
+      },
+      {
+        "name": "rich_3675__reference.junit.xml",
+        "size": 946,
+        "creationDate": "2:07 pm, Thursday 22 October 2026 UTC"
+      },
+      {
+        "name": "rich_3942__baseline.json",
+        "size": 929,
+        "creationDate": "2:07 pm, Thursday 22 October 2026 UTC"
+      },
+      {
+        "name": "rich_3942__baseline.junit.xml",
+        "size": 944,
+        "creationDate": "2:07 pm, Thursday 22 October 2026 UTC"
+      },
+      {
+        "name": "rich_3942__reference.json",
+        "size": 932,
+        "creationDate": "2:07 pm, Thursday 22 October 2026 UTC"
+      },
+      {
+        "name": "rich_3942__reference.junit.xml",
+        "size": 946,
+        "creationDate": "2:07 pm, Thursday 22 October 2026 UTC"
+      },
+      {
+        "name": "control_recheck.json",
+        "size": 884,
+        "creationDate": "2:07 pm, Thursday 22 October 2026 UTC"
+      },
+      {
+        "name": "preconditions.json",
+        "size": 877,
+        "creationDate": "2:07 pm, Thursday 22 October 2026 UTC"
+      },
+      {
+        "name": "setup_observations.json",
+        "size": 893,
+        "creationDate": "2:07 pm, Thursday 22 October 2026 UTC"
+      },
+      {
+        "name": "swegemma_identity.json",
+        "size": 889,
+        "creationDate": "2:07 pm, Thursday 22 October 2026 UTC"
+      }
+    ]
+  }
+]

@@ -1,0 +1,72 @@
+{
+  "purpose": "repaired four-run V5 baseline GPU launch: exact V5 agent under V5's own budgets",
+  "kernel": "navin03/gemma4-v5-budget-v2",
+  "kernel_url": "https://www.kaggle.com/code/navin03/gemma4-v5-budget-v2",
+  "kernel_version": 1,
+  "authorization": "one four-run GPU launch of the repaired V5 baseline, user's own words 2026-10-22",
+  "prior_launch_check": "no LAUNCH_RECORD in experiments/v5_budget_v2/gpu_baseline and kernel absent before this push; first and only push",
+  "cpu_replay_evidence": "reference/v5_control_replay_v2_2026-10-22T16-01-44Z/review/REPORT.md; both runtime identity gates passed, all eight control arms accepted with cleanup, 27 raw files hashed and rechecked, 0 mismatches",
+  "utc_before_push": "2026-10-22T16:09:53Z",
+  "pushed_utc": "2026-10-22T16:10:30Z",
+  "push_attempts": 1,
+  "push_result": "Kernel version 1 successfully pushed.",
+  "disabled_notebook_sha256": "70f9d5d98baa44ae77396013cc036bbec6a6a3599f43a9cd55a54dee1bc10989",
+  "disabled_preserved_at": "experiments/v5_budget_v2/gpu_baseline/v5_budget_v2_disabled.ipynb",
+  "armed_notebook_sha256": "066b5fb71f8d432826fe251b69a88a54dbf7725ce756427f2e8bdb1eb4f1fdc9",
+  "metadata_sha256": "454a39b7a8716140a38ff54181b435e8d9521dd78ca6e83c22f3797a79dad9d1",
+  "arming": {
+    "substitutions": 1,
+    "cell_index": 1,
+    "byte_delta": -1,
+    "verified_unchanged": [
+      "all other cell sources",
+      "notebook metadata and structure",
+      "ORDER",
+      "BUDGET",
+      "embedded V5 payload"
+    ],
+    "armed_check": "armed == preserved disabled plus exactly one dispatch substitution"
+  },
+  "candidate": {
+    "key": "V5",
+    "sha256": "527acc5403d21a149ecea9d39d573d3d0f45dc65935d115952b772045339ea33"
+  },
+  "order": [
+    [
+      "rich_3278",
+      "V5"
+    ],
+    [
+      "rich_3535",
+      "V5"
+    ],
+    [
+      "rich_3675",
+      "V5"
+    ],
+    [
+      "rich_3942",
+      "V5"
+    ]
+  ],
+  "budgets": {
+    "max_time_minutes": 5.0,
+    "max_turns": 60,
+    "max_tool_calls": 100,
+    "timeout_seconds": 60
+  },
+  "harness": "public development harness, not private-grader-equivalent; does not predict a leaderboard score",
+  "holdout": "untouched; task_freeze.json unchanged (220869409441c04d...)",
+  "gpu_quota_before": {
+    "used": "0.08h",
+    "remaining": "29.92h",
+    "refreshAt": "2026-10-24T00:00:00"
+  },
+  "not_done": [
+    "retry",
+    "additional experiment",
+    "competition submission",
+    "scheduled polling"
+  ],
+  "on_completion": "preserve and hash outputs, verify completeness and identity, report all four rows: verified solves, graded failures, ungraded candidate failures, missing runs and environment failures, distinguishing agent-budget time from trace-relative time"
+}

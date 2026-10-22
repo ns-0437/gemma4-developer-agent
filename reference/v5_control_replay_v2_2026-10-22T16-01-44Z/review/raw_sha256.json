@@ -1,0 +1,31 @@
+{
+  "files": {
+    "gemma4-v5-control-replay.log": "62cc614c6ca447fd0013e586c8cc754436b2c17c55aa86164d0370af6b127af1",
+    "candidates/V5/agent.yaml": "8e890bec4c5e146402c6ef9ee22eb40388207ad8416cfd3405e040aa038ffb83",
+    "candidates/V5/configs/sampling.yaml": "0b754a9811c6a40198102c45f7cee813f43e3fd97edfef2b6da5deeffb6fa3a8",
+    "candidates/V5/prompts/analyzer.md": "5011d37145d981e616d58fb56c5191ccbf336574fa01b3f65c2feab7d697b3a3",
+    "candidates/V5/prompts/system.md": "39b2541c2220cc7655c576bb4ae7ac7e03200a72f2f1e518313068fc93be3b91",
+    "candidates/V5/sub_agents/code_analyzer.yaml": "396b75ffd1315ef93f3d1806b814a49758b9f8dd8b8caef6a092bd6cb2c2d9bb",
+    "pilot/compiler_identity.json": "383b947d0d08bf19f56d5c61558cac45f72348d6d60c0bdf37d642c94ac8f35a",
+    "pilot/control_recheck.json": "9bcf9f4f06a02e23a02792170185b066111b83833c47dbc3317de349f321acbe",
+    "pilot/preconditions.json": "9b8b15d226114d5ba3cc34fd36b0e0f90db2df84d0d8a4766062413543b9ac83",
+    "pilot/setup_observations.json": "d0d4fe37fd37aadf1bf3f8794734ee2e21755f9bd9558ef10dcf8b9ab535b309",
+    "pilot/swegemma_identity.json": "f1ac768f70d93bef88afe4b924a50a7eb5f0d04f16718a1839dba8266c72a22d",
+    "pilot/control_evidence/rich_3278__baseline.json": "9edde82b26fdc4a6ae43fb16e623edc159ae5b8bc125ea78325612e71aa34a80",
+    "pilot/control_evidence/rich_3278__baseline.junit.xml": "840f41e300b4cacf4504523fa98d2447dc223575d206ce9359ee5c034384dc34",
+    "pilot/control_evidence/rich_3278__reference.json": "11367c37ebdcebf629a1c59a264473120e56b2e2c8e758a641b7a49d73566122",
+    "pilot/control_evidence/rich_3278__reference.junit.xml": "12c1e00a310c9a98f23241f25747e448917ff393d0d071759893ecca80e1224f",
+    "pilot/control_evidence/rich_3535__baseline.json": "fbb663de29cb9fd7b5a919bd7ebcef7116da35b464e7ba541b370e1ce8119499",
+    "pilot/control_evidence/rich_3535__baseline.junit.xml": "57740a6221a216d72abdd276f60605a649e5d2e089503c61738ce263eb977fbb",
+    "pilot/control_evidence/rich_3535__reference.json": "2c85413d978adc547aa3ba5d1b908bcb8605f4f860993feaf6603e68beffdd95",
+    "pilot/control_evidence/rich_3535__reference.junit.xml": "26a4aa97496293768cb1164d823cc91086a22262c26ec58f41d9d6ca8ee09495",
+    "pilot/control_evidence/rich_3675__baseline.json": "c63e04768ecd98386fcc6b148458356c627cdfb3564875e3cf32fc6bf842069f",
+    "pilot/control_evidence/rich_3675__baseline.junit.xml": "6302d49edd83772edc0b8855289a6c809dc8c3b841dd2f470db47a152b6e0021",
+    "pilot/control_evidence/rich_3675__reference.json": "2e00b47031e376e0da84e261c6fc0b1a92ec5f352602a6e97e0f3cf711faa330",
+    "pilot/control_evidence/rich_3675__reference.junit.xml": "8298c5b8531f9e89983edab948efa25eb5d2ed6696fbea1d2bab9d4f144b8912",
+    "pilot/control_evidence/rich_3942__baseline.json": "06de0a1507c930ddc2ba1c231cacd40e6a9f57eec31199ec05798de773a33258",
+    "pilot/control_evidence/rich_3942__baseline.junit.xml": "f7275ff13565d394658e719676aa97242726a76e9fbb06b26fd69adf166706fc",
+    "pilot/control_evidence/rich_3942__reference.json": "80fcc3038192502d24738a177766e1291d26e8a979d6cb129aa3e27223763eaf",
+    "pilot/control_evidence/rich_3942__reference.junit.xml": "836deb091bd3b60bf6196d23ec517d25a130903b2e0ba34dfc2b4cba1f1981bd"
+  }
+}

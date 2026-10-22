@@ -1,0 +1,113 @@
+{
+  "passed": true,
+  "identity": {
+    "compiler": {
+      "version": "0.2.13",
+      "modules": 20,
+      "matches": true
+    },
+    "swegemma": {
+      "version": "0.2.11",
+      "modules": 34,
+      "matches": true
+    }
+  },
+  "preconditions": 4,
+  "arms": [
+    {
+      "task": "rich_3278",
+      "arm": "baseline",
+      "pytest_exit": 1,
+      "test_patch_rc": 0,
+      "patch_rc": null,
+      "cleanup_ok": true,
+      "agrees_with_saved": true,
+      "workspace_probe_rc": 0,
+      "n_targets": 16
+    },
+    {
+      "task": "rich_3278",
+      "arm": "reference",
+      "pytest_exit": 0,
+      "test_patch_rc": 0,
+      "patch_rc": 0,
+      "cleanup_ok": true,
+      "agrees_with_saved": true,
+      "workspace_probe_rc": 0,
+      "n_targets": 16
+    },
+    {
+      "task": "rich_3535",
+      "arm": "baseline",
+      "pytest_exit": 1,
+      "test_patch_rc": 0,
+      "patch_rc": null,
+      "cleanup_ok": true,
+      "agrees_with_saved": true,
+      "workspace_probe_rc": 0,
+      "n_targets": 1
+    },
+    {
+      "task": "rich_3535",
+      "arm": "reference",
+      "pytest_exit": 0,
+      "test_patch_rc": 0,
+      "patch_rc": 0,
+      "cleanup_ok": true,
+      "agrees_with_saved": true,
+      "workspace_probe_rc": 0,
+      "n_targets": 1
+    },
+    {
+      "task": "rich_3675",
+      "arm": "baseline",
+      "pytest_exit": 1,
+      "test_patch_rc": 0,
+      "patch_rc": null,
+      "cleanup_ok": true,
+      "agrees_with_saved": true,
+      "workspace_probe_rc": 0,
+      "n_targets": 1
+    },
+    {
+      "task": "rich_3675",
+      "arm": "reference",
+      "pytest_exit": 0,
+      "test_patch_rc": 0,
+      "patch_rc": 0,
+      "cleanup_ok": true,
+      "agrees_with_saved": true,
+      "workspace_probe_rc": 0,
+      "n_targets": 1
+    },
+    {
+      "task": "rich_3942",
+      "arm": "baseline",
+      "pytest_exit": 1,
+      "test_patch_rc": 0,
+      "patch_rc": null,
+      "cleanup_ok": true,
+      "agrees_with_saved": true,
+      "workspace_probe_rc": 0,
+      "n_targets": 6
+    },
+    {
+      "task": "rich_3942",
+      "arm": "reference",
+      "pytest_exit": 0,
+      "test_patch_rc": 0,
+      "patch_rc": 0,
+      "cleanup_ok": true,
+      "agrees_with_saved": true,
+      "workspace_probe_rc": 0,
+      "n_targets": 6
+    }
+  ],
+  "raw_files": 27,
+  "remote_entries": 26,
+  "inventory": "basename multiset matched; remote API provides no full paths and reported sizes differ from downloaded bytes, so remote byte completeness is unverified",
+  "source": "all 10 normalized cell sources and notebook metadata match repaired launch",
+  "version_limitation": "output endpoint ignores version suffix; current source matched repaired v2 and evidence contains its runtime gates",
+  "raw_unchanged": true,
+  "model_evaluation": "none; CPU source has no server or evaluation cells, no run directories or exposure ledger"
+}
