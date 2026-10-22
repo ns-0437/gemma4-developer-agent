@@ -9,6 +9,11 @@ import sys
 
 ROOT = Path(__file__).resolve().parent.parent
 CHECKS = (
+    ('scripts/test_generation_guard.py',),
+    ('scripts/test_verify_v5_dependencies.py',),
+    ('scripts/verify_v5_dependencies.py',),
+    ('scripts/test_verify_v5_control_packet.py',),
+    ('scripts/verify_v5_control_packet.py',),
     ('scripts/test_v5_control_replay_notebook.py',),
     ('scripts/test_verify_v5_submission.py',),
     ('scripts/verify_v5_submission.py',),

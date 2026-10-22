@@ -26,9 +26,10 @@ claimed here. Private-grader dependency versions remain unknown.
   verifies eight controls, no model dispatch, and dependency-drift refusals.
   Included in the standard offline CI suite.
 - `python -B scripts/test_v5_cands_cell_real.py`: actual extracted package sources
-  and locally installed dependencies; explicit gate paths and versions. It does
-  not test automatic runtime package discovery. Restoring the removed import
-  fails. LiteLLM may attempt a cost-map fetch during import and fall back locally.
+  and locally installed dependencies. The unchanged generated cell discovers
+  package paths and versions automatically from the extracted distributions.
+  Restoring the removed import fails. LiteLLM pricing-map downloads are disabled.
+  This validates local discovery, not the unrun Kaggle runtime.
 - `python -B scripts/preflight_v5_budget_v2.py`: stored-evidence consistency,
   candidate compilation, and effective budget checks. This is not fresh replay.
 
@@ -46,6 +47,28 @@ that old notebook to 55a52256..., while NOTEBOOK_PREPARED pins the repaired byte
 
 A separately authorized CPU replay must pass both runtime identity gates and
 all eight real control arms before preparing a GPU baseline. Preserve the frozen
-V5 agent, task freeze, raw evidence and failed GPU notebook. Five commits here
-record engineering work; they are not five Kaggle submissions or measured score
-improvements.
+V5 agent, task freeze, raw evidence and failed GPU notebook. These engineering
+checks are not Kaggle submissions or measured score improvements.
+
+## Artifact protection and portable CI checks
+
+Both V5 generators now refuse before generation when their output experiment
+has a LAUNCH_RECORD.json, including an empty or malformed receipt. Their existing
+default destinations have launch records, so invoking them refuses intentionally.
+Prepare an explicitly versioned destination before regenerating; do not remove
+a receipt or overwrite the failed notebook to make generation succeed.
+
+The shared offline suite now includes 31 checks. New stdlib-only checks verify:
+
+- generation refuses after launch without changing the receipt;
+- dependency manifest digests, metadata versions and every Python module, with
+  missing, extra and changed modules reported separately, without imports;
+- the repaired CPU notebook and metadata hashes, exact V5 payload, development
+  tasks, five-minute budget, disabled dispatch, and gates before control replay.
+
+The generated replay fixture additionally requires all eight arms accepted with
+cleanup confirmed. Six independent failure cases cover compiler version/file
+changes and swegemma version/changed/missing/extra modules; each must persist a
+refusal before controls or model dispatch. These simulate services, so they do
+not replace the fresh CPU replay. The real-package discovery test remains a
+separate dependency-equipped local check; CI does not install the ML stack.
