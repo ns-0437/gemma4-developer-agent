@@ -15,6 +15,7 @@ import sys
 from pathlib import Path
 
 import make_compare_notebook as M
+from generation_guard import require_unlaunched
 import make_v5_budget_notebook as FV
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -32,6 +33,7 @@ DROP_MARKERS = ('# vLLM with the public harness serving configuration',
 
 
 def main() -> None:
+    require_unlaunched(OUT_EXP)
     assert len(sys.argv) == 1, 'Preparation only'
 
     M.TASKS = FV.TASKS

@@ -17,6 +17,7 @@ import json
 import sys
 from pathlib import Path
 import make_compare_notebook as M
+from generation_guard import require_unlaunched
 
 IMAGE = ('gcr.io/kaggle-private-byod/python@sha256:'
          '37c64f7dd9c54116ecd1bcc88817c5469b88387388fade02bfa8bf3fc647d461')
@@ -176,6 +177,7 @@ def specialize(P):
     P.SERVER = P.SERVER.replace('which is what makes A and B differ.', 'Single arm: the exact V5 agent under V5 budgets.')
 
 def main():
+    require_unlaunched(OUT_EXP)
     expected = {'V5': '527acc5403d21a149ecea9d39d573d3d0f45dc65935d115952b772045339ea33'}
     for key, folder in [('V5', SOURCE)]:
         assert M.P.bundle(folder)[1] == expected[key], 'Candidate drift'
