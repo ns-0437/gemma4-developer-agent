@@ -30,8 +30,13 @@ def hook(fault=None):
         if "verify_runtime_compiler()" in cell:
             ns["COMPILER_FIXTURE"] = COMPILER
             ns["SWEGEMMA_FIXTURE"] = SWEGEMMA
+            compiler_version = '0.2.12' if fault == 'compiler_version' else '0.2.13'
             cell = cell.replace("verify_runtime_compiler()",
-                                "verify_runtime_compiler(COMPILER_FIXTURE, '0.2.13')")
+                                f"verify_runtime_compiler(COMPILER_FIXTURE, {compiler_version!r})")
+            if fault == 'compiler_module':
+                cell = cell.replace('verify_runtime_compiler(COMPILER_FIXTURE',
+                                    "EXPECTED_COMPILER_FILES['compiler.py'] = 'changed'\n"
+                                    'verify_runtime_compiler(COMPILER_FIXTURE', 1)
             version = "0.2.10" if fault == "swegemma_version" else "0.2.11"
             cell = cell.replace("verify_runtime_swegemma()",
                                 f"verify_runtime_swegemma(SWEGEMMA_FIXTURE, {version!r})")
@@ -40,6 +45,11 @@ def hook(fault=None):
                     "verify_runtime_swegemma(SWEGEMMA_FIXTURE",
                     "EXPECTED_SWEGEMMA_FILES['config.py'] = 'changed'\n"
                     "verify_runtime_swegemma(SWEGEMMA_FIXTURE", 1)
+            if fault in ('swegemma_missing', 'swegemma_extra'):
+                mutation = ("EXPECTED_SWEGEMMA_FILES['missing.py'] = 'absent'" if fault == 'swegemma_missing'
+                            else "EXPECTED_SWEGEMMA_FILES.pop('config.py')")
+                cell = cell.replace('verify_runtime_swegemma(SWEGEMMA_FIXTURE',
+                                    mutation + "\nverify_runtime_swegemma(SWEGEMMA_FIXTURE", 1)
         return cell
     return edit
 
@@ -59,6 +69,8 @@ def main():
         arms = ns["CONTROL_RECHECK"]
         counts = H.counts()
         assert len(arms) == 8, f"expected eight control arms, got {len(arms)}"
+        assert all(arm['agrees_with_saved'] is True for arm in arms), 'an arm was rejected'
+        assert all(arm['cleanup_ok'] is True for arm in arms), 'cleanup not confirmed' 
         assert counts["evaluations"] == 0 and counts["server_created"] == 0, counts
         rec = json.loads((work / "working" / "pilot" / "swegemma_identity.json")
                          .read_text(encoding="utf-8"))
@@ -68,34 +80,40 @@ def main():
               f"{rec['n_modules']} modules, identity persisted")
         print("  PASS  no evaluation, no server, no evaluator dispatch")
 
-    for fault, label in (("swegemma_module", "a changed swegemma module"),
-                         ("swegemma_version", "a wrong swegemma version")):
-        print(f"2. {label} refuses before sandbox creation")
+    for fault in ('swegemma_module', 'swegemma_version', 'swegemma_missing',
+                  'swegemma_extra', 'compiler_version', 'compiler_module'):
         with tempfile.TemporaryDirectory() as tmp:
             work = Path(tmp) / fault
-            refused = None
+            compiler = fault.startswith('compiler_')
+            expected = 'Runtime compiler drift' if compiler else 'Runtime swegemma drift'
             try:
                 run(work, fault)
             except AssertionError as exc:
-                refused = str(exc)
-            assert refused, f"gate did NOT refuse for {label}"
-            assert "Runtime swegemma drift" in refused, refused[:160]
-            counts = H.counts()
-            assert counts["server_created"] == 0 and counts["evaluations"] == 0, counts
-            # the control cell must not have run at all, so no recheck file exists
-            assert not (work / "working" / "pilot" / "control_recheck.json").exists(), \
-                "controls ran despite a refused swegemma identity"
-            rec = json.loads((work / "working" / "pilot" / "swegemma_identity.json")
-                             .read_text(encoding="utf-8"))
-            assert rec["matches"] is False, rec
-            if fault == "swegemma_module":
-                assert rec["changed"], "changed-module detail not persisted"
-                assert rec["version_ok"] is True and rec["hashes_ok"] is False, rec
+                assert expected in str(exc), str(exc)
             else:
-                assert rec["version_ok"] is False, rec
-            print(f"  PASS  refused, 0 sandboxes, no control_recheck.json, details persisted "
-                  f"(version_ok={rec['version_ok']} hashes_ok={rec['hashes_ok']} "
-                  f"changed={rec['changed'][:2]})")
+                raise AssertionError('gate did not refuse: ' + fault)
+            counts = H.counts()
+            assert counts['server_created'] == 0 and counts['evaluations'] == 0, counts
+            pilot = work / 'working' / 'pilot'
+            assert not (pilot / 'control_recheck.json').exists(), 'controls ran after refusal'
+            identity = 'compiler_identity.json' if compiler else 'swegemma_identity.json'
+            rec = json.loads((pilot / identity).read_text(encoding='utf-8'))
+            assert rec['matches'] is False
+            if compiler:
+                assert not (pilot / 'swegemma_identity.json').exists(), 'later gate ran after refusal'
+                if fault == 'compiler_version': assert rec['version'] == '0.2.12'
+                else: assert rec['version'] == '0.2.13'
+            else:
+                expected_field = {'swegemma_module':'changed','swegemma_missing':'missing',
+                                  'swegemma_extra':'extra'}.get(fault)
+                if expected_field:
+                    assert rec['version_ok'] is True and rec['hashes_ok'] is False, rec
+                    assert rec[expected_field], rec
+                    for field in {'missing','extra','changed'} - {expected_field}:
+                        assert rec[field] == [], rec
+                else:
+                    assert rec['version_ok'] is False and rec['hashes_ok'] is True, rec
+            print('  PASS:', fault, 'refused before controls; identity evidence persisted')
 
     print("\nPASS: both runtime identity gates are embedded in the notebook; matching identities "
           "reach the control stage and either kind of swegemma drift refuses before any sandbox "
