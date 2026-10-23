@@ -1,74 +1,64 @@
-# V5 measurement repair: October 22, 2026
+# V5 measurement status and safeguards: October 23, 2026
 
-V5 scored 0.13 in the saved October 20 API response (submission 57378663).
-The five V5 agent files are identical to frozen ON; only evaluation limits were
-added to the submission ZIP. This is not a causal attribution of the score change.
+The last saved V5 competition score is 0.13 (submission 57378663). V5 adds
+evaluation limits to the frozen ON agent. No score change is inferred from
+repository commits, control tests, or the running baseline experiment.
 
-## Execution state
+## What ran
 
-The four-task GPU baseline failed before evaluation on October 20. The public
-wheelhouse supplied swegemma 0.2.11, which removed models.discovery, and
-adk-submission 0.2.13 instead of the earlier compiler baseline.
+The October 20 GPU baseline and first CPU replay both failed at the removed
+swegemma.models.discovery import. The repaired CPU replay subsequently passed:
+compiler 0.2.13 and swegemma 0.2.11 module identities matched; all eight controls
+and four preconditions passed with cleanup. Its 27 raw files are preserved under
+reference/v5_control_replay_v2_2026-10-22T16-01-44Z. Remote basenames matched;
+remote byte completeness remains unverified because listed sizes disagreed.
 
-CPU replay version 1 then failed at the same obsolete import. The replacement
-had only been implemented in a local preflight, not in the generated notebook.
-Neither runtime identity gate nor any of its eight control arms ran.
+The repaired GPU baseline was pushed once on October 22 at 16:10:30Z, kernel
+navin03/gemma4-v5-budget-v2, version 1. Its launch receipt is under
+experiments/v5_budget_v2/gpu_baseline. Armed SHA-256:
+066b5fb71f8d432826fe251b69a88a54dbf7725ce756427f2e8bdb1eb4f1fdc9.
+The preserved disabled SHA-256 is
+70f9d5d98baa44ae77396013cc036bbec6a6a3599f43a9cd55a54dee1bc10989.
 
-The repaired CPU notebook is disabled, SHA-256
-`bedb8c0ab57eb5c5707aad8c1ff247987c8a30ecb2350995d675b56bb11cd9a9`.
-It now embeds the replacement and runs the compiler and swegemma identity gates
-before candidate validation. No repaired CPU launch or GPU baseline result is
-claimed here. Private-grader dependency versions remain unknown.
+No new Kaggle status request was made while preparing these seven commits.
+This document does not claim that the GPU run is complete or that its candidate
+improved. A later read-only status check and artifact review are still needed.
 
-## Reproduce local checks
+## Reproduce verification
 
-- `python -B scripts/test_v5_control_replay_notebook.py`: simulated services;
-  verifies eight controls, no model dispatch, and dependency-drift refusals.
-  Included in the standard offline CI suite.
-- `python -B scripts/test_v5_cands_cell_real.py`: actual extracted package sources
-  and locally installed dependencies. The unchanged generated cell discovers
-  package paths and versions automatically from the extracted distributions.
-  Restoring the removed import fails. LiteLLM pricing-map downloads are disabled.
-  This validates local discovery, not the unrun Kaggle runtime.
-- `python -B scripts/preflight_v5_budget_v2.py`: stored-evidence consistency,
-  candidate compilation, and effective budget checks. This is not fresh replay.
+Run `python -B scripts/run_offline_checks.py` for all 36 portable CI checks.
+The following checks cover the recent work:
 
-The package sources under experiments/v5_budget_v2 are preserved with their
-wheel metadata and per-module SHA-256 manifests, following the existing harness
-source layout. Binary wheels and bytecode are excluded.
+- `verify_v5_budget_launch.py` verifies the armed notebook equals the frozen
+  disabled bytes plus exactly one dispatch substitution. It checks metadata,
+  version, candidate, order, budgets and single-push receipt without execution.
+- `test_v5_budget_v2_notebook.py` validates that receipt before simulating both
+  dispatch states. Four rows remain visible; compiler drift and control cleanup
+  failure block model startup. The launched file is never rewritten.
+- `verify_v5_cpu_evidence.py` hashes the full saved inventory, verifies dependency
+  identities, all eight distinct arms, preconditions, checkout import paths,
+  patch return codes and cleanup, and cross-checks per-arm records and raw XML
+  against the aggregate. This audits saved evidence, not fresh test execution.
+- `verify_v5_dependencies.py` checks pinned manifests and source trees without
+  importing the ML packages. Missing, extra and changed modules stay distinct.
+- `test_v5_cands_cell_real.py` remains a separate dependency-equipped local test.
+  It executes the unchanged generated candidate cell with automatic discovery of
+  extracted distributions. LiteLLM pricing-map fetches are disabled. This does
+  not substitute for Kaggle runtime evidence or prove GPU serving works.
 
-## Evidence and next step
+## Preserve uncertainty and evidence
 
-Both failed runs retain six raw files and their original hash manifests.
-The remote listing returned no entries, so authoritative download completeness
-is unverified. The failed CPU notebook source itself is not in those six files;
-preserve the remote version-1 source before a new push. The launch receipt pins
-that old notebook to 55a52256..., while NOTEBOOK_PREPARED pins the repaired bytes.
+Generators refuse any matching LAUNCH_RECORD.json or LAUNCH_RECORD_*.json in
+an experiment directory, even malformed receipts. Use fresh versioned paths;
+never remove a launch receipt to regenerate over launched evidence.
 
-A separately authorized CPU replay must pass both runtime identity gates and
-all eight real control arms before preparing a GPU baseline. Preserve the frozen
-V5 agent, task freeze, raw evidence and failed GPU notebook. These engineering
-checks are not Kaggle submissions or measured score improvements.
+Shared packet JSON parsing rejects duplicate keys, NaN, Infinity and float
+overflow. A full Kaggle submission response can omit errorDescription. Capture
+now preserves its score with outcome `score_observed_error_unknown`, rather
+than failing the capture or inventing a no-error field. Explicit errors still
+take precedence, and unknown error details remain explicit in saved observations.
 
-## Artifact protection and portable CI checks
-
-Both V5 generators now refuse before generation when their output experiment
-has a LAUNCH_RECORD.json, including an empty or malformed receipt. Their existing
-default destinations have launch records, so invoking them refuses intentionally.
-Prepare an explicitly versioned destination before regenerating; do not remove
-a receipt or overwrite the failed notebook to make generation succeed.
-
-The shared offline suite now includes 31 checks. New stdlib-only checks verify:
-
-- generation refuses after launch without changing the receipt;
-- dependency manifest digests, metadata versions and every Python module, with
-  missing, extra and changed modules reported separately, without imports;
-- the repaired CPU notebook and metadata hashes, exact V5 payload, development
-  tasks, five-minute budget, disabled dispatch, and gates before control replay.
-
-The generated replay fixture additionally requires all eight arms accepted with
-cleanup confirmed. Six independent failure cases cover compiler version/file
-changes and swegemma version/changed/missing/extra modules; each must persist a
-refusal before controls or model dispatch. These simulate services, so they do
-not replace the fresh CPU replay. The real-package discovery test remains a
-separate dependency-equipped local check; CI does not install the ML stack.
+Frozen releases, raw evidence, notebook bytes and the task freeze were not edited.
+Private-grader versions and runtime parity remain unknown. Next: review the four
+V5 baseline outcomes before proposing a matched candidate improvement; do not
+predict 0.45 or claim any score gain from these engineering checks.
