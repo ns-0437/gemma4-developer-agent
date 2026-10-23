@@ -1,0 +1,277 @@
+[{"stream_name":"stderr","time":6.793227947,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":6.79326669,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":6.793270318,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":6.793272327,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":7.400846353,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":7.400871878,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":7.400874599,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":7.400876633,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":8.512042147,"data":"v5 budget diagnostic: {'max_time_minutes': 5.0, 'max_tool_calls': 100, 'max_turns': 60, 'timeout_seconds': 60} | session cap 90 min\n"}
+,{"stream_name":"stdout","time":8.713082126,"data":"installing 41 wheels...\n"}
+,{"stream_name":"stdout","time":61.861178572,"data":"{\n"}
+,{"stream_name":"stdout","time":61.861210574,"data":"  \"swegemma\": \"0.2.11\",\n"}
+,{"stream_name":"stdout","time":61.861214631,"data":"  \"adk-submission\": \"0.2.13\",\n"}
+,{"stream_name":"stdout","time":61.861217378,"data":"  \"adk-eval-core\": \"0.1.0\",\n"}
+,{"stream_name":"stdout","time":61.861219921,"data":"  \"google-adk\": \"1.36.1\",\n"}
+,{"stream_name":"stdout","time":61.861222343,"data":"  \"vllm\": \"0.19.1\",\n"}
+,{"stream_name":"stdout","time":61.861224787,"data":"  \"transformers\": \"5.13.1\",\n"}
+,{"stream_name":"stdout","time":61.861227167,"data":"  \"litellm\": \"1.82.4\"\n"}
+,{"stream_name":"stdout","time":61.861229613,"data":"}\n"}
+,{"stream_name":"stdout","time":69.570961835,"data":"GPUs: 4 ['NVIDIA L4', 'NVIDIA L4', 'NVIDIA L4', 'NVIDIA L4']\n"}
+,{"stream_name":"stdout","time":90.319953285,"data":"model revision dir: 2 | config sha256: b100d85e571c25b6\n"}
+,{"stream_name":"stdout","time":90.319978838,"data":"architectures: ['Gemma4ForConditionalGeneration']\n"}
+,{"stream_name":"stdout","time":90.3199822,"data":"quantization: {\"config_groups\": {\"group_0\": {\"format\": \"pack-quantized\", \"input_activations\": null, \"output_activations\": null, \"targets\": [\"Linear\"], \"weights\": {\"actorder\": null, \"block_structure\": null, \"dynamic\n"}
+,{"stream_name":"stdout","time":120.225941794,"data":"loaded 129 tasks\n"}
+,{"stream_name":"stdout","time":120.277755221,"data":"PILOT TASKS and the evidence they were chosen on:\n"}
+,{"stream_name":"stdout","time":120.277782105,"data":"\n"}
+,{"stream_name":"stdout","time":120.277785355,"data":"  rich_3278 Textualize/rich\n"}
+,{"stream_name":"stdout","time":120.277787988,"data":"    negative  exit=1 cases=23 failed=16 errored=0\n"}
+,{"stream_name":"stdout","time":120.277790486,"data":"              agent  import: unavailable (no agent ran in the control)\n"}
+,{"stream_name":"stdout","time":120.277792978,"data":"              pytest import: /tmp/swegemma_sandbox_fbc86660-ea1_mbw02i_a/workspace/rich/__init__.py\n"}
+,{"stream_name":"stdout","time":120.277795354,"data":"    positive  exit=0 cases=23 failed=0 errored=0\n"}
+,{"stream_name":"stdout","time":120.277797799,"data":"              agent  import: unavailable (no agent ran in the control)\n"}
+,{"stream_name":"stdout","time":120.277800253,"data":"              pytest import: /tmp/swegemma_sandbox_2c91183e-840_38s9ivy0/workspace/rich/__init__.py\n"}
+,{"stream_name":"stdout","time":120.277815924,"data":"    baseline-fails / gold-passes / grading-import-in-checkout: True\n"}
+,{"stream_name":"stdout","time":120.277818075,"data":"    agent-side import provenance: UNAVAILABLE (no agent ran in the control)\n"}
+,{"stream_name":"stdout","time":120.27781999,"data":"    control patch_rc=0 test_patch_rc=0\n"}
+,{"stream_name":"stdout","time":120.277821799,"data":"    baseline failures: ['test_ansi::test_strip_private_escape_sequences[0]', 'test_ansi::test_strip_private_escape_sequences[1]', 'test_ansi::test_strip_private_escape_sequences[2]', 'test_ansi::test_strip_private_escape_sequences[3]']\n"}
+,{"stream_name":"stdout","time":120.277824834,"data":"\n"}
+,{"stream_name":"stdout","time":120.277826486,"data":"  rich_3535 Textualize/rich\n"}
+,{"stream_name":"stdout","time":120.277828347,"data":"    negative  exit=1 cases=8 failed=1 errored=0\n"}
+,{"stream_name":"stdout","time":120.27783017,"data":"              agent  import: unavailable (no agent ran in the control)\n"}
+,{"stream_name":"stdout","time":120.277832008,"data":"              pytest import: /tmp/swegemma_sandbox_b9bb1fae-ea7_j4kmphm5/workspace/rich/__init__.py\n"}
+,{"stream_name":"stdout","time":120.277833859,"data":"    positive  exit=0 cases=8 failed=0 errored=0\n"}
+,{"stream_name":"stdout","time":120.277843228,"data":"              agent  import: unavailable (no agent ran in the control)\n"}
+,{"stream_name":"stdout","time":120.277845693,"data":"              pytest import: /tmp/swegemma_sandbox_613d24b0-112_yqshur97/workspace/rich/__init__.py\n"}
+,{"stream_name":"stdout","time":120.277847548,"data":"    baseline-fails / gold-passes / grading-import-in-checkout: True\n"}
+,{"stream_name":"stdout","time":120.277849384,"data":"    agent-side import provenance: UNAVAILABLE (no agent ran in the control)\n"}
+,{"stream_name":"stdout","time":120.277851293,"data":"    control patch_rc=0 test_patch_rc=0\n"}
+,{"stream_name":"stdout","time":120.277853085,"data":"    baseline failures: ['test_cells::test_is_single_cell_widths']\n"}
+,{"stream_name":"stdout","time":120.277854961,"data":"\n"}
+,{"stream_name":"stdout","time":120.277856654,"data":"  rich_3675 Textualize/rich\n"}
+,{"stream_name":"stdout","time":120.277858365,"data":"    negative  exit=1 cases=99 failed=1 errored=0\n"}
+,{"stream_name":"stdout","time":120.277860081,"data":"              agent  import: unavailable (no agent ran in the control)\n"}
+,{"stream_name":"stdout","time":120.277861945,"data":"              pytest import: /tmp/swegemma_sandbox_eee552f1-f25_sg8paafw/workspace/rich/__init__.py\n"}
+,{"stream_name":"stdout","time":120.277863762,"data":"    positive  exit=0 cases=99 failed=0 errored=0\n"}
+,{"stream_name":"stdout","time":120.277865614,"data":"              agent  import: unavailable (no agent ran in the control)\n"}
+,{"stream_name":"stdout","time":120.277868473,"data":"              pytest import: /tmp/swegemma_sandbox_29800dba-55b_9nqi_yv4/workspace/rich/__init__.py\n"}
+,{"stream_name":"stdout","time":120.277870454,"data":"    baseline-fails / gold-passes / grading-import-in-checkout: True\n"}
+,{"stream_name":"stdout","time":120.277872258,"data":"    agent-side import provenance: UNAVAILABLE (no agent ran in the control)\n"}
+,{"stream_name":"stdout","time":120.277874069,"data":"    control patch_rc=0 test_patch_rc=0\n"}
+,{"stream_name":"stdout","time":120.277875816,"data":"    baseline failures: ['test_console::test_tty_compatible']\n"}
+,{"stream_name":"stdout","time":120.27787768,"data":"\n"}
+,{"stream_name":"stdout","time":120.277879284,"data":"  rich_3942 Textualize/rich\n"}
+,{"stream_name":"stdout","time":120.277884097,"data":"    negative  exit=1 cases=8 failed=6 errored=0\n"}
+,{"stream_name":"stdout","time":120.277886013,"data":"              agent  import: unavailable (no agent ran in the control)\n"}
+,{"stream_name":"stdout","time":120.277887877,"data":"              pytest import: /tmp/swegemma_sandbox_cb7391fe-ddf_sauv1peb/workspace/rich/__init__.py\n"}
+,{"stream_name":"stdout","time":120.277889764,"data":"    positive  exit=0 cases=8 failed=0 errored=0\n"}
+,{"stream_name":"stdout","time":120.277891494,"data":"              agent  import: unavailable (no agent ran in the control)\n"}
+,{"stream_name":"stdout","time":120.277893267,"data":"              pytest import: /tmp/swegemma_sandbox_58f2d1f1-b18_zzqdtsd6/workspace/rich/__init__.py\n"}
+,{"stream_name":"stdout","time":120.277895084,"data":"    baseline-fails / gold-passes / grading-import-in-checkout: True\n"}
+,{"stream_name":"stdout","time":120.277896835,"data":"    agent-side import provenance: UNAVAILABLE (no agent ran in the control)\n"}
+,{"stream_name":"stdout","time":120.277898742,"data":"    control patch_rc=0 test_patch_rc=0\n"}
+,{"stream_name":"stdout","time":120.277900568,"data":"    baseline failures: ['test_markdown::test_inline_styles_in_table', 'test_markdown::test_inline_styles_with_justification', 'test_markdown::test_markdown_render', 'test_markdown::test_markdown_table']\n"}
+,{"stream_name":"stdout","time":120.391606088,"data":"prompt leakage: CLEAN (0 lines came from the issue text)\n"}
+,{"stream_name":"stdout","time":120.391626918,"data":"LIMITATION: this is a data-flow check. The subprocess backend runs run_command on the host, so\n"}
+,{"stream_name":"stdout","time":120.391629403,"data":"answer-key files remain reachable; traces must be audited for contamination before trusting a run.\n"}
+,{"stream_name":"stdout","time":120.439663652,"data":"swegemma identity: 0.2.11 | modules 34 | matches True\n"}
+,{"stream_name":"stdout","time":120.439683233,"data":"V5: sha256=527acc5403d21a14 model=gemma-4-31b-it-qat-w4a16-ct\n"}
+,{"stream_name":"stdout","time":120.462925863,"data":"repair bound on agent_runner, verification, container_setup (idempotent)\n"}
+,{"stream_name":"stdout","time":120.462939302,"data":"NOTE: a pip success message alone is not proof; the preconditions below check what actually loads.\n"}
+,{"stream_name":"stderr","time":120.653165265,"data":"WARNING:swegemma.sandbox.subprocess:ensurepip unavailable in sandbox 71d565d7-d22, creating venv without pip: Command '['/tmp/swegemma_sandbox_71d565d7-d22_z6tqobsv/venv/bin/python3', '-m', 'ensurepip', '--upgrade', '--default-pip']' returned non-zero exit status 1.\n"}
+,{"stream_name":"stderr","time":120.653186228,"data":"\n"}
+,{"stream_name":"stderr","time":120.653188686,"data":"WARNING:swegemma.sandbox.subprocess:ensurepip unavailable in sandbox 71d565d7-d22, creating venv without pip: Command '['/tmp/swegemma_sandbox_71d565d7-d22_z6tqobsv/venv/bin/python3', '-m', 'ensurepip', '--upgrade', '--default-pip']' returned non-zero exit status 1.\n"}
+,{"stream_name":"stderr","time":169.803068642,"data":"WARNING:swegemma.sandbox.subprocess:ensurepip unavailable in sandbox e76a8ea4-177, creating venv without pip: Command '['/tmp/swegemma_sandbox_e76a8ea4-177_8fi6s1kh/venv/bin/python3', '-m', 'ensurepip', '--upgrade', '--default-pip']' returned non-zero exit status 1.\n"}
+,{"stream_name":"stderr","time":169.803098155,"data":"\n"}
+,{"stream_name":"stderr","time":169.803101564,"data":"WARNING:swegemma.sandbox.subprocess:ensurepip unavailable in sandbox e76a8ea4-177, creating venv without pip: Command '['/tmp/swegemma_sandbox_e76a8ea4-177_8fi6s1kh/venv/bin/python3', '-m', 'ensurepip', '--upgrade', '--default-pip']' returned non-zero exit status 1.\n"}
+,{"stream_name":"stdout","time":169.872055478,"data":"rich_3278        ok=True\n"}
+,{"stream_name":"stdout","time":169.872088847,"data":"    workspace: /tmp/swegemma_sandbox_71d565d7-d22_z6tqobsv/workspace\n"}
+,{"stream_name":"stdout","time":169.872092056,"data":"    agent    : /tmp/swegemma_sandbox_71d565d7-d22_z6tqobsv/workspace/rich/__init__.py\n"}
+,{"stream_name":"stdout","time":169.872094204,"data":"    grading  : /tmp/swegemma_sandbox_71d565d7-d22_z6tqobsv/workspace/rich/__init__.py\n"}
+,{"stream_name":"stderr","time":218.295620058,"data":"WARNING:swegemma.sandbox.subprocess:ensurepip unavailable in sandbox c439afda-5b1, creating venv without pip: Command '['/tmp/swegemma_sandbox_c439afda-5b1_g4ccxidn/venv/bin/python3', '-m', 'ensurepip', '--upgrade', '--default-pip']' returned non-zero exit status 1.\n"}
+,{"stream_name":"stderr","time":218.295651111,"data":"\n"}
+,{"stream_name":"stderr","time":218.295654667,"data":"WARNING:swegemma.sandbox.subprocess:ensurepip unavailable in sandbox c439afda-5b1, creating venv without pip: Command '['/tmp/swegemma_sandbox_c439afda-5b1_g4ccxidn/venv/bin/python3', '-m', 'ensurepip', '--upgrade', '--default-pip']' returned non-zero exit status 1.\n"}
+,{"stream_name":"stdout","time":218.367791905,"data":"rich_3535        ok=True\n"}
+,{"stream_name":"stdout","time":218.367817314,"data":"    workspace: /tmp/swegemma_sandbox_e76a8ea4-177_8fi6s1kh/workspace\n"}
+,{"stream_name":"stdout","time":218.367820721,"data":"    agent    : /tmp/swegemma_sandbox_e76a8ea4-177_8fi6s1kh/workspace/rich/__init__.py\n"}
+,{"stream_name":"stdout","time":218.367823432,"data":"    grading  : /tmp/swegemma_sandbox_e76a8ea4-177_8fi6s1kh/workspace/rich/__init__.py\n"}
+,{"stream_name":"stderr","time":267.251128967,"data":"WARNING:swegemma.sandbox.subprocess:ensurepip unavailable in sandbox ddf87f21-8ce, creating venv without pip: Command '['/tmp/swegemma_sandbox_ddf87f21-8ce_abt361ej/venv/bin/python3', '-m', 'ensurepip', '--upgrade', '--default-pip']' returned non-zero exit status 1.\n"}
+,{"stream_name":"stderr","time":267.251157922,"data":"\n"}
+,{"stream_name":"stderr","time":267.251161414,"data":"WARNING:swegemma.sandbox.subprocess:ensurepip unavailable in sandbox ddf87f21-8ce, creating venv without pip: Command '['/tmp/swegemma_sandbox_ddf87f21-8ce_abt361ej/venv/bin/python3', '-m', 'ensurepip', '--upgrade', '--default-pip']' returned non-zero exit status 1.\n"}
+,{"stream_name":"stdout","time":267.322107749,"data":"rich_3675        ok=True\n"}
+,{"stream_name":"stdout","time":267.322127807,"data":"    workspace: /tmp/swegemma_sandbox_c439afda-5b1_g4ccxidn/workspace\n"}
+,{"stream_name":"stdout","time":267.322131425,"data":"    agent    : /tmp/swegemma_sandbox_c439afda-5b1_g4ccxidn/workspace/rich/__init__.py\n"}
+,{"stream_name":"stdout","time":267.322134086,"data":"    grading  : /tmp/swegemma_sandbox_c439afda-5b1_g4ccxidn/workspace/rich/__init__.py\n"}
+,{"stream_name":"stderr","time":316.987618499,"data":"WARNING:swegemma.sandbox.subprocess:ensurepip unavailable in sandbox bc6cb408-d04, creating venv without pip: Command '['/tmp/swegemma_sandbox_bc6cb408-d04_kx_aj9r8/venv/bin/python3', '-m', 'ensurepip', '--upgrade', '--default-pip']' returned non-zero exit status 1.\n"}
+,{"stream_name":"stderr","time":316.987646402,"data":"\n"}
+,{"stream_name":"stderr","time":316.987649898,"data":"WARNING:swegemma.sandbox.subprocess:ensurepip unavailable in sandbox bc6cb408-d04, creating venv without pip: Command '['/tmp/swegemma_sandbox_bc6cb408-d04_kx_aj9r8/venv/bin/python3', '-m', 'ensurepip', '--upgrade', '--default-pip']' returned non-zero exit status 1.\n"}
+,{"stream_name":"stdout","time":317.051290806,"data":"rich_3942        ok=True\n"}
+,{"stream_name":"stdout","time":317.051337443,"data":"    workspace: /tmp/swegemma_sandbox_ddf87f21-8ce_abt361ej/workspace\n"}
+,{"stream_name":"stdout","time":317.051341179,"data":"    agent    : /tmp/swegemma_sandbox_ddf87f21-8ce_abt361ej/workspace/rich/__init__.py\n"}
+,{"stream_name":"stdout","time":317.051353093,"data":"    grading  : /tmp/swegemma_sandbox_ddf87f21-8ce_abt361ej/workspace/rich/__init__.py\n"}
+,{"stream_name":"stdout","time":317.051355173,"data":"ALL PRECONDITIONS PASSED\n"}
+,{"stream_name":"stdout","time":317.051356899,"data":"Caveat: passing here does not guarantee the same resolution inside every later sandbox; the\n"}
+,{"stream_name":"stdout","time":317.051358745,"data":"per-run setup observations verify imports again in the actual sandboxes. These are grading-flags probes, not direct in-pytest observations.\n"}
+,{"stream_name":"stderr","time":344.68987555,"data":"WARNING:swegemma.sandbox.subprocess:ensurepip unavailable in sandbox 2a69cbcc-e84, creating venv without pip: Command '['/tmp/swegemma_sandbox_2a69cbcc-e84_6ugok8nw/venv/bin/python3', '-m', 'ensurepip', '--upgrade', '--default-pip']' returned non-zero exit status 1.\n"}
+,{"stream_name":"stderr","time":344.689904088,"data":"\n"}
+,{"stream_name":"stderr","time":344.689906752,"data":"WARNING:swegemma.sandbox.subprocess:ensurepip unavailable in sandbox 2a69cbcc-e84, creating venv without pip: Command '['/tmp/swegemma_sandbox_2a69cbcc-e84_6ugok8nw/venv/bin/python3', '-m', 'ensurepip', '--upgrade', '--default-pip']' returned non-zero exit status 1.\n"}
+,{"stream_name":"stdout","time":344.764008686,"data":"  rich_3278      baseline  exit=1 (saved 1) nodes=23/23 targets=16 agrees=True\n"}
+,{"stream_name":"stderr","time":372.352605002,"data":"WARNING:swegemma.sandbox.subprocess:ensurepip unavailable in sandbox 9cdb6882-7c4, creating venv without pip: Command '['/tmp/swegemma_sandbox_9cdb6882-7c4_15ipq9ab/venv/bin/python3', '-m', 'ensurepip', '--upgrade', '--default-pip']' returned non-zero exit status 1.\n"}
+,{"stream_name":"stderr","time":372.352635266,"data":"\n"}
+,{"stream_name":"stderr","time":372.352638558,"data":"WARNING:swegemma.sandbox.subprocess:ensurepip unavailable in sandbox 9cdb6882-7c4, creating venv without pip: Command '['/tmp/swegemma_sandbox_9cdb6882-7c4_15ipq9ab/venv/bin/python3', '-m', 'ensurepip', '--upgrade', '--default-pip']' returned non-zero exit status 1.\n"}
+,{"stream_name":"stdout","time":372.423509023,"data":"  rich_3278      reference exit=0 (saved 0) nodes=23/23 targets=16 agrees=True\n"}
+,{"stream_name":"stderr","time":399.760049897,"data":"WARNING:swegemma.sandbox.subprocess:ensurepip unavailable in sandbox 7187c98a-9d6, creating venv without pip: Command '['/tmp/swegemma_sandbox_7187c98a-9d6_ugo8bfme/venv/bin/python3', '-m', 'ensurepip', '--upgrade', '--default-pip']' returned non-zero exit status 1.\n"}
+,{"stream_name":"stderr","time":399.760082578,"data":"\n"}
+,{"stream_name":"stderr","time":399.760086111,"data":"WARNING:swegemma.sandbox.subprocess:ensurepip unavailable in sandbox 7187c98a-9d6, creating venv without pip: Command '['/tmp/swegemma_sandbox_7187c98a-9d6_ugo8bfme/venv/bin/python3', '-m', 'ensurepip', '--upgrade', '--default-pip']' returned non-zero exit status 1.\n"}
+,{"stream_name":"stdout","time":399.833496465,"data":"  rich_3535      baseline  exit=1 (saved 1) nodes=8/8 targets=1 agrees=True\n"}
+,{"stream_name":"stderr","time":427.31836766,"data":"WARNING:swegemma.sandbox.subprocess:ensurepip unavailable in sandbox b29f6ac4-ba2, creating venv without pip: Command '['/tmp/swegemma_sandbox_b29f6ac4-ba2_m8v59xpw/venv/bin/python3', '-m', 'ensurepip', '--upgrade', '--default-pip']' returned non-zero exit status 1.\n"}
+,{"stream_name":"stderr","time":427.318396447,"data":"\n"}
+,{"stream_name":"stderr","time":427.318399714,"data":"WARNING:swegemma.sandbox.subprocess:ensurepip unavailable in sandbox b29f6ac4-ba2, creating venv without pip: Command '['/tmp/swegemma_sandbox_b29f6ac4-ba2_m8v59xpw/venv/bin/python3', '-m', 'ensurepip', '--upgrade', '--default-pip']' returned non-zero exit status 1.\n"}
+,{"stream_name":"stdout","time":427.387109186,"data":"  rich_3535      reference exit=0 (saved 0) nodes=8/8 targets=1 agrees=True\n"}
+,{"stream_name":"stderr","time":469.826385174,"data":"WARNING:swegemma.sandbox.subprocess:ensurepip unavailable in sandbox 04717b41-71d, creating venv without pip: Command '['/tmp/swegemma_sandbox_04717b41-71d_c6ygpg7a/venv/bin/python3', '-m', 'ensurepip', '--upgrade', '--default-pip']' returned non-zero exit status 1.\n"}
+,{"stream_name":"stderr","time":469.82641205,"data":"\n"}
+,{"stream_name":"stderr","time":469.82641549,"data":"WARNING:swegemma.sandbox.subprocess:ensurepip unavailable in sandbox 04717b41-71d, creating venv without pip: Command '['/tmp/swegemma_sandbox_04717b41-71d_c6ygpg7a/venv/bin/python3', '-m', 'ensurepip', '--upgrade', '--default-pip']' returned non-zero exit status 1.\n"}
+,{"stream_name":"stdout","time":469.895761699,"data":"  rich_3675      baseline  exit=1 (saved 1) nodes=99/99 targets=1 agrees=True\n"}
+,{"stream_name":"stderr","time":498.087056573,"data":"WARNING:swegemma.sandbox.subprocess:ensurepip unavailable in sandbox d784a6c2-e63, creating venv without pip: Command '['/tmp/swegemma_sandbox_d784a6c2-e63_j6e93bs6/venv/bin/python3', '-m', 'ensurepip', '--upgrade', '--default-pip']' returned non-zero exit status 1.\n"}
+,{"stream_name":"stderr","time":498.087081545,"data":"\n"}
+,{"stream_name":"stderr","time":498.087084731,"data":"WARNING:swegemma.sandbox.subprocess:ensurepip unavailable in sandbox d784a6c2-e63, creating venv without pip: Command '['/tmp/swegemma_sandbox_d784a6c2-e63_j6e93bs6/venv/bin/python3', '-m', 'ensurepip', '--upgrade', '--default-pip']' returned non-zero exit status 1.\n"}
+,{"stream_name":"stdout","time":498.161441572,"data":"  rich_3675      reference exit=0 (saved 0) nodes=99/99 targets=1 agrees=True\n"}
+,{"stream_name":"stderr","time":525.800440758,"data":"WARNING:swegemma.sandbox.subprocess:ensurepip unavailable in sandbox 714a80db-916, creating venv without pip: Command '['/tmp/swegemma_sandbox_714a80db-916_72icwnsu/venv/bin/python3', '-m', 'ensurepip', '--upgrade', '--default-pip']' returned non-zero exit status 1.\n"}
+,{"stream_name":"stderr","time":525.800470086,"data":"\n"}
+,{"stream_name":"stderr","time":525.800473438,"data":"WARNING:swegemma.sandbox.subprocess:ensurepip unavailable in sandbox 714a80db-916, creating venv without pip: Command '['/tmp/swegemma_sandbox_714a80db-916_72icwnsu/venv/bin/python3', '-m', 'ensurepip', '--upgrade', '--default-pip']' returned non-zero exit status 1.\n"}
+,{"stream_name":"stdout","time":525.868596264,"data":"  rich_3942      baseline  exit=1 (saved 1) nodes=8/8 targets=6 agrees=True\n"}
+,{"stream_name":"stdout","time":553.109639284,"data":"  rich_3942      reference exit=0 (saved 0) nodes=8/8 targets=6 agrees=True\n"}
+,{"stream_name":"stdout","time":553.109667383,"data":"ALL FOUR CONTROLS REPRODUCE UNDER THIS SETUP (both arms, full node map, targets verified)\n"}
+,{"stream_name":"stdout","time":553.309566447,"data":"adapters discovered: none (expected)\n"}
+,{"stream_name":"stderr","time":1763.601583084,"data":"WARNING:adk_submission.server:Inference server did not terminate within 10.0s; killing...\n"}
+,{"stream_name":"stderr","time":1763.601618652,"data":"\n"}
+,{"stream_name":"stderr","time":1763.601622466,"data":"WARNING:adk_submission.server:Inference server did not terminate within 10.0s; killing...\n"}
+,{"stream_name":"stderr","time":1766.521026522,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":1766.521053346,"data":"  File \"\u003cstring\u003e\", line 1, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":1766.521057427,"data":"  File \"/usr/local/lib/python3.12/dist-packages/papermill/execute.py\", line 131, in execute_notebook\n"}
+,{"stream_name":"stderr","time":1766.52108888,"data":"    raise_for_execution_errors(nb, output_path)\n"}
+,{"stream_name":"stderr","time":1766.521110465,"data":"  File \"/usr/local/lib/python3.12/dist-packages/papermill/execute.py\", line 251, in raise_for_execution_errors\n"}
+,{"stream_name":"stderr","time":1766.521214214,"data":"    raise error\n"}
+,{"stream_name":"stderr","time":1766.521461038,"data":"papermill.exceptions.PapermillExecutionError: \n"}
+,{"stream_name":"stderr","time":1766.521467749,"data":"---------------------------------------------------------------------------\n"}
+,{"stream_name":"stderr","time":1766.521469776,"data":"Exception encountered at \"In [10]\":\n"}
+,{"stream_name":"stderr","time":1766.521471718,"data":"---------------------------------------------------------------------------\n"}
+,{"stream_name":"stderr","time":1766.521473613,"data":"ServerStartupError                        Traceback (most recent call last)\n"}
+,{"stream_name":"stderr","time":1766.521475398,"data":"/tmp/ipykernel_65/1219109320.py in \u003ccell line: 0\u003e()\n"}
+,{"stream_name":"stderr","time":1766.521477658,"data":"     34             tensor_parallel_size=tp_size, startup_timeout=60 * 20)\n"}
+,{"stream_name":"stderr","time":1766.52147947,"data":"     35         server_instance = VllmServer(vllm_cfg, adapter_manifest=adapters)\n"}
+,{"stream_name":"stderr","time":1766.521481483,"data":"---\u003e 36         server_instance.start()\n"}
+,{"stream_name":"stderr","time":1766.521483352,"data":"     37         SERVER_STARTUP_S = time.time() - SERVER_T0\n"}
+,{"stream_name":"stderr","time":1766.521485201,"data":"     38         print(f\"vLLM up at {server_instance.base_url} (tp={tp_size}) in {SERVER_STARTUP_S/60:.1f} min\")\n"}
+,{"stream_name":"stderr","time":1766.521487366,"data":"\n"}
+,{"stream_name":"stderr","time":1766.521489052,"data":"/usr/local/lib/python3.12/dist-packages/adk_submission/server.py in start(self)\n"}
+,{"stream_name":"stderr","time":1766.52149096,"data":"    303 \n"}
+,{"stream_name":"stderr","time":1766.521492649,"data":"    304         try:\n"}
+,{"stream_name":"stderr","time":1766.521494484,"data":"--\u003e 305             self._wait_until_ready()\n"}
+,{"stream_name":"stderr","time":1766.521496393,"data":"    306         except BaseException:\n"}
+,{"stream_name":"stderr","time":1766.521498157,"data":"    307             self.stop()\n"}
+,{"stream_name":"stderr","time":1766.521499914,"data":"\n"}
+,{"stream_name":"stderr","time":1766.521501573,"data":"/usr/local/lib/python3.12/dist-packages/adk_submission/server.py in _wait_until_ready(self)\n"}
+,{"stream_name":"stderr","time":1766.52150344,"data":"    344         self.stop()\n"}
+,{"stream_name":"stderr","time":1766.521505167,"data":"    345         log_tail = out[-2000:] if out else \"(no server output captured)\"\n"}
+,{"stream_name":"stderr","time":1766.521507038,"data":"--\u003e 346         raise ServerStartupError(\n"}
+,{"stream_name":"stderr","time":1766.521508839,"data":"    347             f\"Inference server did not become healthy within {timeout}s.\\n\"\n"}
+,{"stream_name":"stderr","time":1766.521510883,"data":"    348             f\"--- Server Log Tail ({self.log_path}) ---\\n{log_tail}\",\n"}
+,{"stream_name":"stderr","time":1766.521512879,"data":"\n"}
+,{"stream_name":"stderr","time":1766.521514526,"data":"ServerStartupError: Inference server did not become healthy within 1200s.\n"}
+,{"stream_name":"stderr","time":1766.521516346,"data":"--- Server Log Tail (/tmp/inference_server_8000_g05uaddi.log) ---\n"}
+,{"stream_name":"stderr","time":1766.521518126,"data":"for CompressedTensorsWNA16\n"}
+,{"stream_name":"stderr","time":1766.521519863,"data":"(Worker_TP3 pid=1577) INFO 10-22 16:21:25 [compressed_tensors_wNa16.py:112] Using MarlinLinearKernel for CompressedTensorsWNA16\n"}
+,{"stream_name":"stderr","time":1766.52152732,"data":"(Worker_TP2 pid=1576) INFO 10-22 16:21:25 [cuda.py:274] Using AttentionBackendEnum.TRITON_ATTN backend.\n"}
+,{"stream_name":"stderr","time":1766.521529387,"data":"(Worker_TP0 pid=1574) INFO 10-22 16:21:25 [cuda.py:274] Using AttentionBackendEnum.TRITON_ATTN backend.\n"}
+,{"stream_name":"stderr","time":1766.521531451,"data":"(Worker_TP1 pid=1575) INFO 10-22 16:21:25 [cuda.py:274] Using AttentionBackendEnum.TRITON_ATTN backend.\n"}
+,{"stream_name":"stderr","time":1766.521533895,"data":"(Worker_TP3 pid=1577) INFO 10-22 16:21:25 [cuda.py:274] Using AttentionBackendEnum.TRITON_ATTN backend.\n"}
+,{"stream_name":"stderr","time":1766.521535831,"data":"(Worker_TP2 pid=1576) INFO 10-22 16:21:25 [cuda.py:274] Using AttentionBackendEnum.TRITON_ATTN backend.\n"}
+,{"stream_name":"stderr","time":1766.521537687,"data":"(Worker_TP0 pid=1574) INFO 10-22 16:21:25 [cuda.py:274] Using AttentionBackendEnum.TRITON_ATTN backend.\n"}
+,{"stream_name":"stderr","time":1766.52153954,"data":"(Worker_TP1 pid=1575) INFO 10-22 16:21:25 [cuda.py:274] Using AttentionBackendEnum.TRITON_ATTN backend.\n"}
+,{"stream_name":"stderr","time":1766.521541366,"data":"(Worker_TP3 pid=1577) INFO 10-22 16:21:25 [cuda.py:274] Using AttentionBackendEnum.TRITON_ATTN backend.\n"}
+,{"stream_name":"stderr","time":1766.52154324,"data":"(Worker_TP2 pid=1576) INFO 10-22 16:21:26 [weight_utils.py:848] Prefetching checkpoint files into page cache started (in background)\n"}
+,{"stream_name":"stderr","time":1766.521545199,"data":"(Worker_TP2 pid=1576) INFO 10-22 16:21:26 [weight_utils.py:843] Prefetching checkpoint files into page cache finished in 0.00s\n"}
+,{"stream_name":"stderr","time":1766.521547191,"data":"(Worker_TP3 pid=1577) INFO 10-22 16:21:26 [weight_utils.py:848] Prefetching checkpoint files into page cache started (in background)\n"}
+,{"stream_name":"stderr","time":1766.521549118,"data":"(Worker_TP0 pid=1574) INFO 10-22 16:21:26 [weight_utils.py:848] Prefetching checkpoint files into page cache started (in background)\n"}
+,{"stream_name":"stderr","time":1766.521551039,"data":"(Worker_TP0 pid=1574) \n"}
+,{"stream_name":"stderr","time":1766.521552756,"data":"Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stderr","time":1766.521554769,"data":"(Worker_TP1 pid=1575) INFO 10-22 16:21:26 [weight_utils.py:848] Prefetching checkpoint files into page cache started (in background)\n"}
+,{"stream_name":"stderr","time":1766.521556711,"data":"(Worker_TP1 pid=1575) INFO 10-22 16:21:26 [weight_utils.py:843] Prefetching checkpoint files into page cache finished in 0.23s\n"}
+,{"stream_name":"stderr","time":1766.521558611,"data":"(Worker_TP3 pid=1577) INFO 10-22 16:21:26 [weight_utils.py:843] Prefetching checkpoint files into page cache finished in 0.25s\n"}
+,{"stream_name":"stderr","time":1766.521560515,"data":"\n"}
+,{"stream_name":"stderr","time":1766.521562246,"data":"Server output:\n"}
+,{"stream_name":"stderr","time":1766.521563974,"data":"(APIServer pid=1046) INFO 10-22 16:20:11 [utils.py:299] \n"}
+,{"stream_name":"stderr","time":1766.52156576,"data":"(APIServer pid=1046) INFO 10-22 16:20:11 [utils.py:299]        █     █     █▄   ▄█\n"}
+,{"stream_name":"stderr","time":1766.52156844,"data":"(APIServer pid=1046) INFO 10-22 16:20:11 [utils.py:299]  ▄▄ ▄█ █     █     █ ▀▄▀ █  version 0.19.1\n"}
+,{"stream_name":"stderr","time":1766.521570482,"data":"(APIServer pid=1046) INFO 10-22 16:20:11 [utils.py:299]   █▄█▀ █     █     █     █  model   /kaggle/input/models/google/gemma-4/other/gemma-4-31b-it-qat-w4a16-ct/2\n"}
+,{"stream_name":"stderr","time":1766.521572565,"data":"(APIServer pid=1046) INFO 10-22 16:20:11 [utils.py:299]    ▀▀  ▀▀▀▀▀ ▀▀▀▀▀ ▀     ▀\n"}
+,{"stream_name":"stderr","time":1766.521576991,"data":"(APIServer pid=1046) INFO 10-22 16:20:11 [utils.py:299] \n"}
+,{"stream_name":"stderr","time":1766.521579505,"data":"(APIServer pid=1046) INFO 10-22 16:20:11 [utils.py:233] non-default args: {'default_chat_template_kwargs': {'enable_thinking': True}, 'enable_auto_tool_choice': True, 'tool_call_parser': 'gemma4', 'host': '127.0.0.1', 'model': '/kaggle/input/models/google/gemma-4/other/gemma-4-31b-it-qat-w4a16-ct/2', 'dtype': 'bfloat16', 'max_model_len': 32768, 'reasoning_parser': 'gemma4', 'tensor_parallel_size': 4, 'scheduler_reserve_full_isl': False, 'reasoning_config': ReasoningConfig(reasoning_start_str='\u003c|channel\u003e', reasoning_end_str='\u003cchannel|\u003e')}\n"}
+,{"stream_name":"stderr","time":1766.521583863,"data":"(APIServer pid=1046) INFO 10-22 16:20:32 [model.py:549] Resolved architecture: Gemma4ForConditionalGeneration\n"}
+,{"stream_name":"stderr","time":1766.521585789,"data":"(APIServer pid=1046) INFO 10-22 16:20:32 [model.py:1678] Using max model len 32768\n"}
+,{"stream_name":"stderr","time":1766.521587664,"data":"(APIServer pid=1046) INFO 10-22 16:20:33 [config.py:104] Gemma4 model has heterogeneous head dimensions (head_dim=256, global_head_dim=512). Forcing TRITON_ATTN backend to prevent mixed-backend numerical divergence.\n"}
+,{"stream_name":"stderr","time":1766.521589851,"data":"(APIServer pid=1046) INFO 10-22 16:20:33 [vllm.py:790] Asynchronous scheduling is enabled.\n"}
+,{"stream_name":"stderr","time":1766.521598865,"data":"(EngineCore pid=1413) INFO 10-22 16:20:57 [core.py:105] Initializing a V1 LLM engine (v0.19.1) with config: model='/kaggle/input/models/google/gemma-4/other/gemma-4-31b-it-qat-w4a16-ct/2', speculative_config=None, tokenizer='/kaggle/input/models/google/gemma-4/other/gemma-4-31b-it-qat-w4a16-ct/2', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=32768, download_dir=None, load_format=auto, tensor_parallel_size=4, pipeline_parallel_size=1, data_parallel_size=1, decode_context_parallel_size=1, dcp_comm_backend=ag_rs, disable_custom_all_reduce=False, quantization=compressed-tensors, enforce_eager=False, enable_return_routed_experts=False, kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='gemma4', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None, kv_cache_metrics=False, kv_cache_metrics_sample=0.01, cudagraph_metrics=False, enable_layerwise_nvtx_tracing=False, enable_mfu_metrics=False, enable_mm_processor_stats=False, enable_logging_iteration_details=False), seed=0, served_model_name=/kaggle/input/models/google/gemma-4/other/gemma-4-31b-it-qat-w4a16-ct/2, enable_prefix_caching=True, enable_chunked_prefill=True, pooler_config=None, compilation_config={'mode': \u003cCompilationMode.VLLM_COMPILE: 3\u003e, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['none'], 'splitting_ops': ['vllm::unified_attention', 'vllm::unified_attention_with_output', 'vllm::unified_mla_attention', 'vllm::unified_mla_attention_with_output', 'vllm::mamba_mixer2', 'vllm::mamba_mixer', 'vllm::short_conv', 'vllm::linear_attention', 'vllm::plamo2_mamba_mixer', 'vllm::gdn_attention_core', 'vllm::olmo_hybrid_gdn_full_forward', 'vllm::kda_attention', 'vllm::sparse_attn_indexer', 'vllm::rocm_aiter_sparse_attn_indexer', 'vllm::unified_kv_cache_update', 'vllm::unified_mla_kv_cache_update'], 'compile_mm_encoder': False, 'cudagraph_mm_encoder': False, 'encoder_cudagraph_token_budgets': [], 'encoder_cudagraph_max_images_per_batch': 0, 'compile_sizes': [], 'compile_ranges_endpoints': [2048], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'size_asserts': False, 'alignment_asserts': False, 'scalar_asserts': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': \u003cCUDAGraphMode.FULL_AND_PIECEWISE: (2, 1)\u003e, 'cudagraph_num_of_warmups': 1, 'cudagraph_capture_sizes': [1, 2, 4, 8, 16, 24, 32, 40, 48, 56, 64, 72, 80, 88, 96, 104, 112, 120, 128, 136, 144, 152, 160, 168, 176, 184, 192, 200, 208, 216, 224, 232, 240, 248, 256, 272, 288, 304, 320, 336, 352, 368, 384, 400, 416, 432, 448, 464, 480, 496, 512], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {'fuse_norm_quant': False, 'fuse_act_quant': False, 'fuse_attn_quant': False, 'enable_sp': False, 'fuse_gemm_comms': False, 'fuse_allreduce_rms': False}, 'max_cudagraph_capture_size': 512, 'dynamic_shapes_config': {'type': \u003cDynamicShapesType.BACKED: 'backed'\u003e, 'evaluate_guards': False, 'assume_32_bit_indexing': False}, 'local_cache_dir': None, 'fast_moe_cold_start': True, 'static_all_moe_layers': []}\n"}
+,{"stream_name":"stderr","time":1766.52161127,"data":"(EngineCore pid=1413) WARNING 10-22 16:20:57 [multiproc_executor.py:1014] Reducing Torch parallelism from 24 threads to 1 to avoid unnecessary CPU contention. Set OMP_NUM_THREADS in the external environment to tune this value as needed.\n"}
+,{"stream_name":"stderr","time":1766.521614058,"data":"(EngineCore pid=1413) INFO 10-22 16:20:57 [multiproc_executor.py:134] DP group leader: node_rank=0, node_rank_within_dp=0, master_addr=127.0.0.1, mq_connect_ip=172.19.2.2 (local), world_size=4, local_world_size=4\n"}
+,{"stream_name":"stderr","time":1766.5216161,"data":"(Worker pid=1574) INFO 10-22 16:21:15 [parallel_state.py:1400] world_size=4 rank=0 local_rank=0 distributed_init_method=tcp://127.0.0.1:55877 backend=nccl\n"}
+,{"stream_name":"stderr","time":1766.52161814,"data":"(Worker pid=1576) INFO 10-22 16:21:15 [parallel_state.py:1400] world_size=4 rank=2 local_rank=2 distributed_init_method=tcp://127.0.0.1:55877 backend=nccl\n"}
+,{"stream_name":"stderr","time":1766.521620146,"data":"(Worker pid=1575) INFO 10-22 16:21:15 [parallel_state.py:1400] world_size=4 rank=1 local_rank=1 distributed_init_method=tcp://127.0.0.1:55877 backend=nccl\n"}
+,{"stream_name":"stderr","time":1766.521622101,"data":"(Worker pid=1577) INFO 10-22 16:21:15 [parallel_state.py:1400] world_size=4 rank=3 local_rank=3 distributed_init_method=tcp://127.0.0.1:55877 backend=nccl\n"}
+,{"stream_name":"stderr","time":1766.521624059,"data":"[W1022 16:21:23.506133882 socket.cpp:207] [c10d] The hostname of the client socket cannot be retrieved. err=-3\n"}
+,{"stream_name":"stderr","time":1766.521625935,"data":"[W1022 16:21:23.876331455 socket.cpp:207] [c10d] The hostname of the client socket cannot be retrieved. err=-3\n"}
+,{"stream_name":"stderr","time":1766.521627849,"data":"[W1022 16:21:23.877426979 socket.cpp:207] [c10d] The hostname of the client socket cannot be retrieved. err=-3\n"}
+,{"stream_name":"stderr","time":1766.52162972,"data":"[W1022 16:21:23.881683561 socket.cpp:207] [c10d] The hostname of the client socket cannot be retrieved. err=-3\n"}
+,{"stream_name":"stderr","time":1766.521632091,"data":"(Worker pid=1576) \u003cfrozen importlib._bootstrap_external\u003e:1301: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.\n"}
+,{"stream_name":"stderr","time":1766.521634472,"data":"(Worker pid=1577) \u003cfrozen importlib._bootstrap_external\u003e:1301: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.\n"}
+,{"stream_name":"stderr","time":1766.521636634,"data":"(Worker pid=1574) \u003cfrozen importlib._bootstrap_external\u003e:1301: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.\n"}
+,{"stream_name":"stderr","time":1766.521640703,"data":"(Worker pid=1575) \u003cfrozen importlib._bootstrap_external\u003e:1301: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.\n"}
+,{"stream_name":"stderr","time":1766.521642966,"data":"(Worker pid=1576) \u003cfrozen importlib._bootstrap_external\u003e:1301: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.\n"}
+,{"stream_name":"stderr","time":1766.521645063,"data":"(Worker pid=1575) \u003cfrozen importlib._bootstrap_external\u003e:1301: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.\n"}
+,{"stream_name":"stderr","time":1766.52164715,"data":"(Worker pid=1574) \u003cfrozen importlib._bootstrap_external\u003e:1301: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.\n"}
+,{"stream_name":"stderr","time":1766.52164923,"data":"(Worker pid=1577) \u003cfrozen importlib._bootstrap_external\u003e:1301: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.\n"}
+,{"stream_name":"stderr","time":1766.521651325,"data":"(Worker pid=1574) INFO 10-22 16:21:23 [pynccl.py:111] vLLM is using nccl==2.27.5\n"}
+,{"stream_name":"stderr","time":1766.521653223,"data":"(Worker pid=1574) WARNING 10-22 16:21:24 [symm_mem.py:66] SymmMemCommunicator: Device capability 8.9 not supported, communicator is not available.\n"}
+,{"stream_name":"stderr","time":1766.521655402,"data":"(Worker pid=1575) WARNING 10-22 16:21:24 [symm_mem.py:66] SymmMemCommunicator: Device capability 8.9 not supported, communicator is not available.\n"}
+,{"stream_name":"stderr","time":1766.521657359,"data":"(Worker pid=1576) WARNING 10-22 16:21:24 [symm_mem.py:66] SymmMemCommunicator: Device capability 8.9 not supported, communicator is not available.\n"}
+,{"stream_name":"stderr","time":1766.521661015,"data":"(Worker pid=1577) WARNING 10-22 16:21:24 [symm_mem.py:66] SymmMemCommunicator: Device capability 8.9 not supported, communicator is not available.\n"}
+,{"stream_name":"stderr","time":1766.521662984,"data":"(Worker pid=1575) WARNING 10-22 16:21:24 [custom_all_reduce.py:154] Custom allreduce is disabled because it's not supported on more than two PCIe-only GPUs. To silence this warning, specify disable_custom_all_reduce=True explicitly.\n"}
+,{"stream_name":"stderr","time":1766.521665129,"data":"(Worker pid=1574) WARNING 10-22 16:21:24 [custom_all_reduce.py:154] Custom allreduce is disabled because it's not supported on more than two PCIe-only GPUs. To silence this warning, specify disable_custom_all_reduce=True explicitly.\n"}
+,{"stream_name":"stderr","time":1766.521667193,"data":"(Worker pid=1576) WARNING 10-22 16:21:24 [custom_all_reduce.py:154] Custom allreduce is disabled because it's not supported on more than two PCIe-only GPUs. To silence this warning, specify disable_custom_all_reduce=True explicitly.\n"}
+,{"stream_name":"stderr","time":1766.52166924,"data":"(Worker pid=1577) WARNING 10-22 16:21:24 [custom_all_reduce.py:154] Custom allreduce is disabled because it's not supported on more than two PCIe-only GPUs. To silence this warning, specify disable_custom_all_reduce=True explicitly.\n"}
+,{"stream_name":"stderr","time":1766.521671444,"data":"(Worker pid=1574) INFO 10-22 16:21:24 [parallel_state.py:1716] rank 0 in world size 4 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 0, EP rank N/A, EPLB rank N/A\n"}
+,{"stream_name":"stderr","time":1766.521675452,"data":"(Worker_TP0 pid=1574) INFO 10-22 16:21:24 [gpu_model_runner.py:4735] Starting to load model /kaggle/input/models/google/gemma-4/other/gemma-4-31b-it-qat-w4a16-ct/2...\n"}
+,{"stream_name":"stderr","time":1766.521677556,"data":"(Worker_TP0 pid=1574) INFO 10-22 16:21:25 [vllm.py:790] Asynchronous scheduling is enabled.\n"}
+,{"stream_name":"stderr","time":1766.521679409,"data":"(Worker_TP2 pid=1576) INFO 10-22 16:21:25 [compressed_tensors_wNa16.py:112] Using MarlinLinearKernel for CompressedTensorsWNA16\n"}
+,{"stream_name":"stderr","time":1766.521681313,"data":"(Worker_TP1 pid=1575) INFO 10-22 16:21:25 [compressed_tensors_wNa16.py:112] Using MarlinLinearKernel for CompressedTensorsWNA16\n"}
+,{"stream_name":"stderr","time":1766.521683606,"data":"(Worker_TP0 pid=1574) INFO 10-22 16:21:25 [compressed_tensors_wNa16.py:112] Using MarlinLinearKernel for CompressedTensorsWNA16\n"}
+,{"stream_name":"stderr","time":1766.521685509,"data":"(Worker_TP3 pid=1577) INFO 10-22 16:21:25 [compressed_tensors_wNa16.py:112] Using MarlinLinearKernel for CompressedTensorsWNA16\n"}
+,{"stream_name":"stderr","time":1766.52168738,"data":"(Worker_TP2 pid=1576) INFO 10-22 16:21:25 [cuda.py:274] Using AttentionBackendEnum.TRITON_ATTN backend.\n"}
+,{"stream_name":"stderr","time":1766.521689287,"data":"(Worker_TP0 pid=1574) INFO 10-22 16:21:25 [cuda.py:274] Using AttentionBackendEnum.TRITON_ATTN backend.\n"}
+,{"stream_name":"stderr","time":1766.52169112,"data":"(Worker_TP1 pid=1575) INFO 10-22 16:21:25 [cuda.py:274] Using AttentionBackendEnum.TRITON_ATTN backend.\n"}
+,{"stream_name":"stderr","time":1766.521692962,"data":"(Worker_TP3 pid=1577) INFO 10-22 16:21:25 [cuda.py:274] Using AttentionBackendEnum.TRITON_ATTN backend.\n"}
+,{"stream_name":"stderr","time":1766.521694814,"data":"(Worker_TP2 pid=1576) INFO 10-22 16:21:25 [cuda.py:274] Using AttentionBackendEnum.TRITON_ATTN backend.\n"}
+,{"stream_name":"stderr","time":1766.52169663,"data":"(Worker_TP0 pid=1574) INFO 10-22 16:21:25 [cuda.py:274] Using AttentionBackendEnum.TRITON_ATTN backend.\n"}
+,{"stream_name":"stderr","time":1766.521698437,"data":"(Worker_TP1 pid=1575) INFO 10-22 16:21:25 [cuda.py:274] Using AttentionBackendEnum.TRITON_ATTN backend.\n"}
+,{"stream_name":"stderr","time":1766.521700254,"data":"(Worker_TP3 pid=1577) INFO 10-22 16:21:25 [cuda.py:274] Using AttentionBackendEnum.TRITON_ATTN backend.\n"}
+,{"stream_name":"stderr","time":1766.521702102,"data":"(Worker_TP2 pid=1576) INFO 10-22 16:21:26 [weight_utils.py:848] Prefetching checkpoint files into page cache started (in background)\n"}
+,{"stream_name":"stderr","time":1766.521704076,"data":"(Worker_TP2 pid=1576) INFO 10-22 16:21:26 [weight_utils.py:843] Prefetching checkpoint files into page cache finished in 0.00s\n"}
+,{"stream_name":"stderr","time":1766.521705982,"data":"(Worker_TP3 pid=1577) INFO 10-22 16:21:26 [weight_utils.py:848] Prefetching checkpoint files into page cache started (in background)\n"}
+,{"stream_name":"stderr","time":1766.521707938,"data":"(Worker_TP0 pid=1574) INFO 10-22 16:21:26 [weight_utils.py:848] Prefetching checkpoint files into page cache started (in background)\n"}
+,{"stream_name":"stderr","time":1766.521709891,"data":"(Worker_TP0 pid=1574) \n"}
+,{"stream_name":"stderr","time":1766.521711697,"data":"Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stderr","time":1766.521713585,"data":"(Worker_TP1 pid=1575) INFO 10-22 16:21:26 [weight_utils.py:848] Prefetching checkpoint files into page cache started (in background)\n"}
+,{"stream_name":"stderr","time":1766.521715495,"data":"(Worker_TP1 pid=1575) INFO 10-22 16:21:26 [weight_utils.py:843] Prefetching checkpoint files into page cache finished in 0.23s\n"}
+,{"stream_name":"stderr","time":1766.521717385,"data":"(Worker_TP3 pid=1577) INFO 10-22 16:21:26 [weight_utils.py:843] Prefetching checkpoint files into page cache finished in 0.25s\n"}
+,{"stream_name":"stderr","time":1766.521721511,"data":"\n"}
+,{"stream_name":"stderr","time":1766.521723347,"data":"\n"}
+,{"stream_name":"stderr","time":1769.04288072,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":1769.042909931,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":1769.202760221,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":1769.202788301,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":1770.455355351,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":1770.793547322,"data":"[NbConvertApp] Writing 205704 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":1774.368670776,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":1775.506232661,"data":"[NbConvertApp] Writing 806858 bytes to __results__.html\n"}
+]

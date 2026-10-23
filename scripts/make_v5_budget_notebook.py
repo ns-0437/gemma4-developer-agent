@@ -19,6 +19,10 @@ from pathlib import Path
 import make_compare_notebook as M
 from generation_guard import require_unlaunched
 
+# vLLM server startup timeout (seconds), passed to VllmConfig in the SERVER cell.
+# 60*20 = 1200s is the value shipped in scripts/make_pilot_notebook.py; override before
+# calling main() to raise it. Leaving this at the default changes nothing.
+
 IMAGE = ('gcr.io/kaggle-private-byod/python@sha256:'
          '37c64f7dd9c54116ecd1bcc88817c5469b88387388fade02bfa8bf3fc647d461')
 
@@ -28,6 +32,7 @@ OUT_EXP = ROOT / 'experiments/v5_budget_v1'      # this follow-up's own records
 OUT_NAME = 'v5_budget'
 NB_FILENAME = 'v5_budget.ipynb'
 KERNEL_ID = 'navin03/gemma4-v5-budget'
+STARTUP_TIMEOUT_S = 60 * 20  # 1200s, unchanged default
 SOURCE = ROOT / 'experiments/v5_budget_v1/candidate_V5'
 TASKS = ['rich_3278', 'rich_3535', 'rich_3675', 'rich_3942']
 ORDER = [('rich_3278','V5'), ('rich_3535','V5'),
@@ -174,6 +179,11 @@ def specialize(P):
     assert P.CANDS.index('verify_runtime_swegemma()') < P.CANDS.index('declared_model(d)')
     assert 'validate_single_declared_model' not in P.CANDS
 
+    old_timeout = 'startup_timeout=60 * 20)'
+    assert P.SERVER.count(old_timeout) == 1, 'startup_timeout anchor missing; refusing to generate'
+    if STARTUP_TIMEOUT_S != 60 * 20:
+        P.SERVER = P.SERVER.replace(old_timeout, 'startup_timeout=%d)' % STARTUP_TIMEOUT_S, 1)
+
     P.SERVER = P.SERVER.replace('CAND_DIRS["A"]', 'CAND_DIRS["V5"]')
     P.SERVER = P.SERVER.replace("# vLLM with the grader's serving settings.", '# vLLM with the public harness serving configuration; private parity unverified.')
     P.SERVER = P.SERVER.replace("for cand in ('A','B'):", 'for cand in CAND_DIRS:')
@@ -236,6 +246,7 @@ visible. Four tasks from one repository cannot predict the hidden set or a publi
     record['purpose'] = 'descriptive V5 baseline; not a matched control for a later A/B'
     record['harness'] = 'public development harness, not private-grader-equivalent'
     record['docker_image'] = IMAGE
+    record['startup_timeout_s'] = STARTUP_TIMEOUT_S
     meta_path = ROOT/'notebooks'/OUT_NAME/'kernel-metadata.json'
     meta = json.loads(meta_path.read_text())
     meta['docker_image'] = IMAGE

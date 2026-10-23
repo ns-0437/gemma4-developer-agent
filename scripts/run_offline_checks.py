@@ -12,6 +12,7 @@ CHECKS = (
     ('scripts/test_verify_v5_budget_launch.py',),
     ('scripts/verify_v5_budget_launch.py',),
     ('scripts/test_v5_budget_v2_notebook.py',),
+    ('scripts/test_v5_budget_v3_notebook.py',),
     ('scripts/test_verify_v5_cpu_evidence.py',),
     ('scripts/verify_v5_cpu_evidence.py',),
     ('scripts/test_generation_guard.py',),

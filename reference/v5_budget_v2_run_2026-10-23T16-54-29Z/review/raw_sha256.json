@@ -1,0 +1,32 @@
+{
+  "files": {
+    "candidates/V5/agent.yaml": "8e890bec4c5e146402c6ef9ee22eb40388207ad8416cfd3405e040aa038ffb83",
+    "candidates/V5/configs/sampling.yaml": "0b754a9811c6a40198102c45f7cee813f43e3fd97edfef2b6da5deeffb6fa3a8",
+    "candidates/V5/prompts/analyzer.md": "5011d37145d981e616d58fb56c5191ccbf336574fa01b3f65c2feab7d697b3a3",
+    "candidates/V5/prompts/system.md": "39b2541c2220cc7655c576bb4ae7ac7e03200a72f2f1e518313068fc93be3b91",
+    "candidates/V5/sub_agents/code_analyzer.yaml": "396b75ffd1315ef93f3d1806b814a49758b9f8dd8b8caef6a092bd6cb2c2d9bb",
+    "gemma4-v5-budget-v2.log": "4c13d26799f1ff2fe41b584dc8f610b0399d8cec3873389da3734eae2b20bb6f",
+    "pilot/compiler_identity.json": "383b947d0d08bf19f56d5c61558cac45f72348d6d60c0bdf37d642c94ac8f35a",
+    "pilot/control_evidence/rich_3278__baseline.json": "0227046fbf0bb205ed7c7f4d6d162dcd7f78e601d7ea8353aeba6f4d3269725c",
+    "pilot/control_evidence/rich_3278__baseline.junit.xml": "6364727a847932e09e37e3d2cce8d47e73c07c0fe16b83042803de62163da983",
+    "pilot/control_evidence/rich_3278__reference.json": "5e94762f9c35bcf1bb3e66b16074a30f9a9415a1fb073b6e7001dffe19f8a4d2",
+    "pilot/control_evidence/rich_3278__reference.junit.xml": "7a440612d7f65d295b97c5aa6bc7979aa10c8a52ed821210167cd047d6724a6d",
+    "pilot/control_evidence/rich_3535__baseline.json": "1b94ef29f8407dc71df5d9c79444b1316e5de803a5784ada910c7cd22f3e9ffa",
+    "pilot/control_evidence/rich_3535__baseline.junit.xml": "8dde71d9a4ef17856d142748ded962f8576d8c80ffcd08abf493c66f9047590e",
+    "pilot/control_evidence/rich_3535__reference.json": "15e16d996320944d76f96c6eb682ec1686a7d1e570473b5fe9332fd9212b295d",
+    "pilot/control_evidence/rich_3535__reference.junit.xml": "c4828a1314cac088cde8084ffd1ba2835ed40173d53a9295ef55cc22f3bb0b53",
+    "pilot/control_evidence/rich_3675__baseline.json": "58ca1642a3bddc44d89f507831e5de72f96dc59cf7a21b7861c924be2aa10b8a",
+    "pilot/control_evidence/rich_3675__baseline.junit.xml": "412bb5d925152ffa38003ff90df885174b7f9d55c1bdf4a0c9d3883ba0637ac3",
+    "pilot/control_evidence/rich_3675__reference.json": "3e60cf484180e48bc69e85a669c7ad9b119adf594307f720f3bba8713a9358f1",
+    "pilot/control_evidence/rich_3675__reference.junit.xml": "3a87590c5e2786342f3cf53cba9fbe00af9f85530914caa534ad7670692b8b10",
+    "pilot/control_evidence/rich_3942__baseline.json": "a4844fbedd03469964c82406e5f64fdcc499c346651836f8993026a0b75dda93",
+    "pilot/control_evidence/rich_3942__baseline.junit.xml": "c42e3a9bdb0638d0d770a1e9de047f109afe9a991f96f7d323de34b2973b1503",
+    "pilot/control_evidence/rich_3942__reference.json": "ed99cbf342f5de07ac5c99cd92202cadfb362142110bf34181c56bda1b271563",
+    "pilot/control_evidence/rich_3942__reference.junit.xml": "4685c85d5ef8f2938a68eb07a47494f5fd62872d6c74a1c6d800de4363214336",
+    "pilot/control_recheck.json": "602fbead19bfa391843b948dff11b0b89206d1a046a73c86b47102c5d8d535d8",
+    "pilot/preconditions.json": "f7d28bf2f048d507a257173445055bd4846a25f1ec436bcc85438fd34ecbc3cb",
+    "pilot/setup_observations.json": "71ca11506a3ff878e19ef003d9e8cabf9b15e00ebc8052cdac262d76ba73db0f",
+    "pilot/swegemma_identity.json": "f1ac768f70d93bef88afe4b924a50a7eb5f0d04f16718a1839dba8266c72a22d"
+  },
+  "note": "hashed after full download (log required a UTF-8 console codepage fetch)"
+}

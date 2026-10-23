@@ -1,0 +1,46 @@
+[
+  {
+    "task": "rich_3278",
+    "ws": "/tmp/swegemma_sandbox_71d565d7-d22_z6tqobsv/workspace",
+    "agent_file": "/tmp/swegemma_sandbox_71d565d7-d22_z6tqobsv/workspace/rich/__init__.py",
+    "agent_exe": "/tmp/swegemma_sandbox_71d565d7-d22_z6tqobsv/venv/bin/python3",
+    "grading_file": "/tmp/swegemma_sandbox_71d565d7-d22_z6tqobsv/workspace/rich/__init__.py",
+    "grading_exe": "/tmp/swegemma_sandbox_71d565d7-d22_z6tqobsv/venv/bin/python3",
+    "cleanup_ok": true,
+    "owned_sandboxes": [],
+    "ok": true
+  },
+  {
+    "task": "rich_3535",
+    "ws": "/tmp/swegemma_sandbox_e76a8ea4-177_8fi6s1kh/workspace",
+    "agent_file": "/tmp/swegemma_sandbox_e76a8ea4-177_8fi6s1kh/workspace/rich/__init__.py",
+    "agent_exe": "/tmp/swegemma_sandbox_e76a8ea4-177_8fi6s1kh/venv/bin/python3",
+    "grading_file": "/tmp/swegemma_sandbox_e76a8ea4-177_8fi6s1kh/workspace/rich/__init__.py",
+    "grading_exe": "/tmp/swegemma_sandbox_e76a8ea4-177_8fi6s1kh/venv/bin/python3",
+    "cleanup_ok": true,
+    "owned_sandboxes": [],
+    "ok": true
+  },
+  {
+    "task": "rich_3675",
+    "ws": "/tmp/swegemma_sandbox_c439afda-5b1_g4ccxidn/workspace",
+    "agent_file": "/tmp/swegemma_sandbox_c439afda-5b1_g4ccxidn/workspace/rich/__init__.py",
+    "agent_exe": "/tmp/swegemma_sandbox_c439afda-5b1_g4ccxidn/venv/bin/python3",
+    "grading_file": "/tmp/swegemma_sandbox_c439afda-5b1_g4ccxidn/workspace/rich/__init__.py",
+    "grading_exe": "/tmp/swegemma_sandbox_c439afda-5b1_g4ccxidn/venv/bin/python3",
+    "cleanup_ok": true,
+    "owned_sandboxes": [],
+    "ok": true
+  },
+  {
+    "task": "rich_3942",
+    "ws": "/tmp/swegemma_sandbox_ddf87f21-8ce_abt361ej/workspace",
+    "agent_file": "/tmp/swegemma_sandbox_ddf87f21-8ce_abt361ej/workspace/rich/__init__.py",
+    "agent_exe": "/tmp/swegemma_sandbox_ddf87f21-8ce_abt361ej/venv/bin/python3",
+    "grading_file": "/tmp/swegemma_sandbox_ddf87f21-8ce_abt361ej/workspace/rich/__init__.py",
+    "grading_exe": "/tmp/swegemma_sandbox_ddf87f21-8ce_abt361ej/venv/bin/python3",
+    "cleanup_ok": true,
+    "owned_sandboxes": [],
+    "ok": true
+  }
+]
