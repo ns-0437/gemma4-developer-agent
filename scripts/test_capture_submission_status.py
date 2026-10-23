@@ -26,6 +26,17 @@ class CaptureTests(unittest.TestCase):
         self.assertIn('competition_submissions', self.runner.call_args.args[0][4])
         self.assertEqual(self.runner.call_args.kwargs, dict(capture_output=True, timeout=90, check=True))
 
+    def test_omitted_error_keeps_score_and_uncertainty(self):
+        raw=json.dumps([dict(ref=7,status='COMPLETE',publicScore='0.13')]).encode()
+        runner=Mock(return_value=SimpleNamespace(stdout=raw))
+        result=capture(self.folder,7,runner=runner)
+        self.assertTrue(result['verified'])
+        self.assertEqual(result['observation']['public_score'],'0.13')
+        self.assertEqual(result['observation']['outcome'],'score_observed_error_unknown')
+        self.assertIs(result['observation']['error_description_observed'],False)
+        self.assertEqual((self.folder/'submissions.json').read_bytes(),raw)
+        runner.assert_called_once()
+
     def test_existing_directory_refuses_before_network(self):
         self.folder.mkdir(); (self.folder / 'keep').write_text('original')
         with self.assertRaisesRegex(ValueError, 'already exists'):

@@ -13,10 +13,9 @@ def read_details(text, reference):
     if len(matches) != 1:
         raise ValueError('expected exactly one matching submission')
     row = matches[0]
-    if 'errorDescription' not in row:
-        raise ValueError('full API record required: errorDescription unavailable')
+    error_observed = 'errorDescription' in row
     status = row.get('status')
-    error = row['errorDescription']
+    error = row.get('errorDescription')
     if not isinstance(status, str) or not status.strip() or (error is not None and not isinstance(error, str)):
         raise ValueError('invalid status or error description')
     status = status.strip().removeprefix('SubmissionStatus.').upper()
@@ -37,6 +36,13 @@ def read_details(text, reference):
                else 'complete_without_score' if status == 'COMPLETE'
                else 'pending_or_running' if status in {'PENDING', 'RUNNING', 'QUEUED'}
                else 'unknown_status')
-    return {'submission_ref': reference, 'status': status, 'public_score': score,
+    result = {'submission_ref': reference, 'status': status, 'public_score': score,
             'score_available': score is not None, 'error_description': error or None,
             'outcome': outcome, 'live_status_checked': False}
+    if not error_observed:
+        # A full API serializer may omit this field. Preserve the score as observed,
+        # but never turn an unavailable error detail into an explicit no-error claim.
+        result['error_description_observed'] = False
+        if outcome == 'scored': result['outcome'] = 'score_observed_error_unknown'
+        elif outcome == 'complete_without_score': result['outcome'] = 'complete_without_score_error_unknown'
+    return result

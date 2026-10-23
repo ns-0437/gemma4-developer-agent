@@ -34,9 +34,17 @@ class DetailsTests(unittest.TestCase):
     def test_error_takes_precedence_over_score(self):
         self.assertEqual(self.read(publicScore='0.06', errorDescription='failed')['outcome'], 'error')
 
-    def test_summary_without_error_field_refused(self):
-        with self.assertRaisesRegex(ValueError, 'full API record'):
-            read_details('[{"ref":7,"status":"COMPLETE","publicScore":null}]', 7)
+    def test_omitted_error_is_unknown_not_explicit_success(self):
+        for score, expected in ((None,'complete_without_score_error_unknown'),
+                                ('0.13','score_observed_error_unknown'),
+                                (0,'score_observed_error_unknown')):
+            with self.subTest(score=score):
+                result=read_details(json.dumps([dict(ref=7,status='COMPLETE',publicScore=score)]),7)
+                self.assertEqual(result['outcome'],expected)
+                self.assertIs(result['error_description_observed'],False)
+                self.assertEqual(result['score_available'],score is not None)
+        result=read_details('[{"ref":7,"status":"ERROR","publicScore":"0.13"}]',7)
+        self.assertEqual(result['outcome'],'error')
 
     def test_ambiguous_or_invalid_records(self):
         for raw in ('{}', '[]', '[{"ref":7},{"ref":7}]'):
