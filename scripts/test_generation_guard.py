@@ -20,6 +20,19 @@ class GuardTests(unittest.TestCase):
                     require_unlaunched(tmp)
                 self.assertEqual(p.read_bytes(), raw)
 
+    def test_versioned_receipt_alone_blocks_regeneration(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            receipt = Path(tmp) / 'LAUNCH_RECORD_repaired_v2.json'
+            receipt.write_bytes(b'incomplete')
+            with self.assertRaisesRegex(RuntimeError, 'repaired_v2'):
+                require_unlaunched(tmp)
+            self.assertEqual(receipt.read_bytes(), b'incomplete')
+
+    def test_preparation_record_is_not_a_launch(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            (Path(tmp) / 'NOTEBOOK_PREPARED.json').write_text('{}')
+            require_unlaunched(tmp)
+
     def test_generators_guard_before_writing(self):
         import ast
         for name in ('make_v5_budget_notebook.py', 'make_v5_control_replay_notebook.py'):
