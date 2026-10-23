@@ -1,0 +1,24 @@
+{
+  "status": "PUSH FAILED, no kernel created, no launch occurred",
+  "kernel_attempted": "navin03/gemma4-v5-budget-v3",
+  "attempts": 2,
+  "utc_before_first_attempt": "2026-10-23T17:11:47Z",
+  "attempt_1_utc": "2026-10-23T17:12:43Z",
+  "attempt_2_utc": "2026-10-23T17:14:12Z",
+  "failure": "requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0) while parsing the SaveKernel API response; the HTTP response body was empty. Server-side or network-side; not related to packet content.",
+  "confirmed_no_kernel_created": "kernel absent from `kaggle kernels list -m` after both attempts",
+  "gpu_quota_before": "1.06h used, 28.94h remaining",
+  "gpu_quota_after_both_attempts": "1.06h used, 28.94h remaining (unchanged; confirms nothing ran)",
+  "packet_verified_before_attempts": {
+    "disabled_notebook_sha256": "8e5cea46bfdaa449281402a8f541558d42cac2141937cb6eaf35df99deaf21c3",
+    "armed_notebook_sha256": "7ded068d0f311cbc43373c38c1cf514ed16d914be52deefffc3ae4272840dbc1",
+    "metadata_sha256": "06d908c0a7e4d79fa1cd7329c580b18b9cb0111e5d17e869552c0bb7e518696b",
+    "diff_vs_launched_v2": "exactly one line, startup_timeout 60*20 -> 1800, after normalizing DISPATCH_CONFIRM"
+  },
+  "action_taken": "retried once after confirming zero GPU/kernel impact from the first failure; stopped after a second identical failure rather than continue retrying",
+  "not_done": [
+    "further retry",
+    "timeout change",
+    "competition submission"
+  ]
+}
