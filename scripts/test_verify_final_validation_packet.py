@@ -44,6 +44,14 @@ class PacketIdentityTests(unittest.TestCase):
             with self.subTest(raw=raw), self.assertRaisesRegex(ValueError, 'duplicate packet JSON key'):
                 strict_json(raw)
 
+    def test_nonfinite_json_numbers_refused_at_any_depth(self):
+        for number in ('NaN', 'Infinity', '-Infinity', '1e999', '-1e999'):
+            for raw in (number, '{"nested":[' + number + ']}'):
+                with self.subTest(raw=raw), self.assertRaisesRegex(ValueError, 'nonfinite'):
+                    strict_json(raw)
+        self.assertEqual(strict_json('{"score":0.13,"label":"NaN"}'),
+                         {'score':0.13,'label':'NaN'})
+
     def test_original_packet(self):
         self.assertEqual(verify_packet(RAW, PREPARED)['runs'], 6)
 

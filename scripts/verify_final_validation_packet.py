@@ -8,6 +8,7 @@ import argparse
 import base64
 import hashlib
 import json
+import math
 from pathlib import Path
 
 ORDER = [('fastapi_15280', 'V3'), ('fastapi_15280', 'ON'),
@@ -24,7 +25,15 @@ def strict_json(raw):
                 raise ValueError('duplicate packet JSON key: ' + key)
             result[key] = value
         return result
-    return json.loads(raw, object_pairs_hook=unique)
+    def reject_constant(value):
+        raise ValueError('nonfinite packet JSON number: ' + value)
+    def finite_float(value):
+        parsed = float(value)
+        if not math.isfinite(parsed):
+            reject_constant(value)
+        return parsed
+    return json.loads(raw, object_pairs_hook=unique, parse_constant=reject_constant,
+                      parse_float=finite_float)
 
 
 def require(condition, message):
